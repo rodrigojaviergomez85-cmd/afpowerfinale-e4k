@@ -1,21 +1,10 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { COURSES } from "@/data/content";
+import type { ContentMix } from "./content";
 
-export type TeamIcon = "🚀" | "🦊" | "⚡" | "🦈" | "🐉" | "🌟" | "🔥" | "🐯" | "🦅" | "🤖";
-
-export interface Team {
-  name: string;
-  icon: string;
-}
-
-export interface Player {
-  id: string;
-  name: string;
-  quiet: boolean; // spoke little in AF
-  turns: number;
-  points: number;
-}
-
+export interface Team { name: string; icon: string }
+export interface Player { id: string; name: string; quiet: boolean; turns: number; points: number }
 export interface Settings {
   turnTime: number;
   rounds: number;
@@ -24,35 +13,33 @@ export interface Settings {
   showSpanish: boolean;
   calm: boolean;
 }
-
+export interface BombOptions { target: number; time: number; penalty: number; mix: ContentMix }
 export interface LastResult {
   gameId: string;
   teams: Team[];
   scores: number[];
   mode: "teams" | "coop";
-  coopGoal?: number;
   mvp?: string;
   at: number;
 }
 
 interface AppState {
   settings: Settings;
+  course: string;
   level: number;
-  classNum: number;
-  group: string;
+  week: number;
+  day: number;
   teams: [Team, Team];
   roster: Player[];
   rosterDate: string;
-  usedHistory: Record<string, string[]>;
+  bomb: BombOptions;
   lastResult: LastResult | null;
-  nextGameIndex: number;
   setSettings: (s: Partial<Settings>) => void;
-  setSetup: (s: Partial<Pick<AppState, "level" | "classNum" | "group" | "teams" | "roster">>) => void;
-  markUsed: (ids: string[]) => void;
+  setSetup: (s: Partial<Pick<AppState, "course" | "level" | "week" | "day" | "teams" | "roster">>) => void;
+  setBomb: (b: Partial<BombOptions>) => void;
   resetTurns: () => void;
   bumpPlayer: (id: string, field: "turns" | "points", delta?: number) => void;
   setLastResult: (r: LastResult) => void;
-  advanceNextGame: () => void;
 }
 
 export const TEAM_NAME_POOL: Team[] = [
@@ -68,49 +55,49 @@ export const TEAM_NAME_POOL: Team[] = [
   { name: "Ninja Octopus", icon: "🐙" },
 ];
 
-export const groupKey = (group: string, level: number) =>
-  `${group.trim().toLowerCase() || "default"}::L${level}`;
+export const BOMB_PRESETS: Record<string, BombOptions> = {
+  Easy: { target: 8, time: 120, penalty: 3, mix: "mix" },
+  Normal: { target: 10, time: 120, penalty: 5, mix: "mix" },
+  Hard: { target: 12, time: 100, penalty: 5, mix: "mix" },
+};
+
+/** Session-only memory (not saved): ids used in the previous game, so Rematch prefers new items. */
+export const sessionUsed: Record<string, string[]> = {};
 
 const today = () => new Date().toISOString().slice(0, 10);
+const c0 = COURSES[0];
+const l0 = c0.levels[0];
 
 export const useApp = create<AppState>()(
   persist(
     (set, get) => ({
       settings: { turnTime: 15, rounds: 10, sound: true, volume: 0.7, showSpanish: true, calm: false },
-      level: 1,
-      classNum: 1,
-      group: "",
+      course: c0.name,
+      level: l0.level,
+      week: l0.weeks[0].week,
+      day: l0.weeks[0].days[0].day,
       teams: [TEAM_NAME_POOL[0], TEAM_NAME_POOL[1]],
       roster: [],
       rosterDate: today(),
-      usedHistory: {},
+      bomb: BOMB_PRESETS.Normal,
       lastResult: null,
-      nextGameIndex: 0,
       setSettings: (s) => set({ settings: { ...get().settings, ...s } }),
       setSetup: (s) => set(s as Partial<AppState>),
-      markUsed: (ids) => {
-        const key = groupKey(get().group, get().level);
-        const prev = get().usedHistory[key] ?? [];
-        const next = [...ids, ...prev.filter((i) => !ids.includes(i))].slice(0, 150);
-        set({ usedHistory: { ...get().usedHistory, [key]: next } });
-      },
-      resetTurns: () =>
-        set({ roster: get().roster.map((p) => ({ ...p, turns: 0, points: 0 })), rosterDate: today() }),
+      setBomb: (b) => set({ bomb: { ...get().bomb, ...b } }),
+      resetTurns: () => set({ roster: get().roster.map((p) => ({ ...p, turns: 0, points: 0 })), rosterDate: today() }),
       bumpPlayer: (id, field, delta = 1) =>
-        set({
-          roster: get().roster.map((p) =>
-            p.id === id ? { ...p, [field]: Math.max(0, p[field] + delta) } : p,
-          ),
-        }),
+        set({ roster: get().roster.map((p) => (p.id === id ? { ...p, [field]: Math.max(0, p[field] + delta) } : p)) }),
       setLastResult: (r) => set({ lastResult: r }),
-      advanceNextGame: () => set({ nextGameIndex: get().nextGameIndex + 1 }),
     }),
     {
-      name: "af-power-finale",
+      name: "af-power-finale-v2",
       onRehydrateStorage: () => (state) => {
-        // New day → fresh turn counts
         if (state && state.rosterDate !== today()) state.resetTurns();
       },
     },
   ),
 );
+
+export const selectionOf = (s: { course: string; level: number; week: number; day: number }) => ({
+  course: s.course, level: s.level, week: s.week, day: s.day,
+});
