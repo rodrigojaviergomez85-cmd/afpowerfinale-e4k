@@ -24,7 +24,7 @@ export const GAMES: GameDef[] = [
     status: "ready",
     rules: [
       { icon: "👀", text: "Look at the screen and say it in English." },
-      { icon: "⏱️", text: "You have 15 seconds. Win points for your team!" },
+      { icon: "⏱️", text: "Be fast! Win points for your team!" },
     ],
   },
   {
@@ -36,8 +36,11 @@ export const GAMES: GameDef[] = [
     minutes: "4 min",
     accent: "bg-game-bomb",
     accentText: "text-game-bomb",
-    status: "soon",
-    rules: [],
+    status: "ready",
+    rules: [
+      { icon: "💣", text: "Answer 10 questions before the bomb explodes!" },
+      { icon: "🤝", text: "Work together!" },
+    ],
   },
   {
     id: "hot-chair",
