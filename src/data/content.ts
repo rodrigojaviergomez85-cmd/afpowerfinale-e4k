@@ -34,6 +34,7 @@ export interface PilotCard {
   openAnswer?: boolean;
   pictureChoices?: { label: string; emoji: string }[];
   choiceNote?: string;
+  practice?: { target: string; spanish: string; errors: string[] };
 }
 export interface PilotLesson {
   id: string;
@@ -53,6 +54,17 @@ export interface PilotLesson {
 const shapeNames = ["circle", "rectangle", "star", "heart", "square", "triangle", "oval"];
 const palette = ["red", "blue", "yellow", "green", "purple", "orange"];
 const numbers = ["zero", "one", "two", "three", "four", "five", "six"];
+const shapeSpanish = [
+  "círculo",
+  "rectángulo",
+  "estrella",
+  "corazón",
+  "cuadrado",
+  "triángulo",
+  "óvalo",
+];
+const colorSpanish = ["rojo", "azul", "amarillo", "verde", "morado", "naranja"];
+const numberSpanish = ["cero", "uno", "dos", "tres", "cuatro", "cinco", "seis"];
 const article = (word: string) => (/^[aeiou]/i.test(word) ? "an" : "a");
 function shapeCards(day: number): PilotCard[] {
   return shapeNames.flatMap((shape, si) =>
@@ -91,6 +103,15 @@ function shapeCards(day: number): PilotCard[] {
           : n === 1
             ? `There is one ${color} ${shape}.`
             : `There are ${numbers[n]} ${color} ${shape}s.`;
+      const target = day === 2 ? prompt : answer;
+      const noun = shapeSpanish[si]!;
+      const plural = noun === "corazón" ? "corazones" : `${noun}s`;
+      const shade = colorSpanish[ci]!.replace(/o$/, noun === "estrella" ? "a" : "o");
+      const colored = `${n === 1 ? noun : plural} ${shade}${n === 1 ? "" : "es" === shade.slice(-2) ? "" : shade === "azul" ? "es" : "s"}`;
+      const translation =
+        day === 2
+          ? `¿Hay ${n === 1 ? ((ci % 2 === 0 ? shape : other) === "star" ? "una " : "un ") : ""}${shapeSpanish[shapeNames.indexOf(ci % 2 === 0 ? shape : other)]}${n === 1 ? "" : shapeSpanish[shapeNames.indexOf(ci % 2 === 0 ? shape : other)] === "corazón" ? "es" : "s"}?`
+          : `${day === 3 ? "Veo" : "Hay"} ${n === 1 ? (noun === "estrella" ? "una" : "un") : numberSpanish[n]} ${colored}.`;
       return {
         key: `shapes-d${day}-${shape}-${color}`,
         line: `S || ${color} ${shape}:${n} || ${prompt} || ${answer}`,
@@ -98,6 +119,30 @@ function shapeCards(day: number): PilotCard[] {
         spanish: "Mira las figuras. Responde con una oración completa.",
         falseClaim: wrong,
         correction,
+        practice: {
+          target,
+          spanish: translation,
+          errors:
+            day === 2
+              ? [
+                  target
+                    .replace(/^Is there/, "Are there")
+                    .replace(/^Are there any/, "Is there any"),
+                  target.replace(/^(Is|Are) there/, "$1 there is"),
+                  target.replace("there", "they"),
+                ]
+              : [
+                  wrong,
+                  target.replace(
+                    n === 1 ? ` ${shape}.` : ` ${shape}s.`,
+                    n === 1 ? ` ${shape}s.` : ` ${shape}.`,
+                  ),
+                  target.replace(
+                    day === 3 ? "I see" : n === 1 ? "There is" : "There are",
+                    day === 3 ? "I sees" : "There be",
+                  ),
+                ],
+        },
       };
     }),
   );
@@ -111,6 +156,62 @@ const jobs = [
   { name: "teacher", icon: "🧑‍🏫", action: "teach children", place: "school" },
   { name: "astronaut", icon: "🧑‍🚀", action: "explore space", place: "space station" },
 ];
+const jobsSpanish = ["médico", "veterinario", "bombero", "policía", "profesor", "astronauta"];
+const actionsSpanish = [
+  "ayudar a las personas enfermas",
+  "ayudar a los animales",
+  "apagar incendios",
+  "combatir el crimen",
+  "enseñar a los niños",
+  "explorar el espacio",
+];
+const placesSpanish = [
+  "un hospital",
+  "un hospital veterinario",
+  "una estación de bomberos",
+  "una estación de policía",
+  "una escuela",
+  "una estación espacial",
+];
+function jobPractice(job: (typeof jobs)[number], day: number, task = 0) {
+  const i = jobs.indexOf(job),
+    j = `${article(job.name)} ${job.name}`;
+  const target =
+    day === 2
+      ? task === 0
+        ? `Do you want to be ${j}?`
+        : task === 1
+          ? `Yes, I do. I want to be ${j}.`
+          : `No, I don't want to be ${j}.`
+      : day === 3
+        ? `I want to be ${j} because I want to ${job.action}.`
+        : day === 4
+          ? `I want to work at ${article(job.place)} ${job.place} because I want to ${job.action}.`
+          : `I want to be ${j}.`;
+  const spanish =
+    day === 2
+      ? task === 0
+        ? `¿Quieres ser ${jobsSpanish[i]}?`
+        : task === 1
+          ? `Sí, quiero ser ${jobsSpanish[i]}.`
+          : `No, no quiero ser ${jobsSpanish[i]}.`
+      : day === 4
+        ? `Quiero trabajar en ${placesSpanish[i]} porque quiero ${actionsSpanish[i]}.`
+        : `Quiero ser ${jobsSpanish[i]}${day === 3 ? ` porque quiero ${actionsSpanish[i]}` : ""}.`;
+  const errors =
+    day === 2 && task === 0
+      ? [
+          target.replace("want", "wants"),
+          target.replace("Do you want", "Do want you"),
+          target.replace("to be", "be"),
+        ]
+      : [
+          target.replace("want to", "want"),
+          target.replace("want", "wants"),
+          target.replace("want to", "to want"),
+        ];
+  return { target, spanish, errors };
+}
 function jobCards(day: number): PilotCard[] {
   // Teacher/astronaut are introduced on day 2; teaching is practised on day 4.
   const pool = jobs.slice(0, day === 1 ? 4 : 6).filter((j) => day !== 3 || j.name !== "teacher");
@@ -137,7 +238,7 @@ function jobCards(day: number): PilotCard[] {
                 ? `Do you want to be ${j}? Give a long answer.`
                 : task === 1
                   ? `Ask a classmate if they want to be ${j}. Listen to their answer.`
-                  : `You want to be ${j}. Do you want to be ${c}?`;
+                  : `Role card: you want to be ${j}. Your partner asks: "Do you want to be ${c}?" Answer as the character.`;
             answer =
               task === 0
                 ? `Yes, I do. I want to be ${j}. / No, I don't. I want to be ${c}.`
@@ -194,6 +295,7 @@ function jobCards(day: number): PilotCard[] {
             spanish: "Responde con una oración. En una actividad en parejas, ambos hablan.",
             falseClaim: wrong,
             correction,
+            practice: jobPractice(job, day, task),
             openAnswer: true,
             ...(day === 1
               ? {
@@ -218,6 +320,7 @@ function jobCards(day: number): PilotCard[] {
         falseClaim: `I want be ${article(job.name)} ${job.name}.`,
         correction: `I want to be ${article(job.name)} ${job.name}.`,
         openAnswer: true,
+        practice: jobPractice(job, 1),
         pictureChoices: [{ label: job.name, emoji: job.icon }],
         choiceNote: "Your choice! You can name another job, too.",
       }),
@@ -256,6 +359,7 @@ const routineCards: PilotCard[] = routines.flatMap(([verb, place, icon], i) => [
     falseClaim: `I ${verb} in ${place} the.`,
     correction: `I ${verb} in the ${place}.`,
     openAnswer: true,
+    practice: routinePractice(verb, place, i),
   },
   {
     key: `routine-${i}-where`,
@@ -265,8 +369,43 @@ const routineCards: PilotCard[] = routines.flatMap(([verb, place, icon], i) => [
     falseClaim: `I ${verb} the in ${place}.`,
     correction: `I ${verb} in the ${place}.`,
     openAnswer: true,
+    practice: routinePractice(verb, place, i),
   },
 ]);
+function routinePractice(verb: string, place: string, i: number) {
+  const translations = [
+    "Desayuno en la cocina.",
+    "Ceno en el comedor.",
+    "Me ducho en el baño.",
+    "Duermo en el dormitorio.",
+    "Veo televisión en la sala.",
+    "Juego fútbol en el parque.",
+    "Leo un libro en el dormitorio.",
+    "Hago mi tarea en el dormitorio.",
+    "Estudio inglés en el salón de clases.",
+    "Juego con amigos en el patio de juegos.",
+    "Me cepillo los dientes en el baño.",
+    "Bebo agua en la cocina.",
+    "Escribo en mi cuaderno en el salón de clases.",
+    "Corro en el parque.",
+    "Bailo en la sala.",
+    "Canto en el salón de clases.",
+    "Pinto en el salón de clases.",
+    "Almuerzo en la cafetería.",
+    "Juego con mi perro en el parque.",
+    "Aprendo matemáticas en el salón de clases.",
+  ];
+  const target = `I ${verb} in the ${place}.`;
+  return {
+    target,
+    spanish: translations[i]!,
+    errors: [
+      `I ${verb} in ${place} the.`,
+      `I ${verb} the in ${place}.`,
+      `Me ${verb} in the ${place}.`,
+    ],
+  };
+}
 const s1 = shapeCards(1),
   s2 = shapeCards(2),
   s3 = shapeCards(3);

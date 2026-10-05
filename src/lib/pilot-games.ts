@@ -26,7 +26,7 @@ export const PILOT_GAMES = [
     category: "Find & fix",
     minutes: 4,
     color: "#69d9c0",
-    rule: "The robot mixed up a sentence. Find the mistake and fix it!",
+    rule: "Check the robot's messages: fix mistakes, judge correct sentences, choose or complete. Say the message!",
     team: false,
   },
   {
@@ -36,7 +36,7 @@ export const PILOT_GAMES = [
     category: "Build & say",
     minutes: 4,
     color: "#86c9ff",
-    rule: "Tell your coach which word comes next. Build it, then say it!",
+    rule: "Build, complete, translate or choose a message. Then say the whole sentence!",
     team: false,
   },
   {

@@ -2588,3 +2588,33 @@
     transition: none;
   }
 }
+
+.activity-options {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+.activity-options button {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  text-align: left;
+  padding: 16px 20px;
+  border: 2px solid #7184ac;
+  border-radius: 16px;
+  background: #303a60;
+  font-size: clamp(18px, 2vw, 27px);
+  color: #fff;
+}
+.activity-options button[aria-pressed="true"] {
+  border-color: #ffda32;
+  background: #4a4664;
+  box-shadow: 0 0 0 2px #ffda32;
+}
+.activity-options button:disabled {
+  opacity: 0.65;
+}
+.activity-options small {
+  color: #becbeb;
+  font-size: 14px;
+}

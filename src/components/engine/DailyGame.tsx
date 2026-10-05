@@ -105,6 +105,7 @@ function DailyRound({
       lesson,
       useDailySession.getState().used,
       game.team ? Math.ceil(turns / 2) * 2 : turns,
+      gameId,
     );
   });
   const [runId] = useState(() => crypto.randomUUID());
@@ -417,13 +418,15 @@ function DailyRound({
         )}
         <div className="daily-question" key={item.key}>
           <p className="daily-question-label">
-            {gameId === "detective"
-              ? "FIX THE ROBOT'S SENTENCE"
-              : gameId === "sentence"
-                ? "BUILD IT. THEN SAY IT."
-                : gameId === "spotlight"
-                  ? "LOOK CLOSELY. SAY IT."
-                  : "ANSWER IN A FULL SENTENCE"}
+            {item.activity
+              ? item.activity.label
+              : gameId === "detective"
+                ? "FIX THE ROBOT'S SENTENCE"
+                : gameId === "sentence"
+                  ? "BUILD IT. THEN SAY IT."
+                  : gameId === "spotlight"
+                    ? "LOOK CLOSELY. SAY IT."
+                    : "ANSWER IN A FULL SENTENCE"}
           </p>
           {gameId === "spotlight" ? (
             <Spotlight item={item} revealed={answer || !!state.answered} />
@@ -432,7 +435,12 @@ function DailyRound({
               <ItemPicture item={item} />
             </div>
           )}
-          {gameId === "detective" ? (
+          {(item.activity?.kind === "fix" || item.activity?.kind === "judge") && (
+            <p className="daily-task">
+              Check the English and any picture details. Say the correct message.
+            </p>
+          )}
+          {!item.activity && gameId === "detective" ? (
             <>
               <div className="daily-wrong">🤖 “{item.falseClaim}”</div>
               <p className="daily-task">Correct the sentence. Then answer: {item.prompt}</p>
@@ -443,7 +451,14 @@ function DailyRound({
           {item.choiceNote && gameId !== "detective" && gameId !== "sentence" && (
             <p className="profession-choice-note">{item.choiceNote}</p>
           )}
-          {gameId === "sentence" && (
+          {item.activity?.options && (
+            <ActivityOptions
+              key={`${item.key}-${state.retryCount}`}
+              options={item.activity.options}
+              disabled={stopped}
+            />
+          )}
+          {(item.activity?.kind === "build" || (!item.activity && gameId === "sentence")) && (
             <SentenceBuilder
               key={`${item.key}-${state.retryCount}`}
               item={item}
@@ -467,7 +482,7 @@ function DailyRound({
           )}
           {(answer || state.answered) && (
             <div className="daily-answer">
-              {gameId === "detective" && (
+              {!item.activity && gameId === "detective" && (
                 <>
                   <small>Corrected sentence</small>
                   <p>{item.correction}</p>
@@ -611,6 +626,28 @@ function Spotlight({ item, revealed }: { item: DailyCard; revealed: boolean }) {
         ))}
       </div>
       <span>Coach: click a window to reveal a clue</span>
+    </div>
+  );
+}
+
+function ActivityOptions({ options, disabled }: { options: string[]; disabled: boolean }) {
+  const [selected, setSelected] = useState<number | null>(null);
+  return (
+    <div className="activity-options" role="group" aria-label="Answer options">
+      {options.map((option, i) => (
+        <button
+          key={option}
+          aria-pressed={selected === i}
+          disabled={disabled}
+          onClick={() => setSelected(i)}
+        >
+          <b>{String.fromCharCode(65 + i)}</b>
+          <span>{option}</span>
+        </button>
+      ))}
+      <small>
+        Choose an option, then say it. El coach valida y califica con los controles de abajo.
+      </small>
     </div>
   );
 }

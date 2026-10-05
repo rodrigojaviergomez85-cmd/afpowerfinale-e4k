@@ -3,10 +3,11 @@ import { createJSONStorage, persist } from "zustand/middleware";
 import { PILOT_LESSONS, type PilotCard, type PilotLesson } from "@/data/content";
 import { parseDay, shuffle, type ContentItem } from "./content";
 import type { PilotGameId } from "./pilot-games";
+import { activitySequence, withActivity, type RoundActivity } from "./round-activities";
 
 export const findLesson = (id: string) => PILOT_LESSONS.find((l) => l.id === id);
 export const lessonUrl = (id: string) => `/lesson/${id}`;
-export type DailyCard = ContentItem & PilotCard;
+export type DailyCard = ContentItem & PilotCard & { activity?: RoundActivity };
 export function lessonCards(lesson: PilotLesson): DailyCard[] {
   return lesson.cards.map((card) => ({
     ...parseDay({ day: lesson.day, label: "", focus: "", lines: [card.line] }, lesson.week)[0]!,
@@ -14,13 +15,29 @@ export function lessonCards(lesson: PilotLesson): DailyCard[] {
     id: card.key,
   }));
 }
-export function drawDaily(lesson: PilotLesson, used: string[], count: number) {
+export function drawDaily(lesson: PilotLesson, used: string[], count: number, game?: PilotGameId) {
   const seen = new Set(used);
   const cards = lessonCards(lesson);
   const fresh = shuffle(cards.filter((c) => !seen.has(c.key)));
   const repeat = shuffle(cards.filter((c) => seen.has(c.key)));
+  const available = [...fresh, ...repeat];
+  const selected: DailyCard[] = [];
+  while (selected.length < count && available.length) {
+    // Avoid the same message twice in succession, even when card IDs differ.
+    const previous = selected.at(-1)?.practice?.target;
+    const next = available.findIndex((c) => !seen.has(c.key) && c.practice?.target !== previous);
+    const fallback = available.findIndex((c) => c.practice?.target !== previous);
+    const anyFresh = available.findIndex((c) => !seen.has(c.key));
+    selected.push(
+      available.splice(
+        next >= 0 ? next : anyFresh >= 0 ? anyFresh : fallback >= 0 ? fallback : 0,
+        1,
+      )[0]!,
+    );
+  }
+  const sequence = game ? activitySequence(game, selected.length) : [];
   return {
-    cards: [...fresh, ...repeat].slice(0, count),
+    cards: game ? selected.map((c, i) => withActivity(c, sequence[i]!, i)) : selected,
     recycled: fresh.length < Math.min(count, cards.length),
   };
 }
