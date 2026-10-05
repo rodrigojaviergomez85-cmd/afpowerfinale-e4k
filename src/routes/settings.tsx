@@ -42,16 +42,16 @@ function SettingsPage() {
       <main className="mx-auto max-w-4xl px-8 pb-12">
         <div className="panel px-8 py-2">
           <Row label={`Turn time: ${settings.turnTime}s`} hint="Seconds per turn (5–60)">
-            <Slider min={5} max={60} step={1} value={[settings.turnTime]} onValueChange={([v]) => setSettings({ turnTime: v })} />
+            <Slider min={5} max={60} step={1} value={[settings.turnTime]} onValueChange={([v]) => setSettings({ turnTime: v! })} />
           </Row>
           <Row label={`Rounds: ${settings.rounds}`} hint="Cards per game">
-            <Slider min={4} max={30} step={1} value={[settings.rounds]} onValueChange={([v]) => setSettings({ rounds: v })} />
+            <Slider min={4} max={30} step={1} value={[settings.rounds]} onValueChange={([v]) => setSettings({ rounds: v! })} />
           </Row>
           <Row label="Sound" hint="Remember to tick “Share sound” in Zoom">
             <Switch checked={settings.sound} onCheckedChange={(v) => setSettings({ sound: v })} />
           </Row>
           <Row label={`Volume: ${Math.round(settings.volume * 100)}%`}>
-            <Slider min={0} max={1} step={0.05} value={[settings.volume]} onValueChange={([v]) => setSettings({ volume: v })} onValueCommit={() => sfx.correct()} />
+            <Slider min={0} max={1} step={0.05} value={[settings.volume]} onValueChange={([v]) => setSettings({ volume: v! })} onValueCommit={() => sfx.correct()} />
           </Row>
           <Row label="Spanish hints" hint="Show Spanish prompts and translations">
             <Switch checked={settings.showSpanish} onCheckedChange={(v) => setSettings({ showSpanish: v })} />

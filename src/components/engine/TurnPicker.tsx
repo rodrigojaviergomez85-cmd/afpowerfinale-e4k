@@ -8,7 +8,7 @@ export function pickPlayer(roster: Player[]): Player | null {
   const minTurns = Math.min(...roster.map((p) => p.turns));
   const pool = roster.filter((p) => p.turns === minTurns);
   const weighted = pool.flatMap((p) => (p.quiet ? [p, p, p] : [p]));
-  return weighted[Math.floor(Math.random() * weighted.length)];
+  return weighted[Math.floor(Math.random() * weighted.length)] ?? null;
 }
 
 export function TurnPicker({ open, onDone }: { open: boolean; onDone: (p: Player) => void }) {
@@ -28,7 +28,7 @@ export function TurnPicker({ open, onDone }: { open: boolean; onDone: (p: Player
     let t: ReturnType<typeof setTimeout>;
     const step = () => {
       i++;
-      setDisplay(roster[Math.floor(Math.random() * roster.length)].name);
+      setDisplay(roster[Math.floor(Math.random() * roster.length)]!.name);
       sfx.spin();
       if (i < steps) {
         delay *= 1.12;

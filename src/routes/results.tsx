@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Home, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FullscreenButton, MuteButton, useHotkeys } from "@/components/engine/controls";
@@ -26,14 +26,12 @@ export const Route = createFileRoute("/results")({
 function Results() {
   const result = useApp((s) => s.lastResult);
   const calm = useApp((s) => s.settings.calm);
-  const nextIdx = useApp((s) => s.nextGameIndex);
   const others = GAMES.filter((g) => g.id !== result?.gameId);
-  const nextGame = others[nextIdx % others.length];
+  const [nextGame] = useState(() => others[Math.floor(Math.random() * others.length)]);
 
   useEffect(() => {
     sfx.win();
     finaleConfetti();
-    useApp.getState().advanceNextGame();
   }, []);
   useHotkeys({ Space: () => finaleConfetti() });
 
@@ -45,7 +43,7 @@ function Results() {
     );
   }
 
-  const [a, b] = result.scores;
+  const [a = 0, b = 0] = result.scores;
   const tie = a === b;
   const winner = a > b ? 0 : 1;
 
@@ -58,7 +56,7 @@ function Results() {
       <main className="flex flex-1 flex-col items-center justify-center gap-8 px-8 pb-10 text-center">
         <div className="animate-pop text-[8rem] leading-none animate-float">🏆</div>
         <h1 className="animate-pop text-7xl text-stroke">
-          {tie ? "It’s a tie! Everybody wins!" : <>{result.teams[winner].icon} {result.teams[winner].name} win!</>}
+          {tie ? "It’s a tie! Everybody wins!" : <>{result.teams[winner]!.icon} {result.teams[winner]!.name} win!</>}
         </h1>
 
         <div className="flex items-end justify-center gap-8">
@@ -67,8 +65,8 @@ function Results() {
             const isWin = tie || i === winner;
             return (
               <div key={i} className="flex animate-slide-up flex-col items-center gap-3" style={{ animationDelay: `${300 + i * 200}ms` }}>
-                <div className="text-6xl">{result.teams[i].icon}</div>
-                <div className="text-3xl font-bold">{st.pattern} {result.teams[i].name}</div>
+                <div className="text-6xl">{result.teams[i]!.icon}</div>
+                <div className="text-3xl font-bold">{st.pattern} {result.teams[i]!.name}</div>
                 <div className={cn("grid w-64 place-items-center rounded-t-3xl chunky font-display text-8xl font-bold text-primary-foreground", st.bg, isWin ? "h-56" : "h-36")}>
                   {result.scores[i]}
                 </div>

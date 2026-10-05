@@ -34,7 +34,7 @@ const SHORTCUTS: [string, string][] = [
   ["Z", "Undo last point"], ["A", "Show answer"], ["R", "Random player"], ["M", "Mute"], ["F", "Full screen"], ["?", "This help"],
 ];
 
-type Action = { team: number; delta: number; playerId?: string };
+type Action = { team: number; delta: number; playerId?: string | undefined };
 
 function DemoDrill() {
   const game = getGame("demo")!;
@@ -59,7 +59,7 @@ function DemoDrill() {
   const item = items?.[idx];
 
   useEffect(() => {
-    const { items, review } = drawItems(selectionOf(useApp.getState()), settings.rounds, "mix", sessionUsed.demo ?? []);
+    const { items, review } = drawItems(selectionOf(useApp.getState()), settings.rounds, "mix", sessionUsed["demo"] ?? []);
     setItems(items);
     setReview(review);
     if (items.length) timer.reset(true);
@@ -69,7 +69,7 @@ function DemoDrill() {
   const finish = useCallback(
     (finalScores: number[]) => {
       const st = useApp.getState();
-      if (items) sessionUsed.demo = items.map((i) => i.id);
+      if (items) sessionUsed["demo"] = items.map((i) => i.id);
       const best = [...st.roster].sort((a, b) => b.points - a.points)[0];
       st.setLastResult({ gameId: "demo", teams, scores: finalScores, mode: "teams", mvp: best && best.points > 0 ? best.name : undefined, at: Date.now() });
       navigate({ to: "/results" });
@@ -151,7 +151,7 @@ function DemoDrill() {
               </div>
               <StreakBadge streak={streak.n} />
               <div className={cn("flex items-center gap-2 rounded-full px-5 py-2 text-primary-foreground", activeTeam === 0 ? "bg-team1" : "bg-team2")}>
-                {teams[activeTeam].icon} {teams[activeTeam].name}’s turn
+                {teams[activeTeam]!.icon} {teams[activeTeam]!.name}’s turn
                 {player && <span className="ml-2 rounded-full bg-card px-3 text-foreground">🎤 {player.name}</span>}
               </div>
             </div>

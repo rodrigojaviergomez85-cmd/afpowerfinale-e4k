@@ -19,7 +19,7 @@ export interface LastResult {
   teams: Team[];
   scores: number[];
   mode: "teams" | "coop";
-  mvp?: string;
+  mvp?: string | undefined;
   at: number;
 }
 
@@ -65,8 +65,8 @@ export const BOMB_PRESETS: Record<string, BombOptions> = {
 export const sessionUsed: Record<string, string[]> = {};
 
 const today = () => new Date().toISOString().slice(0, 10);
-const c0 = COURSES[0];
-const l0 = c0.levels[0];
+const c0 = COURSES[0]!;
+const l0 = c0.levels[0]!;
 
 export const useApp = create<AppState>()(
   persist(
@@ -74,12 +74,12 @@ export const useApp = create<AppState>()(
       settings: { turnTime: 15, rounds: 10, sound: true, volume: 0.7, showSpanish: true, calm: false },
       course: c0.name,
       level: l0.level,
-      week: l0.weeks[0].week,
-      day: l0.weeks[0].days[0].day,
-      teams: [TEAM_NAME_POOL[0], TEAM_NAME_POOL[1]],
+      week: l0.weeks[0]!.week,
+      day: l0.weeks[0]!.days[0]!.day,
+      teams: [TEAM_NAME_POOL[0]!, TEAM_NAME_POOL[1]!],
       roster: [],
       rosterDate: today(),
-      bomb: BOMB_PRESETS.Normal,
+      bomb: BOMB_PRESETS["Normal"]!,
       lastResult: null,
       setSettings: (s) => set({ settings: { ...get().settings, ...s } }),
       setSetup: (s) => set(s as Partial<AppState>),
