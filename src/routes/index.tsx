@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Settings, Lock } from "lucide-react";
+import { Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FullscreenButton, Logo, MuteButton } from "@/components/engine/controls";
 import { GAMES } from "@/lib/games";
@@ -32,9 +32,6 @@ function Hub() {
         <div className="ml-auto flex items-center gap-3">
           <Button asChild variant="panel" size="iconLg" aria-label="Settings">
             <Link to="/settings"><Settings /></Link>
-          </Button>
-          <Button asChild variant="panel" size="iconLg" aria-label="Content Manager">
-            <Link to="/admin"><Lock /></Link>
           </Button>
           <MuteButton />
           <FullscreenButton />
