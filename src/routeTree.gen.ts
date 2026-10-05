@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SetupRouteImport } from './routes/setup'
+import { Route as PlayBombRouteImport } from './routes/play.bomb'
 import { Route as PlayDemoRouteImport } from './routes/play.demo'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const SetupRoute = SetupRouteImport.update({
   path: '/setup',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlayBombRoute = PlayBombRouteImport.update({
+  id: '/play/bomb',
+  path: '/play/bomb',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlayDemoRoute = PlayDemoRouteImport.update({
   id: '/play/demo',
   path: '/play/demo',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
+  '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
+  '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,23 @@ export interface FileRoutesById {
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
+  '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/results' | '/settings' | '/setup' | '/play/demo'
+  fullPaths:
+    '/' | '/results' | '/settings' | '/setup' | '/play/bomb' | '/play/demo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/results' | '/settings' | '/setup' | '/play/demo'
-  id: '__root__' | '/' | '/results' | '/settings' | '/setup' | '/play/demo'
+  to: '/' | '/results' | '/settings' | '/setup' | '/play/bomb' | '/play/demo'
+  id:
+    | '__root__'
+    | '/'
+    | '/results'
+    | '/settings'
+    | '/setup'
+    | '/play/bomb'
+    | '/play/demo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +93,7 @@ export interface RootRouteChildren {
   ResultsRoute: typeof ResultsRoute
   SettingsRoute: typeof SettingsRoute
   SetupRoute: typeof SetupRoute
+  PlayBombRoute: typeof PlayBombRoute
   PlayDemoRoute: typeof PlayDemoRoute
 }
 
@@ -109,6 +127,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SetupRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/play/bomb': {
+      id: '/play/bomb'
+      path: '/play/bomb'
+      fullPath: '/play/bomb'
+      preLoaderRoute: typeof PlayBombRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/play/demo': {
       id: '/play/demo'
       path: '/play/demo'
@@ -124,6 +149,7 @@ const rootRouteChildren: RootRouteChildren = {
   ResultsRoute: ResultsRoute,
   SettingsRoute: SettingsRoute,
   SetupRoute: SetupRoute,
+  PlayBombRoute: PlayBombRoute,
   PlayDemoRoute: PlayDemoRoute,
 }
 export const routeTree = rootRouteImport
