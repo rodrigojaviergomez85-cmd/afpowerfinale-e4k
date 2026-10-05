@@ -65,14 +65,14 @@ function Setup() {
 
   const course = getCourse(s.course);
   const level = getLevel(course.name, s.level);
-  const week = level.weeks.find((w) => w.week === s.week) ?? level.weeks[0];
+  const week = level.weeks.find((w) => w.week === s.week) ?? level.weeks[0]!;
 
   const start = () => navigate({ to: isBomb ? "/play/bomb" : "/play/demo" });
   useHotkeys({ Enter: start });
 
   const reshuffle = () => {
     const [a, b] = shuffle(TEAM_NAME_POOL);
-    s.setSetup({ teams: [a, b] });
+    s.setSetup({ teams: [a!, b!] });
   };
   const addPlayers = () => {
     const names = newName.split(/[,\n]/).map((n) => n.trim()).filter(Boolean);

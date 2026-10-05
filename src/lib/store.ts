@@ -19,7 +19,7 @@ export interface LastResult {
   teams: Team[];
   scores: number[];
   mode: "teams" | "coop";
-  mvp?: string;
+  mvp?: string | undefined;
   at: number;
 }
 

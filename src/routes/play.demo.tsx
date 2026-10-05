@@ -34,7 +34,7 @@ const SHORTCUTS: [string, string][] = [
   ["Z", "Undo last point"], ["A", "Show answer"], ["R", "Random player"], ["M", "Mute"], ["F", "Full screen"], ["?", "This help"],
 ];
 
-type Action = { team: number; delta: number; playerId?: string };
+type Action = { team: number; delta: number; playerId?: string | undefined };
 
 function DemoDrill() {
   const game = getGame("demo")!;
@@ -151,7 +151,7 @@ function DemoDrill() {
               </div>
               <StreakBadge streak={streak.n} />
               <div className={cn("flex items-center gap-2 rounded-full px-5 py-2 text-primary-foreground", activeTeam === 0 ? "bg-team1" : "bg-team2")}>
-                {teams[activeTeam].icon} {teams[activeTeam].name}’s turn
+                {teams[activeTeam]!.icon} {teams[activeTeam]!.name}’s turn
                 {player && <span className="ml-2 rounded-full bg-card px-3 text-foreground">🎤 {player.name}</span>}
               </div>
             </div>
