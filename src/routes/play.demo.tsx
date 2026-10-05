@@ -59,7 +59,7 @@ function DemoDrill() {
   const item = items?.[idx];
 
   useEffect(() => {
-    const { items, review } = drawItems(selectionOf(useApp.getState()), settings.rounds, "mix", sessionUsed.demo ?? []);
+    const { items, review } = drawItems(selectionOf(useApp.getState()), settings.rounds, "mix", sessionUsed["demo"] ?? []);
     setItems(items);
     setReview(review);
     if (items.length) timer.reset(true);
@@ -69,7 +69,7 @@ function DemoDrill() {
   const finish = useCallback(
     (finalScores: number[]) => {
       const st = useApp.getState();
-      if (items) sessionUsed.demo = items.map((i) => i.id);
+      if (items) sessionUsed["demo"] = items.map((i) => i.id);
       const best = [...st.roster].sort((a, b) => b.points - a.points)[0];
       st.setLastResult({ gameId: "demo", teams, scores: finalScores, mode: "teams", mvp: best && best.points > 0 ? best.name : undefined, at: Date.now() });
       navigate({ to: "/results" });

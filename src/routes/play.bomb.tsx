@@ -56,7 +56,7 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   const calm = useApp((s) => s.settings.calm);
   const roster = useApp((s) => s.roster);
 
-  const init = useMemo(() => drawItems(selectionOf(useApp.getState()), opts.target, opts.mix, sessionUsed.bomb ?? []), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const init = useMemo(() => drawItems(selectionOf(useApp.getState()), opts.target, opts.mix, sessionUsed["bomb"] ?? []), []); // eslint-disable-line react-hooks/exhaustive-deps
   const goal = Math.min(opts.target, init.items.length);
   const total = opts.time;
 
@@ -203,10 +203,11 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
       const ts = seq.map(([t, f]) => setTimeout(f, t));
       return () => ts.forEach(clearTimeout);
     }
+    return undefined;
   }, [phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    if (phase === "end") sessionUsed.bomb = usedIds.current;
+    if (phase === "end") sessionUsed["bomb"] = usedIds.current;
   }, [phase]);
 
   const skipSeq = () => (phase === "boom" || phase === "defuse") && setPhase("end");

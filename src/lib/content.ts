@@ -30,7 +30,7 @@ function parseShapes(s: string): ShapeSpec[] {
   return s.split(",").map((part) => {
     const [name = "", n] = part.trim().split(":");
     const words = name.trim().split(/\s+/);
-    const color = SHAPE_COLORS.includes(words[0]) && words.length > 1 ? words.shift()! : undefined;
+    const color = SHAPE_COLORS.includes(words[0]!) && words.length > 1 ? words.shift()! : undefined;
     return { shape: words.join(" "), count: Number(n) || 1, color };
   });
 }
@@ -48,15 +48,15 @@ function parseDay(d: DayDef, week: number): ContentItem[] {
   });
 }
 
-export const getCourse = (name: string) => COURSES.find((c) => c.name === name) ?? COURSES[0];
+export const getCourse = (name: string) => COURSES.find((c) => c.name === name) ?? COURSES[0]!;
 export const getLevel = (course: string, level: number) => {
   const c = getCourse(course);
-  return c.levels.find((l) => l.level === level) ?? c.levels[0];
+  return c.levels.find((l) => l.level === level) ?? c.levels[0]!;
 };
 export function getDay(sel: Selection) {
   const lv = getLevel(sel.course, sel.level);
-  const wk = lv.weeks.find((w) => w.week === sel.week) ?? lv.weeks[0];
-  return { week: wk, day: wk.days.find((d) => d.day === sel.day) ?? wk.days[0] };
+  const wk = lv.weeks.find((w) => w.week === sel.week) ?? lv.weeks[0]!;
+  return { week: wk, day: wk.days.find((d) => d.day === sel.day) ?? wk.days[0]! };
 }
 export const isReviewDay = (sel: Selection) => getDay(sel).day.lines.length === 0;
 
