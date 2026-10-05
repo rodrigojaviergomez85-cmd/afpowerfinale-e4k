@@ -29,7 +29,7 @@ export function ShapePicture({ specs, seed }: { specs: ShapeSpec[]; seed: string
     const palette = shuffle(SHAPE_COLORS);
     let k = 0;
     return specs.flatMap((s) =>
-      Array.from({ length: s.count }, () => ({ shape: s.shape, color: s.color ?? palette[k++ % palette.length] })),
+      Array.from({ length: s.count }, () => ({ shape: s.shape, color: s.color ?? palette[k++ % palette.length]! })),
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seed]);

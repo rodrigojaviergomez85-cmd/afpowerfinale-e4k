@@ -1,7 +1,7 @@
 import { COURSES, type DayDef } from "@/data/content";
 
 export type ItemKind = "Q" | "T" | "S" | "E";
-export interface ShapeSpec { shape: string; count: number; color?: string }
+export interface ShapeSpec { shape: string; count: number; color?: string | undefined }
 export interface ContentItem {
   id: string;
   kind: ItemKind;
@@ -21,23 +21,23 @@ export function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+    [a[i], a[j]] = [a[j]!, a[i]!];
   }
   return a;
 }
 
 function parseShapes(s: string): ShapeSpec[] {
   return s.split(",").map((part) => {
-    const [name, n] = part.trim().split(":");
+    const [name = "", n] = part.trim().split(":");
     const words = name.trim().split(/\s+/);
-    const color = SHAPE_COLORS.includes(words[0]) && words.length > 1 ? words.shift() : undefined;
+    const color = SHAPE_COLORS.includes(words[0]) && words.length > 1 ? words.shift()! : undefined;
     return { shape: words.join(" "), count: Number(n) || 1, color };
   });
 }
 
 function parseDay(d: DayDef, week: number): ContentItem[] {
   return d.lines.map((line, i) => {
-    const f = line.split(" || ");
+    const f = line.split(" || ") as [string, string, string, string];
     const kind = f[0] as ItemKind;
     const id = `w${week}d${d.day}-${i}`;
     const base = { id, kind, week, day: d.day };

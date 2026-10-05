@@ -7,7 +7,7 @@ const TEAM_STYLES = [
   { bg: "bg-team2", ring: "ring-team2", deep: "bg-team2-deep", pattern: "▲" },
 ];
 
-export const teamStyle = (i: number) => TEAM_STYLES[i % 2];
+export const teamStyle = (i: number) => TEAM_STYLES[i % 2]!;
 
 function Pop({ value }: { value: number }) {
   const [pops, setPops] = useState<{ id: number; d: number }[]>([]);
