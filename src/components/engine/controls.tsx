@@ -8,6 +8,7 @@ export function useHotkeys(map: Record<string, () => void>, enabled = true) {
   useEffect(() => {
     if (!enabled) return;
     const onKey = (e: KeyboardEvent) => {
+      if (e.repeat) return;
       const t = e.target as HTMLElement;
       if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
       const k = e.key === " " ? "Space" : e.key.length === 1 ? e.key.toLowerCase() : e.key;

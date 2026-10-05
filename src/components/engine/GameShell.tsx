@@ -10,7 +10,15 @@ import { useApp } from "@/lib/store";
 
 type Phase = "rules" | "countdown" | "play";
 
-export function GameShell({ game, children, rightSlot }: { game: GameDef; children: ReactNode; rightSlot?: ReactNode }) {
+export function GameShell({
+  game,
+  children,
+  rightSlot,
+}: {
+  game: GameDef;
+  children: ReactNode;
+  rightSlot?: ReactNode;
+}) {
   const [phase, setPhase] = useState<Phase>("rules");
   const [count, setCount] = useState(3);
   const calm = useApp((s) => s.settings.calm);
@@ -41,17 +49,28 @@ export function GameShell({ game, children, rightSlot }: { game: GameDef; childr
   }, [phase]);
 
   useHotkeys(
-    { Space: () => setPhase("countdown"), Enter: () => setPhase("countdown"), ArrowRight: () => setPhase("countdown") },
+    {
+      Space: () => setPhase("countdown"),
+      Enter: () => setPhase("countdown"),
+      ArrowRight: () => setPhase("countdown"),
+    },
     phase === "rules",
   );
 
   return (
-    <div data-calm={calm} className="stage-bg flex min-h-screen flex-col">
+    <div data-calm={calm} className="engine-game-shell stage-bg flex min-h-screen flex-col">
       <header className="flex items-center gap-3 px-6 py-3">
         <Button asChild variant="panel" size="iconLg" aria-label="Home">
-          <Link to="/"><Home /></Link>
+          <Link to="/">
+            <Home />
+          </Link>
         </Button>
-        <div className={cn("flex items-center gap-3 rounded-2xl px-4 py-2 text-primary-foreground chunky", game.accent)}>
+        <div
+          className={cn(
+            "flex items-center gap-3 rounded-2xl px-4 py-2 text-primary-foreground chunky",
+            game.accent,
+          )}
+        >
           <span className="text-3xl">{game.icon}</span>
           <span className="text-2xl font-bold">{game.name}</span>
         </div>
@@ -69,7 +88,11 @@ export function GameShell({ game, children, rightSlot }: { game: GameDef; childr
             <h1 className="animate-slide-up text-7xl text-stroke">{game.name}</h1>
             <div className="grid max-w-5xl gap-5">
               {game.rules.map((r, i) => (
-                <div key={i} className="panel flex animate-slide-up items-center gap-6 px-8 py-5 text-left" style={{ animationDelay: `${200 + i * 200}ms` }}>
+                <div
+                  key={i}
+                  className="panel flex animate-slide-up items-center gap-6 px-8 py-5 text-left"
+                  style={{ animationDelay: `${200 + i * 200}ms` }}
+                >
                   <span className="text-6xl">{r.icon}</span>
                   <span className="text-4xl font-bold">{r.text}</span>
                 </div>
@@ -77,16 +100,27 @@ export function GameShell({ game, children, rightSlot }: { game: GameDef; childr
             </div>
             <div className="flex items-center gap-4">
               <div className="h-3 w-64 overflow-hidden rounded-full bg-secondary">
-                <div className={cn("h-full", game.accent)} style={{ animation: "rules-bar 5s linear forwards" }} />
+                <div
+                  className={cn("h-full", game.accent)}
+                  style={{ animation: "rules-bar 5s linear forwards" }}
+                />
               </div>
-              <Button variant="game" size="xl" onClick={() => setPhase("countdown")}>Skip ▶ (Space)</Button>
+              <Button variant="game" size="xl" onClick={() => setPhase("countdown")}>
+                Skip ▶ (Space)
+              </Button>
             </div>
             <style>{`@keyframes rules-bar{from{width:0}to{width:100%}}`}</style>
           </div>
         )}
         {phase === "countdown" && (
           <div className="flex flex-1 items-center justify-center">
-            <div key={count} className={cn("animate-pop font-display font-bold text-stroke", count > 0 ? "text-[16rem] text-foreground" : "text-[14rem] text-primary")}>
+            <div
+              key={count}
+              className={cn(
+                "animate-pop font-display font-bold text-stroke",
+                count > 0 ? "text-[16rem] text-foreground" : "text-[14rem] text-primary",
+              )}
+            >
               {count > 0 ? count : "GO!"}
             </div>
           </div>
