@@ -245,6 +245,7 @@ function DailyRound({
   const results = useDailySession((s) => s.results);
   if (state.finished) {
     const others = lesson.suggested
+      .slice(0, 2)
       .filter((id) => id !== gameId)
       .map((id) => PILOT_GAMES.find((g) => g.id === id)!)
       .filter(Boolean);
