@@ -29,7 +29,7 @@ afterEach(() => {
 describe("App routing", () => {
   it("renders the index route", async () => {
     renderAt("/");
-    expect(await screen.findByRole("heading", { name: /Today's next/i })).toBeInTheDocument();
+    expect(await screen.findByRole("heading", { name: /Todo el curso/i })).toBeInTheDocument();
   });
 
   it("renders the not-found route", async () => {

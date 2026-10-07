@@ -1,0 +1,62 @@
+/* One lightweight SVG chamber, shared by all bomb missions. */
+.week-shell[data-theme=bomb] .game-scene{grid-template-columns:40% 60%;background:radial-gradient(ellipse at 25% 70%,#225067 0,transparent 60%),linear-gradient(140deg,#142e40,#122032);border-color:#648996}
+.week-shell[data-theme=bomb] .game-scene:before{background:linear-gradient(90deg,transparent 98%,#76beca08 98%),linear-gradient(transparent 98%,#76beca08 98%);background-size:35px 35px}
+.week-shell[data-theme=bomb] .bomb-art{padding:10px 24px 10px;justify-content:flex-start;gap:5px;position:relative;overflow:hidden;height:100%}
+.bomb-heading{display:flex;align-items:center;justify-content:center;gap:14px;flex-shrink:0}
+.week-shell[data-theme=bomb] .bomb-heading h2{font-size:13px;letter-spacing:2.5px;color:#b6dce0;margin:4px 0}
+.alarm-light{width:9px;height:9px;border-radius:50%;background:#91dbcd;box-shadow:0 0 10px #91dbcd66}
+.bomb-stage{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;position:relative}
+.bomb-stage:before{content:'';position:absolute;width:70%;height:70%;border-radius:50%;background:radial-gradient(#60d5de12,transparent 70%)}
+.bomb-illustration{width:100%;height:100%;max-height:530px;overflow:visible;position:relative}
+.week-shell[data-theme=bomb] .bomb-art .fuse-track{stroke:#243d4c;stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+.week-shell[data-theme=bomb] .bomb-art .live-fuse{stroke:#ecc58b;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;transition:none}
+.week-shell[data-theme=bomb] .fuse-spark{animation:none;filter:drop-shadow(0 0 7px #f9c07a)}
+.fuse-spark>path{transform-box:fill-box;transform-origin:center;animation:ember-turn 3s linear infinite}
+.bomb-code{flex-shrink:0;max-width:440px;width:100%;align-self:center;border:1px solid #537484;border-radius:12px;background:linear-gradient(#172d3f,#0d2131);padding:9px 12px;box-shadow:0 4px 0 #081928}
+.code-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;color:#b5d4dc;font-size:10px;letter-spacing:2px;font-weight:800}
+.code-label strong{color:#ffdb96;font-size:14px;letter-spacing:0}
+.code-pieces{display:flex;justify-content:center;gap:5px}
+.code-piece{flex:1;max-width:43px;border:1px solid #486171;border-radius:5px;background:#203344;color:#7b97a7;height:27px;display:grid;place-items:center;font-size:15px;font-weight:900}
+.code-piece.unlocked{background:#87dfbc;color:#133a37;border-color:#c3ffdf;box-shadow:0 0 8px #68d2ad33}
+.code-piece.new-piece{animation:code-lock .7s ease-out}
+.week-shell[data-theme=bomb] .bomb-art .bomb-status{font-size:12px;letter-spacing:1px;font-weight:800;color:#e8d7af;text-align:center;margin:4px 0;min-height:17px;flex-shrink:0}
+.bomb-art[data-urgency=warning] .alarm-light{background:#ffce7f;box-shadow:0 0 15px #ffb55766}
+.bomb-art[data-urgency=critical] .alarm-light{background:#f39a88;box-shadow:0 0 18px #f48e6966;animation:alarm-breathe 1.8s ease-in-out infinite}
+.week-shell[data-theme=bomb] .bomb-art[data-urgency=critical] .bomb-status{color:#ffb5a5}
+.bomb-art[data-urgency=critical] .bomb-display{stroke:#e6a081}
+.week-shell[data-theme=bomb] .bomb-art.mistake .bomb-body{transform-box:fill-box;transform-origin:center;animation:chamber-jolt .5s ease-out}
+.bomb-art.mistake .bomb-display{fill:#412936;stroke:#ffb4a4}
+.week-shell[data-theme=bomb] .bomb-art.success .bomb-body{animation:core-accept .8s ease-out}
+.bomb-art.success .bomb-display{fill:#173e3a;stroke:#a1e9c5}
+.defused-check,.defusal-rings,.bomb-smoke{opacity:0;pointer-events:none}
+.week-shell[data-theme=bomb] .bomb-art.win .bomb-body{filter:none}
+.bomb-art.win .lock-icon{opacity:0}.bomb-art.win .defused-check{opacity:1;stroke-dasharray:75;animation:check-draw .8s .5s backwards}
+.bomb-art.win .defusal-rings{transform-origin:260px 317px;animation:safe-wave 2s ease-out both}
+.bomb-art.win .fuse-spark,.bomb-art.loss .fuse-spark{display:none}
+.week-shell[data-theme=bomb] .bomb-art.win .live-fuse{stroke:#638d86;opacity:.4}
+.bomb-art.win .wire-coral{animation:unplug-left 1.2s .2s both}.bomb-art.win .wire-blue{animation:unplug-right 1.2s .2s both}
+.bomb-art.win .alarm-light{background:#a3efc8;box-shadow:0 0 15px #9ce6c655;animation:none}
+.week-shell[data-theme=bomb] .bomb-art.win .bomb-status{color:#b7ffda;font-size:16px}
+.week-shell[data-theme=bomb] .bomb-art.loss .bomb-body{filter:grayscale(.7);opacity:.25;transition:opacity .5s}
+.bomb-art.loss .bomb-smoke{transform-origin:260px 320px;animation:smoke-puff 1.5s ease-out both}
+.bomb-art.loss .live-fuse{opacity:.1}.bomb-art.loss .alarm-light{animation:none;background:#c99589;box-shadow:none}
+.week-shell[data-theme=bomb] .game-task{position:relative;margin:14px 20px 14px 4px;border:6px solid #3b596c;border-top:18px solid #3b596c;border-radius:17px;background:linear-gradient(135deg,#fff5dd,#f0edd6);box-shadow:0 7px 0 #091c2c,0 0 0 1px #83a6b0;overflow:auto;gap:5px;padding:10px 20px}
+.week-shell[data-theme=bomb] .game-task h1{color:#223b49}
+.week-shell[data-theme=bomb] .game-task .eyebrow{color:#617569;letter-spacing:2px}
+.week-shell[data-theme=bomb] .game-task .game-option{border-color:#97aaa7;box-shadow:0 3px 0 #a0afa544}
+.week-shell[data-theme=bomb] .game-task .game-option.correct{border-color:#328563;background:#c4efd8}
+.week-shell[data-theme=bomb] .game-task .game-option.wrong{border-color:#ba6a62;background:#ffdbce}
+.week-shell[data-theme=bomb] .game-task .week-picture{height:85px}
+.week-shell[data-theme=bomb][data-state=end] .bomb-art.idle *{animation:none!important}
+@keyframes ember-turn{to{transform:rotate(360deg)}}
+@keyframes alarm-breathe{50%{box-shadow:0 0 24px #f48e6988}}
+@keyframes chamber-jolt{20%,60%{transform:translateX(-6px) rotate(-1deg)}40%,80%{transform:translateX(5px) rotate(1deg)}to{transform:none}}
+@keyframes code-lock{from{transform:scale(.7);background:#fff0bb}60%{transform:scale(1.13)}to{transform:scale(1)}}
+@keyframes core-accept{40%{filter:drop-shadow(0 0 12px #8ee0bf77)}}
+@keyframes safe-wave{from{opacity:0;transform:scale(.7)}35%{opacity:.8}to{opacity:0;transform:scale(1.25)}}
+@keyframes check-draw{from{stroke-dashoffset:75}to{stroke-dashoffset:0}}
+@keyframes unplug-left{to{transform:translate(-12px,15px)}}@keyframes unplug-right{to{transform:translate(12px,15px)}}
+@keyframes smoke-puff{from{opacity:0;transform:scale(.2)}30%{opacity:.95;transform:scale(1.1)}to{opacity:.6;transform:scale(1)}}
+.game-shell[data-calm=true] .bomb-art.win .wire-coral{transform:translate(-12px,15px)}.game-shell[data-calm=true] .bomb-art.win .wire-blue{transform:translate(12px,15px)}.game-shell[data-calm=true] .bomb-art.loss .bomb-smoke{opacity:.6}
+@media(prefers-reduced-motion:reduce){.bomb-art *{animation:none!important;transition:none!important}.bomb-art.win .wire-coral{transform:translate(-12px,15px)}.bomb-art.win .wire-blue{transform:translate(12px,15px)}.bomb-art.loss .bomb-smoke{opacity:.6}}
+@media(max-width:800px){.week-shell[data-theme=bomb] .bomb-art{height:400px;flex-shrink:0;padding:14px 20px}.week-shell[data-theme=bomb] .game-task{margin:12px;overflow:visible;min-height:360px}.week-shell[data-theme=bomb] .bomb-art .bomb-status{font-size:12px}}

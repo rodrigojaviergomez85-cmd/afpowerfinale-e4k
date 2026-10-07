@@ -2618,3 +2618,236 @@
   color: #becbeb;
   font-size: 14px;
 }
+
+.weekly-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+}
+.weekly-actions a,
+.weekly-actions button,
+.weekly-copy > button,
+.daily-prezi > button {
+  display: inline-block;
+  padding: 10px 17px;
+  border: 1px solid #a4b5aa;
+  border-radius: 12px;
+  background: #fff7e7;
+  color: #273f45;
+  font-weight: 750;
+  cursor: pointer;
+}
+.weekly-actions a[aria-current="page"] {
+  background: #234c50;
+  color: #fff6da;
+}
+.weekly-days {
+  display: grid;
+  gap: 28px;
+}
+.weekly-day {
+  padding: 24px;
+  border: 1px solid #b8c7be;
+  border-radius: 24px;
+  background: #ffffff66;
+}
+.weekly-day > header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.weekly-day h2 {
+  font-size: 28px;
+}
+.weekly-game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+.weekly-game-grid article {
+  display: flex;
+  gap: 20px;
+  padding: 26px;
+  border: 1px solid #adc2b7;
+  border-radius: 22px;
+  background: #fff9eb;
+  color: #263f47;
+}
+.weekly-game-grid h3,
+.weekly-game-grid h2 {
+  font-size: 25px;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+.weekly-game-grid p {
+  line-height: 1.5;
+}
+.weekly-icon {
+  font-size: 44px;
+}
+.weekly-copy label {
+  display: block;
+  max-width: 100%;
+  font-size: 13px;
+}
+.weekly-copy input {
+  display: block;
+  width: 100%;
+  min-width: 200px;
+  color: #263f47;
+  background: white;
+  padding: 8px;
+}
+.daily-prezi {
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.adventure-player {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: #102436;
+}
+.adventure-player > nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 16px;
+  color: #e4f5ec;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.adventure-player iframe {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  border: 0;
+  background: #102436;
+}
+.master-filters {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+.master-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.master-filters select {
+  padding: 12px;
+  border: 1px solid #8caaa0;
+  border-radius: 12px;
+  background: #fff8e6;
+  color: #243d43;
+}
+.master-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.master-table th,
+.master-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #bccdc2;
+  vertical-align: top;
+}
+.master-table th {
+  background: #e3ece5;
+}
+.master-scroll {
+  overflow-x: auto;
+}
+.master-status {
+  font-size: 12px;
+  padding: 5px 9px;
+  background: #dfede2;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 8px 0;
+}
+.master-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
+.master-summary > div {
+  flex: 1;
+  min-width: 150px;
+  background: #fff8e9;
+  border: 1px solid #b8cbbc;
+  border-radius: 18px;
+  padding: 20px;
+}
+.master-summary b {
+  display: block;
+  font-size: 32px;
+}
+.master-week {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid #b4c9bc;
+  border-radius: 24px;
+  background: #fffaf0;
+}
+.master-week summary {
+  cursor: pointer;
+  font-weight: 750;
+  font-size: 19px;
+}
+.master-week h2 {
+  font-size: 29px;
+}
+@media (max-width: 750px) {
+  .weekly-game-grid {
+    grid-template-columns: 1fr;
+  }
+  .weekly-day {
+    padding: 16px;
+  }
+  .weekly-game-grid article {
+    padding: 18px;
+  }
+  .daily-header {
+    flex-wrap: wrap;
+  }
+  .weekly-icon {
+    font-size: 32px;
+  }
+  .adventure-player > nav span {
+    display: none;
+  }
+  .master-table th,
+  .master-table td {
+    padding: 10px;
+  }
+  .master-week {
+    padding: 14px;
+  }
+}
+
+.master-summary > div,
+.master-week {
+  color: #263f47;
+}
+.master-status {
+  color: #284c3e;
+}
+.weekly-day {
+  background: #263447;
+}
+.weekly-day .daily-eyebrow {
+  color: #d4ed99;
+}
+.weekly-day > header p {
+  color: #d4dedc;
+}
+.weekly-game-grid article p {
+  color: #3e5660;
+}

@@ -1,0 +1,1 @@
+const n=Number(new URLSearchParams(location.search).get('day')||1);const day=Number.isInteger(n)&&n>=1&&n<=5?n:1;const url='/lesson/kids-super-intensive-l2-w4-d'+day;if(window.top)window.top.location.href=url;

@@ -14,6 +14,7 @@ import { Route as ResultsRouteImport } from './routes/results'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SetupRouteImport } from './routes/setup'
 import { Route as LessonLessonIdRouteImport } from './routes/lesson.$lessonId'
+import { Route as PlayAdventureRouteImport } from './routes/play.adventure'
 import { Route as PlayBombRouteImport } from './routes/play.bomb'
 import { Route as PlayDemoRouteImport } from './routes/play.demo'
 import { Route as PlayDetectiveRouteImport } from './routes/play.detective'
@@ -21,6 +22,7 @@ import { Route as PlayMissionRouteImport } from './routes/play.mission'
 import { Route as PlayRocketRouteImport } from './routes/play.rocket'
 import { Route as PlaySentenceRouteImport } from './routes/play.sentence'
 import { Route as PlaySpotlightRouteImport } from './routes/play.spotlight'
+import { Route as WeekWeekIdRouteImport } from './routes/week.$weekId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -45,6 +47,11 @@ const SetupRoute = SetupRouteImport.update({
 const LessonLessonIdRoute = LessonLessonIdRouteImport.update({
   id: '/lesson/$lessonId',
   path: '/lesson/$lessonId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayAdventureRoute = PlayAdventureRouteImport.update({
+  id: '/play/adventure',
+  path: '/play/adventure',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlayBombRoute = PlayBombRouteImport.update({
@@ -82,6 +89,11 @@ const PlaySpotlightRoute = PlaySpotlightRouteImport.update({
   path: '/play/spotlight',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WeekWeekIdRoute = WeekWeekIdRouteImport.update({
+  id: '/week/$weekId',
+  path: '/week/$weekId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -89,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
   '/lesson/$lessonId': typeof LessonLessonIdRoute
+  '/play/adventure': typeof PlayAdventureRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
   '/play/detective': typeof PlayDetectiveRoute
@@ -96,6 +109,7 @@ export interface FileRoutesByFullPath {
   '/play/rocket': typeof PlayRocketRoute
   '/play/sentence': typeof PlaySentenceRoute
   '/play/spotlight': typeof PlaySpotlightRoute
+  '/week/$weekId': typeof WeekWeekIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -103,6 +117,7 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
   '/lesson/$lessonId': typeof LessonLessonIdRoute
+  '/play/adventure': typeof PlayAdventureRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
   '/play/detective': typeof PlayDetectiveRoute
@@ -110,6 +125,7 @@ export interface FileRoutesByTo {
   '/play/rocket': typeof PlayRocketRoute
   '/play/sentence': typeof PlaySentenceRoute
   '/play/spotlight': typeof PlaySpotlightRoute
+  '/week/$weekId': typeof WeekWeekIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -118,6 +134,7 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
   '/lesson/$lessonId': typeof LessonLessonIdRoute
+  '/play/adventure': typeof PlayAdventureRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
   '/play/detective': typeof PlayDetectiveRoute
@@ -125,6 +142,7 @@ export interface FileRoutesById {
   '/play/rocket': typeof PlayRocketRoute
   '/play/sentence': typeof PlaySentenceRoute
   '/play/spotlight': typeof PlaySpotlightRoute
+  '/week/$weekId': typeof WeekWeekIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -134,6 +152,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/setup'
     | '/lesson/$lessonId'
+    | '/play/adventure'
     | '/play/bomb'
     | '/play/demo'
     | '/play/detective'
@@ -141,6 +160,7 @@ export interface FileRouteTypes {
     | '/play/rocket'
     | '/play/sentence'
     | '/play/spotlight'
+    | '/week/$weekId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -148,6 +168,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/setup'
     | '/lesson/$lessonId'
+    | '/play/adventure'
     | '/play/bomb'
     | '/play/demo'
     | '/play/detective'
@@ -155,6 +176,7 @@ export interface FileRouteTypes {
     | '/play/rocket'
     | '/play/sentence'
     | '/play/spotlight'
+    | '/week/$weekId'
   id:
     | '__root__'
     | '/'
@@ -162,6 +184,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/setup'
     | '/lesson/$lessonId'
+    | '/play/adventure'
     | '/play/bomb'
     | '/play/demo'
     | '/play/detective'
@@ -169,6 +192,7 @@ export interface FileRouteTypes {
     | '/play/rocket'
     | '/play/sentence'
     | '/play/spotlight'
+    | '/week/$weekId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -177,6 +201,7 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   SetupRoute: typeof SetupRoute
   LessonLessonIdRoute: typeof LessonLessonIdRoute
+  PlayAdventureRoute: typeof PlayAdventureRoute
   PlayBombRoute: typeof PlayBombRoute
   PlayDemoRoute: typeof PlayDemoRoute
   PlayDetectiveRoute: typeof PlayDetectiveRoute
@@ -184,6 +209,7 @@ export interface RootRouteChildren {
   PlayRocketRoute: typeof PlayRocketRoute
   PlaySentenceRoute: typeof PlaySentenceRoute
   PlaySpotlightRoute: typeof PlaySpotlightRoute
+  WeekWeekIdRoute: typeof WeekWeekIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -221,6 +247,13 @@ declare module '@tanstack/react-router' {
       path: '/lesson/$lessonId'
       fullPath: '/lesson/$lessonId'
       preLoaderRoute: typeof LessonLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/adventure': {
+      id: '/play/adventure'
+      path: '/play/adventure'
+      fullPath: '/play/adventure'
+      preLoaderRoute: typeof PlayAdventureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/play/bomb': {
@@ -272,6 +305,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlaySpotlightRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/week/$weekId': {
+      id: '/week/$weekId'
+      path: '/week/$weekId'
+      fullPath: '/week/$weekId'
+      preLoaderRoute: typeof WeekWeekIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -281,6 +321,7 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   SetupRoute: SetupRoute,
   LessonLessonIdRoute: LessonLessonIdRoute,
+  PlayAdventureRoute: PlayAdventureRoute,
   PlayBombRoute: PlayBombRoute,
   PlayDemoRoute: PlayDemoRoute,
   PlayDetectiveRoute: PlayDetectiveRoute,
@@ -288,6 +329,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlayRocketRoute: PlayRocketRoute,
   PlaySentenceRoute: PlaySentenceRoute,
   PlaySpotlightRoute: PlaySpotlightRoute,
+  WeekWeekIdRoute: WeekWeekIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

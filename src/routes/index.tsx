@@ -5,7 +5,7 @@ import { FullscreenButton, Logo, MuteButton } from "@/components/engine/controls
 import { GAMES } from "@/lib/games";
 import { useApp } from "@/lib/store";
 import { cn } from "@/lib/utils";
-import { DailyLibrary } from "@/components/engine/DailyLibrary";
+import { MasterLibrary } from "@/components/engine/MasterLibrary";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  component: DailyLibrary,
+  component: MasterLibrary,
 });
 
 function Hub() {

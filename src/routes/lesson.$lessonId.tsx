@@ -1,3 +1,4 @@
+import { ApprovedDay } from "@/components/engine/WeeklyLinks";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Copy, Users, RotateCcw } from "lucide-react";
@@ -37,11 +38,13 @@ function LessonPage() {
         <Link to="/">Elegir una lección</Link>
       </div>
     );
+  if (lesson.week === 4) return <ApprovedDay lessonId={lesson.id} />;
   const results = session.lesson === lesson.id ? session.results : [];
   const ordered = [
     ...lesson.suggested.map((id) => PILOT_GAMES.find((g) => g.id === id)!),
     ...PILOT_GAMES.filter((g) => !lesson.suggested.includes(g.id)),
   ];
+  ordered.splice(2);
   const next = ordered.find((g) => !results.some((r) => r.game === g.id));
   const saveNames = () => {
     const entries = names
@@ -140,10 +143,10 @@ function LessonPage() {
         <section aria-label="Juegos sugeridos">
           <div className="daily-section-title">
             <h2>Tu ruta de hoy</h2>
-            <span>Elige 1, 2 o 3 · Puedes terminar cuando necesites</span>
+            <span>Elige 1 o 2 · Puedes terminar cuando necesites</span>
           </div>
           <div className="daily-game-grid">
-            {ordered.slice(0, 3).map((g, i) => {
+            {ordered.slice(0, 2).map((g, i) => {
               const done = results.some((r) => r.game === g.id);
               return (
                 <Link
@@ -180,17 +183,7 @@ function LessonPage() {
             })}
           </div>
         </section>
-        <details className="daily-other">
-          <summary>Cambiar de juego · {PILOT_GAMES.length} opciones para esta lección</summary>
-          <div>
-            {ordered.map((g) => (
-              <Link key={g.id} to={pilotGamePath(g.id)} search={{ lesson: lesson.id }}>
-                {g.icon} {g.name}
-                <span>{g.minutes} min</span>
-              </Link>
-            ))}
-          </div>
-        </details>
+
         <section className="daily-coach">
           <div>
             <h2>
