@@ -13,16 +13,8 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SetupRouteImport } from './routes/setup'
-import { Route as LessonLessonIdRouteImport } from './routes/lesson.$lessonId'
-import { Route as PlayAdventureRouteImport } from './routes/play.adventure'
 import { Route as PlayBombRouteImport } from './routes/play.bomb'
 import { Route as PlayDemoRouteImport } from './routes/play.demo'
-import { Route as PlayDetectiveRouteImport } from './routes/play.detective'
-import { Route as PlayMissionRouteImport } from './routes/play.mission'
-import { Route as PlayRocketRouteImport } from './routes/play.rocket'
-import { Route as PlaySentenceRouteImport } from './routes/play.sentence'
-import { Route as PlaySpotlightRouteImport } from './routes/play.spotlight'
-import { Route as WeekWeekIdRouteImport } from './routes/week.$weekId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -44,16 +36,6 @@ const SetupRoute = SetupRouteImport.update({
   path: '/setup',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LessonLessonIdRoute = LessonLessonIdRouteImport.update({
-  id: '/lesson/$lessonId',
-  path: '/lesson/$lessonId',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayAdventureRoute = PlayAdventureRouteImport.update({
-  id: '/play/adventure',
-  path: '/play/adventure',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PlayBombRoute = PlayBombRouteImport.update({
   id: '/play/bomb',
   path: '/play/bomb',
@@ -64,68 +46,22 @@ const PlayDemoRoute = PlayDemoRouteImport.update({
   path: '/play/demo',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PlayDetectiveRoute = PlayDetectiveRouteImport.update({
-  id: '/play/detective',
-  path: '/play/detective',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayMissionRoute = PlayMissionRouteImport.update({
-  id: '/play/mission',
-  path: '/play/mission',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlayRocketRoute = PlayRocketRouteImport.update({
-  id: '/play/rocket',
-  path: '/play/rocket',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlaySentenceRoute = PlaySentenceRouteImport.update({
-  id: '/play/sentence',
-  path: '/play/sentence',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlaySpotlightRoute = PlaySpotlightRouteImport.update({
-  id: '/play/spotlight',
-  path: '/play/spotlight',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WeekWeekIdRoute = WeekWeekIdRouteImport.update({
-  id: '/week/$weekId',
-  path: '/week/$weekId',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
-  '/lesson/$lessonId': typeof LessonLessonIdRoute
-  '/play/adventure': typeof PlayAdventureRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
-  '/play/detective': typeof PlayDetectiveRoute
-  '/play/mission': typeof PlayMissionRoute
-  '/play/rocket': typeof PlayRocketRoute
-  '/play/sentence': typeof PlaySentenceRoute
-  '/play/spotlight': typeof PlaySpotlightRoute
-  '/week/$weekId': typeof WeekWeekIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
-  '/lesson/$lessonId': typeof LessonLessonIdRoute
-  '/play/adventure': typeof PlayAdventureRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
-  '/play/detective': typeof PlayDetectiveRoute
-  '/play/mission': typeof PlayMissionRoute
-  '/play/rocket': typeof PlayRocketRoute
-  '/play/sentence': typeof PlaySentenceRoute
-  '/play/spotlight': typeof PlaySpotlightRoute
-  '/week/$weekId': typeof WeekWeekIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -133,66 +69,23 @@ export interface FileRoutesById {
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
-  '/lesson/$lessonId': typeof LessonLessonIdRoute
-  '/play/adventure': typeof PlayAdventureRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/demo': typeof PlayDemoRoute
-  '/play/detective': typeof PlayDetectiveRoute
-  '/play/mission': typeof PlayMissionRoute
-  '/play/rocket': typeof PlayRocketRoute
-  '/play/sentence': typeof PlaySentenceRoute
-  '/play/spotlight': typeof PlaySpotlightRoute
-  '/week/$weekId': typeof WeekWeekIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/results'
-    | '/settings'
-    | '/setup'
-    | '/lesson/$lessonId'
-    | '/play/adventure'
-    | '/play/bomb'
-    | '/play/demo'
-    | '/play/detective'
-    | '/play/mission'
-    | '/play/rocket'
-    | '/play/sentence'
-    | '/play/spotlight'
-    | '/week/$weekId'
+    '/' | '/results' | '/settings' | '/setup' | '/play/bomb' | '/play/demo'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/results'
-    | '/settings'
-    | '/setup'
-    | '/lesson/$lessonId'
-    | '/play/adventure'
-    | '/play/bomb'
-    | '/play/demo'
-    | '/play/detective'
-    | '/play/mission'
-    | '/play/rocket'
-    | '/play/sentence'
-    | '/play/spotlight'
-    | '/week/$weekId'
+  to: '/' | '/results' | '/settings' | '/setup' | '/play/bomb' | '/play/demo'
   id:
     | '__root__'
     | '/'
     | '/results'
     | '/settings'
     | '/setup'
-    | '/lesson/$lessonId'
-    | '/play/adventure'
     | '/play/bomb'
     | '/play/demo'
-    | '/play/detective'
-    | '/play/mission'
-    | '/play/rocket'
-    | '/play/sentence'
-    | '/play/spotlight'
-    | '/week/$weekId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -200,16 +93,8 @@ export interface RootRouteChildren {
   ResultsRoute: typeof ResultsRoute
   SettingsRoute: typeof SettingsRoute
   SetupRoute: typeof SetupRoute
-  LessonLessonIdRoute: typeof LessonLessonIdRoute
-  PlayAdventureRoute: typeof PlayAdventureRoute
   PlayBombRoute: typeof PlayBombRoute
   PlayDemoRoute: typeof PlayDemoRoute
-  PlayDetectiveRoute: typeof PlayDetectiveRoute
-  PlayMissionRoute: typeof PlayMissionRoute
-  PlayRocketRoute: typeof PlayRocketRoute
-  PlaySentenceRoute: typeof PlaySentenceRoute
-  PlaySpotlightRoute: typeof PlaySpotlightRoute
-  WeekWeekIdRoute: typeof WeekWeekIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -242,20 +127,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SetupRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/lesson/$lessonId': {
-      id: '/lesson/$lessonId'
-      path: '/lesson/$lessonId'
-      fullPath: '/lesson/$lessonId'
-      preLoaderRoute: typeof LessonLessonIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/adventure': {
-      id: '/play/adventure'
-      path: '/play/adventure'
-      fullPath: '/play/adventure'
-      preLoaderRoute: typeof PlayAdventureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/play/bomb': {
       id: '/play/bomb'
       path: '/play/bomb'
@@ -270,48 +141,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayDemoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/play/detective': {
-      id: '/play/detective'
-      path: '/play/detective'
-      fullPath: '/play/detective'
-      preLoaderRoute: typeof PlayDetectiveRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/mission': {
-      id: '/play/mission'
-      path: '/play/mission'
-      fullPath: '/play/mission'
-      preLoaderRoute: typeof PlayMissionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/rocket': {
-      id: '/play/rocket'
-      path: '/play/rocket'
-      fullPath: '/play/rocket'
-      preLoaderRoute: typeof PlayRocketRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/sentence': {
-      id: '/play/sentence'
-      path: '/play/sentence'
-      fullPath: '/play/sentence'
-      preLoaderRoute: typeof PlaySentenceRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/play/spotlight': {
-      id: '/play/spotlight'
-      path: '/play/spotlight'
-      fullPath: '/play/spotlight'
-      preLoaderRoute: typeof PlaySpotlightRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/week/$weekId': {
-      id: '/week/$weekId'
-      path: '/week/$weekId'
-      fullPath: '/week/$weekId'
-      preLoaderRoute: typeof WeekWeekIdRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -320,16 +149,8 @@ const rootRouteChildren: RootRouteChildren = {
   ResultsRoute: ResultsRoute,
   SettingsRoute: SettingsRoute,
   SetupRoute: SetupRoute,
-  LessonLessonIdRoute: LessonLessonIdRoute,
-  PlayAdventureRoute: PlayAdventureRoute,
   PlayBombRoute: PlayBombRoute,
   PlayDemoRoute: PlayDemoRoute,
-  PlayDetectiveRoute: PlayDetectiveRoute,
-  PlayMissionRoute: PlayMissionRoute,
-  PlayRocketRoute: PlayRocketRoute,
-  PlaySentenceRoute: PlaySentenceRoute,
-  PlaySpotlightRoute: PlaySpotlightRoute,
-  WeekWeekIdRoute: WeekWeekIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

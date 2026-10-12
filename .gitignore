@@ -8,8 +8,6 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-/.pilot-checks/
-/pnpm-workspace.yaml
 dist
 dist-ssr
 .output
@@ -32,5 +30,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-/public/missions/

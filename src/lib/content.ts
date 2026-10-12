@@ -1,11 +1,7 @@
 import { COURSES, type DayDef } from "@/data/content";
 
 export type ItemKind = "Q" | "T" | "S" | "E";
-export interface ShapeSpec {
-  shape: string;
-  count: number;
-  color?: string | undefined;
-}
+export interface ShapeSpec { shape: string; count: number; color?: string | undefined }
 export interface ContentItem {
   id: string;
   kind: ItemKind;
@@ -13,17 +9,11 @@ export interface ContentItem {
   answers: string[];
   shapes?: ShapeSpec[];
   emoji?: string;
-  pictureChoices?: { label: string; emoji: string }[];
   week: number;
   day: number;
 }
 export type ContentMix = "mix" | "questions" | "translations";
-export interface Selection {
-  course: string;
-  level: number;
-  week: number;
-  day: number;
-}
+export interface Selection { course: string; level: number; week: number; day: number }
 
 export const SHAPE_COLORS = ["red", "blue", "yellow", "green", "purple", "orange", "pink"];
 
@@ -45,7 +35,7 @@ function parseShapes(s: string): ShapeSpec[] {
   });
 }
 
-export function parseDay(d: DayDef, week: number): ContentItem[] {
+function parseDay(d: DayDef, week: number): ContentItem[] {
   return d.lines.map((line, i) => {
     const f = line.split(" || ") as [string, string, string, string];
     const kind = f[0] as ItemKind;
@@ -53,8 +43,7 @@ export function parseDay(d: DayDef, week: number): ContentItem[] {
     const base = { id, kind, week, day: d.day };
     if (kind === "Q") return { ...base, prompt: f[1], answers: f[2].split(" / ") };
     if (kind === "T") return { ...base, prompt: f[1], answers: [f[2]] };
-    if (kind === "S")
-      return { ...base, prompt: f[2], answers: f[3].split(" / "), shapes: parseShapes(f[1]) };
+    if (kind === "S") return { ...base, prompt: f[2], answers: f[3].split(" / "), shapes: parseShapes(f[1]) };
     return { ...base, prompt: f[2], answers: f[3].split(" / "), emoji: f[1] };
   });
 }
@@ -103,10 +92,7 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
   tiers.forEach((tier, ti) => {
     if (picked.length >= count) return;
     const pool = tier.filter((i) => matchesMix(i, mix));
-    const ordered = [
-      ...shuffle(pool.filter((i) => !avoidSet.has(i.id))),
-      ...shuffle(pool.filter((i) => avoidSet.has(i.id))),
-    ];
+    const ordered = [...shuffle(pool.filter((i) => !avoidSet.has(i.id))), ...shuffle(pool.filter((i) => avoidSet.has(i.id)))];
     const add = ordered.slice(0, count - picked.length);
     if (add.length && ti > 0) review = true;
     picked.push(...add);
