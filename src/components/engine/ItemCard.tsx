@@ -26,6 +26,8 @@ export function HiddenPicture({ item, showAll, onReveal }: { item: ContentItem; 
   return (
     <div className="relative grid min-h-[260px] min-w-[460px] place-items-center rounded-3xl bg-card p-4">
       <ItemPicture item={item} />
+      {/* Solid cover so gaps between boxes never leak the picture */}
+      <div className="absolute inset-0 rounded-3xl bg-card" />
       <div className="absolute inset-0 grid grid-cols-4 grid-rows-3 gap-1.5 p-1.5">
         {Array.from({ length: HIDDEN_TILES }, (_, i) => (
           <button
