@@ -1,3 +1,4 @@
+import { ItemCard } from "@/components/engine/ItemCard";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Check, X, Eye, Hand, Dices, Snowflake, Pause, HelpCircle, Home, RotateCcw, Flame } from "lucide-react";
@@ -266,15 +267,8 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
             <TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={120} />
           </div>
           {item ? (
-            <div key={item.id + progress} className="panel flex flex-1 animate-pop flex-col items-center justify-center gap-4 p-6 text-center">
-              <div className="rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground">
-                {item.kind === "T" ? "Say it in English! 🇺🇸" : "Answer in a full sentence!"}
-              </div>
-              <ItemPicture item={item} />
-              <div className="font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">{item.prompt}</div>
-              <div className={cn("min-h-14 text-4xl font-bold text-success transition-opacity duration-300", showAns ? "opacity-100" : "opacity-0")}>
-                {showAns && item.answers.map((a, i) => <div key={i}>💬 {a}</div>)}
-              </div>
+            <div key={item.id + progress} className="flex flex-1">
+              <ItemCard item={item} showAnswer={showAns} compact onReveal={() => { setRemaining((r) => Math.max(0, r - 2)); pop("-2s", "bad"); }} />
             </div>
           ) : (
             <div className="panel flex flex-1 items-center justify-center p-8 text-4xl font-bold">No items for this day.</div>
