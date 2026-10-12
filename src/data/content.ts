@@ -1,6 +1,7 @@
 // Curriculum content — stored exactly as provided. Do not edit wording.
 // Q || question || answers (" / ")   T || Spanish || English
 // S || shapes || question || answer  E || emoji || question || answer
+// H || shapes-or-emoji || question || answer (hidden picture)  F || sentence with ____ || correct || wrong / wrong
 
 export interface DayDef { day: number; label: string; focus: string; lines: string[] }
 export interface WeekDef { week: number; days: DayDef[] }
@@ -22,6 +23,10 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 1",
                 "focus": "There is / there are; simple present, 1st person (review) — Vocabulary: shapes (circle, rectangle, star, heart, square, triangle, oval)",
                 "lines": [
+                  "H || circle:2 || What is hidden? || There are two circles.",
+                  "H || star:1 || What shape is hidden? || It's a star.",
+                  "F || There ____ three squares. || are || is / aren't",
+                  "F || I ____ up at seven o'clock. || wake || wakes / waking",
                   "Q || What do you do on Saturdays? || On Saturdays, I play soccer. / I watch TV on Saturdays.",
                   "Q || What is your favorite color? || My favorite color is blue.",
                   "Q || Where do you eat dinner? || I eat dinner in the kitchen. / I eat dinner at home.",
@@ -46,6 +51,10 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 2",
                 "focus": "There is / there are; simple present, 3rd person singular (review)",
                 "lines": [
+                  "H || heart:3 || What is hidden? || There are three hearts.",
+                  "H || triangle:2 || What is hidden? || There are two triangles.",
+                  "F || Messi ____ soccer every day. || plays || play / playing",
+                  "F || My dad ____ up at six o'clock. || wakes || wake / waking",
                   "Q || What does your mom do in the morning? || My mom cooks breakfast. / She goes to work.",
                   "Q || What does Messi do every day? || Messi plays soccer every day.",
                   "Q || Where does your best friend take a shower? || My best friend takes a shower at home.",
@@ -70,6 +79,10 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 3",
                 "focus": "There is / there are",
                 "lines": [
+                  "H || oval:1, square:2 || What shapes are hidden? || There is one oval and two squares.",
+                  "H || rectangle:3 || What is hidden? || There are three rectangles.",
+                  "F || There ____ a star. || is || are / aren't",
+                  "F || There ____ a triangle. || isn't || aren't / are",
                   "S || star:3, heart:2 || How many shapes do you see? || I see five shapes. / There are five shapes.",
                   "S || circle:1, square:4 || How many squares are there? || There are four squares.",
                   "S || heart:5 || How many hearts are there? || There are five hearts.",
@@ -99,6 +112,10 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 1",
                 "focus": "Simple present, 1st person singular — Vocabulary: professions (doctor, vet, firefighter, police officer)",
                 "lines": [
+                  "H || 👩‍⚕️ || What is her profession? || She is a doctor.",
+                  "H || 🧑‍🚒 || What is his profession? || He is a firefighter.",
+                  "F || I ____ to be a vet. || want || wants / wanting",
+                  "F || I don't want ____ a police officer. || to be || be / is",
                   "Q || What do you want to be in the future? || I want to be a doctor. / I want to be a vet.",
                   "Q || What is your favorite profession? || My favorite profession is firefighter.",
                   "Q || What do you do at school? || I study English at school. / I play with my friends.",
@@ -128,6 +145,10 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 3",
                 "focus": "Want to be… because I want to… — Vocabulary: help, stop fires, fight crime, explore space (+ astronaut)",
                 "lines": [
+                  "H || 👩‍🚀 || What is her profession? || She is an astronaut.",
+                  "H || 🐶🩺 || Who helps animals? || A vet helps animals.",
+                  "F || A firefighter ____ fires. || stops || stop / stopping",
+                  "F || I want to be a vet ____ I want to help animals. || because || but / and",
                   "Q || Where do you want to work? || I want to work in a hospital. / I want to work at a fire station.",
                   "Q || Who do you want to help? || I want to help animals. / I want to help people.",
                   "Q || What do you want to be? Why? || I want to be an astronaut because I want to explore space.",

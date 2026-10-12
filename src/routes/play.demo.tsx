@@ -1,5 +1,5 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Check, SkipForward, Eye, Dices, Undo2, Minus, Pause, Play, Flag, Plus, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GameShell } from "@/components/engine/GameShell";
@@ -8,7 +8,7 @@ import { Scoreboard, StreakBadge } from "@/components/engine/Scoreboard";
 import { TurnPicker } from "@/components/engine/TurnPicker";
 import { useHotkeys, toggleFullscreen } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
-import { ItemCard } from "@/components/engine/ItemCard";
+import { ItemCard, hiddenPoints } from "@/components/engine/ItemCard";
 import { getGame } from "@/lib/games";
 import { drawItems, type ContentItem } from "@/lib/content";
 import { selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
@@ -53,6 +53,8 @@ function DemoDrill() {
   const [player, setPlayer] = useState<Player | null>(null);
   const [shake, setShake] = useState(0);
   const [help, setHelp] = useState(false);
+  const opened = useRef(0);
+  const [openedN, setOpenedN] = useState(0);
 
   const timer = useTimer(settings.turnTime, () => setShowAnswer(true));
   const activeTeam = idx % 2;
@@ -82,6 +84,8 @@ function DemoDrill() {
     sfx.whoosh();
     setShowAnswer(false);
     setPlayer(null);
+    opened.current = 0;
+    setOpenedN(0);
     if (idx + 1 >= items.length) return finish(scores);
     setIdx((i) => i + 1);
     timer.reset(true);
@@ -117,7 +121,7 @@ function DemoDrill() {
   }, [app]);
 
   const correct = () => {
-    award(activeTeam, 1);
+    award(activeTeam, item?.hidden ? hiddenPoints(opened.current) : 1);
     setShowAnswer(true);
     timer.setRunning(false);
     setTimeout(next, 1200);
@@ -149,7 +153,7 @@ function DemoDrill() {
               <div className="rounded-full bg-secondary px-5 py-2">
                 Card {idx + 1} / {items!.length} {review && <span className="ml-2 text-primary">· Review mode</span>}
               </div>
-              <StreakBadge streak={streak.n} />
+              {item.hidden ? <div className="rounded-full bg-accent px-5 py-2 text-accent-foreground">🔍 Worth {hiddenPoints(openedN)} pts</div> : <StreakBadge streak={streak.n} />}
               <div className={cn("flex items-center gap-2 rounded-full px-5 py-2 text-primary-foreground", activeTeam === 0 ? "bg-team1" : "bg-team2")}>
                 {teams[activeTeam]!.icon} {teams[activeTeam]!.name}’s turn
                 {player && <span className="ml-2 rounded-full bg-card px-3 text-foreground">🎤 {player.name}</span>}
@@ -157,7 +161,7 @@ function DemoDrill() {
             </div>
 
             <div className="grid flex-1 grid-cols-[1fr_auto] items-center gap-8">
-              <ItemCard key={item.id} item={item} showAnswer={showAnswer} />
+              <ItemCard key={item.id} item={item} showAnswer={showAnswer} onReveal={(n) => { opened.current = n; setOpenedN(n); sfx.whoosh(); }} />
               <div className="flex flex-col items-center gap-6">
                 <TimerRing remaining={timer.remaining} duration={timer.duration} running={timer.running} size={220} />
                 <Button variant="panel" size="xl" onClick={timer.toggle}>{timer.running ? <Pause /> : <Play />} <Kbd>Space</Kbd></Button>
