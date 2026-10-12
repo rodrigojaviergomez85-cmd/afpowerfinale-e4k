@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { GameShell } from "@/components/engine/GameShell";
 import { useHotkeys } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
-import { ItemPicture } from "@/components/engine/Picture";
 import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { Bomb, DefusePanel, type BombMood } from "@/components/bomb/Bomb";
