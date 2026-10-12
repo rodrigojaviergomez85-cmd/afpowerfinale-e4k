@@ -26,21 +26,27 @@ export function HiddenPicture({ item, showAll, onReveal }: { item: ContentItem; 
   return (
     <div className="relative grid min-h-[260px] min-w-[460px] place-items-center rounded-3xl bg-card p-4">
       <ItemPicture item={item} />
-      {/* Solid cover so gaps between boxes never leak the picture */}
-      <div className="absolute inset-0 rounded-3xl bg-card" />
-      <div className="absolute inset-0 grid grid-cols-4 grid-rows-3 gap-1.5 p-1.5">
-        {Array.from({ length: HIDDEN_TILES }, (_, i) => (
-          <button
-            key={i}
-            onClick={() => reveal(i)}
-            className={cn(
-              "rounded-xl border-4 border-border bg-primary font-display text-4xl font-bold text-primary-foreground transition-all duration-300 hover:brightness-110",
-              (showAll || open.has(i)) && "pointer-events-none scale-75 opacity-0",
-            )}
-          >
-            {i + 1}
-          </button>
-        ))}
+      <div className="absolute inset-0 grid grid-cols-4 grid-rows-3">
+        {Array.from({ length: HIDDEN_TILES }, (_, i) => {
+          const isOpen = showAll || open.has(i);
+          return (
+            <div
+              key={i}
+              className={cn(
+                // Opaque cell: hides the picture fully, gaps included, until opened
+                "bg-card p-1.5 transition-opacity duration-300",
+                isOpen && "pointer-events-none opacity-0",
+              )}
+            >
+              <button
+                onClick={() => reveal(i)}
+                className="h-full w-full rounded-xl border-4 border-border bg-primary font-display text-4xl font-bold text-primary-foreground transition-all duration-300 hover:brightness-110"
+              >
+                {i + 1}
+              </button>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
