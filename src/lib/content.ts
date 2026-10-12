@@ -1,6 +1,6 @@
 import { COURSES, type DayDef } from "@/data/content";
 
-export type ItemKind = "Q" | "T" | "S" | "E";
+export type ItemKind = "Q" | "T" | "S" | "E" | "H" | "F";
 export interface ShapeSpec { shape: string; count: number; color?: string | undefined }
 export interface ContentItem {
   id: string;
@@ -9,6 +9,8 @@ export interface ContentItem {
   answers: string[];
   shapes?: ShapeSpec[];
   emoji?: string;
+  hidden?: boolean;
+  options?: string[];
   week: number;
   day: number;
 }
@@ -43,6 +45,11 @@ function parseDay(d: DayDef, week: number): ContentItem[] {
     const base = { id, kind, week, day: d.day };
     if (kind === "Q") return { ...base, prompt: f[1], answers: f[2].split(" / ") };
     if (kind === "T") return { ...base, prompt: f[1], answers: [f[2]] };
+    if (kind === "F") return { ...base, prompt: f[1], answers: [f[1].replace("____", f[2])], options: shuffle([f[2], ...f[3].split(" / ")]).slice(0, 3) };
+    if (kind === "H") {
+      const isShape = /[a-z]/i.test(f[1]);
+      return { ...base, prompt: f[2], answers: f[3].split(" / "), hidden: true, ...(isShape ? { shapes: parseShapes(f[1]) } : { emoji: f[1] }) };
+    }
     if (kind === "S") return { ...base, prompt: f[2], answers: f[3].split(" / "), shapes: parseShapes(f[1]) };
     return { ...base, prompt: f[2], answers: f[3].split(" / "), emoji: f[1] };
   });
