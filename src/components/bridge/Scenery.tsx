@@ -8,7 +8,7 @@ export function Treasure({ celebrating = false }: { celebrating?: boolean }) {
         <path d="M40 53V33Q80 15 120 33V53Z" fill="var(--treasure-inside)" />
         <path d="M28 27V61M132 27V61" stroke="var(--gold)" strokeWidth="9" />
         <path d="M19 70L35 54H126L143 70L132 89H29Z" fill="var(--treasure-inside)" />
-        {[ [43,61], [65,55], [88,59], [111,57], [55,72], [79,70], [104,71] ].map(([x,y], i) => (
+        {([[43,61], [65,55], [88,59], [111,57], [55,72], [79,70], [104,71]] as const).map(([x,y], i) => (
           <g key={i} className={cn(celebrating && "motion-safe:animate-jolt")}>
             <circle cx={x} cy={y} r="12" fill="var(--gold)" stroke="var(--treasure-trim)" strokeWidth="3" />
             <path d={`M${x} ${y - 6}v12`} stroke="var(--treasure-trim)" strokeWidth="3" />
