@@ -133,19 +133,14 @@ function RaceGame({ planet, help, openHelp }: { planet: Planet; help: boolean; o
     setShowAnswer(false); setTimeUp(false); scored.current = false; opened.current = 0; setPlayer(null);
     if (p[0]! >= stops || p[1]! >= stops) return land(p);
     const last = idx + 1 >= items.length;
-    // sudden death: only decide after both teams had a card in the round
-    if (last || (suddenDeath && activeTeam === 1)) {
+    // After the cards run out (or each sudden-death round), the rocket ahead wins; a tie = sudden death.
+    if (suddenDeath ? activeTeam === 1 : last) {
       if (p[0] !== p[1]) return land(p);
-      if (!last) { /* keep going */ } else {
-        setSuddenDeath(true);
-        const extra = shuffle(items.filter((i) => i.kind !== "H")).slice(0, 2);
-        setItems((it) => [...it, ...(extra.length ? extra : items.slice(0, 2))]);
-      }
-      if (last && !suddenDeath) setSuddenDeath(true);
-      else if (suddenDeath && activeTeam === 1 && last) {
-        const extra = shuffle(items.filter((i) => i.kind !== "H")).slice(0, 2);
-        setItems((it) => [...it, ...extra]);
-      }
+      setSuddenDeath(true);
+    }
+    if (last) {
+      const extra = shuffle(items.filter((i) => i.kind !== "H")).slice(0, 2);
+      setItems((it) => [...it, ...(extra.length === 2 ? extra : [items[0]!, items[0]!])]);
     }
     sfx.whoosh();
     setIdx((i) => i + 1);
