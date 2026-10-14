@@ -39,11 +39,11 @@ function Hub() {
       </header>
 
       <main className="relative mx-auto max-w-7xl px-8 pb-16">
-        <div className="py-6 text-center">
-          <h1 className="animate-pop text-7xl text-stroke md:text-8xl">
+        <div className="py-4 text-center">
+          <h1 className="animate-pop text-6xl text-stroke md:text-7xl">
             Power <span className="text-primary">Finale!</span>
           </h1>
-          <p className="mt-3 text-3xl font-semibold text-muted-foreground">Pick a game. Let’s go, champions!</p>
+          <p className="mt-2 text-2xl font-semibold text-muted-foreground">Pick a game. Let’s go, champions!</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {GAMES.map((g, i) => {
@@ -51,17 +51,17 @@ function Hub() {
             const card = (
               <div
                 className={cn(
-                  "panel group relative flex h-full animate-slide-up items-center gap-5 overflow-hidden p-6 transition-transform",
+                  "panel group relative flex h-full animate-slide-up items-center gap-4 overflow-hidden p-5 transition-transform",
                   ready ? "hover:-translate-y-1" : "opacity-75",
                 )}
                 style={{ animationDelay: `${i * 90}ms` }}
               >
                 <div className={cn("absolute inset-y-0 left-0 w-3", g.accent)} />
-                <div className={cn("grid h-24 w-24 shrink-0 place-items-center rounded-3xl text-7xl chunky", g.accent)}>{g.icon}</div>
+                <div className={cn("grid h-20 w-20 shrink-0 place-items-center rounded-3xl text-6xl chunky", g.accent)}>{g.icon}</div>
                 <div className="min-w-0 flex-1">
                   <h2 className="text-3xl leading-tight">{g.name}</h2>
-                  <p className="mt-1 text-xl text-muted-foreground">{g.tagline}</p>
-                  <div className="mt-3 flex flex-wrap gap-2 text-lg font-bold">
+                  <p className="mt-1 text-lg leading-snug text-muted-foreground">{g.tagline}</p>
+                  <div className="mt-2 flex flex-wrap gap-2 text-base font-bold">
                     <span className="rounded-full bg-secondary px-3 py-1">{g.mode === "2 teams" ? "⚔️" : "🤝"} {g.mode}</span>
                     <span className="rounded-full bg-secondary px-3 py-1">⏱️ {g.minutes}</span>
                     {ready ? (

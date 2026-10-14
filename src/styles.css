@@ -341,5 +341,6 @@
   .fit-card .banner-pill { font-size: 1.5rem !important; padding: 0.25rem 1.25rem !important; }
   .fit-card .min-h-16 { min-height: 0 !important; }
   .fit-timer { zoom: 0.7; }
+  .fit-scene .luna { zoom: 0.62; }
   .fit-gap { gap: 0.5rem !important; }
 }

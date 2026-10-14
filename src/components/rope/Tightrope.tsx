@@ -72,7 +72,7 @@ export function Tightrope({
           </svg>
           {!inPool && (
             <div className="absolute -translate-x-1/2 -translate-y-full transition-[left,top] duration-500 ease-out" style={{ left: `${lx / 10}%`, top: `${(ly / 300) * 100}%` }}>
-              <div key={slipKey} className={cn("relative flex flex-col items-center", slipKey > 0 && "animate-slip", falling && "animate-fall")}>
+              <div key={slipKey} className={cn("luna relative flex flex-col items-center", slipKey > 0 && "animate-slip", falling && "animate-fall")}>
                 <span className="mb-[-6px] rounded-full bg-card px-1.5 text-3xl leading-tight">{FACE[mood]}</span>
                 <span className="text-6xl leading-none">{mood === "tada" ? "🙆‍♀️" : "🤸‍♀️"}</span>
                 {frozen && <span className="absolute top-[55%] h-1.5 w-40 rounded-full" style={{ background: "var(--gold)" }} />}

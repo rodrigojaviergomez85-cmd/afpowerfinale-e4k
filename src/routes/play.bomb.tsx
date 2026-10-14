@@ -258,7 +258,7 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
           <div className="text-3xl font-bold">{progress} / {goal} <span className="text-muted-foreground">defused</span></div>
         </div>
 
-        <div className="flex h-full min-h-0 flex-col gap-4">
+        <div className="flex h-full min-h-0 min-w-0 flex-col gap-4">
           <div className="flex items-center justify-between gap-4">
             <div className="min-h-16 rounded-full bg-accent px-6 py-2 text-4xl font-bold text-accent-foreground chunky">
               {player ? <>🎤 Your turn: {player.name}!</> : <>🤝 Whole class!</>}
