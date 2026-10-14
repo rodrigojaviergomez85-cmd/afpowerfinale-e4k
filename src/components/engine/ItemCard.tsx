@@ -15,7 +15,7 @@ function banner(item: ContentItem) {
   return "Answer in a full sentence!";
 }
 
-export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = false }: { item: ContentItem; showAll: boolean; onReveal?: ((opened: number) => void) | undefined; auto?: boolean; paused?: boolean }) {
+export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = false }: { item: ContentItem; showAll: boolean; onReveal?: ((opened: number) => void) | undefined; auto?: boolean | undefined; paused?: boolean | undefined }) {
   const [open, setOpen] = useState<Set<number>>(() => new Set());
   const openRef = useRef(open);
   openRef.current = open;
