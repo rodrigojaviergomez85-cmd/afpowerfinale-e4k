@@ -43,6 +43,18 @@ export const GAMES: GameDef[] = [
     ],
   },
   {
+    id: "bridge-builder",
+    name: "Bridge Builder",
+    icon: "🌉",
+    tagline: "Build the bridge before the river rises!",
+    mode: "Whole class",
+    minutes: "3 min",
+    accent: "bg-game-bridge",
+    accentText: "text-game-bridge",
+    status: "ready",
+    rules: [],
+  },
+  {
     id: "hot-chair",
     name: "Hot Chair Translation",
     icon: "🔥",
