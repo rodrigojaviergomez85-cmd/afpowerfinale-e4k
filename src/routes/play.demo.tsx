@@ -56,7 +56,9 @@ function DemoDrill() {
   const opened = useRef(0);
   const [openedN, setOpenedN] = useState(0);
 
-  const timer = useTimer(settings.turnTime, () => setShowAnswer(true));
+  const [timeUp, setTimeUp] = useState(false);
+  const scored = useRef(false);
+  const timer = useTimer(settings.turnTime, () => { setTimeUp(true); sfx.minus(); });
   const activeTeam = idx % 2;
   const item = items?.[idx];
 
@@ -83,6 +85,8 @@ function DemoDrill() {
     if (!items) return;
     sfx.whoosh();
     setShowAnswer(false);
+    setTimeUp(false);
+    scored.current = false;
     setPlayer(null);
     opened.current = 0;
     setOpenedN(0);
@@ -120,12 +124,16 @@ function DemoDrill() {
     });
   }, [app]);
 
-  const correct = () => {
-    award(activeTeam, item?.hidden ? hiddenPoints(opened.current) : 1);
+  /** Any team scoring = correct answer: award once per card, reveal, then move on. */
+  const correctFor = (team: number) => {
+    if (scored.current || !item) return;
+    scored.current = true;
+    award(team, item.hidden ? hiddenPoints(opened.current) : 1);
     setShowAnswer(true);
     timer.setRunning(false);
     setTimeout(next, 1200);
   };
+  const correct = () => correctFor(activeTeam);
   const skip = () => { sfx.skip(); setStreak({ team: -1, n: 0 }); next(); };
   const pick = () => roster.length && !picking && setPicking(true);
 
