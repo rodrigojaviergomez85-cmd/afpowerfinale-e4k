@@ -127,6 +127,12 @@ function Setup() {
             </div>
           ) : (
             <>
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                <div className="space-y-2"><div className="font-bold text-muted-foreground">⏱️ Time per card</div>
+                  <Seg value={s.settings.turnTime} onChange={(v) => s.setSettings({ turnTime: v })} options={[10, 15, 20, 30, 45].map((n) => ({ v: n, l: `${n}s` }))} /></div>
+                <div className="space-y-2"><div className="font-bold text-muted-foreground">🃏 Number of cards</div>
+                  <Seg value={s.settings.rounds} onChange={(v) => s.setSettings({ rounds: v })} options={[6, 10, 12, 16, 20].map((n) => ({ v: n, l: String(n) }))} /></div>
+              </div>
               <div className="flex items-center justify-between pt-2">
                 <h2 className="text-3xl">⚔️ Teams</h2>
                 <Button variant="panel" size="lg" onClick={reshuffle}><Shuffle /> New names</Button>
