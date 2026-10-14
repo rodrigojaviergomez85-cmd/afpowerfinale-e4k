@@ -25,7 +25,7 @@ export function HiddenPicture({ item, showAll, onReveal }: { item: ContentItem; 
   };
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="relative h-[290px] w-[620px] overflow-hidden rounded-3xl bg-card">
+      <div className="relative h-[230px] w-[580px] overflow-hidden rounded-3xl bg-card">
         {/* One stable picture filling the board */}
         <div className="absolute inset-0 grid place-items-center">
           <ItemPicture item={item} big />

@@ -36,7 +36,7 @@ export function ShapePicture({ specs, seed, big }: { specs: ShapeSpec[]; seed: s
   const wide = (s: string) => (s === "rectangle" || s === "oval" ? 1.8 : 1);
   const units = list.reduce((a, s) => a + wide(s.shape), 0);
   // Big mode: fill a ~600×280 board in one row without cropping.
-  const size = big ? Math.min(240, Math.floor((580 - 16 * (list.length - 1)) / Math.max(units, 1))) : list.length > 6 ? 84 : list.length > 3 ? 100 : 130;
+  const size = big ? Math.min(190, Math.floor((560 - 16 * (list.length - 1)) / Math.max(units, 1))) : list.length > 6 ? 84 : list.length > 3 ? 100 : 130;
   return (
     <div className={big ? "flex flex-nowrap items-center justify-center gap-4" : "flex max-w-3xl flex-wrap items-center justify-center gap-5"}>
       {list.map((s, i) => <Shape key={i} shape={s.shape} color={s.color} size={size} />)}
@@ -48,7 +48,7 @@ export function ItemPicture({ item, big }: { item: ContentItem; big?: boolean })
   if (item.shapes) return <ShapePicture specs={item.shapes} seed={item.id} big={big} />;
   if (item.emoji) {
     const n = [...new Intl.Segmenter().segment(item.emoji)].length;
-    return <div className="leading-none" style={{ fontSize: big ? (n > 1 ? 200 : 250) : 160 }}>{item.emoji}</div>;
+    return <div className="leading-none" style={{ fontSize: big ? (n > 1 ? 170 : 200) : 160 }}>{item.emoji}</div>;
   }
   return null;
 }
