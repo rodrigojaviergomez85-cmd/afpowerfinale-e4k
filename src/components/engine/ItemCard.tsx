@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ContentItem } from "@/lib/content";
 import { ItemPicture } from "./Picture";
 import { cn } from "@/lib/utils";
@@ -15,19 +15,32 @@ function banner(item: ContentItem) {
   return "Answer in a full sentence!";
 }
 
-export function HiddenPicture({ item, showAll, onReveal }: { item: ContentItem; showAll: boolean; onReveal?: ((opened: number) => void) | undefined }) {
+export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = false }: { item: ContentItem; showAll: boolean; onReveal?: ((opened: number) => void) | undefined; auto?: boolean | undefined; paused?: boolean | undefined }) {
   const [open, setOpen] = useState<Set<number>>(() => new Set());
+  const openRef = useRef(open);
+  openRef.current = open;
   const reveal = (i: number) => {
     if (open.has(i) || showAll) return;
     const n = new Set(open).add(i);
     setOpen(n);
     onReveal?.(n.size);
   };
+  // Mission mode: one box opens by itself every 2 seconds.
+  useEffect(() => {
+    if (!auto || showAll || paused) return;
+    const id = setInterval(() => {
+      const closed = Array.from({ length: HIDDEN_TILES }, (_, i) => i).filter((i) => !openRef.current.has(i));
+      if (!closed.length) return;
+      const pick = closed[Math.floor(Math.random() * closed.length)]!;
+      setOpen((o) => new Set(o).add(pick));
+    }, 2000);
+    return () => clearInterval(id);
+  }, [auto, showAll, paused]);
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="relative h-[230px] w-[580px] overflow-hidden rounded-3xl bg-card">
+      <div className="hidden-board relative h-[230px] w-[580px] overflow-hidden rounded-3xl bg-card">
         {/* One stable picture filling the board */}
-        <div className="absolute inset-0 grid place-items-center">
+        <div className="pic-wrap absolute inset-0 grid place-items-center">
           <ItemPicture item={item} big />
         </div>
         <div className="absolute inset-0 grid grid-cols-4 grid-rows-3">
@@ -47,7 +60,7 @@ export function HiddenPicture({ item, showAll, onReveal }: { item: ContentItem; 
           })}
         </div>
       </div>
-      <div className="text-xl font-bold text-muted-foreground">{open.size} / {HIDDEN_TILES} boxes opened</div>
+      <div className="text-xl font-bold text-muted-foreground">{open.size} / {HIDDEN_TILES} boxes opened{auto && !showAll && " · opening by itself…"}</div>
     </div>
   );
 }
@@ -78,11 +91,11 @@ function FillBlank({ item, showAnswer }: { item: ContentItem; showAnswer: boolea
   );
 }
 
-export function ItemCard({ item, showAnswer, compact, onReveal }: { item: ContentItem; showAnswer: boolean; compact?: boolean; onReveal?: (opened: number) => void }) {
+export function ItemCard({ item, showAnswer, compact, onReveal, autoReveal, paused }: { item: ContentItem; showAnswer: boolean; compact?: boolean; onReveal?: (opened: number) => void; autoReveal?: boolean; paused?: boolean }) {
   return (
-    <div className={cn("panel flex h-full animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
-      <div className="rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground">{banner(item)}</div>
-      {item.hidden ? <HiddenPicture item={item} showAll={showAnswer} onReveal={onReveal} /> : <ItemPicture item={item} />}
+    <div className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
+      <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground">{autoReveal && item.kind === "H" ? "What's hidden? 🔍 Say the word!" : banner(item)}</div>
+      {item.hidden ? <HiddenPicture item={item} showAll={showAnswer} onReveal={onReveal} auto={autoReveal} paused={paused} /> : <div className="pic-wrap"><ItemPicture item={item} /></div>}
       <div className="font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">{item.prompt}</div>
       {item.options && <FillBlank item={item} showAnswer={showAnswer} />}
       <div className={cn("min-h-16 text-4xl font-bold text-success transition-all duration-500", showAnswer ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0")}>

@@ -46,7 +46,7 @@ export function GameShell({ game, children, rightSlot }: { game: GameDef; childr
   );
 
   return (
-    <div data-calm={calm} className="stage-bg flex min-h-screen flex-col">
+    <div data-calm={calm} className="stage-bg flex h-dvh flex-col overflow-hidden">
       <header className="flex items-center gap-3 px-6 py-3">
         <Button asChild variant="panel" size="iconLg" aria-label="Home">
           <Link to="/"><Home /></Link>
@@ -62,7 +62,7 @@ export function GameShell({ game, children, rightSlot }: { game: GameDef; childr
         </div>
       </header>
 
-      <main className="relative flex flex-1 flex-col">
+      <main className="relative flex min-h-0 flex-1 flex-col overflow-y-auto">
         {phase === "rules" && (
           <div className="flex flex-1 flex-col items-center justify-center gap-10 px-8 text-center">
             <div className="animate-pop text-[10rem] leading-none">{game.icon}</div>

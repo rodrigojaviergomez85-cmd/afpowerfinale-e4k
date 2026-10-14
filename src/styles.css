@@ -41,6 +41,7 @@
   --color-game-chair: var(--game-chair);
   --color-game-blitz: var(--game-blitz);
   --color-game-bridge: var(--game-bridge);
+  --color-game-rope: var(--game-rope);
   --color-stage: var(--stage);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -91,6 +92,13 @@
   --game-chair: oklch(0.72 0.2 350);
   --game-blitz: oklch(0.77 0.18 160);
   --game-bridge: oklch(0.68 0.13 190);
+  --game-rope: oklch(0.65 0.24 340);
+  --tent-a: oklch(0.45 0.17 20);
+  --tent-b: oklch(0.3 0.1 20);
+  --pool: oklch(0.7 0.13 215);
+  --pool-deep: oklch(0.5 0.14 235);
+  --rope: oklch(0.85 0.06 80);
+  --spot: oklch(0.97 0.08 95 / 0.35);
   --river: oklch(0.55 0.14 235);
   --river-deep: oklch(0.4 0.13 245);
   --cliff: oklch(0.5 0.08 55);
@@ -299,3 +307,40 @@
 @utility animate-flop { animation: flop 0.4s ease-in-out infinite; }
 @utility animate-run { animation: run-across 1.6s ease-in-out forwards; }
 [data-calm="true"] .animate-rain { animation-duration: 1.4s; }
+
+/* Tightrope Rescue */
+@keyframes rope-wobble { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(var(--wob, 2deg)); } 75% { transform: rotate(calc(var(--wob, 2deg) * -1)); } }
+@keyframes rope-bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(var(--bnc, 4px)); } }
+@keyframes slip-hang { 0% { transform: translateY(0) rotate(0); } 25% { transform: translateY(46px) rotate(160deg); } 75% { transform: translateY(46px) rotate(170deg); } 100% { transform: translateY(0) rotate(0); } }
+@keyframes spot-sweep { 0%,100% { transform: rotate(-18deg); } 50% { transform: rotate(18deg); } }
+@keyframes spot-flash { 0% { opacity: 0; } 30% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes luna-fall { 0% { transform: translateY(0) rotate(0); } 100% { transform: translateY(260px) rotate(540deg); } }
+@keyframes wave-fill { 0% { transform: translateY(100%); } 50% { transform: translateY(0); } 100% { transform: translateY(100%); } }
+@keyframes pop-up { 0% { transform: translateY(80px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+@keyframes petal-fall { from { transform: translateY(-40px) rotate(0); } to { transform: translateY(110vh) rotate(360deg); } }
+@utility animate-wobble { animation: rope-wobble var(--wobt, 1.6s) ease-in-out infinite; transform-origin: 50% 0%; }
+@utility animate-bounce-rope { animation: rope-bounce 0.5s ease-in-out infinite; }
+@utility animate-slip { animation: slip-hang 1.2s ease-in-out both; }
+@utility animate-sweep { animation: spot-sweep 3s ease-in-out infinite; transform-origin: 50% 0%; }
+@utility animate-spotflash { animation: spot-flash 700ms ease-out forwards; }
+@utility animate-fall { animation: luna-fall 1s cubic-bezier(0.5,0,0.9,0.5) forwards; }
+@utility animate-wavefill { animation: wave-fill 1.4s ease-in-out forwards; }
+@utility animate-popup { animation: pop-up 600ms cubic-bezier(0.3,1.4,0.5,1) both; }
+@utility animate-petal { animation: petal-fall 3s linear forwards; }
+[data-calm="true"] .animate-wobble, [data-calm="true"] .animate-bounce-rope, [data-calm="true"] .animate-sweep { animation: none; }
+[data-calm="true"] .animate-spotflash { animation-duration: 1.4s; opacity: 0.4; }
+
+/* Fit play screens on short laptop screens (e.g. 1366x768) */
+@media (max-height: 860px) {
+  .fit-scene { height: 140px !important; }
+  .fit-bomb { height: 210px !important; }
+  .fit-bomb > div { zoom: 0.72; }
+  .fit-card { gap: 0.5rem !important; padding: 0.75rem 1rem !important; min-height: 0 !important; }
+  .fit-card .hidden-board { height: 170px !important; width: 460px !important; }
+  .fit-card .pic-wrap { zoom: 0.62; }
+  .fit-card .banner-pill { font-size: 1.5rem !important; padding: 0.25rem 1.25rem !important; }
+  .fit-card .min-h-16 { min-height: 0 !important; }
+  .fit-timer { zoom: 0.7; }
+  .fit-scene .luna { zoom: 0.62; }
+  .fit-gap { gap: 0.5rem !important; }
+}
