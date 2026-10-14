@@ -9,7 +9,7 @@ export function Canyon({
   sunny, rainbow = false, floating = false, maxX, chestOpen = false, flags = [], fish = false, className,
 }: {
   pct: number; goal: number; planks: number; mood?: MaxMood; frozen?: boolean; waveKey?: number; plankKey?: number; calm?: boolean;
-  sunny?: boolean; rainbow?: boolean; floating?: boolean; maxX?: "run"; chestOpen?: boolean; flags?: string[]; fish?: boolean; className?: string;
+  sunny?: boolean; rainbow?: boolean; floating?: boolean; maxX?: "run" | undefined; chestOpen?: boolean; flags?: string[]; fish?: boolean; className?: string;
 }) {
   const weather = sunny ? "sun" : pct > 0.5 ? "sun" : pct > 0.25 ? "cloud" : "storm";
   const sky = weather === "sun" ? "var(--sky-sun)" : weather === "cloud" ? "var(--sky-cloud)" : "var(--sky-storm)";
