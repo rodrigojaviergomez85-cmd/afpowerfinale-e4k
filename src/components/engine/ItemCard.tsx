@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import type { ContentItem } from "@/lib/content";
 import { ItemPicture } from "./Picture";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export const HIDDEN_TILES = 12;
 
@@ -33,7 +34,8 @@ export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = 
     const id = setInterval(() => {
       const closed = Array.from({ length: HIDDEN_TILES }, (_, i) => i).filter((i) => !openRef.current.has(i));
       if (!closed.length) return;
-      const pick = closed[Math.floor(Math.random() * closed.length)]!;
+      const pick = closed[Math.floor(Math.random() * closed.length)];
+      if (pick === undefined) return;
       const n = new Set(openRef.current).add(pick);
       setOpen(n);
       onRevealRef.current?.(n.size);
@@ -41,7 +43,7 @@ export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = 
     return () => clearInterval(id);
   }, [auto, showAll, paused]);
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="hidden-picture flex flex-col items-center gap-2">
       <div className="hidden-board relative h-[230px] w-[580px] overflow-hidden rounded-3xl bg-card">
         {/* One stable picture filling the board */}
         <div className="pic-wrap absolute inset-0 grid place-items-center">
@@ -53,12 +55,12 @@ export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = 
             if (isOpen) return <div key={i} aria-hidden className="pointer-events-none" />;
             return (
               <div key={i} className="bg-card p-1">
-                <button
+                <Button
                   onClick={() => reveal(i)}
                   className="h-full w-full rounded-xl border-4 border-border bg-primary font-display text-4xl font-bold text-primary-foreground hover:brightness-110"
                 >
                   {i + 1}
-                </button>
+                </Button>
               </div>
             );
           })}
@@ -74,11 +76,11 @@ function FillBlank({ item, showAnswer }: { item: ContentItem; showAnswer: boolea
   useEffect(() => { if (!showAnswer) setChosen(null); }, [showAnswer]);
   const reveal = showAnswer || chosen !== null;
   return (
-    <div className="flex flex-wrap justify-center gap-4">
-      {item.options!.map((o, i) => {
+    <div className="item-options flex flex-wrap justify-center gap-4">
+      {item.options?.map((o, i) => {
         const right = o === item.blank;
         return (
-          <button
+          <Button
             key={o}
             onClick={() => setChosen(o)}
             className={cn(
@@ -88,7 +90,7 @@ function FillBlank({ item, showAnswer }: { item: ContentItem; showAnswer: boolea
             )}
           >
             {"abc"[i]}) {o}
-          </button>
+          </Button>
         );
       })}
     </div>
@@ -99,10 +101,10 @@ export function ItemCard({ item, showAnswer, compact, onReveal, autoReveal, paus
   return (
     <div className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
       <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground">{autoReveal && item.kind === "H" ? "What's hidden? 🔍 Say the word!" : banner(item)}</div>
-      {item.hidden ? <HiddenPicture item={item} showAll={showAnswer} onReveal={onReveal} auto={autoReveal} paused={paused} /> : <div className="pic-wrap"><ItemPicture item={item} /></div>}
-      <div className="font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">{item.prompt}</div>
+      {item.hidden ? <HiddenPicture item={item} showAll={showAnswer} onReveal={onReveal} auto={autoReveal} paused={paused} /> : <div className="item-picture pic-wrap"><ItemPicture item={item} /></div>}
+      <div className="item-prompt font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">{item.prompt}</div>
       {item.options && <FillBlank item={item} showAnswer={showAnswer} />}
-      <div className={cn("min-h-16 text-4xl font-bold text-success transition-all duration-500", showAnswer ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0")}>
+      <div className={cn("item-answer min-h-16 text-4xl font-bold text-success transition-all duration-500", showAnswer ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0")}>
         {showAnswer && item.answers.map((a, i) => <div key={i}>💬 {a}</div>)}
       </div>
     </div>

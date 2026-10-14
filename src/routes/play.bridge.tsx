@@ -45,7 +45,7 @@ function BridgeBuilder() {
   const [round, setRound] = useState(0);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
-    <GameShell key={round} game={game} rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>
+    <GameShell key={round} game={game} className="bridge-shell" rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>
       <HelpOverlay open={helpOpen} onClose={() => setHelpOpen(false)} shortcuts={SHORTCUTS} />
       <BridgeGame onRematch={() => setRound((r) => r + 1)} helpOpen={helpOpen} openHelp={() => setHelpOpen(true)} />
     </GameShell>
@@ -230,7 +230,7 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
 
   return (
     <div className="bridge-play fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
-      <div className="relative">
+      <div className="relative shrink-0">
         <Canyon pct={pct} goal={goal} planks={progress} mood={mood} frozen={frozen} waveKey={wave} plankKey={progress} calm={calm} className="fit-scene h-[200px]" />
         {floats.map((f) => (
           <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-4 -translate-x-1/2 font-display text-6xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
@@ -240,16 +240,16 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
         )}
       </div>
 
-      <div className="flex items-center justify-between gap-4">
-        <div className="min-h-14 rounded-full bg-accent px-6 py-2 text-3xl font-bold text-accent-foreground chunky">
+      <div className="bridge-status grid shrink-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
+        <div className="min-w-0 truncate font-bold text-accent">
           {player ? <>🎤 Your turn: {player.name}!</> : <>🤝 Whole class!</>}
         </div>
-        <div className="text-3xl font-bold">🪵 {progress} / {goal} <span className="text-muted-foreground">planks</span></div>
-        <TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={96} />
+        <div className="shrink-0 font-bold">{progress} / {goal} <span className="text-muted-foreground">planks</span></div>
       </div>
 
       {item ? (
-        <div key={item.id + progress} className="grid min-h-fit w-full min-w-0 flex-1 shrink-0 self-stretch [&>.fit-card]:h-auto [&>.fit-card]:min-h-fit [&>.fit-card]:min-w-0 [&>.fit-card]:max-w-none [&_.text-5xl]:text-[56px]">
+        <div key={item.id + progress} className="bridge-card-slot w-full min-w-0 self-stretch">
+          <div className="bridge-timer"><TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={68} /></div>
           <ItemCard item={item} showAnswer={showAns} compact onReveal={() => { setRemaining((r) => Math.max(0, r - 2)); pop("-2s", "bad"); }} />
         </div>
       ) : (

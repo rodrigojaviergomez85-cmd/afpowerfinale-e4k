@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Max, type MaxMood } from "./Max";
+import { RiverSplash, RiverSurface, Treasure } from "./Scenery";
 export type { MaxMood } from "./Max";
 
 /** Canyon scene. Water rises with (1 - pct); at pct = 0 it reaches the bridge. */
@@ -31,9 +32,7 @@ export function Canyon({
 
       {/* river */}
       <div className="absolute inset-x-0 bottom-0 transition-[top] duration-700 ease-out" style={{ top: `${waterTop}%`, background: "linear-gradient(var(--river), var(--river-deep))" }}>
-        <div className={cn("absolute -top-4 left-0 flex w-[110%] text-3xl", weather === "storm" && !calm ? "animate-panic" : "animate-wave")}>
-          {Array.from({ length: 24 }).map((_, i) => <span key={i}>🌊</span>)}
-        </div>
+        <RiverSurface storm={weather === "storm" && !calm} />
         {frozen && (
           <div className="absolute -top-8 left-1/2 flex -translate-x-1/2 items-center gap-1 text-4xl animate-pop">
             {"🟫🟫🟫🟫🟫".split("").filter((c) => c.trim()).map((c, i) => <span key={i}>{c}</span>)}
@@ -42,7 +41,7 @@ export function Canyon({
         )}
         {fish && <span className="animate-flop absolute -top-12 left-[15%] text-5xl">🐟</span>}
       </div>
-      {waveKey > 0 && <span key={waveKey} className="animate-splash absolute left-1/2 -translate-x-1/2 text-7xl" style={{ top: `${waterTop - 14}%` }}>💦🌊💦</span>}
+      {waveKey > 0 && <span key={waveKey} className="animate-splash absolute left-1/2 -translate-x-1/2" style={{ top: `${waterTop - 14}%` }}><RiverSplash /></span>}
 
       {/* water level mark at bridge height */}
       <div className="absolute inset-x-[18%] border-t-4 border-dashed border-destructive/80" style={{ top: "44%" }}>
@@ -81,9 +80,8 @@ export function Canyon({
         <Max mood={mood} className={cn("h-full w-full", mood === "worried" && !calm && "motion-safe:animate-panic", mood === "cheer" && "motion-safe:animate-jolt")} />
       </div>
       {/* chest */}
-      <div className="absolute right-[5%] flex flex-col items-center" style={{ top: chestOpen ? "8%" : "20%" }}>
-        {chestOpen && <span className="animate-rise text-4xl">🪙✨🪙</span>}
-        <span className="text-6xl">{chestOpen ? "💰" : "🧰"}</span>
+      <div className="absolute bottom-[59%] right-[4%] h-[39%] aspect-[8/7]">
+        <Treasure celebrating={chestOpen} />
       </div>
     </div>
   );
