@@ -251,7 +251,7 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
         <Tightrope pct={pct} goal={goal} steps={progress} mood={mood} crowd={crowd} frozen={frozen} slipKey={slip} flashKey={flash} calm={calm}
           countdown={secs <= 10 && secs > 0 && !frozen ? secs : undefined} className="fit-scene h-[200px]" />
         {floats.map((f) => (
-          <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-4 -translate-x-1/2 font-display text-6xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
+          <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 font-display text-6xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
         ))}
         {frozen && <div className="animate-pop absolute left-1/2 top-2 -translate-x-1/2 rounded-full px-5 py-1 text-2xl font-bold chunky" style={{ background: "var(--gold)", color: "var(--shape-outline)" }}>🎪 Balance Pole! Time frozen</div>}
       </div>
