@@ -10,4 +10,4 @@
 - [x] Bridge Builder: canyon/river game, sandbags, win/lose sequences, setup options
 - [x] Tightrope Rescue: circus co-op game, type rotation, auto-opening hidden boxes, splash/win sequences; all play screens fit 1366×768
 - [x] Rocket Race: 2-team space race, turbo, sputter, sudden death, landing sequence, setup options
-- [ ] Bridge Builder: drawn explorer and full-width question card; verify during play
+- [x] Bridge Builder: drawn explorer and full-width question card; verify during play
