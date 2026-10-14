@@ -398,7 +398,8 @@
 .bridge-play .hidden-picture > div:last-child { font-size: 16px; }
 .bridge-play .item-answer { grid-column: 1 / -1; }
 .bridge-controls { display: flex; flex-wrap: wrap; gap: 8px; }
-.bridge-controls > button { height: 44px; padding-inline: 12px; font-size: 18px; }
+.bridge-controls > button { height: 44px; padding-inline: 10px; font-size: 16px; }
+.bridge-controls > button kbd { font-size: 12px; }
 .bridge-controls > button svg { width: 20px; height: 20px; }
 .river-surface { animation: river-breathe 3s ease-in-out infinite; }
 .river-surface-storm { animation-duration: 1s; }
