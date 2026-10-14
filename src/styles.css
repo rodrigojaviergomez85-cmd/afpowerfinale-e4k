@@ -42,6 +42,7 @@
   --color-game-blitz: var(--game-blitz);
   --color-game-bridge: var(--game-bridge);
   --color-game-rope: var(--game-rope);
+  --color-game-race: var(--game-race);
   --color-stage: var(--stage);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -93,6 +94,11 @@
   --game-blitz: oklch(0.77 0.18 160);
   --game-bridge: oklch(0.68 0.13 190);
   --game-rope: oklch(0.65 0.24 340);
+  --game-race: oklch(0.58 0.2 285);
+  --space-deep: oklch(0.16 0.06 280);
+  --space-mid: oklch(0.24 0.09 270);
+  --flame: oklch(0.8 0.18 65);
+  --smoke: oklch(0.75 0.01 260);
   --tent-a: oklch(0.45 0.17 20);
   --tent-b: oklch(0.3 0.1 20);
   --pool: oklch(0.7 0.13 215);
@@ -344,3 +350,24 @@
   .fit-scene .luna { zoom: 0.62; }
   .fit-gap { gap: 0.5rem !important; }
 }
+
+/* Rocket Race */
+@keyframes star-drift { from { background-position: 0 0; } to { background-position: -600px 0; } }
+@keyframes flame-flicker { 0%,100% { transform: scaleX(1); opacity: .9; } 50% { transform: scaleX(1.25); opacity: 1; } }
+@keyframes flame-burst { 0% { transform: scaleX(3); } 100% { transform: scaleX(1); } }
+@keyframes smoke-puff { 0% { transform: translate(0,0) scale(.5); opacity: .9; } 100% { transform: translate(-50px,-20px) scale(2); opacity: 0; } }
+@keyframes rocket-wobble { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-8deg); } 75% { transform: rotate(8deg); } }
+@keyframes planet-glow { 0%,100% { filter: drop-shadow(0 0 10px var(--gold)); } 50% { filter: drop-shadow(0 0 30px var(--gold)); } }
+@keyframes rainbow { from { filter: hue-rotate(0deg); } to { filter: hue-rotate(360deg); } }
+@keyframes land-hop { 0% { transform: translateY(0); } 50% { transform: translateY(-30px); } 100% { transform: translateY(0); } }
+@utility animate-stars { animation: star-drift 60s linear infinite; }
+@utility animate-stars-fast { animation: star-drift 25s linear infinite; }
+@utility animate-flame { animation: flame-flicker .25s ease-in-out infinite; transform-origin: 100% 50%; }
+@utility animate-flame-burst { animation: flame-burst .7s ease-out; transform-origin: 100% 50%; }
+@utility animate-smoke { animation: smoke-puff 1s ease-out forwards; }
+@utility animate-rocket-wobble { animation: rocket-wobble .25s ease-in-out 4; }
+@utility animate-planet-glow { animation: planet-glow 1.4s ease-in-out infinite; }
+@utility animate-rainbow { animation: rainbow .6s linear infinite; }
+@utility animate-hop { animation: land-hop .5s ease-in-out 3; }
+[data-calm="true"] .animate-stars, [data-calm="true"] .animate-stars-fast, [data-calm="true"] .animate-rainbow { animation: none; }
+@media (max-height: 860px) { .fit-track { height: 150px !important; } }

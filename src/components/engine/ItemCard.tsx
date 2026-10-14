@@ -19,6 +19,8 @@ export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = 
   const [open, setOpen] = useState<Set<number>>(() => new Set());
   const openRef = useRef(open);
   openRef.current = open;
+  const onRevealRef = useRef(onReveal);
+  onRevealRef.current = onReveal;
   const reveal = (i: number) => {
     if (open.has(i) || showAll) return;
     const n = new Set(open).add(i);
@@ -32,7 +34,9 @@ export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = 
       const closed = Array.from({ length: HIDDEN_TILES }, (_, i) => i).filter((i) => !openRef.current.has(i));
       if (!closed.length) return;
       const pick = closed[Math.floor(Math.random() * closed.length)]!;
-      setOpen((o) => new Set(o).add(pick));
+      const n = new Set(openRef.current).add(pick);
+      setOpen(n);
+      onRevealRef.current?.(n.size);
     }, 2000);
     return () => clearInterval(id);
   }, [auto, showAll, paused]);
