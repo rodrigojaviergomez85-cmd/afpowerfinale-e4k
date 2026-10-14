@@ -5,8 +5,8 @@ import { CrowdRow, LunaSvg, PoolLuna, StarSign } from "./Luna";
 export type LunaMood = "calm" | "worried" | "panic" | "uhoh" | "happy" | "tada" | "soaked";
 export type Crowd = "calm" | "cheer" | "gasp" | "aww" | "roar";
 
-// Rope geometry in a 1000x300 box: from (120,95) to (880,95), sagging in the middle.
-const X0 = 120, X1 = 880, Y = 95;
+// Rope geometry in a 1000x300 box: from (120,150) to (880,150), sagging in the middle.
+const X0 = 120, X1 = 880, Y = 150;
 const ropeY = (t: number, sag: number) => Y + 2 * t * (1 - t) * sag;
 
 export function Tightrope({
@@ -43,10 +43,10 @@ export function Tightrope({
         {inPool && <PoolLuna className="animate-popup absolute left-1/2 top-[-34%] h-24 w-44 -translate-x-1/2" />}
       </div>
       {/* platforms + poles */}
-      <div className="absolute left-[3%] top-[33%] h-[67%] w-3 rounded" style={{ background: "var(--rope)" }} />
-      <div className="absolute left-[1%] top-[30%] h-4 w-[12%] rounded-lg border-2 border-border" style={{ background: "var(--gold)" }} />
-      <div className="absolute right-[3%] top-[33%] h-[67%] w-3 rounded" style={{ background: "var(--rope)" }} />
-      <div className="absolute right-[1%] top-[30%] h-4 w-[12%] rounded-lg border-2 border-border" style={{ background: "var(--gold)" }} />
+      <div className="absolute left-[3%] top-[52%] h-[48%] w-3 rounded" style={{ background: "var(--rope)" }} />
+      <div className="absolute left-[1%] top-[49%] h-4 w-[12%] rounded-lg border-2 border-border" style={{ background: "var(--gold)" }} />
+      <div className="absolute right-[3%] top-[52%] h-[48%] w-3 rounded" style={{ background: "var(--rope)" }} />
+      <div className="absolute right-[1%] top-[49%] h-4 w-[12%] rounded-lg border-2 border-border" style={{ background: "var(--gold)" }} />
       <div className="absolute right-[2%] top-[2%] grid h-[27%] w-[10%] place-items-center">
         <StarSign className="absolute h-full w-full" />
         {countdown !== undefined && <span key={countdown} className="animate-pop relative font-display text-4xl font-bold text-destructive text-stroke">{countdown}</span>}
@@ -64,7 +64,7 @@ export function Tightrope({
           {!inPool && (
             <div className="absolute -translate-x-1/2 -translate-y-full transition-[left,top] duration-500 ease-out" style={{ left: `${lx / 10}%`, top: `${(ly / 300) * 100}%` }}>
               <div key={slipKey} className={cn("luna relative flex flex-col items-center", slipKey > 0 && "animate-slip", falling && "animate-fall")}>
-                <LunaSvg mood={mood} className="h-36 w-28" />
+                <LunaSvg mood={mood} className="h-24 w-20" />
                 {frozen && <span className="absolute top-[55%] h-1.5 w-40 rounded-full" style={{ background: "var(--gold)" }} />}
               </div>
               {flashKey > 0 && <div key={`f${flashKey}`} className="animate-spotflash pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ background: "radial-gradient(var(--spot), transparent 70%)" }} />}
