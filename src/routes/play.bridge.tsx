@@ -249,7 +249,7 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
 
       {item ? (
         <div key={item.id + progress} className="bridge-card-slot w-full min-w-0 self-stretch">
-          <div className="bridge-timer"><TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={68} /></div>
+          <div className="bridge-timer"><TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={120} /></div>
           <ItemCard item={item} showAnswer={showAns} compact onReveal={() => { setRemaining((r) => Math.max(0, r - 2)); pop("-2s", "bad"); }} />
         </div>
       ) : (
