@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
-
-export type MaxMood = "ready" | "cheer" | "worried" | "soaked" | "happy";
-const FACE: Record<MaxMood, string> = { ready: "🤠", cheer: "🥳", worried: "😰", soaked: "🥶", happy: "😄" };
+import { Max, type MaxMood } from "./Max";
+export type { MaxMood } from "./Max";
 
 /** Canyon scene. Water rises with (1 - pct); at pct = 0 it reaches the bridge. */
 export function Canyon({
@@ -78,10 +77,8 @@ export function Canyon({
       </div>
 
       {/* Max */}
-      <div className={cn("absolute flex flex-col items-center leading-none", maxX === "run" && "animate-run")} style={{ left: maxX === "run" ? undefined : "6%", top: "12%" }}>
-        {mood === "soaked" && <span className="text-2xl">💧🎩💧</span>}
-        <span className={cn("text-6xl", mood === "worried" && !calm && "animate-panic", mood === "cheer" && "animate-jolt")}>{FACE[mood]}</span>
-        <span className="text-3xl">🎒</span>
+      <div className={cn("absolute bottom-[60%] left-[6%] h-[39%] aspect-[11/14]", maxX === "run" && "animate-run")}>
+        <Max mood={mood} className={cn("h-full w-full", mood === "worried" && !calm && "motion-safe:animate-panic", mood === "cheer" && "motion-safe:animate-jolt")} />
       </div>
       {/* chest */}
       <div className="absolute right-[5%] flex flex-col items-center" style={{ top: chestOpen ? "8%" : "20%" }}>

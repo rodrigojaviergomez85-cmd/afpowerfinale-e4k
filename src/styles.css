@@ -110,6 +110,13 @@
   --cliff: oklch(0.5 0.08 55);
   --cliff-top: oklch(0.65 0.15 140);
   --plank: oklch(0.62 0.11 60);
+  --explorer-skin: oklch(0.82 0.09 55);
+  --explorer-hat: oklch(0.77 0.1 80);
+  --explorer-shirt: oklch(0.88 0.07 85);
+  --explorer-trousers: oklch(0.48 0.08 155);
+  --explorer-boots: oklch(0.34 0.05 50);
+  --explorer-pack: oklch(0.63 0.15 165);
+  --explorer-teeth: oklch(0.99 0.01 90);
   --sky-sun: oklch(0.72 0.11 230);
   --sky-cloud: oklch(0.55 0.04 250);
   --sky-storm: oklch(0.32 0.04 265);
@@ -352,6 +359,15 @@
 }
 
 /* Rocket Race */
+.bridge-controls > button {
+  height: 64px;
+  padding-inline: 1.25rem;
+  font-size: 1.25rem;
+}
+.bridge-play .fit-card {
+  min-height: max-content !important;
+}
+
 @keyframes star-drift { from { background-position: 0 0; } to { background-position: -600px 0; } }
 @keyframes flame-flicker { 0%,100% { transform: scaleX(1); opacity: .9; } 50% { transform: scaleX(1.25); opacity: 1; } }
 @keyframes flame-burst { 0% { transform: scaleX(3); } 100% { transform: scaleX(1); } }

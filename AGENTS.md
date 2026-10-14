@@ -13,3 +13,4 @@
 - Curriculum content lives only in `src/data/content.ts` (raw " || " lines parsed by `src/lib/content.ts`); no backend reads — keeps the app login-free.
 - Coach settings/selection persist via the zustand store in `src/lib/store.ts` (localStorage); game history is session-only (`sessionUsed`).
 - Games plug into `src/components/engine/*` (GameShell phases, Timer, Scoreboard, TurnPicker, Kbd/HelpOverlay); each game is one route under `src/routes/play.*`.
+- Bridge Builder's explorer is rendered by the mood-driven SVG in `src/components/bridge/Max.tsx`, using global semantic character tokens so play and ending scenes stay consistent.

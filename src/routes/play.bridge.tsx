@@ -229,7 +229,7 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
   const canPass = !!player && !passed.has(player.id) && roster.length > 1;
 
   return (
-    <div className="fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
+    <div className="bridge-play fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
       <div className="relative">
         <Canyon pct={pct} goal={goal} planks={progress} mood={mood} frozen={frozen} waveKey={wave} plankKey={progress} calm={calm} className="fit-scene h-[200px]" />
         {floats.map((f) => (
@@ -249,14 +249,14 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
       </div>
 
       {item ? (
-        <div key={item.id + progress} className="flex min-h-0 flex-1 [&_.text-5xl]:text-[56px]">
+        <div key={item.id + progress} className="grid min-h-fit w-full min-w-0 flex-1 shrink-0 self-stretch [&>.fit-card]:h-auto [&>.fit-card]:min-h-fit [&>.fit-card]:min-w-0 [&>.fit-card]:max-w-none [&_.text-5xl]:text-[56px]">
           <ItemCard item={item} showAnswer={showAns} compact onReveal={() => { setRemaining((r) => Math.max(0, r - 2)); pop("-2s", "bad"); }} />
         </div>
       ) : (
         <div className="panel flex flex-1 items-center justify-center p-8 text-4xl font-bold">No items for this day.</div>
       )}
 
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className="bridge-controls flex shrink-0 flex-wrap items-center justify-center gap-3">
         <Button variant="success" size="huge" onClick={correct}><Check /> Correct <Kbd>C</Kbd></Button>
         <Button variant="danger" size="huge" onClick={wrong}><X /> Wrong / Skip <Kbd>X</Kbd></Button>
         <Button variant="game" size="xl" onClick={showAnswer}><Eye /> Answer <Kbd>A</Kbd></Button>
