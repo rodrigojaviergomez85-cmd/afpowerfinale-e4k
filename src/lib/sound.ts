@@ -79,4 +79,9 @@ export const sfx = {
   drumroll: (dur = 1) => { for (let t = 0; t < dur; t += 0.045) noise(0.04, t, 0.4 + (t / dur) * 0.6, 1500); },
   thump: () => { tone(90, 0.3, "sine", 0, 2, 40); noise(0.15, 0, 0.8, 600); },
   firework: () => { noise(0.6, 0, 0.6, 3000, 300); tone(1500, 0.3, "sine", 0, 0.4, 600); },
+  tok: () => { tone(220, 0.08, "square", 0, 1.2, 110); noise(0.06, 0, 1, 1800); tone(240, 0.08, "square", 0.14, 1, 120); },
+  splash: () => { noise(0.7, 0, 1.2, 2500, 300); tone(200, 0.4, "sine", 0, 0.8, 80); },
+  whooshWave: () => { noise(1.6, 0, 1.6, 900, 150); tone(90, 1.4, "sine", 0, 1.5, 40); },
+  thunder: () => { noise(1.4, 0, 1.4, 500, 60); },
+  yahoo: () => { tone(520, 0.15, "triangle"); tone(780, 0.3, "triangle", 0.15, 1, 1040); },
 };

@@ -40,6 +40,7 @@
   --color-game-bomb: var(--game-bomb);
   --color-game-chair: var(--game-chair);
   --color-game-blitz: var(--game-blitz);
+  --color-game-bridge: var(--game-bridge);
   --color-stage: var(--stage);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -89,6 +90,15 @@
   --game-bomb: oklch(0.66 0.23 25);
   --game-chair: oklch(0.72 0.2 350);
   --game-blitz: oklch(0.77 0.18 160);
+  --game-bridge: oklch(0.68 0.13 190);
+  --river: oklch(0.55 0.14 235);
+  --river-deep: oklch(0.4 0.13 245);
+  --cliff: oklch(0.5 0.08 55);
+  --cliff-top: oklch(0.65 0.15 140);
+  --plank: oklch(0.62 0.11 60);
+  --sky-sun: oklch(0.72 0.11 230);
+  --sky-cloud: oklch(0.55 0.04 250);
+  --sky-storm: oklch(0.32 0.04 265);
   --border: oklch(0.42 0.08 275);
   --input: oklch(0.42 0.08 275);
   --ring: oklch(0.87 0.17 92);
@@ -273,3 +283,19 @@
 @utility animate-banner { animation: banner-in 600ms cubic-bezier(0.3,1.4,0.5,1) both; }
 
 [data-calm="true"] .animate-panic { animation: none; }
+
+@keyframes plank-in { 0% { transform: translateY(-60px) rotate(-20deg); opacity: 0; } 70% { transform: translateY(4px); opacity: 1; } 85% { transform: translateY(-3px); } 100% { transform: translateY(0); } }
+@keyframes wave-bob { 0%,100% { transform: translateX(0); } 50% { transform: translateX(-30px); } }
+@keyframes rain-fall { from { transform: translateY(-20px); } to { transform: translateY(260px); } }
+@keyframes splash-up { 0% { transform: translateY(20px) scale(0.6); opacity: 0; } 40% { opacity: 1; transform: translateY(-30px) scale(1.2); } 100% { opacity: 0; transform: translateY(-50px) scale(1); } }
+@keyframes float-away { to { transform: translate(60vw, 120px) rotate(200deg); opacity: 0; } }
+@keyframes flop { 0%,100% { transform: rotate(-20deg) translateY(0); } 50% { transform: rotate(20deg) translateY(-10px); } }
+@keyframes run-across { from { left: 6%; } to { left: 82%; } }
+@utility animate-plank { animation: plank-in 500ms cubic-bezier(0.3,1.4,0.5,1) both; }
+@utility animate-wave { animation: wave-bob 2.4s ease-in-out infinite; }
+@utility animate-rain { animation: rain-fall 0.6s linear infinite; }
+@utility animate-splash { animation: splash-up 800ms ease-out forwards; }
+@utility animate-float { animation: float-away 1.6s ease-in forwards; }
+@utility animate-flop { animation: flop 0.4s ease-in-out infinite; }
+@utility animate-run { animation: run-across 1.6s ease-in-out forwards; }
+[data-calm="true"] .animate-rain { animation-duration: 1.4s; }

@@ -33,10 +33,12 @@ interface AppState {
   roster: Player[];
   rosterDate: string;
   bomb: BombOptions;
+  bridge: BombOptions;
   lastResult: LastResult | null;
   setSettings: (s: Partial<Settings>) => void;
   setSetup: (s: Partial<Pick<AppState, "course" | "level" | "week" | "day" | "teams" | "roster">>) => void;
   setBomb: (b: Partial<BombOptions>) => void;
+  setBridge: (b: Partial<BombOptions>) => void;
   resetTurns: () => void;
   bumpPlayer: (id: string, field: "turns" | "points", delta?: number) => void;
   setLastResult: (r: LastResult) => void;
@@ -80,10 +82,12 @@ export const useApp = create<AppState>()(
       roster: [],
       rosterDate: today(),
       bomb: BOMB_PRESETS["Normal"]!,
+      bridge: BOMB_PRESETS["Normal"]!,
       lastResult: null,
       setSettings: (s) => set({ settings: { ...get().settings, ...s } }),
       setSetup: (s) => set(s as Partial<AppState>),
       setBomb: (b) => set({ bomb: { ...get().bomb, ...b } }),
+      setBridge: (b) => set({ bridge: { ...(get().bridge ?? BOMB_PRESETS["Normal"]!), ...b } }),
       resetTurns: () => set({ roster: get().roster.map((p) => ({ ...p, turns: 0, points: 0 })), rosterDate: today() }),
       bumpPlayer: (id, field, delta = 1) =>
         set({ roster: get().roster.map((p) => (p.id === id ? { ...p, [field]: Math.max(0, p[field] + delta) } : p)) }),

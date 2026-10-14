@@ -7,3 +7,4 @@
 - [x] Beat the Bomb: full game, dramatic bomb, explosion + defuse sequences, end screens, options/presets
 - [x] Key badges inside every button; "?" help overlay; remove shortcut text line
 - [x] Content rules (fallback to earlier days/weeks, lower target, rematch prefers unused)
+- [x] Bridge Builder: canyon/river game, sandbags, win/lose sequences, setup options
