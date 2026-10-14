@@ -30,7 +30,7 @@ export const Route = createFileRoute("/play/demo")({
 });
 
 const SHORTCUTS: [string, string][] = [
-  ["Space", "Start / pause timer"], ["C / Enter", "Correct"], ["→", "Skip / next"], ["1 / 2", "+1 to Team 1 / Team 2"],
+  ["Space", "Start / pause timer"], ["C / Enter", "Correct"], ["→", "Skip / next"], ["1 / 2", "Team 1 / Team 2 answered correctly (steal!)"],
   ["Z", "Undo last point"], ["A", "Show answer"], ["R", "Random player"], ["M", "Mute"], ["F", "Full screen"], ["?", "This help"],
 ];
 
@@ -139,12 +139,12 @@ function DemoDrill() {
 
   const keys = useMemo(
     () => ({
-      Space: timer.toggle, "1": () => award(0, 1), "2": () => award(1, 1), ArrowRight: skip,
+      Space: timer.toggle, "1": () => correctFor(0), "2": () => correctFor(1), ArrowRight: skip,
       a: () => setShowAnswer((v) => !v), r: pick, m: () => app.setSettings({ sound: !settings.sound }),
       z: undo, f: toggleFullscreen, Enter: correct, c: correct, "?": () => setHelp(true),
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [timer.toggle, award, next, undo, settings.sound, roster.length, picking, activeTeam],
+    [timer.toggle, award, next, undo, settings.sound, roster.length, picking, activeTeam, item],
   );
 
   return (
@@ -176,6 +176,7 @@ function DemoDrill() {
               </div>
             </div>
 
+            {timeUp && !showAnswer && <div className="animate-pop self-center rounded-full bg-destructive px-8 py-3 text-3xl font-bold text-primary-foreground">⏰ Time's up! {teams[1 - activeTeam]!.icon} {teams[1 - activeTeam]!.name} can steal — press {2 - activeTeam}</div>}
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Button variant="success" size="huge" onClick={correct}><Check /> Correct <Kbd>C</Kbd></Button>
               <Button variant="panel" size="huge" onClick={skip}><SkipForward /> Skip <Kbd>→</Kbd></Button>
@@ -183,9 +184,9 @@ function DemoDrill() {
               {roster.length > 0 && <Button variant="panel" size="xl" onClick={pick}><Dices /> Pick <Kbd>R</Kbd></Button>}
             </div>
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <Button variant="team1" size="xl" onClick={() => award(0, 1)}><Plus /> Team 1 <Kbd>1</Kbd></Button>
+              <Button variant="team1" size="xl" onClick={() => correctFor(0)}><Plus /> Team 1 <Kbd>1</Kbd></Button>
               <Button variant="team1" size="iconLg" onClick={() => award(0, -1)} aria-label="Minus team 1"><Minus /></Button>
-              <Button variant="team2" size="xl" onClick={() => award(1, 1)}><Plus /> Team 2 <Kbd>2</Kbd></Button>
+              <Button variant="team2" size="xl" onClick={() => correctFor(1)}><Plus /> Team 2 <Kbd>2</Kbd></Button>
               <Button variant="team2" size="iconLg" onClick={() => award(1, -1)} aria-label="Minus team 2"><Minus /></Button>
               <Button variant="panel" size="xl" onClick={undo}><Undo2 /> Undo <Kbd>Z</Kbd></Button>
               <Button variant="danger" size="xl" onClick={() => finish(scores)}><Flag /> End</Button>
