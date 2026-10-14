@@ -229,9 +229,9 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
   const canPass = !!player && !passed.has(player.id) && roster.length > 1;
 
   return (
-    <div className="relative flex flex-1 flex-col gap-3 px-8 pb-4">
+    <div className="fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
       <div className="relative">
-        <Canyon pct={pct} goal={goal} planks={progress} mood={mood} frozen={frozen} waveKey={wave} plankKey={progress} calm={calm} className="h-[200px]" />
+        <Canyon pct={pct} goal={goal} planks={progress} mood={mood} frozen={frozen} waveKey={wave} plankKey={progress} calm={calm} className="fit-scene h-[200px]" />
         {floats.map((f) => (
           <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-4 -translate-x-1/2 font-display text-6xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
         ))}
@@ -249,7 +249,7 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
       </div>
 
       {item ? (
-        <div key={item.id + progress} className="flex flex-1 [&_.text-5xl]:text-[56px]">
+        <div key={item.id + progress} className="flex min-h-0 flex-1 [&_.text-5xl]:text-[56px]">
           <ItemCard item={item} showAnswer={showAns} compact onReveal={() => { setRemaining((r) => Math.max(0, r - 2)); pop("-2s", "bad"); }} />
         </div>
       ) : (

@@ -237,16 +237,16 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   const canPass = !!player && !passed.has(player.id) && roster.length > 1;
 
   return (
-    <div className="relative flex flex-1 flex-col gap-4 px-8 pb-5">
+    <div className="fit-gap relative flex min-h-0 flex-1 flex-col gap-4 px-8 pb-6">
       {/* top fuse bar */}
       <div className="relative h-8 overflow-hidden rounded-full border-4 border-border bg-card">
         <div className={cn("h-full transition-[width] duration-100 ease-linear", pct > 0.5 ? "bg-success" : pct > 0.25 ? "bg-primary" : "bg-destructive")} style={{ width: `${pct * 100}%` }} />
         <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl" style={{ left: `${pct * 100}%` }}>{frozen ? "❄️" : "🔥"}</span>
       </div>
 
-      <div className="grid flex-1 grid-cols-[minmax(320px,0.9fr)_1.4fr] items-center gap-6">
+      <div className="grid min-h-0 flex-1 grid-cols-[minmax(320px,0.9fr)_1.4fr] items-center gap-6">
         <div className="flex flex-col items-center gap-4">
-          <div className="relative grid h-[340px] w-full place-items-center">
+          <div className="fit-bomb relative grid h-[340px] w-full place-items-center">
             <div className="relative transition-transform duration-500" style={{ height: 260, width: 240, transform: `scale(${scale})`, transformOrigin: "center bottom" }}>
               <Bomb pct={pct} mood={mood} secondsLeft={secs} frozen={frozen} joltKey={jolt} className="relative h-full w-full" />
             </div>
@@ -258,7 +258,7 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
           <div className="text-3xl font-bold">{progress} / {goal} <span className="text-muted-foreground">defused</span></div>
         </div>
 
-        <div className="flex h-full flex-col gap-4">
+        <div className="flex h-full min-h-0 flex-col gap-4">
           <div className="flex items-center justify-between gap-4">
             <div className="min-h-16 rounded-full bg-accent px-6 py-2 text-4xl font-bold text-accent-foreground chunky">
               {player ? <>🎤 Your turn: {player.name}!</> : <>🤝 Whole class!</>}
@@ -266,7 +266,7 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
             <TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={120} />
           </div>
           {item ? (
-            <div key={item.id + progress} className="flex flex-1">
+            <div key={item.id + progress} className="flex min-h-0 flex-1">
               <ItemCard item={item} showAnswer={showAns} compact onReveal={() => { setRemaining((r) => Math.max(0, r - 2)); pop("-2s", "bad"); }} />
             </div>
           ) : (

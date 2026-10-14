@@ -152,7 +152,7 @@ function DemoDrill() {
       <PlayKeys keys={keys} enabled={!help} />
       <HelpOverlay open={help} onClose={() => setHelp(false)} shortcuts={SHORTCUTS} />
       <TurnPicker open={picking} onDone={(p) => { setPicking(false); setPlayer(p); }} />
-      <div key={shake} className={cn("flex flex-1 flex-col gap-5 px-8 pb-6", shake > 0 && "animate-shake")}>
+      <div key={shake} className={cn("fit-gap flex min-h-0 flex-1 flex-col gap-5 px-8 pb-6", shake > 0 && "animate-shake")}>
         <Scoreboard teams={teams} scores={scores} activeTeam={activeTeam} />
         {items && !items.length && <div className="panel p-10 text-center text-3xl">No items for this day yet.</div>}
         {item && (
@@ -168,10 +168,10 @@ function DemoDrill() {
               </div>
             </div>
 
-            <div className="grid flex-1 grid-cols-[1fr_auto] items-center gap-8">
+            <div className="grid min-h-0 flex-1 grid-cols-[1fr_auto] items-center gap-8">
               <ItemCard key={item.id} item={item} showAnswer={showAnswer} onReveal={(n) => { opened.current = n; setOpenedN(n); sfx.whoosh(); }} />
               <div className="flex flex-col items-center gap-6">
-                <TimerRing remaining={timer.remaining} duration={timer.duration} running={timer.running} size={220} />
+                <div className="fit-timer"><TimerRing remaining={timer.remaining} duration={timer.duration} running={timer.running} size={220} /></div>
                 <Button variant="panel" size="xl" onClick={timer.toggle}>{timer.running ? <Pause /> : <Play />} <Kbd>Space</Kbd></Button>
               </div>
             </div>
