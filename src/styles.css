@@ -368,9 +368,9 @@
 .bridge-shell > header button { height: 44px; }
 .bridge-shell > main { overflow: hidden; }
 .bridge-play { padding: 0 16px 16px; gap: 8px !important; }
-.bridge-play .fit-scene { height: clamp(180px, 32dvh, 340px) !important; }
+.bridge-play .fit-scene { height: clamp(180px, 39dvh, 420px) !important; }
 .bridge-status { height: 34px; font-size: 22px; padding-right: 144px; }
-.bridge-timer { position: absolute; top: -4px; right: 14px; z-index: 10; border-radius: 50%; background: var(--card); }
+.bridge-timer { position: absolute; top: -110px; right: 14px; z-index: 10; border-radius: 50%; background: var(--card); }
 .bridge-timer [class*="-bottom-3"] { display: none; }
 .bridge-card-slot { position: relative; flex: 1; min-height: 0; display: grid; }
 .bridge-play .fit-card {
@@ -402,9 +402,9 @@
 .bridge-controls > button kbd { font-size: 16px; }
 .bridge-controls > button svg { width: 28px; height: 28px; }
 @media (max-width: 1000px) {
-  .bridge-controls > button { padding-inline: 10px; font-size: 20px; gap: 6px; }
+  .bridge-controls > button { padding-inline: 8px; font-size: 18px; gap: 4px; }
   .bridge-controls > button kbd { font-size: 12px; }
-  .bridge-controls > button svg { width: 24px; height: 24px; }
+  .bridge-controls > button svg { width: 20px; height: 20px; }
   .bridge-play .fit-scene { height: 180px !important; }
 }
 .river-surface { animation: river-breathe 3s ease-in-out infinite; }
