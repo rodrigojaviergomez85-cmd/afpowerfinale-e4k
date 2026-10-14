@@ -1,16 +1,9 @@
 import type { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
+import { CrowdRow, LunaSvg, PoolLuna, StarSign } from "./Luna";
 
 export type LunaMood = "calm" | "worried" | "panic" | "uhoh" | "happy" | "tada" | "soaked";
-const FACE: Record<LunaMood, string> = { calm: "😊", worried: "😟", panic: "😱", uhoh: "😬", happy: "😁", tada: "🤩", soaked: "🥽" };
 export type Crowd = "calm" | "cheer" | "gasp" | "aww" | "roar";
-const CROWD: Record<Crowd, string[]> = {
-  calm: ["🙂", "😃", "🙂", "😊", "🙂", "😃", "🙂", "😊"],
-  cheer: ["👏", "🙌", "😃", "👏", "🙌", "😃", "👏", "🙌"],
-  gasp: ["😲", "😨", "😲", "😮", "😲", "😨", "😮", "😲"],
-  aww: ["🥺", "😢", "🥺", "😔", "🥺", "😢", "😔", "🥺"],
-  roar: ["🥳", "🙌", "🤩", "👏", "🥳", "🙌", "🤩", "👏"],
-};
 
 // Rope geometry in a 1000x300 box: from (120,95) to (880,95), sagging in the middle.
 const X0 = 120, X1 = 880, Y = 95;
