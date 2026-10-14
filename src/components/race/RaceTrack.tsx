@@ -58,7 +58,7 @@ export function RaceTrack({ teams, pos, stops, planet, fx, active, className, la
                 <span key={s} className="absolute top-1/2 h-3 w-3 -translate-y-1/2 rounded-full" style={{ left: `calc(${((s + 1) / stops) * 100}% - 6px)`, background: s < pos[i]! ? `var(--team${i + 1})` : "var(--smoke)", opacity: s < pos[i]! ? 1 : 0.4 }} />
               ))}
               <div className="absolute top-1/2 -translate-y-1/2 transition-[left] duration-700 ease-out" style={{ left: `calc(${pct * 100}% - ${pct * 100}px + 8px)` }}>
-                <Rocket team={t} index={i} fx={fx[i]} landed={landed?.includes(i)} />
+                <Rocket team={t} index={i} fx={fx[i]} landed={!!landed?.includes(i)} />
               </div>
             </div>
           );
