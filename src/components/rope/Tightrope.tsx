@@ -52,7 +52,7 @@ export function Tightrope({
         )}
       </div>
       {/* platforms + poles */}
-      <div className="absolute left-[3%] top-[33%] h-[67%] w-3 rounded bg-rope" style={{ background: "var(--rope)" }} />
+      <div className="absolute left-[3%] top-[33%] h-[67%] w-3 rounded" style={{ background: "var(--rope)" }} />
       <div className="absolute left-[1%] top-[30%] h-4 w-[12%] rounded-lg border-2 border-border" style={{ background: "var(--gold)" }} />
       <div className="absolute right-[3%] top-[33%] h-[67%] w-3 rounded" style={{ background: "var(--rope)" }} />
       <div className="absolute right-[1%] top-[30%] h-4 w-[12%] rounded-lg border-2 border-border" style={{ background: "var(--gold)" }} />
