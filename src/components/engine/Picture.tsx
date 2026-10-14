@@ -24,7 +24,7 @@ function Shape({ shape, color, size }: { shape: string; color: string; size: num
   return <svg viewBox={vb} width={w} height={size} aria-label={`${color} ${shape}`}>{el}</svg>;
 }
 
-export function ShapePicture({ specs, seed, big }: { specs: ShapeSpec[]; seed: string; big?: boolean }) {
+export function ShapePicture({ specs, seed, big }: { specs: ShapeSpec[]; seed: string; big?: boolean | undefined }) {
   const list = useMemo(() => {
     const palette = shuffle(SHAPE_COLORS);
     let k = 0;
@@ -44,7 +44,7 @@ export function ShapePicture({ specs, seed, big }: { specs: ShapeSpec[]; seed: s
   );
 }
 
-export function ItemPicture({ item, big }: { item: ContentItem; big?: boolean }) {
+export function ItemPicture({ item, big }: { item: ContentItem; big?: boolean | undefined }) {
   if (item.shapes) return <ShapePicture specs={item.shapes} seed={item.id} big={big} />;
   if (item.emoji) {
     const n = [...new Intl.Segmenter().segment(item.emoji)].length;
