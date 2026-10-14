@@ -47,7 +47,7 @@ export function HiddenPicture({ item, showAll, onReveal }: { item: ContentItem; 
           })}
         </div>
       </div>
-      <div className="text-xl font-bold text-muted-foreground">{showAll ? HIDDEN_TILES : open.size} / {HIDDEN_TILES} boxes opened</div>
+      <div className="text-xl font-bold text-muted-foreground">{open.size} / {HIDDEN_TILES} boxes opened</div>
     </div>
   );
 }
