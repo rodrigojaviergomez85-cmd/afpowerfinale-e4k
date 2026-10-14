@@ -10,7 +10,7 @@ import { useApp } from "@/lib/store";
 
 type Phase = "rules" | "countdown" | "play";
 
-export function GameShell({ game, children, rightSlot }: { game: GameDef; children: ReactNode; rightSlot?: ReactNode }) {
+export function GameShell({ game, children, rightSlot, className }: { game: GameDef; children: ReactNode; rightSlot?: ReactNode; className?: string }) {
   const [phase, setPhase] = useState<Phase>("rules");
   const [count, setCount] = useState(3);
   const calm = useApp((s) => s.settings.calm);
@@ -46,7 +46,7 @@ export function GameShell({ game, children, rightSlot }: { game: GameDef; childr
   );
 
   return (
-    <div data-calm={calm} className="stage-bg flex h-dvh flex-col overflow-hidden">
+    <div data-calm={calm} className={cn("stage-bg flex h-dvh flex-col overflow-hidden", className)}>
       <header className="flex items-center gap-3 px-6 py-3">
         <Button asChild variant="panel" size="iconLg" aria-label="Home">
           <Link to="/"><Home /></Link>

@@ -14,3 +14,4 @@
 - Coach settings/selection persist via the zustand store in `src/lib/store.ts` (localStorage); game history is session-only (`sessionUsed`).
 - Games plug into `src/components/engine/*` (GameShell phases, Timer, Scoreboard, TurnPicker, Kbd/HelpOverlay); each game is one route under `src/routes/play.*`.
 - Bridge Builder's explorer is rendered by the mood-driven SVG in `src/components/bridge/Max.tsx`, using global semantic character tokens so play and ending scenes stay consistent.
+- Bridge scenery uses token-colored SVG assets in `src/components/bridge/Scenery.tsx`; Bridge-only layout overrides are scoped through `bridge-shell` and `bridge-play` so other games retain their sizing.
