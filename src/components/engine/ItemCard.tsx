@@ -82,6 +82,7 @@ function FillBlank({ item, showAnswer }: { item: ContentItem; showAnswer: boolea
         return (
           <Button
             key={o}
+            variant="secondary"
             onClick={() => setChosen(o)}
             className={cn(
               "rounded-2xl border-4 border-border bg-secondary px-8 py-3 text-4xl font-bold transition-colors",

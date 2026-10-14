@@ -11,4 +11,4 @@
 - [x] Tightrope Rescue: circus co-op game, type rotation, auto-opening hidden boxes, splash/win sequences; all play screens fit 1366×768
 - [x] Rocket Race: 2-team space race, turbo, sputter, sudden death, landing sequence, setup options
 - [x] Bridge Builder: drawn explorer and full-width question card; verify during play
-- [ ] Bridge Builder: drawn open treasure, continuous river waves, compact status and floating timer; verify all card types without scrolling
+- [x] Bridge Builder: drawn open treasure, continuous river waves, compact status and floating timer; all card types verified without scrolling at 874×639, 1366×768 and 1920×1080
