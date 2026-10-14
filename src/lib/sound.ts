@@ -81,6 +81,8 @@ export const sfx = {
   firework: () => { noise(0.6, 0, 0.6, 3000, 300); tone(1500, 0.3, "sine", 0, 0.4, 600); },
   tok: () => { tone(220, 0.08, "square", 0, 1.2, 110); noise(0.06, 0, 1, 1800); tone(240, 0.08, "square", 0.14, 1, 120); },
   splash: () => { noise(0.7, 0, 1.2, 2500, 300); tone(200, 0.4, "sine", 0, 0.8, 80); },
+  blast: (big = false) => { noise(big ? 1.2 : 0.7, 0, big ? 1.6 : 1, 1800, 200); tone(big ? 180 : 240, big ? 0.9 : 0.5, "sawtooth", 0, big ? 0.8 : 0.5, big ? 1600 : 900); },
+  pfft: () => { noise(0.35, 0, 0.8, 700, 200); tone(160, 0.3, "triangle", 0.05, 0.6, 70); },
   whooshWave: () => { noise(1.6, 0, 1.6, 900, 150); tone(90, 1.4, "sine", 0, 1.5, 40); },
   cheer: () => { noise(1.1, 0, 0.9, 2200, 500); tone(880, 0.2, "triangle", 0.1, 0.4); },
   ooh: () => tone(420, 0.8, "sine", 0, 1, 260),

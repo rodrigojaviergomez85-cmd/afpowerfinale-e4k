@@ -5,7 +5,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BOMB_PRESETS, TEAM_NAME_POOL, useApp, type RopeType } from "@/lib/store";
+import { BOMB_PRESETS, RACE_DEFAULTS, TEAM_NAME_POOL, useApp, type RopeType } from "@/lib/store";
 
 const ROPE_TYPES: [RopeType, string][] = [["Q", "Questions"], ["T", "Translations"], ["F", "Fill in the blank"], ["H", "Hidden picture"], ["P", "Picture questions"]];
 import { getGame } from "@/lib/games";
@@ -56,6 +56,7 @@ function Setup() {
   const game = getGame(gameId) ?? getGame("demo")!;
   const isBridge = game.id === "bridge-builder";
   const isRope = game.id === "tightrope";
+  const isRace = game.id === "rocket-race";
   const isBomb = game.id === "beat-the-bomb" || isBridge || isRope;
   const navigate = useNavigate();
   const s = useApp();
@@ -71,7 +72,7 @@ function Setup() {
   const level = getLevel(course.name, s.level);
   const week = level.weeks.find((w) => w.week === s.week) ?? level.weeks[0]!;
 
-  const start = () => navigate({ to: isRope ? "/play/rope" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
+  const start = () => navigate({ to: isRace ? "/play/race" : isRope ? "/play/rope" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
   useHotkeys({ Enter: start });
 
   const reshuffle = () => {
@@ -87,6 +88,7 @@ function Setup() {
   const mo = isRope ? (s.rope ?? BOMB_PRESETS["Normal"]!) : isBridge ? (s.bridge ?? BOMB_PRESETS["Normal"]!) : s.bomb;
   const setMo = isRope ? s.setRope : isBridge ? s.setBridge : s.setBomb;
   const ropeOff = s.ropeOff ?? [];
+  const race = { ...RACE_DEFAULTS, ...s.race };
   const toggleType = (t: RopeType) => {
     const next = ropeOff.includes(t) ? ropeOff.filter((x) => x !== t) : [...ropeOff, t];
     if (next.length < ROPE_TYPES.length) s.setRopeOff(next);
@@ -147,12 +149,32 @@ function Setup() {
             </div>
           ) : (
             <>
+              {isRace ? (
+              <div className="space-y-3 pt-2">
+                <h2 className="text-3xl">🚀 Race options</h2>
+                <div className="space-y-2"><div className="font-bold text-muted-foreground">⛽ Fuel stops to the planet</div>
+                  <Seg value={race.stops} onChange={(v) => s.setRace({ stops: v })} options={[4, 5, 6, 7, 8].map((n) => ({ v: n, l: String(n) }))} /></div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-2"><div className="font-bold text-muted-foreground">⏱️ Turn time</div>
+                    <Seg value={race.turnTime} onChange={(v) => s.setRace({ turnTime: v })} options={[10, 15, 20, 30].map((n) => ({ v: n, l: `${n}s` }))} /></div>
+                  <div className="space-y-2"><div className="font-bold text-muted-foreground">🃏 Number of cards</div>
+                    <Seg value={race.cards} onChange={(v) => s.setRace({ cards: v })} options={[10, 16, 20].map((n) => ({ v: n, l: String(n) }))} /></div>
+                </div>
+                <div className="space-y-2"><div className="font-bold text-muted-foreground">Content — Mix (tap to turn a type off)</div>
+                  <div className="flex flex-wrap gap-2">
+                    {ROPE_TYPES.map(([t, l]) => (
+                      <button key={t} onClick={() => { const n = race.off.includes(t) ? race.off.filter((x) => x !== t) : [...race.off, t]; if (n.length < ROPE_TYPES.length) s.setRace({ off: n }); }} className={cn("rounded-xl px-4 py-2 text-lg font-bold chunky", race.off.includes(t) ? "bg-secondary opacity-60 line-through" : "bg-primary text-primary-foreground")}>{race.off.includes(t) ? "☐" : "☑"} {l}</button>
+                    ))}
+                  </div></div>
+              </div>
+              ) : (
               <div className="grid grid-cols-2 gap-4 pt-2">
                 <div className="space-y-2"><div className="font-bold text-muted-foreground">⏱️ Time per card</div>
                   <Seg value={s.settings.turnTime} onChange={(v) => s.setSettings({ turnTime: v })} options={[10, 15, 20, 30, 45].map((n) => ({ v: n, l: `${n}s` }))} /></div>
                 <div className="space-y-2"><div className="font-bold text-muted-foreground">🃏 Number of cards</div>
                   <Seg value={s.settings.rounds} onChange={(v) => s.setSettings({ rounds: v })} options={[6, 10, 12, 16, 20].map((n) => ({ v: n, l: String(n) }))} /></div>
               </div>
+              )}
               <div className="flex items-center justify-between pt-2">
                 <h2 className="text-3xl">⚔️ Teams</h2>
                 <Button variant="panel" size="lg" onClick={reshuffle}><Shuffle /> New names</Button>

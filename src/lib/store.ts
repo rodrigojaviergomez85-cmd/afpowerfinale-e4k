@@ -16,6 +16,8 @@ export interface Settings {
 export interface BombOptions { target: number; time: number; penalty: number; mix: ContentMix }
 /** Challenge types for Tightrope Rescue: Q question, T translation, F fill-in, H hidden picture, P picture question (S/E). */
 export type RopeType = "Q" | "T" | "F" | "H" | "P";
+export interface RaceOptions { stops: number; turnTime: number; cards: number; off: RopeType[] }
+export const RACE_DEFAULTS: RaceOptions = { stops: 6, turnTime: 15, cards: 16, off: [] };
 export interface LastResult {
   gameId: string;
   teams: Team[];
@@ -38,6 +40,8 @@ interface AppState {
   bridge: BombOptions;
   rope: BombOptions;
   ropeOff: RopeType[];
+  race: RaceOptions;
+  setRace: (r: Partial<RaceOptions>) => void;
   lastResult: LastResult | null;
   setSettings: (s: Partial<Settings>) => void;
   setSetup: (s: Partial<Pick<AppState, "course" | "level" | "week" | "day" | "teams" | "roster">>) => void;
@@ -91,6 +95,8 @@ export const useApp = create<AppState>()(
       bridge: BOMB_PRESETS["Normal"]!,
       rope: BOMB_PRESETS["Normal"]!,
       ropeOff: [],
+      race: RACE_DEFAULTS,
+      setRace: (r) => set({ race: { ...RACE_DEFAULTS, ...get().race, ...r } }),
       lastResult: null,
       setSettings: (s) => set({ settings: { ...get().settings, ...s } }),
       setSetup: (s) => set(s as Partial<AppState>),

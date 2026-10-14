@@ -67,6 +67,18 @@ export const GAMES: GameDef[] = [
     rules: [],
   },
   {
+    id: "rocket-race",
+    name: "Rocket Race",
+    icon: "🚀",
+    tagline: "First rocket to the planet wins!",
+    mode: "2 teams",
+    minutes: "5 min",
+    accent: "bg-game-race",
+    accentText: "text-game-race",
+    status: "ready",
+    rules: [],
+  },
+  {
     id: "hot-chair",
     name: "Hot Chair Translation",
     icon: "🔥",
