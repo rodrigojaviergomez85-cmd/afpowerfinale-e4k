@@ -368,9 +368,9 @@
 .bridge-shell > header button { height: 44px; }
 .bridge-shell > main { overflow: hidden; }
 .bridge-play { padding: 0 16px 16px; gap: 8px !important; }
-.bridge-play .fit-scene { height: clamp(90px, 18dvh, 190px) !important; }
-.bridge-status { height: 34px; font-size: 22px; padding-right: 88px; }
-.bridge-timer { position: absolute; top: -4px; right: 14px; z-index: 10; border-radius: 50%; background: var(--card); }
+.bridge-play .fit-scene { height: clamp(180px, 39dvh, 420px) !important; }
+.bridge-status { height: 34px; font-size: 22px; padding-right: 144px; }
+.bridge-timer { position: absolute; top: -110px; right: 14px; z-index: 10; border-radius: 50%; background: var(--card); }
 .bridge-timer [class*="-bottom-3"] { display: none; }
 .bridge-card-slot { position: relative; flex: 1; min-height: 0; display: grid; }
 .bridge-play .fit-card {
@@ -378,7 +378,7 @@
   gap: 8px !important; display: grid; grid-template-columns: minmax(0, 1fr);
   align-content: center; justify-items: center; overflow: hidden;
 }
-.bridge-play .banner-pill { font-size: 20px !important; padding: 4px 12px !important; max-width: calc(100% - 104px); }
+.bridge-play .banner-pill { font-size: 20px !important; padding: 4px 12px !important; max-width: calc(100% - 144px); }
 .bridge-play .item-prompt { font-size: 48px !important; line-height: 1.05; min-width: 0; overflow-wrap: anywhere; }
 .bridge-play .item-answer { min-height: 0; font-size: 26px; line-height: 1.1; }
 .bridge-play .item-answer:empty, .bridge-play .item-picture:empty { display: none; }
@@ -398,9 +398,15 @@
 .bridge-play .hidden-picture > div:last-child { font-size: 16px; }
 .bridge-play .item-answer { grid-column: 1 / -1; }
 .bridge-controls { display: flex; flex-wrap: wrap; gap: 8px; }
-.bridge-controls > button { height: 44px; padding-inline: 10px; font-size: 16px; }
-.bridge-controls > button kbd { font-size: 12px; }
-.bridge-controls > button svg { width: 20px; height: 20px; }
+.bridge-controls > button { height: 64px; padding-inline: 20px; font-size: 24px; }
+.bridge-controls > button kbd { font-size: 16px; }
+.bridge-controls > button svg { width: 28px; height: 28px; }
+@media (max-width: 1000px) {
+  .bridge-controls > button { padding-inline: 8px; font-size: 18px; gap: 4px; }
+  .bridge-controls > button kbd { font-size: 12px; }
+  .bridge-controls > button svg { width: 20px; height: 20px; }
+  .bridge-play .fit-scene { height: 180px !important; }
+}
 .river-surface { animation: river-breathe 3s ease-in-out infinite; }
 .river-surface-storm { animation-duration: 1s; }
 @keyframes river-breathe { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
@@ -411,7 +417,6 @@
   .bridge-play .item-picture { zoom: 1 !important; }
   .bridge-play .hidden-board .pic-wrap { zoom: 1 !important; }
   .bridge-play .item-prompt { font-size: 56px !important; }
-  .bridge-controls > button { height: 56px; font-size: 22px; }
 }
 
 @keyframes star-drift { from { background-position: 0 0; } to { background-position: -600px 0; } }

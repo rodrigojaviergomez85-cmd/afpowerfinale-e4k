@@ -12,3 +12,4 @@
 - [x] Rocket Race: 2-team space race, turbo, sputter, sudden death, landing sequence, setup options
 - [x] Bridge Builder: drawn explorer and full-width question card; verify during play
 - [x] Bridge Builder: drawn open treasure, continuous river waves, compact status and floating timer; all card types verified without scrolling at 874×639, 1366×768 and 1920×1080
+- [x] Bridge Builder: enlarged scene, restored 64px buttons and 120px floating timer, reduced empty card space; full rounds verified at 874×639, 1366×768 and 1920×1080.
