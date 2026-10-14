@@ -24,7 +24,7 @@ function Shape({ shape, color, size }: { shape: string; color: string; size: num
   return <svg viewBox={vb} width={w} height={size} aria-label={`${color} ${shape}`}>{el}</svg>;
 }
 
-export function ShapePicture({ specs, seed }: { specs: ShapeSpec[]; seed: string }) {
+export function ShapePicture({ specs, seed, big }: { specs: ShapeSpec[]; seed: string; big?: boolean }) {
   const list = useMemo(() => {
     const palette = shuffle(SHAPE_COLORS);
     let k = 0;
@@ -33,16 +33,22 @@ export function ShapePicture({ specs, seed }: { specs: ShapeSpec[]; seed: string
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seed]);
-  const size = list.length > 6 ? 84 : list.length > 3 ? 100 : 130;
+  const wide = (s: string) => (s === "rectangle" || s === "oval" ? 1.8 : 1);
+  const units = list.reduce((a, s) => a + wide(s.shape), 0);
+  // Big mode: fill a ~600×280 board in one row without cropping.
+  const size = big ? Math.min(240, Math.floor((580 - 16 * (list.length - 1)) / Math.max(units, 1))) : list.length > 6 ? 84 : list.length > 3 ? 100 : 130;
   return (
-    <div className="flex max-w-3xl flex-wrap items-center justify-center gap-5">
+    <div className={big ? "flex flex-nowrap items-center justify-center gap-4" : "flex max-w-3xl flex-wrap items-center justify-center gap-5"}>
       {list.map((s, i) => <Shape key={i} shape={s.shape} color={s.color} size={size} />)}
     </div>
   );
 }
 
-export function ItemPicture({ item }: { item: ContentItem }) {
-  if (item.shapes) return <ShapePicture specs={item.shapes} seed={item.id} />;
-  if (item.emoji) return <div className="leading-none" style={{ fontSize: 160 }}>{item.emoji}</div>;
+export function ItemPicture({ item, big }: { item: ContentItem; big?: boolean }) {
+  if (item.shapes) return <ShapePicture specs={item.shapes} seed={item.id} big={big} />;
+  if (item.emoji) {
+    const n = [...new Intl.Segmenter().segment(item.emoji)].length;
+    return <div className="leading-none" style={{ fontSize: big ? (n > 1 ? 200 : 250) : 160 }}>{item.emoji}</div>;
+  }
   return null;
 }
