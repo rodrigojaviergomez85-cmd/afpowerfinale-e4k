@@ -105,5 +105,25 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
     if (add.length && ti > 0) review = true;
     picked.push(...add);
   });
+  // Guarantee at least one hidden-picture card (if eligible) within the first three cards.
+  if (mix !== "translations" && picked.length) {
+    if (!picked.some((i) => i.kind === "H")) {
+      const ids = new Set(picked.map((i) => i.id));
+      let h: ContentItem | undefined;
+      for (const tier of tiers) {
+        const hs = tier.filter((i) => i.kind === "H" && !ids.has(i.id));
+        h = shuffle(hs.filter((i) => !avoidSet.has(i.id)))[0] ?? shuffle(hs)[0];
+        if (h) break;
+      }
+      if (h) {
+        if (tiers[0] && !tiers[0].includes(h)) review = true;
+        if (picked.length < count) picked.push(h); else picked[picked.length - 1] = h;
+      }
+    }
+    const out = shuffle(picked);
+    const hi = out.findIndex((i) => i.kind === "H");
+    if (hi > 2) { const t = Math.floor(Math.random() * Math.min(3, out.length)); [out[t], out[hi]] = [out[hi]!, out[t]!]; }
+    return { items: out, review };
+  }
   return { items: shuffle(picked), review };
 }

@@ -16,7 +16,7 @@ function banner(item: ContentItem) {
 }
 
 export function HiddenPicture({ item, showAll, onReveal }: { item: ContentItem; showAll: boolean; onReveal?: ((opened: number) => void) | undefined }) {
-  const [open, setOpen] = useState<Set<number>>(new Set());
+  const [open, setOpen] = useState<Set<number>>(() => new Set());
   const reveal = (i: number) => {
     if (open.has(i) || showAll) return;
     const n = new Set(open).add(i);
@@ -24,30 +24,30 @@ export function HiddenPicture({ item, showAll, onReveal }: { item: ContentItem; 
     onReveal?.(n.size);
   };
   return (
-    <div className="relative grid min-h-[260px] min-w-[460px] place-items-center rounded-3xl bg-card p-4">
-      <ItemPicture item={item} />
-      <div className="absolute inset-0 grid grid-cols-4 grid-rows-3">
-        {Array.from({ length: HIDDEN_TILES }, (_, i) => {
-          const isOpen = showAll || open.has(i);
-          return (
-            <div
-              key={i}
-              className={cn(
-                // Opaque cell: hides the picture fully, gaps included, until opened
-                "bg-card p-1.5 transition-opacity duration-300",
-                isOpen && "pointer-events-none opacity-0",
-              )}
-            >
-              <button
-                onClick={() => reveal(i)}
-                className="h-full w-full rounded-xl border-4 border-border bg-primary font-display text-4xl font-bold text-primary-foreground transition-all duration-300 hover:brightness-110"
-              >
-                {i + 1}
-              </button>
-            </div>
-          );
-        })}
+    <div className="flex flex-col items-center gap-2">
+      <div className="relative h-[230px] w-[580px] overflow-hidden rounded-3xl bg-card">
+        {/* One stable picture filling the board */}
+        <div className="absolute inset-0 grid place-items-center">
+          <ItemPicture item={item} big />
+        </div>
+        <div className="absolute inset-0 grid grid-cols-4 grid-rows-3">
+          {Array.from({ length: HIDDEN_TILES }, (_, i) => {
+            const isOpen = showAll || open.has(i);
+            if (isOpen) return <div key={i} aria-hidden className="pointer-events-none" />;
+            return (
+              <div key={i} className="bg-card p-1">
+                <button
+                  onClick={() => reveal(i)}
+                  className="h-full w-full rounded-xl border-4 border-border bg-primary font-display text-4xl font-bold text-primary-foreground hover:brightness-110"
+                >
+                  {i + 1}
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
+      <div className="text-xl font-bold text-muted-foreground">{open.size} / {HIDDEN_TILES} boxes opened</div>
     </div>
   );
 }
