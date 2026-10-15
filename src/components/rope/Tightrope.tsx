@@ -15,7 +15,9 @@ export function Tightrope({ goal, steps, mood, frozen = false, countdown, fallin
   const height = Math.max(0, Math.min(goal + start, start + steps));
   const y = 475 - height / Math.max(1, goal + start) * 305;
   const safe = steps >= goal && !falling && !inPool;
-  const characterY = inPool ? 625 : falling ? 690 : y;
+  const characterY = inPool ? 587 : falling ? 690 : y;
+  const characterScale = safe || landing ? .85 : 1.1;
+  const characterOffset = safe || landing ? 151 : 195;
   const reaction = crowd === "cheer" ? "happy" : crowd === "gasp" ? "uhoh" : mood;
   return (
     <div className={cn("elevator-scene relative min-h-0 w-full overflow-hidden rounded-lg", className)} data-height={height} data-safe={safe} data-calm={calm}>
@@ -54,9 +56,9 @@ export function Tightrope({ goal, steps, mood, frozen = false, countdown, fallin
           {!inPool && <g className={cn(falling && "elevator-collapse")}><path d="M181 0 H348 V15 H181Z" fill="var(--gold)" stroke="var(--circus-ink)" strokeWidth="3" /><path d="M187 15 L337 29 L348 15" fill="var(--circus-teal)" stroke="var(--circus-ink)" strokeWidth="3" /><circle cx="350" cy="8" r="12" fill="var(--circus-metal)" stroke="var(--circus-ink)" strokeWidth="3" />{frozen && <path d="M190 -4 H338" stroke="var(--pool)" strokeWidth="8" />}</g>}
         </g>
         <g clipPath={`url(#${clip})`}>
-          <g className="elevator-character-position" transform={`translate(${landing ? 392 : 190} ${characterY - 195})`}>
+          <g className="elevator-character-position" transform={`translate(${landing ? 414 : 190} ${characterY - characterOffset})`}>
             <g className={cn(landing && "acrobat-balcony-hop", inPool && "acrobat-bob", falling && "acrobat-tumble")}>
-              <g transform="scale(1.1)"><Acrobat mood={inPool ? "soaked" : celebrating ? "tada" : falling ? "panic" : reaction} /></g>
+              <g transform={`scale(${characterScale})`}><Acrobat mood={inPool ? "soaked" : celebrating ? "tada" : falling ? "panic" : reaction} /></g>
             </g>
           </g>
         </g>

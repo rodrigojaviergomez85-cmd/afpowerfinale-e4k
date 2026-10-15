@@ -24,6 +24,8 @@ export const Route = createFileRoute("/play/demo")({
       { name: "description", content: "See it, say it, score it! A fast two-team English drill." },
       { property: "og:title", content: "Demo Drill — AF Power Finale" },
       { property: "og:description", content: "See it, say it, score it! A fast two-team English drill." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: DemoDrill,
