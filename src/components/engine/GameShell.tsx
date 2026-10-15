@@ -64,7 +64,7 @@ export function GameShell({ game, children, rightSlot, className }: { game: Game
 
       <main className="relative flex min-h-0 flex-1 flex-col overflow-y-auto">
         {phase === "rules" && (
-          <div className="flex flex-1 flex-col items-center justify-center gap-10 px-8 text-center">
+          <div className="game-rules flex flex-1 flex-col items-center justify-center gap-10 px-8 text-center">
             <div className="animate-pop text-[10rem] leading-none">{game.icon}</div>
             <h1 className="animate-slide-up text-7xl text-stroke">{game.name}</h1>
             <div className="grid max-w-5xl gap-5">

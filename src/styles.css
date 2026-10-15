@@ -177,11 +177,11 @@
 
 /* Vocab Blitz only — preserve every other game's layout. */
 .blitz-shell > main { overflow: hidden; }
-.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) { gap: 20px; }
-.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) > div:first-child { font-size: 90px; }
-.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) > h1 { font-size: 60px; }
-.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) .panel { padding: 16px 24px; }
-.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) .panel > span { font-size: 30px; }
+.blitz-shell .game-rules { gap: 20px; }
+.blitz-shell .game-rules > div:first-child { font-size: 90px; }
+.blitz-shell .game-rules > h1 { font-size: 60px; }
+.blitz-shell .game-rules .panel { padding: 16px 24px; }
+.blitz-shell .game-rules .panel > span { font-size: 30px; }
 .blitz-play { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 12px; padding: 0 28px 28px; }
 .blitz-status { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 20px; font-weight: 700; }
 .blitz-court { position: relative; flex: 1 1 48%; min-height: 210px; display: grid; grid-template-columns: 1fr 1fr; border: 3px solid var(--game-blitz); border-radius: 8px; overflow: hidden; background: var(--blitz-court); }
@@ -202,9 +202,18 @@
 .blitz-rally { position: absolute; z-index: 2; left: 50%; top: 16px; transform: translateX(-50%); display: flex; align-items: center; flex-direction: column; border-radius: 8px; background: var(--stage); padding: 8px 20px; white-space: nowrap; }
 .blitz-rally strong { font-size: 30px; }
 .blitz-rally span { font-size: 18px; }
-.blitz-ball { position: absolute; z-index: 3; bottom: 18px; width: 48px; height: 48px; transition: left .45s ease-in-out, transform .45s ease-in-out; }
-.blitz-ball-left { left: 27%; transform: rotate(-50deg); }
-.blitz-ball-right { left: calc(73% - 48px); transform: rotate(160deg); }
+.blitz-ball { position: absolute; z-index: 3; width: 48px; height: 48px; transform: translate(-50%, -50%); transition: left .65s ease-in-out, top .65s ease-in-out; pointer-events: none; }
+.blitz-ball-left { left: 27%; }
+.blitz-ball-right { left: 73%; }
+.blitz-ball-lane-0 { top: 80%; }
+.blitz-ball-lane-1 { top: 55%; }
+.blitz-ball-lane-2 { top: 70%; }
+.blitz-ball-lane-3 { top: 48%; }
+.blitz-ball-lane-4 { top: 65%; }
+.blitz-ball-lane-1.blitz-ball-left, .blitz-ball-lane-3.blitz-ball-left { left: 35%; }
+.blitz-ball-lane-1.blitz-ball-right, .blitz-ball-lane-3.blitz-ball-right { left: 65%; }
+.blitz-ball svg { display: block; width: 100%; height: 100%; animation: blitz-ball-bounce .7s ease-out; }
+@keyframes blitz-ball-bounce { 0% { transform: translateY(0) rotate(0); } 35% { transform: translateY(-36px) rotate(100deg); } 72% { transform: translateY(0) scale(1.1, .85) rotate(210deg); } 86% { transform: translateY(-8px) rotate(250deg); } 100% { transform: translateY(0) rotate(280deg); } }
 .blitz-category-zone { position: relative; display: flex; min-height: 170px; flex: 0 0 auto; align-items: center; justify-content: center; padding: 10px 160px; }
 .blitz-category { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 26px; font-weight: 700; }
 .blitz-category h1 { font-size: 48px; line-height: 1.05; max-width: 100%; overflow-wrap: anywhere; }
@@ -276,7 +285,7 @@
   .blitz-rally strong { font-size: 21px; }
   .blitz-stars { gap: 2px; }
   .blitz-stars svg { width: 18px; height: 18px; }
-  .blitz-ball { width: 32px; height: 32px; bottom: 8px; }
+  .blitz-ball { width: 32px; height: 32px; }
   .blitz-category-zone { padding: 0; flex-direction: column; }
   .blitz-clock { position: static; transform: none; margin-top: 8px; }
   .blitz-category h1 { font-size: 40px; }
@@ -284,9 +293,9 @@
   .blitz-word-list { font-size: 19px; }
   .blitz-finale h1 { font-size: 34px; }
 }
-@media (prefers-reduced-motion: reduce) { .blitz-ball, .blitz-team { transition: none; } .blitz-coin { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .blitz-ball, .blitz-team { transition: none; } .blitz-coin, .blitz-ball svg { animation: none; } }
 [data-calm="true"] .blitz-ball, [data-calm="true"] .blitz-team { transition: none; }
-[data-calm="true"] .blitz-coin { animation: none; }
+[data-calm="true"] .blitz-coin, [data-calm="true"] .blitz-ball svg { animation: none; }
 
 @layer base {
   * {
