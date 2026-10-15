@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Circus Rescue: centered blue splash and plain white So close; large tilted pink rescue sign and Tadaa emoji; verify both endings.
+
 - [x] Hub, quick setup, shared engine, Demo Drill, results, settings
 - [x] Replace all content with real curriculum in src/data/content.ts (no backend, no admin)
 - [x] Setup: Course → Level → Week → Day dropdowns with Review badge
