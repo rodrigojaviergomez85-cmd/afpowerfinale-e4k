@@ -112,7 +112,7 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
     const pic = Math.max(1, Math.round(count * 0.14));
     const rest = Math.max(0, count - h - f - pic);
     const quota: Record<string, number> = mix === "mix"
-      ? { H: h, F: f, P: pic, T: Math.floor(rest * 0.45), Q: rest - Math.floor(rest * 0.45) }
+      ? { H: h, F: f, P: pic, T: Math.min(rest, Math.max(1, Math.round(rest * 0.45))), Q: rest - Math.min(rest, Math.max(1, Math.round(rest * 0.45))) }
       : { H: h, F: f, P: pic, Q: rest };
     const ids = new Set<string>();
     for (const [t, n] of Object.entries(quota)) {
