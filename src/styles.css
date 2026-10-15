@@ -114,6 +114,8 @@
   --det-street: oklch(0.7 0.03 260);
   --det-paw: oklch(0.38 0.06 50);
   --det-hint: oklch(0.9 0.18 100);
+  --det-sky: oklch(0.86 0.07 230);
+  --det-sun: oklch(0.88 0.16 90);
   --game-tug: oklch(0.55 0.1 60);
   --mud: oklch(0.45 0.08 60);
   --mud-deep: oklch(0.36 0.07 55);

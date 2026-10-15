@@ -90,7 +90,7 @@ export function Gigglebug({ mood }: { mood: BugMood }) {
       ) : (
         <path d="M-8 -36 Q0 -26 8 -36 Z" fill="var(--det-roof)" />
       )}
-      {mood === "nervous" && <path d="M14 -56 q4 6 0 9 q-4 -3 0 -9" fill="var(--sky)" strokeWidth="1.5" />}
+      {mood === "nervous" && <path d="M14 -56 q4 6 0 9 q-4 -3 0 -9" fill="var(--det-sky)" strokeWidth="1.5" />}
       {mood === "wave" && <path d="M18 -26 L32 -48" strokeWidth="5" stroke="var(--det-bug-dark)" className="det-tug" />}
     </g>
   );
@@ -102,8 +102,8 @@ function House({ x, w, h, sign }: { x: number; w: number; h: number; sign?: stri
       <rect x={x} y={STREET_Y - h} width={w} height={h} fill="var(--det-house)" />
       <path d={`M${x - 8} ${STREET_Y - h} L${x + w / 2} ${STREET_Y - h - 40} L${x + w + 8} ${STREET_Y - h}Z`} fill="var(--det-roof)" />
       <rect x={x + w / 2 - 12} y={STREET_Y - 36} width="24" height="36" fill="var(--det-basket)" />
-      <rect x={x + 10} y={STREET_Y - h + 14} width="18" height="18" fill="var(--sky)" />
-      <rect x={x + w - 28} y={STREET_Y - h + 14} width="18" height="18" fill="var(--sky)" />
+      <rect x={x + 10} y={STREET_Y - h + 14} width="18" height="18" fill="var(--det-sky)" />
+      <rect x={x + w - 28} y={STREET_Y - h + 14} width="18" height="18" fill="var(--det-sky)" />
       {sign && (
         <g transform={`translate(${x + w / 2} ${STREET_Y - h - 6}) rotate(-4)`}>
           <rect x="-34" y="-14" width="68" height="22" rx="4" fill="var(--explorer-teeth)" strokeWidth="2" />
@@ -176,12 +176,12 @@ export function ChaseScene({
     <svg viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid meet" className={cn("w-full rounded-3xl", className)} role="img" aria-label={`Detective Sniff has found ${clues} of ${goal} clues`}>
       <defs>
         <linearGradient id="det-sky" x1="0" x2="0" y1="0" y2="1">
-          <stop offset="0" stopColor={night ? "var(--det-balloon-a)" : "var(--sky)"} stopOpacity={night ? 0.45 : 1} />
-          <stop offset="1" stopColor="var(--sky)" />
+          <stop offset="0" stopColor={night ? "var(--det-balloon-a)" : "var(--det-sky)"} stopOpacity={night ? 0.45 : 1} />
+          <stop offset="1" stopColor="var(--det-sky)" />
         </linearGradient>
       </defs>
       <rect width="1200" height="300" fill="url(#det-sky)" />
-      <circle cx="90" cy="60" r="30" fill="var(--sun)" stroke={INK} strokeWidth="3" />
+      <circle cx="90" cy="60" r="30" fill="var(--det-sun)" stroke={INK} strokeWidth="3" />
       <House x={220} w={120} h={110} sign="BAKERY" />
       <House x={400} w={100} h={140} sign="SCHOOL" />
       <House x={580} w={130} h={100} sign="LIBRERY" />
