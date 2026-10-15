@@ -71,7 +71,7 @@ export function TreeScene({
     pepperAt === "helmet" ? { x: rosa.x - 2, y: rosa.y - 112 } :
     { x: rosa.x + 4, y: rosa.y - 48 };
   return (
-    <div data-calm={calm} className={cn("relative w-full overflow-hidden rounded-3xl border-4 border-border", className)} style={{ background: "var(--park-sky)" }}>
+    <div data-calm={calm} className={cn("relative w-full overflow-hidden rounded-3xl border-4 border-border", className)} style={{ background: "linear-gradient(var(--park-sky) 84%, var(--park-grass) 84%, var(--park-grass-deep) 93%)" }}>
       <svg viewBox="0 -50 1000 450" preserveAspectRatio="xMidYMax meet" className="absolute inset-0 h-full w-full" role="img" aria-label={`Ladder: ${rungs} of ${goal} rungs`}>
         <circle cx="120" cy="70" r="36" fill="var(--rosa-helmet)" />
         <path d="M0 340 Q250 315 500 338 T1000 330 V400 H0Z" fill="var(--park-grass)" />
