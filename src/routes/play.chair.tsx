@@ -187,7 +187,7 @@ function HotChair() {
       <ChairKeys keys={keys} enabled={!help && phase !== "final"} />
       <HelpOverlay open={help} onClose={() => setHelp(false)} shortcuts={SHORTCUTS} />
       {phase === "final" ? (
-        <FinalReveal teams={teams} scores={tiebreak ? tb : scores} tiebreak={tiebreak} onTie={startTiebreak} onDone={finish} />
+        <FinalReveal teams={teams} scores={tiebreak ? tb : scores} tiebreak={tiebreak} onTie={startTiebreak} />
       ) : (
         <div className="flex min-h-0 flex-1 flex-col gap-3 px-6 pb-5">
           <div className="flex items-center justify-center gap-4">
