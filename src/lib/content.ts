@@ -118,8 +118,8 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
       const order = shuffle(["H", "F", "P"]);
       for (let i = 0; i < rest; i++) quota[order[i % 3]!] = (quota[order[i % 3]!] ?? 0) + 1;
       // Never more than 3 hidden pictures; extras move to blanks or figures.
-      while ((quota.H ?? 0) > 3) {
-        quota.H = (quota.H ?? 0) - 1;
+      while ((quota["H"] ?? 0) > 3) {
+        quota["H"] = (quota["H"] ?? 0) - 1;
         const to = order.find((k) => k !== "H")!;
         quota[to] = (quota[to] ?? 0) + 1;
       }
@@ -127,8 +127,8 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
       const h = Math.min(3, Math.max(1, Math.round(count * 0.18)));
       const f = Math.max(1, Math.round(count * 0.18));
       const pic = Math.max(1, Math.round(count * 0.12));
-      quota.H = h; quota.F = f; quota.P = pic;
-      quota.Q = Math.max(0, count - h - f - pic);
+      quota["H"] = h; quota["F"] = f; quota["P"] = pic;
+      quota["Q"] = Math.max(0, count - h - f - pic);
     }
     const ids = new Set<string>();
     for (const [t, n] of Object.entries(quota)) {
