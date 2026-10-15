@@ -107,18 +107,6 @@ export const GAMES: GameDef[] = [
     ],
   },
   {
-    id: "hot-chair",
-    name: "Hot Chair Translation",
-    icon: "🔥",
-    tagline: "Fast turns. Translate the sentence!",
-    mode: "2 teams",
-    minutes: "6 min",
-    accent: "bg-game-chair",
-    accentText: "text-game-chair",
-    status: "soon",
-    rules: [],
-  },
-  {
     id: "vocab-blitz",
     name: "Vocab Blitz",
     icon: "⚡",
