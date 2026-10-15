@@ -1,6 +1,6 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Check, X, Eye, Dices, Undo2, Pause, Play, HelpCircle, Flag } from "lucide-react";
+import { Check, X, Eye, Dices, Undo2, Pause, Play, HelpCircle, Flag, Home, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GameShell } from "@/components/engine/GameShell";
 import { useTimer, TimerRing } from "@/components/engine/Timer";
@@ -8,7 +8,7 @@ import { pickPlayer } from "@/components/engine/TurnPicker";
 import { useHotkeys, toggleFullscreen } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
 import { ItemCard } from "@/components/engine/ItemCard";
-import { getGame } from "@/lib/games";
+import { GAMES, getGame } from "@/lib/games";
 import { chairDeck, type ContentItem } from "@/lib/content";
 import { CHAIR_DEFAULTS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
@@ -187,7 +187,7 @@ function HotChair() {
       <ChairKeys keys={keys} enabled={!help && phase !== "final"} />
       <HelpOverlay open={help} onClose={() => setHelp(false)} shortcuts={SHORTCUTS} />
       {phase === "final" ? (
-        <FinalReveal teams={teams} scores={tiebreak ? tb : scores} tiebreak={tiebreak} onTie={startTiebreak} onDone={finish} />
+        <FinalReveal teams={teams} scores={tiebreak ? tb : scores} tiebreak={tiebreak} onTie={startTiebreak} />
       ) : (
         <div className="flex min-h-0 flex-1 flex-col gap-3 px-6 pb-5">
           <div className="flex items-center justify-center gap-4">
@@ -279,10 +279,14 @@ function ChairArt({ flames, speed }: { flames: number; speed: number }) {
   );
 }
 
-function FinalReveal({ teams, scores, tiebreak, onTie, onDone }: { teams: { name: string; icon: string }[]; scores: number[]; tiebreak: boolean; onTie: () => void; onDone: () => void }) {
+function FinalReveal({ teams, scores, tiebreak, onTie }: { teams: { name: string; icon: string }[]; scores: number[]; tiebreak: boolean; onTie: () => void }) {
   const [shown, setShown] = useState(0);
+  const navigate = useNavigate();
+  const app = useApp();
   const tie = scores[0] === scores[1];
   const winner = scores[0]! > scores[1]! ? 0 : 1;
+  const mvp = [...app.roster].sort((a, b) => b.points - a.points)[0];
+  const [nextGame] = useState(() => GAMES.filter((g) => g.id !== "hot-chair")[Math.floor(Math.random() * (GAMES.length - 1))]);
   useEffect(() => {
     sfx.drumroll(2.2);
     const ts = [
@@ -292,13 +296,18 @@ function FinalReveal({ teams, scores, tiebreak, onTie, onDone }: { teams: { name
     ];
     return () => ts.forEach(clearTimeout);
   }, [tie]);
-  useHotkeys({ Space: () => shown >= 3 && (tie ? onTie() : onDone()), Enter: () => shown >= 3 && (tie ? onTie() : onDone()) });
+  const playAgain = useCallback(() => {
+    useApp.getState().setLastResult({ gameId: "hot-chair", teams, scores, mode: "teams", at: Date.now() });
+    navigate({ to: "/setup", search: { game: "hot-chair" } });
+  }, [teams, scores, navigate]);
+  useHotkeys({ Space: () => shown >= 3 && (tie ? onTie() : playAgain()), Enter: () => shown >= 3 && (tie ? onTie() : playAgain()) });
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-8 px-8 pb-6 text-center">
-      <div className="text-4xl font-bold text-muted-foreground">{tiebreak ? "⚡ Tiebreaker results" : "🥁 And the scores are..."}</div>
+    <div className="flex flex-1 flex-col items-center justify-center gap-5 px-8 pb-6 text-center">
+      <div className="text-3xl font-bold text-muted-foreground">{tiebreak ? "⚡ Tiebreaker results" : "🥁 And the scores are..."}</div>
       <div className="flex gap-10">
         {teams.map((t, i) => (
-          <div key={i} className={cn("panel flex w-80 flex-col items-center gap-2 p-6", shown >= 3 && !tie && winner === i && "ring-8 ring-primary")}>
+          <div key={i} className={cn("panel relative flex w-80 flex-col items-center gap-2 p-6", shown >= 3 && !tie && winner === i && "ring-8 ring-primary")}>
+            {shown >= 3 && !tie && winner === i && <div className="animate-pop absolute -top-7 right-3 text-5xl drop-shadow">🏆</div>}
             <div className="text-6xl">{t.icon}</div>
             <div className="text-3xl font-bold">{t.name}</div>
             <div className={cn("grid h-32 w-48 place-items-center rounded-2xl font-display text-8xl font-bold text-primary-foreground", i === 0 ? "bg-team1" : "bg-team2")}>
@@ -309,12 +318,34 @@ function FinalReveal({ teams, scores, tiebreak, onTie, onDone }: { teams: { name
       </div>
       {shown >= 3 && (
         <>
-          <div className="animate-pop font-display text-7xl font-bold text-stroke">
+          <div className="animate-pop font-display text-6xl font-bold text-stroke">
             {tie ? "IT'S A TIE! 😮" : `${teams[winner]!.name.toUpperCase()} WIN! 🔥`}
           </div>
-          {tie
-            ? <Button variant="game" size="huge" onClick={onTie}>⚡ {TIEBREAK}-second tiebreaker <Kbd>Space</Kbd></Button>
-            : <Button variant="game" size="huge" onClick={onDone}>🏆 See results <Kbd>Space</Kbd></Button>}
+          {tie ? (
+            <Button variant="game" size="huge" onClick={onTie}>⚡ {TIEBREAK}-second tiebreaker <Kbd>Space</Kbd></Button>
+          ) : (
+            <>
+              {mvp && mvp.points > 0 && (
+                <div className="panel animate-pop px-10 py-3 text-3xl font-bold">
+                  🌟 MVP of the day: <span className="text-primary">{mvp.name}</span>!
+                </div>
+              )}
+              <div className="text-4xl font-bold text-stroke">See you next class, champions! 👋</div>
+              {nextGame && (
+                <div className="panel flex items-center gap-4 px-6 py-3">
+                  <div className={cn("grid h-16 w-16 place-items-center rounded-2xl text-4xl chunky", nextGame.accent)}>{nextGame.icon}</div>
+                  <div className="text-left">
+                    <div className="text-lg font-bold text-muted-foreground">Next class:</div>
+                    <div className="text-3xl font-bold">{nextGame.name}</div>
+                  </div>
+                </div>
+              )}
+              <div className="flex items-center gap-3">
+                <Button variant="game" size="huge" onClick={playAgain}><RotateCcw /> Play again <Kbd>Space</Kbd></Button>
+                <Button asChild variant="panel" size="huge" aria-label="Home"><Link to="/"><Home /></Link></Button>
+              </div>
+            </>
+          )}
         </>
       )}
     </div>
