@@ -623,7 +623,7 @@
 
 /* Muddy Tug of War */
 .tug-scene { height: 250px; }
-@media (max-height: 860px) { .tug-scene { height: 185px !important; } }
+@media (max-height: 860px) { .tug-scene { height: 150px !important; } }
 .tug-scene svg { display: block; }
 @keyframes tug-lean { 0%,100% { transform: rotate(0); } 40% { transform: rotate(-11deg) translateX(-8px); } 70% { transform: rotate(-7deg); } }
 .tug-lean { transform-box: fill-box; transform-origin: 50% 90%; animation: tug-lean .9s ease-in-out; }
