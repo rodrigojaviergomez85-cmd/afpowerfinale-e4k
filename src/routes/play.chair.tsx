@@ -1,6 +1,6 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Check, X, Eye, Dices, Undo2, Pause, Play, HelpCircle, Flag } from "lucide-react";
+import { Check, X, Eye, Dices, Undo2, Pause, Play, HelpCircle, Flag, Home, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GameShell } from "@/components/engine/GameShell";
 import { useTimer, TimerRing } from "@/components/engine/Timer";
@@ -9,6 +9,7 @@ import { useHotkeys, toggleFullscreen } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
 import { ItemCard } from "@/components/engine/ItemCard";
 import { getGame } from "@/lib/games";
+import { GAMES } from "@/lib/games";
 import { chairDeck, type ContentItem } from "@/lib/content";
 import { CHAIR_DEFAULTS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
