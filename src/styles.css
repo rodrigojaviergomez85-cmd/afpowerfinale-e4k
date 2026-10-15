@@ -252,6 +252,10 @@
   .blitz-category { gap: 4px; }
   .blitz-finale { gap: 12px; }
   .blitz-round-point { font-size: 28px; }
+  .blitz-play:has(.blitz-word-list) .blitz-court { flex-basis: 25%; min-height: 130px; }
+  .blitz-play:has(.blitz-word-list) .blitz-category { gap: 4px; }
+  .blitz-play:has(.blitz-word-list) .blitz-word-list { font-size: 20px; line-height: 1.2; }
+  .blitz-play:has(.blitz-word-list) .blitz-category > span:last-child { font-size: 17px; }
 }
 @media (max-width: 650px) {
   .blitz-shell > header { padding: 8px; gap: 6px; }
