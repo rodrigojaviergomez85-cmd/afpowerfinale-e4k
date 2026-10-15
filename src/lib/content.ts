@@ -163,3 +163,39 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
   if (hi > 2) { const t = 1 + Math.floor(Math.random() * Math.min(2, out.length - 1)); [out[t], out[hi]] = [out[hi]!, out[t]!]; }
   return { items: out, review };
 }
+
+/** Hot Chair card modes (coach-chosen for this game only). Hidden pictures never appear. */
+export type ChairMode = "mix" | "translations" | "wh" | "pictures";
+const WH_START = /^\s*(what|where|when|who|whose|whom|why|how|which)\b/i;
+const chairMatch = (i: ContentItem, mode: ChairMode) =>
+  i.kind === "H" ? false
+  : mode === "translations" ? i.kind === "T"
+  : mode === "wh" ? i.kind === "Q" && WH_START.test(i.prompt)
+  : mode === "pictures" ? i.kind === "S" || i.kind === "E"
+  : true;
+
+/**
+ * Every eligible card for Hot Chair, freshest tier first (selected day → earlier days → earlier weeks,
+ * never later). Mixed mode rotates types so no two consecutive cards share a type when avoidable.
+ */
+export function chairDeck(sel: Selection, mode: ChairMode) {
+  const lv = getLevel(sel.course, sel.level);
+  const tiers: ContentItem[][] = [];
+  const weeks = [...lv.weeks].filter((w) => w.week <= sel.week).sort((a, b) => b.week - a.week);
+  for (const w of weeks) {
+    const days = [...w.days].filter((d) => w.week < sel.week || d.day <= sel.day).sort((a, b) => b.day - a.day);
+    if (w.week === sel.week) for (const d of days) tiers.push(parseDay(d, w.week));
+    else tiers.push(days.flatMap((d) => parseDay(d, w.week)));
+  }
+  const ordered = tiers.flatMap((t) => shuffle(t.filter((i) => chairMatch(i, mode))));
+  const typeOf = (i: ContentItem) => (i.kind === "S" || i.kind === "E" ? "P" : i.kind);
+  if (mode !== "mix") return ordered;
+  const rest = [...ordered];
+  const out: ContentItem[] = [];
+  while (rest.length) {
+    const last = out.length ? typeOf(out[out.length - 1]!) : "";
+    const k = rest.findIndex((i) => typeOf(i) !== last);
+    out.push(rest.splice(k < 0 ? 0 : k, 1)[0]!);
+  }
+  return out;
+}

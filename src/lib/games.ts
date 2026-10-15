@@ -120,15 +120,15 @@ export const GAMES: GameDef[] = [
   },
   {
     id: "hot-chair",
-    name: "Hot Chair Translation",
+    name: "Hot Chair",
     icon: "🔥",
-    tagline: "Fast turns. Translate the sentence!",
+    tagline: "60 seconds. One card, one student, one point!",
     mode: "2 teams",
-    minutes: "6 min",
+    minutes: "4 min",
     accent: "bg-game-chair",
     accentText: "text-game-chair",
-    status: "soon",
-    rules: [],
+    status: "ready",
+    rules: [{ icon: "🔥", text: "60 seconds. One card, one student, one point! 🔥" }],
   },
 ];
 
