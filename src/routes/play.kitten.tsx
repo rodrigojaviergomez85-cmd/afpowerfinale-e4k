@@ -287,7 +287,7 @@ function coins(calm: boolean) {
 function LoseSequence({ step, calm, goal, rungs }: { step: number; calm: boolean; goal: number; rungs: number }) {
   return (
     <div className={cn("relative flex flex-1 flex-col items-center justify-center gap-5 overflow-hidden px-8", step === 0 && (calm ? "animate-softshake" : "animate-bigshake"))}>
-      <TreeScene pct={0.1} goal={goal} rungs={rungs} snapped pepperAt={step === 0 ? "falling" : step === 1 ? "net" : "helmet"} rosaT={0} rosaMood={step === 0 ? "whoa" : "smile"} pepperMood={step === 0 ? "scared" : "dizzy"} boing={step === 1 ? 1 : 0} calm={calm} className="h-[340px] max-w-5xl" />
+      <TreeScene pct={0.1} goal={goal} rungs={rungs} snapped crowd="shock" pepperAt={step === 0 ? "falling" : step === 1 ? "net" : "helmet"} rosaT={0} rosaMood={step === 0 ? "whoa" : "smile"} pepperMood={step === 0 ? "scared" : "dizzy"} boing={step === 1 ? 1 : 0} calm={calm} className="h-[340px] max-w-5xl" />
       {step === 0 && <div className="animate-stamp font-display text-[7rem] font-bold leading-none text-destructive text-stroke">CRACK! Meeeow!</div>}
       {step === 1 && <div className="animate-pop font-display text-[6rem] font-bold leading-none text-stroke">BOING! BOING!</div>}
       {step >= 2 && <div className="animate-pop font-display text-6xl font-bold text-stroke">Phew! 😮‍💨</div>}

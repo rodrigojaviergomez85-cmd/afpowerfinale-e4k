@@ -606,3 +606,5 @@
 @keyframes kitten-spray { from { stroke-dashoffset: 60; } to { stroke-dashoffset: 0; } }
 .kitten-spray { stroke-dasharray: 10 8; animation: kitten-spray .6s linear infinite; }
 .kitten-banner { transform: rotate(-4deg); }
+@keyframes kitten-gasp { 0%,100% { translate: 0 0; } 25% { translate: 0 -7px; } 60% { translate: 0 -2px; } }
+.kitten-gasp { animation: kitten-gasp .7s ease-out 2; }
