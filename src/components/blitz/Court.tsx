@@ -12,6 +12,6 @@ export function Court({ teams, scores, active, rally, rounds, review }: { teams:
       <div className="blitz-serving">{!review && active === i ? "Your serve!" : "\u00a0"}</div>
     </div>)}
     <div className="blitz-rally"><strong>Rally: {rally}</strong><span key={tag} className={rally >= 5 ? "animate-pop text-primary" : "text-foreground"}>{tag}</span></div>
-    <div className={cn("blitz-ball", active === 0 ? "blitz-ball-left" : "blitz-ball-right")} aria-label="Tennis ball"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="27" className="fill-primary stroke-primary-foreground" strokeWidth="2"/><path d="M11 10C38 24 22 39 48 50M49 10C22 24 38 39 12 50" className="stroke-foreground" fill="none" strokeWidth="3"/></svg></div>
+    <div className={cn("blitz-ball", `blitz-ball-lane-${rally % 5}`, active === 0 ? "blitz-ball-left" : "blitz-ball-right")} aria-label="Tennis ball"><svg key={rally} viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="27" className="fill-primary stroke-primary-foreground" strokeWidth="2"/><path d="M11 10C38 24 22 39 48 50M49 10C22 24 38 39 12 50" className="stroke-foreground" fill="none" strokeWidth="3"/></svg></div>
   </section>;
 }
