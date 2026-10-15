@@ -492,6 +492,8 @@
   .rope-play .hidden-picture, .rope-play .item-picture { grid-column: 1; grid-row: 2; }
   .rope-play .fit-card:has(.hidden-picture) .item-prompt, .rope-play .fit-card:has(.item-picture:not(:empty)) .item-prompt { grid-column: 2; grid-row: 2; font-size: 48px !important; }
   .rope-play .item-answer { grid-column: 1 / -1; font-size: 21px; }
+  .rope-play .item-picture > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; max-width: 100%; }
+  .rope-play .item-picture svg { width: 70px; height: 70px; max-width: 100%; }
   .rope-controls-roster { display: flex; }
   .rope-controls-roster > button { flex: 1; font-size: 17px; gap: 4px; padding-inline: 8px; }
   .rope-controls-roster > button kbd { display: none; }
