@@ -20,10 +20,10 @@ export const Route = createFileRoute("/play/rope")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "Tightrope Rescue — AF Power Finale" },
-      { name: "description", content: "Whole-class circus challenge: raise Luna’s platform to the SAFE balcony before time runs out!" },
-      { property: "og:title", content: "Tightrope Rescue — AF Power Finale" },
-      { property: "og:description", content: "Whole-class circus challenge: raise Luna’s platform to the SAFE balcony before time runs out!" },
+      { title: "Circus Rescue — AF Power Finale" },
+      { name: "description", content: "Whole-class circus challenge: raise Luna’s platform to safety before time runs out!" },
+      { property: "og:title", content: "Circus Rescue — AF Power Finale" },
+      { property: "og:description", content: "Whole-class circus challenge: raise Luna’s platform to safety before time runs out!" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -42,7 +42,7 @@ function TightropeRescue() {
   const base = getGame("tightrope");
   if (!base) throw new Error("Circus game is unavailable");
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Luna to SAFE! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Luna to safety! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
@@ -125,8 +125,8 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
     if (phase !== "play") return;
     if (secs !== lastSec.current && !frozen) {
       lastSec.current = secs;
-      if (secs <= 10 && secs > 0) { sfx.tick(); sfx.drumroll(0.5); }
-      else if (pct < 0.25 && secs % 4 === 0) sfx.drumroll(calm ? 0.6 : 1.2);
+      // A single soft cue, never a continuous rattling roll near defeat.
+      if (secs === 10) sfx.ooh();
     }
     if (remaining <= 0) { setPhase("lose"); setStep(0); }
   }, [secs, remaining, phase, pct, calm, frozen]);
@@ -251,7 +251,7 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
         <div className="rope-player min-w-0 truncate text-2xl font-bold">
           {player ? <>🎤 Your turn: {player.name}!</> : <>🤝 Whole class!</>}
         </div>
-        <div className="text-xl font-bold text-muted-foreground">{Math.max(0, altitude)} / {goal} levels to SAFE!</div>
+        <div className="text-xl font-bold text-muted-foreground">{Math.max(0, altitude)} / {goal} levels to safety</div>
         <div className="rope-timer"><TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={120} /></div>
       </div>
 
@@ -299,11 +299,13 @@ function fireworks(calm: boolean) {
 
 function LoseSequence({ step, calm, goal, steps }: { step: number; calm: boolean; goal: number; steps: number }) {
   return (
-    <div className="circus-ending">
+    <div className="circus-ending" data-calm={calm}>
       <Tightrope pct={0} goal={goal} steps={steps} mood="uhoh" crowd="gasp" falling={step >= 1} inPool={step >= 2} calm={calm} className="rope-ending-scene" />
+      {step >= 1 && <div className="circus-flood" aria-hidden="true"><svg viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0 40 Q125 0 250 40 T500 40 T750 40 T1000 40 V100 H0Z" fill="var(--pool)" /><path d="M0 40 Q125 0 250 40 T500 40 T750 40 T1000 40" fill="none" stroke="var(--river-foam)" strokeWidth="5" /></svg></div>}
       <div className="circus-ending-caption" aria-live="polite">
-        <h1>{step === 0 ? "Hold on, Luna!" : step === 1 ? "SPLAAASH!" : "A splash, not the end!"}</h1>
-        <p>{step >= 2 ? "Let's rescue her next time!" : ""}</p>
+        <h1 className="circus-finale-title">{step === 0 ? "Hold on!" : "SPLAAASH!"}</h1>
+        {step >= 2 && <div className="circus-finale-banner">So close!</div>}
+        <p>{step >= 2 ? "Let's rescue Luna next time!" : ""}</p>
       </div>
       <div className="circus-skip">Skip <Kbd>Space</Kbd></div>
     </div>
@@ -315,8 +317,9 @@ function WinSequence({ step, calm, goal, heroes, close }: { step: number; calm: 
     <div className="circus-ending">
       <Tightrope pct={1} goal={goal} steps={step >= 1 ? goal : goal - 1} mood={step >= 2 ? "tada" : "happy"} landing={step >= 2} celebrating={step >= 2} stars={step >= 3 ? heroes : []} calm={calm} className="rope-ending-scene" />
       <div className="circus-ending-caption" aria-live="polite">
-        <h1>{step < 2 ? "One final leap…" : "TA-DAAA! LUNA IS SAFE!"}</h1>
-        <p>{step >= 2 ? close ? "Phew! Just in time!" : "You raised her all the way!" : ""}</p>
+        <h1 className="circus-finale-title">{step < 2 ? "One final leap…" : "TA-DAAA!"}</h1>
+        {step >= 2 && <div className="circus-finale-banner">Rescue complete!</div>}
+        <p>{step >= 2 ? close ? "Phew! Just in time!" : "Luna is safe, thanks to you!" : ""}</p>
       </div>
       <div className="circus-skip">Skip <Kbd>Space</Kbd></div>
     </div>
@@ -339,13 +342,14 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
       <Tightrope pct={won ? 1 : 0} goal={goal} steps={won ? goal : 0} mood={won ? "tada" : "soaked"} landing={won} celebrating={won} inPool={!won} calm className="circus-result-scene" />
       {won ? (
         <>
-          <h1 className="text-7xl text-stroke">{secondsLeft < 10 ? "PHEW! JUST IN TIME!" : "Rescue complete! 🎉"}</h1>
+          <h1 className="circus-result-title text-stroke">TA-DAAA!</h1>
+          <div className="circus-finale-banner">Rescue complete!</div>
           <div className="text-4xl font-bold">Saved with <span className="text-primary">{secondsLeft}</span> seconds to spare!</div>
         </>
       ) : (
         <>
-          <h1 className="text-8xl text-stroke">SPLASH! So close!</h1>
-          <div className="text-5xl font-bold"><span className="text-primary">{progress}</span>/{goal} steps</div>
+          <h1 className="circus-result-title text-stroke">SPLAAASH!</h1>
+          <div className="text-5xl font-bold"><span className="text-primary">{progress}</span>/{goal} levels</div>
           <div className="text-3xl font-bold">You almost had it! Rematch?</div>
         </>
       )}
