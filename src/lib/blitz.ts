@@ -2,6 +2,9 @@ import { COURSES, type VocabGroup } from "@/data/content";
 
 export const categoryIcons: Record<string, string> = { Shapes: "🔵", Professions: "🧑‍🚒", "What do they do?": "🛠️", Colors: "🎨", Numbers: "🔢", Family: "👪", "Daily routine": "⏰", Food: "🍎", Animals: "🐾", School: "✏️", Rooms: "🏠" };
 
+/** Display names are separate from curriculum keys so saved category picks stay valid. */
+export const categoryLabel = (category: string) => category === "What do they do?" ? "Professions' activities" : category;
+
 export function availableCategories(course: string, level: number, week: number): VocabGroup[] {
   return COURSES.find((c) => c.name === course)?.levels.find((l) => l.level === level)?.vocab.filter((v) => v.week === "general" || v.week <= week) ?? [];
 }

@@ -20,3 +20,4 @@
 - Circus layout overrides stay scoped to `rope-shell` and `rope-play`; the tall scene sits beside the question with a full-size timer above it so other game layouts remain unchanged.
 - Kitten Rescue (`/play/kitten`, own `kitten` settings) reuses Bridge's scoped `bridge-shell`/`bridge-play` layout classes; its token-colored park SVG lives in `src/components/kitten/TreeScene.tsx` — keeps one tested compact layout for timer-race games.
 - Vocab Blitz uses vocabulary groups from the static curriculum, a pure rally reducer in `src/lib/blitz.ts`, and its own scoped court layout and persisted options; roster order assigns alternating entries to teams so selection stays team-specific without changing shared roster data.
+- Vocabulary display labels are centralized separately from curriculum category keys so wording changes preserve saved coach selections and original curriculum content.
