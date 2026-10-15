@@ -189,13 +189,15 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
   };
 
   return (
-    <div className={cn("tug-scene relative w-full overflow-hidden rounded-3xl chunky", className)}>
-      <svg viewBox="0 0 1120 300" className="h-full w-full" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Tug of war over a mud puddle">
-        {/* sky + meadow */}
-        <rect width="1120" height="300" fill="var(--park-sky)" />
-        <circle cx="1010" cy="46" r="30" fill="var(--gold)" stroke="var(--gold-deep)" strokeWidth="4" />
-        <ellipse cx="180" cy="52" rx="58" ry="18" fill="#fff" opacity="0.8" />
-        <ellipse cx="250" cy="62" rx="40" ry="14" fill="#fff" opacity="0.7" />
+    <div
+      className={cn("tug-scene relative w-full overflow-hidden rounded-3xl chunky", className)}
+      style={{ background: "linear-gradient(to bottom, var(--park-sky) 0 31.5%, var(--park-grass) 31.5% 100%)" }}
+    >
+      <svg viewBox="0 90 1120 190" className="h-full w-full" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Tug of war over a mud puddle">
+        {/* sun + clouds */}
+        <circle cx="62" cy="122" r="24" fill="var(--gold)" stroke="var(--gold-deep)" strokeWidth="4" />
+        <ellipse cx="420" cy="122" rx="52" ry="15" fill="#fff" opacity="0.8" />
+        <ellipse cx="480" cy="131" rx="36" ry="12" fill="#fff" opacity="0.7" />
         <rect y="150" width="1120" height="150" fill="var(--park-grass)" />
         <rect y="150" width="1120" height="12" fill="var(--park-grass-deep)" opacity="0.5" />
         {[80, 320, 700, 1060].map((x) => (
