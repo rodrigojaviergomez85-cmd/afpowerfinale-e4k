@@ -48,7 +48,7 @@ function Hub() {
           <p className="mt-2 text-2xl font-semibold text-muted-foreground">Pick a game. Let’s go, champions!</p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {GAMES.map((g, i) => {
+          {[...GAMES].sort((a, b) => (a.status === "ready" ? 0 : 1) - (b.status === "ready" ? 0 : 1)).map((g, i) => {
             const ready = g.status === "ready";
             const card = (
               <div
