@@ -52,12 +52,10 @@ function BridgeBuilder() {
   );
 }
 
-/** Same mixed queue as Beat the Bomb, but at most 2 hidden pictures per game. */
-function drawBridge(target: number, mix: Parameters<typeof drawItems>[2]) {
-  const r = drawItems(selectionOf(useApp.getState()), target + 8, mix, sessionUsed["bridge"] ?? []);
-  let h = 0;
-  const items = r.items.filter((i) => i.kind !== "H" || ++h <= 2).slice(0, target);
-  return { items, review: r.review };
+/** Balanced mix straight from the content bank: questions & translations lead, every other dynamic shows up. */
+function drawBridge(target: number) {
+  const r = drawItems(selectionOf(useApp.getState()), target, "mix", sessionUsed["bridge"] ?? []);
+  return { items: r.items, review: r.review };
 }
 
 type Phase = "play" | "lose" | "win" | "end";
@@ -68,7 +66,7 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
   const calm = useApp((s) => s.settings.calm);
   const roster = useApp((s) => s.roster);
 
-  const init = useMemo(() => drawBridge(opts.target, opts.mix), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const init = useMemo(() => drawBridge(opts.target), []); // eslint-disable-line react-hooks/exhaustive-deps
   const goal = Math.min(opts.target, init.items.length);
   const total = opts.time;
 
