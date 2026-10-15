@@ -159,7 +159,7 @@ function DetectiveGame({ onRematch, helpOpen, openHelp }: { onRematch: () => voi
     setProgress(n);
     if (player) setHeroes((h) => (h.includes(player.name) ? h : [...h, player.name]));
     pop(`Clue ${n}/${goal}`, "good");
-    setFreshPaw(true);
+    setFreshPaw(true); setTimeout(() => setFreshPaw(false), 600);
     if (n >= goal) { setWon(true); setPhase("win"); setStep(0); return; }
     sfx.stamp();
     setCheerUntil(Date.now() + 900);
