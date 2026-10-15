@@ -15,7 +15,7 @@ export interface ContentItem {
   week: number;
   day: number;
 }
-export type ContentMix = "mix" | "questions" | "translations";
+export type ContentMix = "mix" | "questions" | "translations" | "wh";
 export interface Selection { course: string; level: number; week: number; day: number }
 
 export const SHAPE_COLORS = ["red", "blue", "yellow", "green", "purple", "orange", "pink"];
@@ -77,7 +77,7 @@ export function normalizeSelection(sel: Selection): Selection {
 }
 
 const matchesMix = (i: ContentItem, mix: ContentMix) =>
-  mix === "mix" ? true : mix === "translations" ? i.kind === "T" : i.kind !== "T";
+  mix === "mix" ? true : mix === "translations" ? i.kind === "T" : mix === "wh" ? i.kind === "Q" : i.kind !== "T";
 
 /**
  * Tiers: selected day → earlier days of same week (latest first) → earlier weeks (latest first).
@@ -104,7 +104,7 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
   ];
   const typeOf = (i: ContentItem) => (i.kind === "S" || i.kind === "E" ? "P" : i.kind);
   const picked: ContentItem[] = [];
-  if (mix === "translations") picked.push(...ordered.slice(0, count));
+  if (mix === "translations" || mix === "wh") picked.push(...ordered.slice(0, count));
   else {
     // Questions & translations take half the round (Q slightly ahead for short
     // rounds). The other half is split AT RANDOM between hidden pictures, blanks

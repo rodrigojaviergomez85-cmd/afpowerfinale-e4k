@@ -13,7 +13,7 @@ export interface Settings {
   showSpanish: boolean;
   calm: boolean;
 }
-export interface BombOptions { target: number; time: number; penalty: number; mix: ContentMix }
+export interface BombOptions { target: number; time: number; penalty: number; mix: ContentMix; whOnly?: boolean }
 /** Challenge types for Tightrope Rescue: Q question, T translation, F fill-in, H hidden picture, P picture question (S/E). */
 export type RopeType = "Q" | "T" | "F" | "H" | "P";
 export interface RaceOptions { stops: number; turnTime: number; cards: number }
@@ -76,9 +76,9 @@ export const TEAM_NAME_POOL: Team[] = [
 ];
 
 export const BOMB_PRESETS: Record<string, BombOptions> = {
-  Easy: { target: 8, time: 120, penalty: 3, mix: "mix" },
-  Normal: { target: 10, time: 120, penalty: 5, mix: "mix" },
-  Hard: { target: 12, time: 100, penalty: 5, mix: "mix" },
+  Easy: { target: 8, time: 120, penalty: 3, mix: "mix", whOnly: false },
+  Normal: { target: 10, time: 120, penalty: 5, mix: "mix", whOnly: false },
+  Hard: { target: 12, time: 100, penalty: 5, mix: "mix", whOnly: false },
 };
 
 /** Session-only memory (not saved): ids used in the previous game, so Rematch prefers new items. */

@@ -39,7 +39,15 @@ const SHORTCUTS: [string, string][] = [
 function BeatTheBomb() {
   const base = getGame("beat-the-bomb")!;
   const target = useApp((s) => s.bomb.target);
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "💣", text: `Answer ${target} questions before the bomb explodes!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
+  const whOnly = useApp((s) => s.bomb.whOnly);
+  const game = useMemo(() => ({
+    ...base,
+    rules: [
+      { icon: "💣", text: `Answer ${target} questions before the bomb explodes!` },
+      { icon: "🤝", text: "Work together!" },
+      ...(whOnly ? [{ icon: "❓", text: "WH questions only!" }] : []),
+    ],
+  }), [base, target, whOnly]);
   const [round, setRound] = useState(0);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
@@ -58,7 +66,7 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   const calm = useApp((s) => s.settings.calm);
   const roster = useApp((s) => s.roster);
 
-  const init = useMemo(() => drawItems(selectionOf(useApp.getState()), opts.target, "mix", sessionUsed["bomb"] ?? []), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const init = useMemo(() => drawItems(selectionOf(useApp.getState()), opts.target, opts.whOnly ? "wh" : "mix", sessionUsed["bomb"] ?? []), []); // eslint-disable-line react-hooks/exhaustive-deps
   const goal = Math.min(opts.target, init.items.length);
   const total = opts.time;
 
