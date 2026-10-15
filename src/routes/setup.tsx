@@ -4,9 +4,10 @@ import { Home, Shuffle, Plus, X, Play } from "lucide-react";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BOMB_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, BLITZ_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
-import { availableCategories, categoryIcons } from "@/lib/blitz";
+import { availableCategories, categoryIcons, categoryLabel } from "@/lib/blitz";
 
 import { getGame } from "@/lib/games";
 import { COURSES } from "@/data/content";
@@ -139,11 +140,11 @@ function Setup() {
               <div className="space-y-2"><div className="font-bold text-muted-foreground">{isBridge ? "Wave penalty for wrong / skip" : "Penalty for wrong / skip"}</div>
                 <Seg value={mo.penalty} onChange={(v) => setMo({ penalty: v })} options={[0, 3, 5].map((n) => ({ v: n, l: `${n}s` }))} /></div>
               {game.id === "beat-the-bomb" && (
-                <div className="space-y-2 pt-1">
-                  <div className="font-bold text-muted-foreground">WH questions only</div>
-                  <div className="flex gap-2">
-                    <Button variant={mo.whOnly ? "game" : "panel"} aria-pressed={!!mo.whOnly} onClick={() => setMo({ whOnly: true })}>On — only WH questions</Button>
-                    <Button variant={!mo.whOnly ? "game" : "panel"} aria-pressed={!mo.whOnly} onClick={() => setMo({ whOnly: false })}>Off — mixed</Button>
+                <div className="flex items-center justify-between gap-4 pt-2">
+                  <label htmlFor="bomb-wh-only" className="cursor-pointer font-bold text-muted-foreground">WH questions only</label>
+                  <div className="flex items-center gap-3">
+                    <Switch id="bomb-wh-only" checked={!!mo.whOnly} onCheckedChange={(checked) => setMo({ whOnly: checked })} className="h-7 w-12 [&_span]:h-6 [&_span]:w-6 [&_span]:data-[state=checked]:translate-x-5" />
+                    <span className="w-8 font-bold" aria-live="polite">{mo.whOnly ? "Yes" : "No"}</span>
                   </div>
                 </div>
               )}
@@ -158,7 +159,7 @@ function Setup() {
                     <div><div className="mb-2 font-bold text-muted-foreground">Shot clock</div><div className="flex gap-2">{[5, 7, 10].map((n) => <Button key={n} variant={blitz.shotClock === n ? "game" : "panel"} aria-pressed={blitz.shotClock === n} onClick={() => s.setBlitz({ shotClock: n })}>{n}s</Button>)}</div></div>
                   </div>
                   <div className="flex items-center justify-between"><h3 className="text-xl">Categories</h3><Button variant={blitz.categories.length ? "panel" : "game"} onClick={() => s.setBlitz({ categories: [] })}><Shuffle /> Random</Button></div>
-                  <div className="flex flex-wrap gap-2">{categories.map((v) => <Button key={v.category} variant={blitz.categories.includes(v.category) ? "game" : "panel"} aria-pressed={blitz.categories.includes(v.category)} onClick={() => s.setBlitz({ categories: blitz.categories.includes(v.category) ? blitz.categories.filter((c) => c !== v.category) : [...blitz.categories, v.category].slice(-blitz.rounds) })}>{categoryIcons[v.category]} {v.category}{v.week === s.week && <span className="text-xs">· This week</span>}</Button>)}</div>
+                  <div className="flex flex-wrap gap-2">{categories.map((v) => <Button key={v.category} variant={blitz.categories.includes(v.category) ? "game" : "panel"} aria-pressed={blitz.categories.includes(v.category)} onClick={() => s.setBlitz({ categories: blitz.categories.includes(v.category) ? blitz.categories.filter((c) => c !== v.category) : [...blitz.categories, v.category].slice(-blitz.rounds) })}>{categoryIcons[v.category]} {categoryLabel(v.category)}{v.week === s.week && <span className="text-xs">· This week</span>}</Button>)}</div>
                 </div>
               ) : isRace || isTug ? (
               <div className="space-y-3 pt-2">

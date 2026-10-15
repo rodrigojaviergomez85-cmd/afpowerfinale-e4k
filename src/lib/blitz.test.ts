@@ -1,7 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { availableCategories, chooseCategories, initialRally, rallyReducer } from "./blitz";
+import { availableCategories, chooseCategories, categoryLabel, initialRally, rallyReducer } from "./blitz";
 
 describe("Vocab Blitz", () => {
+  it("presents profession actions as a vocabulary category without changing its stored key", () => {
+    expect(categoryLabel("What do they do?")).toBe("Professions' activities");
+    expect(categoryLabel("Professions")).toBe("Professions");
+  });
   it("excludes later weeks and includes all eight general groups", () => {
     const a = availableCategories("Kids Super Intensivo", 2, 4);
     expect(a.some((c) => c.category === "Professions")).toBe(false);

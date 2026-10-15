@@ -8,7 +8,7 @@ import { pickPlayer } from "@/components/engine/TurnPicker";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
 import { toggleFullscreen, useHotkeys } from "@/components/engine/controls";
 import { Court } from "@/components/blitz/Court";
-import { availableCategories, chooseCategories, categoryIcons, initialRally, rallyReducer, type RallyState, type RallyAction } from "@/lib/blitz";
+import { availableCategories, chooseCategories, categoryIcons, categoryLabel, initialRally, rallyReducer, type RallyState, type RallyAction } from "@/lib/blitz";
 import { BLITZ_DEFAULTS, useApp, type Player } from "@/lib/store";
 import { getGame, GAMES } from "@/lib/games";
 import { sfx } from "@/lib/sound";
@@ -141,8 +141,8 @@ function BlitzMatch() {
     <Court teams={app.teams} scores={state.scores} active={state.active} rally={state.rally} rounds={options.rounds} review={state.phase !== "rally"} />
     <section className="blitz-category-zone">
       <div key={`${state.round}-${matchKey}`} className="blitz-category animate-pop">
-        {state.phase === "review" ? <><div className="blitz-round-point text-primary">{roundWinningTeam.name} +1 ROUND ★</div><h1 className="blitz-review-title">{categoryIcons[category.category]} {category.category}</h1><h2 className="text-xl text-muted-foreground">Words you could say:</h2><p className="blitz-word-list">{category.words.join(" · ")}</p><span className="text-muted-foreground">Next category in {reviewSeconds}s</span></> : <>
-          <div className="blitz-category-icon">{categoryIcons[category.category] ?? "⚡"}</div><h1>{category.category.toUpperCase()}!</h1>
+        {state.phase === "review" ? <><div className="blitz-round-point text-primary">{roundWinningTeam.name} +1 ROUND ★</div><h1 className="blitz-review-title">{categoryIcons[category.category]} {categoryLabel(category.category)}</h1><h2 className="text-xl text-muted-foreground">Words you could say:</h2><p className="blitz-word-list">{category.words.join(" · ")}</p><span className="text-muted-foreground">Next category in {reviewSeconds}s</span></> : <>
+          <div className="blitz-category-icon">{categoryIcons[category.category] ?? "⚡"}</div><h1>{categoryLabel(category.category).toUpperCase()}</h1>
           {state.phase === "intro" ? <div className="blitz-starting"><span className={state.round === 0 ? "blitz-coin" : ""}>{startingTeam.icon}</span><span>{startingTeam.name} starts!</span></div> : <div className={state.active === 0 ? "text-team1" : "text-team2"}>{player ? `🎤 ${player.name}` : `${servingTeam.name}’s turn`}</div>}
           {state.round === 0 && <p className="blitz-rule">Say a word. Don't repeat! Don't stop!</p>}
         </>}
