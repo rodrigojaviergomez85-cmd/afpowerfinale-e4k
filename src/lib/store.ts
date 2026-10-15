@@ -20,6 +20,8 @@ export interface RaceOptions { stops: number; turnTime: number; cards: number }
 export const RACE_DEFAULTS: RaceOptions = { stops: 6, turnTime: 15, cards: 16 };
 export interface TugOptions { pulls: number; turnTime: number; cards: number }
 export const TUG_DEFAULTS: TugOptions = { pulls: 5, turnTime: 15, cards: 16 };
+export interface BlitzOptions { rounds: number; shotClock: number; categories: string[] }
+export const BLITZ_DEFAULTS: BlitzOptions = { rounds: 3, shotClock: 7, categories: [] };
 export interface LastResult {
   gameId: string;
   teams: Team[];
@@ -47,6 +49,8 @@ interface AppState {
   setRace: (r: Partial<RaceOptions>) => void;
   tug: TugOptions;
   setTug: (r: Partial<TugOptions>) => void;
+  blitz: BlitzOptions;
+  setBlitz: (r: Partial<BlitzOptions>) => void;
   lastResult: LastResult | null;
   setSettings: (s: Partial<Settings>) => void;
   setSetup: (s: Partial<Pick<AppState, "course" | "level" | "week" | "day" | "teams" | "roster">>) => void;
@@ -104,6 +108,8 @@ export const useApp = create<AppState>()(
       setRace: (r) => set({ race: { ...RACE_DEFAULTS, ...get().race, ...r } }),
       tug: TUG_DEFAULTS,
       setTug: (r) => set({ tug: { ...TUG_DEFAULTS, ...get().tug, ...r } }),
+      blitz: BLITZ_DEFAULTS,
+      setBlitz: (r) => set({ blitz: { ...BLITZ_DEFAULTS, ...get().blitz, ...r } }),
       lastResult: null,
       setSettings: (s) => set({ settings: { ...get().settings, ...s } }),
       setSetup: (s) => set(s as Partial<AppState>),

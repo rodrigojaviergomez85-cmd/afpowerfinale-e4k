@@ -5,7 +5,8 @@
 
 export interface DayDef { day: number; label: string; focus: string; lines: string[] }
 export interface WeekDef { week: number; days: DayDef[] }
-export interface LevelDef { level: number; weeks: WeekDef[]; vocab: { week: number; category: string; words: string[] }[] }
+export interface VocabGroup { week: number | "general"; category: string; words: string[] }
+export interface LevelDef { level: number; weeks: WeekDef[]; vocab: VocabGroup[] }
 export interface CourseDef { name: string; levels: LevelDef[] }
 
 export const COURSES: CourseDef[] = [
@@ -184,6 +185,14 @@ export const COURSES: CourseDef[] = [
           }
         ],
         "vocab": [
+          { week: "general", category: "Colors", words: ["red", "blue", "yellow", "green", "orange", "purple", "pink", "black", "white", "brown", "gray"] },
+          { week: "general", category: "Numbers", words: ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"] },
+          { week: "general", category: "Family", words: ["mom", "dad", "brother", "sister", "grandma", "grandpa", "baby", "aunt", "uncle", "cousin"] },
+          { week: "general", category: "Daily routine", words: ["wake up", "take a shower", "brush my teeth", "eat breakfast", "go to school", "do homework", "play", "eat dinner", "watch TV", "go to bed"] },
+          { week: "general", category: "Food", words: ["apple", "banana", "pizza", "rice", "chicken", "bread", "milk", "water", "juice", "cookie", "sandwich", "soup"] },
+          { week: "general", category: "Animals", words: ["dog", "cat", "bird", "fish", "horse", "cow", "pig", "lion", "monkey", "elephant", "rabbit", "turtle"] },
+          { week: "general", category: "School", words: ["pencil", "pen", "book", "notebook", "desk", "chair", "teacher", "backpack", "eraser", "ruler"] },
+          { week: "general", category: "Rooms", words: ["kitchen", "bedroom", "bathroom", "living room", "garden", "garage"] },
           {
             "week": 4,
             "category": "Shapes",
