@@ -5,7 +5,8 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BOMB_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
+import { BOMB_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, BLITZ_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
+import { availableCategories, categoryIcons } from "@/lib/blitz";
 
 import { getGame } from "@/lib/games";
 import { COURSES } from "@/data/content";
@@ -60,6 +61,7 @@ function Setup() {
   const isKitten = game.id === "kitten-rescue";
   const isRace = game.id === "rocket-race";
   const isTug = game.id === "mud-tug";
+  const isBlitz = game.id === "vocab-blitz";
   const isBomb = game.id === "beat-the-bomb" || isBridge || isRope || isKitten;
   const navigate = useNavigate();
   const s = useApp();
@@ -75,7 +77,7 @@ function Setup() {
   const level = getLevel(course.name, s.level);
   const week = level.weeks.find((w) => w.week === s.week) ?? level.weeks[0]!;
 
-  const start = () => navigate({ to: isRace ? "/play/race" : isTug ? "/play/tug" : isRope ? "/play/rope" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
+  const start = () => navigate({ to: isBlitz ? "/play/blitz" : isRace ? "/play/race" : isTug ? "/play/tug" : isRope ? "/play/rope" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
   useHotkeys({ Enter: start });
 
   const reshuffle = () => {
@@ -92,6 +94,8 @@ function Setup() {
   const setMo = isKitten ? s.setKitten : isRope ? s.setRope : isBridge ? s.setBridge : s.setBomb;
   const race = { ...RACE_DEFAULTS, ...s.race };
   const tug = { ...TUG_DEFAULTS, ...s.tug };
+  const blitz = { ...BLITZ_DEFAULTS, ...s.blitz };
+  const categories = availableCategories(s.course, s.level, s.week);
   const presetName = Object.entries(BOMB_PRESETS).find(([, p]) => p.target === mo.target && p.time === mo.time && p.penalty === mo.penalty)?.[0];
 
   return (
@@ -137,7 +141,17 @@ function Setup() {
             </div>
           ) : (
             <>
-              {isRace || isTug ? (
+              {isBlitz ? (
+                <div className="space-y-4 pt-2">
+                  <h2 className="text-3xl">⚡ Blitz options</h2>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div><div className="mb-2 font-bold text-muted-foreground">Rounds</div><div className="flex gap-2">{[3, 5].map((n) => <Button key={n} variant={blitz.rounds === n ? "game" : "panel"} aria-pressed={blitz.rounds === n} onClick={() => s.setBlitz({ rounds: n })}>{n}</Button>)}</div></div>
+                    <div><div className="mb-2 font-bold text-muted-foreground">Shot clock</div><div className="flex gap-2">{[5, 7, 10].map((n) => <Button key={n} variant={blitz.shotClock === n ? "game" : "panel"} aria-pressed={blitz.shotClock === n} onClick={() => s.setBlitz({ shotClock: n })}>{n}s</Button>)}</div></div>
+                  </div>
+                  <div className="flex items-center justify-between"><h3 className="text-xl">Categories</h3><Button variant={blitz.categories.length ? "panel" : "game"} onClick={() => s.setBlitz({ categories: [] })}><Shuffle /> Random</Button></div>
+                  <div className="flex flex-wrap gap-2">{categories.map((v) => <Button key={v.category} variant={blitz.categories.includes(v.category) ? "game" : "panel"} aria-pressed={blitz.categories.includes(v.category)} onClick={() => s.setBlitz({ categories: blitz.categories.includes(v.category) ? blitz.categories.filter((c) => c !== v.category) : [...blitz.categories, v.category].slice(-blitz.rounds) })}>{categoryIcons[v.category]} {v.category}{v.week === s.week && <span className="text-xs">· This week</span>}</Button>)}</div>
+                </div>
+              ) : isRace || isTug ? (
               <div className="space-y-3 pt-2">
                 <h2 className="text-3xl">{isRace ? "🚀 Race options" : "🪢 Tug of war options"}</h2>
                 <div className="space-y-2"><div className="font-bold text-muted-foreground">{isRace ? "⛽ Fuel stops to the planet" : "💪 Pulls to win (each side)"}</div>

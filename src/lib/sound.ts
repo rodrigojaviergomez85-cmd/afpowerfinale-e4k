@@ -53,6 +53,7 @@ function noise(dur: number, delay = 0, gainMul = 1, filterFreq = 2000, filterTo?
 }
 
 export const sfx = {
+  ping: () => tone(1100, 0.13, "sine", 0, 0.8, 750),
   correct: () => { tone(660, 0.12); tone(990, 0.22, "square", 0.1); },
   skip: () => tone(400, 0.25, "triangle", 0, 1, 200),
   tick: () => tone(1200, 0.05, "square", 0, 0.5),
