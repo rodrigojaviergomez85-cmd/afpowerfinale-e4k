@@ -67,6 +67,18 @@ export const GAMES: GameDef[] = [
     rules: [],
   },
   {
+    id: "kitten-rescue",
+    name: "Kitten Rescue",
+    icon: "🐱",
+    tagline: "Build the ladder and save Pepper!",
+    mode: "Whole class",
+    minutes: "3 min",
+    accent: "bg-game-kitten",
+    accentText: "text-game-kitten",
+    status: "ready",
+    rules: [],
+  },
+  {
     id: "rocket-race",
     name: "Rocket Race",
     icon: "🚀",

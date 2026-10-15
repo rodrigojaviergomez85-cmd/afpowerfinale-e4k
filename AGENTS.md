@@ -18,3 +18,4 @@
 
 - Circus Rescue retains its existing tightrope game ID and rope route/settings for saved-state compatibility; its self-contained token-colored SVG stage, audience and mood-driven puppet are shared across play and endings so no image requests delay rendering. Altitude is separate from correct-answer count so mistakes lower the platform, and missed cards requeue until the rescue succeeds or fails.
 - Circus layout overrides stay scoped to `rope-shell` and `rope-play`; the tall scene sits beside the question with a full-size timer above it so other game layouts remain unchanged.
+- Kitten Rescue (`/play/kitten`, own `kitten` settings) reuses Bridge's scoped `bridge-shell`/`bridge-play` layout classes; its token-colored park SVG lives in `src/components/kitten/TreeScene.tsx` — keeps one tested compact layout for timer-race games.

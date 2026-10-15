@@ -19,3 +19,4 @@
 - [x] Tightrope: illustrated elevator rescue, upward/downward platform and safe/splash endings; large scene, floating timer and full-size controls without scrolling.
 - [x] Tightrope: lightweight cohesive illustrated scene, expressive character, continuous animated SAFE/SPLASH endings; play and both endings verified at 874×639, 1366×768 and 1920×1080, with no character/background image requests.
 - [x] Circus Rescue: restored striped tent and reacting audience, removed footer text, normalized safe wording, renamed game, dramatic banner endings and flooding water; removed near-defeat rattle; play and both endings verified at 874×639, 1366×768 and 1920×1080.
+- [x] Kitten Rescue game

@@ -57,8 +57,9 @@ function Setup() {
   const game = getGame(gameId) ?? getGame("demo")!;
   const isBridge = game.id === "bridge-builder";
   const isRope = game.id === "tightrope";
+  const isKitten = game.id === "kitten-rescue";
   const isRace = game.id === "rocket-race";
-  const isBomb = game.id === "beat-the-bomb" || isBridge || isRope;
+  const isBomb = game.id === "beat-the-bomb" || isBridge || isRope || isKitten;
   const navigate = useNavigate();
   const s = useApp();
   const [newName, setNewName] = useState("");
@@ -73,7 +74,7 @@ function Setup() {
   const level = getLevel(course.name, s.level);
   const week = level.weeks.find((w) => w.week === s.week) ?? level.weeks[0]!;
 
-  const start = () => navigate({ to: isRace ? "/play/race" : isRope ? "/play/rope" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
+  const start = () => navigate({ to: isRace ? "/play/race" : isRope ? "/play/rope" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
   useHotkeys({ Enter: start });
 
   const reshuffle = () => {
@@ -86,8 +87,8 @@ function Setup() {
     s.setSetup({ roster: [...s.roster, ...names.map((name) => ({ id: crypto.randomUUID(), name, quiet: false, turns: 0, points: 0 }))] });
     setNewName("");
   };
-  const mo = isRope ? (s.rope ?? BOMB_PRESETS["Normal"]!) : isBridge ? (s.bridge ?? BOMB_PRESETS["Normal"]!) : s.bomb;
-  const setMo = isRope ? s.setRope : isBridge ? s.setBridge : s.setBomb;
+  const mo = isKitten ? (s.kitten ?? BOMB_PRESETS["Normal"]!) : isRope ? (s.rope ?? BOMB_PRESETS["Normal"]!) : isBridge ? (s.bridge ?? BOMB_PRESETS["Normal"]!) : s.bomb;
+  const setMo = isKitten ? s.setKitten : isRope ? s.setRope : isBridge ? s.setBridge : s.setBomb;
   const race = { ...RACE_DEFAULTS, ...s.race };
   const presetName = Object.entries(BOMB_PRESETS).find(([, p]) => p.target === mo.target && p.time === mo.time && p.penalty === mo.penalty)?.[0];
 
@@ -123,9 +124,9 @@ function Setup() {
 
           {isBomb ? (
             <div className="space-y-4 pt-2">
-              <h2 className="text-3xl">{isRope ? "🎪 Rescue options" : isBridge ? "🌉 Bridge options" : "💣 Bomb options"}</h2>
+              <h2 className="text-3xl">{isKitten ? "🐱 Rescue options" : isRope ? "🎪 Rescue options" : isBridge ? "🌉 Bridge options" : "💣 Bomb options"}</h2>
               <Seg value={presetName ?? ""} onChange={(v) => v && setMo({ ...BOMB_PRESETS[v], mix: mo.mix })} options={Object.keys(BOMB_PRESETS).map((k) => ({ v: k, l: k }))} />
-              <div className="space-y-1"><div className="font-bold text-muted-foreground">Target: {mo.target} {isRope ? "levels to safety" : isBridge ? "planks" : "questions"}</div>
+              <div className="space-y-1"><div className="font-bold text-muted-foreground">Target: {mo.target} {isKitten ? "rungs" : isRope ? "levels to safety" : isBridge ? "planks" : "questions"}</div>
                 <input type="range" min={6} max={15} value={mo.target} onChange={(e) => setMo({ target: Number(e.target.value) })} className="w-full accent-primary" /></div>
               <div className="space-y-1"><div className="font-bold text-muted-foreground">Total time: {mo.time}s</div>
                 <input type="range" min={60} max={180} step={10} value={mo.time} onChange={(e) => setMo({ time: Number(e.target.value) })} className="w-full accent-primary" /></div>

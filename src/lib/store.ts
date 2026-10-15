@@ -39,6 +39,8 @@ interface AppState {
   bomb: BombOptions;
   bridge: BombOptions;
   rope: BombOptions;
+  kitten: BombOptions;
+  setKitten: (b: Partial<BombOptions>) => void;
   race: RaceOptions;
   setRace: (r: Partial<RaceOptions>) => void;
   lastResult: LastResult | null;
@@ -92,6 +94,8 @@ export const useApp = create<AppState>()(
       bomb: BOMB_PRESETS["Normal"]!,
       bridge: BOMB_PRESETS["Normal"]!,
       rope: BOMB_PRESETS["Normal"]!,
+      kitten: BOMB_PRESETS["Normal"]!,
+      setKitten: (b) => set({ kitten: { ...(get().kitten ?? BOMB_PRESETS["Normal"]!), ...b } }),
       race: RACE_DEFAULTS,
       setRace: (r) => set({ race: { ...RACE_DEFAULTS, ...get().race, ...r } }),
       lastResult: null,

@@ -91,4 +91,13 @@ export const sfx = {
   cymbal: () => { noise(1.4, 0, 1.2, 9000, 3000); },
   thunder: () => { noise(1.4, 0, 1.4, 500, 60); },
   yahoo: () => { tone(520, 0.15, "triangle"); tone(780, 0.3, "triangle", 0.15, 1, 1040); },
+  clack: () => { noise(0.04, 0, 1.2, 4000); tone(520, 0.06, "square", 0, 0.9, 300); noise(0.03, 0.07, 0.8, 5000); },
+  creak: () => { tone(110, 0.6, "sawtooth", 0, 0.35, 150); tone(170, 0.5, "triangle", 0.1, 0.25, 120); },
+  heartbeat: () => { tone(60, 0.12, "sine", 0, 1.6, 45); tone(55, 0.12, "sine", 0.18, 1.3, 40); },
+  meow: (long = false) => tone(700, long ? 1.4 : 0.45, "triangle", 0, 0.7, long ? 380 : 520),
+  whoa: () => tone(600, 0.35, "triangle", 0, 0.8, 320),
+  crack: () => { noise(0.25, 0, 1.6, 6000, 800); tone(180, 0.15, "square", 0, 0.8, 80); },
+  boing: () => tone(180, 0.5, "sine", 0, 1.2, 620),
+  siren: () => [0, 0.3, 0.6, 0.9].forEach((t, i) => tone(i % 2 ? 660 : 880, 0.28, "triangle", t, 0.5)),
+  purr: () => { for (let t = 0; t < 0.8; t += 0.06) noise(0.04, t, 0.35, 300); },
 };
