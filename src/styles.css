@@ -44,6 +44,7 @@
   --color-game-rope: var(--game-rope);
   --color-game-race: var(--game-race);
   --color-game-kitten: var(--game-kitten);
+  --color-game-detective: var(--game-detective);
   --color-game-tug: var(--game-tug);
   --color-stage: var(--stage);
   --color-border: var(--border);
@@ -98,6 +99,21 @@
   --game-rope: oklch(0.65 0.24 340);
   --game-race: oklch(0.58 0.2 285);
   --game-kitten: oklch(0.72 0.18 55);
+  --game-detective: oklch(0.36 0.11 262);
+  --det-fur: oklch(0.72 0.1 60);
+  --det-fur-dark: oklch(0.48 0.09 50);
+  --det-coat: oklch(0.62 0.09 75);
+  --det-hat: oklch(0.5 0.07 70);
+  --det-bug: oklch(0.68 0.2 145);
+  --det-bug-dark: oklch(0.45 0.15 150);
+  --det-balloon-a: oklch(0.68 0.21 25);
+  --det-balloon-b: oklch(0.88 0.15 95);
+  --det-basket: oklch(0.55 0.09 60);
+  --det-house: oklch(0.8 0.06 70);
+  --det-roof: oklch(0.5 0.13 30);
+  --det-street: oklch(0.7 0.03 260);
+  --det-paw: oklch(0.38 0.06 50);
+  --det-hint: oklch(0.9 0.18 100);
   --game-tug: oklch(0.55 0.1 60);
   --mud: oklch(0.45 0.08 60);
   --mud-deep: oklch(0.36 0.07 55);
@@ -793,3 +809,30 @@
 @media (prefers-reduced-motion: reduce) { .chair-flame { animation: none; } }
 .chair-shell .fit-card { min-height: 0; padding: 1rem 1.5rem; gap: .75rem; }
 .chair-shell .item-prompt { font-size: 56px; }
+
+/* Detective Sniff — reuses bridge-shell/bridge-play layout; mistake card + scene animation below */
+.detective-play .item-prompt { font-size: 56px !important; }
+.mistake-word { border-radius: 6px; }
+.mistake-word[data-hint="true"] { text-decoration: underline; text-decoration-color: var(--det-hint); text-decoration-thickness: 8px; text-underline-offset: 8px; background: color-mix(in oklch, var(--det-hint) 25%, transparent); }
+.detective-play .item-options button { font-size: 34px; padding: 6px 28px; min-height: 60px; }
+@keyframes det-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.det-bob { animation: det-bob 1.6s ease-in-out infinite; transform-box: fill-box; }
+@keyframes det-stamp { 0% { transform: scale(2.2); opacity: 0; } 60% { transform: scale(0.9); opacity: 1; } 100% { transform: scale(1); } }
+.det-paw-new { animation: det-stamp .45s ease-out both; transform-box: fill-box; transform-origin: center; }
+@keyframes det-bonk { 0%,100% { transform: rotate(0); } 30% { transform: rotate(-14deg) translateX(-8px); } 60% { transform: rotate(8deg); } }
+.det-bonk { animation: det-bonk .6s ease-out; transform-box: fill-box; transform-origin: bottom center; }
+@keyframes det-tug { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-5px) rotate(1.5deg); } }
+.det-tug { animation: det-tug .9s ease-in-out infinite; transform-box: fill-box; transform-origin: bottom center; }
+@keyframes det-glow { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+.det-glow { animation: det-glow .8s ease-in-out infinite; }
+@keyframes det-flyaway { to { transform: translate(140px, -320px) scale(.6); } }
+.det-flyaway { animation: det-flyaway 2.6s ease-in forwards; }
+@keyframes det-letter { from { transform: translateY(0); opacity: 1; } to { transform: translateY(180px); opacity: 0; } }
+.det-letter { animation: det-letter 1.8s ease-in forwards; }
+@keyframes det-deflate { to { transform: scale(1.2, .25) translateY(120px); } }
+.det-deflate { animation: det-deflate .9s ease-in forwards; transform-box: fill-box; transform-origin: bottom center; }
+@keyframes det-slam { 0% { transform: scale(3) rotate(-18deg); opacity: 0; } 70% { transform: scale(.92) rotate(-8deg); opacity: 1; } 100% { transform: scale(1) rotate(-8deg); } }
+.det-slam { animation: det-slam .5s cubic-bezier(.3,1.4,.5,1) both; }
+[data-calm="true"] .det-tug, [data-calm="true"] .det-bob { animation-duration: 3s; }
+[data-calm="true"] .det-slam { animation-duration: 1s; }
+@media (prefers-reduced-motion: reduce) { .det-tug, .det-bob, .det-glow { animation: none; } }

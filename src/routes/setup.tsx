@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BOMB_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, BLITZ_DEFAULTS, CHAIR_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
+import { BOMB_PRESETS, DETECTIVE_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, BLITZ_DEFAULTS, CHAIR_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
 import { availableCategories, categoryIcons, categoryLabel } from "@/lib/blitz";
 
 import { getGame } from "@/lib/games";
