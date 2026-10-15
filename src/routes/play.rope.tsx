@@ -53,11 +53,11 @@ function TightropeRescue() {
   );
 }
 
-/** Rotate through the enabled challenge types; no two in a row of the same type when possible; at most 2 hidden pictures. */
-function drawRope(target: number, off: RopeType[]) {
+/** Rotate through every challenge type; no two in a row of the same type when possible; at most 2 hidden pictures. */
+function drawRope(target: number) {
   const r = drawItems(selectionOf(useApp.getState()), target + 10, "mix", sessionUsed["rope"] ?? []);
   let h = 0;
-  const pool = r.items.filter((i) => !off.includes(typeOf(i))).filter((i) => i.kind !== "H" || ++h <= 2);
+  const pool = r.items.filter((i) => i.kind !== "H" || ++h <= 2);
   const buckets = new Map<RopeType, ContentItem[]>();
   for (const i of pool) buckets.set(typeOf(i), [...(buckets.get(typeOf(i)) ?? []), i]);
   const out: ContentItem[] = [];
@@ -80,9 +80,7 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   const opts = useOpts();
   const calm = useApp((s) => s.settings.calm);
   const roster = useApp((s) => s.roster);
-  const off = useApp((s) => s.ropeOff ?? []);
-
-  const init = useMemo(() => drawRope(opts.target, off), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const init = useMemo(() => drawRope(opts.target), []); // eslint-disable-line react-hooks/exhaustive-deps
   const goal = Math.min(opts.target, init.items.length);
   const total = opts.time;
 

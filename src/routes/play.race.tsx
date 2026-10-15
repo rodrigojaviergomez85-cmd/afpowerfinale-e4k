@@ -40,10 +40,10 @@ const useOpts = () => ({ ...RACE_DEFAULTS, ...useApp((s) => s.race) });
 const typeOf = (i: ContentItem): RopeType => (i.kind === "S" || i.kind === "E" ? "P" : i.kind);
 
 /** Same mixed-dynamics queue as Bridge Builder / Tightrope: rotate types, no two in a row, max 2 hidden pictures. */
-function drawRace(n: number, off: RopeType[]) {
+function drawRace(n: number) {
   const r = drawItems(selectionOf(useApp.getState()), n + 10, "mix", sessionUsed["race"] ?? []);
   let h = 0;
-  const pool = r.items.filter((i) => !off.includes(typeOf(i))).filter((i) => i.kind !== "H" || ++h <= 2);
+  const pool = r.items.filter((i) => i.kind !== "H" || ++h <= 2);
   const buckets = new Map<RopeType, ContentItem[]>();
   for (const i of pool) buckets.set(typeOf(i), [...(buckets.get(typeOf(i)) ?? []), i]);
   const out: ContentItem[] = [];
@@ -87,7 +87,7 @@ function RaceGame({ planet, help, openHelp }: { planet: Planet; help: boolean; o
   const calm = useApp((s) => s.settings.calm);
   const stops = opts.stops;
 
-  const init = useMemo(() => drawRace(opts.cards, opts.off), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const init = useMemo(() => drawRace(opts.cards), []); // eslint-disable-line react-hooks/exhaustive-deps
   const [items, setItems] = useState<ContentItem[]>(init.items);
   const [idx, setIdx] = useState(0);
   const [pos, setPos] = useState([0, 0]);
