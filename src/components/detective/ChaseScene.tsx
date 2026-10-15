@@ -235,7 +235,9 @@ export function ChaseScene({
         <Balloon state={balloon} ropes={ropes} tangled={tangled} countdown={countdown} bug={rackyInBasket ? rackyMood : undefined} />
       </g>
       {!rackyInBasket && !net && (
-        <g transform={`translate(1060 ${STREET_Y})`} className="det-bob"><Racky mood={rackyMood} /></g>
+        <g transform={`translate(1060 ${STREET_Y})`}>
+          <g className="det-bob"><Racky mood={rackyMood} /></g>
+        </g>
       )}
       {letters && ["B", "Y", "E", "!"].map((l, i) => (
         <text key={l} x={1010 + i * 34} y={70 + i * 8} fontSize="44" fontWeight="900" fill="var(--det-hint)" stroke={INK} strokeWidth="3" paintOrder="stroke" className="det-letter font-display" style={{ animationDelay: `${0.4 + i * 0.35}s` }}>{l}</text>
