@@ -317,7 +317,7 @@ function WinSequence({ step, calm, goal, heroes, close }: { step: number; calm: 
       {step === 3 && <div className="animate-pop font-display text-6xl font-bold text-stroke">Pffffft… 🎈</div>}
       {step >= 4 && (
         <>
-          <div className="det-slam absolute top-1/3 rounded-2xl border-8 border-success bg-card px-12 py-4 font-display text-8xl font-bold text-success chunky">CASE CLOSED! ✅</div>
+          <div className="det-slam absolute top-1/3 rounded-2xl border-8 border-success bg-card px-10 py-3 font-display text-[clamp(3rem,8vw,6rem)] font-bold text-success chunky">CASE CLOSED! ✅</div>
           <div className="animate-medal rounded-full px-8 py-2 text-3xl font-bold chunky" style={{ background: "var(--gold)", color: "var(--shape-outline)" }}>🏅 Junior Detectives</div>
         </>
       )}
