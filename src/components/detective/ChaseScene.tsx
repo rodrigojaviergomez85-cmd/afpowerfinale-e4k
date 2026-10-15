@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 export type SniffMood = "sniff" | "happy" | "bonk" | "sad" | "super" | "dash" | "jump";
-export type BugMood = "smug" | "nervous" | "giggle" | "wave" | "caught";
+export type RackyMood = "smug" | "nervous" | "giggle" | "wave" | "caught";
 export type BalloonState = "ground" | "tug" | "lift" | "away" | "deflate";
 
 const INK = "var(--sky-ink)";
@@ -65,8 +65,8 @@ export function Sniff({ mood }: { mood: SniffMood }) {
   );
 }
 
-/** Racky: a tiny mischievous raccoon thief, with a striped tail and a loot sack. Origin = bottom. */
-export function Racky({ mood }: { mood: BugMood }) {
+/** Racky: a small raccoon thief. Origin = bottom. */
+export function Racky({ mood }: { mood: RackyMood }) {
   const worried = mood === "nervous" || mood === "caught";
   const waving = mood === "wave";
   return (
@@ -166,7 +166,7 @@ function Paw({ x, y, on, fresh }: { x: number; y: number; on: boolean; fresh: bo
   );
 }
 
-function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonState; ropes: number; tangled: boolean; countdown?: number | undefined; bug?: BugMood | undefined }) {
+function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonState; ropes: number; tangled: boolean; countdown?: number | undefined; bug?: RackyMood | undefined }) {
   const lift = state === "lift" ? 40 : 0;
   const inflate = state === "ground" ? 0.72 : 1;
   return (
@@ -183,7 +183,7 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
       <g transform={`translate(0 ${-lift})`} className={state === "tug" || state === "lift" ? "det-tug" : undefined}>
         {/* basket */}
         <rect x="-24" y="-30" width="48" height="30" rx="5" fill="var(--det-basket)" stroke={INK} strokeWidth="3" />
-        {bug && <g transform="translate(0 -24) scale(0.85)"><Gigglebug mood={bug} /></g>}
+        {bug && <g transform="translate(0 -24) scale(0.85)"><Racky mood={bug} /></g>}
         <path d="M-22 -30 L-36 -78 M22 -30 L36 -78" stroke={INK} strokeWidth="2" />
         {/* envelope */}
         <g transform={`translate(0 -140) scale(${inflate}) translate(0 ${state === "ground" ? 30 : 0})`}><g className={state === "deflate" ? "det-deflate" : undefined}>
@@ -199,9 +199,9 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
 }
 
 export function ChaseScene({
-  goal, clues, pct, sniffMood, bugMood, balloon, ropes, tangled = false, countdown, freshPaw = false, sniffX, bugInBasket, bonk = false, net = false, letters = false, badges = [], className,
+  goal, clues, pct, sniffMood, rackyMood, balloon, ropes, tangled = false, countdown, freshPaw = false, sniffX, rackyInBasket, bonk = false, net = false, letters = false, badges = [], className,
 }: {
-  goal: number; clues: number; pct: number; sniffMood: SniffMood; bugMood: BugMood; balloon: BalloonState; ropes: number; tangled?: boolean; countdown?: number | undefined; freshPaw?: boolean; sniffX?: number | undefined; bugInBasket: boolean; bonk?: boolean; net?: boolean; letters?: boolean; badges?: string[]; className?: string;
+  goal: number; clues: number; pct: number; sniffMood: SniffMood; rackyMood: RackyMood; balloon: BalloonState; ropes: number; tangled?: boolean; countdown?: number | undefined; freshPaw?: boolean; sniffX?: number | undefined; rackyInBasket: boolean; bonk?: boolean; net?: boolean; letters?: boolean; badges?: string[]; className?: string;
 }) {
   const paws = Array.from({ length: goal }, (_, i) => START_X + 60 + (i * (END_X - START_X - 60)) / Math.max(1, goal - 1));
   const x = sniffX ?? START_X + ((END_X - START_X - 70) * clues) / Math.max(1, goal);
@@ -232,10 +232,10 @@ export function ChaseScene({
       {paws.map((px, i) => <Paw key={i} x={px} y={STREET_Y + 24 + (i % 2 ? 6 : -6)} on={i < clues} fresh={freshPaw && i === clues - 1} />)}
       {/* balloon */}
       <g transform={`translate(985 ${STREET_Y})`}>
-        <Balloon state={balloon} ropes={ropes} tangled={tangled} countdown={countdown} bug={bugInBasket ? bugMood : undefined} />
+        <Balloon state={balloon} ropes={ropes} tangled={tangled} countdown={countdown} bug={rackyInBasket ? rackyMood : undefined} />
       </g>
-      {!bugInBasket && !net && (
-        <g transform={`translate(1060 ${STREET_Y})`} className="det-bob"><Gigglebug mood={bugMood} /></g>
+      {!rackyInBasket && !net && (
+        <g transform={`translate(1060 ${STREET_Y})`} className="det-bob"><Racky mood={rackyMood} /></g>
       )}
       {letters && ["B", "Y", "E", "!"].map((l, i) => (
         <text key={l} x={1010 + i * 34} y={70 + i * 8} fontSize="44" fontWeight="900" fill="var(--det-hint)" stroke={INK} strokeWidth="3" paintOrder="stroke" className="det-letter font-display" style={{ animationDelay: `${0.4 + i * 0.35}s` }}>{l}</text>
@@ -250,7 +250,7 @@ export function ChaseScene({
           <g transform="translate(70 -70)">
             <path d="M0 0 L60 -60" stroke="var(--det-paw)" strokeWidth="6" />
             <ellipse cx="74" cy="-74" rx="30" ry="22" fill="var(--explorer-teeth)" fillOpacity="0.55" stroke={INK} strokeWidth="3" strokeDasharray="5 4" />
-            <g transform="translate(74 -58) scale(0.7)"><Gigglebug mood="caught" /></g>
+            <g transform="translate(74 -58) scale(0.7)"><Racky mood="caught" /></g>
           </g>
         )}
       </g>
