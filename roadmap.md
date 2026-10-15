@@ -14,3 +14,4 @@
 - [x] Bridge Builder: drawn open treasure, continuous river waves, compact status and floating timer; all card types verified without scrolling at 874×639, 1366×768 and 1920×1080
 - [x] Bridge Builder: enlarged scene, restored 64px buttons and 120px floating timer, reduced empty card space; full rounds verified at 874×639, 1366×768 and 1920×1080.
 - [x] Remove card-type on/off pickers from Tightrope Rescue and Rocket Race setup — the app always picks a balanced mix.
+- [ ] Tightrope: illustrated elevator rescue, upward/downward platform and safe/splash endings; large scene, floating timer and full-size controls without scrolling.
