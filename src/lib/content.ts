@@ -108,7 +108,7 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
   else {
     // Balanced quotas: questions & translations lead, every other dynamic shows up.
     const h = count >= 4 ? Math.min(2, Math.max(1, Math.round(count * 0.12))) : 1;
-    const f = Math.max(count >= 5 ? 2 : 1, Math.round(count * 0.18));
+    const f = Math.max(count >= 8 ? 2 : 1, Math.round(count * 0.18));
     const pic = Math.max(1, Math.round(count * 0.14));
     const rest = Math.max(0, count - h - f - pic);
     const quota: Record<string, number> = mix === "mix"
