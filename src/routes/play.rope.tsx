@@ -338,8 +338,9 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
   useEffect(() => { if (won) sfx.win(); }, [won]);
   useHotkeys({ Enter: onRematch });
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-4 px-8 pb-8 text-center">
+    <div className="circus-result">
       <Tightrope pct={won ? 1 : 0} goal={goal} steps={won ? goal : 0} mood={won ? "tada" : "soaked"} landing={won} celebrating={won} inPool={!won} calm className="circus-result-scene" />
+      <div className="circus-result-copy">
       {won ? (
         <>
           <h1 className="circus-result-title text-stroke">TA-DAAA!</h1>
@@ -359,14 +360,15 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
           {heroes.map((h) => <span key={h} className="rounded-full bg-secondary px-4 py-1 text-2xl font-bold">⭐ {h}</span>)}
         </div>
       )}
-      <div className="text-5xl font-bold text-stroke">See you next class, champions! 👋</div>
+      <div className="circus-result-farewell font-bold">See you next class, champions!</div>
       {teaser && (
         <div className="panel flex items-center gap-5 px-8 py-3">
           <div className={cn("grid h-16 w-16 place-items-center rounded-2xl text-4xl chunky", teaser.accent)}>{teaser.icon}</div>
           <div className="text-left"><div className="text-lg font-bold text-muted-foreground">Next class:</div><div className="text-3xl font-bold">{teaser.name}</div></div>
         </div>
       )}
-      <div className="flex gap-4">
+      </div>
+      <div className="circus-result-controls">
         <Button variant="game" size="xl" onClick={onRematch}><RotateCcw /> Rematch <Kbd>Enter</Kbd></Button>
         <Button variant="danger" size="xl" onClick={harder}><Flame /> Harder!</Button>
         <Button asChild variant="panel" size="xl"><Link to="/"><Home /> Home</Link></Button>

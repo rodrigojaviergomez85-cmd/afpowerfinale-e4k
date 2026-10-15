@@ -484,7 +484,7 @@
 .rope-controls > button kbd { font-size: 16px; }
 .elevator-carriage { transition: transform 650ms ease-in-out; }
 .elevator-character-position { transition: transform 850ms cubic-bezier(.45,0,.3,1); }
-.elevator-scene { background: var(--circus-sky); }
+.elevator-scene { background: var(--tent-b); }
 .elevator-collapse { transform-box: fill-box; transform-origin: right center; animation: platform-collapse .9s ease-in forwards; }
 .elevator-acrobat-fall { transform-box: fill-box; transform-origin: center; animation: acrobat-drop 1s ease-in forwards; }
 .rope-ending-scene { width: 100%; height: 100%; }
@@ -499,7 +499,17 @@
 .circus-flood svg { position: absolute; bottom: 100%; width: 100%; height: 90px; }
 @keyframes circus-flood { 0% { transform: translateY(110%); } 45% { transform: translateY(12%); } 100% { transform: translateY(78%); } }
 .circus-skip { position: absolute; bottom: 12px; right: 24px; font-size: 20px; color: var(--muted-foreground); }
-.circus-result-scene { width: 220px; height: 180px; flex-shrink: 1; min-height: 80px; }
+.circus-result { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); grid-template-rows: minmax(0, 1fr) auto; gap: 16px; flex: 1; min-height: 0; padding: 8px 16px 20px; }
+.circus-result-scene { width: 100%; height: 100%; min-height: 0; }
+.circus-result-copy { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; min-width: 0; min-height: 0; text-align: center; }
+.circus-result-copy .circus-finale-banner { margin-top: 0; }
+.circus-result-copy > .text-4xl, .circus-result-copy > .text-5xl { font-size: 28px; line-height: 1.15; }
+.circus-result-copy > .text-3xl, .circus-result-farewell { font-size: 22px; line-height: 1.15; }
+.circus-result-copy > .panel { padding: 8px 12px; gap: 10px; }
+.circus-result-copy > .panel .text-3xl { font-size: 24px; }
+.circus-result-controls { grid-column: 1 / -1; display: flex; justify-content: center; gap: 12px; }
+.circus-result-controls > button, .circus-result-controls > a { height: 64px; }
+.circus-result-copy > .flex.flex-wrap { max-height: 72px; overflow-y: auto; }
 .acrobat-balcony-hop { animation: balcony-hop 850ms ease-in-out; }
 .acrobat-tumble { transform-box: fill-box; transform-origin: center; animation: circus-tumble 850ms ease-in forwards; }
 .acrobat-bob { animation: circus-bob 2.4s ease-in-out infinite; }
@@ -508,7 +518,7 @@
 .circus-confetti { animation: circus-confetti 1.6s ease-out forwards; }
 .circus-heroes { position: absolute; inset: 10px 10px auto; display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
 .circus-heroes span { background: var(--gold); color: var(--circus-ink); padding: 2px 8px; border-radius: 4px; font-weight: 700; }
-@keyframes balcony-hop { 0%,100% { transform: translateY(0); } 45% { transform: translateY(-55px) rotate(-8deg); } }
+@keyframes balcony-hop { 0%,100% { transform: translateY(0); } 45% { transform: translateY(-18px) rotate(-8deg); } }
 @keyframes circus-tumble { to { transform: rotate(25deg); } }
 @keyframes circus-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 @keyframes circus-splash { from { transform: scale(.25); opacity: 1; } to { transform: scale(1.3); opacity: 0; } }
