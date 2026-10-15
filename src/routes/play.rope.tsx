@@ -11,8 +11,8 @@ import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { Tightrope, type Crowd, type LunaMood } from "@/components/rope/Tightrope";
 import { getGame, GAMES } from "@/lib/games";
-import { drawItems, shuffle, type ContentItem } from "@/lib/content";
-import { BOMB_PRESETS, selectionOf, sessionUsed, useApp, type Player, type RopeType } from "@/lib/store";
+import { drawItems, type ContentItem } from "@/lib/content";
+import { BOMB_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";
 
@@ -37,7 +37,6 @@ const SHORTCUTS: [string, string][] = [
 ];
 
 const useOpts = () => useApp((s) => s.rope ?? BOMB_PRESETS["Normal"]!);
-const typeOf = (i: ContentItem): RopeType => (i.kind === "S" || i.kind === "E" ? "P" : i.kind);
 
 function TightropeRescue() {
   const base = getGame("tightrope")!;
@@ -53,24 +52,10 @@ function TightropeRescue() {
   );
 }
 
-/** Rotate through the enabled challenge types; no two in a row of the same type when possible; at most 2 hidden pictures. */
-function drawRope(target: number, off: RopeType[]) {
-  const r = drawItems(selectionOf(useApp.getState()), target + 10, "mix", sessionUsed["rope"] ?? []);
-  let h = 0;
-  const pool = r.items.filter((i) => !off.includes(typeOf(i))).filter((i) => i.kind !== "H" || ++h <= 2);
-  const buckets = new Map<RopeType, ContentItem[]>();
-  for (const i of pool) buckets.set(typeOf(i), [...(buckets.get(typeOf(i)) ?? []), i]);
-  const out: ContentItem[] = [];
-  let last: RopeType | null = null;
-  while (out.length < target && [...buckets.values()].some((b) => b.length)) {
-    const avail = shuffle([...buckets.entries()].filter(([, b]) => b.length));
-    // prefer a different type, and the fullest bucket among those, so rotation lasts longest
-    const diff = avail.filter(([t]) => t !== last).sort((a, b) => b[1].length - a[1].length);
-    const [t, b] = diff[0] ?? avail[0]!;
-    out.push(b.shift()!);
-    last = t;
-  }
-  return { items: out, review: r.review };
+/** Balanced mix straight from the content bank: questions & translations lead, every other dynamic shows up. */
+function drawRope(target: number) {
+  const r = drawItems(selectionOf(useApp.getState()), target, "mix", sessionUsed["rope"] ?? []);
+  return { items: r.items, review: r.review };
 }
 
 type Phase = "play" | "lose" | "win" | "end";
@@ -80,9 +65,7 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   const opts = useOpts();
   const calm = useApp((s) => s.settings.calm);
   const roster = useApp((s) => s.roster);
-  const off = useApp((s) => s.ropeOff ?? []);
-
-  const init = useMemo(() => drawRope(opts.target, off), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const init = useMemo(() => drawRope(opts.target), []); // eslint-disable-line react-hooks/exhaustive-deps
   const goal = Math.min(opts.target, init.items.length);
   const total = opts.time;
 

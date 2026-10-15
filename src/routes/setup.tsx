@@ -5,12 +5,11 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BOMB_PRESETS, RACE_DEFAULTS, TEAM_NAME_POOL, useApp, type RopeType } from "@/lib/store";
+import { BOMB_PRESETS, RACE_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
 
-const ROPE_TYPES: [RopeType, string][] = [["Q", "Questions"], ["T", "Translations"], ["F", "Fill in the blank"], ["H", "Hidden picture"], ["P", "Picture questions"]];
 import { getGame } from "@/lib/games";
 import { COURSES } from "@/data/content";
-import { getCourse, getLevel, isReviewDay, normalizeSelection, shuffle, type ContentMix } from "@/lib/content";
+import { getCourse, getLevel, isReviewDay, normalizeSelection, shuffle } from "@/lib/content";
 import { teamStyle } from "@/components/engine/Scoreboard";
 import { useHotkeys } from "@/components/engine/controls";
 import { Kbd } from "@/components/engine/Kbd";
@@ -87,12 +86,7 @@ function Setup() {
   };
   const mo = isRope ? (s.rope ?? BOMB_PRESETS["Normal"]!) : isBridge ? (s.bridge ?? BOMB_PRESETS["Normal"]!) : s.bomb;
   const setMo = isRope ? s.setRope : isBridge ? s.setBridge : s.setBomb;
-  const ropeOff = s.ropeOff ?? [];
   const race = { ...RACE_DEFAULTS, ...s.race };
-  const toggleType = (t: RopeType) => {
-    const next = ropeOff.includes(t) ? ropeOff.filter((x) => x !== t) : [...ropeOff, t];
-    if (next.length < ROPE_TYPES.length) s.setRopeOff(next);
-  };
   const presetName = Object.entries(BOMB_PRESETS).find(([, p]) => p.target === mo.target && p.time === mo.time && p.penalty === mo.penalty)?.[0];
 
   return (
@@ -135,17 +129,6 @@ function Setup() {
                 <input type="range" min={60} max={180} step={10} value={mo.time} onChange={(e) => setMo({ time: Number(e.target.value) })} className="w-full accent-primary" /></div>
               <div className="space-y-2"><div className="font-bold text-muted-foreground">{isBridge ? "Wave penalty for wrong / skip" : "Penalty for wrong / skip"}</div>
                 <Seg value={mo.penalty} onChange={(v) => setMo({ penalty: v })} options={[0, 3, 5].map((n) => ({ v: n, l: `${n}s` }))} /></div>
-              {isRope ? (
-              <div className="space-y-2"><div className="font-bold text-muted-foreground">Content — Mix (tap to turn a type off)</div>
-                <div className="flex flex-wrap gap-2">
-                  {ROPE_TYPES.map(([t, l]) => (
-                    <button key={t} onClick={() => toggleType(t)} className={cn("rounded-xl px-4 py-2 text-lg font-bold chunky", ropeOff.includes(t) ? "bg-secondary opacity-60 line-through" : "bg-primary text-primary-foreground")}>{ropeOff.includes(t) ? "☐" : "☑"} {l}</button>
-                  ))}
-                </div></div>
-              ) : (
-              <div className="space-y-2"><div className="font-bold text-muted-foreground">Content</div>
-                <Seg<ContentMix> value={mo.mix} onChange={(v) => setMo({ mix: v })} options={[{ v: "mix", l: "Mix" }, { v: "questions", l: "Questions only" }, { v: "translations", l: "Translations only" }]} /></div>
-              )}
             </div>
           ) : (
             <>
@@ -160,12 +143,6 @@ function Setup() {
                   <div className="space-y-2"><div className="font-bold text-muted-foreground">🃏 Number of cards</div>
                     <Seg value={race.cards} onChange={(v) => s.setRace({ cards: v })} options={[10, 16, 20].map((n) => ({ v: n, l: String(n) }))} /></div>
                 </div>
-                <div className="space-y-2"><div className="font-bold text-muted-foreground">Content — Mix (tap to turn a type off)</div>
-                  <div className="flex flex-wrap gap-2">
-                    {ROPE_TYPES.map(([t, l]) => (
-                      <button key={t} onClick={() => { const n = race.off.includes(t) ? race.off.filter((x) => x !== t) : [...race.off, t]; if (n.length < ROPE_TYPES.length) s.setRace({ off: n }); }} className={cn("rounded-xl px-4 py-2 text-lg font-bold chunky", race.off.includes(t) ? "bg-secondary opacity-60 line-through" : "bg-primary text-primary-foreground")}>{race.off.includes(t) ? "☐" : "☑"} {l}</button>
-                    ))}
-                  </div></div>
               </div>
               ) : (
               <div className="grid grid-cols-2 gap-4 pt-2">

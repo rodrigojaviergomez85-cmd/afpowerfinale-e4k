@@ -16,8 +16,8 @@ export interface Settings {
 export interface BombOptions { target: number; time: number; penalty: number; mix: ContentMix }
 /** Challenge types for Tightrope Rescue: Q question, T translation, F fill-in, H hidden picture, P picture question (S/E). */
 export type RopeType = "Q" | "T" | "F" | "H" | "P";
-export interface RaceOptions { stops: number; turnTime: number; cards: number; off: RopeType[] }
-export const RACE_DEFAULTS: RaceOptions = { stops: 6, turnTime: 15, cards: 16, off: [] };
+export interface RaceOptions { stops: number; turnTime: number; cards: number }
+export const RACE_DEFAULTS: RaceOptions = { stops: 6, turnTime: 15, cards: 16 };
 export interface LastResult {
   gameId: string;
   teams: Team[];
@@ -39,7 +39,6 @@ interface AppState {
   bomb: BombOptions;
   bridge: BombOptions;
   rope: BombOptions;
-  ropeOff: RopeType[];
   race: RaceOptions;
   setRace: (r: Partial<RaceOptions>) => void;
   lastResult: LastResult | null;
@@ -48,7 +47,6 @@ interface AppState {
   setBomb: (b: Partial<BombOptions>) => void;
   setBridge: (b: Partial<BombOptions>) => void;
   setRope: (b: Partial<BombOptions>) => void;
-  setRopeOff: (t: RopeType[]) => void;
   resetTurns: () => void;
   bumpPlayer: (id: string, field: "turns" | "points", delta?: number) => void;
   setLastResult: (r: LastResult) => void;
@@ -94,7 +92,6 @@ export const useApp = create<AppState>()(
       bomb: BOMB_PRESETS["Normal"]!,
       bridge: BOMB_PRESETS["Normal"]!,
       rope: BOMB_PRESETS["Normal"]!,
-      ropeOff: [],
       race: RACE_DEFAULTS,
       setRace: (r) => set({ race: { ...RACE_DEFAULTS, ...get().race, ...r } }),
       lastResult: null,
@@ -103,7 +100,6 @@ export const useApp = create<AppState>()(
       setBomb: (b) => set({ bomb: { ...get().bomb, ...b } }),
       setBridge: (b) => set({ bridge: { ...(get().bridge ?? BOMB_PRESETS["Normal"]!), ...b } }),
       setRope: (b) => set({ rope: { ...(get().rope ?? BOMB_PRESETS["Normal"]!), ...b } }),
-      setRopeOff: (t) => set({ ropeOff: t }),
       resetTurns: () => set({ roster: get().roster.map((p) => ({ ...p, turns: 0, points: 0 })), rosterDate: today() }),
       bumpPlayer: (id, field, delta = 1) =>
         set({ roster: get().roster.map((p) => (p.id === id ? { ...p, [field]: Math.max(0, p[field] + delta) } : p)) }),

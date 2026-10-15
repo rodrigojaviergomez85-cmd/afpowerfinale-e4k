@@ -12,7 +12,7 @@ import { ItemCard } from "@/components/engine/ItemCard";
 import { RaceTrack, PLANETS, type LaneFx, type Planet } from "@/components/race/RaceTrack";
 import { getGame } from "@/lib/games";
 import { drawItems, shuffle, type ContentItem } from "@/lib/content";
-import { RACE_DEFAULTS, selectionOf, sessionUsed, useApp, type Player, type RopeType, type Team } from "@/lib/store";
+import { RACE_DEFAULTS, selectionOf, sessionUsed, useApp, type Player, type Team } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";
 
@@ -37,25 +37,11 @@ const SHORTCUTS: [string, string][] = [
 ];
 
 const useOpts = () => ({ ...RACE_DEFAULTS, ...useApp((s) => s.race) });
-const typeOf = (i: ContentItem): RopeType => (i.kind === "S" || i.kind === "E" ? "P" : i.kind);
 
-/** Same mixed-dynamics queue as Bridge Builder / Tightrope: rotate types, no two in a row, max 2 hidden pictures. */
-function drawRace(n: number, off: RopeType[]) {
-  const r = drawItems(selectionOf(useApp.getState()), n + 10, "mix", sessionUsed["race"] ?? []);
-  let h = 0;
-  const pool = r.items.filter((i) => !off.includes(typeOf(i))).filter((i) => i.kind !== "H" || ++h <= 2);
-  const buckets = new Map<RopeType, ContentItem[]>();
-  for (const i of pool) buckets.set(typeOf(i), [...(buckets.get(typeOf(i)) ?? []), i]);
-  const out: ContentItem[] = [];
-  let last: RopeType | null = null;
-  while (out.length < n && [...buckets.values()].some((b) => b.length)) {
-    const avail = shuffle([...buckets.entries()].filter(([, b]) => b.length));
-    const diff = avail.filter(([t]) => t !== last).sort((a, b) => b[1].length - a[1].length);
-    const [t, b] = diff[0] ?? avail[0]!;
-    out.push(b.shift()!);
-    last = t;
-  }
-  return { items: out, review: r.review };
+/** Balanced mix straight from the content bank: questions & translations lead, every other dynamic shows up. */
+function drawRace(n: number) {
+  const r = drawItems(selectionOf(useApp.getState()), n, "mix", sessionUsed["race"] ?? []);
+  return { items: r.items, review: r.review };
 }
 
 function RocketRace() {
@@ -87,7 +73,7 @@ function RaceGame({ planet, help, openHelp }: { planet: Planet; help: boolean; o
   const calm = useApp((s) => s.settings.calm);
   const stops = opts.stops;
 
-  const init = useMemo(() => drawRace(opts.cards, opts.off), []); // eslint-disable-line react-hooks/exhaustive-deps
+  const init = useMemo(() => drawRace(opts.cards), []); // eslint-disable-line react-hooks/exhaustive-deps
   const [items, setItems] = useState<ContentItem[]>(init.items);
   const [idx, setIdx] = useState(0);
   const [pos, setPos] = useState([0, 0]);
