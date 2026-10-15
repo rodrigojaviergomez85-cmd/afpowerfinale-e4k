@@ -490,7 +490,7 @@
   .rope-play .fit-card:has(.hidden-picture), .rope-play .fit-card:has(.item-picture:not(:empty)) { grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); }
   .rope-play .fit-card > .banner-pill { grid-column: 1 / -1; }
   .rope-play .hidden-picture, .rope-play .item-picture { grid-column: 1; grid-row: 2; }
-  .rope-play .fit-card:has(.hidden-picture) .item-prompt, .rope-play .fit-card:has(.item-picture:not(:empty)) .item-prompt { grid-column: 2; grid-row: 2; font-size: 38px !important; }
+  .rope-play .fit-card:has(.hidden-picture) .item-prompt, .rope-play .fit-card:has(.item-picture:not(:empty)) .item-prompt { grid-column: 2; grid-row: 2; font-size: 48px !important; }
   .rope-play .item-answer { grid-column: 1 / -1; font-size: 21px; }
   .rope-controls-roster { display: flex; }
   .rope-controls-roster > button { flex: 1; font-size: 17px; gap: 4px; padding-inline: 8px; }
@@ -500,3 +500,6 @@
 }
 @media (min-height: 900px) { .rope-play .hidden-board { height: 230px !important; } .rope-play .pic-wrap { zoom: 1; } .rope-play .item-prompt { font-size: 56px !important; } }
 @media (prefers-reduced-motion: reduce) { .elevator-carriage { transition: none; } .elevator-collapse, .elevator-acrobat-fall { animation-duration: .01ms; } }
+.rope-shell main > div:has(> .rope-ending-scene) { gap: 12px; padding: 0 16px 32px; }
+.rope-shell main > div:has(> .rope-ending-scene) > div:not(.elevator-scene) { max-width: 100%; font-size: 48px; text-align: center; line-height: 1.1; }
+.rope-shell main > div:has(> .rope-ending-scene) > div.animate-wavefill { font-size: inherit; }
