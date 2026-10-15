@@ -28,4 +28,4 @@
 - [x] Kitten Rescue game
 - [x] Kitten Rescue: expressive reacting neighbors and detailed truck and sun; preserved firefighter, kitten, tree and result designs. Verified watch/cheer/gasp reactions in play, no runtime errors or windowed overflow.
 - [x] Muddy Tug of War: 2-team tug game with drawn bunny/puppy teams, alternating turns, steal, POWER PULL on 3-streak or fast hidden picture, sudden death and tie; options (4–7 pulls, 10/15/20/30 s, 10/16/20 cards) remembered; SPLOOSH finale and results. Verified win, tie, power pull, "So close" glow and compact 874×639 layout with no overflow or page errors.
-- [ ] Hot Chair: playable 2-team timed rounds, card modes, final reveal, tiebreaker
+- [x] Hot Chair: playable 2-team timed rounds, card modes, final reveal, tiebreaker
