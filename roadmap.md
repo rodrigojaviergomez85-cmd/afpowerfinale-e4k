@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Vocab Blitz: larger court, compact category area/buttons, profession activities category label; Beat the Bomb: single WH-only switch with Yes/No. Verify both.
+- [x] Vocab Blitz: larger court, compact category area/buttons, profession activities category label; Beat the Bomb: single WH-only switch with Yes/No. Verified switch persistence, correct/out and review at 950×639, 1366×768 and 1920×1080 without scrolling or page errors; six logic tests pass.
 
 - [x] Vocab Blitz: static vocabulary groups, remembered category/clock/round setup, word-tennis court, alternating team-specific roster turns, undo, timed review, sudden-death reducer and finals. Five logic tests pass; full three/five-round matches, timeout/undo, automatic review advance and rematch verified at 874×639, 1366×768 and 1920×1080 with no page errors.
 
