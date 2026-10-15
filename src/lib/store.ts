@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { COURSES } from "@/data/content";
-import type { ContentMix } from "./content";
+import type { ChairMode, ContentMix } from "./content";
 
 export interface Team { name: string; icon: string }
 export interface Player { id: string; name: string; quiet: boolean; turns: number; points: number }
@@ -22,6 +22,8 @@ export interface TugOptions { pulls: number; turnTime: number; cards: number }
 export const TUG_DEFAULTS: TugOptions = { pulls: 5, turnTime: 15, cards: 16 };
 export interface BlitzOptions { rounds: number; shotClock: number; categories: string[] }
 export const BLITZ_DEFAULTS: BlitzOptions = { rounds: 3, shotClock: 7, categories: [] };
+export interface ChairOptions { time: number; mode: ChairMode }
+export const CHAIR_DEFAULTS: ChairOptions = { time: 60, mode: "mix" };
 export interface LastResult {
   gameId: string;
   teams: Team[];
@@ -51,6 +53,8 @@ interface AppState {
   setTug: (r: Partial<TugOptions>) => void;
   blitz: BlitzOptions;
   setBlitz: (r: Partial<BlitzOptions>) => void;
+  chair: ChairOptions;
+  setChair: (r: Partial<ChairOptions>) => void;
   lastResult: LastResult | null;
   setSettings: (s: Partial<Settings>) => void;
   setSetup: (s: Partial<Pick<AppState, "course" | "level" | "week" | "day" | "teams" | "roster">>) => void;
@@ -110,6 +114,8 @@ export const useApp = create<AppState>()(
       setTug: (r) => set({ tug: { ...TUG_DEFAULTS, ...get().tug, ...r } }),
       blitz: BLITZ_DEFAULTS,
       setBlitz: (r) => set({ blitz: { ...BLITZ_DEFAULTS, ...get().blitz, ...r } }),
+      chair: CHAIR_DEFAULTS,
+      setChair: (r) => set({ chair: { ...CHAIR_DEFAULTS, ...get().chair, ...r } }),
       lastResult: null,
       setSettings: (s) => set({ settings: { ...get().settings, ...s } }),
       setSetup: (s) => set(s as Partial<AppState>),

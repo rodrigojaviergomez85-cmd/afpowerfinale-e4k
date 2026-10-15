@@ -780,3 +780,16 @@
   .tug-controls kbd { font-size: 12px; padding: 0 4px; }
   .tug-sploosh { font-size: 4.5rem !important; }
 }
+
+/* Hot Chair — scoped to chair-shell */
+.chair-stage { background: radial-gradient(ellipse 60% 70% at 50% 18%, color-mix(in oklch, var(--chair-color) 35%, transparent), transparent 70%), var(--color-card); }
+.chair-glow { filter: drop-shadow(0 0 18px color-mix(in oklch, var(--chair-color) 70%, transparent)); }
+.chair-cool { filter: grayscale(0.7) brightness(0.85); transition: filter 1.2s ease; }
+@keyframes chair-flame { 0%,100% { transform: scaleY(1) scaleX(1); } 50% { transform: scaleY(1.18) scaleX(0.9); } }
+.chair-flame { animation: chair-flame var(--flame-speed, .5s) ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes chair-flip { 0% { transform: rotateY(90deg); } 100% { transform: rotateY(0); } }
+.chair-flip { animation: chair-flip .6s cubic-bezier(.3,1.6,.5,1) both; }
+[data-calm="true"] .chair-flame, .chair-cool .chair-flame { animation: none; }
+@media (prefers-reduced-motion: reduce) { .chair-flame { animation: none; } }
+.chair-shell .fit-card { min-height: 0; padding: 1rem 1.5rem; gap: .75rem; }
+.chair-shell .item-prompt { font-size: 56px; }

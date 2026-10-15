@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BOMB_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, BLITZ_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
+import { BOMB_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, BLITZ_DEFAULTS, CHAIR_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
 import { availableCategories, categoryIcons, categoryLabel } from "@/lib/blitz";
 
 import { getGame } from "@/lib/games";
@@ -63,6 +63,7 @@ function Setup() {
   const isRace = game.id === "rocket-race";
   const isTug = game.id === "mud-tug";
   const isBlitz = game.id === "vocab-blitz";
+  const isChair = game.id === "hot-chair";
   const isBomb = game.id === "beat-the-bomb" || isBridge || isRope || isKitten;
   const navigate = useNavigate();
   const s = useApp();
@@ -78,7 +79,7 @@ function Setup() {
   const level = getLevel(course.name, s.level);
   const week = level.weeks.find((w) => w.week === s.week) ?? level.weeks[0]!;
 
-  const start = () => navigate({ to: isBlitz ? "/play/blitz" : isRace ? "/play/race" : isTug ? "/play/tug" : isRope ? "/play/rope" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
+  const start = () => navigate({ to: isChair ? "/play/chair" : isBlitz ? "/play/blitz" : isRace ? "/play/race" : isTug ? "/play/tug" : isRope ? "/play/rope" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
   useHotkeys({ Enter: start });
 
   const reshuffle = () => {
@@ -96,6 +97,7 @@ function Setup() {
   const race = { ...RACE_DEFAULTS, ...s.race };
   const tug = { ...TUG_DEFAULTS, ...s.tug };
   const blitz = { ...BLITZ_DEFAULTS, ...s.blitz };
+  const chair = { ...CHAIR_DEFAULTS, ...s.chair };
   const categories = availableCategories(s.course, s.level, s.week);
   const presetName = Object.entries(BOMB_PRESETS).find(([, p]) => p.target === mo.target && p.time === mo.time && p.penalty === mo.penalty)?.[0];
 
@@ -151,7 +153,15 @@ function Setup() {
             </div>
           ) : (
             <>
-              {isBlitz ? (
+              {isChair ? (
+                <div className="space-y-4 pt-2">
+                  <h2 className="text-3xl">🔥 Hot Chair options</h2>
+                  <div className="space-y-2"><div className="font-bold text-muted-foreground">⏱️ Round time (each team)</div>
+                    <Seg value={chair.time} onChange={(v) => s.setChair({ time: v })} options={[45, 60, 90].map((n) => ({ v: n, l: `${n}s` }))} /></div>
+                  <div className="space-y-2"><div className="font-bold text-muted-foreground">🃏 Cards</div>
+                    <Seg value={chair.mode} onChange={(v) => s.setChair({ mode: v })} options={[{ v: "mix" as const, l: "Mixed" }, { v: "translations" as const, l: "Translation" }, { v: "wh" as const, l: "WH questions" }, { v: "pictures" as const, l: "Vocab pictures" }]} /></div>
+                </div>
+              ) : isBlitz ? (
                 <div className="space-y-4 pt-2">
                   <h2 className="text-3xl">⚡ Blitz options</h2>
                   <div className="grid grid-cols-2 gap-4">
