@@ -180,7 +180,8 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
           <path key={i} d={`M${dx} 4 l${dx > 0 ? 6 : -6} -10`} stroke="var(--det-basket)" strokeWidth="3" />
         );
       })}
-      <g transform={`translate(0 ${-lift})`} className={state === "tug" || state === "lift" ? "det-tug" : undefined}>
+      <g transform={`translate(0 ${-lift})`}>
+      <g className={state === "tug" || state === "lift" ? "det-tug" : undefined}>
         {/* basket */}
         <rect x="-24" y="-30" width="48" height="30" rx="5" fill="var(--det-basket)" stroke={INK} strokeWidth="3" />
         {bug && <g transform="translate(0 -24) scale(0.85)"><Racky mood={bug} /></g>}
