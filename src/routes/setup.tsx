@@ -125,7 +125,7 @@ function Setup() {
             <div className="space-y-4 pt-2">
               <h2 className="text-3xl">{isRope ? "🎪 Rescue options" : isBridge ? "🌉 Bridge options" : "💣 Bomb options"}</h2>
               <Seg value={presetName ?? ""} onChange={(v) => v && setMo({ ...BOMB_PRESETS[v], mix: mo.mix })} options={Object.keys(BOMB_PRESETS).map((k) => ({ v: k, l: k }))} />
-              <div className="space-y-1"><div className="font-bold text-muted-foreground">Target: {mo.target} {isRope ? "levels to SAFE" : isBridge ? "planks" : "questions"}</div>
+              <div className="space-y-1"><div className="font-bold text-muted-foreground">Target: {mo.target} {isRope ? "levels to safety" : isBridge ? "planks" : "questions"}</div>
                 <input type="range" min={6} max={15} value={mo.target} onChange={(e) => setMo({ target: Number(e.target.value) })} className="w-full accent-primary" /></div>
               <div className="space-y-1"><div className="font-bold text-muted-foreground">Total time: {mo.time}s</div>
                 <input type="range" min={60} max={180} step={10} value={mo.time} onChange={(e) => setMo({ time: Number(e.target.value) })} className="w-full accent-primary" /></div>
