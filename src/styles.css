@@ -644,3 +644,17 @@
 .tug-fly { animation: tug-fly 1s ease-in forwards; transform-box: fill-box; transform-origin: center; }
 @media (prefers-reduced-motion: reduce) { .tug-lean, .tug-skid, .tug-stretch, .tug-shake, .mud-bubble, .tug-fly, .tug-line-glow { animation: none; } }
 [data-calm="true"] .mud-bubble, [data-calm="true"] .tug-line-glow { animation: none; }
+@media (max-width: 1100px), (max-height: 700px) {
+  .tug-scene { height: 130px !important; }
+  .tug-play .fit-card .hidden-board { height: 120px !important; width: 400px !important; }
+  .tug-play .fit-card .item-prompt { font-size: 36px !important; }
+  .tug-play .fit-card .banner-pill { font-size: 1.2rem !important; padding: 0.1rem 1rem !important; }
+  .tug-play .fit-card .item-answer { min-height: 0 !important; font-size: 22px !important; }
+  .tug-play .fit-card .pic-wrap { zoom: 0.55; }
+  .tug-play .fit-timer { zoom: 0.6; }
+  .tug-controls { gap: 6px !important; }
+  .tug-controls button { height: 44px; font-size: 19px; padding: 0 12px; }
+  .tug-controls button svg { width: 20px; height: 20px; }
+  .tug-controls kbd { font-size: 12px; padding: 0 4px; }
+  .tug-sploosh { font-size: 4.5rem !important; }
+}
