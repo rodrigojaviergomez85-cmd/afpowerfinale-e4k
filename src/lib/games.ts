@@ -46,7 +46,7 @@ export const GAMES: GameDef[] = [
     id: "tightrope",
     name: "Tightrope Rescue",
     icon: "🎪",
-    tagline: "Get Luna across the rope before time runs out!",
+    tagline: "Raise Luna’s platform to SAFE — don't let her splash!",
     mode: "Whole class",
     minutes: "3 min",
     accent: "bg-game-rope",

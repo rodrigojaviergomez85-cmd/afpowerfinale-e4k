@@ -1,88 +1,58 @@
-import type { CSSProperties } from "react";
 import { cn } from "@/lib/utils";
-import { CrowdRow, LunaSvg, PoolLuna, StarSign } from "./Luna";
+import fairground from "@/assets/circus-fairground.jpg";
+import acrobat from "@/assets/circus-acrobat.png";
 
 export type LunaMood = "calm" | "worried" | "panic" | "uhoh" | "happy" | "tada" | "soaked";
 export type Crowd = "calm" | "cheer" | "gasp" | "aww" | "roar";
 
-// Rope geometry in a 1000x300 box: from (120,150) to (880,150), sagging in the middle.
-const X0 = 120, X1 = 880, Y = 150;
-const ropeY = (t: number, sag: number) => Y + 2 * t * (1 - t) * sag;
-
-export function Tightrope({
-  pct, goal, steps, mood, crowd = "calm", frozen = false, slipKey = 0, flashKey = 0, calm = false,
-  countdown, falling = false, inPool = false, spotsSwing = false, stars = [], className,
-}: {
+/** A vertical rescue: the entire carriage moves; the fairground stays still. */
+export function Tightrope({ goal, steps, frozen = false, countdown, falling = false, inPool = false, stars = [], className, ...rest }: {
   pct: number; goal: number; steps: number; mood: LunaMood; crowd?: Crowd; frozen?: boolean; slipKey?: number; flashKey?: number; calm?: boolean;
   countdown?: number | undefined; falling?: boolean; inPool?: boolean; spotsSwing?: boolean; stars?: string[]; className?: string;
 }) {
-  const level = frozen ? 0 : mood === "panic" ? 3 : mood === "worried" ? 2 : mood === "calm" ? 1 : 0;
-  const sag = 20 + (1 - Math.max(0, Math.min(1, pct))) * 50 + (level === 3 ? 10 : 0);
-  const t = goal ? Math.min(1, steps / goal) : 0;
-  const lx = X0 + (X1 - X0) * t;
-  const ly = ropeY(t, sag);
-  const wob: CSSProperties = { ["--wob" as string]: `${[0, 0.6, 1.6, 3.2][level]}deg`, ["--wobt" as string]: `${[2, 2, 1.2, 0.6][level]}s` };
-  const path = `M${X0},${Y} Q500,${Y + sag * 2} ${X1},${Y}`;
-  const marks = Array.from({ length: Math.max(0, goal - 1) }, (_, i) => (i + 1) / goal);
-
+  const start = Math.ceil(goal / 2);
+  const height = Math.max(0, Math.min(goal + start, start + steps));
+  const fraction = height / Math.max(1, goal + start);
+  const y = falling || inPool ? 480 : 470 - fraction * 320;
+  const safe = steps >= goal && !falling && !inPool;
   return (
-    <div
-      className={cn("relative w-full overflow-hidden rounded-3xl border-4 border-border", className)}
-      style={{ background: "repeating-linear-gradient(90deg, var(--tent-a) 0 70px, var(--tent-b) 70px 140px)" }}
-    >
-      {/* spotlights */}
-      {[22, 78].map((x, i) => (
-        <div key={x} className={cn("pointer-events-none absolute -top-4 h-[130%] w-40 -translate-x-1/2", (spotsSwing || level === 3) && "animate-sweep")}
-          style={{ left: `${x}%`, background: "linear-gradient(var(--spot), transparent 85%)", clipPath: "polygon(42% 0, 58% 0, 100% 100%, 0 100%)", animationDelay: `${i * 0.7}s` }} />
-      ))}
-      {/* pool */}
-      <div className="absolute inset-x-[10%] bottom-0 h-[24%] rounded-t-2xl border-x-4 border-t-4 border-border" style={{ background: "linear-gradient(var(--pool), var(--pool-deep))" }}>
-        <svg viewBox="0 0 400 20" preserveAspectRatio="none" className="animate-wave absolute -top-2.5 left-0 h-5 w-[110%] opacity-80">
-          <path d="M0 12 q12 -10 25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0 t25 0" fill="none" stroke="var(--pool)" strokeWidth="4" strokeLinecap="round" />
-        </svg>
-        {inPool && <PoolLuna className="animate-popup absolute left-1/2 top-[-34%] h-24 w-44 -translate-x-1/2" />}
-      </div>
-      {/* platforms + poles */}
-      <div className="absolute left-[3%] top-[52%] h-[48%] w-3 rounded" style={{ background: "var(--rope)" }} />
-      <div className="absolute left-[1%] top-[49%] h-4 w-[12%] rounded-lg border-2 border-border" style={{ background: "var(--gold)" }} />
-      <div className="absolute right-[3%] top-[52%] h-[48%] w-3 rounded" style={{ background: "var(--rope)" }} />
-      <div className="absolute right-[1%] top-[49%] h-4 w-[12%] rounded-lg border-2 border-border" style={{ background: "var(--gold)" }} />
-      <div className="absolute right-[2%] top-[2%] grid h-[27%] w-[10%] place-items-center">
-        <StarSign className="absolute h-full w-full" />
-        {countdown !== undefined && <span key={countdown} className="animate-pop relative font-display text-4xl font-bold text-destructive text-stroke">{countdown}</span>}
-      </div>
-
-      {/* rope + Luna, wobbling together */}
-      <div className={cn("absolute inset-0", level > 0 && !calm && "animate-wobble")} style={wob}>
-        <div className={cn("absolute inset-0", level === 3 && !calm && "animate-bounce-rope")}>
-          <svg viewBox="0 0 1000 300" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
-            <path d={path} fill="none" stroke="var(--rope)" strokeWidth="7" strokeLinecap="round" />
-            {marks.map((m) => (
-              <circle key={m} cx={X0 + (X1 - X0) * m} cy={ropeY(m, sag)} r="7" fill={m <= t + 0.0001 ? "var(--gold)" : "var(--tent-b)"} stroke="var(--rope)" strokeWidth="3" />
-            ))}
-          </svg>
-          {!inPool && (
-            <div className="absolute -translate-x-1/2 -translate-y-full transition-[left,top] duration-500 ease-out" style={{ left: `${lx / 10}%`, top: `${(ly / 300) * 100}%` }}>
-              <div key={slipKey} className={cn("luna relative flex flex-col items-center", slipKey > 0 && "animate-slip", falling && "animate-fall")}>
-                <LunaSvg mood={mood} className="h-24 w-20" />
-                {frozen && <span className="absolute top-[55%] h-1.5 w-40 rounded-full" style={{ background: "var(--gold)" }} />}
-              </div>
-              {flashKey > 0 && <div key={`f${flashKey}`} className="animate-spotflash pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full" style={{ background: "radial-gradient(var(--spot), transparent 70%)" }} />}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* hero stars around the ring */}
-      {stars.map((s, i) => (
-        <span key={s} className="animate-pop absolute rounded-full px-2 text-lg font-bold" style={{ left: `${8 + ((i * 23) % 80)}%`, top: `${8 + ((i * 37) % 22)}%`, background: "var(--gold)", color: "var(--shape-outline)", animationDelay: `${i * 120}ms` }}>⭐ {s}</span>
-      ))}
-
-      {/* crowd */}
-      <div className="absolute inset-x-0 bottom-0 flex justify-between px-1">
-        <CrowdRow mood={crowd} count={3} className="flex" />
-        <CrowdRow mood={crowd} count={3} className="flex" />
-      </div>
+    <div className={cn("elevator-scene relative min-h-0 w-full overflow-hidden rounded-lg", className)} data-height={height} data-safe={safe}>
+      <img src={fairground} width={1536} height={768} alt="Circus fairground with a pool beneath Luna's elevator" className="absolute inset-0 h-full w-full object-cover" />
+      <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label={`Luna's platform: level ${height} of ${goal + start}${safe ? ', SAFE!' : ''}`}>
+        <g stroke="var(--circus-ink)" strokeWidth="3" strokeLinejoin="round">
+          <path d="M330 100 L390 100 L390 505 L330 505Z" fill="var(--circus-red)" />
+          <path d="M336 100 H350 V505 H336Z" fill="var(--circus-metal)" />
+          <path d="M352 100 H363 V505 H352Z" fill="var(--circus-ink)" />
+          <path d="M365 100 H376 V505 H365Z" fill="var(--circus-metal)" />
+          {Array.from({ length: goal + start + 1 }, (_, i) => {
+            const yy = 470 - i / (goal + start) * 320;
+            return <g key={i}><path d={`M380 ${yy} h16`} stroke="var(--gold)" strokeWidth={i === start ? 6 : 3} />{(i === 0 || i === start || i === goal + start) && <text x="405" y={yy + 5} stroke="none" fill="var(--circus-ink)" fontSize="17" fontWeight="700">{i === start ? "START" : i === 0 ? "SPLASH" : "TOP"}</text>}</g>;
+          })}
+          <path d="M314 101 L360 64 L405 101Z" fill="var(--circus-red)" />
+          <path d="M338 82 L360 64 L381 82 L373 101 H345Z" fill="var(--gold)" />
+          <circle cx="360" cy="60" r="6" fill="var(--gold)" />
+          <path d="M390 150 H513 V178 H390Z" fill="var(--gold)" />
+          <path d="M394 178 L430 215 L452 178" fill="var(--circus-teal)" />
+          <path d="M395 116 H509 V165 H395Z" fill="var(--circus-teal)" />
+          <path d="M390 114 H515 M397 97 V116 M507 97 V116" stroke="var(--gold)" strokeWidth="7" />
+          <text x="452" y="149" textAnchor="middle" fill="var(--gold)" stroke="none" fontSize="30" fontWeight="700">SAFE!</text>
+          <path d="M510 96 V55 L543 64 L510 78" fill="var(--circus-red)" />
+        </g>
+        <g className="elevator-carriage" transform={`translate(0 ${y})`}>
+          <g className={cn(falling && "elevator-collapse")}>
+            <path d="M206 0 H342 V16 H206Z" fill="var(--gold)" stroke="var(--circus-ink)" strokeWidth="3" />
+            <path d="M209 16 L327 27 L342 16" fill="var(--circus-wood)" stroke="var(--circus-ink)" strokeWidth="3" />
+            <circle cx="342" cy="9" r="11" fill="var(--circus-metal)" stroke="var(--circus-ink)" strokeWidth="4" />
+          </g>
+          {!inPool && <image href={acrobat} x={safe ? 383 : 193} y="-151" width="151" height="155" preserveAspectRatio="xMidYMax meet" className={cn("elevator-character", falling && "elevator-acrobat-fall")} />}
+          {frozen && <path d="M212 -5 H337" stroke="var(--pool)" strokeWidth="8" />}
+        </g>
+        {inPool && <g className="animate-popup"><image href={acrobat} x="216" y="395" width="126" height="165" /><ellipse cx="278" cy="515" rx="91" ry="28" fill="var(--pool)" /><path d="M194 516 Q220 500 250 516 T330 516 M208 530 Q270 547 343 525" fill="none" stroke="var(--river-foam)" strokeWidth="5" /><path d="M204 479 l-12 -16 M337 480 l15 -20 M236 473 l-5 -15" stroke="var(--river-foam)" strokeWidth="6" strokeLinecap="round" /></g>}
+        {safe && <g><path d="M440 66 l10 10 24 -27" stroke="var(--success)" fill="none" strokeWidth="8" strokeLinecap="round" /></g>}
+      </svg>
+      {countdown !== undefined && <span className="absolute left-4 top-4 rounded-lg bg-destructive px-4 py-1 text-4xl font-bold text-destructive-foreground">{countdown}</span>}
+      {(rest.crowd === "cheer" || rest.crowd === "roar") && <div key={rest.flashKey} className="animate-pop absolute bottom-3 left-3 rounded-lg bg-primary px-4 py-1 text-xl font-bold text-primary-foreground">{safe ? "RESCUED!" : "Going up!"}</div>}
+      {stars.length > 0 && <div className="absolute inset-x-3 top-3 flex flex-wrap justify-center gap-2">{stars.map(s => <span key={s} className="rounded-lg bg-primary px-2 text-sm font-bold text-primary-foreground">{s}</span>)}</div>}
     </div>
   );
 }
