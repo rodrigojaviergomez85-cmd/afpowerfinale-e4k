@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Team } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
@@ -180,7 +181,7 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
             skid && (team === 0 ? "tug-skid tug-skid-r" : "tug-skid tug-skid-l"),
             cheer && "animate-hop",
           )}
-          style={flying ? ({ "--fly-x": `${flyX}px` } as React.CSSProperties) : undefined}
+          style={flying ? ({ "--fly-x": `${flyX}px` } as CSSProperties) : undefined}
         >
           <Animal mood={mood} color={`var(--team${team + 1})`} icon={st.icon} />
         </g>
