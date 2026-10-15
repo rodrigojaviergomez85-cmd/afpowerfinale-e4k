@@ -95,35 +95,55 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
     else tiers.push(days.flatMap((d) => parseDay(d, w.week)));
   }
   const avoidSet = new Set(avoid);
+  const tier0 = new Set((tiers[0] ?? []).map((i) => i.id));
+  const all = tiers.map((t) => t.filter((i) => matchesMix(i, mix)));
+  // Preference order: fresh items by tier (selected day first), then already-seen items.
+  const ordered = [
+    ...all.flatMap((t) => shuffle(t.filter((i) => !avoidSet.has(i.id)))),
+    ...all.flatMap((t) => shuffle(t.filter((i) => avoidSet.has(i.id)))),
+  ];
+  const typeOf = (i: ContentItem) => (i.kind === "S" || i.kind === "E" ? "P" : i.kind);
   const picked: ContentItem[] = [];
-  let review = false;
-  tiers.forEach((tier, ti) => {
-    if (picked.length >= count) return;
-    const pool = tier.filter((i) => matchesMix(i, mix));
-    const ordered = [...shuffle(pool.filter((i) => !avoidSet.has(i.id))), ...shuffle(pool.filter((i) => avoidSet.has(i.id)))];
-    const add = ordered.slice(0, count - picked.length);
-    if (add.length && ti > 0) review = true;
-    picked.push(...add);
-  });
-  // Guarantee at least one hidden-picture card (if eligible) within the first three cards.
-  if (mix !== "translations" && picked.length) {
-    if (!picked.some((i) => i.kind === "H")) {
-      const ids = new Set(picked.map((i) => i.id));
-      let h: ContentItem | undefined;
-      for (const tier of tiers) {
-        const hs = tier.filter((i) => i.kind === "H" && !ids.has(i.id));
-        h = shuffle(hs.filter((i) => !avoidSet.has(i.id)))[0] ?? shuffle(hs)[0];
-        if (h) break;
-      }
-      if (h) {
-        if (tiers[0] && !tiers[0].includes(h)) review = true;
-        if (picked.length < count) picked.push(h); else picked[picked.length - 1] = h;
+  if (mix === "translations") picked.push(...ordered.slice(0, count));
+  else {
+    // Balanced quotas: questions & translations lead, every other dynamic shows up.
+    const h = count >= 4 ? Math.min(2, Math.max(1, Math.round(count * 0.12))) : 1;
+    const f = Math.max(count >= 5 ? 2 : 1, Math.round(count * 0.18));
+    const pic = Math.max(1, Math.round(count * 0.14));
+    const rest = Math.max(0, count - h - f - pic);
+    const quota: Record<string, number> = mix === "mix"
+      ? { H: h, F: f, P: pic, T: Math.floor(rest * 0.45), Q: rest - Math.floor(rest * 0.45) }
+      : { H: h, F: f, P: pic, Q: rest };
+    const ids = new Set<string>();
+    for (const [t, n] of Object.entries(quota)) {
+      for (const i of ordered) {
+        if (picked.filter((x) => typeOf(x) === t).length >= n) break;
+        if (typeOf(i) === t && !ids.has(i.id)) { picked.push(i); ids.add(i.id); }
       }
     }
-    const out = shuffle(picked);
-    const hi = out.findIndex((i) => i.kind === "H");
-    if (hi > 2) { const t = Math.floor(Math.random() * Math.min(3, out.length)); [out[t], out[hi]] = [out[hi]!, out[t]!]; }
-    return { items: out, review };
+    // Fill any shortfall (never more than 2 hidden pictures).
+    for (const i of ordered) {
+      if (picked.length >= count) break;
+      if (ids.has(i.id)) continue;
+      if (i.kind === "H" && picked.filter((x) => x.kind === "H").length >= 2) continue;
+      picked.push(i); ids.add(i.id);
+    }
   }
-  return { items: shuffle(picked), review };
+  const review = picked.some((i) => !tier0.has(i.id));
+  // Interleave so the same dynamic never repeats back-to-back when avoidable.
+  const buckets = new Map<string, ContentItem[]>();
+  for (const i of shuffle(picked)) buckets.set(typeOf(i), [...(buckets.get(typeOf(i)) ?? []), i]);
+  const out: ContentItem[] = [];
+  let last = "";
+  while (out.length < picked.length) {
+    const avail = shuffle([...buckets.entries()].filter(([, b]) => b.length));
+    const diff = avail.filter(([t]) => t !== last).sort((a, b) => b[1].length - a[1].length);
+    const [t, b] = diff[0] ?? avail[0]!;
+    out.push(b.shift()!);
+    last = t;
+  }
+  // At least one hidden picture within the first three cards.
+  const hi = out.findIndex((i) => i.kind === "H");
+  if (hi > 2) { const t = 1 + Math.floor(Math.random() * Math.min(2, out.length - 1)); [out[t], out[hi]] = [out[hi]!, out[t]!]; }
+  return { items: out, review };
 }
