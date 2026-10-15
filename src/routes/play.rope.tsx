@@ -20,9 +20,9 @@ export const Route = createFileRoute("/play/rope")({
   ssr: false,
   head: () => ({
     meta: [
-      { title: "Circus Rescue — AF Power Finale" },
+      { title: "Circus Splash — AF Power Finale" },
       { name: "description", content: "Whole-class circus challenge: raise Luna’s platform to safety before time runs out!" },
-      { property: "og:title", content: "Circus Rescue — AF Power Finale" },
+      { property: "og:title", content: "Circus Splash — AF Power Finale" },
       { property: "og:description", content: "Whole-class circus challenge: raise Luna’s platform to safety before time runs out!" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
