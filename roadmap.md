@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Vocab Blitz: static vocabulary groups, remembered category/clock/round setup, word-tennis court, alternating team-specific roster turns, undo, timed review, sudden-death reducer and finals. Five logic tests pass; full three/five-round matches, timeout/undo, automatic review advance and rematch verified at 874×639, 1366×768 and 1920×1080 with no page errors.
+
 - [x] Circus Rescue: centered blue splash and plain white So close; large tilted pink rescue sign and Tadaa emoji; both endings verified at 874×639, 1366×768 and 1920×1080 with no runtime errors (test browser lacks emoji glyphs).
 
 - [x] Hub, quick setup, shared engine, Demo Drill, results, settings

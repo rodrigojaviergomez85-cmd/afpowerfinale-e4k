@@ -122,13 +122,13 @@ export const GAMES: GameDef[] = [
     id: "vocab-blitz",
     name: "Vocab Blitz",
     icon: "⚡",
-    tagline: "Say many words from a group. Go go go!",
+    tagline: "Word tennis! Don't repeat, don't stop!",
     mode: "2 teams",
     minutes: "5 min",
     accent: "bg-game-blitz",
     accentText: "text-game-blitz",
-    status: "soon",
-    rules: [],
+    status: "ready",
+    rules: [{ icon: "🎾", text: "Say a word. Don't repeat! Don't stop!" }],
   },
 ];
 
