@@ -22,7 +22,7 @@ export function Tightrope({ goal, steps, mood, frozen = false, countdown, fallin
   const reaction = crowd === "cheer" ? "happy" : crowd === "gasp" ? "uhoh" : mood;
   return (
     <div className={cn("elevator-scene relative min-h-0 w-full overflow-hidden rounded-lg", className)} data-height={height} data-safe={safe} data-calm={calm}>
-      <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label={`Luna's platform: level ${height} of ${goal + start}${safe ? ', SAFE!' : ''}`}>
+        <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label={`Luna's platform: level ${height} of ${goal + start}${safe ? ', safe!' : ''}`}>
         <defs><clipPath id={clip}><rect width="600" height="520" /></clipPath></defs>
         <rect width="600" height="600" fill="var(--tent-b)" />
         {Array.from({ length: 7 }, (_, i) => <rect key={i} x={i * 92} width="46" height="600" fill="var(--tent-a)" />)}
