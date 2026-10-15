@@ -307,7 +307,9 @@ function FinalReveal({ teams, scores, tiebreak, onTie }: { teams: { name: string
       <div className="flex gap-10">
         {teams.map((t, i) => (
           <div key={i} className={cn("panel relative flex w-80 flex-col items-center gap-2 p-6", shown >= 3 && !tie && winner === i && "ring-8 ring-primary")}>
-            {shown >= 3 && !tie && winner === i && <div className="animate-pop absolute -top-7 right-3 text-5xl drop-shadow">🏆</div>}
+            {shown >= 3 && !tie && winner === i && (
+              <div className={cn("animate-pop absolute -top-12 text-9xl drop-shadow-2xl", i === 0 ? "-left-6" : "-right-6")}>🏆</div>
+            )}
             <div className="text-6xl">{t.icon}</div>
             <div className="text-3xl font-bold">{t.name}</div>
             <div className={cn("grid h-32 w-48 place-items-center rounded-2xl font-display text-8xl font-bold text-primary-foreground", i === 0 ? "bg-team1" : "bg-team2")}>
