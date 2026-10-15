@@ -44,7 +44,7 @@ export const GAMES: GameDef[] = [
   },
   {
     id: "tightrope",
-    name: "Circus Rescue",
+    name: "Circus Splash",
     icon: "🎪",
     tagline: "Raise Luna’s platform to safety — don't let her splash!",
     mode: "Whole class",
