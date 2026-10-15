@@ -176,9 +176,8 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
           className={cn(
             flying && "tug-fly",
             inPuddle && "animate-pop",
-            lean && (team === 0 ? "tug-lean tug-lean-l" : "tug-lean tug-lean-r"),
-            slip && (team === 0 ? "tug-skid tug-skid-r" : "tug-skid tug-skid-l"),
-            skid && (team === 0 ? "tug-skid tug-skid-r" : "tug-skid tug-skid-l"),
+            lean && (team === 0 ? "tug-lean" : "tug-lean tug-lean-r"),
+            (slip || skid) && (team === 0 ? "tug-skid" : "tug-skid tug-skid-l"),
             cheer && "animate-hop",
           )}
           style={flying ? ({ "--fly-x": `${flyX}px` } as CSSProperties) : undefined}

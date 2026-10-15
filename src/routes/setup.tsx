@@ -5,7 +5,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BOMB_PRESETS, RACE_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
+import { BOMB_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
 
 import { getGame } from "@/lib/games";
 import { COURSES } from "@/data/content";
@@ -59,6 +59,7 @@ function Setup() {
   const isRope = game.id === "tightrope";
   const isKitten = game.id === "kitten-rescue";
   const isRace = game.id === "rocket-race";
+  const isTug = game.id === "mud-tug";
   const isBomb = game.id === "beat-the-bomb" || isBridge || isRope || isKitten;
   const navigate = useNavigate();
   const s = useApp();
@@ -74,7 +75,7 @@ function Setup() {
   const level = getLevel(course.name, s.level);
   const week = level.weeks.find((w) => w.week === s.week) ?? level.weeks[0]!;
 
-  const start = () => navigate({ to: isRace ? "/play/race" : isRope ? "/play/rope" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
+  const start = () => navigate({ to: isRace ? "/play/race" : isTug ? "/play/tug" : isRope ? "/play/rope" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
   useHotkeys({ Enter: start });
 
   const reshuffle = () => {
@@ -90,6 +91,7 @@ function Setup() {
   const mo = isKitten ? (s.kitten ?? BOMB_PRESETS["Normal"]!) : isRope ? (s.rope ?? BOMB_PRESETS["Normal"]!) : isBridge ? (s.bridge ?? BOMB_PRESETS["Normal"]!) : s.bomb;
   const setMo = isKitten ? s.setKitten : isRope ? s.setRope : isBridge ? s.setBridge : s.setBomb;
   const race = { ...RACE_DEFAULTS, ...s.race };
+  const tug = { ...TUG_DEFAULTS, ...s.tug };
   const presetName = Object.entries(BOMB_PRESETS).find(([, p]) => p.target === mo.target && p.time === mo.time && p.penalty === mo.penalty)?.[0];
 
   return (
@@ -135,16 +137,23 @@ function Setup() {
             </div>
           ) : (
             <>
-              {isRace ? (
+              {isRace || isTug ? (
               <div className="space-y-3 pt-2">
-                <h2 className="text-3xl">🚀 Race options</h2>
-                <div className="space-y-2"><div className="font-bold text-muted-foreground">⛽ Fuel stops to the planet</div>
-                  <Seg value={race.stops} onChange={(v) => s.setRace({ stops: v })} options={[4, 5, 6, 7, 8].map((n) => ({ v: n, l: String(n) }))} /></div>
+                <h2 className="text-3xl">{isRace ? "🚀 Race options" : "🪢 Tug of war options"}</h2>
+                <div className="space-y-2"><div className="font-bold text-muted-foreground">{isRace ? "⛽ Fuel stops to the planet" : "💪 Pulls to win (each side)"}</div>
+                  {isRace
+                    ? <Seg value={race.stops} onChange={(v) => s.setRace({ stops: v })} options={[4, 5, 6, 7, 8].map((n) => ({ v: n, l: String(n) }))} />
+                    : <Seg value={tug.pulls} onChange={(v) => s.setTug({ pulls: v })} options={[4, 5, 6, 7].map((n) => ({ v: n, l: String(n) }))} />}
+                </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="space-y-2"><div className="font-bold text-muted-foreground">⏱️ Turn time</div>
-                    <Seg value={race.turnTime} onChange={(v) => s.setRace({ turnTime: v })} options={[10, 15, 20, 30].map((n) => ({ v: n, l: `${n}s` }))} /></div>
+                    {isRace
+                      ? <Seg value={race.turnTime} onChange={(v) => s.setRace({ turnTime: v })} options={[10, 15, 20, 30].map((n) => ({ v: n, l: `${n}s` }))} />
+                      : <Seg value={tug.turnTime} onChange={(v) => s.setTug({ turnTime: v })} options={[10, 15, 20, 30].map((n) => ({ v: n, l: `${n}s` }))} />}</div>
                   <div className="space-y-2"><div className="font-bold text-muted-foreground">🃏 Number of cards</div>
-                    <Seg value={race.cards} onChange={(v) => s.setRace({ cards: v })} options={[10, 16, 20].map((n) => ({ v: n, l: String(n) }))} /></div>
+                    {isRace
+                      ? <Seg value={race.cards} onChange={(v) => s.setRace({ cards: v })} options={[10, 16, 20].map((n) => ({ v: n, l: String(n) }))} />
+                      : <Seg value={tug.cards} onChange={(v) => s.setTug({ cards: v })} options={[10, 16, 20].map((n) => ({ v: n, l: String(n) }))} />}</div>
                 </div>
               </div>
               ) : (
