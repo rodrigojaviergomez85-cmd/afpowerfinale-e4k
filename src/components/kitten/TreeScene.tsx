@@ -51,6 +51,27 @@ function Rosa({ slip = false, holding = false, mood }: { slip?: boolean; holding
   );
 }
 
+function Neighbors({ mood }: { mood: "watch" | "cheer" | "gasp" | "relief" | "worried" }) {
+  const cheering = mood === "cheer";
+  const alarmed = mood === "gasp" || mood === "worried";
+  return (
+    <g data-neighbors={mood} stroke="var(--sky-ink)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      {[876, 927, 976].map((x, i) => (
+        <g key={x} transform={`translate(${x} 350)`}>
+          <path d="M-18 0 V-26 Q-18 -40 0 -40 Q18 -40 18 -26 V0Z" fill={["var(--team2)", "var(--game-rope)", "var(--leaf)"][i]} />
+          <path d={cheering ? "M-15 -29 L-25 -53 M15 -29 L25 -53" : mood === "gasp" ? "M-15 -28 L-18 -48 M15 -28 L18 -48" : "M-15 -26 L-19 -8 M15 -26 L19 -8"} stroke="var(--rosa-skin)" strokeWidth="7" />
+          <circle cy="-57" r="20" fill={i === 1 ? "var(--audience-skin)" : "var(--rosa-skin)"} />
+          <path d={i === 1 ? "M-19 -57 Q-23 -82 0 -80 Q23 -82 19 -57 L12 -64 Q2 -60 -5 -71 L-13 -62Z" : "M-19 -61 Q-19 -82 0 -80 Q20 -82 19 -61 Q7 -69 -6 -66 L-17 -56Z"} fill={i === 2 ? "var(--sky-ink)" : "var(--rosa-hair)"} />
+          <path d={alarmed ? "M-13 -66 L-4 -69 M4 -69 L13 -66" : "M-13 -66 Q-9 -69 -5 -66 M5 -66 Q9 -69 13 -66"} fill="none" strokeWidth="2" />
+          {cheering || mood === "relief" ? <path d="M-12 -57 Q-8 -63 -4 -57 M4 -57 Q8 -63 12 -57" fill="none" /> : <g fill="var(--acrobat-white)" strokeWidth="1.5"><ellipse cx="-8" cy="-57" rx="4.5" ry={alarmed ? 6 : 5} /><ellipse cx="8" cy="-57" rx="4.5" ry={alarmed ? 6 : 5} /><g fill="var(--sky-ink)" stroke="none"><circle cx="-7" cy="-57" r="2.4" /><circle cx="9" cy="-57" r="2.4" /></g></g>}
+          <path d="M0 -54 L-2 -49 H1" fill="none" strokeWidth="1.5" />
+          {mood === "gasp" ? <ellipse cy="-43" rx="4" ry="5" fill="var(--acrobat-mouth)" /> : mood === "worried" ? <path d="M-6 -42 Q0 -48 6 -42" fill="none" /> : <path d="M-8 -46 Q0 -34 8 -46Z" fill="var(--acrobat-white)" strokeWidth="2" />}
+        </g>
+      ))}
+    </g>
+  );
+}
+
 /** Park scene: Rosa climbs the ladder up the tree trunk to Pepper on a bending branch. */
 export function TreeScene({
   goal, rungs, pct, pepperMood = "calm", ears = false, slip = false, frozen = false, countdown, snapped = false,
@@ -64,6 +85,7 @@ export function TreeScene({
   const sway = frozen ? 0 : stage === 0 ? 1.5 : stage === 1 ? 2.5 : 4.5;
   const t = rosaT ?? rungs / (goal + 1);
   const rosa = at(t);
+  const crowdMood = slip || pepperAt === "falling" ? "gasp" : rosaMood === "cheer" || ears || pepperAt === "arms" ? "cheer" : pepperAt === "helmet" || pepperAt === "net" ? "relief" : stage === 2 ? "worried" : "watch";
   const pepper =
     pepperAt === "branch" ? { x: 790, y: 120 + bend * 4 } :
     pepperAt === "falling" ? { x: 800, y: 260 } :
@@ -73,7 +95,12 @@ export function TreeScene({
   return (
     <div data-calm={calm} className={cn("relative w-full overflow-hidden rounded-3xl border-4 border-border", className)} style={{ background: "linear-gradient(var(--park-sky) 84%, var(--park-grass) 84%, var(--park-grass-deep) 93%)" }}>
       <svg viewBox="0 -50 1000 450" preserveAspectRatio="xMidYMax meet" className="absolute inset-0 h-full w-full" role="img" aria-label={`Ladder: ${rungs} of ${goal} rungs`}>
-        <circle cx="120" cy="70" r="36" fill="var(--rosa-helmet)" />
+        <g data-sun="illustrated" transform="translate(120 70)" stroke="var(--rosa-helmet)" strokeWidth="5" strokeLinecap="round">
+          {Array.from({ length: 12 }, (_, i) => <path key={i} d="M0 -47 V-58" transform={`rotate(${i * 30})`} />)}
+          <circle r="36" fill="var(--rosa-helmet)" stroke="var(--gold)" strokeWidth="3" />
+          <path d="M-24 -12 Q-17 -26 -4 -27" fill="none" stroke="var(--acrobat-white)" opacity=".65" />
+          <g stroke="var(--sky-ink)" strokeWidth="2.5"><path d="M-15 -2 Q-11 -7 -7 -2 M7 -2 Q11 -7 15 -2 M-10 10 Q0 22 10 10" fill="none" /></g>
+        </g>
         <path d="M0 340 Q250 315 500 338 T1000 330 V400 H0Z" fill="var(--park-grass)" />
         <path d="M0 375 Q500 355 1000 378 V400 H0Z" fill="var(--park-grass-deep)" />
         {/* tree */}
@@ -105,26 +132,31 @@ export function TreeScene({
           })}
         </g>
         {/* fire truck */}
-        <g stroke="var(--sky-ink)" strokeWidth="3">
-          <rect x="40" y="250" width="260" height="90" rx="12" fill="var(--truck-red)" />
-          <rect x="220" y="210" width="80" height="60" rx="8" fill="var(--truck-red)" />
-          <rect x="235" y="222" width="50" height="30" rx="4" fill="var(--park-sky)" />
-          <path d="M60 240 H200 M60 228 H200" stroke="var(--ladder)" strokeWidth="6" />
+        <g data-truck="detailed" stroke="var(--sky-ink)" strokeWidth="3" strokeLinejoin="round">
+          <ellipse cx="170" cy="365" rx="142" ry="8" fill="var(--park-grass-deep)" stroke="none" />
+          <path d="M40 265 Q40 250 54 250 H220 V219 Q220 210 229 210 H281 L300 239 V329 Q300 340 288 340 H52 Q40 340 40 328Z" fill="var(--truck-red)" />
+          <path d="M43 316 H298 V330 H43Z" fill="var(--rosa-coat)" stroke="none" />
+          <path d="M231 222 H277 L287 240 V257 H231Z" fill="var(--park-sky)" />
+          <path d="M239 226 H263 L239 249Z" fill="var(--acrobat-white)" opacity=".65" stroke="none" />
+          <path d="M222 266 V319 M232 274 H245" fill="none" />
+          <rect x="55" y="269" width="70" height="46" rx="3" fill="var(--circus-metal)" />
+          <path d="M61 280 H119 M61 289 H119 M61 298 H119 M61 307 H119" strokeWidth="1.5" opacity=".6" />
+          <rect x="136" y="269" width="68" height="46" rx="3" fill="var(--rosa-coat)" />
+          <circle cx="158" cy="292" r="14" fill="var(--circus-metal)" />
+          <circle cx="158" cy="292" r="7" fill="var(--truck-red)" />
+          <path d="M173 279 H197 M173 288 H197 M180 302 H198" stroke="var(--rosa-helmet)" strokeWidth="3" />
+          <path d="M250 278 l5 7 9 1 -6 6 1 9 -9 -4 -8 4 1 -9 -6 -6 9 -1Z" fill="var(--rosa-helmet)" strokeWidth="1.5" />
+          <path d="M50 260 H205 M53 324 H285" stroke="var(--acrobat-white)" strokeWidth="4" opacity=".8" />
+          <path d="M60 240 H200 M60 228 H200" stroke="var(--circus-metal)" strokeWidth="5" />
+          {[70, 95, 120, 145, 170, 195].map((x) => <path key={x} d={`M${x} 228 V240`} stroke="var(--circus-metal)" strokeWidth="3" />)}
           <rect x="240" y="190" width="40" height="20" rx="6" className={cn(flashing || countdown !== undefined ? "kitten-flash" : undefined)} fill="var(--truck-light)" />
-          <circle cx="95" cy="342" r="24" fill="var(--sky-ink)" /><circle cx="250" cy="342" r="24" fill="var(--sky-ink)" />
-          <path d="M70 290 H200" stroke="var(--rosa-helmet)" strokeWidth="6" />
+          {[95, 250].map((x) => <g key={x}><circle cx={x} cy="342" r="24" fill="var(--sky-ink)" /><circle cx={x} cy="342" r="13" fill="var(--circus-metal)" /><circle cx={x} cy="342" r="5" fill="var(--sky-ink)" /><path d={`M${x - 8} 328 Q${x} 324 ${x + 8} 328`} fill="none" stroke="var(--acrobat-white)" strokeWidth="2" /></g>)}
+          <rect x="289" y="280" width="10" height="15" rx="2" fill="var(--rosa-helmet)" strokeWidth="2" />
+          <path d="M288 318 H308 V326 H288" fill="var(--circus-metal)" />
           {countdown !== undefined && <text x="260" y="183" textAnchor="middle" fontSize="54" fontWeight="800" fill="var(--truck-light)" stroke="var(--net)" strokeWidth="3">{countdown}</text>}
         </g>
         {/* neighbors */}
-        <g stroke="var(--sky-ink)" strokeWidth="3">
-          {[880, 930, 975].map((x, i) => (
-            <g key={x} transform={`translate(${x} 352)`}>
-              <rect x="-14" y="-40" width="28" height="40" rx="10" fill={["var(--team2)", "var(--game-rope)", "var(--leaf)"][i]} />
-              <circle cy="-54" r="14" fill="var(--rosa-skin)" />
-              <path d={rosaMood === "cheer" ? "M-6 -50 q6 6 12 0" : "M-5 -48 h10"} fill="none" strokeWidth="2" />
-            </g>
-          ))}
-        </g>
+        <Neighbors mood={crowdMood} />
         {(pepperAt === "net" || pepperAt === "falling") && (
           <g stroke="var(--sky-ink)" strokeWidth="3">
             <path d="M740 352 L748 330 M860 352 L852 330" strokeWidth="5" />
