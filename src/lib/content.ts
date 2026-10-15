@@ -106,13 +106,14 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
   const picked: ContentItem[] = [];
   if (mix === "translations") picked.push(...ordered.slice(0, count));
   else {
-    // Balanced quotas: questions & translations lead, every other dynamic shows up.
-    const h = count >= 4 ? Math.min(2, Math.max(1, Math.round(count * 0.12))) : 1;
-    const f = Math.max(count >= 8 ? 2 : 1, Math.round(count * 0.18));
-    const pic = Math.max(1, Math.round(count * 0.14));
+    // Balanced quotas: questions & translations lead equally, every other dynamic shows up.
+    const h = Math.min(3, Math.max(1, Math.round(count * 0.18)));
+    const f = Math.max(1, Math.round(count * 0.18));
+    const pic = Math.max(1, Math.round(count * 0.12));
     const rest = Math.max(0, count - h - f - pic);
+    const t = mix === "mix" ? Math.ceil(rest / 2) : 0;
     const quota: Record<string, number> = mix === "mix"
-      ? { H: h, F: f, P: pic, T: Math.min(rest, Math.max(1, Math.round(rest * 0.45))), Q: rest - Math.min(rest, Math.max(1, Math.round(rest * 0.45))) }
+      ? { H: h, F: f, P: pic, T: t, Q: rest - t }
       : { H: h, F: f, P: pic, Q: rest };
     const ids = new Set<string>();
     for (const [t, n] of Object.entries(quota)) {
@@ -121,7 +122,7 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
         if (typeOf(i) === t && !ids.has(i.id)) { picked.push(i); ids.add(i.id); }
       }
     }
-    // Fill any shortfall (never more than 2 hidden pictures).
+    // Fill any shortfall (never more than 3 hidden pictures).
     for (const i of ordered) {
       if (picked.length >= count) break;
       if (ids.has(i.id)) continue;
