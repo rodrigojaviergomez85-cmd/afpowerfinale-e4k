@@ -1,6 +1,7 @@
 import { useId } from "react";
 import { cn } from "@/lib/utils";
 import { Acrobat, type AcrobatMood } from "./Acrobat";
+import { Audience } from "./Audience";
 
 export type LunaMood = AcrobatMood;
 export type Crowd = "calm" | "cheer" | "gasp" | "aww" | "roar";
@@ -21,18 +22,14 @@ export function Tightrope({ goal, steps, mood, frozen = false, countdown, fallin
   const reaction = crowd === "cheer" ? "happy" : crowd === "gasp" ? "uhoh" : mood;
   return (
     <div className={cn("elevator-scene relative min-h-0 w-full overflow-hidden rounded-lg", className)} data-height={height} data-safe={safe} data-calm={calm}>
-      <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label={`Luna's platform: level ${height} of ${goal + start}${safe ? ', SAFE!' : ''}`}>
+        <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label={`Luna's platform: level ${height} of ${goal + start}${safe ? ', safe!' : ''}`}>
         <defs><clipPath id={clip}><rect width="600" height="520" /></clipPath></defs>
-        <rect width="600" height="600" fill="var(--circus-sky)" />
-        <path d="M0 0 H600 V70 Q300 30 0 70Z" fill="var(--circus-red)" />
-        <path d="M0 0 H78 Q60 130 92 240 L50 320 L0 410Z M600 0 H522 Q540 130 508 240 L550 320 L600 410Z" fill="var(--circus-curtain)" />
-        <path d="M14 14 Q23 134 60 244 M41 10 Q47 127 75 219 M586 14 Q577 134 540 244 M559 10 Q553 127 525 219" fill="none" stroke="var(--circus-red)" strokeWidth="14" />
-        <path d="M0 254 Q45 277 85 240 M600 254 Q555 277 515 240" fill="none" stroke="var(--gold)" strokeWidth="10" />
+        <rect width="600" height="600" fill="var(--tent-b)" />
+        {Array.from({ length: 7 }, (_, i) => <rect key={i} x={i * 92} width="46" height="600" fill="var(--tent-a)" />)}
         <path d="M0 53 Q300 114 600 53" fill="none" stroke="var(--circus-ink)" strokeWidth="2" />
         {Array.from({ length: 13 }, (_, i) => <circle key={i} cx={i * 46 + 24} cy={65 + Math.sin(i / 12 * Math.PI) * 22} r="6" fill="var(--gold)" />)}
-        <path d="M90 90 L270 480 L90 480Z M510 90 L330 480 L510 480Z" fill="var(--acrobat-white)" opacity=".22" />
-        <path d="M0 480 Q300 450 600 480 V600 H0Z" fill="var(--circus-wood)" />
-        {[500, 535, 575].map(v => <path key={v} d={`M0 ${v} H600`} stroke="var(--circus-ink)" opacity=".2" strokeWidth="2" />)}
+        <path d="M115 0 L25 490 L265 490Z M485 0 L335 490 L575 490Z" fill="var(--spot)" />
+        <path d="M0 480 Q300 450 600 480 V600 H0Z" fill="var(--pool-deep)" />
         <g stroke="var(--circus-ink)" strokeWidth="3" strokeLinejoin="round">
           <path d="M337 122 H377 V501 H337Z" fill="var(--circus-metal)" />
           <path d="M346 127 H358 V495 H346Z" fill="var(--circus-teal)" />
@@ -46,7 +43,7 @@ export function Tightrope({ goal, steps, mood, frozen = false, countdown, fallin
           <path d="M392 186 L408 220 L434 186 M485 186 L510 220 L526 186" fill="var(--circus-teal)" />
           <path d="M400 164 V135 M440 164 V135 M480 164 V135 M523 164 V135 M395 137 H529" stroke="var(--gold)" strokeWidth="6" />
           <rect x="403" y="90" width="126" height="40" rx="4" fill={celebrating ? "var(--success)" : "var(--circus-teal)"} />
-          <text x="466" y="119" textAnchor="middle" fill="var(--acrobat-white)" stroke="none" fontSize="29" fontWeight="800">SAFE!</text>
+          <text x="466" y="119" textAnchor="middle" fill="var(--acrobat-white)" stroke="none" fontSize="29" fontWeight="800">Safe!</text>
           <path d="M530 95 V53 L565 64 L530 78" fill="var(--circus-red)" />
         </g>
         <ellipse cx="284" cy="530" rx="214" ry="49" fill="var(--gold)" stroke="var(--circus-ink)" strokeWidth="3" />
@@ -65,7 +62,7 @@ export function Tightrope({ goal, steps, mood, frozen = false, countdown, fallin
         <g className="circus-water" fill="none" stroke="var(--river-foam)" strokeWidth="4" strokeLinecap="round"><path d="M118 524 Q159 511 201 523 M342 524 Q382 512 432 522 M205 537 Q276 549 344 535" /></g>
         {inPool && <g className="circus-splash" fill="var(--river-foam)">{Array.from({ length: 9 }, (_, i) => <path key={i} transform={`translate(264 512) rotate(${i * 23 - 90})`} d="M0 -7 Q-12 -49 0 -72 Q12 -49 0 -7Z" />)}</g>}
         {(celebrating || crowd === "cheer") && <g key={rest.flashKey} className="circus-confetti">{Array.from({ length: 22 }, (_, i) => <path key={i} d={`M${100 + i * 19} ${80 + (i % 5) * 60} l5 10`} stroke={i % 3 === 0 ? "var(--circus-red)" : i % 3 === 1 ? "var(--gold)" : "var(--circus-teal)"} strokeWidth="5" />)}</g>}
-        <text x="284" y="582" textAnchor="middle" fill="var(--circus-ink)" fontSize="21" fontWeight="800">{inPool ? "A splash… and a smile!" : celebrating ? "LUNA IS SAFE!" : frozen ? "SAFETY BRAKE ON" : "SAVE THE ACROBAT"}</text>
+        <Audience mood={inPool ? "aww" : celebrating ? "roar" : crowd} />
       </svg>
       {countdown !== undefined && <span className="absolute left-4 top-4 rounded-lg bg-destructive px-4 py-1 text-4xl font-bold text-destructive-foreground">{countdown}</span>}
       {stars.length > 0 && <div className="circus-heroes">{stars.map(s => <span key={s}>{s}</span>)}</div>}
