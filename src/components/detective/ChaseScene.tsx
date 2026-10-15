@@ -152,13 +152,13 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
         {bug && <g transform="translate(0 -24) scale(0.85)"><Gigglebug mood={bug} /></g>}
         <path d="M-22 -30 L-36 -78 M22 -30 L36 -78" stroke={INK} strokeWidth="2" />
         {/* envelope */}
-        <g transform={`translate(0 -140) scale(${inflate}) translate(0 ${state === "ground" ? 30 : 0})`}>
+        <g transform={`translate(0 -140) scale(${inflate}) translate(0 ${state === "ground" ? 30 : 0})`}><g className={state === "deflate" ? "det-deflate" : undefined}>
           <path d="M0 -74 C60 -74 70 -10 40 40 L-40 40 C-70 -10 -60 -74 0 -74Z" fill="var(--det-balloon-a)" stroke={INK} strokeWidth="3" />
           <path d="M0 -74 C24 -60 26 0 16 40 L-16 40 C-26 0 -24 -60 0 -74Z" fill="var(--det-balloon-b)" stroke={INK} strokeWidth="2" />
           {countdown !== undefined && (
             <text y="10" textAnchor="middle" fontSize="54" fontWeight="900" fill="var(--explorer-teeth)" stroke={INK} strokeWidth="3" paintOrder="stroke" className="font-display">{countdown}</text>
           )}
-        </g>
+        </g></g>
       </g>
     </g>
   );
@@ -167,7 +167,7 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
 export function ChaseScene({
   goal, clues, pct, sniffMood, bugMood, balloon, ropes, tangled = false, countdown, freshPaw = false, sniffX, bugInBasket, bonk = false, net = false, letters = false, badges = [], className,
 }: {
-  goal: number; clues: number; pct: number; sniffMood: SniffMood; bugMood: BugMood; balloon: BalloonState; ropes: number; tangled?: boolean; countdown?: number | undefined; freshPaw?: boolean; sniffX?: number; bugInBasket: boolean; bonk?: boolean; net?: boolean; letters?: boolean; badges?: string[]; className?: string;
+  goal: number; clues: number; pct: number; sniffMood: SniffMood; bugMood: BugMood; balloon: BalloonState; ropes: number; tangled?: boolean; countdown?: number | undefined; freshPaw?: boolean; sniffX?: number | undefined; bugInBasket: boolean; bonk?: boolean; net?: boolean; letters?: boolean; badges?: string[]; className?: string;
 }) {
   const paws = Array.from({ length: goal }, (_, i) => START_X + 60 + (i * (END_X - START_X - 60)) / Math.max(1, goal - 1));
   const x = sniffX ?? START_X + ((END_X - START_X - 70) * clues) / Math.max(1, goal);
