@@ -195,6 +195,7 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
           )}
         </g></g>
       </g>
+      </g>
     </g>
   );
 }
