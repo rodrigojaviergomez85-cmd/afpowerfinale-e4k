@@ -1,6 +1,6 @@
 import { COURSES, type DayDef } from "@/data/content";
 
-export type ItemKind = "Q" | "T" | "S" | "E" | "H" | "F";
+export type ItemKind = "Q" | "T" | "S" | "E" | "H" | "F" | "M";
 export interface ShapeSpec { shape: string; count: number; color?: string | undefined }
 export interface ContentItem {
   id: string;
@@ -12,6 +12,8 @@ export interface ContentItem {
   hidden?: boolean;
   options?: string[];
   blank?: string;
+  /** M items: the sentence split into plain/wrong parts (wrong = bracketed words). */
+  parts?: { text: string; wrong: boolean }[];
   week: number;
   day: number;
 }
@@ -198,4 +200,33 @@ export function chairDeck(sel: Selection, mode: ChairMode) {
     out.push(rest.splice(k < 0 ? 0 : k, 1)[0]!);
   }
   return out;
+}
+
+/** Parse Detective Sniff "find the mistake" lines (M || [wrong] sentence || a / b* / c || corrected). */
+function parseMistakes(d: DayDef, week: number): ContentItem[] {
+  return (d.mistakes ?? []).map((line, i) => {
+    const [, sentence = "", opts = "", fixed = ""] = line.split(" || ");
+    const parts = sentence.split(/(\[[^\]]+\])/).filter(Boolean).map((t) => (t.startsWith("[") ? { text: t.slice(1, -1), wrong: true } : { text: t, wrong: false }));
+    const raw = opts.split(" / ");
+    const options = raw.map((o) => o.replace(/\*$/, "").trim());
+    const blank = options[raw.findIndex((o) => o.trim().endsWith("*"))] ?? options[0]!;
+    return { id: `w${week}d${d.day}-m${i}`, kind: "M" as const, prompt: parts.map((x) => x.text).join(""), parts, options, blank, answers: [fixed], week, day: d.day };
+  });
+}
+
+/** Mistake cards for Detective Sniff: selected day → earlier days (latest first) → earlier weeks; never later; `avoid` last. */
+export function drawMistakes(sel: Selection, count: number, avoid: string[] = []) {
+  const lv = getLevel(sel.course, sel.level);
+  const tiers: ContentItem[][] = [];
+  const weeks = [...lv.weeks].filter((w) => w.week <= sel.week).sort((a, b) => b.week - a.week);
+  for (const w of weeks) {
+    const days = [...w.days].filter((d) => w.week < sel.week || d.day <= sel.day).sort((a, b) => b.day - a.day);
+    if (w.week === sel.week) for (const d of days) tiers.push(parseMistakes(d, w.week));
+    else tiers.push(days.flatMap((d) => parseMistakes(d, w.week)));
+  }
+  const av = new Set(avoid);
+  const ordered = [...tiers.flatMap((t) => shuffle(t.filter((i) => !av.has(i.id)))), ...tiers.flatMap((t) => shuffle(t.filter((i) => av.has(i.id))))];
+  const picked = ordered.slice(0, count);
+  const first = new Set((tiers[0] ?? []).map((i) => i.id));
+  return { items: shuffle(picked), review: picked.some((i) => !first.has(i.id)) };
 }

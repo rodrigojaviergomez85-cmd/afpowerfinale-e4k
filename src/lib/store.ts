@@ -46,6 +46,8 @@ interface AppState {
   bridge: BombOptions;
   rope: BombOptions;
   kitten: BombOptions;
+  detective: BombOptions;
+  setDetective: (b: Partial<BombOptions>) => void;
   setKitten: (b: Partial<BombOptions>) => void;
   race: RaceOptions;
   setRace: (r: Partial<RaceOptions>) => void;
@@ -85,6 +87,13 @@ export const BOMB_PRESETS: Record<string, BombOptions> = {
   Hard: { target: 12, time: 100, penalty: 5, mix: "mix", whOnly: false },
 };
 
+/** Detective Sniff presets (clues = target). */
+export const DETECTIVE_PRESETS: Record<string, BombOptions> = {
+  Easy: { target: 6, time: 120, penalty: 3, mix: "mix" },
+  Normal: { target: 8, time: 120, penalty: 5, mix: "mix" },
+  Hard: { target: 10, time: 100, penalty: 5, mix: "mix" },
+};
+
 /** Session-only memory (not saved): ids used in the previous game, so Rematch prefers new items. */
 export const sessionUsed: Record<string, string[]> = {};
 
@@ -107,6 +116,8 @@ export const useApp = create<AppState>()(
       bridge: BOMB_PRESETS["Normal"]!,
       rope: BOMB_PRESETS["Normal"]!,
       kitten: BOMB_PRESETS["Normal"]!,
+      detective: DETECTIVE_PRESETS["Normal"]!,
+      setDetective: (b) => set({ detective: { ...(get().detective ?? DETECTIVE_PRESETS["Normal"]!), ...b } }),
       setKitten: (b) => set({ kitten: { ...(get().kitten ?? BOMB_PRESETS["Normal"]!), ...b } }),
       race: RACE_DEFAULTS,
       setRace: (r) => set({ race: { ...RACE_DEFAULTS, ...get().race, ...r } }),
