@@ -9,7 +9,7 @@ import { BOMB_PRESETS, RACE_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store
 
 import { getGame } from "@/lib/games";
 import { COURSES } from "@/data/content";
-import { getCourse, getLevel, isReviewDay, normalizeSelection, shuffle, type ContentMix } from "@/lib/content";
+import { getCourse, getLevel, isReviewDay, normalizeSelection, shuffle } from "@/lib/content";
 import { teamStyle } from "@/components/engine/Scoreboard";
 import { useHotkeys } from "@/components/engine/controls";
 import { Kbd } from "@/components/engine/Kbd";
@@ -129,10 +129,6 @@ function Setup() {
                 <input type="range" min={60} max={180} step={10} value={mo.time} onChange={(e) => setMo({ time: Number(e.target.value) })} className="w-full accent-primary" /></div>
               <div className="space-y-2"><div className="font-bold text-muted-foreground">{isBridge ? "Wave penalty for wrong / skip" : "Penalty for wrong / skip"}</div>
                 <Seg value={mo.penalty} onChange={(v) => setMo({ penalty: v })} options={[0, 3, 5].map((n) => ({ v: n, l: `${n}s` }))} /></div>
-              {!isRope && (
-              <div className="space-y-2"><div className="font-bold text-muted-foreground">Content</div>
-                <Seg<ContentMix> value={mo.mix} onChange={(v) => setMo({ mix: v })} options={[{ v: "mix", l: "Mix" }, { v: "questions", l: "Questions only" }, { v: "translations", l: "Translations only" }]} /></div>
-              )}
             </div>
           ) : (
             <>
