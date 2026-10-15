@@ -44,7 +44,7 @@ export const GAMES: GameDef[] = [
   },
   {
     id: "tightrope",
-    name: "Circus Rescue",
+    name: "Circus Splash",
     icon: "🎪",
     tagline: "Raise Luna’s platform to safety — don't let her splash!",
     mode: "Whole class",
@@ -107,18 +107,6 @@ export const GAMES: GameDef[] = [
     ],
   },
   {
-    id: "hot-chair",
-    name: "Hot Chair Translation",
-    icon: "🔥",
-    tagline: "Fast turns. Translate the sentence!",
-    mode: "2 teams",
-    minutes: "6 min",
-    accent: "bg-game-chair",
-    accentText: "text-game-chair",
-    status: "soon",
-    rules: [],
-  },
-  {
     id: "vocab-blitz",
     name: "Vocab Blitz",
     icon: "⚡",
@@ -129,6 +117,18 @@ export const GAMES: GameDef[] = [
     accentText: "text-game-blitz",
     status: "ready",
     rules: [{ icon: "🎾", text: "Say a word. Don't repeat! Don't stop!" }],
+  },
+  {
+    id: "hot-chair",
+    name: "Hot Chair Translation",
+    icon: "🔥",
+    tagline: "Fast turns. Translate the sentence!",
+    mode: "2 teams",
+    minutes: "6 min",
+    accent: "bg-game-chair",
+    accentText: "text-game-chair",
+    status: "soon",
+    rules: [],
   },
 ];
 
