@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { BOMB_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, BLITZ_DEFAULTS, CHAIR_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
+import { BOMB_PRESETS, DETECTIVE_PRESETS, RACE_DEFAULTS, TUG_DEFAULTS, BLITZ_DEFAULTS, CHAIR_DEFAULTS, TEAM_NAME_POOL, useApp } from "@/lib/store";
 import { availableCategories, categoryIcons, categoryLabel } from "@/lib/blitz";
 
 import { getGame } from "@/lib/games";
@@ -60,11 +60,12 @@ function Setup() {
   const isBridge = game.id === "bridge-builder";
   const isRope = game.id === "tightrope";
   const isKitten = game.id === "kitten-rescue";
+  const isDet = game.id === "detective-sniff";
   const isRace = game.id === "rocket-race";
   const isTug = game.id === "mud-tug";
   const isBlitz = game.id === "vocab-blitz";
   const isChair = game.id === "hot-chair";
-  const isBomb = game.id === "beat-the-bomb" || isBridge || isRope || isKitten;
+  const isBomb = game.id === "beat-the-bomb" || isBridge || isRope || isKitten || isDet;
   const navigate = useNavigate();
   const s = useApp();
   const [newName, setNewName] = useState("");
@@ -79,7 +80,7 @@ function Setup() {
   const level = getLevel(course.name, s.level);
   const week = level.weeks.find((w) => w.week === s.week) ?? level.weeks[0]!;
 
-  const start = () => navigate({ to: isChair ? "/play/chair" : isBlitz ? "/play/blitz" : isRace ? "/play/race" : isTug ? "/play/tug" : isRope ? "/play/rope" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
+  const start = () => navigate({ to: isChair ? "/play/chair" : isBlitz ? "/play/blitz" : isRace ? "/play/race" : isTug ? "/play/tug" : isRope ? "/play/rope" : isDet ? "/play/detective" : isKitten ? "/play/kitten" : isBridge ? "/play/bridge" : isBomb ? "/play/bomb" : "/play/demo" });
   useHotkeys({ Enter: start });
 
   const reshuffle = () => {
@@ -92,14 +93,15 @@ function Setup() {
     s.setSetup({ roster: [...s.roster, ...names.map((name) => ({ id: crypto.randomUUID(), name, quiet: false, turns: 0, points: 0 }))] });
     setNewName("");
   };
-  const mo = isKitten ? (s.kitten ?? BOMB_PRESETS["Normal"]!) : isRope ? (s.rope ?? BOMB_PRESETS["Normal"]!) : isBridge ? (s.bridge ?? BOMB_PRESETS["Normal"]!) : s.bomb;
-  const setMo = isKitten ? s.setKitten : isRope ? s.setRope : isBridge ? s.setBridge : s.setBomb;
+  const mo = isDet ? (s.detective ?? DETECTIVE_PRESETS["Normal"]!) : isKitten ? (s.kitten ?? BOMB_PRESETS["Normal"]!) : isRope ? (s.rope ?? BOMB_PRESETS["Normal"]!) : isBridge ? (s.bridge ?? BOMB_PRESETS["Normal"]!) : s.bomb;
+  const setMo = isDet ? s.setDetective : isKitten ? s.setKitten : isRope ? s.setRope : isBridge ? s.setBridge : s.setBomb;
   const race = { ...RACE_DEFAULTS, ...s.race };
   const tug = { ...TUG_DEFAULTS, ...s.tug };
   const blitz = { ...BLITZ_DEFAULTS, ...s.blitz };
   const chair = { ...CHAIR_DEFAULTS, ...s.chair };
   const categories = availableCategories(s.course, s.level, s.week);
-  const presetName = Object.entries(BOMB_PRESETS).find(([, p]) => p.target === mo.target && p.time === mo.time && p.penalty === mo.penalty)?.[0];
+  const presets = isDet ? DETECTIVE_PRESETS : BOMB_PRESETS;
+  const presetName = Object.entries(presets).find(([, p]) => p.target === mo.target && p.time === mo.time && p.penalty === mo.penalty)?.[0];
 
   return (
     <div data-calm={s.settings.calm} className="stage-bg min-h-screen">
@@ -133,10 +135,10 @@ function Setup() {
 
           {isBomb ? (
             <div className="space-y-4 pt-2">
-              <h2 className="text-3xl">{isKitten ? "🐱 Rescue options" : isRope ? "🎪 Rescue options" : isBridge ? "🌉 Bridge options" : "💣 Bomb options"}</h2>
-              <Seg value={presetName ?? ""} onChange={(v) => v && setMo({ ...BOMB_PRESETS[v], mix: mo.mix, whOnly: !!mo.whOnly })} options={Object.keys(BOMB_PRESETS).map((k) => ({ v: k, l: k }))} />
-              <div className="space-y-1"><div className="font-bold text-muted-foreground">Target: {mo.target} {isKitten ? "rungs" : isRope ? "levels to safety" : isBridge ? "planks" : "questions"}</div>
-                <input type="range" min={6} max={15} value={mo.target} onChange={(e) => setMo({ target: Number(e.target.value) })} className="w-full accent-primary" /></div>
+              <h2 className="text-3xl">{isDet ? "🔍 Case options" : isKitten ? "🐱 Rescue options" : isRope ? "🎪 Rescue options" : isBridge ? "🌉 Bridge options" : "💣 Bomb options"}</h2>
+              <Seg value={presetName ?? ""} onChange={(v) => v && setMo({ ...presets[v], mix: mo.mix, whOnly: !!mo.whOnly })} options={Object.keys(presets).map((k) => ({ v: k, l: k }))} />
+              <div className="space-y-1"><div className="font-bold text-muted-foreground">Target: {mo.target} {isDet ? "clues" : isKitten ? "rungs" : isRope ? "levels to safety" : isBridge ? "planks" : "questions"}</div>
+                <input type="range" min={isDet ? 5 : 6} max={isDet ? 12 : 15} value={mo.target} onChange={(e) => setMo({ target: Number(e.target.value) })} className="w-full accent-primary" /></div>
               <div className="space-y-1"><div className="font-bold text-muted-foreground">Total time: {mo.time}s</div>
                 <input type="range" min={60} max={180} step={10} value={mo.time} onChange={(e) => setMo({ time: Number(e.target.value) })} className="w-full accent-primary" /></div>
               <div className="space-y-2"><div className="font-bold text-muted-foreground">{isBridge ? "Wave penalty for wrong / skip" : "Penalty for wrong / skip"}</div>

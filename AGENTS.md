@@ -22,3 +22,4 @@
 - Vocab Blitz uses vocabulary groups from the static curriculum, a pure rally reducer in `src/lib/blitz.ts`, and its own scoped court layout and persisted options; roster order assigns alternating entries to teams so selection stays team-specific without changing shared roster data.
 - Vocabulary display labels are centralized separately from curriculum category keys so wording changes preserve saved coach selections and original curriculum content.
 - Hot Chair (`/play/chair`, `chair` options) builds its deck with `chairDeck` in `src/lib/content.ts` (coach-chosen card mode, never hidden pictures) and consumes it sequentially across both teams so the second team sees fresh cards.
+- Detective Sniff (`/play/detective`, `detective` options) reads M items from each day's separate `mistakes` list via `drawMistakes`, so other games and review-day detection ignore them; reuses bridge-shell/bridge-play layout.
