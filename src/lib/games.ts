@@ -118,6 +118,18 @@ export const GAMES: GameDef[] = [
     status: "ready",
     rules: [{ icon: "🎾", text: "Say a word. Don't repeat! Don't stop!" }],
   },
+  {
+    id: "hot-chair",
+    name: "Hot Chair Translation",
+    icon: "🔥",
+    tagline: "Fast turns. Translate the sentence!",
+    mode: "2 teams",
+    minutes: "6 min",
+    accent: "bg-game-chair",
+    accentText: "text-game-chair",
+    status: "soon",
+    rules: [],
+  },
 ];
 
 export const getGame = (id: string) => GAMES.find((g) => g.id === id);
