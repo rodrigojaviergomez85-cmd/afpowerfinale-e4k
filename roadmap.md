@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Vocab Blitz: varying ball landing positions and bounce animation; restore shared countdown size. Verify movement and countdown.
+- [x] Vocab Blitz: varying ball landing positions and bounce animation; restored shared countdown size. Six exchanges verified at 950×639 and 1366×768; countdown matches Demo Drill (256px numbers, 224px GO), no page errors.
 
 - [x] Vocab Blitz: larger court, compact category area/buttons, profession activities category label; Beat the Bomb: single WH-only switch with Yes/No. Verified switch persistence, correct/out and review at 950×639, 1366×768 and 1920×1080 without scrolling or page errors; six logic tests pass.
 
