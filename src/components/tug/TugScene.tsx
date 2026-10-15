@@ -66,7 +66,7 @@ function Face({ mood, y = -52 }: { mood: TugMood; y?: number }) {
   );
 }
 
-function Bunny({ mood, color, icon }: { mood: TugMood; color: string; icon: string }) {
+function Bunny({ mood, color }: { mood: TugMood; color: string }) {
   const effort = mood === "pull" || mood === "power";
   return (
     <g>
@@ -81,7 +81,6 @@ function Bunny({ mood, color, icon }: { mood: TugMood; color: string; icon: stri
       </g>
       {/* body jersey */}
       <ellipse cx={0} cy={-8} rx="20" ry="23" fill={color} stroke={OUTLINE} strokeWidth="3" />
-      <ellipse cx={0} cy={-2} rx="11" ry="12" fill="#fff" opacity="0.85" />
       {/* feet */}
       <ellipse cx={-9} cy={1} rx="7" ry="5" fill={FUR} stroke={OUTLINE} strokeWidth="2.5" />
       <ellipse cx={9} cy={1} rx="7" ry="5" fill={FUR} stroke={OUTLINE} strokeWidth="2.5" />
@@ -93,13 +92,11 @@ function Bunny({ mood, color, icon }: { mood: TugMood; color: string; icon: stri
       <path d={effort ? "M 17 -22 Q 34 -30 38 -42" : "M 17 -22 Q 30 -28 33 -40"} stroke={FUR} strokeWidth="8" fill="none" strokeLinecap="round" />
       <circle cx={effort ? -38 : -33} cy={effort ? -42 : -40} r="5" fill={FUR} stroke={OUTLINE} strokeWidth="2" />
       <circle cx={effort ? 38 : 33} cy={effort ? -42 : -40} r="5" fill={FUR} stroke={OUTLINE} strokeWidth="2" />
-      {/* team icon on jersey */}
-      <text x={0} y={2} textAnchor="middle" fontSize="15">{icon}</text>
     </g>
   );
 }
 
-function Puppy({ mood, color, icon }: { mood: TugMood; color: string; icon: string }) {
+function Puppy({ mood, color }: { mood: TugMood; color: string }) {
   const effort = mood === "pull" || mood === "power";
   return (
     <g>
@@ -110,7 +107,6 @@ function Puppy({ mood, color, icon }: { mood: TugMood; color: string; icon: stri
       <ellipse cx={17} cy={-58} rx="7.5" ry="15" fill="var(--pup-ear)" stroke={OUTLINE} strokeWidth="3" transform="rotate(-18 17 -58)" />
       {/* body jersey */}
       <ellipse cx={0} cy={-8} rx="20" ry="23" fill={color} stroke={OUTLINE} strokeWidth="3" />
-      <ellipse cx={0} cy={-2} rx="11" ry="12" fill="#fff" opacity="0.85" />
       {/* feet */}
       <ellipse cx={-9} cy={1} rx="7" ry="5" fill={PUP_FUR} stroke={OUTLINE} strokeWidth="2.5" />
       <ellipse cx={9} cy={1} rx="7" ry="5" fill={PUP_FUR} stroke={OUTLINE} strokeWidth="2.5" />
@@ -125,7 +121,6 @@ function Puppy({ mood, color, icon }: { mood: TugMood; color: string; icon: stri
       <path d={effort ? "M 17 -22 Q 34 -30 38 -42" : "M 17 -22 Q 30 -28 33 -40"} stroke={PUP_FUR} strokeWidth="8" fill="none" strokeLinecap="round" />
       <circle cx={effort ? -38 : -33} cy={effort ? -42 : -40} r="5" fill={PUP_FUR} stroke={OUTLINE} strokeWidth="2" />
       <circle cx={effort ? 38 : 33} cy={effort ? -42 : -40} r="5" fill={PUP_FUR} stroke={OUTLINE} strokeWidth="2" />
-      <text x={0} y={2} textAnchor="middle" fontSize="15">{icon}</text>
     </g>
   );
 }
@@ -135,7 +130,7 @@ const ropeY = (x: number) => {
   return 200 + 60 * k * (1 - k);
 };
 
-/** The tug-of-war scene: two mascot teams, the rope with its red ribbon, the mud puddle and the win lines. */
+/** The tug-of-war scene: two mascot teams, the rope with its center knot, the mud puddle and the win lines. */
 export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
   teams: Team[]; pos: number[]; pulls: number; active: number;
   fx: TugFx | undefined; className?: string; ending?: TugEnding;
@@ -156,7 +151,6 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
   };
 
   const mascot = (team: number, i: number) => {
-    const st = teams[team]!;
     const mood = moodFor(team);
     const Animal = team === 0 ? Bunny : Puppy;
     // Play positions: bunnies left, puppies right. Muddy losers end up in the puddle.
@@ -182,7 +176,7 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
           )}
           style={flying ? ({ "--fly-x": `${flyX}px` } as CSSProperties) : undefined}
         >
-          <Animal mood={mood} color={`var(--team${team + 1})`} icon={st.icon} />
+          <Animal mood={mood} color={`var(--team${team + 1})`} />
         </g>
       </g>
     );
@@ -238,16 +232,20 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
             ))
           ))}
         </g>
-        {/* mascots behind the ribbon, hands on the rope */}
+        {/* mascots behind the knot, hands on the rope */}
         {[0, 1].map((i) => mascot(0, i))}
         {[0, 1].map((i) => mascot(1, i))}
         {/* sunk-in mud lip so muddy mascots look inside the puddle */}
         {ending && ending.step >= 1 && <ellipse cx="560" cy="266" rx="250" ry="26" fill="var(--mud-deep)" opacity="0.85" />}
-        {/* red ribbon */}
+        {/* Interwoven rope knot: outlined strands with braided texture. */}
         <g key={`ribbon-${key}`} className={fx?.kind === "slip" ? "tug-shake" : undefined}>
-          <path d={`M ${ribbonX - 26} ${ropeY(ribbonX) - 2} l 26 8 l -26 8 z`} fill="var(--ribbon)" stroke={OUTLINE} strokeWidth="2.5" />
-          <path d={`M ${ribbonX + 26} ${ropeY(ribbonX) - 2} l -26 8 l 26 8 z`} fill="var(--ribbon)" stroke={OUTLINE} strokeWidth="2.5" />
-          <circle cx={ribbonX} cy={ropeY(ribbonX) + 6} r="7" fill="var(--ribbon-deep)" stroke={OUTLINE} strokeWidth="2.5" />
+          <g transform={`translate(${ribbonX} ${ropeY(ribbonX)})`} aria-label="Center rope knot">
+            <path d="M -28 0 C -15 0 -18 -15 -5 -15 C 12 -15 18 15 4 15 C -10 15 -15 0 -28 0 M 28 0 C 15 0 18 15 5 15 C -12 15 -18 -15 -4 -15 C 10 -15 15 0 28 0" fill="none" stroke="var(--rope-straw-deep)" strokeWidth="12" strokeLinecap="round" />
+            <path d="M -28 0 C -15 0 -18 -15 -5 -15 C 12 -15 18 15 4 15 C -10 15 -15 0 -28 0 M 28 0 C 15 0 18 15 5 15 C -12 15 -18 -15 -4 -15 C 10 -15 15 0 28 0" fill="none" stroke="var(--rope-straw)" strokeWidth="7" strokeLinecap="round" />
+            <path d="M -8 -11 L 8 11" fill="none" stroke="var(--rope-straw-deep)" strokeWidth="12" strokeLinecap="round" />
+            <path d="M -8 -11 L 8 11" fill="none" stroke="var(--rope-straw)" strokeWidth="7" strokeLinecap="round" />
+            <path d="M -9 -7 l 7 -4 M -5 -1 l 7 -4 M -1 5 l 7 -4 M 3 11 l 7 -4 M -16 -8 l 5 3 M 14 7 l 5 3" fill="none" stroke="var(--rope-straw-deep)" strokeWidth="2" strokeLinecap="round" />
+          </g>
         </g>
       </svg>
     </div>
