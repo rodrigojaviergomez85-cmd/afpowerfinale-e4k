@@ -138,6 +138,15 @@ function Setup() {
                 <input type="range" min={60} max={180} step={10} value={mo.time} onChange={(e) => setMo({ time: Number(e.target.value) })} className="w-full accent-primary" /></div>
               <div className="space-y-2"><div className="font-bold text-muted-foreground">{isBridge ? "Wave penalty for wrong / skip" : "Penalty for wrong / skip"}</div>
                 <Seg value={mo.penalty} onChange={(v) => setMo({ penalty: v })} options={[0, 3, 5].map((n) => ({ v: n, l: `${n}s` }))} /></div>
+              {game.id === "beat-the-bomb" && (
+                <div className="space-y-2 pt-1">
+                  <div className="font-bold text-muted-foreground">WH questions only</div>
+                  <div className="flex gap-2">
+                    <Button variant={mo.whOnly ? "game" : "panel"} aria-pressed={!!mo.whOnly} onClick={() => setMo({ whOnly: true })}>On — only WH questions</Button>
+                    <Button variant={!mo.whOnly ? "game" : "panel"} aria-pressed={!mo.whOnly} onClick={() => setMo({ whOnly: false })}>Off — mixed</Button>
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
             <>
