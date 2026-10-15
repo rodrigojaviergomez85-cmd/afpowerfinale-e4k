@@ -487,7 +487,7 @@
   .rope-controls > button:nth-child(-n+2) { grid-column: span 3; }
   .rope-controls > button kbd { font-size: 13px; }
   .rope-play { grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); gap: 8px 10px; }
-  .rope-play .fit-card:has(.hidden-picture), .rope-play .fit-card:has(.item-picture:not(:empty)) { grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); }
+  .rope-play .fit-card:has(.hidden-picture), .rope-play .fit-card:has(.item-picture:not(:empty)) { grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr); }
   .rope-play .fit-card > .banner-pill { grid-column: 1 / -1; }
   .rope-play .hidden-picture, .rope-play .item-picture { grid-column: 1; grid-row: 2; }
   .rope-play .fit-card:has(.hidden-picture) .item-prompt, .rope-play .fit-card:has(.item-picture:not(:empty)) .item-prompt { grid-column: 2; grid-row: 2; font-size: 48px !important; }
