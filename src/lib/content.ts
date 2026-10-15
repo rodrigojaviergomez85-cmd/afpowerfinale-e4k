@@ -126,7 +126,7 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
     for (const i of ordered) {
       if (picked.length >= count) break;
       if (ids.has(i.id)) continue;
-      if (i.kind === "H" && picked.filter((x) => x.kind === "H").length >= 2) continue;
+      if (i.kind === "H" && picked.filter((x) => x.kind === "H").length >= 3) continue;
       picked.push(i); ids.add(i.id);
     }
   }
