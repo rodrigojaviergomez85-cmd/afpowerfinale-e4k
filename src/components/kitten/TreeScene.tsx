@@ -65,9 +65,18 @@ function Neighbors({ mood }: { mood: CrowdMood }) {
       {[876, 927, 976].map((x, i) => (
         <g key={x} transform={`translate(${x} 350)`}>
           <path d="M-18 0 V-26 Q-18 -40 0 -40 Q18 -40 18 -26 V0Z" fill={["var(--team2)", "var(--game-rope)", "var(--leaf)"][i]} />
-          <path d={cheering ? "M-15 -29 L-25 -53 M15 -29 L25 -53" : shocked ? "M-14 -29 L-23 -52 M14 -29 L23 -52" : mood === "gasp" ? "M-15 -28 L-18 -48 M15 -28 L18 -48" : "M-15 -26 L-19 -8 M15 -26 L19 -8"} stroke="var(--rosa-skin)" strokeWidth="7" />
+          <path d={armD} stroke="var(--sky-ink)" strokeWidth="10" />
+          <path d={armD} stroke="var(--rosa-skin)" strokeWidth="6" />
           <circle cy="-57" r="20" fill={i === 1 ? "var(--audience-skin)" : "var(--rosa-skin)"} />
           <path d={i === 1 ? "M-19 -57 Q-23 -82 0 -80 Q23 -82 19 -57 L12 -64 Q2 -60 -5 -71 L-13 -62Z" : "M-19 -61 Q-19 -82 0 -80 Q20 -82 19 -61 Q7 -69 -6 -66 L-17 -56Z"} fill={i === 2 ? "var(--sky-ink)" : "var(--rosa-hair)"} />
+          {shocked && (
+            <g>
+              <path d="M-21 -41 L-19 -49 M21 -41 L19 -49" stroke="var(--sky-ink)" strokeWidth="10" />
+              <path d="M-21 -41 L-19 -49 M21 -41 L19 -49" stroke="var(--rosa-skin)" strokeWidth="6" />
+              <circle cx="-19" cy="-51" r="5.5" fill="var(--rosa-skin)" strokeWidth="2.5" />
+              <circle cx="19" cy="-51" r="5.5" fill="var(--rosa-skin)" strokeWidth="2.5" />
+            </g>
+          )}
           <path d={alarmed ? "M-13 -66 L-4 -69 M4 -69 L13 -66" : "M-13 -66 Q-9 -69 -5 -66 M5 -66 Q9 -69 13 -66"} fill="none" strokeWidth="2" />
           {cheering || mood === "relief" ? <path d="M-12 -57 Q-8 -63 -4 -57 M4 -57 Q8 -63 12 -57" fill="none" /> : <g fill="var(--acrobat-white)" strokeWidth="1.5"><ellipse cx="-8" cy="-57" rx="5" ry={shocked ? 8 : alarmed ? 6 : 5} /><ellipse cx="8" cy="-57" rx="5" ry={shocked ? 8 : alarmed ? 6 : 5} /><g fill="var(--sky-ink)" stroke="none"><circle cx={shocked ? "-9.5" : "-7"} cy={shocked ? "-59" : "-57"} r={shocked ? 1.8 : 2.4} /><circle cx={shocked ? "6.5" : "9"} cy={shocked ? "-59" : "-57"} r={shocked ? 1.8 : 2.4} /></g></g>}
           <path d="M0 -56 L-2 -51 H1" fill="none" strokeWidth="1.5" />
