@@ -177,6 +177,11 @@
 
 /* Vocab Blitz only — preserve every other game's layout. */
 .blitz-shell > main { overflow: hidden; }
+.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) { gap: 20px; }
+.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) > div:first-child { font-size: 90px; }
+.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) > h1 { font-size: 60px; }
+.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) .panel { padding: 16px 24px; }
+.blitz-shell > main > div:not(.blitz-play):not(.blitz-finale) .panel > span { font-size: 30px; }
 .blitz-play { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 12px; padding: 0 28px 28px; }
 .blitz-status { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 20px; font-weight: 700; }
 .blitz-court { position: relative; flex: 0 0 29%; min-height: 150px; display: grid; grid-template-columns: 1fr 1fr; border: 3px solid var(--game-blitz); border-radius: 8px; overflow: hidden; background: var(--blitz-court); }

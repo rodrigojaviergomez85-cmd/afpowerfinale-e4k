@@ -41,6 +41,7 @@ function BlitzMatch() {
   const history = useRef<{ state: RallyState; roster: Player[]; player: Player | null }[]>([]);
   const [player, setPlayer] = useState<Player | null>(null);
   const playerRef = useRef(player); playerRef.current = player;
+  const restoring = useRef(false);
   const [help, setHelp] = useState(false);
   const [reviewSeconds, setReviewSeconds] = useState(5);
   const [matchKey, setMatchKey] = useState(0);
@@ -67,6 +68,7 @@ function BlitzMatch() {
   function undo() {
     const last = history.current.pop(); if (!last) return;
     if (last.state.remaining <= 0) last.state = { ...last.state, remaining: options.shotClock };
+    restoring.current = true;
     current.current = last.state; setState(last.state); app.setSetup({ roster: last.roster }); setPlayer(last.player); sfx.minus();
   }
   function pick() {
@@ -75,6 +77,7 @@ function BlitzMatch() {
   }
 
   useEffect(() => {
+    if (restoring.current) { restoring.current = false; return; }
     if (state.phase !== "rally") return;
     pick();
     // Pick only on a new serve, not on clock ticks.
@@ -119,6 +122,9 @@ function BlitzMatch() {
   useHotkeys({ c: () => act("correct"), Enter: () => act("correct"), x: () => act("out"), z: undo, Space: pause, ArrowRight: () => act("next"), r: pick, m: () => app.setSettings({ sound: !app.settings.sound }), f: toggleFullscreen, "?": () => setHelp(true) }, !help && state.phase !== "final");
   if (!category) return <div className="m-auto text-center text-3xl">No vocabulary categories for this level.<Button asChild variant="game" className="mt-6"><Link to="/setup" search={{ game: "vocab-blitz" }}>Back to setup</Link></Button></div>;
   const winner = state.scores[0] > state.scores[1] ? 0 : 1;
+  const servingTeam = app.teams[state.active === 0 ? 0 : 1];
+  const startingTeam = app.teams[state.starter === 0 ? 0 : 1];
+  const roundWinningTeam = app.teams[state.roundWinner === 0 ? 0 : 1];
   if (state.phase === "final") return <div className="blitz-finale">
     <div className="text-7xl animate-pop">{app.teams[winner].icon} 🏆</div>
     <h1>{app.teams[winner].name} WIN THE BLITZ! ⚡</h1>
@@ -135,9 +141,9 @@ function BlitzMatch() {
     <Court teams={app.teams} scores={state.scores} active={state.active} rally={state.rally} rounds={options.rounds} review={state.phase !== "rally"} />
     <section className="blitz-category-zone">
       <div key={`${state.round}-${matchKey}`} className="blitz-category animate-pop">
-        {state.phase === "review" ? <><div className="blitz-round-point text-primary">{app.teams[state.roundWinner ?? 0].name} +1 ROUND ★</div><h1 className="blitz-review-title">{categoryIcons[category.category]} {category.category}</h1><h2 className="text-xl text-muted-foreground">Words you could say:</h2><p className="blitz-word-list">{category.words.join(" · ")}</p><span className="text-muted-foreground">Next category in {reviewSeconds}s</span></> : <>
+        {state.phase === "review" ? <><div className="blitz-round-point text-primary">{roundWinningTeam.name} +1 ROUND ★</div><h1 className="blitz-review-title">{categoryIcons[category.category]} {category.category}</h1><h2 className="text-xl text-muted-foreground">Words you could say:</h2><p className="blitz-word-list">{category.words.join(" · ")}</p><span className="text-muted-foreground">Next category in {reviewSeconds}s</span></> : <>
           <div className="blitz-category-icon">{categoryIcons[category.category] ?? "⚡"}</div><h1>{category.category.toUpperCase()}!</h1>
-          {state.phase === "intro" ? <div className="blitz-starting"><span className={state.round === 0 ? "blitz-coin" : ""}>{app.teams[state.starter].icon}</span><span>{app.teams[state.starter].name} starts!</span></div> : <div className={state.active === 0 ? "text-team1" : "text-team2"}>{player ? `🎤 ${player.name}` : `${app.teams[state.active].name}’s turn`}</div>}
+          {state.phase === "intro" ? <div className="blitz-starting"><span className={state.round === 0 ? "blitz-coin" : ""}>{startingTeam.icon}</span><span>{startingTeam.name} starts!</span></div> : <div className={state.active === 0 ? "text-team1" : "text-team2"}>{player ? `🎤 ${player.name}` : `${servingTeam.name}’s turn`}</div>}
           {state.round === 0 && <p className="blitz-rule">Say a word. Don't repeat! Don't stop!</p>}
         </>}
       </div>

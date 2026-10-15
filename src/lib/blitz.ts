@@ -19,8 +19,9 @@ const randomOrder = <T,>(items: T[]): T[] => {
 export function chooseCategories(available: VocabGroup[], week: number, rounds: number, manual: string[] = []): VocabGroup[] {
   const chosen = randomOrder(available.filter((v) => manual.includes(v.category)));
   const current = randomOrder(available.filter((v) => v.week === week && !manual.includes(v.category)));
-  const rest = randomOrder(available.filter((v) => v.week !== week && !manual.includes(v.category)));
-  return [...chosen, ...current, ...rest].slice(0, rounds);
+  const general = randomOrder(available.filter((v) => v.week === "general" && !manual.includes(v.category)));
+  const earlier = randomOrder(available.filter((v) => v.week !== "general" && v.week < week && !manual.includes(v.category)));
+  return [...chosen, ...current, ...general, ...earlier].slice(0, rounds);
 }
 
 export type RallyPhase = "intro" | "rally" | "review" | "final";
@@ -40,7 +41,7 @@ export function rallyReducer(s: RallyState, a: RallyAction): RallyState {
   if (a.type === "correct") return s.phase === "rally" && !s.paused ? { ...s, active: 1 - s.active, rally: s.rally + 1, longest: Math.max(s.longest, s.rally + 1), remaining: a.clock } : s;
   if (a.type === "out") {
     if (s.phase !== "rally" || s.paused) return s;
-    const winner = 1 - s.active;
+    const winner = s.active === 0 ? 1 : 0;
     const scores: [number, number] = [...s.scores]; scores[winner] += 1;
     return { ...s, phase: "review", roundWinner: winner, scores };
   }
