@@ -39,7 +39,15 @@ const SHORTCUTS: [string, string][] = [
 function BeatTheBomb() {
   const base = getGame("beat-the-bomb")!;
   const target = useApp((s) => s.bomb.target);
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "💣", text: `Answer ${target} questions before the bomb explodes!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
+  const whOnly = useApp((s) => s.bomb.whOnly);
+  const game = useMemo(() => ({
+    ...base,
+    rules: [
+      { icon: "💣", text: `Answer ${target} questions before the bomb explodes!` },
+      { icon: "🤝", text: "Work together!" },
+      ...(whOnly ? [{ icon: "❓", text: "WH questions only!" }] : []),
+    ],
+  }), [base, target, whOnly]);
   const [round, setRound] = useState(0);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
