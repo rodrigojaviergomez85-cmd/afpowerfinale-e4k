@@ -475,6 +475,7 @@
 .rope-controls > button svg { width: 28px; height: 28px; }
 .rope-controls > button kbd { font-size: 16px; }
 .elevator-carriage { transition: transform 650ms ease-in-out; }
+.elevator-character { transition: x 800ms ease-in-out; }
 .elevator-collapse { transform-box: fill-box; transform-origin: right center; animation: platform-collapse .9s ease-in forwards; }
 .elevator-acrobat-fall { transform-box: fill-box; transform-origin: center; animation: acrobat-drop 1s ease-in forwards; }
 .rope-ending-scene { width: min(100%, 900px); height: min(55dvh, 550px); flex-shrink: 1; }

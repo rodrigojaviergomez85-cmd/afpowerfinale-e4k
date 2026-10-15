@@ -8,7 +8,7 @@ export type Crowd = "calm" | "cheer" | "gasp" | "aww" | "roar";
 /** A vertical rescue: the entire carriage moves; the fairground stays still. */
 export function Tightrope({ goal, steps, frozen = false, countdown, falling = false, inPool = false, stars = [], className, ...rest }: {
   pct: number; goal: number; steps: number; mood: LunaMood; crowd?: Crowd; frozen?: boolean; slipKey?: number; flashKey?: number; calm?: boolean;
-  countdown?: number; falling?: boolean; inPool?: boolean; spotsSwing?: boolean; stars?: string[]; className?: string;
+  countdown?: number | undefined; falling?: boolean; inPool?: boolean; spotsSwing?: boolean; stars?: string[]; className?: string;
 }) {
   const start = Math.ceil(goal / 2);
   const height = Math.max(0, Math.min(goal + start, start + steps));
@@ -44,7 +44,7 @@ export function Tightrope({ goal, steps, frozen = false, countdown, falling = fa
             <path d="M209 16 L327 27 L342 16" fill="var(--circus-wood)" stroke="var(--circus-ink)" strokeWidth="3" />
             <circle cx="342" cy="9" r="11" fill="var(--circus-metal)" stroke="var(--circus-ink)" strokeWidth="4" />
           </g>
-          {!inPool && <image href={acrobat} x="193" y="-151" width="151" height="155" preserveAspectRatio="xMidYMax meet" className={cn(falling && "elevator-acrobat-fall")} />}
+          {!inPool && <image href={acrobat} x={safe ? 383 : 193} y="-151" width="151" height="155" preserveAspectRatio="xMidYMax meet" className={cn("elevator-character", falling && "elevator-acrobat-fall")} />}
           {frozen && <path d="M212 -5 H337" stroke="var(--pool)" strokeWidth="8" />}
         </g>
         {inPool && <g className="animate-popup"><image href={acrobat} x="216" y="395" width="126" height="165" /><ellipse cx="278" cy="515" rx="91" ry="28" fill="var(--pool)" /><path d="M194 516 Q220 500 250 516 T330 516 M208 530 Q270 547 343 525" fill="none" stroke="var(--river-foam)" strokeWidth="5" /><path d="M204 479 l-12 -16 M337 480 l15 -20 M236 473 l-5 -15" stroke="var(--river-foam)" strokeWidth="6" strokeLinecap="round" /></g>}
