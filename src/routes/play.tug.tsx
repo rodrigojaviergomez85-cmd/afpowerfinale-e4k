@@ -207,7 +207,7 @@ function TugGame({ help, openHelp, onRematch: _onRematch }: { help: boolean; ope
 
   const t = teams[activeTeam]!;
   return (
-    <div className="fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
+    <div className="tug-play fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
       <TurnPicker open={picking} onDone={(p) => { setPicking(false); setPlayer(p); }} />
       <div className="relative">
         <TugScene teams={teams} pos={pos} pulls={pulls} active={activeTeam} fx={fx} className="w-full" />
@@ -239,7 +239,7 @@ function TugGame({ help, openHelp, onRematch: _onRematch }: { help: boolean; ope
         <div className="panel flex flex-1 items-center justify-center p-8 text-4xl font-bold">No items for this day.</div>
       )}
 
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className="tug-controls flex flex-wrap items-center justify-center gap-3">
         <Button variant="success" size="huge" onClick={correct}><Check /> Correct <Kbd>C</Kbd></Button>
         <Button variant="panel" size="huge" onClick={skip}><SkipForward /> Skip <Kbd>→</Kbd></Button>
         <Button variant="game" size="xl" onClick={() => setShowAnswer((v) => !v)}><Eye /> Answer <Kbd>A</Kbd></Button>
@@ -285,7 +285,7 @@ function WinScreen({ teams, ending, winner, pos, pulls, step }: { teams: Team[];
       ))}
       <TugScene teams={teams} pos={pos} pulls={pulls} active={-1} fx={undefined} ending={ending} className="w-full max-w-4xl" />
       {step >= 0 && !tie && (
-        <div key="sploosh" className="animate-pop font-display text-[7rem] font-bold leading-none text-stroke" style={{ color: "var(--ribbon-deep)" }}>SPLOOSH!</div>
+        <div key="sploosh" className="tug-sploosh animate-pop font-display text-[7rem] font-bold leading-none text-stroke" style={{ color: "var(--ribbon-deep)" }}>SPLOOSH!</div>
       )}
       {step >= 2 && (
         <div className="animate-banner rounded-3xl bg-accent px-10 py-4 text-center font-display text-6xl font-bold uppercase text-accent-foreground chunky">
