@@ -65,33 +65,67 @@ export function Sniff({ mood }: { mood: SniffMood }) {
   );
 }
 
-/** Gigglebug: a tiny mischievous green bug. Origin = bottom. */
-export function Gigglebug({ mood }: { mood: BugMood }) {
+/** Racky: a tiny mischievous raccoon thief, with a striped tail and a loot sack. Origin = bottom. */
+export function Racky({ mood }: { mood: BugMood }) {
   const worried = mood === "nervous" || mood === "caught";
+  const waving = mood === "wave";
   return (
     <g stroke={INK} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d={worried ? "M-8 -40 Q-16 -58 -22 -54 M8 -40 Q16 -58 22 -54" : "M-8 -40 Q-14 -60 -6 -64 M8 -40 Q14 -60 6 -64"} fill="none" />
-      <circle cx={worried ? -22 : -6} cy={worried ? -54 : -64} r="4" fill="var(--det-balloon-a)" />
-      <circle cx={worried ? 22 : 6} cy={worried ? -54 : -64} r="4" fill="var(--det-balloon-a)" />
-      <ellipse cx="0" cy="-20" rx="20" ry="20" fill="var(--det-bug)" />
-      <path d="M0 -40 L0 0" stroke="var(--det-bug-dark)" strokeWidth="2" />
-      <circle cx="-8" cy="-14" r="3" fill="var(--det-bug-dark)" stroke="none" /><circle cx="9" cy="-8" r="3" fill="var(--det-bug-dark)" stroke="none" />
-      <circle cx="0" cy="-42" r="15" fill="var(--det-bug)" />
-      {mood === "giggle" || mood === "wave" ? (
-        <><path d="M-10 -46 Q-6 -50 -2 -46" fill="none" /><path d="M2 -46 Q6 -50 10 -46" fill="none" /></>
+      {/* striped tail */}
+      <path d={worried ? "M-10 -30 Q-38 -26 -44 -8" : "M-12 -32 Q-42 -40 -48 -20"} fill="none" stroke="var(--det-rack-mid)" strokeWidth="13" />
+      <path d={worried ? "M-24 -28 l-3 -1 M-36 -18 l-3 2" : "M-26 -36 l-3 -3 M-40 -28 l-3 1"} fill="none" stroke="var(--det-rack-dark)" strokeWidth="13" />
+      {/* legs */}
+      <path d="M-7 -12 L-8 0 M7 -12 L8 0" stroke="var(--det-rack-dark)" strokeWidth="7" />
+      {/* body */}
+      <ellipse cx="0" cy="-22" rx="15" ry="16" fill="var(--det-rack)" />
+      <ellipse cx="0" cy="-18" rx="8" ry="10" fill="var(--explorer-teeth)" strokeWidth="2" />
+      {/* loot sack */}
+      <g transform="translate(14 -22) rotate(14)">
+        <path d="M0 -6 q7 2 6 10 q-1 6 -7 6 q-6 0 -7 -7 q-1 -8 8 -9Z" fill="var(--det-basket)" strokeWidth="2" />
+        <path d="M-2 -6 q2 -5 6 -3" fill="none" strokeWidth="2" />
+      </g>
+      {/* arms */}
+      {waving ? (
+        <path d="M10 -28 Q22 -42 20 -50" fill="none" stroke="var(--det-rack-dark)" strokeWidth="6" />
       ) : (
-        <>
-          <circle cx="-6" cy="-46" r={worried ? 6 : 5} fill="var(--explorer-teeth)" /><circle cx="6" cy="-46" r={worried ? 6 : 5} fill="var(--explorer-teeth)" />
-          <circle cx="-6" cy={worried ? -47 : -45} r="2.5" fill={INK} /><circle cx="6" cy={worried ? -47 : -45} r="2.5" fill={INK} />
-        </>
+        <path d="M10 -28 Q18 -24 16 -18" fill="none" stroke="var(--det-rack-dark)" strokeWidth="6" />
       )}
-      {worried ? (
-        <ellipse cx="0" cy="-34" rx="4" ry="5" fill={INK} />
-      ) : (
-        <path d="M-8 -36 Q0 -26 8 -36 Z" fill="var(--det-roof)" />
-      )}
-      {mood === "nervous" && <path d="M14 -56 q4 6 0 9 q-4 -3 0 -9" fill="var(--det-sky)" strokeWidth="1.5" />}
-      {mood === "wave" && <path d="M18 -26 L32 -48" strokeWidth="5" stroke="var(--det-bug-dark)" className="det-tug" />}
+      <path d="M-10 -26 Q-16 -20 -12 -14" fill="none" stroke="var(--det-rack-dark)" strokeWidth="6" />
+      {/* head */}
+      <g transform="translate(0 -48)">
+        {/* ears */}
+        <path d="M-13 -8 L-16 -22 L-3 -14Z" fill="var(--det-rack)" />
+        <path d="M13 -8 L16 -22 L3 -14Z" fill="var(--det-rack)" />
+        <circle cx="0" cy="0" r="14" fill="var(--det-rack)" />
+        {/* dark mask band */}
+        <path d="M-14 -3 Q0 -10 14 -3 Q14 4 8 3 Q0 -1 -8 3 Q-14 4 -14 -3Z" fill="var(--det-rack-dark)" stroke="none" />
+        {/* eyes */}
+        {mood === "giggle" ? (
+          <path d="M-9 -2 Q-6 -6 -3 -2 M3 -2 Q6 -6 9 -2" fill="none" strokeWidth="2.5" />
+        ) : (
+          <>
+            <circle cx="-6" cy="-2" r={worried ? 3.6 : 2.8} fill="var(--explorer-teeth)" stroke="none" />
+            <circle cx="6" cy="-2" r={worried ? 3.6 : 2.8} fill="var(--explorer-teeth)" stroke="none" />
+            <circle cx={-6 + (worried ? 0 : 0.8)} cy={worried ? -1 : -1.6} r="1.5" fill={INK} stroke="none" />
+            <circle cx={6 + (worried ? 0 : 0.8)} cy={worried ? -1 : -1.6} r="1.5" fill={INK} stroke="none" />
+          </>
+        )}
+        {/* muzzle + nose */}
+        <ellipse cx="0" cy="7" rx="6" ry="4.5" fill="var(--explorer-teeth)" strokeWidth="2" />
+        <ellipse cx="0" cy="4.5" rx="3" ry="2.2" fill={INK} stroke="none" />
+        {/* mouth */}
+        {mood === "smug" ? (
+          <path d="M-3 8 Q1 11 5 7" fill="none" strokeWidth="2" />
+        ) : mood === "giggle" ? (
+          <path d="M-4 7 Q0 12 4 7Z" fill="var(--det-roof)" strokeWidth="2" />
+        ) : worried ? (
+          <path d="M-3 9 Q0 6.5 3 9" fill="none" strokeWidth="2" />
+        ) : (
+          <path d="M-3 8 L3 8" fill="none" strokeWidth="2" />
+        )}
+        {mood === "nervous" && <path d="M16 -10 q4 6 0 9 q-4 -3 0 -9" fill="var(--det-sky)" strokeWidth="1.5" />}
+      </g>
+      {waving && <path d="M18 -54 q5 5 1 8" fill="none" strokeWidth="2.5" className="det-tug" />}
     </g>
   );
 }
