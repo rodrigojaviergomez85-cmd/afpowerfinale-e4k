@@ -72,7 +72,7 @@ export function TreeScene({
     { x: rosa.x + 4, y: rosa.y - 48 };
   return (
     <div data-calm={calm} className={cn("relative w-full overflow-hidden rounded-3xl border-4 border-border", className)} style={{ background: "var(--park-sky)" }}>
-      <svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMax slice" className="absolute inset-0 h-full w-full" role="img" aria-label={`Ladder: ${rungs} of ${goal} rungs`}>
+      <svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMax meet" className="absolute inset-0 h-full w-full" role="img" aria-label={`Ladder: ${rungs} of ${goal} rungs`}>
         <circle cx="120" cy="70" r="36" fill="var(--rosa-helmet)" />
         <path d="M0 340 Q250 315 500 338 T1000 330 V400 H0Z" fill="var(--park-grass)" />
         <path d="M0 375 Q500 355 1000 378 V400 H0Z" fill="var(--park-grass-deep)" />
