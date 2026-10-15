@@ -3,7 +3,8 @@
 // S || shapes || question || answer  E || emoji || question || answer
 // H || shapes-or-emoji || question || answer (hidden picture)  F || sentence with ____ || correct || wrong / wrong
 
-export interface DayDef { day: number; label: string; focus: string; lines: string[] }
+// M (mistakes, Detective Sniff only) || sentence with [wrong] word(s) || options " / ", correct marked * || corrected sentence
+export interface DayDef { day: number; label: string; focus: string; lines: string[]; mistakes?: string[] }
 export interface WeekDef { week: number; days: DayDef[] }
 export interface VocabGroup { week: number | "general"; category: string; words: string[] }
 export interface LevelDef { level: number; weeks: WeekDef[]; vocab: VocabGroup[] }
@@ -21,6 +22,16 @@ export const COURSES: CourseDef[] = [
             "days": [
               {
                 "day": 1,
+                "mistakes": [
+                  "M || There [are] a star on the table. || is* / are / be || There is a star on the table.",
+                  "M || I [wakes] up at seven o'clock. || wakes / wake* / waking || I wake up at seven o'clock.",
+                  "M || There [is] three circles. || am / is / are* || There are three circles.",
+                  "M || My favorite color [are] blue. || is* / are / am || My favorite color is blue.",
+                  "M || I [eats] dinner in the kitchen. || eat* / eats / eating || I eat dinner in the kitchen.",
+                  "M || There are two [heart]. || heart / hearts* / a heart || There are two hearts.",
+                  "M || I play with [mi] brother. || me / mi / my* || I play with my brother.",
+                  "M || On Saturdays I [plays] soccer. || playing / play* / plays || On Saturdays I play soccer."
+                ],
                 "label": "Day 1",
                 "focus": "There is / there are; simple present, 1st person (review) — Vocabulary: shapes (circle, rectangle, star, heart, square, triangle, oval)",
                 "lines": [
@@ -49,6 +60,16 @@ export const COURSES: CourseDef[] = [
               },
               {
                 "day": 2,
+                "mistakes": [
+                  "M || My mom [cook] breakfast in the morning. || cook / cooks* / cooking || My mom cooks breakfast in the morning.",
+                  "M || Messi [play] soccer every day. || plays* / play / playing || Messi plays soccer every day.",
+                  "M || My dad [wake] up at six. || waking / wake / wakes* || My dad wakes up at six.",
+                  "M || She [go] to work at eight. || goes* / going / go || She goes to work at eight.",
+                  "M || He [watch] TV on Sundays. || watch / watches* / watching || He watches TV on Sundays.",
+                  "M || My sister [do] her homework after school. || doing / does* / do || My sister does her homework after school.",
+                  "M || There [is] four squares. || are* / is / am || There are four squares.",
+                  "M || My teacher [teach] English every day. || teach / teaching / teaches* || My teacher teaches English every day."
+                ],
                 "label": "Day 2",
                 "focus": "There is / there are; simple present, 3rd person singular (review)",
                 "lines": [
@@ -77,6 +98,16 @@ export const COURSES: CourseDef[] = [
               },
               {
                 "day": 3,
+                "mistakes": [
+                  "M || There [is] five stars. || is / are* / am || There are five stars.",
+                  "M || There [are] a park near my house. || be / is* / are || There is a park near my house.",
+                  "M || How many stars [is] there? || are* / is / am || How many stars are there?",
+                  "M || There are two [oval] and a circle. || ovals* / oval / an oval || There are two ovals and a circle.",
+                  "M || There isn't a [triangles]. || triangles / triangle* / three triangles || There isn't a triangle.",
+                  "M || Is there a [squares]? || squares / two squares / square* || Is there a square?",
+                  "M || There [are] one window in my room. || are / am / is* || There is one window in my room.",
+                  "M || There are three [pencil] on my desk. || pencils* / pencil / a pencil || There are three pencils on my desk."
+                ],
                 "label": "Day 3",
                 "focus": "There is / there are",
                 "lines": [
@@ -110,6 +141,16 @@ export const COURSES: CourseDef[] = [
             "days": [
               {
                 "day": 1,
+                "mistakes": [
+                  "M || I want to be a doctor in the [futur]. || futur / future* / futuro || I want to be a doctor in the future.",
+                  "M || I [wants] to be a vet. || want* / wants / wanting || I want to be a vet.",
+                  "M || My favorite profession [are] firefighter. || am / is* / are || My favorite profession is firefighter.",
+                  "M || I don't [wants] to be a police officer. || wanting / want* / wants || I don't want to be a police officer.",
+                  "M || I want [be] a firefighter. || to be* / be / being || I want to be a firefighter.",
+                  "M || I [goes] to school at seven. || goes / going / go* || I go to school at seven.",
+                  "M || My mom [are] a doctor. || is* / are / am || My mom is a doctor.",
+                  "M || I study [english] at school. || english / English* / inglés || I study English at school."
+                ],
                 "label": "Day 1",
                 "focus": "Simple present, 1st person singular — Vocabulary: professions (doctor, vet, firefighter, police officer)",
                 "lines": [
@@ -143,6 +184,16 @@ export const COURSES: CourseDef[] = [
               },
               {
                 "day": 3,
+                "mistakes": [
+                  "M || I want to be an astronaut because I [wants] to explore space. || wants / wanting / want* || I want to be an astronaut because I want to explore space.",
+                  "M || A firefighter [stop] fires. || stops* / stop / stopping || A firefighter stops fires.",
+                  "M || A police officer [fight] crime. || fighting / fight / fights* || A police officer fights crime.",
+                  "M || I want to be a vet because I want [help] animals. || to help* / help / helping || I want to be a vet because I want to help animals.",
+                  "M || She is [a] astronaut. || a / an* / the || She is an astronaut.",
+                  "M || He is [firefighter]. || a firefighter* / an firefighter / firefighter || He is a firefighter.",
+                  "M || An astronaut [explore] space. || explore / explores* / exploring || An astronaut explores space.",
+                  "M || Where do you want [work]? || working / to work* / work || Where do you want to work?"
+                ],
                 "label": "Day 3",
                 "focus": "Want to be… because I want to… — Vocabulary: help, stop fires, fight crime, explore space (+ astronaut)",
                 "lines": [
