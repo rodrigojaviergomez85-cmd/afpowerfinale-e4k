@@ -13,6 +13,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Pick a fast, high-energy English game to end your class with a bang." },
       { property: "og:title", content: "AF Power Finale — Game Library" },
       { property: "og:description", content: "Pick a fast, high-energy English game to end your class with a bang." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Hub,

@@ -16,5 +16,5 @@
 - Bridge Builder's explorer is rendered by the mood-driven SVG in `src/components/bridge/Max.tsx`, using global semantic character tokens so play and ending scenes stay consistent.
 - Bridge scenery uses token-colored SVG assets in `src/components/bridge/Scenery.tsx`; Bridge-only layout overrides are scoped through `bridge-shell` and `bridge-play` so other games retain their sizing.
 
-- Tightrope uses a vertical elevator scene with generated fairground/acrobat assets and token-colored moving SVG machinery; altitude is separate from correct-answer count so mistakes lower the platform, and missed cards requeue until the rescue succeeds or fails.
+- Tightrope uses a self-contained token-colored SVG circus and a mood-driven vector puppet shared across play and animated endings; no background/character image requests so expressions stay live and the scene renders immediately. Altitude is separate from correct-answer count so mistakes lower the platform, and missed cards requeue until the rescue succeeds or fails.
 - Circus layout overrides stay scoped to `rope-shell` and `rope-play`; the tall scene sits beside the question with a full-size timer above it so other game layouts remain unchanged.

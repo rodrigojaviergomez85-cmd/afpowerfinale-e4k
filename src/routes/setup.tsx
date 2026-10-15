@@ -23,6 +23,8 @@ export const Route = createFileRoute("/setup")({
       { name: "description", content: "Pick the course, level, week and day in seconds." },
       { property: "og:title", content: "Quick Setup — AF Power Finale" },
       { property: "og:description", content: "Pick the course, level, week and day in seconds." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Setup,

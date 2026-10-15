@@ -14,6 +14,8 @@ export const Route = createFileRoute("/settings")({
       { name: "description", content: "Turn time, rounds, sound, Spanish hints and theme intensity." },
       { property: "og:title", content: "Settings — AF Power Finale" },
       { property: "og:description", content: "Turn time, rounds, sound, Spanish hints and theme intensity." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: SettingsPage,

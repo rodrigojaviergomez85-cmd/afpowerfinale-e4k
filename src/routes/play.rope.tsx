@@ -230,7 +230,8 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   if (phase === "lose") return <LoseSequence step={step} calm={calm} goal={goal} steps={altitude} />;
   if (phase === "win") return <WinSequence step={step} calm={calm} goal={goal} heroes={heroes} close={remaining < 10} />;
 
-  const mood: LunaMood = frozen ? "calm" : pct > 0.5 ? "calm" : pct > 0.25 ? "worried" : "panic";
+  const danger = Math.ceil(goal / 2) + altitude <= 2;
+  const mood: LunaMood = frozen ? "calm" : danger || pct <= 0.25 ? "panic" : pct <= 0.5 ? "worried" : "calm";
   const crowd: Crowd = now < crowdUntil.until ? crowdUntil.c : pct < 0.25 && !frozen ? "gasp" : "calm";
   const showAns = now < answerUntil;
   const canPass = !!player && !passed.has(player.id) && roster.length > 1;
@@ -298,33 +299,26 @@ function fireworks(calm: boolean) {
 
 function LoseSequence({ step, calm, goal, steps }: { step: number; calm: boolean; goal: number; steps: number }) {
   return (
-    <div className={cn("relative flex flex-1 flex-col items-center justify-center gap-6 overflow-hidden px-8", step === 1 && (calm ? "animate-softshake" : "animate-bigshake"))}>
-      <Tightrope pct={0} goal={goal} steps={steps} mood={step >= 2 ? "soaked" : "uhoh"} crowd={step >= 2 ? "aww" : "gasp"} falling={step === 0} inPool={step >= 2} calm={calm} className="rope-ending-scene" />
-      {step === 1 && (
-        <div className="animate-wavefill pointer-events-none absolute inset-0 z-10" style={{ background: "linear-gradient(transparent, var(--pool) 25%, var(--pool-deep))" }} />
-      )}
-      {step === 0 && <div className="animate-pop font-display text-6xl font-bold text-stroke">Uh-oh… 😬</div>}
-      {step === 1 && <div className="animate-stamp relative z-20 font-display text-[8rem] font-bold leading-none text-stroke" style={{ color: "var(--pool)" }}>SPLAAASH!</div>}
-      {step >= 2 && <div className="animate-pop font-display text-6xl font-bold text-stroke">Luna made a splash!</div>}
-      <div className="absolute bottom-4 right-6 z-20 text-xl font-bold text-muted-foreground">Skip <Kbd>Space</Kbd></div>
+    <div className="circus-ending">
+      <Tightrope pct={0} goal={goal} steps={steps} mood="uhoh" crowd="gasp" falling={step >= 1} inPool={step >= 2} calm={calm} className="rope-ending-scene" />
+      <div className="circus-ending-caption" aria-live="polite">
+        <h1>{step === 0 ? "Hold on, Luna!" : step === 1 ? "SPLAAASH!" : "A splash, not the end!"}</h1>
+        <p>{step >= 2 ? "Let's rescue her next time!" : ""}</p>
+      </div>
+      <div className="circus-skip">Skip <Kbd>Space</Kbd></div>
     </div>
   );
 }
 
 function WinSequence({ step, calm, goal, heroes, close }: { step: number; calm: boolean; goal: number; heroes: string[]; close: boolean }) {
   return (
-    <div className={cn("relative flex flex-1 flex-col items-center justify-center gap-5 overflow-hidden px-8", step === 1 && !calm && "animate-shake")}>
-      <Tightrope pct={1} goal={goal} steps={step >= 1 ? goal : goal - 1} mood={step >= 2 ? "tada" : "worried"} crowd={step >= 1 ? "roar" : "gasp"} spotsSwing={step >= 2} flashKey={step >= 1 ? step : 0} stars={step >= 3 ? heroes : []} calm={calm} className="rope-ending-scene" />
-      {step === 0 && <div className="font-display text-6xl font-bold text-stroke">Almost SAFE…</div>}
-      {step === 1 && <div className="animate-pop font-display text-6xl font-bold text-stroke">{close ? "PHEW! JUST IN TIME!" : "CRASH! 🥁"}</div>}
-      {step === 2 && <div className="animate-pop font-display text-7xl font-bold text-stroke">TA-DAAA! SAFE!</div>}
-      {step >= 3 && (
-        <>
-          <div className="animate-banner rounded-3xl bg-accent px-12 py-4 font-display text-7xl font-bold text-accent-foreground chunky">RESCUE COMPLETE! 🎪</div>
-          {heroes.length > 0 && <div className="animate-medal rounded-full px-8 py-2 text-3xl font-bold chunky" style={{ background: "var(--gold)", color: "var(--shape-outline)" }}>⭐ Circus Heroes</div>}
-        </>
-      )}
-      <div className="absolute bottom-4 right-6 text-xl font-bold text-muted-foreground">Skip <Kbd>Space</Kbd></div>
+    <div className="circus-ending">
+      <Tightrope pct={1} goal={goal} steps={step >= 1 ? goal : goal - 1} mood={step >= 2 ? "tada" : "happy"} landing={step >= 2} celebrating={step >= 2} stars={step >= 3 ? heroes : []} calm={calm} className="rope-ending-scene" />
+      <div className="circus-ending-caption" aria-live="polite">
+        <h1>{step < 2 ? "One final leap…" : "TA-DAAA! LUNA IS SAFE!"}</h1>
+        <p>{step >= 2 ? close ? "Phew! Just in time!" : "You raised her all the way!" : ""}</p>
+      </div>
+      <div className="circus-skip">Skip <Kbd>Space</Kbd></div>
     </div>
   );
 }
@@ -342,7 +336,7 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
   useHotkeys({ Enter: onRematch });
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-4 px-8 pb-8 text-center">
-      <div className="animate-pop text-[7rem] leading-none">{won ? "🎪🏆" : "💦🦆"}</div>
+      <Tightrope pct={won ? 1 : 0} goal={goal} steps={won ? goal : 0} mood={won ? "tada" : "soaked"} landing={won} celebrating={won} inPool={!won} calm className="circus-result-scene" />
       {won ? (
         <>
           <h1 className="text-7xl text-stroke">{secondsLeft < 10 ? "PHEW! JUST IN TIME!" : "Rescue complete! 🎉"}</h1>

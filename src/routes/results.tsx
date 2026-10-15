@@ -18,6 +18,8 @@ export const Route = createFileRoute("/results")({
       { name: "description", content: "Final scores, winners and the MVP of the day." },
       { property: "og:title", content: "Results — AF Power Finale" },
       { property: "og:description", content: "Final scores, winners and the MVP of the day." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Results,

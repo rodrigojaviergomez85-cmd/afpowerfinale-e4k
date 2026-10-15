@@ -1,58 +1,74 @@
+import { useId } from "react";
 import { cn } from "@/lib/utils";
-import fairground from "@/assets/circus-fairground.jpg";
-import acrobat from "@/assets/circus-acrobat.png";
+import { Acrobat, type AcrobatMood } from "./Acrobat";
 
-export type LunaMood = "calm" | "worried" | "panic" | "uhoh" | "happy" | "tada" | "soaked";
+export type LunaMood = AcrobatMood;
 export type Crowd = "calm" | "cheer" | "gasp" | "aww" | "roar";
 
-/** A vertical rescue: the entire carriage moves; the fairground stays still. */
-export function Tightrope({ goal, steps, frozen = false, countdown, falling = false, inPool = false, stars = [], className, ...rest }: {
+/** One lightweight vector stage shared by play, rescue, and splash. */
+export function Tightrope({ goal, steps, mood, frozen = false, countdown, falling = false, inPool = false, landing = false, celebrating = false, stars = [], className, calm = false, crowd = "calm", ...rest }: {
   pct: number; goal: number; steps: number; mood: LunaMood; crowd?: Crowd; frozen?: boolean; slipKey?: number; flashKey?: number; calm?: boolean;
-  countdown?: number | undefined; falling?: boolean; inPool?: boolean; spotsSwing?: boolean; stars?: string[]; className?: string;
+  countdown?: number | undefined; falling?: boolean; inPool?: boolean; landing?: boolean; celebrating?: boolean; spotsSwing?: boolean; stars?: string[]; className?: string;
 }) {
+  const clip = useId().replaceAll(":", "");
   const start = Math.ceil(goal / 2);
   const height = Math.max(0, Math.min(goal + start, start + steps));
-  const fraction = height / Math.max(1, goal + start);
-  const y = falling || inPool ? 480 : 470 - fraction * 320;
+  const y = 475 - height / Math.max(1, goal + start) * 305;
   const safe = steps >= goal && !falling && !inPool;
+  const characterY = inPool ? 587 : falling ? 690 : y;
+  const characterScale = safe || landing ? .85 : 1.1;
+  const characterOffset = safe || landing ? 151 : 195;
+  const reaction = crowd === "cheer" ? "happy" : crowd === "gasp" ? "uhoh" : mood;
   return (
-    <div className={cn("elevator-scene relative min-h-0 w-full overflow-hidden rounded-lg", className)} data-height={height} data-safe={safe}>
-      <img src={fairground} width={1536} height={768} alt="Circus fairground with a pool beneath Luna's elevator" className="absolute inset-0 h-full w-full object-cover" />
+    <div className={cn("elevator-scene relative min-h-0 w-full overflow-hidden rounded-lg", className)} data-height={height} data-safe={safe} data-calm={calm}>
       <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label={`Luna's platform: level ${height} of ${goal + start}${safe ? ', SAFE!' : ''}`}>
+        <defs><clipPath id={clip}><rect width="600" height="520" /></clipPath></defs>
+        <rect width="600" height="600" fill="var(--circus-sky)" />
+        <path d="M0 0 H600 V70 Q300 30 0 70Z" fill="var(--circus-red)" />
+        <path d="M0 0 H78 Q60 130 92 240 L50 320 L0 410Z M600 0 H522 Q540 130 508 240 L550 320 L600 410Z" fill="var(--circus-curtain)" />
+        <path d="M14 14 Q23 134 60 244 M41 10 Q47 127 75 219 M586 14 Q577 134 540 244 M559 10 Q553 127 525 219" fill="none" stroke="var(--circus-red)" strokeWidth="14" />
+        <path d="M0 254 Q45 277 85 240 M600 254 Q555 277 515 240" fill="none" stroke="var(--gold)" strokeWidth="10" />
+        <path d="M0 53 Q300 114 600 53" fill="none" stroke="var(--circus-ink)" strokeWidth="2" />
+        {Array.from({ length: 13 }, (_, i) => <circle key={i} cx={i * 46 + 24} cy={65 + Math.sin(i / 12 * Math.PI) * 22} r="6" fill="var(--gold)" />)}
+        <path d="M90 90 L270 480 L90 480Z M510 90 L330 480 L510 480Z" fill="var(--acrobat-white)" opacity=".22" />
+        <path d="M0 480 Q300 450 600 480 V600 H0Z" fill="var(--circus-wood)" />
+        {[500, 535, 575].map(v => <path key={v} d={`M0 ${v} H600`} stroke="var(--circus-ink)" opacity=".2" strokeWidth="2" />)}
         <g stroke="var(--circus-ink)" strokeWidth="3" strokeLinejoin="round">
-          <path d="M330 100 L390 100 L390 505 L330 505Z" fill="var(--circus-red)" />
-          <path d="M336 100 H350 V505 H336Z" fill="var(--circus-metal)" />
-          <path d="M352 100 H363 V505 H352Z" fill="var(--circus-ink)" />
-          <path d="M365 100 H376 V505 H365Z" fill="var(--circus-metal)" />
+          <path d="M337 122 H377 V501 H337Z" fill="var(--circus-metal)" />
+          <path d="M346 127 H358 V495 H346Z" fill="var(--circus-teal)" />
           {Array.from({ length: goal + start + 1 }, (_, i) => {
-            const yy = 470 - i / (goal + start) * 320;
-            return <g key={i}><path d={`M380 ${yy} h16`} stroke="var(--gold)" strokeWidth={i === start ? 6 : 3} />{(i === 0 || i === start || i === goal + start) && <text x="405" y={yy + 5} stroke="none" fill="var(--circus-ink)" fontSize="17" fontWeight="700">{i === start ? "START" : i === 0 ? "SPLASH" : "TOP"}</text>}</g>;
+            const yy = 475 - i / (goal + start) * 305;
+            return <g key={i}><path d={`M370 ${yy} h14`} stroke="var(--gold)" strokeWidth={i === start ? 6 : 3} />{i === start && <text x="390" y={yy + 5} stroke="none" fill="var(--circus-ink)" fontSize="16" fontWeight="700">START</text>}</g>;
           })}
-          <path d="M314 101 L360 64 L405 101Z" fill="var(--circus-red)" />
-          <path d="M338 82 L360 64 L381 82 L373 101 H345Z" fill="var(--gold)" />
-          <circle cx="360" cy="60" r="6" fill="var(--gold)" />
-          <path d="M390 150 H513 V178 H390Z" fill="var(--gold)" />
-          <path d="M394 178 L430 215 L452 178" fill="var(--circus-teal)" />
-          <path d="M395 116 H509 V165 H395Z" fill="var(--circus-teal)" />
-          <path d="M390 114 H515 M397 97 V116 M507 97 V116" stroke="var(--gold)" strokeWidth="7" />
-          <text x="452" y="149" textAnchor="middle" fill="var(--gold)" stroke="none" fontSize="30" fontWeight="700">SAFE!</text>
-          <path d="M510 96 V55 L543 64 L510 78" fill="var(--circus-red)" />
+          <path d="M319 122 L357 95 L393 122Z" fill="var(--circus-red)" />
+          <circle cx="357" cy="91" r="6" fill="var(--gold)" />
+          <path d="M380 168 H540 V186 H380Z" fill="var(--gold)" />
+          <path d="M392 186 L408 220 L434 186 M485 186 L510 220 L526 186" fill="var(--circus-teal)" />
+          <path d="M400 164 V135 M440 164 V135 M480 164 V135 M523 164 V135 M395 137 H529" stroke="var(--gold)" strokeWidth="6" />
+          <rect x="403" y="90" width="126" height="40" rx="4" fill={celebrating ? "var(--success)" : "var(--circus-teal)"} />
+          <text x="466" y="119" textAnchor="middle" fill="var(--acrobat-white)" stroke="none" fontSize="29" fontWeight="800">SAFE!</text>
+          <path d="M530 95 V53 L565 64 L530 78" fill="var(--circus-red)" />
         </g>
+        <ellipse cx="284" cy="530" rx="214" ry="49" fill="var(--gold)" stroke="var(--circus-ink)" strokeWidth="3" />
+        <ellipse cx="284" cy="522" rx="200" ry="35" fill="var(--pool-deep)" />
+        <ellipse cx="284" cy="516" rx="193" ry="29" fill="var(--pool)" />
         <g className="elevator-carriage" transform={`translate(0 ${y})`}>
-          <g className={cn(falling && "elevator-collapse")}>
-            <path d="M206 0 H342 V16 H206Z" fill="var(--gold)" stroke="var(--circus-ink)" strokeWidth="3" />
-            <path d="M209 16 L327 27 L342 16" fill="var(--circus-wood)" stroke="var(--circus-ink)" strokeWidth="3" />
-            <circle cx="342" cy="9" r="11" fill="var(--circus-metal)" stroke="var(--circus-ink)" strokeWidth="4" />
-          </g>
-          {!inPool && <image href={acrobat} x={safe ? 383 : 193} y="-151" width="151" height="155" preserveAspectRatio="xMidYMax meet" className={cn("elevator-character", falling && "elevator-acrobat-fall")} />}
-          {frozen && <path d="M212 -5 H337" stroke="var(--pool)" strokeWidth="8" />}
+          {!inPool && <g className={cn(falling && "elevator-collapse")}><path d="M181 0 H348 V15 H181Z" fill="var(--gold)" stroke="var(--circus-ink)" strokeWidth="3" /><path d="M187 15 L337 29 L348 15" fill="var(--circus-teal)" stroke="var(--circus-ink)" strokeWidth="3" /><circle cx="350" cy="8" r="12" fill="var(--circus-metal)" stroke="var(--circus-ink)" strokeWidth="3" />{frozen && <path d="M190 -4 H338" stroke="var(--pool)" strokeWidth="8" />}</g>}
         </g>
-        {inPool && <g className="animate-popup"><image href={acrobat} x="216" y="395" width="126" height="165" /><ellipse cx="278" cy="515" rx="91" ry="28" fill="var(--pool)" /><path d="M194 516 Q220 500 250 516 T330 516 M208 530 Q270 547 343 525" fill="none" stroke="var(--river-foam)" strokeWidth="5" /><path d="M204 479 l-12 -16 M337 480 l15 -20 M236 473 l-5 -15" stroke="var(--river-foam)" strokeWidth="6" strokeLinecap="round" /></g>}
-        {safe && <g><path d="M440 66 l10 10 24 -27" stroke="var(--success)" fill="none" strokeWidth="8" strokeLinecap="round" /></g>}
+        <g clipPath={`url(#${clip})`}>
+          <g className="elevator-character-position" transform={`translate(${landing ? 414 : 190} ${characterY - characterOffset})`}>
+            <g className={cn(landing && "acrobat-balcony-hop", inPool && "acrobat-bob", falling && "acrobat-tumble")}>
+              <g transform={`scale(${characterScale})`}><Acrobat mood={inPool ? "soaked" : celebrating ? "tada" : falling ? "panic" : reaction} /></g>
+            </g>
+          </g>
+        </g>
+        <g className="circus-water" fill="none" stroke="var(--river-foam)" strokeWidth="4" strokeLinecap="round"><path d="M118 524 Q159 511 201 523 M342 524 Q382 512 432 522 M205 537 Q276 549 344 535" /></g>
+        {inPool && <g className="circus-splash" fill="var(--river-foam)">{Array.from({ length: 9 }, (_, i) => <path key={i} transform={`translate(264 512) rotate(${i * 23 - 90})`} d="M0 -7 Q-12 -49 0 -72 Q12 -49 0 -7Z" />)}</g>}
+        {(celebrating || crowd === "cheer") && <g key={rest.flashKey} className="circus-confetti">{Array.from({ length: 22 }, (_, i) => <path key={i} d={`M${100 + i * 19} ${80 + (i % 5) * 60} l5 10`} stroke={i % 3 === 0 ? "var(--circus-red)" : i % 3 === 1 ? "var(--gold)" : "var(--circus-teal)"} strokeWidth="5" />)}</g>}
+        <text x="284" y="582" textAnchor="middle" fill="var(--circus-ink)" fontSize="21" fontWeight="800">{inPool ? "A splash… and a smile!" : celebrating ? "LUNA IS SAFE!" : frozen ? "SAFETY BRAKE ON" : "SAVE THE ACROBAT"}</text>
       </svg>
       {countdown !== undefined && <span className="absolute left-4 top-4 rounded-lg bg-destructive px-4 py-1 text-4xl font-bold text-destructive-foreground">{countdown}</span>}
-      {(rest.crowd === "cheer" || rest.crowd === "roar") && <div key={rest.flashKey} className="animate-pop absolute bottom-3 left-3 rounded-lg bg-primary px-4 py-1 text-xl font-bold text-primary-foreground">{safe ? "RESCUED!" : "Going up!"}</div>}
-      {stars.length > 0 && <div className="absolute inset-x-3 top-3 flex flex-wrap justify-center gap-2">{stars.map(s => <span key={s} className="rounded-lg bg-primary px-2 text-sm font-bold text-primary-foreground">{s}</span>)}</div>}
+      {stars.length > 0 && <div className="circus-heroes">{stars.map(s => <span key={s}>{s}</span>)}</div>}
     </div>
   );
 }

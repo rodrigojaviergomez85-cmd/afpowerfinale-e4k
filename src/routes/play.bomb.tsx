@@ -24,6 +24,8 @@ export const Route = createFileRoute("/play/bomb")({
       { name: "description", content: "Whole-class challenge: answer the questions before the bomb explodes!" },
       { property: "og:title", content: "Beat the Bomb — AF Power Finale" },
       { property: "og:description", content: "Whole-class challenge: answer the questions before the bomb explodes!" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: BeatTheBomb,
