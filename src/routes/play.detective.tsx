@@ -339,7 +339,7 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
   useHotkeys({ Enter: onRematch });
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-5 px-8 pb-8 text-center">
-      <div className="animate-pop text-[8rem] leading-none">{won ? "🐶🔍" : "🎈🐞"}</div>
+      <div className="animate-pop text-[8rem] leading-none">{won ? "🐶🔍" : "🎈🦝"}</div>
       {won ? (
         <>
           <h1 className="text-7xl text-stroke">{secondsLeft < 10 ? "PHEW! JUST IN TIME!" : "Case closed! 🎉"}</h1>
