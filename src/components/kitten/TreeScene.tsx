@@ -56,6 +56,10 @@ function Neighbors({ mood }: { mood: CrowdMood }) {
   const cheering = mood === "cheer";
   const shocked = mood === "shock";
   const alarmed = mood === "gasp" || mood === "worried" || shocked;
+  const armD = cheering ? "M-15 -29 L-25 -53 M15 -29 L25 -53"
+    : shocked ? "M-14 -28 L-21 -41 M14 -28 L21 -41"
+    : mood === "gasp" ? "M-15 -28 L-18 -48 M15 -28 L18 -48"
+    : "M-15 -26 L-19 -8 M15 -26 L19 -8";
   return (
     <g data-neighbors={mood} className={cn(shocked && "kitten-gasp")} stroke="var(--sky-ink)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       {[876, 927, 976].map((x, i) => (
