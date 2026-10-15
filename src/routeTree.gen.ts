@@ -19,6 +19,7 @@ import { Route as PlayDemoRouteImport } from './routes/play.demo'
 import { Route as PlayKittenRouteImport } from './routes/play.kitten'
 import { Route as PlayRaceRouteImport } from './routes/play.race'
 import { Route as PlayRopeRouteImport } from './routes/play.rope'
+import { Route as PlayTugRouteImport } from './routes/play.tug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -70,6 +71,11 @@ const PlayRopeRoute = PlayRopeRouteImport.update({
   path: '/play/rope',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlayTugRoute = PlayTugRouteImport.update({
+  id: '/play/tug',
+  path: '/play/tug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/play/kitten': typeof PlayKittenRoute
   '/play/race': typeof PlayRaceRoute
   '/play/rope': typeof PlayRopeRoute
+  '/play/tug': typeof PlayTugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/play/kitten': typeof PlayKittenRoute
   '/play/race': typeof PlayRaceRoute
   '/play/rope': typeof PlayRopeRoute
+  '/play/tug': typeof PlayTugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   '/play/kitten': typeof PlayKittenRoute
   '/play/race': typeof PlayRaceRoute
   '/play/rope': typeof PlayRopeRoute
+  '/play/tug': typeof PlayTugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -121,6 +130,7 @@ export interface FileRouteTypes {
     | '/play/kitten'
     | '/play/race'
     | '/play/rope'
+    | '/play/tug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,6 +143,7 @@ export interface FileRouteTypes {
     | '/play/kitten'
     | '/play/race'
     | '/play/rope'
+    | '/play/tug'
   id:
     | '__root__'
     | '/'
@@ -145,6 +156,7 @@ export interface FileRouteTypes {
     | '/play/kitten'
     | '/play/race'
     | '/play/rope'
+    | '/play/tug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -158,6 +170,7 @@ export interface RootRouteChildren {
   PlayKittenRoute: typeof PlayKittenRoute
   PlayRaceRoute: typeof PlayRaceRoute
   PlayRopeRoute: typeof PlayRopeRoute
+  PlayTugRoute: typeof PlayTugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -232,6 +245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayRopeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/play/tug': {
+      id: '/play/tug'
+      path: '/play/tug'
+      fullPath: '/play/tug'
+      preLoaderRoute: typeof PlayTugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -246,6 +266,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlayKittenRoute: PlayKittenRoute,
   PlayRaceRoute: PlayRaceRoute,
   PlayRopeRoute: PlayRopeRoute,
+  PlayTugRoute: PlayTugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

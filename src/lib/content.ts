@@ -83,7 +83,7 @@ const matchesMix = (i: ContentItem, mix: ContentMix) =>
  * Tiers: selected day → earlier days of same week (latest first) → earlier weeks (latest first).
  * Never later days/weeks. No repeats within a game; `avoid` ids are used only as a last resort.
  */
-export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid: string[] = []) {
+export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid: string[] = [], maxHidden = 3) {
   const lv = getLevel(sel.course, sel.level);
   const tiers: ContentItem[][] = [];
   const weeks = [...lv.weeks].filter((w) => w.week <= sel.week).sort((a, b) => b.week - a.week);
@@ -117,8 +117,8 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
       const rest = Math.max(0, count - lang);
       const order = shuffle(["H", "F", "P"]);
       for (let i = 0; i < rest; i++) quota[order[i % 3]!] = (quota[order[i % 3]!] ?? 0) + 1;
-      // Never more than 3 hidden pictures; extras move to blanks or figures.
-      while ((quota["H"] ?? 0) > 3) {
+      // Never more than maxHidden hidden pictures; extras move to blanks or figures.
+      while ((quota["H"] ?? 0) > maxHidden) {
         quota["H"] = (quota["H"] ?? 0) - 1;
         const to = order.find((k) => k !== "H")!;
         quota[to] = (quota[to] ?? 0) + 1;
@@ -137,11 +137,11 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
         if (typeOf(i) === t && !ids.has(i.id)) { picked.push(i); ids.add(i.id); }
       }
     }
-    // Fill any shortfall (never more than 3 hidden pictures).
+    // Fill any shortfall (never more than maxHidden hidden pictures).
     for (const i of ordered) {
       if (picked.length >= count) break;
       if (ids.has(i.id)) continue;
-      if (i.kind === "H" && picked.filter((x) => x.kind === "H").length >= 3) continue;
+      if (i.kind === "H" && picked.filter((x) => x.kind === "H").length >= maxHidden) continue;
       picked.push(i); ids.add(i.id);
     }
   }

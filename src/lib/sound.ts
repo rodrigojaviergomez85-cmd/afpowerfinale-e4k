@@ -100,4 +100,9 @@ export const sfx = {
   boing: () => tone(180, 0.5, "sine", 0, 1.2, 620),
   siren: () => [0, 0.3, 0.6, 0.9].forEach((t, i) => tone(i % 2 ? 660 : 880, 0.28, "triangle", t, 0.5)),
   purr: () => { for (let t = 0; t < 0.8; t += 0.06) noise(0.04, t, 0.35, 300); },
+  heave: (big = false) => { tone(big ? 170 : 140, big ? 0.4 : 0.3, "sawtooth", 0, big ? 1.6 : 1, 80); noise(0.25, 0, big ? 1 : 0.6, 900); },
+  splat: () => { noise(0.35, 0, 1.3, 700, 150); tone(120, 0.3, "sine", 0, 0.9, 55); },
+  sploosh: () => { noise(1.3, 0, 1.6, 1300, 180); tone(200, 0.9, "sine", 0, 1.1, 45); },
+  rubber: () => { tone(200, 0.4, "sine", 0, 0.9, 680); tone(680, 0.35, "sine", 0.25, 0.8, 200); },
+  fanfare: () => { [392, 523, 659, 784].forEach((f, i) => tone(f, 0.22, "square", i * 0.12, 1.1)); tone(784, 0.5, "square", 0.5, 1.2); tone(988, 0.7, "triangle", 0.5, 0.8); },
 };

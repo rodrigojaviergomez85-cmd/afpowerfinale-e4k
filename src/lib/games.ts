@@ -91,6 +91,22 @@ export const GAMES: GameDef[] = [
     rules: [],
   },
   {
+    id: "mud-tug",
+    name: "Muddy Tug of War",
+    icon: "🐰",
+    tagline: "Pull the rope, win the mud battle!",
+    mode: "2 teams",
+    minutes: "5 min",
+    accent: "bg-game-tug",
+    accentText: "text-game-tug",
+    status: "ready",
+    rules: [
+      { icon: "🪢", text: "Correct answer = pull the ribbon toward your team!" },
+      { icon: "🧲", text: "Pull it past your line to win. Losers get muddy!" },
+      { icon: "💪", text: "3 in a row = POWER PULL! (2 steps)" },
+    ],
+  },
+  {
     id: "hot-chair",
     name: "Hot Chair Translation",
     icon: "🔥",

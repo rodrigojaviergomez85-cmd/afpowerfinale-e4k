@@ -44,6 +44,7 @@
   --color-game-rope: var(--game-rope);
   --color-game-race: var(--game-race);
   --color-game-kitten: var(--game-kitten);
+  --color-game-tug: var(--game-tug);
   --color-stage: var(--stage);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -97,6 +98,17 @@
   --game-rope: oklch(0.65 0.24 340);
   --game-race: oklch(0.58 0.2 285);
   --game-kitten: oklch(0.72 0.18 55);
+  --game-tug: oklch(0.55 0.1 60);
+  --mud: oklch(0.45 0.08 60);
+  --mud-deep: oklch(0.36 0.07 55);
+  --rope-straw: oklch(0.82 0.09 90);
+  --rope-straw-deep: oklch(0.62 0.09 80);
+  --ribbon: oklch(0.62 0.22 25);
+  --ribbon-deep: oklch(0.5 0.2 25);
+  --fur: oklch(0.96 0.015 95);
+  --fur-pup: oklch(0.85 0.09 80);
+  --pup-ear: oklch(0.6 0.1 60);
+  --gold-deep: oklch(0.75 0.14 80);
   --park-sky: oklch(0.8 0.09 220);
   --park-grass: oklch(0.68 0.15 140);
   --park-grass-deep: oklch(0.55 0.14 145);
@@ -608,3 +620,41 @@
 .kitten-banner { transform: rotate(-4deg); }
 @keyframes kitten-gasp { 0%,100% { translate: 0 0; } 25% { translate: 0 -7px; } 60% { translate: 0 -2px; } }
 .kitten-gasp { animation: kitten-gasp .7s ease-out 2; }
+
+/* Muddy Tug of War */
+.tug-scene { height: 250px; }
+@media (max-height: 860px) { .tug-scene { height: 150px !important; } }
+.tug-scene svg { display: block; }
+@keyframes tug-lean { 0%,100% { transform: rotate(0); } 40% { transform: rotate(-11deg) translateX(-8px); } 70% { transform: rotate(-7deg); } }
+.tug-lean { transform-box: fill-box; transform-origin: 50% 90%; animation: tug-lean .9s ease-in-out; }
+@keyframes tug-lean-r { 0%,100% { transform: rotate(0); } 40% { transform: rotate(11deg) translateX(8px); } 70% { transform: rotate(7deg); } }
+.tug-lean-r { animation-name: tug-lean-r; }
+@keyframes tug-skid { 0%,100% { transform: translateX(0); } 30% { transform: translateX(18px); } 60% { transform: translateX(7px); } }
+.tug-skid { animation: tug-skid .7s ease-out; }
+.tug-skid-l { animation-direction: reverse; }
+@keyframes tug-stretch { 0%,100% { transform: scaleX(1); } 30% { transform: scaleX(1.045); } 60% { transform: scaleX(.985); } }
+.tug-stretch { transform-box: fill-box; transform-origin: center; animation: tug-stretch .6s ease-out; }
+@keyframes tug-shake { 0%,100% { translate: 0 0; } 25% { translate: -6px 0; } 50% { translate: 6px 0; } 75% { translate: -3px 0; } }
+.tug-shake { animation: tug-shake .5s ease-out; }
+@keyframes mud-bubble { from { transform: translateY(0); opacity: .95; } to { transform: translateY(-30px); opacity: 0; } }
+.mud-bubble { animation: mud-bubble 1.1s ease-in infinite; }
+@keyframes tug-glow { 0%,100% { filter: drop-shadow(0 0 4px currentColor); } 50% { filter: drop-shadow(0 0 20px currentColor); } }
+.tug-line-glow { animation: tug-glow 1s ease-in-out infinite; }
+@keyframes tug-fly { 0% { transform: translate(0,0) rotate(0); } 60% { transform: translate(calc(var(--fly-x, 300px) * .7), -60px) rotate(420deg); } 100% { transform: translate(var(--fly-x, 300px), 60px) rotate(660deg); } }
+.tug-fly { animation: tug-fly 1s ease-in forwards; transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: reduce) { .tug-lean, .tug-skid, .tug-stretch, .tug-shake, .mud-bubble, .tug-fly, .tug-line-glow { animation: none; } }
+[data-calm="true"] .mud-bubble, [data-calm="true"] .tug-line-glow { animation: none; }
+@media (max-width: 1100px), (max-height: 700px) {
+  .tug-scene { height: 130px !important; }
+  .tug-play .fit-card .hidden-board { height: 120px !important; width: 400px !important; }
+  .tug-play .fit-card .item-prompt { font-size: 36px !important; }
+  .tug-play .fit-card .banner-pill { font-size: 1.2rem !important; padding: 0.1rem 1rem !important; }
+  .tug-play .fit-card .item-answer { min-height: 0 !important; font-size: 22px !important; }
+  .tug-play .fit-card .pic-wrap { zoom: 0.55; }
+  .tug-play .fit-timer { zoom: 0.6; }
+  .tug-controls { gap: 6px !important; }
+  .tug-controls button { height: 44px; font-size: 19px; padding: 0 12px; }
+  .tug-controls button svg { width: 20px; height: 20px; }
+  .tug-controls kbd { font-size: 12px; padding: 0 4px; }
+  .tug-sploosh { font-size: 4.5rem !important; }
+}

@@ -18,6 +18,8 @@ export interface BombOptions { target: number; time: number; penalty: number; mi
 export type RopeType = "Q" | "T" | "F" | "H" | "P";
 export interface RaceOptions { stops: number; turnTime: number; cards: number }
 export const RACE_DEFAULTS: RaceOptions = { stops: 6, turnTime: 15, cards: 16 };
+export interface TugOptions { pulls: number; turnTime: number; cards: number }
+export const TUG_DEFAULTS: TugOptions = { pulls: 5, turnTime: 15, cards: 16 };
 export interface LastResult {
   gameId: string;
   teams: Team[];
@@ -43,6 +45,8 @@ interface AppState {
   setKitten: (b: Partial<BombOptions>) => void;
   race: RaceOptions;
   setRace: (r: Partial<RaceOptions>) => void;
+  tug: TugOptions;
+  setTug: (r: Partial<TugOptions>) => void;
   lastResult: LastResult | null;
   setSettings: (s: Partial<Settings>) => void;
   setSetup: (s: Partial<Pick<AppState, "course" | "level" | "week" | "day" | "teams" | "roster">>) => void;
@@ -98,6 +102,8 @@ export const useApp = create<AppState>()(
       setKitten: (b) => set({ kitten: { ...(get().kitten ?? BOMB_PRESETS["Normal"]!), ...b } }),
       race: RACE_DEFAULTS,
       setRace: (r) => set({ race: { ...RACE_DEFAULTS, ...get().race, ...r } }),
+      tug: TUG_DEFAULTS,
+      setTug: (r) => set({ tug: { ...TUG_DEFAULTS, ...get().tug, ...r } }),
       lastResult: null,
       setSettings: (s) => set({ settings: { ...get().settings, ...s } }),
       setSetup: (s) => set(s as Partial<AppState>),
