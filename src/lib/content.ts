@@ -112,8 +112,8 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
     const quota: Record<string, number> = { H: 0, F: 0, P: 0, Q: 0, T: 0 };
     if (mix === "mix") {
       const lang = Math.ceil(count / 2);
-      quota.T = Math.floor(lang / 2);
-      quota.Q = lang - (quota.T ?? 0);
+      quota["T"] = Math.floor(lang / 2);
+      quota["Q"] = lang - (quota["T"] ?? 0);
       const rest = Math.max(0, count - lang);
       const order = shuffle(["H", "F", "P"]);
       for (let i = 0; i < rest; i++) quota[order[i % 3]!] = (quota[order[i % 3]!] ?? 0) + 1;
