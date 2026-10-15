@@ -16,6 +16,7 @@ import { Route as SetupRouteImport } from './routes/setup'
 import { Route as PlayBombRouteImport } from './routes/play.bomb'
 import { Route as PlayBridgeRouteImport } from './routes/play.bridge'
 import { Route as PlayDemoRouteImport } from './routes/play.demo'
+import { Route as PlayKittenRouteImport } from './routes/play.kitten'
 import { Route as PlayRaceRouteImport } from './routes/play.race'
 import { Route as PlayRopeRouteImport } from './routes/play.rope'
 
@@ -54,6 +55,11 @@ const PlayDemoRoute = PlayDemoRouteImport.update({
   path: '/play/demo',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlayKittenRoute = PlayKittenRouteImport.update({
+  id: '/play/kitten',
+  path: '/play/kitten',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlayRaceRoute = PlayRaceRouteImport.update({
   id: '/play/race',
   path: '/play/race',
@@ -73,6 +79,7 @@ export interface FileRoutesByFullPath {
   '/play/bomb': typeof PlayBombRoute
   '/play/bridge': typeof PlayBridgeRoute
   '/play/demo': typeof PlayDemoRoute
+  '/play/kitten': typeof PlayKittenRoute
   '/play/race': typeof PlayRaceRoute
   '/play/rope': typeof PlayRopeRoute
 }
@@ -84,6 +91,7 @@ export interface FileRoutesByTo {
   '/play/bomb': typeof PlayBombRoute
   '/play/bridge': typeof PlayBridgeRoute
   '/play/demo': typeof PlayDemoRoute
+  '/play/kitten': typeof PlayKittenRoute
   '/play/race': typeof PlayRaceRoute
   '/play/rope': typeof PlayRopeRoute
 }
@@ -96,6 +104,7 @@ export interface FileRoutesById {
   '/play/bomb': typeof PlayBombRoute
   '/play/bridge': typeof PlayBridgeRoute
   '/play/demo': typeof PlayDemoRoute
+  '/play/kitten': typeof PlayKittenRoute
   '/play/race': typeof PlayRaceRoute
   '/play/rope': typeof PlayRopeRoute
 }
@@ -109,6 +118,7 @@ export interface FileRouteTypes {
     | '/play/bomb'
     | '/play/bridge'
     | '/play/demo'
+    | '/play/kitten'
     | '/play/race'
     | '/play/rope'
   fileRoutesByTo: FileRoutesByTo
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/play/bomb'
     | '/play/bridge'
     | '/play/demo'
+    | '/play/kitten'
     | '/play/race'
     | '/play/rope'
   id:
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/play/bomb'
     | '/play/bridge'
     | '/play/demo'
+    | '/play/kitten'
     | '/play/race'
     | '/play/rope'
   fileRoutesById: FileRoutesById
@@ -143,6 +155,7 @@ export interface RootRouteChildren {
   PlayBombRoute: typeof PlayBombRoute
   PlayBridgeRoute: typeof PlayBridgeRoute
   PlayDemoRoute: typeof PlayDemoRoute
+  PlayKittenRoute: typeof PlayKittenRoute
   PlayRaceRoute: typeof PlayRaceRoute
   PlayRopeRoute: typeof PlayRopeRoute
 }
@@ -198,6 +211,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlayDemoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/play/kitten': {
+      id: '/play/kitten'
+      path: '/play/kitten'
+      fullPath: '/play/kitten'
+      preLoaderRoute: typeof PlayKittenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/play/race': {
       id: '/play/race'
       path: '/play/race'
@@ -223,6 +243,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlayBombRoute: PlayBombRoute,
   PlayBridgeRoute: PlayBridgeRoute,
   PlayDemoRoute: PlayDemoRoute,
+  PlayKittenRoute: PlayKittenRoute,
   PlayRaceRoute: PlayRaceRoute,
   PlayRopeRoute: PlayRopeRoute,
 }
