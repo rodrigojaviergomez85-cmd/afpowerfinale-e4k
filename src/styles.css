@@ -438,3 +438,64 @@
 @utility animate-hop { animation: land-hop .5s ease-in-out 3; }
 [data-calm="true"] .animate-stars, [data-calm="true"] .animate-stars-fast, [data-calm="true"] .animate-rainbow { animation: none; }
 @media (max-height: 860px) { .fit-track { height: 150px !important; } }
+
+/* Circus elevator: a tall story beside a compact question, never a compressed panorama. */
+:root {
+  --circus-ink: oklch(0.28 0.04 210);
+  --circus-red: oklch(0.58 0.18 25);
+  --circus-teal: oklch(0.46 0.1 195);
+  --circus-metal: oklch(0.68 0.025 210);
+  --circus-wood: oklch(0.56 0.12 65);
+}
+.rope-shell > header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; padding: 8px 16px; gap: 10px; }
+.rope-shell > header > div { min-width: 0; }
+.rope-shell > header > div:nth-child(2) { justify-self: start; }
+.rope-shell > header > div:nth-child(2) > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rope-shell > header button { height: 48px; }
+.rope-shell > main { overflow: hidden; }
+.rope-play { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.25fr); grid-template-rows: 116px minmax(0, 1fr) auto; gap: 10px 16px; padding: 0 16px 20px; }
+.rope-story { grid-column: 1; grid-row: 1 / 3; }
+.rope-status { grid-column: 2; grid-row: 1; display: flex; flex-direction: column; justify-content: center; padding-right: 132px; gap: 4px; }
+.rope-timer { position: absolute; right: 0; top: 0; z-index: 10; border-radius: 50%; background: var(--card); }
+.rope-timer [class*="-bottom-3"] { display: none; }
+.rope-card-slot { grid-column: 2; grid-row: 2; }
+.rope-play .fit-card { height: 100%; min-height: 0 !important; padding: 12px 16px !important; gap: 8px !important; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; justify-items: center; }
+.rope-play .banner-pill { font-size: 18px !important; padding: 3px 10px !important; max-width: 100%; }
+.rope-play .item-prompt { font-size: 48px !important; line-height: 1.04; overflow-wrap: anywhere; }
+.rope-play .item-answer { min-height: 0; font-size: 24px; line-height: 1.1; }
+.rope-play .item-answer:empty, .rope-play .item-picture:empty { display: none; }
+.rope-play .hidden-board { width: 100% !important; height: 150px !important; }
+.rope-play .hidden-picture { width: 100%; min-width: 0; }
+.rope-play .hidden-picture > div:last-child { font-size: 14px; }
+.rope-play .pic-wrap { zoom: .65; }
+.rope-play .item-options { gap: 6px; }
+.rope-play .item-options button { font-size: 26px; padding: 6px 12px; }
+.rope-controls { grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.rope-controls > button { height: 64px; padding-inline: 20px; font-size: 24px; gap: 8px; }
+.rope-controls > button svg { width: 28px; height: 28px; }
+.rope-controls > button kbd { font-size: 16px; }
+.elevator-carriage { transition: transform 650ms ease-in-out; }
+.elevator-collapse { transform-box: fill-box; transform-origin: right center; animation: platform-collapse .9s ease-in forwards; }
+.elevator-acrobat-fall { transform-box: fill-box; transform-origin: center; animation: acrobat-drop 1s ease-in forwards; }
+.rope-ending-scene { width: min(100%, 900px); height: min(55dvh, 550px); flex-shrink: 1; }
+@keyframes platform-collapse { to { transform: rotate(-75deg); } }
+@keyframes acrobat-drop { to { transform: translateY(100px) rotate(-30deg); opacity: 0; } }
+@media (max-width: 1100px) {
+  .rope-controls { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; }
+  .rope-controls > button { grid-column: span 2; padding-inline: 8px; font-size: 22px; }
+  .rope-controls > button:nth-child(-n+2) { grid-column: span 3; }
+  .rope-controls > button kbd { font-size: 13px; }
+  .rope-play { grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr); gap: 8px 10px; }
+  .rope-play .fit-card:has(.hidden-picture), .rope-play .fit-card:has(.item-picture:not(:empty)) { grid-template-columns: minmax(0, .8fr) minmax(0, 1fr); }
+  .rope-play .fit-card > .banner-pill { grid-column: 1 / -1; }
+  .rope-play .hidden-picture, .rope-play .item-picture { grid-column: 1; grid-row: 2; }
+  .rope-play .fit-card:has(.hidden-picture) .item-prompt, .rope-play .fit-card:has(.item-picture:not(:empty)) .item-prompt { grid-column: 2; grid-row: 2; font-size: 38px !important; }
+  .rope-play .item-answer { grid-column: 1 / -1; font-size: 21px; }
+  .rope-controls-roster { display: flex; }
+  .rope-controls-roster > button { flex: 1; font-size: 17px; gap: 4px; padding-inline: 8px; }
+  .rope-controls-roster > button kbd { display: none; }
+  .rope-shell > header { gap: 8px; }
+  .rope-shell > header > div:last-child { gap: 8px; }
+}
+@media (min-height: 900px) { .rope-play .hidden-board { height: 230px !important; } .rope-play .pic-wrap { zoom: 1; } .rope-play .item-prompt { font-size: 56px !important; } }
+@media (prefers-reduced-motion: reduce) { .elevator-carriage { transition: none; } .elevator-collapse, .elevator-acrobat-fall { animation-duration: .01ms; } }

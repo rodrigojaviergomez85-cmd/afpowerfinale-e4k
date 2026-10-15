@@ -21,9 +21,9 @@ export const Route = createFileRoute("/play/rope")({
   head: () => ({
     meta: [
       { title: "Tightrope Rescue — AF Power Finale" },
-      { name: "description", content: "Whole-class circus challenge: get Luna across the tightrope before time runs out!" },
+      { name: "description", content: "Whole-class circus challenge: raise Luna’s platform to the SAFE balcony before time runs out!" },
       { property: "og:title", content: "Tightrope Rescue — AF Power Finale" },
-      { property: "og:description", content: "Whole-class circus challenge: get Luna across the tightrope before time runs out!" },
+      { property: "og:description", content: "Whole-class circus challenge: raise Luna’s platform to the SAFE balcony before time runs out!" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -32,20 +32,21 @@ export const Route = createFileRoute("/play/rope")({
 });
 
 const SHORTCUTS: [string, string][] = [
-  ["Space", "Start / pause"], ["C / Enter", "Correct (+1 step)"], ["X", "Wrong / skip (slip!)"], ["A", "Show answer"],
-  ["P", "Pass to a friend"], ["R", "Re-pick student"], ["F", "Balance Pole 🎪"], ["M", "Mute"], ["?", "This help"],
+  ["Space", "Start / pause"], ["C / Enter", "Correct (platform up)"], ["X", "Wrong / skip (platform down)"], ["A", "Show answer"],
+  ["P", "Pass to a friend"], ["R", "Re-pick student"], ["F", "Safety Brake"], ["M", "Mute"], ["?", "This help"],
 ];
 
-const useOpts = () => useApp((s) => s.rope ?? BOMB_PRESETS["Normal"]!);
+const useOpts = () => useApp((s) => s.rope ?? BOMB_PRESETS["Normal"]);
 
 function TightropeRescue() {
-  const base = getGame("tightrope")!;
+  const base = getGame("tightrope");
+  if (!base) throw new Error("Circus game is unavailable");
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Get Luna across in ${target} steps before time runs out!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Luna to SAFE! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
-    <GameShell key={round} game={game} rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>
+    <GameShell className="rope-shell" key={round} game={game} rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>
       <HelpOverlay open={helpOpen} onClose={() => setHelpOpen(false)} shortcuts={SHORTCUTS} />
       <RopeGame onRematch={() => setRound((r) => r + 1)} helpOpen={helpOpen} openHelp={() => setHelpOpen(true)} />
     </GameShell>
@@ -72,6 +73,7 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   const [queue, setQueue] = useState<ContentItem[]>(init.items);
   const [retry, setRetry] = useState<ContentItem[]>([]);
   const [progress, setProgress] = useState(0);
+  const [altitude, setAltitude] = useState(0);
   const [remaining, setRemaining] = useState(total);
   const [paused, setPaused] = useState(false);
   const [frozenUntil, setFrozenUntil] = useState(0);
@@ -150,20 +152,25 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
 
   const correct = () => {
     if (phase !== "play" || paused || !item) return;
-    const n = progress + 1;
-    setProgress(n);
+    const n = altitude + 1;
+    setAltitude(n);
+    setProgress((p) => p + 1);
     if (player) setHeroes((h) => (h.includes(player.name) ? h : [...h, player.name]));
-    pop("+1 step", "good");
+    pop("↑ Up one level!", "good");
     if (n >= goal) { setWon(true); setPhase("win"); setStep(0); return; }
     sfx.correct(); sfx.cheer();
     setFlash((f) => f + 1);
     crowdFor("cheer", 1200);
-    advance();
+    advance(item);
   };
   const wrong = () => {
     if (phase !== "play" || paused || !item) return;
     sfx.ooh();
     setSlip((s) => s + 1);
+    const lower = altitude - 1;
+    setAltitude(lower);
+    if (Math.ceil(goal / 2) + lower <= 0) { setPhase("lose"); setStep(0); return; }
+    pop("↓ Down one level!", "bad");
     crowdFor("gasp", 1300);
     if (opts.penalty) { setRemaining((r) => Math.max(0, r - opts.penalty)); pop(`-${opts.penalty}s`, "bad"); }
     advance(item);
@@ -220,7 +227,7 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   useHotkeys(keys, !helpOpen);
 
   if (phase === "end") return <EndScreen won={won} progress={progress} goal={goal} secondsLeft={Math.ceil(remaining)} heroes={heroes} onRematch={onRematch} />;
-  if (phase === "lose") return <LoseSequence step={step} calm={calm} goal={goal} steps={progress} />;
+  if (phase === "lose") return <LoseSequence step={step} calm={calm} goal={goal} steps={altitude} />;
   if (phase === "win") return <WinSequence step={step} calm={calm} goal={goal} heroes={heroes} close={remaining < 10} />;
 
   const mood: LunaMood = frozen ? "calm" : pct > 0.5 ? "calm" : pct > 0.25 ? "worried" : "panic";
@@ -229,39 +236,39 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   const canPass = !!player && !passed.has(player.id) && roster.length > 1;
 
   return (
-    <div className="fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
-      <div className="relative">
-        <Tightrope pct={pct} goal={goal} steps={progress} mood={mood} crowd={crowd} frozen={frozen} slipKey={slip} flashKey={flash} calm={calm}
-          countdown={secs <= 10 && secs > 0 && !frozen ? secs : undefined} className="fit-scene h-[200px]" />
+    <div className="rope-play relative min-h-0 flex-1">
+      <div className="rope-story relative min-h-0">
+        <Tightrope pct={pct} goal={goal} steps={altitude} mood={mood} crowd={crowd} frozen={frozen} slipKey={slip} flashKey={flash} calm={calm}
+          countdown={secs <= 10 && secs > 0 && !frozen ? secs : undefined} className="h-full" />
         {floats.map((f) => (
-          <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 font-display text-6xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
+          <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-12 -translate-x-1/2 font-display text-3xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
         ))}
-        {frozen && <div className="animate-pop absolute left-1/2 top-2 -translate-x-1/2 rounded-full px-5 py-1 text-2xl font-bold chunky" style={{ background: "var(--gold)", color: "var(--shape-outline)" }}>🎪 Balance Pole! Time frozen</div>}
+        {frozen && <div className="animate-pop absolute left-1/2 top-2 -translate-x-1/2 rounded-full px-5 py-1 text-2xl font-bold chunky" style={{ background: "var(--gold)", color: "var(--shape-outline)" }}>Safety Brake! Time frozen</div>}
       </div>
 
-      <div className="flex items-center justify-between gap-4">
-        <div className="min-h-14 rounded-full bg-accent px-6 py-2 text-3xl font-bold text-accent-foreground chunky">
+      <div className="rope-status relative min-w-0">
+        <div className="rope-player min-w-0 truncate text-2xl font-bold">
           {player ? <>🎤 Your turn: {player.name}!</> : <>🤝 Whole class!</>}
         </div>
-        <div className="text-3xl font-bold">👣 {progress} / {goal} <span className="text-muted-foreground">steps</span></div>
-        <TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={96} />
+        <div className="text-xl font-bold text-muted-foreground">{Math.max(0, altitude)} / {goal} levels to SAFE!</div>
+        <div className="rope-timer"><TimerRing remaining={remaining} duration={total} running={!paused && !frozen} size={120} /></div>
       </div>
 
       {item ? (
-        <div key={item.id + progress} className="flex min-h-0 flex-1">
+        <div key={item.id + progress} className="rope-card-slot min-w-0 min-h-0">
           <ItemCard item={item} showAnswer={showAns} compact autoReveal paused={paused || helpOpen} />
         </div>
       ) : (
         <div className="panel flex flex-1 items-center justify-center p-8 text-4xl font-bold">No items for this day.</div>
       )}
 
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className={cn("rope-controls", roster.length > 0 && "rope-controls-roster")}>
         <Button variant="success" size="huge" onClick={correct}><Check /> Correct <Kbd>C</Kbd></Button>
         <Button variant="danger" size="huge" onClick={wrong}><X /> Wrong / Skip <Kbd>X</Kbd></Button>
         <Button variant="game" size="xl" onClick={showAnswer}><Eye /> Answer <Kbd>A</Kbd></Button>
         {roster.length > 0 && <Button variant="panel" size="xl" onClick={pass} disabled={!canPass}><Hand /> Pass <Kbd>P</Kbd></Button>}
         {roster.length > 0 && <Button variant="panel" size="xl" onClick={repick}><Dices /> Re-pick <Kbd>R</Kbd></Button>}
-        <Button variant="panel" size="xl" onClick={balancePole} disabled={poleUsed} className={cn(poleUsed && "grayscale")}>🎪 Balance Pole <Kbd>F</Kbd></Button>
+        <Button variant="panel" size="xl" onClick={balancePole} disabled={poleUsed} className={cn(poleUsed && "grayscale")}>Safety Brake <Kbd>F</Kbd></Button>
         <Button variant="panel" size="xl" onClick={() => setPaused((p) => !p)}><Pause /> Pause <Kbd>Space</Kbd></Button>
       </div>
 
@@ -292,13 +299,13 @@ function fireworks(calm: boolean) {
 function LoseSequence({ step, calm, goal, steps }: { step: number; calm: boolean; goal: number; steps: number }) {
   return (
     <div className={cn("relative flex flex-1 flex-col items-center justify-center gap-6 overflow-hidden px-8", step === 1 && (calm ? "animate-softshake" : "animate-bigshake"))}>
-      <Tightrope pct={0} goal={goal} steps={steps} mood={step >= 2 ? "soaked" : "uhoh"} crowd={step >= 2 ? "aww" : "gasp"} falling={step === 0} inPool={step >= 2} calm={calm} className="fit-scene h-[320px]" />
+      <Tightrope pct={0} goal={goal} steps={steps} mood={step >= 2 ? "soaked" : "uhoh"} crowd={step >= 2 ? "aww" : "gasp"} falling={step === 0} inPool={step >= 2} calm={calm} className="rope-ending-scene" />
       {step === 1 && (
         <div className="animate-wavefill pointer-events-none absolute inset-0 z-10" style={{ background: "linear-gradient(transparent, var(--pool) 25%, var(--pool-deep))" }} />
       )}
       {step === 0 && <div className="animate-pop font-display text-6xl font-bold text-stroke">Uh-oh… 😬</div>}
       {step === 1 && <div className="animate-stamp relative z-20 font-display text-[8rem] font-bold leading-none text-stroke" style={{ color: "var(--pool)" }}>SPLAAASH!</div>}
-      {step >= 2 && <div className="animate-pop font-display text-6xl font-bold text-stroke">Awww… Luna is soaking wet! 🦆</div>}
+      {step >= 2 && <div className="animate-pop font-display text-6xl font-bold text-stroke">Luna made a splash!</div>}
       <div className="absolute bottom-4 right-6 z-20 text-xl font-bold text-muted-foreground">Skip <Kbd>Space</Kbd></div>
     </div>
   );
@@ -307,10 +314,10 @@ function LoseSequence({ step, calm, goal, steps }: { step: number; calm: boolean
 function WinSequence({ step, calm, goal, heroes, close }: { step: number; calm: boolean; goal: number; heroes: string[]; close: boolean }) {
   return (
     <div className={cn("relative flex flex-1 flex-col items-center justify-center gap-5 overflow-hidden px-8", step === 1 && !calm && "animate-shake")}>
-      <Tightrope pct={1} goal={goal} steps={step >= 1 ? goal : goal - 1} mood={step >= 2 ? "tada" : "worried"} crowd={step >= 1 ? "roar" : "gasp"} spotsSwing={step >= 2} flashKey={step >= 1 ? step : 0} stars={step >= 3 ? heroes : []} calm={calm} className="fit-scene h-[300px]" />
-      {step === 0 && <div className="font-display text-6xl font-bold text-stroke">Last step…</div>}
+      <Tightrope pct={1} goal={goal} steps={step >= 1 ? goal : goal - 1} mood={step >= 2 ? "tada" : "worried"} crowd={step >= 1 ? "roar" : "gasp"} spotsSwing={step >= 2} flashKey={step >= 1 ? step : 0} stars={step >= 3 ? heroes : []} calm={calm} className="rope-ending-scene" />
+      {step === 0 && <div className="font-display text-6xl font-bold text-stroke">Almost SAFE…</div>}
       {step === 1 && <div className="animate-pop font-display text-6xl font-bold text-stroke">{close ? "PHEW! JUST IN TIME!" : "CRASH! 🥁"}</div>}
-      {step === 2 && <div className="animate-pop font-display text-7xl font-bold text-stroke">TA-DAAA! 🙆‍♀️</div>}
+      {step === 2 && <div className="animate-pop font-display text-7xl font-bold text-stroke">TA-DAAA! SAFE!</div>}
       {step >= 3 && (
         <>
           <div className="animate-banner rounded-3xl bg-accent px-12 py-4 font-display text-7xl font-bold text-accent-foreground chunky">RESCUE COMPLETE! 🎪</div>
