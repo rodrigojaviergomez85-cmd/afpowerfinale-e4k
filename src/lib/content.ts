@@ -106,15 +106,30 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
   const picked: ContentItem[] = [];
   if (mix === "translations") picked.push(...ordered.slice(0, count));
   else {
-    // Balanced quotas: questions & translations lead equally, every other dynamic shows up.
-    const h = Math.min(3, Math.max(1, Math.round(count * 0.18)));
-    const f = Math.max(1, Math.round(count * 0.18));
-    const pic = Math.max(1, Math.round(count * 0.12));
-    const rest = Math.max(0, count - h - f - pic);
-    const t = mix === "mix" ? Math.ceil(rest / 2) : 0;
-    const quota: Record<string, number> = mix === "mix"
-      ? { H: h, F: f, P: pic, T: t, Q: rest - t }
-      : { H: h, F: f, P: pic, Q: rest };
+    // Questions & translations take half the round (Q slightly ahead for short
+    // rounds). The other half is split AT RANDOM between hidden pictures, blanks
+    // and figure pictures, so every game feels a little different.
+    const quota: Record<string, number> = { H: 0, F: 0, P: 0, Q: 0, T: 0 };
+    if (mix === "mix") {
+      const lang = Math.ceil(count / 2);
+      quota.T = Math.floor(lang / 2);
+      quota.Q = lang - (quota.T ?? 0);
+      const rest = Math.max(0, count - lang);
+      const order = shuffle(["H", "F", "P"]);
+      for (let i = 0; i < rest; i++) quota[order[i % 3]!] = (quota[order[i % 3]!] ?? 0) + 1;
+      // Never more than 3 hidden pictures; extras move to blanks or figures.
+      while ((quota.H ?? 0) > 3) {
+        quota.H = (quota.H ?? 0) - 1;
+        const to = order.find((k) => k !== "H")!;
+        quota[to] = (quota[to] ?? 0) + 1;
+      }
+    } else {
+      const h = Math.min(3, Math.max(1, Math.round(count * 0.18)));
+      const f = Math.max(1, Math.round(count * 0.18));
+      const pic = Math.max(1, Math.round(count * 0.12));
+      quota.H = h; quota.F = f; quota.P = pic;
+      quota.Q = Math.max(0, count - h - f - pic);
+    }
     const ids = new Set<string>();
     for (const [t, n] of Object.entries(quota)) {
       for (const i of ordered) {
