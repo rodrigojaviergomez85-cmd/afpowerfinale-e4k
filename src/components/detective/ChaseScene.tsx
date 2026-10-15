@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 export type SniffMood = "sniff" | "happy" | "bonk" | "sad" | "super" | "dash" | "jump";
-export type BugMood = "smug" | "nervous" | "giggle" | "wave" | "caught";
+export type RackyMood = "smug" | "nervous" | "giggle" | "wave" | "caught";
 export type BalloonState = "ground" | "tug" | "lift" | "away" | "deflate";
 
 const INK = "var(--sky-ink)";
@@ -65,33 +65,67 @@ export function Sniff({ mood }: { mood: SniffMood }) {
   );
 }
 
-/** Gigglebug: a tiny mischievous green bug. Origin = bottom. */
-export function Gigglebug({ mood }: { mood: BugMood }) {
+/** Racky: a small raccoon thief. Origin = bottom. */
+export function Racky({ mood }: { mood: RackyMood }) {
   const worried = mood === "nervous" || mood === "caught";
+  const waving = mood === "wave";
   return (
     <g stroke={INK} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d={worried ? "M-8 -40 Q-16 -58 -22 -54 M8 -40 Q16 -58 22 -54" : "M-8 -40 Q-14 -60 -6 -64 M8 -40 Q14 -60 6 -64"} fill="none" />
-      <circle cx={worried ? -22 : -6} cy={worried ? -54 : -64} r="4" fill="var(--det-balloon-a)" />
-      <circle cx={worried ? 22 : 6} cy={worried ? -54 : -64} r="4" fill="var(--det-balloon-a)" />
-      <ellipse cx="0" cy="-20" rx="20" ry="20" fill="var(--det-bug)" />
-      <path d="M0 -40 L0 0" stroke="var(--det-bug-dark)" strokeWidth="2" />
-      <circle cx="-8" cy="-14" r="3" fill="var(--det-bug-dark)" stroke="none" /><circle cx="9" cy="-8" r="3" fill="var(--det-bug-dark)" stroke="none" />
-      <circle cx="0" cy="-42" r="15" fill="var(--det-bug)" />
-      {mood === "giggle" || mood === "wave" ? (
-        <><path d="M-10 -46 Q-6 -50 -2 -46" fill="none" /><path d="M2 -46 Q6 -50 10 -46" fill="none" /></>
+      {/* striped tail */}
+      <path d={worried ? "M-10 -30 Q-38 -26 -44 -8" : "M-12 -32 Q-42 -40 -48 -20"} fill="none" stroke="var(--det-rack-mid)" strokeWidth="13" />
+      <path d={worried ? "M-24 -28 l-3 -1 M-36 -18 l-3 2" : "M-26 -36 l-3 -3 M-40 -28 l-3 1"} fill="none" stroke="var(--det-rack-dark)" strokeWidth="13" />
+      {/* legs */}
+      <path d="M-7 -12 L-8 0 M7 -12 L8 0" stroke="var(--det-rack-dark)" strokeWidth="7" />
+      {/* body */}
+      <ellipse cx="0" cy="-22" rx="15" ry="16" fill="var(--det-rack)" />
+      <ellipse cx="0" cy="-18" rx="8" ry="10" fill="var(--explorer-teeth)" strokeWidth="2" />
+      {/* loot sack */}
+      <g transform="translate(14 -22) rotate(14)">
+        <path d="M0 -6 q7 2 6 10 q-1 6 -7 6 q-6 0 -7 -7 q-1 -8 8 -9Z" fill="var(--det-basket)" strokeWidth="2" />
+        <path d="M-2 -6 q2 -5 6 -3" fill="none" strokeWidth="2" />
+      </g>
+      {/* arms */}
+      {waving ? (
+        <path d="M10 -28 Q22 -42 20 -50" fill="none" stroke="var(--det-rack-dark)" strokeWidth="6" />
       ) : (
-        <>
-          <circle cx="-6" cy="-46" r={worried ? 6 : 5} fill="var(--explorer-teeth)" /><circle cx="6" cy="-46" r={worried ? 6 : 5} fill="var(--explorer-teeth)" />
-          <circle cx="-6" cy={worried ? -47 : -45} r="2.5" fill={INK} /><circle cx="6" cy={worried ? -47 : -45} r="2.5" fill={INK} />
-        </>
+        <path d="M10 -28 Q18 -24 16 -18" fill="none" stroke="var(--det-rack-dark)" strokeWidth="6" />
       )}
-      {worried ? (
-        <ellipse cx="0" cy="-34" rx="4" ry="5" fill={INK} />
-      ) : (
-        <path d="M-8 -36 Q0 -26 8 -36 Z" fill="var(--det-roof)" />
-      )}
-      {mood === "nervous" && <path d="M14 -56 q4 6 0 9 q-4 -3 0 -9" fill="var(--det-sky)" strokeWidth="1.5" />}
-      {mood === "wave" && <path d="M18 -26 L32 -48" strokeWidth="5" stroke="var(--det-bug-dark)" className="det-tug" />}
+      <path d="M-10 -26 Q-16 -20 -12 -14" fill="none" stroke="var(--det-rack-dark)" strokeWidth="6" />
+      {/* head */}
+      <g transform="translate(0 -48)">
+        {/* ears */}
+        <path d="M-13 -8 L-16 -22 L-3 -14Z" fill="var(--det-rack)" />
+        <path d="M13 -8 L16 -22 L3 -14Z" fill="var(--det-rack)" />
+        <circle cx="0" cy="0" r="14" fill="var(--det-rack)" />
+        {/* dark mask band */}
+        <path d="M-14 -3 Q0 -10 14 -3 Q14 4 8 3 Q0 -1 -8 3 Q-14 4 -14 -3Z" fill="var(--det-rack-dark)" stroke="none" />
+        {/* eyes */}
+        {mood === "giggle" ? (
+          <path d="M-9 -2 Q-6 -6 -3 -2 M3 -2 Q6 -6 9 -2" fill="none" strokeWidth="2.5" />
+        ) : (
+          <>
+            <circle cx="-6" cy="-2" r={worried ? 3.6 : 2.8} fill="var(--explorer-teeth)" stroke="none" />
+            <circle cx="6" cy="-2" r={worried ? 3.6 : 2.8} fill="var(--explorer-teeth)" stroke="none" />
+            <circle cx={-6 + (worried ? 0 : 0.8)} cy={worried ? -1 : -1.6} r="1.5" fill={INK} stroke="none" />
+            <circle cx={6 + (worried ? 0 : 0.8)} cy={worried ? -1 : -1.6} r="1.5" fill={INK} stroke="none" />
+          </>
+        )}
+        {/* muzzle + nose */}
+        <ellipse cx="0" cy="7" rx="6" ry="4.5" fill="var(--explorer-teeth)" strokeWidth="2" />
+        <ellipse cx="0" cy="4.5" rx="3" ry="2.2" fill={INK} stroke="none" />
+        {/* mouth */}
+        {mood === "smug" ? (
+          <path d="M-3 8 Q1 11 5 7" fill="none" strokeWidth="2" />
+        ) : mood === "giggle" ? (
+          <path d="M-4 7 Q0 12 4 7Z" fill="var(--det-roof)" strokeWidth="2" />
+        ) : worried ? (
+          <path d="M-3 9 Q0 6.5 3 9" fill="none" strokeWidth="2" />
+        ) : (
+          <path d="M-3 8 L3 8" fill="none" strokeWidth="2" />
+        )}
+        {mood === "nervous" && <path d="M16 -10 q4 6 0 9 q-4 -3 0 -9" fill="var(--det-sky)" strokeWidth="1.5" />}
+      </g>
+      {waving && <path d="M18 -54 q5 5 1 8" fill="none" strokeWidth="2.5" className="det-tug" />}
     </g>
   );
 }
@@ -132,7 +166,7 @@ function Paw({ x, y, on, fresh }: { x: number; y: number; on: boolean; fresh: bo
   );
 }
 
-function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonState; ropes: number; tangled: boolean; countdown?: number | undefined; bug?: BugMood | undefined }) {
+function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonState; ropes: number; tangled: boolean; countdown?: number | undefined; bug?: RackyMood | undefined }) {
   const lift = state === "lift" ? 40 : 0;
   const inflate = state === "ground" ? 0.72 : 1;
   return (
@@ -146,10 +180,11 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
           <path key={i} d={`M${dx} 4 l${dx > 0 ? 6 : -6} -10`} stroke="var(--det-basket)" strokeWidth="3" />
         );
       })}
-      <g transform={`translate(0 ${-lift})`} className={state === "tug" || state === "lift" ? "det-tug" : undefined}>
+      <g transform={`translate(0 ${-lift})`}>
+      <g className={state === "tug" || state === "lift" ? "det-tug" : undefined}>
         {/* basket */}
         <rect x="-24" y="-30" width="48" height="30" rx="5" fill="var(--det-basket)" stroke={INK} strokeWidth="3" />
-        {bug && <g transform="translate(0 -24) scale(0.85)"><Gigglebug mood={bug} /></g>}
+        {bug && <g transform="translate(0 -24) scale(0.85)"><Racky mood={bug} /></g>}
         <path d="M-22 -30 L-36 -78 M22 -30 L36 -78" stroke={INK} strokeWidth="2" />
         {/* envelope */}
         <g transform={`translate(0 -140) scale(${inflate}) translate(0 ${state === "ground" ? 30 : 0})`}><g className={state === "deflate" ? "det-deflate" : undefined}>
@@ -160,14 +195,15 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
           )}
         </g></g>
       </g>
+      </g>
     </g>
   );
 }
 
 export function ChaseScene({
-  goal, clues, pct, sniffMood, bugMood, balloon, ropes, tangled = false, countdown, freshPaw = false, sniffX, bugInBasket, bonk = false, net = false, letters = false, badges = [], className,
+  goal, clues, pct, sniffMood, rackyMood, balloon, ropes, tangled = false, countdown, freshPaw = false, sniffX, rackyInBasket, bonk = false, net = false, letters = false, badges = [], className,
 }: {
-  goal: number; clues: number; pct: number; sniffMood: SniffMood; bugMood: BugMood; balloon: BalloonState; ropes: number; tangled?: boolean; countdown?: number | undefined; freshPaw?: boolean; sniffX?: number | undefined; bugInBasket: boolean; bonk?: boolean; net?: boolean; letters?: boolean; badges?: string[]; className?: string;
+  goal: number; clues: number; pct: number; sniffMood: SniffMood; rackyMood: RackyMood; balloon: BalloonState; ropes: number; tangled?: boolean; countdown?: number | undefined; freshPaw?: boolean; sniffX?: number | undefined; rackyInBasket: boolean; bonk?: boolean; net?: boolean; letters?: boolean; badges?: string[]; className?: string;
 }) {
   const paws = Array.from({ length: goal }, (_, i) => START_X + 60 + (i * (END_X - START_X - 60)) / Math.max(1, goal - 1));
   const x = sniffX ?? START_X + ((END_X - START_X - 70) * clues) / Math.max(1, goal);
@@ -198,10 +234,12 @@ export function ChaseScene({
       {paws.map((px, i) => <Paw key={i} x={px} y={STREET_Y + 24 + (i % 2 ? 6 : -6)} on={i < clues} fresh={freshPaw && i === clues - 1} />)}
       {/* balloon */}
       <g transform={`translate(985 ${STREET_Y})`}>
-        <Balloon state={balloon} ropes={ropes} tangled={tangled} countdown={countdown} bug={bugInBasket ? bugMood : undefined} />
+        <Balloon state={balloon} ropes={ropes} tangled={tangled} countdown={countdown} bug={rackyInBasket ? rackyMood : undefined} />
       </g>
-      {!bugInBasket && !net && (
-        <g transform={`translate(1060 ${STREET_Y})`} className="det-bob"><Gigglebug mood={bugMood} /></g>
+      {!rackyInBasket && !net && (
+        <g transform={`translate(1060 ${STREET_Y})`}>
+          <g className="det-bob"><Racky mood={rackyMood} /></g>
+        </g>
       )}
       {letters && ["B", "Y", "E", "!"].map((l, i) => (
         <text key={l} x={1010 + i * 34} y={70 + i * 8} fontSize="44" fontWeight="900" fill="var(--det-hint)" stroke={INK} strokeWidth="3" paintOrder="stroke" className="det-letter font-display" style={{ animationDelay: `${0.4 + i * 0.35}s` }}>{l}</text>
@@ -216,7 +254,7 @@ export function ChaseScene({
           <g transform="translate(70 -70)">
             <path d="M0 0 L60 -60" stroke="var(--det-paw)" strokeWidth="6" />
             <ellipse cx="74" cy="-74" rx="30" ry="22" fill="var(--explorer-teeth)" fillOpacity="0.55" stroke={INK} strokeWidth="3" strokeDasharray="5 4" />
-            <g transform="translate(74 -58) scale(0.7)"><Gigglebug mood="caught" /></g>
+            <g transform="translate(74 -58) scale(0.7)"><Racky mood="caught" /></g>
           </g>
         )}
       </g>

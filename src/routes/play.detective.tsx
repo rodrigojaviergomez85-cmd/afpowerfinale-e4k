@@ -9,7 +9,7 @@ import { useHotkeys } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
 import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
-import { ChaseScene, type SniffMood, type BugMood, type BalloonState } from "@/components/detective/ChaseScene";
+import { ChaseScene, type SniffMood, type RackyMood, type BalloonState } from "@/components/detective/ChaseScene";
 import { getGame, GAMES } from "@/lib/games";
 import { drawMistakes, type ContentItem } from "@/lib/content";
 import { DETECTIVE_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/play/detective")({
   head: () => ({
     meta: [
       { title: "Detective Sniff — AF Power Finale" },
-      { name: "description", content: "Whole-class challenge: find the mistakes before Gigglebug escapes!" },
+      { name: "description", content: "Whole-class challenge: find the mistakes before Racky escapes!" },
       { property: "og:title", content: "Detective Sniff — AF Power Finale" },
-      { property: "og:description", content: "Whole-class challenge: find the mistakes before Gigglebug escapes!" },
+      { property: "og:description", content: "Whole-class challenge: find the mistakes before Racky escapes!" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -41,7 +41,7 @@ const useOpts = () => useApp((s) => s.detective ?? DETECTIVE_PRESETS["Normal"]!)
 function DetectiveSniff() {
   const base = getGame("detective-sniff")!;
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🔍", text: `Find ${target} mistakes before Gigglebug escapes!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🔍", text: `Find ${target} mistakes before Racky escapes!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
@@ -231,7 +231,7 @@ function DetectiveGame({ onRematch, helpOpen, openHelp }: { onRematch: () => voi
 
   const bonk = now < bonkUntil;
   const sniffMood: SniffMood = frozen ? "super" : bonk ? "bonk" : now < cheerUntil ? "happy" : "sniff";
-  const bugMood: BugMood = bonk ? "giggle" : secs <= 10 ? "wave" : now < cheerUntil || progress >= goal - 2 ? "nervous" : "smug";
+  const rackyMood: RackyMood = bonk ? "giggle" : secs <= 10 ? "wave" : now < cheerUntil || progress >= goal - 2 ? "nervous" : "smug";
   const balloon: BalloonState = pct > 0.5 ? "ground" : pct > 0.25 ? "tug" : "lift";
   const ropes = frozen ? 4 : pct > 0.25 ? 4 : Math.max(1, Math.ceil((pct / 0.25) * 4));
   const showAns = now < answerUntil;
@@ -240,7 +240,7 @@ function DetectiveGame({ onRematch, helpOpen, openHelp }: { onRematch: () => voi
   return (
     <div className="bridge-play detective-play fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
       <div className="relative shrink-0">
-        <ChaseScene goal={goal} clues={progress} pct={pct} sniffMood={sniffMood} bugMood={bugMood} balloon={balloon} ropes={ropes} tangled={frozen} bonk={bonk} freshPaw={freshPaw} bugInBasket={pct <= 0.5} countdown={secs <= 10 && secs > 0 && !frozen ? secs : undefined} className={cn("fit-scene h-[200px]", pct < 0.25 && !calm && !frozen && "animate-softshake")} />
+        <ChaseScene goal={goal} clues={progress} pct={pct} sniffMood={sniffMood} rackyMood={rackyMood} balloon={balloon} ropes={ropes} tangled={frozen} bonk={bonk} freshPaw={freshPaw} rackyInBasket={pct <= 0.5} countdown={secs <= 10 && secs > 0 && !frozen ? secs : undefined} className={cn("fit-scene h-[200px]", pct < 0.25 && !calm && !frozen && "animate-softshake")} />
         {floats.map((f) => (
           <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-4 -translate-x-1/2 font-display text-6xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
         ))}
@@ -297,7 +297,7 @@ function coins(calm: boolean) {
 function LoseSequence({ step, calm, goal, clues }: { step: number; calm: boolean; goal: number; clues: number }) {
   return (
     <div className={cn("relative flex flex-1 flex-col items-center justify-center gap-5 overflow-hidden px-8", step === 0 && !calm && "animate-softshake")}>
-      <ChaseScene goal={goal} clues={clues} pct={0.05} balloon={step >= 1 ? "away" : "lift"} ropes={step >= 1 ? 0 : 1} bugInBasket bugMood="giggle" letters={step >= 1} sniffMood={step === 2 ? "jump" : step >= 3 ? "sad" : "sniff"} sniffX={step >= 2 ? 860 : undefined} className="h-[340px] max-w-5xl" />
+      <ChaseScene goal={goal} clues={clues} pct={0.05} balloon={step >= 1 ? "away" : "lift"} ropes={step >= 1 ? 0 : 1} rackyInBasket rackyMood="giggle" letters={step >= 1} sniffMood={step === 2 ? "jump" : step >= 3 ? "sad" : "sniff"} sniffX={step >= 2 ? 860 : undefined} className="h-[340px] max-w-5xl" />
       {step === 0 && <div className="animate-stamp font-display text-[6rem] font-bold leading-none text-destructive text-stroke">SNAP!</div>}
       {step === 1 && <div className="animate-pop font-display text-[6rem] font-bold leading-none text-stroke">Hee hee hee! 🎈</div>}
       {step === 2 && <div className="animate-pop font-display text-6xl font-bold text-stroke">Jump, Sniff!</div>}
@@ -310,7 +310,7 @@ function LoseSequence({ step, calm, goal, clues }: { step: number; calm: boolean
 function WinSequence({ step, calm, goal, heroes, close }: { step: number; calm: boolean; goal: number; heroes: string[]; close: boolean }) {
   return (
     <div className={cn("relative flex flex-1 flex-col items-center justify-center gap-5 overflow-hidden px-8", step === 4 && !calm && "animate-shake")}>
-      <ChaseScene goal={goal} clues={goal} pct={0.3} freshPaw={step <= 1} balloon={step >= 3 ? "deflate" : "tug"} ropes={step >= 2 ? 0 : 4} bugInBasket={step < 2} bugMood={step >= 2 ? "caught" : "nervous"} net={step >= 2} sniffMood={step === 1 ? "dash" : step === 2 ? "jump" : step >= 2 ? "happy" : "sniff"} sniffX={step >= 1 ? 880 : undefined} badges={step >= 4 ? heroes : []} className="h-[320px] max-w-5xl" />
+      <ChaseScene goal={goal} clues={goal} pct={0.3} freshPaw={step <= 1} balloon={step >= 3 ? "deflate" : "tug"} ropes={step >= 2 ? 0 : 4} rackyInBasket={step < 2} rackyMood={step >= 2 ? "caught" : "nervous"} net={step >= 2} sniffMood={step === 1 ? "dash" : step === 2 ? "jump" : step >= 2 ? "happy" : "sniff"} sniffX={step >= 1 ? 880 : undefined} badges={step >= 4 ? heroes : []} className="h-[320px] max-w-5xl" />
       {step === 0 && <div className="font-display text-6xl font-bold text-stroke">Last clue…</div>}
       {step === 1 && <div className="animate-pop font-display text-6xl font-bold text-stroke">{close ? "PHEW! JUST IN TIME!" : "Run, Sniff, run! 🐾"}</div>}
       {step === 2 && <div className="animate-pop font-display text-6xl font-bold text-stroke">GOTCHA! 🦋</div>}
@@ -339,7 +339,7 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
   useHotkeys({ Enter: onRematch });
   return (
     <div className="flex flex-1 flex-col items-center justify-center gap-5 px-8 pb-8 text-center">
-      <div className="animate-pop text-[8rem] leading-none">{won ? "🐶🔍" : "🎈🐞"}</div>
+      <div className="animate-pop text-[8rem] leading-none">{won ? "🐶🔍" : "🎈🦝"}</div>
       {won ? (
         <>
           <h1 className="text-7xl text-stroke">{secondsLeft < 10 ? "PHEW! JUST IN TIME!" : "Case closed! 🎉"}</h1>
@@ -347,7 +347,7 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
         </>
       ) : (
         <>
-          <h1 className="text-6xl text-stroke">Gigglebug got away… for now!</h1>
+          <h1 className="text-6xl text-stroke">Racky got away… for now!</h1>
           <div className="text-5xl font-bold"><span className="text-primary">{progress}</span>/{goal} clues</div>
           <div className="text-3xl font-bold">Case reopened! Rematch?</div>
         </>

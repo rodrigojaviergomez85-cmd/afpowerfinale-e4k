@@ -66,13 +66,12 @@ export function MuteButton() {
   );
 }
 
+import logoAsset from "@/assets/english4kids-logo.png.asset.json";
+
 export function Logo() {
   return (
     <div className="flex items-center gap-3">
-      {/* School logo slot: replace with English4Kids logo image */}
-      <div className="flex h-12 items-center rounded-xl border-2 border-dashed border-primary/60 px-3 text-sm font-bold text-primary">
-        English4Kids
-      </div>
+      <img src={logoAsset.url} alt="English4Kids" className="h-14 w-auto" />
       <div className="leading-none">
         <div className="text-2xl font-bold tracking-tight text-stroke">
           AF <span className="text-primary">Power</span> Finale

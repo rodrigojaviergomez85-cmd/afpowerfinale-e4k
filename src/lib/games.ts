@@ -82,7 +82,7 @@ export const GAMES: GameDef[] = [
     id: "detective-sniff",
     name: "Detective Sniff",
     icon: "🔍",
-    tagline: "Find the mistakes before Gigglebug escapes!",
+    tagline: "Find the mistakes before Racky escapes!",
     mode: "Whole class",
     minutes: "3 min",
     accent: "bg-game-detective",

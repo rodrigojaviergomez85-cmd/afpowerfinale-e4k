@@ -106,6 +106,9 @@
   --det-hat: oklch(0.5 0.07 70);
   --det-bug: oklch(0.68 0.2 145);
   --det-bug-dark: oklch(0.45 0.15 150);
+  --det-rack: oklch(0.74 0.015 270);
+  --det-rack-dark: oklch(0.4 0.02 270);
+  --det-rack-mid: oklch(0.6 0.02 270);
   --det-balloon-a: oklch(0.68 0.21 25);
   --det-balloon-b: oklch(0.88 0.15 95);
   --det-basket: oklch(0.55 0.09 60);
