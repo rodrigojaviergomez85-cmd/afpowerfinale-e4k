@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 export type PepperMood = "calm" | "worried" | "scared" | "happy" | "dizzy";
 export type PepperAt = "branch" | "falling" | "net" | "helmet" | "arms";
+export type CrowdMood = "watch" | "cheer" | "gasp" | "relief" | "worried" | "shock";
 
 const BASE = { x: 455, y: 360 };
 const TOP = { x: 572, y: 92 };
@@ -51,21 +52,35 @@ function Rosa({ slip = false, holding = false, mood }: { slip?: boolean; holding
   );
 }
 
-function Neighbors({ mood }: { mood: "watch" | "cheer" | "gasp" | "relief" | "worried" }) {
+function Neighbors({ mood }: { mood: CrowdMood }) {
   const cheering = mood === "cheer";
-  const alarmed = mood === "gasp" || mood === "worried";
+  const shocked = mood === "shock";
+  const alarmed = mood === "gasp" || mood === "worried" || shocked;
+  const armD = cheering ? "M-15 -29 L-25 -53 M15 -29 L25 -53"
+    : shocked ? "M-14 -28 L-21 -41 M14 -28 L21 -41"
+    : mood === "gasp" ? "M-15 -28 L-18 -48 M15 -28 L18 -48"
+    : "M-15 -26 L-19 -8 M15 -26 L19 -8";
   return (
-    <g data-neighbors={mood} stroke="var(--sky-ink)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <g data-neighbors={mood} className={cn(shocked && "kitten-gasp")} stroke="var(--sky-ink)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       {[876, 927, 976].map((x, i) => (
         <g key={x} transform={`translate(${x} 350)`}>
           <path d="M-18 0 V-26 Q-18 -40 0 -40 Q18 -40 18 -26 V0Z" fill={["var(--team2)", "var(--game-rope)", "var(--leaf)"][i]} />
-          <path d={cheering ? "M-15 -29 L-25 -53 M15 -29 L25 -53" : mood === "gasp" ? "M-15 -28 L-18 -48 M15 -28 L18 -48" : "M-15 -26 L-19 -8 M15 -26 L19 -8"} stroke="var(--rosa-skin)" strokeWidth="7" />
+          <path d={armD} stroke="var(--sky-ink)" strokeWidth="10" />
+          <path d={armD} stroke="var(--rosa-skin)" strokeWidth="6" />
           <circle cy="-57" r="20" fill={i === 1 ? "var(--audience-skin)" : "var(--rosa-skin)"} />
           <path d={i === 1 ? "M-19 -57 Q-23 -82 0 -80 Q23 -82 19 -57 L12 -64 Q2 -60 -5 -71 L-13 -62Z" : "M-19 -61 Q-19 -82 0 -80 Q20 -82 19 -61 Q7 -69 -6 -66 L-17 -56Z"} fill={i === 2 ? "var(--sky-ink)" : "var(--rosa-hair)"} />
+          {shocked && (
+            <g>
+              <path d="M-21 -41 L-19 -49 M21 -41 L19 -49" stroke="var(--sky-ink)" strokeWidth="10" />
+              <path d="M-21 -41 L-19 -49 M21 -41 L19 -49" stroke="var(--rosa-skin)" strokeWidth="6" />
+              <circle cx="-19" cy="-51" r="5.5" fill="var(--rosa-skin)" strokeWidth="2.5" />
+              <circle cx="19" cy="-51" r="5.5" fill="var(--rosa-skin)" strokeWidth="2.5" />
+            </g>
+          )}
           <path d={alarmed ? "M-13 -66 L-4 -69 M4 -69 L13 -66" : "M-13 -66 Q-9 -69 -5 -66 M5 -66 Q9 -69 13 -66"} fill="none" strokeWidth="2" />
-          {cheering || mood === "relief" ? <path d="M-12 -57 Q-8 -63 -4 -57 M4 -57 Q8 -63 12 -57" fill="none" /> : <g fill="var(--acrobat-white)" strokeWidth="1.5"><ellipse cx="-8" cy="-57" rx="4.5" ry={alarmed ? 6 : 5} /><ellipse cx="8" cy="-57" rx="4.5" ry={alarmed ? 6 : 5} /><g fill="var(--sky-ink)" stroke="none"><circle cx="-7" cy="-57" r="2.4" /><circle cx="9" cy="-57" r="2.4" /></g></g>}
-          <path d="M0 -54 L-2 -49 H1" fill="none" strokeWidth="1.5" />
-          {mood === "gasp" ? <ellipse cy="-43" rx="4" ry="5" fill="var(--acrobat-mouth)" /> : mood === "worried" ? <path d="M-6 -42 Q0 -48 6 -42" fill="none" /> : <path d="M-8 -46 Q0 -34 8 -46Z" fill="var(--acrobat-white)" strokeWidth="2" />}
+          {cheering || mood === "relief" ? <path d="M-12 -57 Q-8 -63 -4 -57 M4 -57 Q8 -63 12 -57" fill="none" /> : <g fill="var(--acrobat-white)" strokeWidth="1.5"><ellipse cx="-8" cy="-57" rx="5" ry={shocked ? 8 : alarmed ? 6 : 5} /><ellipse cx="8" cy="-57" rx="5" ry={shocked ? 8 : alarmed ? 6 : 5} /><g fill="var(--sky-ink)" stroke="none"><circle cx={shocked ? "-9.5" : "-7"} cy={shocked ? "-59" : "-57"} r={shocked ? 1.8 : 2.4} /><circle cx={shocked ? "6.5" : "9"} cy={shocked ? "-59" : "-57"} r={shocked ? 1.8 : 2.4} /></g></g>}
+          <path d="M0 -56 L-2 -51 H1" fill="none" strokeWidth="1.5" />
+          {shocked ? <ellipse cy="-44" rx="5.5" ry="6.5" fill="var(--acrobat-mouth)" /> : mood === "gasp" ? <ellipse cy="-43" rx="4" ry="5" fill="var(--acrobat-mouth)" /> : mood === "worried" ? <path d="M-6 -42 Q0 -48 6 -42" fill="none" /> : <path d="M-8 -46 Q0 -34 8 -46Z" fill="var(--acrobat-white)" strokeWidth="2" />}
         </g>
       ))}
     </g>
@@ -75,17 +90,17 @@ function Neighbors({ mood }: { mood: "watch" | "cheer" | "gasp" | "relief" | "wo
 /** Park scene: Rosa climbs the ladder up the tree trunk to Pepper on a bending branch. */
 export function TreeScene({
   goal, rungs, pct, pepperMood = "calm", ears = false, slip = false, frozen = false, countdown, snapped = false,
-  pepperAt = "branch", rosaT, rosaMood = "smile", boing = 0, calm = false, flashing = false, badges = [], className,
+  pepperAt = "branch", rosaT, rosaMood = "smile", boing = 0, calm = false, flashing = false, badges = [], crowd, className,
 }: {
   goal: number; rungs: number; pct: number; pepperMood?: PepperMood; ears?: boolean; slip?: boolean; frozen?: boolean; countdown?: number | undefined;
-  snapped?: boolean; pepperAt?: PepperAt; rosaT?: number; rosaMood?: "smile" | "whoa" | "cheer"; boing?: number; calm?: boolean; flashing?: boolean; badges?: string[]; className?: string;
+  snapped?: boolean; pepperAt?: PepperAt; rosaT?: number; rosaMood?: "smile" | "whoa" | "cheer"; boing?: number; calm?: boolean; flashing?: boolean; badges?: string[]; crowd?: CrowdMood; className?: string;
 }) {
   const stage = pct > 0.5 ? 0 : pct > 0.25 ? 1 : 2;
   const bend = stage === 0 ? 2 : stage === 1 ? 7 : 12;
   const sway = frozen ? 0 : stage === 0 ? 1.5 : stage === 1 ? 2.5 : 4.5;
   const t = rosaT ?? rungs / (goal + 1);
   const rosa = at(t);
-  const crowdMood = slip || pepperAt === "falling" ? "gasp" : rosaMood === "cheer" || ears || pepperAt === "arms" ? "cheer" : pepperAt === "helmet" || pepperAt === "net" ? "relief" : stage === 2 ? "worried" : "watch";
+  const crowdMood: CrowdMood = crowd ?? (slip || pepperAt === "falling" ? "gasp" : rosaMood === "cheer" || ears || pepperAt === "arms" ? "cheer" : pepperAt === "helmet" || pepperAt === "net" ? "relief" : stage === 2 ? "worried" : "watch");
   const pepper =
     pepperAt === "branch" ? { x: 790, y: 120 + bend * 4 } :
     pepperAt === "falling" ? { x: 800, y: 260 } :
