@@ -299,12 +299,12 @@ function fireworks(calm: boolean) {
 
 function LoseSequence({ step, calm, goal, steps }: { step: number; calm: boolean; goal: number; steps: number }) {
   return (
-    <div className="circus-ending" data-calm={calm}>
+    <div className={cn("circus-ending circus-ending-lose", step >= 1 && "circus-splashed")} data-calm={calm}>
       <Tightrope pct={0} goal={goal} steps={steps} mood="uhoh" crowd="gasp" falling={step >= 1} inPool={step >= 2} calm={calm} className="rope-ending-scene" />
       {step >= 1 && <div className="circus-flood" aria-hidden="true"><svg viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0 40 Q125 0 250 40 T500 40 T750 40 T1000 40 V100 H0Z" fill="var(--pool)" /><path d="M0 40 Q125 0 250 40 T500 40 T750 40 T1000 40" fill="none" stroke="var(--river-foam)" strokeWidth="5" /></svg></div>}
       <div className="circus-ending-caption" aria-live="polite">
         <h1 className="circus-finale-title">{step === 0 ? "Hold on!" : "SPLAAASH!"}</h1>
-        {step >= 2 && <div className="circus-finale-banner">So close!</div>}
+        {step >= 2 && <div className="circus-so-close">So close!</div>}
         <p>{step >= 2 ? "Let's rescue Luna next time!" : ""}</p>
       </div>
       <div className="circus-skip">Skip <Kbd>Space</Kbd></div>
@@ -314,13 +314,13 @@ function LoseSequence({ step, calm, goal, steps }: { step: number; calm: boolean
 
 function WinSequence({ step, calm, goal, heroes, close }: { step: number; calm: boolean; goal: number; heroes: string[]; close: boolean }) {
   return (
-    <div className="circus-ending">
+    <div className={cn("circus-ending circus-ending-win", step >= 2 && "circus-rescued")}>
       <Tightrope pct={1} goal={goal} steps={step >= 1 ? goal : goal - 1} mood={step >= 2 ? "tada" : "happy"} landing={step >= 2} celebrating={step >= 2} stars={step >= 3 ? heroes : []} calm={calm} className="rope-ending-scene" />
       <div className="circus-ending-caption" aria-live="polite">
-        <h1 className="circus-finale-title">{step < 2 ? "One final leap…" : "TA-DAAA!"}</h1>
-        {step >= 2 && <div className="circus-finale-banner">Rescue complete!</div>}
+        <h1 className="circus-finale-title">{step < 2 ? "One final leap…" : <>TA-DAAA! <span className="circus-tadaa-emoji">🙆‍♀️</span></>}</h1>
         <p>{step >= 2 ? close ? "Phew! Just in time!" : "Luna is safe, thanks to you!" : ""}</p>
       </div>
+      {step >= 2 && <div className="circus-finale-banner circus-rescue-overlay">RESCUE COMPLETE!</div>}
       <div className="circus-skip">Skip <Kbd>Space</Kbd></div>
     </div>
   );
@@ -343,13 +343,13 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
       <div className="circus-result-copy">
       {won ? (
         <>
-          <h1 className="circus-result-title text-stroke">TA-DAAA!</h1>
-          <div className="circus-finale-banner">Rescue complete!</div>
+          <h1 className="circus-result-title text-stroke">TA-DAAA! <span className="circus-tadaa-emoji">🙆‍♀️</span></h1>
+          <div className="circus-finale-banner">RESCUE COMPLETE!</div>
           <div className="text-4xl font-bold">Saved with <span className="text-primary">{secondsLeft}</span> seconds to spare!</div>
         </>
       ) : (
         <>
-          <h1 className="circus-result-title text-stroke">SPLAAASH!</h1>
+          <h1 className="circus-result-title circus-splash-title text-stroke">SPLAAASH!</h1>
           <div className="text-5xl font-bold"><span className="text-primary">{progress}</span>/{goal} levels</div>
           <div className="text-3xl font-bold">You almost had it! Rematch?</div>
         </>
