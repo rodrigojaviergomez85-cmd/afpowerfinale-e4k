@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SetupRouteImport } from './routes/setup'
+import { Route as PlayBlitzRouteImport } from './routes/play.blitz'
 import { Route as PlayBombRouteImport } from './routes/play.bomb'
 import { Route as PlayBridgeRouteImport } from './routes/play.bridge'
 import { Route as PlayDemoRouteImport } from './routes/play.demo'
@@ -39,6 +40,11 @@ const SettingsRoute = SettingsRouteImport.update({
 const SetupRoute = SetupRouteImport.update({
   id: '/setup',
   path: '/setup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlayBlitzRoute = PlayBlitzRouteImport.update({
+  id: '/play/blitz',
+  path: '/play/blitz',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlayBombRoute = PlayBombRouteImport.update({
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
+  '/play/blitz': typeof PlayBlitzRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/bridge': typeof PlayBridgeRoute
   '/play/demo': typeof PlayDemoRoute
@@ -95,6 +102,7 @@ export interface FileRoutesByTo {
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
+  '/play/blitz': typeof PlayBlitzRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/bridge': typeof PlayBridgeRoute
   '/play/demo': typeof PlayDemoRoute
@@ -109,6 +117,7 @@ export interface FileRoutesById {
   '/results': typeof ResultsRoute
   '/settings': typeof SettingsRoute
   '/setup': typeof SetupRoute
+  '/play/blitz': typeof PlayBlitzRoute
   '/play/bomb': typeof PlayBombRoute
   '/play/bridge': typeof PlayBridgeRoute
   '/play/demo': typeof PlayDemoRoute
@@ -124,6 +133,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/settings'
     | '/setup'
+    | '/play/blitz'
     | '/play/bomb'
     | '/play/bridge'
     | '/play/demo'
@@ -137,6 +147,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/settings'
     | '/setup'
+    | '/play/blitz'
     | '/play/bomb'
     | '/play/bridge'
     | '/play/demo'
@@ -150,6 +161,7 @@ export interface FileRouteTypes {
     | '/results'
     | '/settings'
     | '/setup'
+    | '/play/blitz'
     | '/play/bomb'
     | '/play/bridge'
     | '/play/demo'
@@ -164,6 +176,7 @@ export interface RootRouteChildren {
   ResultsRoute: typeof ResultsRoute
   SettingsRoute: typeof SettingsRoute
   SetupRoute: typeof SetupRoute
+  PlayBlitzRoute: typeof PlayBlitzRoute
   PlayBombRoute: typeof PlayBombRoute
   PlayBridgeRoute: typeof PlayBridgeRoute
   PlayDemoRoute: typeof PlayDemoRoute
@@ -201,6 +214,13 @@ declare module '@tanstack/react-router' {
       path: '/setup'
       fullPath: '/setup'
       preLoaderRoute: typeof SetupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/play/blitz': {
+      id: '/play/blitz'
+      path: '/play/blitz'
+      fullPath: '/play/blitz'
+      preLoaderRoute: typeof PlayBlitzRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/play/bomb': {
@@ -260,6 +280,7 @@ const rootRouteChildren: RootRouteChildren = {
   ResultsRoute: ResultsRoute,
   SettingsRoute: SettingsRoute,
   SetupRoute: SetupRoute,
+  PlayBlitzRoute: PlayBlitzRoute,
   PlayBombRoute: PlayBombRoute,
   PlayBridgeRoute: PlayBridgeRoute,
   PlayDemoRoute: PlayDemoRoute,

@@ -175,6 +175,108 @@
   --sidebar-ring: var(--ring);
 }
 
+/* Vocab Blitz only — preserve every other game's layout. */
+.blitz-shell > main { overflow: hidden; }
+.blitz-play { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 12px; padding: 0 28px 28px; }
+.blitz-status { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 20px; font-weight: 700; }
+.blitz-court { position: relative; flex: 0 0 29%; min-height: 150px; display: grid; grid-template-columns: 1fr 1fr; border: 3px solid var(--game-blitz); border-radius: 8px; overflow: hidden; background: var(--blitz-court); }
+.blitz-court-lines { position: absolute; inset: 0; width: 100%; height: 100%; fill: none; stroke: var(--blitz-lines); stroke-width: 3; opacity: .5; }
+.blitz-net { stroke-width: 7; stroke-dasharray: 4 4; }
+.blitz-team { z-index: 1; padding: 18px 22px; display: flex; flex-direction: column; align-items: flex-start; transition: background .25s; min-width: 0; }
+.blitz-team-two { align-items: flex-end; text-align: right; }
+.blitz-team-one.blitz-team-active { background: color-mix(in oklch, var(--team1) 22%, transparent); }
+.blitz-team-two.blitz-team-active { background: color-mix(in oklch, var(--team2) 25%, transparent); }
+.blitz-team-name { display: flex; align-items: center; gap: 10px; max-width: 85%; }
+.blitz-team-name span { font-size: 42px; }
+.blitz-team-name h2 { font-size: 30px; line-height: 1.1; overflow-wrap: anywhere; }
+.blitz-team-one h2 { color: var(--team1); }
+.blitz-team-two h2 { color: var(--team2); }
+.blitz-stars { display: flex; gap: 7px; padding-top: 10px; }
+.blitz-stars svg { width: 32px; height: 32px; }
+.blitz-serving { font-size: 20px; font-weight: 700; margin-top: 5px; }
+.blitz-rally { position: absolute; z-index: 2; left: 50%; top: 16px; transform: translateX(-50%); display: flex; align-items: center; flex-direction: column; border-radius: 8px; background: var(--stage); padding: 8px 20px; white-space: nowrap; }
+.blitz-rally strong { font-size: 30px; }
+.blitz-rally span { font-size: 18px; }
+.blitz-ball { position: absolute; z-index: 3; bottom: 18px; width: 48px; height: 48px; transition: left .45s ease-in-out, transform .45s ease-in-out; }
+.blitz-ball-left { left: 27%; transform: rotate(-50deg); }
+.blitz-ball-right { left: calc(73% - 48px); transform: rotate(160deg); }
+.blitz-category-zone { position: relative; display: flex; min-height: 0; flex: 1; align-items: center; justify-content: center; padding: 0 170px; }
+.blitz-category { text-align: center; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; font-size: 26px; font-weight: 700; }
+.blitz-category h1 { font-size: 64px; line-height: 1.05; max-width: 100%; overflow-wrap: anywhere; }
+.blitz-category-icon { font-size: 52px; line-height: 1; }
+.blitz-rule { font-size: 22px; color: var(--muted-foreground); }
+.blitz-clock { position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
+.blitz-starting { display: flex; gap: 12px; align-items: center; justify-content: center; }
+.blitz-coin { display: inline-block; font-size: 40px; animation: blitz-coin-flip .35s ease-in-out 6; }
+@keyframes blitz-coin-flip { 0%,100% { transform: rotateY(0); } 50% { transform: rotateY(180deg) translateY(-10px); } }
+.blitz-round-point { font-size: 34px; line-height: 1.1; }
+.blitz-category .blitz-review-title { font-size: 30px; }
+.blitz-word-list { font-size: 26px; line-height: 1.25; max-width: 1000px; }
+.blitz-category-zone:has(.blitz-word-list) { padding: 0 25px; }
+.blitz-actions { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; flex-shrink: 0; }
+.blitz-actions > button { padding-inline: 22px; }
+.blitz-finale { display: flex; flex: 1; min-height: 0; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 12px 30px 28px; text-align: center; }
+.blitz-finale h1 { font-size: 60px; line-height: 1.1; max-width: 1100px; overflow-wrap: anywhere; }
+.blitz-final-scores { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; font-size: 28px; font-weight: 700; }
+:root { --blitz-court: oklch(.36 .09 160); --blitz-lines: oklch(.96 .02 150); }
+@media (max-width: 1100px) {
+  .blitz-play { padding: 0 18px 22px; gap: 8px; }
+  .blitz-court { min-height: 142px; flex-basis: 29%; }
+  .blitz-team { padding: 12px 16px; }
+  .blitz-team-name h2 { font-size: 24px; }
+  .blitz-team-name span { font-size: 32px; }
+  .blitz-rally strong { font-size: 25px; }
+  .blitz-rally span { font-size: 16px; }
+  .blitz-stars svg { width: 25px; height: 25px; }
+  .blitz-serving { font-size: 16px; }
+  .blitz-category-zone { padding: 0 145px 0 8px; }
+  .blitz-category h1 { font-size: 56px; }
+  .blitz-category-icon { font-size: 40px; }
+  .blitz-category { gap: 5px; font-size: 22px; }
+  .blitz-rule { font-size: 18px; }
+  .blitz-actions { gap: 8px; }
+  .blitz-actions > button { padding-inline: 12px; font-size: 20px; }
+  .blitz-actions > button svg { width: 22px; height: 22px; }
+  .blitz-actions > button kbd { min-width: 24px; padding-inline: 4px; }
+  .blitz-word-list { font-size: 23px; }
+  .blitz-finale { gap: 14px; }
+  .blitz-finale h1 { font-size: 44px; }
+}
+@media (max-height: 700px) {
+  .blitz-category-icon { font-size: 36px; }
+  .blitz-category { gap: 4px; }
+  .blitz-finale { gap: 12px; }
+  .blitz-round-point { font-size: 28px; }
+}
+@media (max-width: 650px) {
+  .blitz-shell > header { padding: 8px; gap: 6px; }
+  .blitz-shell > header > div:nth-child(2) { padding: 6px; gap: 4px; }
+  .blitz-shell > header > div:nth-child(2) > span { font-size: 18px; }
+  .blitz-shell > header button { width: 40px; height: 44px; }
+  .blitz-shell > header > div:last-child { gap: 5px; }
+  .blitz-status { font-size: 15px; }
+  .blitz-status > span:nth-child(2) { display: none; }
+  .blitz-court { min-height: 162px; }
+  .blitz-team { padding: 8px; }
+  .blitz-team-name { flex-direction: column; gap: 2px; max-width: 80%; }
+  .blitz-team-name h2 { font-size: 18px; }
+  .blitz-team-two .blitz-team-name { align-items: flex-end; }
+  .blitz-rally { top: 75px; padding: 5px 8px; }
+  .blitz-rally strong { font-size: 21px; }
+  .blitz-stars { gap: 2px; }
+  .blitz-stars svg { width: 18px; height: 18px; }
+  .blitz-ball { width: 32px; height: 32px; bottom: 8px; }
+  .blitz-category-zone { padding: 0; flex-direction: column; }
+  .blitz-clock { position: static; transform: none; margin-top: 8px; }
+  .blitz-category h1 { font-size: 56px; }
+  .blitz-actions > button { height: 54px; font-size: 16px; }
+  .blitz-word-list { font-size: 19px; }
+  .blitz-finale h1 { font-size: 34px; }
+}
+@media (prefers-reduced-motion: reduce) { .blitz-ball, .blitz-team { transition: none; } .blitz-coin { animation: none; } }
+[data-calm="true"] .blitz-ball, [data-calm="true"] .blitz-team { transition: none; }
+[data-calm="true"] .blitz-coin { animation: none; }
+
 @layer base {
   * {
     border-color: var(--color-border);

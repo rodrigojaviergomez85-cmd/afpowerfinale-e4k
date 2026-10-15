@@ -66,6 +66,7 @@ function BlitzMatch() {
   }
   function undo() {
     const last = history.current.pop(); if (!last) return;
+    if (last.state.remaining <= 0) last.state = { ...last.state, remaining: options.shotClock };
     current.current = last.state; setState(last.state); app.setSetup({ roster: last.roster }); setPlayer(last.player); sfx.minus();
   }
   function pick() {
@@ -140,7 +141,7 @@ function BlitzMatch() {
           {state.round === 0 && <p className="blitz-rule">Say a word. Don't repeat! Don't stop!</p>}
         </>}
       </div>
-      {state.phase !== "review" && <div className="blitz-clock"><TimerRing remaining={state.remaining} duration={options.shotClock} running={state.phase === "rally" && !state.paused && !help} size={140} /></div>}
+      {state.phase !== "review" && <div className="blitz-clock"><TimerRing remaining={state.remaining} duration={options.shotClock} running={state.phase === "rally" && !state.paused && !help} size={140} dangerSeconds={3} /></div>}
     </section>
     <footer className="blitz-actions">
       <Button variant="success" size="xl" disabled={state.phase !== "rally" || state.paused} onClick={() => act("correct")}><Check /> Correct <Kbd>C</Kbd></Button>

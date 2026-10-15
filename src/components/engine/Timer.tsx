@@ -53,12 +53,12 @@ export function useTimer(duration: number, onEnd?: () => void) {
   return { remaining, running, toggle, reset, setRunning, duration };
 }
 
-export function TimerRing({ remaining, duration, running, size = 200 }: { remaining: number; duration: number; running: boolean; size?: number }) {
+export function TimerRing({ remaining, duration, running, size = 200, dangerSeconds = 5 }: { remaining: number; duration: number; running: boolean; size?: number; dangerSeconds?: number }) {
   const r = 44;
   const c = 2 * Math.PI * r;
   const pct = duration ? remaining / duration : 0;
   const sec = Math.ceil(remaining);
-  const danger = sec <= 5 && remaining > 0;
+  const danger = sec <= dangerSeconds && remaining > 0;
   const done = remaining <= 0;
   return (
     <div
