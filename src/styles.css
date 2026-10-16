@@ -866,6 +866,12 @@
 .demo-play .hidden-board svg, .tug-play .hidden-board svg { max-height: 80cqh; max-width: 100%; }
 .steal-slot { flex: 0 0 36px; min-height: 36px; display: flex; justify-content: center; align-items: center; }
 .steal-notice { max-width: 100%; padding: 4px 18px; font-size: 22px; line-height: 1.2; text-align: center; }
+/* Tug/Demo pictures scale with the card (container units) instead of a fixed
+   160px emoji or zoom, so nothing overflows on small non-fullscreen windows. */
+.tug-play .fit-card, .demo-play .fit-card { container-type: size; }
+.tug-play .fit-card .item-picture, .demo-play .fit-card .item-picture { zoom: 1 !important; max-width: 100%; }
+.tug-play .fit-card .item-picture > div, .demo-play .fit-card .item-picture > div { display: block; line-height: 1; font-size: min(160px, 45cqh, 10cqw) !important; }
+.tug-play .fit-card .item-picture svg, .demo-play .fit-card .item-picture svg { width: min(120px, 36cqh); height: min(120px, 36cqh); max-width: 100%; }
 .demo-play, .tug-play { padding: 0 18px 14px; }
 .demo-play > *, .tug-play > * { flex-shrink: 0; }
 .demo-play .demo-card-row, .tug-play > div:has(> .fit-card) { flex: 1 1 0; min-height: 0; }
