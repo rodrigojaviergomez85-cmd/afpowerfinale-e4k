@@ -100,10 +100,13 @@
   --game-race: oklch(0.58 0.2 285);
   --game-kitten: oklch(0.72 0.18 55);
   --game-detective: oklch(0.8 0.15 82);
-  --det-fur: oklch(0.72 0.1 60);
+  --det-fur: oklch(0.82 0.14 76);
+  --det-muzzle: oklch(0.92 0.07 82);
+  --det-window: oklch(0.78 0.13 227);
+  --det-satchel: oklch(0.6 0.2 27);
   --det-fur-dark: oklch(0.48 0.09 50);
-  --det-coat: oklch(0.62 0.09 75);
-  --det-hat: oklch(0.5 0.07 70);
+  --det-coat: oklch(0.78 0.11 78);
+  --det-hat: oklch(0.68 0.1 73);
   --det-bug: oklch(0.68 0.2 145);
   --det-bug-dark: oklch(0.45 0.15 150);
   --det-rack: oklch(0.74 0.015 270);
@@ -112,12 +115,12 @@
   --det-balloon-a: oklch(0.68 0.21 25);
   --det-balloon-b: oklch(0.88 0.15 95);
   --det-basket: oklch(0.55 0.09 60);
-  --det-house: oklch(0.8 0.06 70);
-  --det-roof: oklch(0.5 0.13 30);
-  --det-street: oklch(0.7 0.03 260);
+  --det-house: oklch(0.94 0.08 92);
+  --det-roof: oklch(0.66 0.22 30);
+  --det-street: oklch(0.86 0.01 260);
   --det-paw: oklch(0.38 0.06 50);
   --det-hint: oklch(0.9 0.18 100);
-  --det-sky: oklch(0.86 0.07 230);
+  --det-sky: oklch(0.8 0.13 228);
   --det-sun: oklch(0.88 0.16 90);
   --game-tug: oklch(0.55 0.1 60);
   --mud: oklch(0.45 0.08 60);
@@ -816,6 +819,17 @@
 .chair-shell .item-prompt { font-size: 56px; }
 
 /* Detective Sniff — reuses bridge-shell/bridge-play layout; mistake card + scene animation below */
+.detective-result-scene { height: 180px; flex-shrink: 0; }
+@media (max-height: 860px) {
+  .detective-result { gap: 12px; padding-bottom: 16px; }
+  .detective-result-scene { height: 130px; }
+  .detective-result h1 { font-size: 42px; line-height: 1.1; }
+  .detective-result > div { font-size: 24px; }
+  .detective-result > div:last-child { flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .detective-ending { gap: 14px; }
+  .detective-ending > svg { height: 240px; }
+  .detective-ending > div:not(:last-child) { font-size: 42px; }
+}
 .detective-play .item-prompt { font-size: 56px !important; }
 .mistake-word { border-radius: 6px; }
 .mistake-word[data-hint="true"] { text-decoration: underline; text-decoration-color: var(--det-hint); text-decoration-thickness: 8px; text-underline-offset: 8px; background: color-mix(in oklch, var(--det-hint) 25%, transparent); }
