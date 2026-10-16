@@ -4,7 +4,7 @@ const INK = "var(--sky-ink)";
 const PAPER = "var(--explorer-teeth)";
 
 /** Upright, expressive detective. Coordinates are anchored at his feet. */
-export function Sniff({ mood }: { mood: SniffMood }) {
+export function Sniff({ mood, holding = false }: { mood: SniffMood; holding?: boolean }) {
   const sad = mood === "sad";
   const happy = mood === "happy" || mood === "dash";
   const jumping = mood === "jump";
@@ -16,8 +16,8 @@ export function Sniff({ mood }: { mood: SniffMood }) {
       <path d="M-23 -93 Q-41 -69 -31 -27 Q-2 -20 27 -28 L22 -90Z" fill="var(--det-coat)" />
       <path d="M-13 -94 L-1 -77 L10 -94 M-1 -77 L2 -27 M-28 -38 L-13 -37" fill="none" strokeWidth="2.5" />
       <circle cx="8" cy="-64" r="3" fill={INK} /><circle cx="9" cy="-46" r="3" fill={INK} />
-      <path d={jumping ? "M19 -81 Q44 -97 58 -119 L65 -116 Q65 -107 53 -92 L31 -66" : "M20 -78 Q38 -61 54 -75 L61 -65 Q43 -43 22 -58"} fill="var(--det-coat)" />
-      <path d={jumping ? "M56 -119 l-1 -10 q3 -5 6 4 l5 -6 q5 -2 3 6 q10 -2 7 5 l-10 10Z" : "M52 -77 q-3 -10 4 -10 l5 6 q10 -8 11 -1 l-9 13Z"} fill="var(--det-fur)" />
+      <path d={holding ? "M20 -78 Q48 -63 78 -66 L80 -53 Q47 -45 22 -58" : jumping ? "M19 -81 Q44 -97 58 -119 L65 -116 Q65 -107 53 -92 L31 -66" : "M20 -78 Q38 -61 54 -75 L61 -65 Q43 -43 22 -58"} fill="var(--det-coat)" />
+      <path d={holding ? "M76 -67 Q83 -76 90 -69 L94 -65 Q101 -65 100 -60 L96 -52 Q84 -47 77 -54Z" : jumping ? "M56 -119 l-1 -10 q3 -5 6 4 l5 -6 q5 -2 3 6 q10 -2 7 5 l-10 10Z" : "M52 -77 q-3 -10 4 -10 l5 6 q10 -8 11 -1 l-9 13Z"} fill="var(--det-fur)" />
       <path d="M-26 -77 Q-43 -63 -41 -48 Q-35 -41 -28 -49 L-28 -57" fill="var(--det-coat)" />
       <path d="M-42 -48 q-2 12 5 13 q6 1 5 -7 q5 9 8 2 l-3 -12" fill="var(--det-fur)" />
       <g transform={`translate(7 ${sad ? -109 : -116}) rotate(${sad ? 12 : mood === "sniff" ? 3 : jumping ? -12 : 0})`}>
@@ -32,7 +32,7 @@ export function Sniff({ mood }: { mood: SniffMood }) {
         <path d="M-6 -60 Q9 -48 9 -29 M-30 -29 Q0 -38 33 -31 L47 -26 Q17 -19 -34 -24Z" fill="var(--det-coat)" />
         <path d="M0 -61 Q-15 -75 -11 -79 Q-1 -80 3 -65 Q7 -80 16 -77 Q21 -70 4 -61" fill="var(--det-fur-dark)" />
       </g>
-      {!sad && !jumping && <g transform={`translate(74 ${mood === "sniff" ? -85 : -95}) rotate(22)`}>
+      {!sad && !jumping && !holding && <g transform={`translate(74 ${mood === "sniff" ? -85 : -95}) rotate(22)`}>
         <path d="M-13 19 L-25 37" stroke="var(--det-basket)" strokeWidth="8" />
         <circle r="24" fill="var(--det-window)" fillOpacity="0.72" strokeWidth="5" />
         <path d="M-13 -10 Q-8 -18 1 -17" fill="none" stroke={PAPER} strokeWidth="4" />
@@ -44,6 +44,7 @@ export function Sniff({ mood }: { mood: SniffMood }) {
 /** A little masked raccoon with a red satchel, smaller than Sniff. */
 export function Racky({ mood }: { mood: RackyMood }) {
   const worried = mood === "nervous" || mood === "caught";
+  const surprised = mood === "caught";
   const waving = mood === "wave";
   return (
     <g stroke={INK} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -68,7 +69,7 @@ export function Racky({ mood }: { mood: RackyMood }) {
         {mood === "giggle" ? <path d="M-19 0 Q-12 -10 -5 0 M5 0 Q12 -10 19 0" stroke={PAPER} fill="none" /> : <>{[-12, 12].map((x) => <g key={x}><ellipse cx={x} cy="-2" rx="8" ry={worried ? 11 : 9} fill={PAPER} stroke="none" /><ellipse cx={x + (worried ? 0 : -1)} cy="-1" rx="4.5" ry="6" fill={INK} stroke="none" /><circle cx={x + 1} cy="-4" r="2" fill={PAPER} stroke="none" /></g>)}</>}
         <ellipse cy="12" rx="12" ry="9" fill={PAPER} stroke="none" />
         <path d="M-5 8 Q0 3 5 8 Q0 15 -5 8Z" fill={INK} strokeWidth="1.5" />
-        <path d={worried ? "M-4 19 Q0 12 4 19Z" : "M-7 15 Q0 25 7 15"} fill={worried ? "var(--det-roof)" : "none"} strokeWidth="2" />
+        {surprised ? <ellipse cy="19" rx="4" ry="5" fill={INK} strokeWidth="2" /> : <path d={worried ? "M-4 19 Q0 12 4 19Z" : "M-7 15 Q0 25 7 15"} fill={worried ? "var(--det-roof)" : "none"} strokeWidth="2" />}
         {mood === "nervous" && <path d="M31 -18 q7 10 0 13 q-7 -3 0 -13" fill="var(--det-window)" strokeWidth="1.5" />}
       </g>
     </g>

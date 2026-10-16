@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Replace Detective Sniff's net capture with a direct hold, keep Racky's size and surprised expression, remove dashed capture lines, and verify capture/results while preserving escape.
+
 - [x] Improve Detective Sniff's characters, town and balloon using the supplied cartoon references; verified cards, answer reveal, capture, escape, both results and rematch at 951×639 and 1366×768 with no runtime errors. Separated the captured raccoon from the balloon and kept all controls visible.
 
 - [x] Review all ten games for overlapping cards, answers, notices and controls at 844×639, 1366×768 and 1920×1080. Fixed Rocket Race's layout/steal track, Bomb's columns/controls, Detective's options/answer space, compact rules and shared responsive picture/card fitting. Verified Q/T/F/H/S and M cards where applicable, Hot Chair and Blitz views, and all three team-game timeout tracks; nine content/Blitz tests pass, no timeout runtime errors.
