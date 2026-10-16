@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Home } from "lucide-react";
+import { Home, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FullscreenButton, MuteButton, useHotkeys } from "./controls";
 import type { GameDef } from "@/lib/games";
