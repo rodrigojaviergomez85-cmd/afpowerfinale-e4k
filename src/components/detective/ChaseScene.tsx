@@ -102,9 +102,9 @@ function Balloon({ state, ropes, tangled, countdown, bug }: { state: BalloonStat
 }
 
 export function ChaseScene({
-  goal, clues, pct, sniffMood, rackyMood, balloon, ropes, tangled = false, countdown, freshPaw = false, sniffX, rackyInBasket, bonk = false, net = false, letters = false, badges = [], className,
+  goal, clues, pct, sniffMood, rackyMood, balloon, ropes, tangled = false, countdown, freshPaw = false, sniffX, rackyInBasket, bonk = false, holding = false, letters = false, badges = [], className,
 }: {
-  goal: number; clues: number; pct: number; sniffMood: SniffMood; rackyMood: RackyMood; balloon: BalloonState; ropes: number; tangled?: boolean; countdown?: number | undefined; freshPaw?: boolean; sniffX?: number | undefined; rackyInBasket: boolean; bonk?: boolean; net?: boolean; letters?: boolean; badges?: string[]; className?: string;
+  goal: number; clues: number; pct: number; sniffMood: SniffMood; rackyMood: RackyMood; balloon: BalloonState; ropes: number; tangled?: boolean; countdown?: number | undefined; freshPaw?: boolean; sniffX?: number | undefined; rackyInBasket: boolean; bonk?: boolean; holding?: boolean; letters?: boolean; badges?: string[]; className?: string;
 }) {
   const paws = Array.from({ length: goal }, (_, i) => START_X + 60 + (i * (END_X - START_X - 60)) / Math.max(1, goal - 1));
   const x = sniffX ?? START_X + ((END_X - START_X - 70) * clues) / Math.max(1, goal);
@@ -136,12 +136,12 @@ export function ChaseScene({
       <path d={`M0 ${STREET_Y + 75} H1200`} stroke={INK} strokeOpacity="0.15" strokeWidth="2" />
       {paws.map((px, i) => <Paw key={i} x={px} y={STREET_Y + 50 + (i % 2 ? 6 : -6)} on={i < clues} fresh={freshPaw && i === clues - 1} />)}
       {/* balloon */}
-      <g transform={`translate(${net ? 1120 : 985} ${STREET_Y + 32})`}>
+      <g transform={`translate(${holding ? 1120 : 985} ${STREET_Y + 32})`}>
         <Balloon state={balloon} ropes={ropes} tangled={tangled} countdown={countdown} bug={rackyInBasket ? rackyMood : undefined} />
       </g>
-      {!rackyInBasket && !net && (
-        <g transform={`translate(1110 ${STREET_Y + 30})`}>
-          <g className="det-bob"><Racky mood={rackyMood} /></g>
+      {!rackyInBasket && (
+        <g data-character="racky" data-captured={holding} style={{ transform: `translate(${holding ? x + 85 : 1110}px, ${STREET_Y + 30}px)`, transition: "transform .7s ease-out" }}>
+          <g className={holding ? undefined : "det-bob"}><Racky mood={rackyMood} /></g>
         </g>
       )}
       {letters && ["B", "Y", "E", "!"].map((l, i) => (
@@ -149,17 +149,10 @@ export function ChaseScene({
       ))}
       {/* Sniff */}
       <g style={{ transform: `translate(${x}px, ${STREET_Y + 30 - (sniffMood === "jump" ? 60 : 0)}px)`, transition: "transform .7s ease-out" }}>
-        <g transform={bonk ? "scale(-1 1)" : undefined} className={bonk ? "det-bonk" : sniffMood === "dash" ? undefined : "det-bob"}>
-          <Sniff mood={sniffMood} />
+        <g transform={bonk ? "scale(-1 1)" : undefined} className={bonk ? "det-bonk" : holding || sniffMood === "dash" ? undefined : "det-bob"}>
+          <Sniff mood={sniffMood} holding={holding} />
         </g>
         {bonk && <text x="-70" y="-110" fontSize="30" fontWeight="900" fill="var(--det-balloon-a)" stroke={INK} strokeWidth="2" paintOrder="stroke" className="font-display">bonk!</text>}
-        {net && (
-          <g transform="translate(70 -50)">
-            <path d="M0 0 L60 -60" stroke="var(--det-paw)" strokeWidth="6" />
-            <ellipse cx="74" cy="-74" rx="30" ry="22" fill="var(--explorer-teeth)" fillOpacity="0.55" stroke={INK} strokeWidth="3" strokeDasharray="5 4" />
-            <g transform="translate(74 -60) scale(0.36)"><Racky mood="caught" /></g>
-          </g>
-        )}
       </g>
       {badges.length > 0 && (
         <g>

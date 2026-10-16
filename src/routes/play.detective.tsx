@@ -310,7 +310,7 @@ function LoseSequence({ step, calm, goal, clues }: { step: number; calm: boolean
 function WinSequence({ step, calm, goal, heroes, close }: { step: number; calm: boolean; goal: number; heroes: string[]; close: boolean }) {
   return (
     <div className={cn("detective-ending relative flex flex-1 flex-col items-center justify-center gap-5 overflow-hidden px-8", step === 4 && !calm && "animate-shake")}>
-      <ChaseScene goal={goal} clues={goal} pct={0.3} freshPaw={step <= 1} balloon={step >= 3 ? "deflate" : "tug"} ropes={step >= 2 ? 0 : 4} rackyInBasket={step < 2} rackyMood={step >= 2 ? "caught" : "nervous"} net={step >= 2} sniffMood={step === 1 ? "dash" : step === 2 ? "jump" : step >= 2 ? "happy" : "sniff"} sniffX={step >= 1 ? 880 : undefined} badges={step >= 4 ? heroes : []} className="h-[320px] max-w-5xl" />
+      <ChaseScene goal={goal} clues={goal} pct={0.3} freshPaw={step <= 1} balloon={step >= 3 ? "deflate" : "tug"} ropes={step >= 2 ? 0 : 4} rackyInBasket={false} rackyMood={step >= 2 ? "caught" : "nervous"} holding={step >= 2} sniffMood={step === 1 ? "dash" : step >= 2 ? "happy" : "sniff"} sniffX={step >= 1 ? 880 : undefined} badges={step >= 4 ? heroes : []} className="h-[320px] max-w-5xl" />
       {step === 0 && <div className="font-display text-6xl font-bold text-stroke">Last clue…</div>}
       {step === 1 && <div className="animate-pop font-display text-6xl font-bold text-stroke">{close ? "PHEW! JUST IN TIME!" : "Run, Sniff, run! 🐾"}</div>}
       {step === 2 && <div className="animate-pop font-display text-6xl font-bold text-stroke">GOTCHA!</div>}
@@ -339,7 +339,7 @@ function EndScreen({ won, progress, goal, secondsLeft, heroes, onRematch }: { wo
   useHotkeys({ Enter: onRematch });
   return (
     <div className="detective-result flex min-h-0 flex-1 flex-col items-center justify-center gap-5 px-8 pb-8 text-center">
-      <ChaseScene goal={goal} clues={progress} pct={won ? 0.6 : 0.1} balloon={won ? "ground" : "lift"} ropes={won ? 4 : 0} rackyInBasket={!won} rackyMood={won ? "caught" : "wave"} sniffMood={won ? "happy" : "sad"} sniffX={won ? 870 : 130} net={won} className="detective-result-scene max-w-4xl" />
+      <ChaseScene goal={goal} clues={progress} pct={won ? 0.6 : 0.1} balloon={won ? "ground" : "lift"} ropes={won ? 4 : 0} rackyInBasket={!won} rackyMood={won ? "caught" : "wave"} sniffMood={won ? "happy" : "sad"} sniffX={won ? 870 : 130} holding={won} className="detective-result-scene max-w-4xl" />
       {won ? (
         <>
           <h1 className="text-7xl text-stroke">{secondsLeft < 10 ? "PHEW! JUST IN TIME!" : "Case closed! 🎉"}</h1>
