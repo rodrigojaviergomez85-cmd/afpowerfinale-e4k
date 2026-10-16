@@ -1,7 +1,7 @@
 # Roadmap
 
-- [ ] Make shared hidden pictures a continuous twelve-tile mosaic with thin seams, exterior-only rounding and stationary independent reveals; verify manual, automatic and answer reveals.
-- [ ] Fit Muddy Tug of War rules without scrolling in windowed and full-screen sizes.
+- [x] Make shared hidden pictures a continuous twelve-tile mosaic with thin seams and exterior-only rounding; manual reveal leaves the image and eleven remaining covers stationary, automatic reveal and full answer reveal verified without runtime errors.
+- [x] Fit Muddy Tug of War rules without scrolling; all rules and Skip visible at 951×639, 1366×768, 1920×1080 and 1280×1800; build OK.
 
 - [x] Improve Kitten Rescue's firefighter, ladder and tree using the supplied cartoon reference; preserved Pepper and all reactions. Verified climbing, slipping, holding, victory and loss at 1206×639 and play at 1366×768, with no runtime errors or page overflow; build OK.
 
