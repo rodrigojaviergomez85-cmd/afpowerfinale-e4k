@@ -48,6 +48,8 @@ function DemoDrill() {
   const [review, setReview] = useState(false);
   const [idx, setIdx] = useState(0);
   const [scores, setScores] = useState([0, 0]);
+  const scoresRef = useRef([0, 0]);
+  scoresRef.current = scores;
   const [, setHistory] = useState<Action[]>([]);
   const [showAnswer, setShowAnswer] = useState(false);
   const [streak, setStreak] = useState({ team: -1, n: 0 });
@@ -92,14 +94,14 @@ function DemoDrill() {
     setPlayer(null);
     opened.current = 0;
     setOpenedN(0);
-    if (idx + 1 >= items.length) return finish(scores);
+    if (idx + 1 >= items.length) return finish(scoresRef.current);
     setIdx((i) => i + 1);
     timer.reset(true);
-  }, [items, idx, scores, finish, timer]);
+  }, [items, idx, finish, timer]);
 
   const award = useCallback(
     (team: number, delta: number) => {
-      setScores((s) => s.map((v, i) => (i === team ? Math.max(0, v + delta) : v)));
+      setScores((s) => { const ns = s.map((v, i) => (i === team ? Math.max(0, v + delta) : v)); scoresRef.current = ns; return ns; });
       setHistory((h) => [...h, { team, delta, playerId: delta > 0 ? player?.id : undefined }]);
       if (delta > 0) {
         sfx.correct();
@@ -118,7 +120,7 @@ function DemoDrill() {
     setHistory((h) => {
       const last = h[h.length - 1];
       if (!last) return h;
-      setScores((s) => s.map((v, i) => (i === last.team ? Math.max(0, v - last.delta) : v)));
+      setScores((s) => { const ns = s.map((v, i) => (i === last.team ? Math.max(0, v - last.delta) : v)); scoresRef.current = ns; return ns; });
       if (last.playerId) app.bumpPlayer(last.playerId, "points", -1);
       setStreak({ team: -1, n: 0 });
       sfx.minus();
@@ -191,7 +193,7 @@ function DemoDrill() {
               <Button variant="team2" size="xl" onClick={() => correctFor(1)}><Plus /> Team 2 <Kbd>2</Kbd></Button>
               <Button variant="team2" size="iconLg" onClick={() => award(1, -1)} aria-label="Minus team 2"><Minus /></Button>
               <Button variant="panel" size="xl" onClick={undo}><Undo2 /> Undo <Kbd>Z</Kbd></Button>
-              <Button variant="danger" size="xl" onClick={() => finish(scores)}><Flag /> End</Button>
+              <Button variant="danger" size="xl" onClick={() => finish(scoresRef.current)}><Flag /> End</Button>
             </div>
           </>
         )}
