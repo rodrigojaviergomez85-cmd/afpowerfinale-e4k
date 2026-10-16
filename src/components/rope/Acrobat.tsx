@@ -1,23 +1,55 @@
 export type AcrobatMood = "calm" | "worried" | "panic" | "uhoh" | "happy" | "tada" | "soaked";
 
-/** Vector puppet: the face and pose are live parts of the scene, not a cutout. */
+/** Vector puppet: a geometric harlequin — jester hat with bells, diamond suit, two-tone limbs. */
 export function Acrobat({ mood }: { mood: AcrobatMood }) {
   const joyful = mood === "happy" || mood === "tada";
   const scared = mood === "panic" || mood === "uhoh";
   return (
     <g data-mood={mood} stroke="var(--circus-ink)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M66 38 Q107 21 97 70 Q92 92 76 83 Q97 69 76 59" fill="var(--acrobat-hair)" />
-      <path d="M46 109 L43 143 L34 169 L49 169 L59 142 L61 115 M65 112 L74 141 L77 169 L92 169 L88 138 L78 107" fill="var(--circus-teal)" />
-      <path d="M34 168 Q24 180 50 177 L50 169 M77 168 Q101 173 94 179 H77Z" fill="var(--gold)" />
-      <path d={joyful ? "M47 80 Q31 69 25 43 M75 80 Q92 68 98 42" : scared ? "M47 80 Q29 68 18 60 M75 80 Q92 70 103 55" : "M47 80 Q34 97 16 95 M75 80 Q92 94 107 87"} stroke="var(--acrobat-skin)" strokeWidth="10" fill="none" />
+      {/* legs: left yellow, right teal, curled jester shoes */}
+      <path d="M48 108 L44 140 L36 168 L51 168 L58 141 L60 114" fill="var(--gold)" />
+      <path d="M64 111 L73 140 L76 168 L91 168 L87 137 L77 106" fill="var(--circus-teal)" />
+      <path d="M36 167 Q26 179 52 176 L52 168 M76 167 Q100 172 93 178 H76Z" fill="var(--circus-red)" />
+      {/* arms: left sleeve yellow, right sleeve teal */}
+      {joyful ? (
+        <g fill="none" strokeWidth="10">
+          <path d="M47 80 Q31 69 25 43" stroke="var(--gold)" />
+          <path d="M75 80 Q92 68 98 42" stroke="var(--circus-teal)" />
+        </g>
+      ) : scared ? (
+        <g fill="none" strokeWidth="10">
+          <path d="M47 80 Q29 68 18 60" stroke="var(--gold)" />
+          <path d="M75 80 Q92 70 103 55" stroke="var(--circus-teal)" />
+        </g>
+      ) : (
+        <g fill="none" strokeWidth="10">
+          <path d="M47 80 Q34 97 16 95" stroke="var(--gold)" />
+          <path d="M75 80 Q92 94 107 87" stroke="var(--circus-teal)" />
+        </g>
+      )}
+      {/* hands */}
+      <circle cx={joyful ? 25 : scared ? 18 : 16} cy={joyful ? 43 : scared ? 60 : 95} r="6" fill="var(--acrobat-skin)" />
+      <circle cx={joyful ? 98 : scared ? 103 : 107} cy={joyful ? 42 : scared ? 55 : 87} r="6" fill="var(--acrobat-skin)" />
+      {/* torso: teal with yellow diamonds + collar ruffle */}
       <path d="M47 76 Q61 70 76 76 L81 111 Q66 122 42 111Z" fill="var(--circus-teal)" />
-      <path d="M48 103 Q61 109 78 102" stroke="var(--gold)" strokeWidth="5" fill="none" />
-      <path d="M61 81 L64 89 L73 89 L66 95 L68 103 L61 98 L54 103 L56 95 L49 89 L58 89Z" fill="var(--gold)" strokeWidth="1" />
+      <g fill="var(--gold)" strokeWidth="1.5">
+        <path d="M61 82 L67 90 L61 98 L55 90Z" />
+        <path d="M52 96 L57 103 L52 110 L47 103Z" />
+        <path d="M70 96 L75 103 L70 110 L65 103Z" />
+      </g>
+      <path d="M47 76 Q54 84 61 78 Q68 84 76 76 L74 70 Q61 64 49 70Z" fill="var(--gold)" />
+      {/* neck + head */}
       <path d="M55 68 V78 Q61 83 69 76 V66" fill="var(--acrobat-skin)" />
       <ellipse cx="61" cy="46" rx="29" ry="30" fill="var(--acrobat-skin)" />
-      <path d="M32 47 Q22 17 48 12 Q79 1 91 32 L89 49 Q80 34 68 26 Q58 42 32 47Z" fill="var(--acrobat-hair)" />
-      <path d="M40 25 Q58 13 75 25" fill="none" stroke="var(--gold)" strokeWidth="4" />
-      <circle cx="83" cy="18" r="7" fill="var(--circus-red)" />
+      {/* hair */}
+      <path d="M33 44 Q34 22 61 20 Q88 22 89 44 Q80 30 61 30 Q42 30 33 44Z" fill="var(--acrobat-hair)" />
+      {/* jester hat: two prongs with bells */}
+      <path d="M38 30 Q20 22 14 2 Q34 6 44 20Z" fill="var(--circus-teal)" />
+      <path d="M84 30 Q102 22 108 2 Q88 6 78 20Z" fill="var(--gold)" />
+      <circle cx="13" cy="2" r="6" fill="var(--gold)" />
+      <circle cx="109" cy="2" r="6" fill="var(--circus-teal)" />
+      <path d="M36 32 Q61 18 86 32 L84 24 Q61 12 38 24Z" fill="var(--circus-red)" />
+      {/* face */}
       <ellipse cx="41" cy="56" rx="5" ry="3" fill="var(--acrobat-blush)" stroke="none" />
       <ellipse cx="80" cy="56" rx="5" ry="3" fill="var(--acrobat-blush)" stroke="none" />
       {joyful ? <path d="M43 47 Q48 40 53 47 M68 47 Q73 40 78 47" fill="none" strokeWidth="3" /> : <g>
