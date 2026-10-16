@@ -45,3 +45,5 @@
 - [x] Hot Chair: playable 2-team timed rounds, card modes, final reveal, tiebreaker
 - [x] Detective Sniff: M mistake cards (separate mistakes list per day), chase scene, hint, Super Sniff, win/lose, setup presets. Verified 844×639 and 1366×768, no scroll.
 - [x] Kitten Rescue: make the on-screen branch countdown (last 10 s) audible with escalating ticks/beeps; verified build and playthrough.
+
+- [x] Reorder the game library: Demo Drill, Beat the Bomb, Circus Splash, Rocket Race, Kitten Rescue, Muddy Tug of War, Bridge Builder, Detective Sniff, Vocab Blitz, Hot Chair last; verified in the hub at 791x639, build OK.
