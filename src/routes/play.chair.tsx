@@ -258,16 +258,10 @@ function ChairKeys({ keys, enabled }: { keys: Record<string, () => void>; enable
 /** Drawn glowing chair in the active team's color with flames that grow with the score. */
 function ChairArt({ flames, speed }: { flames: number; speed: number }) {
   const spots = [100, 60, 140, 30, 170, 80, 120].slice(0, Math.max(3, flames + 2));
-  const scale = 0.7 + flames * 0.12;
+  const scale = 0.6 + flames * 0.2;
   return (
     <svg viewBox="0 0 200 190" className="chair-glow w-full max-w-64 flex-1 min-h-0" role="img" aria-label={`Hot chair with ${flames} flames`}>
       <ellipse cx="100" cy="178" rx="85" ry="10" fill="var(--foreground)" opacity=".15" />
-      {spots.map((x, i) => (
-        <g key={i} style={{ ["--flame-speed" as string]: `${speed + (i % 3) * 0.07}s` }}>
-          <g transform={`translate(${x} 178) scale(${scale * (i < 3 ? 1 : 0.8)})`}><path className="chair-flame" d="M0 0 C-22 -6 -20 -30 -6 -46 C-8 -30 4 -30 2 -50 C18 -36 24 -10 0 0Z" fill="var(--team1)" stroke="var(--foreground)" strokeWidth="3" strokeLinejoin="round" style={{ animationDelay: `${i * 0.09}s` }} /></g>
-          <g transform={`translate(${x} 176) scale(${scale * 0.5 * (i < 3 ? 1 : 0.8)})`}><path className="chair-flame" d="M0 0 C-18 -6 -14 -28 -2 -40 C2 -26 18 -18 0 0Z" fill="var(--game-demo)" style={{ animationDelay: `${i * 0.11}s` }} /></g>
-        </g>
-      ))}
       <g stroke="var(--foreground)" strokeWidth="5" strokeLinejoin="round" strokeLinecap="round">
         <rect x="58" y="125" width="10" height="45" rx="4" fill="var(--chair-color)" />
         <rect x="132" y="125" width="10" height="45" rx="4" fill="var(--chair-color)" />
@@ -275,6 +269,12 @@ function ChairArt({ flames, speed }: { flames: number; speed: number }) {
         <rect x="70" y="34" width="60" height="64" rx="14" fill="var(--card)" opacity=".35" />
         <rect x="44" y="104" width="112" height="28" rx="12" fill="var(--chair-color)" />
       </g>
+      {spots.map((x, i) => (
+        <g key={i} style={{ ["--flame-speed" as string]: `${speed + (i % 3) * 0.07}s` }}>
+          <g transform={`translate(${x} 182) scale(${scale * (i < 3 ? 1 : 0.8)})`}><path className="chair-flame" d="M0 0 C-22 -6 -20 -30 -6 -46 C-8 -30 4 -30 2 -50 C18 -36 24 -10 0 0Z" fill="var(--team1)" stroke="var(--foreground)" strokeWidth="3" strokeLinejoin="round" style={{ animationDelay: `${i * 0.09}s` }} /></g>
+          <g transform={`translate(${x} 180) scale(${scale * 0.5 * (i < 3 ? 1 : 0.8)})`}><path className="chair-flame" d="M0 0 C-18 -6 -14 -28 -2 -40 C2 -26 18 -18 0 0Z" fill="var(--game-demo)" style={{ animationDelay: `${i * 0.11}s` }} /></g>
+        </g>
+      ))}
     </svg>
   );
 }
