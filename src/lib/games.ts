@@ -46,7 +46,7 @@ export const GAMES: GameDef[] = [
     id: "tightrope",
     name: "Circus Splash",
     icon: "🎪",
-    tagline: "Raise Luna’s platform to safety — don't let her splash!",
+    tagline: "Raise Tito’s platform to safety — don't let him splash!",
     mode: "Whole class",
     minutes: "3 min",
     accent: "bg-game-rope",
