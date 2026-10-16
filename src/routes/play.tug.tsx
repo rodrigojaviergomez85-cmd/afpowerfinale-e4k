@@ -119,12 +119,13 @@ function TugGame({ help, openHelp, onRematch: _onRematch }: { help: boolean; ope
   const next = useCallback(() => {
     const p = posRef.current;
     setShowAnswer(false); setTimeUp(false); scored.current = false; opened.current = 0; setPlayer(null);
-    if (p[0]! >= pulls) return endRound(0);
-    if (p[1]! >= pulls) return endRound(1);
     const last = idx + 1 >= items.length;
+    // Equal turns: if Team 1 reaches the goal, Team 2 still gets its matching turn.
+    const reached = p[0]! >= pulls || p[1]! >= pulls;
+    if (reached && activeTeam === 1) return endRound(p[0] === p[1] ? null : p[0]! > p[1]! ? 0 : 1);
     // Cards are out: the team with the ribbon on its side wins; centered ribbon = sudden death,
     // up to 3 cards per team, then it's a tie.
-    if (suddenDeath ? activeTeam === 1 : last) {
+    if (!reached && (suddenDeath ? activeTeam === 1 : last)) {
       if (p[0] !== p[1]) return endRound(p[0]! > p[1]! ? 0 : 1);
       if (suddenDeath && sdRounds >= 2) return endRound(null);
       setSuddenDeath(true);

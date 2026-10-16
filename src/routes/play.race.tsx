@@ -117,10 +117,12 @@ function RaceGame({ planet, help, openHelp }: { planet: Planet; help: boolean; o
   const next = () => {
     const p = posRef.current;
     setShowAnswer(false); setTimeUp(false); scored.current = false; opened.current = 0; setPlayer(null);
-    if (p[0]! >= stops || p[1]! >= stops) return land(p);
     const last = idx + 1 >= items.length;
+    // Equal turns: if Team 1 reaches the goal, Team 2 still gets its matching turn.
+    const reached = p[0]! >= stops || p[1]! >= stops;
+    if (reached && activeTeam === 1) return land(p);
     // After the cards run out (or each sudden-death round), the rocket ahead wins; a tie = sudden death.
-    if (suddenDeath ? activeTeam === 1 : last) {
+    if (!reached && (suddenDeath ? activeTeam === 1 : last)) {
       if (p[0] !== p[1]) return land(p);
       setSuddenDeath(true);
     }
