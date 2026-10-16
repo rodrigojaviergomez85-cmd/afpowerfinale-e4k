@@ -214,7 +214,7 @@ function TugGame({ help, openHelp, onRematch: _onRematch }: { help: boolean; ope
         {powerPop > 0 && <span key={powerPop} className="animate-rise pointer-events-none absolute left-1/2 top-6 -translate-x-1/2 rotate-[-6deg] rounded-3xl px-6 font-display text-7xl font-bold text-stroke chunky" style={{ background: "var(--gold)", color: "var(--shape-outline)" }}>POWER PULL! 💪</span>}
       </div>
 
-      <div className="flex items-center justify-between gap-4">
+      <div className="tug-status flex items-center justify-between gap-4">
         <div className={cn("flex items-center gap-3 rounded-full px-6 py-2 text-3xl font-bold uppercase text-primary-foreground chunky", activeTeam === 0 ? "bg-team1" : "bg-team2")}>
           {t.icon} {t.name}’s turn
           {player && <span className="rounded-full bg-card px-3 normal-case text-foreground">🎤 {player.name}</span>}
@@ -233,12 +233,12 @@ function TugGame({ help, openHelp, onRematch: _onRematch }: { help: boolean; ope
       {item ? (
         <div key={item.id + idx} className="relative flex min-h-0 flex-1">
           <ItemCard item={item} showAnswer={showAnswer} compact autoReveal paused={!timer.running || help} onReveal={(n) => { opened.current = n; }} />
-          {timeUp && !showAnswer && <div className="animate-pop absolute bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-destructive px-8 py-2 text-3xl font-bold text-primary-foreground">⏰ Time's up! {teams[1 - activeTeam]!.icon} {teams[1 - activeTeam]!.name} can steal — press {2 - activeTeam}</div>}
         </div>
       ) : (
         <div className="panel flex flex-1 items-center justify-center p-8 text-4xl font-bold">No items for this day.</div>
       )}
 
+      <div className="steal-slot" role="status">{timeUp && !showAnswer && <div className="steal-notice rounded-full bg-destructive font-bold text-primary-foreground">⏰ Time's up! {teams[1 - activeTeam]?.icon} {teams[1 - activeTeam]?.name} can steal — press {2 - activeTeam}</div>}</div>
       <div className="tug-controls flex flex-wrap items-center justify-center gap-3">
         <Button variant="success" size="huge" onClick={correct}><Check /> Correct <Kbd>C</Kbd></Button>
         <Button variant="panel" size="huge" onClick={skip}><SkipForward /> Skip <Kbd>→</Kbd></Button>
