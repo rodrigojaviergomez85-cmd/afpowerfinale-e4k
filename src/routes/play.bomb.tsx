@@ -247,14 +247,14 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   const canPass = !!player && !passed.has(player.id) && roster.length > 1;
 
   return (
-    <div className="fit-gap relative flex min-h-0 flex-1 flex-col gap-4 px-8 pb-6">
+    <div className="bomb-play fit-gap relative flex min-h-0 flex-1 flex-col gap-4 px-8 pb-6">
       {/* top fuse bar */}
       <div className="relative h-8 overflow-hidden rounded-full border-4 border-border bg-card">
         <div className={cn("h-full transition-[width] duration-100 ease-linear", pct > 0.5 ? "bg-success" : pct > 0.25 ? "bg-primary" : "bg-destructive")} style={{ width: `${pct * 100}%` }} />
         <span className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl" style={{ left: `${pct * 100}%` }}>{frozen ? "❄️" : "🔥"}</span>
       </div>
 
-      <div className="grid min-h-0 flex-1 grid-cols-[minmax(320px,0.9fr)_1.4fr] items-center gap-6">
+      <div className="bomb-columns grid min-h-0 flex-1 grid-cols-[minmax(320px,0.9fr)_1.4fr] items-center gap-6">
         <div className="flex flex-col items-center gap-4">
           <div className="fit-bomb relative grid h-[340px] w-full place-items-center">
             <div className="relative transition-transform duration-500" style={{ height: 260, width: 240, transform: `scale(${scale})`, transformOrigin: "center bottom" }}>
@@ -285,7 +285,7 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className="bomb-controls flex flex-wrap items-center justify-center gap-3">
         <Button variant="success" size="huge" onClick={correct}><Check /> Correct <Kbd>C</Kbd></Button>
         <Button variant="danger" size="huge" onClick={wrong}><X /> Wrong / Skip <Kbd>X</Kbd></Button>
         <Button variant="game" size="xl" onClick={showAnswer}><Eye /> Answer <Kbd>A</Kbd></Button>

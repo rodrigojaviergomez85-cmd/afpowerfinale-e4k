@@ -112,8 +112,37 @@ function FillBlank({ item, showAnswer }: { item: ContentItem; showAnswer: boolea
 }
 
 export function ItemCard({ item, showAnswer, compact, onReveal, autoReveal, paused, hint = false }: { item: ContentItem; showAnswer: boolean; compact?: boolean; onReveal?: (opened: number) => void; autoReveal?: boolean; paused?: boolean; hint?: boolean }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+    let frame = 0;
+    const fit = () => {
+      cancelAnimationFrame(frame);
+      card.style.setProperty("--card-content-scale", "1");
+      let scale = 1;
+      const measure = () => {
+        const bounds = card.getBoundingClientRect();
+        const children = Array.from(card.children).filter((child) => child.getBoundingClientRect().height > 0);
+        const overflow = children.some((child) => {
+          const rect = child.getBoundingClientRect();
+          return rect.top < bounds.top + 4 || rect.bottom > bounds.bottom - 4 || rect.left < bounds.left + 4 || rect.right > bounds.right - 4;
+        });
+        if (overflow && scale > .4) {
+          scale = Math.max(.4, scale * .92);
+          card.style.setProperty("--card-content-scale", String(scale));
+          frame = requestAnimationFrame(measure);
+        }
+      };
+      frame = requestAnimationFrame(measure);
+    };
+    const observer = new ResizeObserver(fit);
+    observer.observe(card);
+    fit();
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); };
+  }, [item, showAnswer, hint]);
   return (
-    <div data-kind={item.kind} className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
+    <div ref={cardRef} data-kind={item.kind} className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
       <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground">{autoReveal && item.kind === "H" ? "What's hidden? 🔍 Say the word!" : banner(item)}</div>
       {item.hidden ? <HiddenPicture item={item} showAll={showAnswer} onReveal={onReveal} auto={autoReveal} paused={paused} /> : <div className="item-picture pic-wrap"><ItemPicture item={item} /></div>}
       {!item.hidden && <div className="item-prompt font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">

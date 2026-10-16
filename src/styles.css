@@ -844,11 +844,19 @@
 
 /* Card content and steal messages occupy separate, stable tracks. */
 .fit-card { min-width: 0; }
+.fit-card > * { zoom: var(--card-content-scale, 1); }
 .fit-card .item-prompt { max-width: 100%; overflow-wrap: anywhere; }
 .fit-card .item-answer:empty, .fit-card .item-picture:empty { display: none; }
 .fit-card[data-kind="H"] .item-prompt { display: none; }
 .fit-card[data-kind="H"] .hidden-picture { grid-column: 1 / -1; grid-row: auto; max-width: 100%; }
 .fit-card[data-kind="H"] .hidden-board { max-width: 100%; }
+.fit-card[data-kind="H"] { container-type: size; }
+.fit-card[data-kind="H"] .hidden-board { max-height: max(72px, calc(100cqh - 110px)); }
+.fit-card[data-kind="H"] .item-answer { min-height: 0 !important; transform: none; }
+.hidden-board { container-type: size; }
+.fit-card .hidden-board .pic-wrap { zoom: 1 !important; }
+.hidden-board .pic-wrap > div { font-size: 80cqh !important; max-width: 100%; }
+.hidden-board svg { max-height: 80cqh; max-width: 100%; }
 .demo-play .fit-card[data-kind="H"], .tug-play .fit-card[data-kind="H"] { container-type: size; }
 .demo-play .fit-card[data-kind="H"] .hidden-board, .tug-play .fit-card[data-kind="H"] .hidden-board { max-height: max(54px, calc(100cqh - 108px)); }
 .demo-play .fit-card[data-kind="H"] .item-answer, .tug-play .fit-card[data-kind="H"] .item-answer { min-height: 32px !important; display: block; }
@@ -892,4 +900,51 @@
   .demo-play .fit-timer { zoom: .6; }
   .demo-play .hidden-board { height: 120px !important; width: 400px !important; }
   .steal-notice { font-size: 18px; }
+}
+
+/* Keep Rocket Race's status, cards and steal message in separate tracks. */
+.race-play { padding: 0 18px 14px; }
+.race-play > * { flex-shrink: 0; }
+.race-play > div:has(> .fit-card) { flex: 1 1 0; min-height: 0; }
+.race-play .fit-card, .bomb-play .fit-card { display: grid; grid-template-columns: minmax(0, 1fr); align-content: center; justify-items: center; gap: 8px !important; padding: 10px 16px !important; min-height: 0 !important; }
+.race-play .item-prompt, .bomb-play .item-prompt { font-size: 48px !important; line-height: 1.05; }
+.race-play .banner-pill, .bomb-play .banner-pill { font-size: 20px !important; max-width: 100%; padding: 4px 12px !important; }
+.race-play .item-answer, .bomb-play .item-answer { font-size: 26px; min-height: 0 !important; line-height: 1.1; transform: none; }
+.race-play .item-options, .bomb-play .item-options { gap: 8px; }
+.race-play .item-options button, .bomb-play .item-options button { height: auto; font-size: 26px; padding: 6px 14px; }
+.race-play .hidden-picture > div:last-child { font-size: 16px; }
+.race-status > div { min-width: 0; font-size: 20px; }
+.race-status > div:last-child { flex-shrink: 0; }
+.race-controls button, .bomb-controls button { height: 52px; font-size: 22px; padding-inline: 14px; }
+.race-controls button svg, .bomb-controls button svg { width: 24px; height: 24px; }
+.race-controls kbd, .bomb-controls kbd { font-size: 14px; }
+@media (max-width: 1100px), (max-height: 700px) {
+  .race-play .fit-track { height: 130px !important; }
+  .race-play .fit-timer { zoom: .6; }
+  .race-status > div { font-size: 17px; padding: 5px 10px; gap: 4px; }
+  .race-status > div:last-child { padding: 0; }
+  .race-status button { height: 48px; padding-inline: 12px; }
+  .race-controls, .bomb-controls { gap: 8px; }
+  .race-controls button, .bomb-controls button { height: 46px; font-size: 18px; padding-inline: 10px; gap: 5px; }
+  .race-controls kbd, .bomb-controls kbd { font-size: 12px; }
+  .bomb-play { padding: 0 18px 14px; }
+  .bomb-columns { grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); gap: 16px; }
+  .bomb-columns > div:first-child { min-width: 0; overflow: hidden; }
+  .bomb-columns > div:last-child > div:first-child > div:first-child { font-size: 22px; min-height: 0; padding: 6px 12px; }
+  .detective-play .fit-scene { height: 150px !important; }
+  .detective-play .item-prompt { font-size: 48px !important; }
+  .detective-play .item-options > div { font-size: 26px; padding: 5px 14px; }
+  .detective-play .bridge-controls > button { height: 48px; font-size: 18px; padding-inline: 9px; gap: 5px; }
+}
+@media (max-height: 860px) {
+  .fit-card .item-picture > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; max-width: 100%; }
+  .fit-card .item-picture svg { width: 72px; height: 72px; max-width: 100%; }
+  .bridge-play .item-picture, .demo-play .item-picture, .tug-play .item-picture { zoom: 1 !important; }
+  .game-rules { min-height: 0; gap: 12px; padding: 12px 24px; }
+  .game-rules > div:first-child { font-size: 64px; }
+  .game-rules > h1 { font-size: 44px; line-height: 1.05; }
+  .game-rules > .grid { gap: 8px; }
+  .game-rules .panel { padding: 8px 16px; gap: 14px; }
+  .game-rules .panel > span:first-child { font-size: 34px; }
+  .game-rules .panel > span:last-child { font-size: 26px; line-height: 1.15; }
 }

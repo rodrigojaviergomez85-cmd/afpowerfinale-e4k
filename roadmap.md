@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Review all ten games for overlapping cards, answers, notices and controls at preview and desktop sizes; correct and verify issues.
+
 - [x] Correct overlapping cards/timeout messages in Demo Drill and Muddy Tug of War; hidden/revealed cards and timeout verified at 844×639, 1366×768 and 1920×1080.
 - [x] Restrict hidden-picture cards to natural vocabulary entries and omit unrelated earlier-week hidden cards; nine content/Blitz tests pass. Two pre-existing routing harness tests still fail (document shell rendered into a div); unrelated to gameplay changes.
 
