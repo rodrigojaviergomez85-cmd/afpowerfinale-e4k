@@ -45,8 +45,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: Good [mornin]. || mornin / mornign / morning* || Good morning.",
                     "M || Corrige: Good [nigth]. || nitgh / night* / nigth || Good night."
-                  ]. || mornin / mornign / morning* || Good morning.",
-                    "M || Good [nigth]. || nitgh / night* / nigth || Good night."
                   ]
                 },
                 {
@@ -74,8 +72,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: My name [are] Mia. || am / is* / are || My name is Mia.",
                     "M || Corrige: She [are] happy. || is* / are / am || She is happy."
-                  ] Mia. || am / is* / are || My name is Mia.",
-                    "M || She [are] happy. || is* / are / am || She is happy."
                   ]
                 },
                 {
@@ -103,8 +99,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: My name [are] Mia. || is* / are / am || My name is Mia.",
                     "M || Corrige: I [is] from Colombia. || is / are / am* || I am from Colombia."
-                  ] Mia. || is* / are / am || My name is Mia.",
-                    "M || I [is] from Colombia. || is / are / am* || I am from Colombia."
                   ]
                 },
                 {
@@ -132,8 +126,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: The letter after E is [G]. || G / H / F* || The letter after E is F.",
                     "M || Corrige: The letter after G is [I]. || J / H* / I || The letter after G is H."
-                  ]. || G / H / F* || The letter after E is F.",
-                    "M || The letter after G is [I]. || J / H* / I || The letter after G is H."
                   ]
                 },
                 {
@@ -161,8 +153,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: The letter after Q is [S]. || T / R* / S || The letter after Q is R.",
                     "M || Corrige: The letter after S is [U]. || T* / U / V || The letter after S is T."
-                  ]. || T / R* / S || The letter after Q is R.",
-                    "M || The letter after S is [U]. || T* / U / V || The letter after S is T."
                   ]
                 }
               ]
@@ -195,8 +185,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: It [am] green. || am / are / is* || It is green.",
                     "M || Corrige: It [am] yellow. || are / is* / am || It is yellow."
-                  ] green. || am / are / is* || It is green.",
-                    "M || It [am] yellow. || are / is* / am || It is yellow."
                   ]
                 },
                 {
@@ -224,8 +212,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: My favorite food [am] French fries. || are / is* / am || My favorite food is French fries.",
                     "M || Corrige: My favorite food [am] hamburger. || is* / am / are || My favorite food is hamburger."
-                  ] French fries. || are / is* / am || My favorite food is French fries.",
-                    "M || My favorite food [am] hamburger. || is* / am / are || My favorite food is hamburger."
                   ]
                 },
                 {
@@ -253,8 +239,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: My favorite fruit [am] pineapple. || is* / am / are || My favorite fruit is pineapple.",
                     "M || Corrige: My favorite fruit [am] orange. || am / are / is* || My favorite fruit is orange."
-                  ] pineapple. || is* / am / are || My favorite fruit is pineapple.",
-                    "M || My favorite fruit [am] orange. || am / are / is* || My favorite fruit is orange."
                   ]
                 },
                 {
@@ -282,8 +266,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: It [am] red. || am / are / is* || It is red.",
                     "M || Corrige: My favorite color [am] red. || are / is* / am || My favorite color is red."
-                  ] red. || am / are / is* || It is red.",
-                    "M || My favorite color [am] red. || are / is* / am || My favorite color is red."
                   ]
                 },
                 {
@@ -311,8 +293,6 @@ export const COURSES: CourseDef[] = [
                   "mistakes": [
                     "M || Corrige: It [am] orange. || are / is* / am || It is orange.",
                     "M || Corrige: My favorite color [am] orange. || is* / am / are || My favorite color is orange."
-                  ] orange. || are / is* / am || It is orange.",
-                    "M || My favorite color [am] orange. || is* / am / are || My favorite color is orange."
                   ]
                 }
               ]
