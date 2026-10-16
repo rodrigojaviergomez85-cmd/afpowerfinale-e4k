@@ -9,7 +9,7 @@ import { useHotkeys } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
 import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
-import { Tightrope, type Crowd, type LunaMood } from "@/components/rope/Tightrope";
+import { Tightrope, type Crowd, type PippoMood } from "@/components/rope/Tightrope";
 import { getGame, GAMES } from "@/lib/games";
 import { drawItems, type ContentItem } from "@/lib/content";
 import { BOMB_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
@@ -21,9 +21,9 @@ export const Route = createFileRoute("/play/rope")({
   head: () => ({
     meta: [
       { title: "Circus Splash — AF Power Finale" },
-      { name: "description", content: "Whole-class circus challenge: raise Luna’s platform to safety before time runs out!" },
+      { name: "description", content: "Whole-class circus challenge: raise Pippo’s platform to safety before time runs out!" },
       { property: "og:title", content: "Circus Splash — AF Power Finale" },
-      { property: "og:description", content: "Whole-class circus challenge: raise Luna’s platform to safety before time runs out!" },
+      { property: "og:description", content: "Whole-class circus challenge: raise Pippo’s platform to safety before time runs out!" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -42,7 +42,7 @@ function TightropeRescue() {
   const base = getGame("tightrope");
   if (!base) throw new Error("Circus game is unavailable");
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Luna to safety! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Pippo to safety! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
@@ -231,7 +231,7 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
   if (phase === "win") return <WinSequence step={step} calm={calm} goal={goal} heroes={heroes} close={remaining < 10} />;
 
   const danger = Math.ceil(goal / 2) + altitude <= 2;
-  const mood: LunaMood = frozen ? "calm" : danger || pct <= 0.25 ? "panic" : pct <= 0.5 ? "worried" : "calm";
+  const mood: PippoMood = frozen ? "calm" : danger || pct <= 0.25 ? "panic" : pct <= 0.5 ? "worried" : "calm";
   const crowd: Crowd = now < crowdUntil.until ? crowdUntil.c : pct < 0.25 && !frozen ? "gasp" : "calm";
   const showAns = now < answerUntil;
   const canPass = !!player && !passed.has(player.id) && roster.length > 1;
@@ -305,7 +305,7 @@ function LoseSequence({ step, calm, goal, steps }: { step: number; calm: boolean
       <div className="circus-ending-caption" aria-live="polite">
         <h1 className="circus-finale-title">{step === 0 ? "Hold on!" : "SPLAAASH!"}</h1>
         {step >= 2 && <div className="circus-so-close">So close!</div>}
-        <p>{step >= 2 ? "Let's rescue Luna next time!" : ""}</p>
+        <p>{step >= 2 ? "Let's rescue Pippo next time!" : ""}</p>
       </div>
       <div className="circus-skip">Skip <Kbd>Space</Kbd></div>
     </div>
@@ -318,7 +318,7 @@ function WinSequence({ step, calm, goal, heroes, close }: { step: number; calm: 
       <Tightrope pct={1} goal={goal} steps={step >= 1 ? goal : goal - 1} mood={step >= 2 ? "tada" : "happy"} landing={step >= 2} celebrating={step >= 2} stars={step >= 3 ? heroes : []} calm={calm} className="rope-ending-scene" />
       <div className="circus-ending-caption" aria-live="polite">
         <h1 className="circus-finale-title">{step < 2 ? "One final leap…" : <>TA-DAAA! <span className="circus-tadaa-emoji">🙆‍♀️</span></>}</h1>
-        <p>{step >= 2 ? close ? "Phew! Just in time!" : "Luna is safe, thanks to you!" : ""}</p>
+        <p>{step >= 2 ? close ? "Phew! Just in time!" : "Pippo is safe, thanks to you!" : ""}</p>
       </div>
       {step >= 2 && <div className="circus-finale-banner circus-rescue-overlay">RESCUE COMPLETE!</div>}
       <div className="circus-skip">Skip <Kbd>Space</Kbd></div>
