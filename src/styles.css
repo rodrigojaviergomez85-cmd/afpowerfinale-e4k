@@ -383,6 +383,11 @@
 .float-msg {
   display: inline-block;
   white-space: nowrap;
+  text-shadow:
+    -2px -2px 0 oklch(0 0 0 / 0.9), 2px -2px 0 oklch(0 0 0 / 0.9),
+    -2px 2px 0 oklch(0 0 0 / 0.9), 2px 2px 0 oklch(0 0 0 / 0.9),
+    0 -2px 0 oklch(0 0 0 / 0.9), 0 2px 0 oklch(0 0 0 / 0.9),
+    -2px 0 0 oklch(0 0 0 / 0.9), 2px 0 0 oklch(0 0 0 / 0.9);
   border-radius: 9999px;
   padding: 6px 24px;
   background: oklch(0.17 0.06 275);
