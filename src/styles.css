@@ -966,4 +966,11 @@
   .game-rules .panel { padding: 8px 16px; gap: 14px; }
   .game-rules .panel > span:first-child { font-size: 34px; }
   .game-rules .panel > span:last-child { font-size: 26px; line-height: 1.15; }
+  .tug-shell .game-rules { gap: 8px; padding: 8px 24px; }
+  .tug-shell .game-rules > div:first-child { font-size: 48px; }
+  .tug-shell .game-rules > h1 { font-size: 36px; }
+  .tug-shell .game-rules > .grid { gap: 6px; }
+  .tug-shell .game-rules .panel { padding: 6px 14px; }
+  .tug-shell .game-rules .panel > span:first-child { font-size: 28px; }
+  .tug-shell .game-rules .panel > span:last-child { font-size: 22px; }
 }
