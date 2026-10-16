@@ -47,8 +47,22 @@ export function ShapePicture({ specs, seed, big }: { specs: ShapeSpec[]; seed: s
 export function ItemPicture({ item, big }: { item: ContentItem; big?: boolean | undefined }) {
   if (item.shapes) return <ShapePicture specs={item.shapes} seed={item.id} big={big} />;
   if (item.emoji) {
-    const n = [...new Intl.Segmenter().segment(item.emoji)].length;
-    return <div className="leading-none" style={{ fontSize: big ? (n > 1 ? 170 : 200) : 160 }}>{item.emoji}</div>;
+    const segs = [...new Intl.Segmenter().segment(item.emoji)].map((s) => s.segment);
+    const n = segs.length;
+    const size = big ? (n > 1 ? 170 : 200) : 160;
+    // Windows has no flag emoji font (shows "MX"), so draw country flags as images.
+    const isFlag = (s: string) => /^[\u{1F1E6}-\u{1F1FF}]{2}$/u.test(s);
+    if (segs.some(isFlag)) {
+      return (
+        <div className="flex items-center justify-center gap-4 leading-none" style={{ fontSize: size }}>
+          {segs.map((s, i) => isFlag(s) ? (
+            <img key={i} alt="" draggable={false} style={{ height: "1em", width: "auto" }}
+              src={`https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/${[...s].map((c) => c.codePointAt(0)!.toString(16)).join("-")}.svg`} />
+          ) : <span key={i}>{s}</span>)}
+        </div>
+      );
+    }
+    return <div className="leading-none" style={{ fontSize: size }}>{item.emoji}</div>;
   }
   return null;
 }
