@@ -27,8 +27,8 @@ function Pop({ value }: { value: number }) {
         <span
           key={p.id}
           className={cn(
-            "pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 font-display text-6xl font-bold animate-rise text-stroke",
-            p.d > 0 ? "text-primary" : "text-destructive",
+            "pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-5xl font-bold animate-msg msg-shadow",
+            p.d > 0 ? "text-primary" : "text-danger",
           )}
         >
           {p.d > 0 ? `+${p.d}` : p.d}
@@ -57,6 +57,9 @@ export function TeamScore({ team, score, index, active }: { team: Team; score: n
       </div>
       <div className="relative min-w-20 rounded-2xl bg-card px-4 py-1 text-center font-display text-6xl font-bold text-foreground">
         {score}
+      </div>
+      {/* Own track for the +/- change so it never covers the score or the panel edge */}
+      <div className="relative w-24 shrink-0" aria-hidden="true">
         <Pop value={score} />
       </div>
     </div>

@@ -260,9 +260,11 @@ function BombGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
             <div className="relative transition-transform duration-500" style={{ height: 260, width: 240, transform: `scale(${scale})`, transformOrigin: "center bottom" }}>
               <Bomb pct={pct} mood={mood} secondsLeft={secs} frozen={frozen} joltKey={jolt} className="relative h-full w-full" />
             </div>
-            {floats.map((f) => (
-              <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-10 -translate-x-1/2 font-display text-7xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
-            ))}
+            <div className="pointer-events-none absolute left-1/2 top-10 flex -translate-x-1/2 flex-col items-center gap-2">
+              {floats.map((f) => (
+                <span key={f.id} className={cn("animate-msg font-display text-7xl font-bold float-msg", f.tone === "good" ? "text-success" : "text-danger")}>{f.text}</span>
+              ))}
+            </div>
           </div>
           <DefusePanel total={goal} cut={progress} lastCut={progress - 1} />
           <div className="text-3xl font-bold">{progress} / {goal} <span className="text-muted-foreground">defused</span></div>

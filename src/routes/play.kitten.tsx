@@ -237,9 +237,11 @@ function KittenGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
     <div className="bridge-play fit-gap relative flex min-h-0 flex-1 flex-col gap-3 px-8 pb-6">
       <div className="relative shrink-0">
         <TreeScene pct={pct} goal={goal} rungs={progress} pepperMood={mood} ears={perk} slip={now < slipUntil} frozen={frozen} calm={calm} countdown={secs <= 10 && secs > 0 && !frozen ? secs : undefined} className={cn("fit-scene h-[200px]", pct < 0.25 && !calm && !frozen && "animate-softshake")} />
-        {floats.map((f) => (
-          <span key={f.id} className={cn("animate-rise pointer-events-none absolute left-1/2 top-4 -translate-x-1/2 font-display text-6xl font-bold text-stroke", f.tone === "good" ? "text-success" : "text-destructive")}>{f.text}</span>
-        ))}
+        <div className="pointer-events-none absolute left-1/2 top-4 flex -translate-x-1/2 flex-col items-center gap-2">
+          {floats.map((f) => (
+            <span key={f.id} className={cn("animate-msg font-display text-6xl font-bold float-msg", f.tone === "good" ? "text-success" : "text-danger")}>{f.text}</span>
+          ))}
+        </div>
       </div>
 
       <div className="bridge-status grid shrink-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
