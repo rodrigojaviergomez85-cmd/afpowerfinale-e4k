@@ -154,12 +154,12 @@ function DemoDrill() {
       <PlayKeys keys={keys} enabled={!help} />
       <HelpOverlay open={help} onClose={() => setHelp(false)} shortcuts={SHORTCUTS} />
       <TurnPicker open={picking} onDone={(p) => { setPicking(false); setPlayer(p); }} />
-      <div key={shake} className={cn("fit-gap flex min-h-0 flex-1 flex-col gap-5 px-8 pb-6", shake > 0 && "animate-shake")}>
+      <div key={shake} className={cn("demo-play fit-gap flex min-h-0 flex-1 flex-col gap-5 px-8 pb-6", shake > 0 && "animate-shake")}>
         <Scoreboard teams={teams} scores={scores} activeTeam={activeTeam} />
         {items && !items.length && <div className="panel p-10 text-center text-3xl">No items for this day yet.</div>}
         {item && (
           <>
-            <div className="flex items-center justify-between text-2xl font-bold">
+            <div className="demo-status flex items-center justify-between text-2xl font-bold">
               <div className="rounded-full bg-secondary px-5 py-2">
                 Card {idx + 1} / {items!.length} {review && <span className="ml-2 text-primary">· Review mode</span>}
               </div>
@@ -170,7 +170,7 @@ function DemoDrill() {
               </div>
             </div>
 
-            <div className="grid min-h-0 flex-1 grid-cols-[1fr_auto] items-center gap-8">
+            <div className="demo-card-row grid min-h-0 flex-1 grid-cols-[minmax(0,1fr)_auto] items-center gap-8">
               <ItemCard key={item.id} item={item} showAnswer={showAnswer} onReveal={(n) => { opened.current = n; setOpenedN(n); sfx.whoosh(); }} />
               <div className="flex flex-col items-center gap-6">
                 <div className="fit-timer"><TimerRing remaining={timer.remaining} duration={timer.duration} running={timer.running} size={220} /></div>
@@ -178,14 +178,14 @@ function DemoDrill() {
               </div>
             </div>
 
-            {timeUp && !showAnswer && <div className="animate-pop self-center rounded-full bg-destructive px-8 py-3 text-3xl font-bold text-primary-foreground">⏰ Time's up! {teams[1 - activeTeam]!.icon} {teams[1 - activeTeam]!.name} can steal — press {2 - activeTeam}</div>}
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="steal-slot" role="status">{timeUp && !showAnswer && <div className="steal-notice rounded-full bg-destructive font-bold text-primary-foreground">⏰ Time's up! {teams[1 - activeTeam]?.icon} {teams[1 - activeTeam]?.name} can steal — press {2 - activeTeam}</div>}</div>
+            <div className="demo-controls flex flex-wrap items-center justify-center gap-4">
               <Button variant="success" size="huge" onClick={correct}><Check /> Correct <Kbd>C</Kbd></Button>
               <Button variant="panel" size="huge" onClick={skip}><SkipForward /> Skip <Kbd>→</Kbd></Button>
               <Button variant="game" size="xl" onClick={() => setShowAnswer((v) => !v)}><Eye /> Answer <Kbd>A</Kbd></Button>
               {roster.length > 0 && <Button variant="panel" size="xl" onClick={pick}><Dices /> Pick <Kbd>R</Kbd></Button>}
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-3">
+            <div className="demo-controls flex flex-wrap items-center justify-center gap-3">
               <Button variant="team1" size="xl" onClick={() => correctFor(0)}><Plus /> Team 1 <Kbd>1</Kbd></Button>
               <Button variant="team1" size="iconLg" onClick={() => award(0, -1)} aria-label="Minus team 1"><Minus /></Button>
               <Button variant="team2" size="xl" onClick={() => correctFor(1)}><Plus /> Team 2 <Kbd>2</Kbd></Button>

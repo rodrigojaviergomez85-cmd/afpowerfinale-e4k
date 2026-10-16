@@ -841,3 +841,55 @@
 [data-calm="true"] .det-tug, [data-calm="true"] .det-bob { animation-duration: 3s; }
 [data-calm="true"] .det-slam { animation-duration: 1s; }
 @media (prefers-reduced-motion: reduce) { .det-tug, .det-bob, .det-glow { animation: none; } }
+
+/* Card content and steal messages occupy separate, stable tracks. */
+.fit-card { min-width: 0; }
+.fit-card .item-prompt { max-width: 100%; overflow-wrap: anywhere; }
+.fit-card .item-answer:empty, .fit-card .item-picture:empty { display: none; }
+.fit-card[data-kind="H"] .item-prompt { display: none; }
+.fit-card[data-kind="H"] .hidden-picture { grid-column: 1 / -1; grid-row: auto; max-width: 100%; }
+.fit-card[data-kind="H"] .hidden-board { max-width: 100%; }
+.demo-play .fit-card[data-kind="H"], .tug-play .fit-card[data-kind="H"] { container-type: size; }
+.demo-play .fit-card[data-kind="H"] .hidden-board, .tug-play .fit-card[data-kind="H"] .hidden-board { max-height: max(54px, calc(100cqh - 108px)); }
+.demo-play .fit-card[data-kind="H"] .item-answer, .tug-play .fit-card[data-kind="H"] .item-answer { min-height: 32px !important; display: block; }
+.demo-play .hidden-board, .tug-play .hidden-board { container-type: size; }
+.demo-play .hidden-board .pic-wrap, .tug-play .hidden-board .pic-wrap { zoom: 1 !important; }
+.demo-play .hidden-board .pic-wrap > div, .tug-play .hidden-board .pic-wrap > div { font-size: 80cqh !important; max-width: 100%; }
+.demo-play .hidden-board svg, .tug-play .hidden-board svg { max-height: 80cqh; max-width: 100%; }
+.steal-slot { flex: 0 0 36px; min-height: 36px; display: flex; justify-content: center; align-items: center; }
+.steal-notice { max-width: 100%; padding: 4px 18px; font-size: 22px; line-height: 1.2; text-align: center; }
+.demo-play, .tug-play { padding: 0 18px 14px; }
+.demo-play > *, .tug-play > * { flex-shrink: 0; }
+.demo-play .demo-card-row, .tug-play > div:has(> .fit-card) { flex: 1 1 0; min-height: 0; }
+.demo-card-row { gap: 18px; align-items: stretch; }
+.demo-card-row > div:last-child { justify-content: center; gap: 10px; }
+.demo-play .fit-card, .tug-play .fit-card { display: grid; align-content: center; justify-items: center; grid-template-columns: minmax(0, 1fr); gap: 8px !important; padding: 10px 16px !important; }
+.demo-play .item-prompt, .tug-play .item-prompt { font-size: 48px !important; line-height: 1.08; }
+.demo-play .banner-pill, .tug-play .banner-pill { max-width: 100%; font-size: 20px !important; padding: 3px 14px !important; }
+.demo-play .item-answer, .tug-play .item-answer { font-size: 28px !important; min-height: 0 !important; line-height: 1.15; transform: none; }
+.demo-play .hidden-picture > div:last-child, .tug-play .hidden-picture > div:last-child { font-size: 16px; }
+.demo-play .fit-card:has(.item-picture:not(:empty)), .tug-play .fit-card:has(.item-picture:not(:empty)) { grid-template-columns: minmax(0, .65fr) minmax(0, 1.35fr); }
+.demo-play .banner-pill, .tug-play .banner-pill, .demo-play .item-answer, .tug-play .item-answer { grid-column: 1 / -1; }
+.demo-play .item-options, .tug-play .item-options { gap: 8px; }
+.demo-play .item-options button, .tug-play .item-options button { height: auto; font-size: 28px; padding: 6px 16px; }
+.demo-status, .tug-status { min-width: 0; gap: 8px; }
+.demo-status > div, .tug-status > div { min-width: 0; font-size: 20px; line-height: 1.2; }
+.tug-status > div:last-child { flex-shrink: 0; }
+.demo-controls, .tug-controls { gap: 8px !important; }
+.demo-controls button, .tug-controls button { height: 52px; font-size: 22px; padding-inline: 16px; gap: 8px; }
+.demo-controls button svg, .tug-controls button svg { width: 24px; height: 24px; }
+.demo-controls kbd, .tug-controls kbd { font-size: 14px; }
+@media (max-height: 860px) {
+  .demo-play .hidden-board { height: 140px !important; width: 460px !important; }
+  .tug-play .hidden-board { height: 120px !important; width: 420px !important; }
+}
+@media (max-width: 1100px), (max-height: 700px) {
+  .tug-play:has([data-kind="H"]) .tug-scene { height: 100px !important; }
+  .demo-controls button, .tug-controls button { height: 46px; font-size: 18px; padding-inline: 10px; gap: 5px; }
+  .demo-controls kbd, .tug-controls kbd { font-size: 12px; }
+  .demo-status > div, .tug-status > div { font-size: 17px; padding: 5px 10px; }
+  .demo-card-row { gap: 12px; }
+  .demo-play .fit-timer { zoom: .6; }
+  .demo-play .hidden-board { height: 120px !important; width: 400px !important; }
+  .steal-notice { font-size: 18px; }
+}

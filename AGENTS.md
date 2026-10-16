@@ -23,3 +23,4 @@
 - Vocabulary display labels are centralized separately from curriculum category keys so wording changes preserve saved coach selections and original curriculum content.
 - Hot Chair (`/play/chair`, `chair` options) builds its deck with `chairDeck` in `src/lib/content.ts` (coach-chosen card mode, never hidden pictures) and consumes it sequentially across both teams so the second team sees fresh cards.
 - Detective Sniff (`/play/detective`, `detective` options) reads M items from each day's separate `mistakes` list via `drawMistakes`, so other games and review-day detection ignore them; reuses bridge-shell/bridge-play layout.
+- Hidden-picture cards use vocabulary answers in the static curriculum and draw only from the selected week; shared ItemCard omits redundant hidden prompts, while Demo/Tug reserve a separate timeout track to prevent content overlap.

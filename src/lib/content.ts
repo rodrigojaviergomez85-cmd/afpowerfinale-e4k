@@ -98,7 +98,8 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
   }
   const avoidSet = new Set(avoid);
   const tier0 = new Set((tiers[0] ?? []).map((i) => i.id));
-  const all = tiers.map((t) => t.filter((i) => matchesMix(i, mix)));
+  // Hidden cards belong to this week's vocabulary, not unrelated review tiers.
+  const all = tiers.map((t) => t.filter((i) => matchesMix(i, mix) && (i.kind !== "H" || i.week === sel.week)));
   // Preference order: fresh items by tier (selected day first), then already-seen items.
   const ordered = [
     ...all.flatMap((t) => shuffle(t.filter((i) => !avoidSet.has(i.id)))),

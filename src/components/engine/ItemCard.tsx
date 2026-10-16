@@ -113,12 +113,12 @@ function FillBlank({ item, showAnswer }: { item: ContentItem; showAnswer: boolea
 
 export function ItemCard({ item, showAnswer, compact, onReveal, autoReveal, paused, hint = false }: { item: ContentItem; showAnswer: boolean; compact?: boolean; onReveal?: (opened: number) => void; autoReveal?: boolean; paused?: boolean; hint?: boolean }) {
   return (
-    <div className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
+    <div data-kind={item.kind} className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
       <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground">{autoReveal && item.kind === "H" ? "What's hidden? 🔍 Say the word!" : banner(item)}</div>
       {item.hidden ? <HiddenPicture item={item} showAll={showAnswer} onReveal={onReveal} auto={autoReveal} paused={paused} /> : <div className="item-picture pic-wrap"><ItemPicture item={item} /></div>}
-      <div className="item-prompt font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">
+      {!item.hidden && <div className="item-prompt font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">
         {item.parts ? item.parts.map((p, i) => (p.wrong ? <span key={i} className="mistake-word" data-hint={hint || showAnswer}>{p.text}</span> : <span key={i}>{p.text}</span>)) : item.prompt}
-      </div>
+      </div>}
       {item.kind === "M" ? <MistakeOptions item={item} showAnswer={showAnswer} /> : item.options && <FillBlank item={item} showAnswer={showAnswer} />}
       <div className={cn("item-answer min-h-16 text-4xl font-bold text-success transition-all duration-500", showAnswer ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0")}>
         {showAnswer && item.answers.map((a, i) => <div key={i}>💬 {a}</div>)}
