@@ -2388,6 +2388,7 @@ export const COURSES: CourseDef[] = [
                 }
               ]
             },
+          {
             "week": 4,
             "days": [
               {
