@@ -41,3 +41,4 @@
 - [x] Muddy Tug of War: 2-team tug game with drawn bunny/puppy teams, alternating turns, steal, POWER PULL on 3-streak or fast hidden picture, sudden death and tie; options (4–7 pulls, 10/15/20/30 s, 10/16/20 cards) remembered; SPLOOSH finale and results. Verified win, tie, power pull, "So close" glow and compact 874×639 layout with no overflow or page errors.
 - [x] Hot Chair: playable 2-team timed rounds, card modes, final reveal, tiebreaker
 - [x] Detective Sniff: M mistake cards (separate mistakes list per day), chase scene, hint, Super Sniff, win/lose, setup presets. Verified 844×639 and 1366×768, no scroll.
+- [ ] Kitten Rescue: make the on-screen branch countdown (last 10 s) audible with escalating ticks/beeps; verified build and playthrough.
