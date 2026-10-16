@@ -161,7 +161,7 @@ function DemoDrill() {
         {items && !items.length && <div className="panel p-10 text-center text-3xl">No items for this day yet.</div>}
         {item && (
           <>
-            <div className="demo-status flex items-center justify-between text-2xl font-bold">
+            <div className="demo-status flex flex-wrap items-center justify-between gap-2 text-2xl font-bold">
               <div className="rounded-full bg-secondary px-5 py-2">
                 Card {idx + 1} / {items!.length} {review && <span className="ml-2 text-primary">· Review mode</span>}
               </div>
