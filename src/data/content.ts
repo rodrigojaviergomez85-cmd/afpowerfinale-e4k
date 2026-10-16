@@ -10,7 +10,7 @@ export interface VocabGroup { week: number | "general"; category: string; words:
 export interface LevelDef { level: number; weeks: WeekDef[]; vocab: VocabGroup[] }
 export interface CourseDef { name: string; levels: LevelDef[] }
 
-  {
+export const COURSES: CourseDef[] = [
   {
     "name": "Kids Super Intensivo",
     "levels": [
@@ -2388,222 +2388,221 @@ export interface CourseDef { name: string; levels: LevelDef[] }
                 }
               ]
             },
-              "exercise",
-              "cook",
-              "watch TV"
+            "week": 4,
+            "days": [
+              {
+                "day": 1,
+                "mistakes": [
+                  "M || There [are] a star on the table. || is* / are / be || There is a star on the table.",
+                  "M || I [wakes] up at seven o'clock. || wakes / wake* / waking || I wake up at seven o'clock.",
+                  "M || There [is] three circles. || am / is / are* || There are three circles.",
+                  "M || My favorite color [are] blue. || is* / are / am || My favorite color is blue.",
+                  "M || I [eats] dinner in the kitchen. || eat* / eats / eating || I eat dinner in the kitchen.",
+                  "M || There are two [heart]. || heart / hearts* / a heart || There are two hearts.",
+                  "M || I play with [mi] brother. || me / mi / my* || I play with my brother.",
+                  "M || On Saturdays I [plays] soccer. || playing / play* / plays || On Saturdays I play soccer."
+                ],
+                "label": "Day 1",
+                "focus": "There is / there are; simple present, 1st person (review) — Vocabulary: shapes (circle, rectangle, star, heart, square, triangle, oval)",
+                "lines": [
+                  "H || circle:1 || What shape is hidden? || Circle",
+                  "H || star:1 || What shape is hidden? || Star",
+                  "F || There ____ three squares. || are || is / aren't",
+                  "F || I ____ up at seven o'clock. || wake || wakes / waking",
+                  "Q || What do you do on Saturdays? || On Saturdays, I play soccer. / I watch TV on Saturdays.",
+                  "Q || What is your favorite color? || My favorite color is blue.",
+                  "Q || Where do you eat dinner? || I eat dinner in the kitchen. / I eat dinner at home.",
+                  "Q || What time do you wake up? || I wake up at seven o'clock.",
+                  "Q || Who do you play with? || I play with my brother. / I play with my friends.",
+                  "Q || What do you do after school? || After school, I do my homework.",
+                  "Q || What do you do when you are happy? || When I am happy, I dance. / I play with my dog.",
+                  "Q || What time do you go to bed? || I go to bed at nine o'clock.",
+                  "S || heart:1 || What shape is this? || It's a heart.",
+                  "S || star:3, triangle:2 || How many stars are there? || There are three stars.",
+                  "S || circle:1, square:2 || Is there a circle? || Yes, there is one circle.",
+                  "T || Yo me despierto a las siete. || I wake up at seven.",
+                  "T || Yo juego con mi hermano. || I play with my brother.",
+                  "T || Mi color favorito es el azul. || My favorite color is blue.",
+                  "T || Los sábados yo juego fútbol. || On Saturdays, I play soccer.",
+                  "T || Hay una estrella. || There is a star.",
+                  "T || Hay tres círculos. || There are three circles."
+                ]
+              },
+              {
+                "day": 2,
+                "mistakes": [
+                  "M || My mom [cook] breakfast in the morning. || cook / cooks* / cooking || My mom cooks breakfast in the morning.",
+                  "M || Messi [play] soccer every day. || plays* / play / playing || Messi plays soccer every day.",
+                  "M || My dad [wake] up at six. || waking / wake / wakes* || My dad wakes up at six.",
+                  "M || She [go] to work at eight. || goes* / going / go || She goes to work at eight.",
+                  "M || He [watch] TV on Sundays. || watch / watches* / watching || He watches TV on Sundays.",
+                  "M || My sister [do] her homework after school. || doing / does* / do || My sister does her homework after school.",
+                  "M || There [is] four squares. || are* / is / am || There are four squares.",
+                  "M || My teacher [teach] English every day. || teach / teaching / teaches* || My teacher teaches English every day."
+                ],
+                "label": "Day 2",
+                "focus": "There is / there are; simple present, 3rd person singular (review)",
+                "lines": [
+                  "H || heart:1 || What shape is hidden? || Heart",
+                  "H || triangle:1 || What shape is hidden? || Triangle",
+                  "F || Messi ____ soccer every day. || plays || play / playing",
+                  "F || My dad ____ up at six o'clock. || wakes || wake / waking",
+                  "Q || What does your mom do in the morning? || My mom cooks breakfast. / She goes to work.",
+                  "Q || What does Messi do every day? || Messi plays soccer every day.",
+                  "Q || Where does your best friend take a shower? || My best friend takes a shower at home.",
+                  "Q || What time does your dad wake up? || My dad wakes up at six o'clock.",
+                  "Q || What does your dad do in the afternoon? || My dad works in the afternoon.",
+                  "Q || What does your teacher do every day? || My teacher teaches English every day.",
+                  "Q || What does your mom do when she is free? || When she is free, my mom reads a book.",
+                  "Q || What does your dad do when he is happy? || When he is happy, my dad sings.",
+                  "Q || What time does your best friend go to bed? || My best friend goes to bed at nine o'clock.",
+                  "S || heart:2, circle:3 || How many hearts are there? || There are two hearts.",
+                  "S || triangle:1, star:4 || Is there a triangle? || Yes, there is one triangle.",
+                  "T || Mi mamá cocina en la mañana. || My mom cooks in the morning.",
+                  "T || Messi juega fútbol todos los días. || Messi plays soccer every day.",
+                  "T || Mi papá se despierta a las seis. || My dad wakes up at six.",
+                  "T || Mi mejor amigo se baña en la noche. || My best friend takes a shower at night.",
+                  "T || Mi hermana hace su tarea después de la escuela. || My sister does her homework after school.",
+                  "T || Hay dos corazones rojos. || There are two red hearts."
+                ]
+              },
+              {
+                "day": 3,
+                "mistakes": [
+                  "M || There [is] five stars. || is / are* / am || There are five stars.",
+                  "M || There [are] a park near my house. || be / is* / are || There is a park near my house.",
+                  "M || How many stars [is] there? || are* / is / am || How many stars are there?",
+                  "M || There are two [oval] and a circle. || ovals* / oval / an oval || There are two ovals and a circle.",
+                  "M || There isn't a [triangles]. || triangles / triangle* / three triangles || There isn't a triangle.",
+                  "M || Is there a [squares]? || squares / two squares / square* || Is there a square?",
+                  "M || There [are] one window in my room. || are / am / is* || There is one window in my room.",
+                  "M || There are three [pencil] on my desk. || pencils* / pencil / a pencil || There are three pencils on my desk."
+                ],
+                "label": "Day 3",
+                "focus": "There is / there are",
+                "lines": [
+                  "H || rectangle:1 || What shape is hidden? || Rectangle",
+                  "F || There ____ a star. || is || are / aren't",
+                  "F || There ____ a triangle. || isn't || aren't / are",
+                  "S || star:3, heart:2 || How many shapes do you see? || I see five shapes. / There are five shapes.",
+                  "S || circle:1, square:4 || How many squares are there? || There are four squares.",
+                  "S || heart:5 || How many hearts are there? || There are five hearts.",
+                  "S || rectangle:2, circle:2 || Is there a triangle? || No, there isn't a triangle.",
+                  "S || square:1, star:3 || Is there a square? || Yes, there is one square.",
+                  "S || red heart:1, blue heart:2, yellow star:2 || How many blue hearts are there? || There are two blue hearts.",
+                  "S || oval:2, rectangle:1, triangle:3 || What shapes do you see? || I see two ovals, one rectangle and three triangles.",
+                  "S || green circle:4, purple star:1 || What color is the star? || The star is purple.",
+                  "Q || How many people are there in your family? || There are four people in my family.",
+                  "Q || How many pencils are there on your desk? || There are three pencils on my desk.",
+                  "Q || Is there a park near your house? || Yes, there is a park near my house. / No, there isn't.",
+                  "T || Hay cinco estrellas. || There are five stars.",
+                  "T || Hay cuatro personas en mi familia. || There are four people in my family.",
+                  "T || Hay tres lápices en mi escritorio. || There are three pencils on my desk.",
+                  "T || No hay un triángulo. || There isn't a triangle.",
+                  "T || ¿Hay un cuadrado? || Is there a square?",
+                  "T || ¿Cuántas estrellas hay? || How many stars are there?"
+                ]
+              }
             ]
           },
           {
-            "week": 7,
-            "category": "Daily Routine",
-            "words": [
-              "exercise",
-              "play soccer",
-              "drink",
-              "win",
-              "travel"
+            "week": 5,
+            "days": [
+              {
+                "day": 1,
+                "mistakes": [
+                  "M || I want to be a doctor in the [futur]. || futur / future* / futuro || I want to be a doctor in the future.",
+                  "M || I [wants] to be a vet. || want* / wants / wanting || I want to be a vet.",
+                  "M || My favorite profession [are] firefighter. || am / is* / are || My favorite profession is firefighter.",
+                  "M || I don't [wants] to be a police officer. || wanting / want* / wants || I don't want to be a police officer.",
+                  "M || I want [be] a firefighter. || to be* / be / being || I want to be a firefighter.",
+                  "M || I [goes] to school at seven. || goes / going / go* || I go to school at seven.",
+                  "M || My mom [are] a doctor. || is* / are / am || My mom is a doctor.",
+                  "M || I study [english] at school. || english / English* / inglés || I study English at school."
+                ],
+                "label": "Day 1",
+                "focus": "Simple present, 1st person singular — Vocabulary: professions (doctor, vet, firefighter, police officer)",
+                "lines": [
+                  "H || 👩‍⚕️ || What profession is hidden? || Doctor",
+                  "H || 🧑‍🚒 || What profession is hidden? || Firefighter",
+                  "F || I ____ to be a vet. || want || wants / wanting",
+                  "F || I don't want ____ a police officer. || to be || be / is",
+                  "Q || What do you want to be in the future? || I want to be a doctor. / I want to be a vet.",
+                  "Q || What is your favorite profession? || My favorite profession is firefighter.",
+                  "Q || What do you do at school? || I study English at school. / I play with my friends.",
+                  "Q || What time do you wake up? || I wake up at six thirty.",
+                  "Q || Do you want to be a vet or a firefighter? || I want to be a vet.",
+                  "Q || What is your mom's profession? || My mom is a doctor.",
+                  "Q || What do you do after school? || After school, I play soccer.",
+                  "E || 👮 || Do you want to be a police officer? || Yes, I do. I want to be a police officer. / No, I don't.",
+                  "E || 🧑‍🚒 || Do you want to be a firefighter? || Yes, I do. I want to be a firefighter. / No, I don't.",
+                  "E || 🐶🩺 || Do you want to be a vet? || Yes, I do. I want to be a vet. / No, I don't.",
+                  "T || Yo quiero ser doctora. || I want to be a doctor.",
+                  "T || Yo quiero ser veterinario. || I want to be a vet.",
+                  "T || Mi profesión favorita es bombero. || My favorite profession is firefighter.",
+                  "T || Yo no quiero ser policía. || I don't want to be a police officer.",
+                  "T || Yo me despierto a las seis y media. || I wake up at six thirty.",
+                  "T || Yo estudio inglés en la escuela. || I study English at school."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Review mode (no own items)",
+                "lines": []
+              },
+              {
+                "day": 3,
+                "mistakes": [
+                  "M || I want to be an astronaut because I [wants] to explore space. || wants / wanting / want* || I want to be an astronaut because I want to explore space.",
+                  "M || A firefighter [stop] fires. || stops* / stop / stopping || A firefighter stops fires.",
+                  "M || A police officer [fight] crime. || fighting / fight / fights* || A police officer fights crime.",
+                  "M || I want to be a vet because I want [help] animals. || to help* / help / helping || I want to be a vet because I want to help animals.",
+                  "M || She is [a] astronaut. || a / an* / the || She is an astronaut.",
+                  "M || He is [firefighter]. || a firefighter* / an firefighter / firefighter || He is a firefighter.",
+                  "M || An astronaut [explore] space. || explore / explores* / exploring || An astronaut explores space.",
+                  "M || Where do you want [work]? || working / to work* / work || Where do you want to work?"
+                ],
+                "label": "Day 3",
+                "focus": "Want to be… because I want to… — Vocabulary: help, stop fires, fight crime, explore space (+ astronaut)",
+                "lines": [
+                  "H || 👩‍🚀 || What profession is hidden? || Astronaut",
+                  "H || 🐶🩺 || What profession is hidden? || Vet",
+                  "F || A firefighter ____ fires. || stops || stop / stopping",
+                  "F || I want to be a vet ____ I want to help animals. || because || but / and",
+                  "Q || Where do you want to work? || I want to work in a hospital. / I want to work at a fire station.",
+                  "Q || Who do you want to help? || I want to help animals. / I want to help people.",
+                  "Q || What do you want to be? Why? || I want to be an astronaut because I want to explore space.",
+                  "Q || Why do you want to be a vet? || I want to be a vet because I want to help animals.",
+                  "Q || What does a firefighter do? || A firefighter stops fires.",
+                  "Q || What does a police officer do? || A police officer fights crime.",
+                  "Q || What does an astronaut do? || An astronaut explores space.",
+                  "Q || Who helps animals? || A vet helps animals.",
+                  "E || 👩‍🚀 || What is her profession? || She is an astronaut.",
+                  "E || 👨‍🚒 || What is his profession? || He is a firefighter.",
+                  "E || 👮‍♀️ || What is her profession? || She is a police officer.",
+                  "T || Yo quiero ser astronauta porque quiero explorar el espacio. || I want to be an astronaut because I want to explore space.",
+                  "T || Yo quiero ser veterinaria porque quiero ayudar a los animales. || I want to be a vet because I want to help animals.",
+                  "T || Los bomberos apagan incendios. || Firefighters stop fires.",
+                  "T || Un policía combate el crimen. || A police officer fights crime.",
+                  "T || Yo quiero ayudar a las personas. || I want to help people.",
+                  "T || Yo quiero trabajar en un hospital. || I want to work in a hospital."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Review mode (no own items)",
+                "lines": []
+              },
+              {
+                "day": 5,
+                "label": "Day 5 (Exam day – review)",
+                "focus": "Exam day (review mode with all Week 5 items, no own items)",
+                "lines": []
+              }
             ]
           },
-          {
-            "week": 8,
-            "category": "Daily Routine",
-            "words": [
-              "Wake up",
-              "take a shower",
-              "eat",
-              "brush my teeth",
-              "sleep",
-              "cook",
-              "work",
-              "exercise",
-              "watch TV"
-            ]
-          }
-        ]
-      },
-      {
-        "level": 2,
-        "weeks": [
-            {
-              "week": 1,
-              "days": [
-                {
-                  "day": 1,
-                  "label": "Day 1",
-                  "focus": "Fruits & vegetables — Simple present (1st person); Positive & Negative sentences Yes/No questions (Short answers) — Vocabulary: Grapes, Strawberries, mangoes, potatoes, carrots, onions",
-                  "lines": [
-                    "Q || Do you like grapes? || Yes, I like grapes. / No, I don't like grapes.",
-                    "Q || Do you like strawberries? || Yes, I like strawberries. / No, I don't like strawberries.",
-                    "Q || Do you like mangoes? || Yes, I like mangoes. / No, I don't like mangoes.",
-                    "Q || Do you like potatoes? || Yes, I like potatoes. / No, I don't like potatoes.",
-                    "Q || Do you like carrots? || Yes, I like carrots. / No, I don't like carrots.",
-                    "Q || Do you like onions? || Yes, I like onions. / No, I don't like onions.",
-                    "Q || Name two fruits you like. || I like grapes and mangoes.",
-                    "Q || What vegetable don't you like? || I don't like onions.",
-                    "F || I ____ grapes and mangoes. || like || likes / liking",
-                    "F || I ____ carrots, but I don't like onions. || like || likes / liking",
-                    "T || Me gustan las fresas. || I like strawberries.",
-                    "T || No me gustan los mangos. || I don't like mangoes.",
-                    "T || Me gustan las papas. || I like potatoes.",
-                    "T || No me gustan las zanahorias. || I don't like carrots.",
-                    "H || 🥭 || Name the fruit. || Mango",
-                    "H || 🥕 || Name the vegetable. || Carrot"
-                  ],
-                  "mistakes": [
-                    "M || I [likes] mangoes. || likes / liking / like* || I like mangoes.",
-                    "M || I [likes] strawberries. || liking / like* / likes || I like strawberries."
-                  ]
-                },
-                {
-                  "day": 2,
-                  "label": "Day 2",
-                  "focus": "Fruits & vegetables — Simple present (1st person); Yes/No questions (Short answers) — Vocabulary: Grapes, Strawberries, mangoes, potatoes, carrots, onions",
-                  "lines": [
-                    "Q || Do you like strawberries? || Yes, I do. / No, I don't.",
-                    "Q || Do you like mangoes? || Yes, I do. / No, I don't.",
-                    "Q || Do you like potatoes? || Yes, I do. / No, I don't.",
-                    "Q || Do you like carrots? || Yes, I do. / No, I don't.",
-                    "Q || Do you like onions? || Yes, I do. / No, I don't.",
-                    "Q || Do you like grapes? || Yes, I do. / No, I don't.",
-                    "Q || Name two fruits you like. || I like grapes and mangoes.",
-                    "Q || What vegetable don't you like? || I don't like onions.",
-                    "F || I ____ carrots, but I don't like onions. || like || likes / liking",
-                    "F || I ____ mangoes. || like || likes / liking",
-                    "T || Me gustan los mangos. || I like mangoes.",
-                    "T || No me gustan las papas. || I don't like potatoes.",
-                    "T || Me gustan las zanahorias. || I like carrots.",
-                    "T || No me gustan las cebollas. || I don't like onions.",
-                    "H || 🥔 || Name the vegetable. || Potato",
-                    "H || 🧅 || Name the vegetable. || Onion"
-                  ],
-                  "mistakes": [
-                    "M || I don't [likes] potatoes. || liking / like* / likes || I don't like potatoes.",
-                    "M || I [likes] carrots. || like* / likes / liking || I like carrots."
-                  ]
-                },
-                {
-                  "day": 3,
-                  "label": "Day 3",
-                  "focus": "Fruits & vegetables — Simple present (1st person); Wh-questions (What...?) — Vocabulary: Grapes, Strawberries, mangoes, potatoes, carrots, onions",
-                  "lines": [
-                    "Q || What fruit do you like in a snack? || I like grapes.",
-                    "Q || What vegetables do you like with lunch? || I like carrots.",
-                    "Q || What fruit do you dislike? || I don't like mangoes.",
-                    "Q || What vegetables do you dislike? || I don't like potatoes.",
-                    "Q || What fruit do you like on a hot day? || I like strawberries.",
-                    "Q || What vegetables do you like in soup? || I like onions.",
-                    "Q || Name two fruits you like. || I like grapes and mangoes.",
-                    "Q || What vegetable don't you like? || I don't like onions.",
-                    "F || I don't ____ mangoes. || like || likes / liking",
-                    "F || I don't ____ potatoes. || like || likes / liking",
-                    "T || Me gustan las papas. || I like potatoes.",
-                    "T || No me gustan las zanahorias. || I don't like carrots.",
-                    "T || Me gustan las cebollas. || I like onions.",
-                    "T || No me gustan las uvas. || I don't like grapes.",
-                    "H || 🥕 || Name the vegetable. || Carrot",
-                    "H || 🍇 || Name the fruit. || Grapes"
-                  ],
-                  "mistakes": [
-                    "M || I [likes] strawberries. || like* / likes / liking || I like strawberries.",
-                    "M || I [likes] onions. || likes / liking / like* || I like onions."
-                  ]
-                },
-                {
-                  "day": 4,
-                  "label": "Day 4",
-                  "focus": "Fruits & vegetables — Simple present (1st person); Wh-questions (Why...?) — Vocabulary: Grapes, Strawberries, mangoes, potatoes, carrots, onions",
-                  "lines": [
-                    "Q || Why do you like potatoes? || Because they are delicious.",
-                    "Q || Why don't you like carrots? || Because they taste bad.",
-                    "Q || Why do you like onions? || Because they are delicious.",
-                    "Q || Why don't you like grapes? || Because they taste bad.",
-                    "Q || Why do you like strawberries? || Because they are delicious.",
-                    "Q || Why don't you like mangoes? || Because they taste bad.",
-                    "Q || Name two fruits you like. || I like grapes and mangoes.",
-                    "Q || What vegetable don't you like? || I don't like onions.",
-                    "F || I don't ____ carrots because they taste bad. || like || likes / liking",
-                    "F || I ____ onions because they are delicious. || like || likes / liking",
-                    "T || Me gustan las zanahorias. || I like carrots.",
-                    "T || No me gustan las cebollas. || I don't like onions.",
-                    "T || Me gustan las uvas. || I like grapes.",
-                    "T || No me gustan las fresas. || I don't like strawberries.",
-                    "H || 🧅 || Name the vegetable. || Onion",
-                    "H || 🍓 || Name the fruit. || Strawberry"
-                  ],
-                  "mistakes": [
-                    "M || I don't [likes] onions because they taste bad. || likes / liking / like* || I don't like onions because they taste bad.",
-                    "M || I [likes] grapes because they are delicious. || liking / like* / likes || I like grapes because they are delicious."
-                  ]
-                },
-                {
-                  "day": 5,
-                  "label": "Day 5",
-                  "focus": "SUPER STAR EXAM — Simple present (1st person); Positive & Negative sentences Yes/No questions (Short answers); Yes/No questions (Short answers); Wh-questions (What...?); Wh-questions (Why...?) — Vocabulary: potatoes; carrots; onions; grapes; strawberries; carrots; onions; mangoes",
-                  "lines": [
-                    "T || Me gustan las papas. || I like potatoes.",
-                    "T || Me gustan las zanahorias. || I like carrots.",
-                    "T || Me gustan las cebollas. || I like onions.",
-                    "T || Me gustan las uvas. || I like grapes.",
-                    "Q || Do you like carrots? || Yes, I like carrots. / No, I don't like carrots.",
-                    "Q || Do you like onions? || Yes, I do. / No, I don't.",
-                    "Q || What fruit do you like on a hot day? || I like strawberries.",
-                    "Q || Why do you like strawberries? || Because they are delicious.",
-                    "F || I ____ strawberries. || like || likes / liking",
-                    "F || I ____ strawberries because they are delicious. || like || likes / liking",
-                    "E || 🍇 || Say whether you like this food. || I like grapes. / I don't like grapes.",
-                    "E || 🍓 || Say whether you like this food. || I like strawberries. / I don't like strawberries.",
-                    "Q || What vegetable don't you like? || I don't like onions.",
-                    "Q || What fruit do you like? || I like mangoes.",
-                    "H || 🥕 || Name the vegetable. || Carrot",
-                    "H || 🧅 || Name the vegetable. || Onion"
-                  ],
-                  "mistakes": [
-                    "M || I don't [likes] strawberries because they taste bad. || liking / like* / likes || I don't like strawberries because they taste bad.",
-                    "M || I don't [likes] carrots. || like* / likes / liking || I don't like carrots."
-                  ]
-                }
-              ]
-            },
-            {
-              "week": 2,
-              "days": [
-                {
-                  "day": 1,
-                  "label": "Day 1",
-                  "focus": "Free time (hobbies) — Simple present (3rd person); Positive sentences — Vocabulary: Play, read, swim",
-                  "lines": [
-                    "Q || What does your sister do on weekends? || She plays games.",
-                    "Q || What does your best friend read before bed? || She reads a book.",
-                    "Q || What does Emma do on a hot day? || She swims.",
-                    "Q || What does Leo do on Saturdays? || He plays games.",
-                    "Q || What does your teacher do before bed? || He reads a book.",
-                    "Q || What does your mom do on Saturdays? || She swims.",
-                    "Q || What does your brother do at home? || He plays games.",
-                    "Q || What does your dad do in the library? || He reads a book.",
-                    "F || She ____ games. || plays || play / playing",
-                    "F || She ____ a book. || reads || read / reading",
-                    "T || Ella juega. || She plays games.",
-                    "T || Él lee un libro. || He reads a book.",
-                    "T || Él nada. || He swims.",
-                    "T || Ella juega todos los días. || She plays games every day.",
-                    "T || Mi hermano lee un libro. || My brother reads a book.",
-                    "H || 🏊 || Name the action. || Swim"
-                  ],
-                  "mistakes": [
-                    "M || She [swim]. || swim / swimming / swims* || She swims.",
-                    "M || He [play] games. || playing / plays* / play || He plays games."
-                  ]
-                },
-                {
-                  "day": 2,
-                  "label": "Day 2",
-                  "focus": "Free time (hobbies) — Simple present (3rd person); Yes/No questions (Long answers) — Vocabulary: Play, read, swim, ride, listen to music",
-                  "lines": [
-                    "Q || Does your best friend read a book? || Yes, she reads a book. / No, she doesn't read a book.",
-                    "Q || Does Emma swim? || Yes, she swims. / No, she doesn't swim.",
-                    "Q || Does Leo ride a bike? || Yes, he rides a bike. / No, he doesn't ride a bike.",
-                    "Q || Does your teacher listen to music? || Yes, he listens to music. / No, he doesn't listen to music.",
-                    "Q || Does your mom play games? || Yes, she plays games. / No, she doesn't play games.",,
             {
               "week": 6,
               "days": [
@@ -3025,8 +3024,51 @@ export interface CourseDef { name: string; levels: LevelDef[] }
               ]
             }
         ],
-                    "Q || What does your dad do on Saturdays? || He swims.",
-                    "Q || What does your sister do after school? || She rides a bike.",
+        "vocab": [
+          { week: "general", category: "Colors", words: ["red", "blue", "yellow", "green", "orange", "purple", "pink", "black", "white", "brown", "gray"] },
+          { week: "general", category: "Numbers", words: ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"] },
+          { week: "general", category: "Family", words: ["mom", "dad", "brother", "sister", "grandma", "grandpa", "baby", "aunt", "uncle", "cousin"] },
+          { week: "general", category: "Daily routine", words: ["wake up", "take a shower", "brush my teeth", "eat breakfast", "go to school", "do homework", "play", "eat dinner", "watch TV", "go to bed"] },
+          { week: "general", category: "Food", words: ["apple", "banana", "pizza", "rice", "chicken", "bread", "milk", "water", "juice", "cookie", "sandwich", "soup"] },
+          { week: "general", category: "Animals", words: ["dog", "cat", "bird", "fish", "horse", "cow", "pig", "lion", "monkey", "elephant", "rabbit", "turtle"] },
+          { week: "general", category: "School", words: ["pencil", "pen", "book", "notebook", "desk", "chair", "teacher", "backpack", "eraser", "ruler"] },
+          { week: "general", category: "Rooms", words: ["kitchen", "bedroom", "bathroom", "living room", "garden", "garage"] },
+          {
+            "week": 4,
+            "category": "Shapes",
+            "words": [
+              "circle",
+              "rectangle",
+              "star",
+              "heart",
+              "square",
+              "triangle",
+              "oval"
+            ]
+          },
+          {
+            "week": 5,
+            "category": "Professions",
+            "words": [
+              "doctor",
+              "vet",
+              "firefighter",
+              "police officer",
+              "astronaut"
+            ]
+          },
+          {
+            "week": 5,
+            "category": "What do they do?",
+            "words": [
+              "help people",
+              "help animals",
+              "stop fires",
+              "fight crime",
+              "explore space"
+            ]
+          }
+        ]
       },
       {
         "level": 3,
