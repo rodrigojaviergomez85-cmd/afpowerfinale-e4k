@@ -26,24 +26,26 @@ export const COURSES: CourseDef[] = [
                   "focus": "Greetings What is your name? — N/A; What is your name? My name is _________. — Vocabulary: Good morning, Good afternoon, Good evening, Good night",
                   "lines": [
                     "Q || What is your name? || My name is Mia.",
-                    "Q || Say hello in the morning. || Good morning!",
-                    "Q || Say hello in the afternoon. || Good afternoon!",
-                    "Q || Say hello in the evening. || Good evening!",
-                    "Q || Say goodbye before bed. || Good night!",
-                    "Q || Complete: My name ____ Leo. || My name is Leo.",
-                    "Q || Complete: Good ____! It is morning. || Good morning!",
-                    "Q || Complete: Good ____! It is afternoon. || Good afternoon!",
+                    "Q || ¿Cómo saludas en la mañana? || Good morning!",
+                    "Q || ¿Cómo saludas en la tarde? || Good afternoon!",
+                    "Q || ¿Cómo saludas al anochecer? || Good evening!",
+                    "Q || ¿Cómo dices adiós antes de ir a dormir? || Good night!",
+                    "Q || Good e___! 🌇 || Good evening!",
+                    "Q || Good m___! ⛅🐓 || Good morning!",
+                    "Q || Good a___! 🖼️ || Good afternoon!",
                     "F || My name ____ Mia. || is || are / am",
                     "F || My ____ is Leo. || name || names / naming",
-                    "T || Buenas noches. (saludo) || Good evening.",
+                    "T || Buenos días || Good morning!",
                     "T || Buenas noches. (despedida) || Good night.",
                     "T || Me llamo Ana. || My name is Ana.",
-                    "Q || Say a greeting and your name. || Good morning! My name is Mia.",
-                    "Q || It is morning. Greet your teacher. || Good morning!",
-                    "Q || It is bedtime. Say goodbye. || Good night!"
+                    "Q || Good n___! 🌃 || Good night!",
+                    "Q || Es de mañana. Saluda a tu coach. || Good morning!",
+                    "Q || Es hora de dormir. Despídete. || Good night!"
                   ],
                   "mistakes": [
-                    "M || Good [mornin]. || mornin / mornign / morning* || Good morning.",
+                    "M || Corrige: Good [mornin]. || mornin / mornign / morning* || Good morning.",
+                    "M || Corrige: Good [nigth]. || nitgh / night* / nigth || Good night."
+                  ]. || mornin / mornign / morning* || Good morning.",
                     "M || Good [nigth]. || nitgh / night* / nigth || Good night."
                   ]
                 },
@@ -52,25 +54,27 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 2",
                   "focus": "How are you today? Where are you from? — N/A; Where are you from? I am from ______________. — Vocabulary: How are you today? I am great!",
                   "lines": [
-                    "Q || How are you today? || I am great!",
+                    "Q || ¿Cómo estás hoy? || I am great!",
                     "Q || Where are you from? || I am from Colombia.",
-                    "Q || Say your name and country. || My name is Mia. I am from Colombia.",
-                    "Q || Ask a friend how they are. || How are you today?",
-                    "Q || Ask a friend their country. || Where are you from?",
-                    "Q || Complete: I am ____ Colombia. || I am from Colombia.",
-                    "Q || Complete: How ____ you today? || How are you today?",
-                    "Q || Complete: I ____ great! || I am great!",
+                    "Q || Di tu nombre y de qué país eres. || My name is Mia. I am from Colombia.",
+                    "Q || Pregúntale a un amigo cómo está. || How are you today?",
+                    "Q || Pregúntale a un amigo de qué país es. || Where are you from?",
+                    "Q || Completa: I am ____ Colombia. || I am from Colombia.",
+                    "Q || Completa: How ____ you today? || How are you today?",
+                    "Q || Completa: I ____ great! || I am great!",
                     "F || I ____ from Colombia. || am || is / are",
                     "F || I ____ nine years old. || am || is / are",
-                    "E || 🇧🇷 || Say the country. || Brazil.",
-                    "E || 🇪🇸 || Say the country. || Spain.",
+                    "E || 🇧🇷 || ¿Qué país es? || Brazil.",
+                    "E || 🇪🇸 || ¿Qué país es? || Spain.",
                     "T || Soy de Colombia. || I am from Colombia.",
                     "T || ¡Estoy muy bien! || I am great!",
-                    "H || 🇨🇴 || Name the country. || Colombia",
-                    "H || 🇲🇽 || Name the country. || Mexico"
+                    "H || 🇨🇴 || ¿Qué país es? || Colombia",
+                    "H || 🇲🇽 || ¿Qué país es? || Mexico"
                   ],
                   "mistakes": [
-                    "M || My name [are] Mia. || am / is* / are || My name is Mia.",
+                    "M || Corrige: My name [are] Mia. || am / is* / are || My name is Mia.",
+                    "M || Corrige: She [are] happy. || is* / are / am || She is happy."
+                  ] Mia. || am / is* / are || My name is Mia.",
                     "M || She [are] happy. || is* / are / am || She is happy."
                   ]
                 },
@@ -80,24 +84,26 @@ export const COURSES: CourseDef[] = [
                   "focus": "Numbers — N/A; How old are you? — Vocabulary: Numbers from 1-12",
                   "lines": [
                     "Q || How old are you? || I am nine years old.",
-                    "Q || Ask a friend their age. || How old are you?",
-                    "Q || Pretend you are eight. Say your age. || I am eight years old.",
-                    "Q || Say your name and age. || My name is Mia. I am ten years old.",
-                    "Q || Say this number: 1. || One.",
-                    "Q || Say this number: 3. || Three.",
-                    "Q || Say this number: 5. || Five.",
-                    "Q || Say this number: 7. || Seven.",
+                    "Q || Pregúntale a un amigo cuántos años tiene. || How old are you?",
+                    "Q || Imagina que tienes ocho años. Di tu edad. || I am eight years old.",
+                    "Q || Di tu nombre y tu edad. || My name is Mia. I am ten years old.",
+                    "Q || Di este número: 1. || One.",
+                    "Q || Di este número: 3. || Three.",
+                    "Q || Di este número: 5. || Five.",
+                    "Q || Di este número: 7. || Seven.",
                     "F || I ____ nine years old. || am || is / are",
                     "F || I ____ eight years old. || am || is / are",
                     "T || dos || two",
                     "T || cuatro || four",
                     "T || seis || six",
                     "T || ocho || eight",
-                    "S || star:3 || How many objects are hidden? || Three.",
-                    "S || circle:5 || How many objects are hidden? || Five."
+                    "S || star:3 || ¿Cuántos objetos ves? || Three.",
+                    "S || circle:5 || ¿Cuántos objetos ves? || Five."
                   ],
                   "mistakes": [
-                    "M || My name [are] Mia. || is* / are / am || My name is Mia.",
+                    "M || Corrige: My name [are] Mia. || is* / are / am || My name is Mia.",
+                    "M || Corrige: I [is] from Colombia. || is / are / am* || I am from Colombia."
+                  ] Mia. || is* / are / am || My name is Mia.",
                     "M || I [is] from Colombia. || is / are / am* || I am from Colombia."
                   ]
                 },
@@ -106,25 +112,27 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 4",
                   "focus": "Alphabet — N/A; Spelling Bee — Vocabulary: The alphabet",
                   "lines": [
-                    "Q || Spell MIA. || M-I-A.",
-                    "Q || Spell LEO. || L-E-O.",
-                    "Q || Spell ANA. || A-N-A.",
-                    "Q || Spell SAM. || S-A-M.",
-                    "Q || Spell BEN. || B-E-N.",
-                    "Q || Spell LIA. || L-I-A.",
-                    "Q || Spell TOM. || T-O-M.",
-                    "Q || Spell EVA. || E-V-A.",
+                    "Q || Deletrea MIA. || M-I-A.",
+                    "Q || Deletrea LEO. || L-E-O.",
+                    "Q || Deletrea ANA. || A-N-A.",
+                    "Q || Deletrea SAM. || S-A-M.",
+                    "Q || Deletrea BEN. || B-E-N.",
+                    "Q || Deletrea LIA. || L-I-A.",
+                    "Q || Deletrea TOM. || T-O-M.",
+                    "Q || Deletrea EVA. || E-V-A.",
                     "F || The letter after A is ____. || B || C / D",
                     "F || The letter after C is ____. || D || E / F",
-                    "Q || What letter is it: F? || F",
-                    "Q || What letter is it: H? || H",
-                    "Q || Spell your first name. || M-I-A.",
-                    "Q || What is the first letter of your name? || M.",
-                    "H || 🅰️ || What letter is it? || A",
-                    "H || 🅱️ || What letter is it? || B"
+                    "Q || ¿Qué letra es: F? || F",
+                    "Q || ¿Qué letra es: H? || H",
+                    "Q || Spell your name || M-I-A.",
+                    "Q || ¿Cuál es la primera letra de tu nombre? || M.",
+                    "H || 🅰️ || ¿Qué letra es? || A",
+                    "H || 🅱️ || ¿Qué letra es? || B"
                   ],
                   "mistakes": [
-                    "M || The letter after E is [G]. || G / H / F* || The letter after E is F.",
+                    "M || Corrige: The letter after E is [G]. || G / H / F* || The letter after E is F.",
+                    "M || Corrige: The letter after G is [I]. || J / H* / I || The letter after G is H."
+                  ]. || G / H / F* || The letter after E is F.",
                     "M || The letter after G is [I]. || J / H* / I || The letter after G is H."
                   ]
                 },
@@ -133,25 +141,27 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 5",
                   "focus": "Alphabet — N/A; Let's spell our names! — Vocabulary: The alphabet",
                   "lines": [
-                    "Q || Spell LUNA. || L-U-N-A.",
-                    "Q || Spell MAX. || M-A-X.",
-                    "Q || Spell SOFIA. || S-O-F-I-A.",
-                    "Q || Spell DAN. || D-A-N.",
-                    "Q || Spell ROSE. || R-O-S-E.",
-                    "Q || Spell ALEX. || A-L-E-X.",
-                    "Q || Spell EMMA. || E-M-M-A.",
-                    "Q || Spell LUIS. || L-U-I-S.",
+                    "Q || Deletrea LUNA. || L-U-N-A.",
+                    "Q || Deletrea MAX. || M-A-X.",
+                    "Q || Deletrea SOFIA. || S-O-F-I-A.",
+                    "Q || Deletrea DAN. || D-A-N.",
+                    "Q || Deletrea ROSE. || R-O-S-E.",
+                    "Q || Deletrea ALEX. || A-L-E-X.",
+                    "Q || Deletrea EMMA. || E-M-M-A.",
+                    "Q || Deletrea LUIS. || L-U-I-S.",
                     "F || The letter after M is ____. || N || O / P",
                     "F || The letter after O is ____. || P || Q / R",
-                    "Q || What letter is it: T? || T",
-                    "Q || What letter is it: W? || W",
-                    "Q || Spell your first name. || M-I-A.",
-                    "Q || What is the first letter of your name? || M.",
-                    "H || 🅰️ || What letter is it? || A",
-                    "H || 🅱️ || What letter is it? || B"
+                    "Q || ¿Qué letra es: T? || T",
+                    "Q || ¿Qué letra es: W? || W",
+                    "Q || Spell your name || M-I-A.",
+                    "Q || ¿Cuál es la primera letra de tu nombre? || M.",
+                    "H || 🅰️ || ¿Qué letra es? || A",
+                    "H || 🅱️ || ¿Qué letra es? || B"
                   ],
                   "mistakes": [
-                    "M || The letter after Q is [S]. || T / R* / S || The letter after Q is R.",
+                    "M || Corrige: The letter after Q is [S]. || T / R* / S || The letter after Q is R.",
+                    "M || Corrige: The letter after S is [U]. || T* / U / V || The letter after S is T."
+                  ]. || T / R* / S || The letter after Q is R.",
                     "M || The letter after S is [U]. || T* / U / V || The letter after S is T."
                   ]
                 }
@@ -165,25 +175,27 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Colors — N/A; What is your favorite color? — Vocabulary: Colors Red, blue, green, yellow, orange, black, white",
                   "lines": [
-                    "Q || Choose orange or yellow. What is your favorite color? || My favorite color is yellow.",
-                    "Q || Choose black or orange. What is your favorite color? || My favorite color is orange.",
-                    "E || 🟢 || What color is this? || It is green.",
-                    "E || 🟡 || What color is this? || It is yellow.",
-                    "E || 🟠 || What color is this? || It is orange.",
-                    "E || ⚫ || What color is this? || It is black.",
-                    "E || ⚪ || What color is this? || It is white.",
+                    "Q || Elige entre naranja y amarillo. ¿Cuál es tu color favorito? || My favorite color is yellow.",
+                    "Q || Elige entre negro y naranja. ¿Cuál es tu color favorito? || My favorite color is orange.",
+                    "E || 🟢 || ¿Qué color es? || It is green.",
+                    "E || 🟡 || ¿Qué color es? || It is yellow.",
+                    "E || 🟠 || ¿Qué color es? || It is orange.",
+                    "E || ⚫ || ¿Qué color es? || It is black.",
+                    "E || ⚪ || ¿Qué color es? || It is white.",
                     "T || rojo || red",
                     "F || It ____ red. || is || am / are",
                     "F || It ____ blue. || is || am / are",
                     "T || amarillo || yellow",
-                    "Q || What is your favorite color? || My favorite color is red.",
-                    "Q || Ask a friend their favorite color. || What is your favorite color?",
-                    "Q || Complete with a color: My favorite color is ____. || My favorite color is green.",
-                    "H || 🔴 || What color is it? || Red",
-                    "H || 🔵 || What color is it? || Blue"
+                    "Q || ¿Cuál es tu color favorito? || My favorite color is red.",
+                    "Q || Pregúntale a un amigo cuál es su color favorito. || What is your favorite color?",
+                    "Q || Completa con un color: My favorite color is ____. || My favorite color is green.",
+                    "H || 🔴 || ¿Qué color es? || Red",
+                    "H || 🔵 || ¿Qué color es? || Blue"
                   ],
                   "mistakes": [
-                    "M || It [am] green. || am / are / is* || It is green.",
+                    "M || Corrige: It [am] green. || am / are / is* || It is green.",
+                    "M || Corrige: It [am] yellow. || are / is* / am || It is yellow."
+                  ] green. || am / are / is* || It is green.",
                     "M || It [am] yellow. || are / is* / am || It is yellow."
                   ]
                 },
@@ -192,25 +204,27 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 2",
                   "focus": "Food — N/A; What is your favorite food? — Vocabulary: Food Ice cream, Hamburger, Hot dog, Chicken, French fries",
                   "lines": [
-                    "Q || Choose a hamburger or ice cream. What is your favorite food? || My favorite food is ice cream.",
-                    "Q || Choose a hot dog or a hamburger. What is your favorite food? || My favorite food is hamburger.",
-                    "E || 🌭 || Name this food. || A hot dog.",
-                    "E || 🍗 || Name this food. || Chicken.",
-                    "E || 🍟 || Name this food. || French fries.",
+                    "Q || Elige entre hamburguesa y helado. ¿Cuál es tu comida favorita? || My favorite food is ice cream.",
+                    "Q || Elige entre perro caliente y hamburguesa. ¿Cuál es tu comida favorita? || My favorite food is hamburger.",
+                    "E || 🌭 || ¿Qué comida es? || A hot dog.",
+                    "E || 🍗 || ¿Qué comida es? || Chicken.",
+                    "E || 🍟 || ¿Qué comida es? || French fries.",
                     "T || helado || ice cream",
                     "T || una hamburguesa || a hamburger",
                     "T || un perro caliente || a hot dog",
                     "F || My favorite food ____ hot dog. || is || am / are",
                     "F || My favorite food ____ chicken. || is || am / are",
-                    "Q || Ask a friend their favorite food. || What is your favorite food?",
-                    "Q || Complete with a food: My favorite food is ____. || My favorite food is hot dog.",
-                    "Q || Choose French fries or chicken. What is your favorite food? || My favorite food is chicken.",
-                    "Q || Choose ice cream or French fries. What is your favorite food? || My favorite food is French fries.",
-                    "H || 🍦 || Name the food. || Ice cream",
-                    "H || 🍔 || Name the food. || Hamburger"
+                    "Q || Pregúntale a un amigo cuál es su comida favorita. || What is your favorite food?",
+                    "Q || Completa con una comida: My favorite food is ____. || My favorite food is hot dog.",
+                    "Q || Elige entre papas fritas y pollo. ¿Cuál es tu comida favorita? || My favorite food is chicken.",
+                    "Q || Elige entre helado y papas fritas. ¿Cuál es tu comida favorita? || My favorite food is French fries.",
+                    "H || 🍦 || ¿Qué comida es? || Ice cream",
+                    "H || 🍔 || ¿Qué comida es? || Hamburger"
                   ],
                   "mistakes": [
-                    "M || My favorite food [am] French fries. || are / is* / am || My favorite food is French fries.",
+                    "M || Corrige: My favorite food [am] French fries. || are / is* / am || My favorite food is French fries.",
+                    "M || Corrige: My favorite food [am] hamburger. || is* / am / are || My favorite food is hamburger."
+                  ] French fries. || are / is* / am || My favorite food is French fries.",
                     "M || My favorite food [am] hamburger. || is* / am / are || My favorite food is hamburger."
                   ]
                 },
@@ -219,25 +233,27 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 3",
                   "focus": "Fruits — N/A; What is your favorite fruit? — Vocabulary: Fruits Banana, Apple, Watermelon, Pineapple, Orange",
                   "lines": [
-                    "Q || Choose an apple or a banana. What is your favorite fruit? || My favorite fruit is banana.",
-                    "Q || Choose a watermelon or an apple. What is your favorite fruit? || My favorite fruit is apple.",
-                    "E || 🍉 || Name this fruit. || A watermelon.",
-                    "E || 🍍 || Name this fruit. || A pineapple.",
-                    "E || 🍊 || Name this fruit. || An orange.",
+                    "Q || Elige entre manzana y banano. ¿Cuál es tu fruta favorita? || My favorite fruit is banana.",
+                    "Q || Elige entre sandía y manzana. ¿Cuál es tu fruta favorita? || My favorite fruit is apple.",
+                    "E || 🍉 || ¿Qué fruta es? || A watermelon.",
+                    "E || 🍍 || ¿Qué fruta es? || A pineapple.",
+                    "E || 🍊 || ¿Qué fruta es? || An orange.",
                     "T || un banano || a banana",
                     "T || una manzana || an apple",
                     "T || una sandía || a watermelon",
                     "F || My favorite fruit ____ banana. || is || am / are",
                     "F || My favorite fruit ____ watermelon. || is || am / are",
-                    "Q || Ask a friend their favorite fruit. || What is your favorite fruit?",
-                    "Q || Complete with a fruit: My favorite fruit is ____. || My favorite fruit is watermelon.",
-                    "Q || Choose an orange or a pineapple. What is your favorite fruit? || My favorite fruit is pineapple.",
-                    "Q || Choose a banana or an orange. What is your favorite fruit? || My favorite fruit is orange.",
-                    "H || 🍌 || Name the fruit. || Banana",
-                    "H || 🍎 || Name the fruit. || Apple"
+                    "Q || Pregúntale a un amigo cuál es su fruta favorita. || What is your favorite fruit?",
+                    "Q || Completa con una fruta: My favorite fruit is ____. || My favorite fruit is watermelon.",
+                    "Q || Elige entre naranja y piña. ¿Cuál es tu fruta favorita? || My favorite fruit is pineapple.",
+                    "Q || Elige entre banano y naranja. ¿Cuál es tu fruta favorita? || My favorite fruit is orange.",
+                    "H || 🍌 || ¿Qué fruta es? || Banana",
+                    "H || 🍎 || ¿Qué fruta es? || Apple"
                   ],
                   "mistakes": [
-                    "M || My favorite fruit [am] pineapple. || is* / am / are || My favorite fruit is pineapple.",
+                    "M || Corrige: My favorite fruit [am] pineapple. || is* / am / are || My favorite fruit is pineapple.",
+                    "M || Corrige: My favorite fruit [am] orange. || am / are / is* || My favorite fruit is orange."
+                  ] pineapple. || is* / am / are || My favorite fruit is pineapple.",
                     "M || My favorite fruit [am] orange. || am / are / is* || My favorite fruit is orange."
                   ]
                 },
@@ -246,25 +262,27 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 4",
                   "focus": "Review — N/A; Review of previously introduced vocabulary and sentence patterns — Vocabulary: green; a hot dog; a watermelon; French fries; orange; black; ice cream; a banana; blue; chicken; a pineapple; red",
                   "lines": [
-                    "E || 🍌 || Name this fruit. || A banana.",
-                    "Q || What is your favorite color? || My favorite color is red.",
-                    "E || 🍉 || Name this fruit. || A watermelon.",
-                    "Q || Complete with a color: My favorite color is ____. || My favorite color is green.",
-                    "Q || Choose ice cream or French fries. What is your favorite food? || My favorite food is French fries.",
-                    "Q || Choose a banana or an orange. What is your favorite fruit? || My favorite fruit is orange.",
-                    "E || ⚫ || What color is this? || It is black.",
+                    "E || 🍌 || ¿Qué fruta es? || A banana.",
+                    "Q || ¿Cuál es tu color favorito? || My favorite color is red.",
+                    "E || 🍉 || ¿Qué fruta es? || A watermelon.",
+                    "Q || Completa con un color: My favorite color is ____. || My favorite color is green.",
+                    "Q || Elige entre helado y papas fritas. ¿Cuál es tu comida favorita? || My favorite food is French fries.",
+                    "Q || Elige entre banano y naranja. ¿Cuál es tu fruta favorita? || My favorite fruit is orange.",
+                    "E || ⚫ || ¿Qué color es? || It is black.",
                     "T || helado || ice cream",
                     "F || My favorite fruit ____ orange. || is || am / are",
                     "F || It ____ black. || is || am / are",
                     "T || pollo || chicken",
                     "T || una piña || a pineapple",
-                    "E || 🔴 || What color is this? || It is red.",
-                    "E || 🍦 || Name this food. || Ice cream.",
-                    "H || 🟢 || What color is it? || Green",
-                    "H || 🌭 || Name the food. || Hot dog"
+                    "E || 🔴 || ¿Qué color es? || It is red.",
+                    "E || 🍦 || ¿Qué comida es? || Ice cream.",
+                    "H || 🟢 || ¿Qué color es? || Green",
+                    "H || 🌭 || ¿Qué comida es? || Hot dog"
                   ],
                   "mistakes": [
-                    "M || It [am] red. || am / are / is* || It is red.",
+                    "M || Corrige: It [am] red. || am / are / is* || It is red.",
+                    "M || Corrige: My favorite color [am] red. || are / is* / am || My favorite color is red."
+                  ] red. || am / are / is* || It is red.",
                     "M || My favorite color [am] red. || are / is* / am || My favorite color is red."
                   ]
                 },
@@ -273,25 +291,27 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 5",
                   "focus": "SUPER STAR EXAM — N/A; What is your favorite color?; What is your favorite food?; What is your favorite fruit?; Review of previously introduced vocabulary and sentence patterns — Vocabulary: blue; chicken; pineapple; orange; French fries; an orange; hamburger; apple; red; a hot dog; a watermelon; yellow; green",
                   "lines": [
-                    "Q || Ask a friend their favorite color. || What is your favorite color?",
-                    "Q || Choose French fries or chicken. What is your favorite food? || My favorite food is chicken.",
-                    "Q || Choose an orange or a pineapple. What is your favorite fruit? || My favorite fruit is pineapple.",
-                    "Q || Ask a friend their favorite fruit. || What is your favorite fruit?",
-                    "E || 🟢 || What color is this? || It is green.",
-                    "E || 🍊 || Name this fruit. || An orange.",
-                    "Q || Choose black or orange. What is your favorite color? || My favorite color is orange.",
-                    "Q || Choose a hot dog or a hamburger. What is your favorite food? || My favorite food is hamburger.",
+                    "Q || Pregúntale a un amigo cuál es su color favorito. || What is your favorite color?",
+                    "Q || Elige entre papas fritas y pollo. ¿Cuál es tu comida favorita? || My favorite food is chicken.",
+                    "Q || Elige entre naranja y piña. ¿Cuál es tu fruta favorita? || My favorite fruit is pineapple.",
+                    "Q || Pregúntale a un amigo cuál es su fruta favorita. || What is your favorite fruit?",
+                    "E || 🟢 || ¿Qué color es? || It is green.",
+                    "E || 🍊 || ¿Qué fruta es? || An orange.",
+                    "Q || Elige entre negro y naranja. ¿Cuál es tu color favorito? || My favorite color is orange.",
+                    "Q || Elige entre perro caliente y hamburguesa. ¿Cuál es tu comida favorita? || My favorite food is hamburger.",
                     "F || My favorite food ____ chicken. || is || am / are",
                     "F || My favorite fruit ____ pineapple. || is || am / are",
                     "T || un perro caliente || a hot dog",
                     "T || una sandía || a watermelon",
                     "T || amarillo || yellow",
-                    "Q || Ask a friend their favorite food. || What is your favorite food?",
-                    "H || 🟠 || What color is it? || Orange",
-                    "H || 🍟 || Name the food. || French fries"
+                    "Q || Pregúntale a un amigo cuál es su comida favorita. || What is your favorite food?",
+                    "H || 🟠 || ¿Qué color es? || Orange",
+                    "H || 🍟 || ¿Qué comida es? || French fries"
                   ],
                   "mistakes": [
-                    "M || It [am] orange. || are / is* / am || It is orange.",
+                    "M || Corrige: It [am] orange. || are / is* / am || It is orange.",
+                    "M || Corrige: My favorite color [am] orange. || is* / am / are || My favorite color is orange."
+                  ] orange. || are / is* / am || It is orange.",
                     "M || My favorite color [am] orange. || is* / am / are || My favorite color is orange."
                   ]
                 }
@@ -579,6 +599,13 @@ export const COURSES: CourseDef[] = [
             }
         ],
         "vocab": [
+          { "week": 2, "category": "Fruits", "words": ["Banana", "Apple", "Watermelon", "Pineapple", "Orange"] },
+          { "week": 2, "category": "Food", "words": ["Ice cream", "Hamburger", "Hot dog", "Chicken", "French fries"] },
+          { "week": 2, "category": "Colors", "words": ["Red", "blue", "green", "yellow", "orange", "black", "white"] },
+          { "week": 1, "category": "Alphabet", "words": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] },
+          { "week": 1, "category": "Numbers", "words": ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"] },
+          { "week": 1, "category": "How are you today? Where are you from?", "words": ["How are you today? I am great!"] },
+          { "week": 1, "category": "Greetings What is your name?", "words": ["Good morning", "Good afternoon", "Good evening", "Good night"] },
           {
             "week": 1,
             "category": "Greetings What is your name?",
