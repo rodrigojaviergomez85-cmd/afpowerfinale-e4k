@@ -637,10 +637,9 @@
   --circus-flood-fill: linear-gradient(180deg, var(--pool), var(--pool-deep));
   --circus-sign-shadow: 0 8px 0 var(--stage);
 }
-.rope-shell > header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; padding: 8px 16px; gap: 10px; }
+.rope-shell > header { padding: 8px 16px; gap: 10px; }
 .rope-shell > header > div { min-width: 0; }
-.rope-shell > header > div:nth-child(2) { justify-self: start; }
-.rope-shell > header > div:nth-child(2) > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rope-shell > header > div:nth-child(3) > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .rope-shell > header button { height: 48px; }
 .rope-shell > main { overflow: hidden; }
 .rope-play { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.25fr); grid-template-rows: 116px minmax(0, 1fr) auto; gap: 10px 16px; padding: 0 16px 20px; }

@@ -54,7 +54,7 @@ function MuddyTug() {
   ] };
   const [help, setHelp] = useState(false);
   return (
-    <GameShell key={round} game={game} rightSlot={<Button variant="panel" size="xl" onClick={() => setHelp(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>
+    <GameShell className="tug-shell" key={round} game={game} rightSlot={<Button variant="panel" size="xl" onClick={() => setHelp(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>
       <HelpOverlay open={help} onClose={() => setHelp(false)} shortcuts={SHORTCUTS} />
       <TugGame help={help} openHelp={() => setHelp(true)} onRematch={() => setRound((r) => r + 1)} />
     </GameShell>
