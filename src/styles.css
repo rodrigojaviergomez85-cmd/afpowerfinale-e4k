@@ -870,7 +870,7 @@
    160px emoji or zoom, so nothing overflows on small non-fullscreen windows. */
 .tug-play .fit-card, .demo-play .fit-card { container-type: size; }
 .tug-play .fit-card .item-picture, .demo-play .fit-card .item-picture { zoom: 1 !important; max-width: 100%; }
-.tug-play .fit-card .item-picture > div, .demo-play .fit-card .item-picture > div { display: block; line-height: 1; font-size: min(160px, 45cqh, 10cqw) !important; }
+.tug-play .fit-card .item-picture > div.leading-none, .demo-play .fit-card .item-picture > div.leading-none { display: block; white-space: nowrap; line-height: 1; font-size: min(160px, 45cqh, 10cqw) !important; }
 .tug-play .fit-card .item-picture svg, .demo-play .fit-card .item-picture svg { width: min(120px, 36cqh); height: min(120px, 36cqh); max-width: 100%; }
 .demo-play, .tug-play { padding: 0 18px 14px; }
 .demo-play > *, .tug-play > * { flex-shrink: 0; }
