@@ -599,13 +599,6 @@ export const COURSES: CourseDef[] = [
             }
         ],
         "vocab": [
-          { "week": 2, "category": "Fruits", "words": ["Banana", "Apple", "Watermelon", "Pineapple", "Orange"] },
-          { "week": 2, "category": "Food", "words": ["Ice cream", "Hamburger", "Hot dog", "Chicken", "French fries"] },
-          { "week": 2, "category": "Colors", "words": ["Red", "blue", "green", "yellow", "orange", "black", "white"] },
-          { "week": 1, "category": "Alphabet", "words": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"] },
-          { "week": 1, "category": "Numbers", "words": ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve"] },
-          { "week": 1, "category": "How are you today? Where are you from?", "words": ["How are you today? I am great!"] },
-          { "week": 1, "category": "Greetings What is your name?", "words": ["Good morning", "Good afternoon", "Good evening", "Good night"] },
           {
             "week": 1,
             "category": "Greetings What is your name?",
