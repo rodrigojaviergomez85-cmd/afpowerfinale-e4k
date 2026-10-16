@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Improve Kitten Rescue's firefighter, ladder and tree using the supplied cartoon reference; preserve Pepper and all reactions, and verify play and both ending sequences without overlaps.
+
 - [x] Replace Detective Sniff's net capture with a direct hold, keep Racky's size and surprised expression, and remove dashed capture lines. Capture, results, rematch and unchanged flyaway verified at 1206×639 without runtime errors; build OK.
 
 - [x] Improve Detective Sniff's characters, town and balloon using the supplied cartoon references; verified cards, answer reveal, capture, escape, both results and rematch at 951×639 and 1366×768 with no runtime errors. Separated the captured raccoon from the balloon and kept all controls visible.
