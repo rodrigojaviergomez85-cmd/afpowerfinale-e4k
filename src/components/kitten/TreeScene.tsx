@@ -37,17 +37,38 @@ function Pepper({ mood, ears = false }: { mood: PepperMood; ears?: boolean }) {
 
 function Rosa({ slip = false, holding = false, mood }: { slip?: boolean; holding?: boolean; mood: "smile" | "whoa" | "cheer" }) {
   return (
-    <g stroke="var(--sky-ink)" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" className={cn(slip && "kitten-slip")}>
-      <path d={slip ? "M-8 -30 L-22 -6 M8 -30 L10 0" : "M-8 -30 L-10 0 M8 -30 L10 0"} stroke="var(--sky-ink)" strokeWidth="9" />
-      <rect x="-16" y="-70" width="32" height="44" rx="10" fill="var(--rosa-coat)" />
-      <path d="M-16 -46 H16" stroke="var(--rosa-helmet)" strokeWidth="5" />
-      <path d={mood === "cheer" ? "M-14 -64 L-30 -92 M14 -64 L30 -92" : holding ? "M-14 -62 L4 -52 M14 -62 L6 -52" : "M-14 -62 L-4 -86 M14 -62 L22 -86"} stroke="var(--rosa-coat)" strokeWidth="9" />
-      <circle cx="0" cy="-86" r="16" fill="var(--rosa-skin)" />
-      <path d="M-14 -82 q-6 12 -2 20 M14 -82 q6 12 2 20" stroke="var(--rosa-hair)" strokeWidth="6" fill="none" />
-      <path d="M-22 -92 Q0 -124 22 -92 Z" fill="var(--rosa-helmet)" />
-      <path d="M-26 -92 H26" stroke="var(--rosa-helmet)" strokeWidth="6" />
-      <circle cx="-6" cy="-87" r="2" fill="var(--sky-ink)" /><circle cx="6" cy="-87" r="2" fill="var(--sky-ink)" />
-      {mood === "whoa" ? <ellipse cx="0" cy="-77" rx="4" ry="5" fill="var(--sky-ink)" /> : <path d="M-7 -79 q7 7 14 0" fill="none" strokeWidth="2.5" />}
+    <g data-firefighter="illustrated" stroke="var(--sky-ink)" strokeWidth="2.8" strokeLinejoin="round" strokeLinecap="round" className={cn(slip && "kitten-slip")}>
+      <ellipse cy="3" rx="30" ry="4" fill="var(--sky-ink)" opacity=".12" stroke="none" />
+      <g transform={slip ? "rotate(18 -9 -30)" : undefined}>
+        <path d="M-19 -35 L-18 -8 L-4 -8 L-1 -33Z" fill="var(--sky-ink)" />
+        <path d="M-18 -16 H-4 V-10 H-18Z" fill="var(--rosa-helmet)" stroke="none" />
+        <path d="M-18 -9 Q-29 -7 -29 1 H-3 V-9Z" fill="var(--rosa-hair)" />
+      </g>
+      <path d="M2 -34 L5 -8 H19 L20 -35Z" fill="var(--sky-ink)" />
+      <path d="M5 -16 H19 V-10 H5Z" fill="var(--rosa-helmet)" stroke="none" />
+      <path d="M5 -9 V1 H30 Q31 -6 19 -9Z" fill="var(--rosa-hair)" />
+      {/* Broad jacket and reflective bands, like the reference's fire uniform. */}
+      <path d="M-12 -76 Q-23 -74 -24 -61 L-22 -31 H22 L24 -61 Q22 -74 12 -76Z" fill="var(--truck-red)" />
+      <path d="M-22 -51 H22 V-43 H-22Z M-22 -35 H22 V-30 H-22Z" fill="var(--rosa-helmet)" stroke="none" />
+      <path d="M0 -69 V-33 M-12 -75 L0 -65 L12 -75" fill="none" strokeWidth="2" />
+      <g>
+        <path d={mood === "cheer" ? "M-19 -67 L-33 -91 L-38 -96" : holding ? "M-19 -66 Q-28 -50 -9 -49 L5 -54" : slip ? "M-19 -66 L-39 -57 L-43 -71" : "M-19 -66 L-31 -47 L-37 -39"} fill="none" strokeWidth="15" />
+        <path d={mood === "cheer" ? "M-19 -67 L-33 -91" : holding ? "M-19 -66 Q-28 -50 -9 -49" : slip ? "M-19 -66 L-39 -57" : "M-19 -66 L-31 -47"} fill="none" stroke="var(--truck-red)" strokeWidth="10" />
+        <circle cx={mood === "cheer" ? -38 : holding ? 5 : slip ? -43 : -37} cy={mood === "cheer" ? -97 : holding ? -54 : slip ? -71 : -39} r="6.5" fill="var(--rosa-hair)" />
+        <path d={mood === "cheer" ? "M19 -67 L33 -91 L38 -96" : holding ? "M19 -66 Q27 -50 15 -48 L5 -49" : "M19 -67 L30 -60 L35 -79"} fill="none" strokeWidth="15" />
+        <path d={mood === "cheer" ? "M19 -67 L33 -91" : holding ? "M19 -66 Q27 -50 15 -48" : "M19 -67 L30 -60 L34 -73"} fill="none" stroke="var(--truck-red)" strokeWidth="10" />
+        <circle cx={mood === "cheer" ? 38 : holding ? 5 : 35} cy={mood === "cheer" ? -97 : holding ? -49 : -79} r="6.5" fill="var(--rosa-hair)" />
+      </g>
+      <path d="M-7 -81 V-74 Q0 -68 7 -74 V-81" fill="var(--rosa-skin)" />
+      <path d="M-20 -95 Q-24 -75 -15 -73 L-11 -93 M20 -95 Q24 -75 15 -73 L11 -93" fill="var(--rosa-hair)" />
+      <ellipse cy="-93" rx="21" ry="20" fill="var(--rosa-skin)" />
+      <path d="M-24 -102 Q-21 -129 0 -129 Q21 -129 24 -102Z" fill="var(--rosa-helmet)" />
+      <path d="M-3 -127 V-109" stroke="var(--gold)" strokeWidth="5" />
+      <path d="M-28 -103 Q0 -113 28 -103 L30 -97 Q0 -103 -30 -97Z" fill="var(--rosa-helmet)" />
+      <path d="M-5 -118 H5 V-109 L0 -105 L-5 -109Z" fill="var(--truck-red)" strokeWidth="1.5" />
+      <g fill="var(--sky-ink)" stroke="none"><ellipse cx="-8" cy="-91" rx="2.6" ry={mood === "whoa" ? 3.6 : 3} /><ellipse cx="8" cy="-91" rx="2.6" ry={mood === "whoa" ? 3.6 : 3} /></g>
+      <path d="M0 -89 L-2 -85 H1" fill="none" strokeWidth="1.5" />
+      {mood === "whoa" ? <ellipse cy="-79" rx="4.5" ry="5" fill="var(--sky-ink)" /> : <path d="M-8 -82 Q0 -71 8 -82" fill="var(--acrobat-white)" strokeWidth="2" />}
     </g>
   );
 }
@@ -119,13 +140,17 @@ export function TreeScene({
         <path d="M0 340 Q250 315 500 338 T1000 330 V400 H0Z" fill="var(--park-grass)" />
         <path d="M0 375 Q500 355 1000 378 V400 H0Z" fill="var(--park-grass-deep)" />
         {/* tree */}
-        <path d="M585 360 C590 250 575 160 590 60 L640 60 C650 160 640 260 655 360Z" fill="var(--tree-bark)" stroke="var(--sky-ink)" strokeWidth="3" />
+        <path data-tree="branching" d="M570 360 Q589 249 589 150 L572 100 L534 76 L545 56 L596 87 L604 25 L628 25 L635 92 L681 59 L696 76 L646 119 Q643 241 670 360Z" fill="var(--tree-bark)" stroke="var(--sky-ink)" strokeWidth="3.5" strokeLinejoin="round" />
+        <path d="M580 354 Q600 245 600 159 M622 54 L618 133 M626 220 Q627 284 645 348" stroke="var(--tree-bark-deep)" strokeWidth="4" fill="none" strokeLinecap="round" opacity=".55" />
         <g fill="var(--leaf)" stroke="var(--leaf-deep)" strokeWidth="3">
-          <circle cx="560" cy="45" r="55" /><circle cx="640" cy="20" r="65" /><circle cx="720" cy="50" r="50" /><circle cx="500" cy="80" r="35" />
+          <circle cx="541" cy="47" r="51" /><circle cx="690" cy="42" r="52" /><circle cx="615" cy="12" r="62" />
+          <path d="M504 26 Q513 9 533 7 M575 -11 Q590 -30 612 -31 M663 21 Q674 5 693 3" fill="none" stroke="var(--park-grass)" strokeWidth="5" strokeLinecap="round" opacity=".65" />
         </g>
         <g className={cn("kitten-branch", snapped && "kitten-snapped")} style={{ ["--sway" as string]: `${sway}deg`, ["--sway-speed" as string]: stage === 2 ? "0.7s" : "2.4s", rotate: `${bend}deg` }}>
-          <path d="M630 90 Q740 92 880 112 L878 124 Q740 110 632 112Z" fill="var(--tree-bark-deep)" stroke="var(--sky-ink)" strokeWidth="3" />
-          <g fill="var(--leaf)" stroke="var(--leaf-deep)" strokeWidth="2"><ellipse cx="880" cy="112" rx="26" ry="14" /><ellipse cx="850" cy="98" rx="18" ry="10" /></g>
+          <path d="M630 90 Q738 105 881 112 L878 132 Q734 125 632 112Z" fill="var(--tree-bark)" stroke="var(--sky-ink)" strokeWidth="3" />
+          <path d="M655 109 Q741 122 855 122" fill="none" stroke="var(--tree-bark-deep)" strokeWidth="2" />
+          <circle cx="891" cy="109" r="31" fill="var(--leaf)" stroke="var(--leaf-deep)" strokeWidth="3" />
+          <path d="M877 92 Q882 83 895 84" fill="none" stroke="var(--park-grass)" strokeWidth="3" opacity=".65" />
         </g>
         {frozen && (
           <g>
@@ -137,13 +162,19 @@ export function TreeScene({
         )}
         {stage === 2 && !frozen && !calm && [0, 1, 2, 3].map((i) => <ellipse key={i} cx={700 + i * 40} cy={110} rx="8" ry="4" fill="var(--leaf)" className="kitten-leaf" style={{ animationDelay: `${i * 0.5}s` }} />)}
         {/* ladder */}
-        <g stroke="var(--sky-ink)" strokeWidth="3">
-          <line x1={BASE.x - 22} y1={BASE.y} x2={TOP.x - 22} y2={TOP.y} stroke="var(--ladder)" strokeWidth="9" />
-          <line x1={BASE.x + 22} y1={BASE.y} x2={TOP.x + 22} y2={TOP.y} stroke="var(--ladder)" strokeWidth="9" />
+        <g data-ladder="outlined" stroke="var(--sky-ink)" strokeWidth="3" strokeLinecap="round">
+          {[-26, 26].map((offset) => <g key={offset}>
+            <line x1={BASE.x + offset} y1={BASE.y} x2={TOP.x + offset} y2={TOP.y} strokeWidth="13" />
+            <line x1={BASE.x + offset} y1={BASE.y} x2={TOP.x + offset} y2={TOP.y} stroke="var(--ladder)" strokeWidth="8" />
+            <path d={`M${BASE.x + offset - 7} ${BASE.y} h14`} strokeWidth="5" />
+          </g>)}
           {Array.from({ length: goal }, (_, i) => {
             const p = at((i + 1) / (goal + 1));
             const on = i < rungs;
-            return <line key={i} x1={p.x - 22} y1={p.y} x2={p.x + 22} y2={p.y} stroke={on ? "var(--ladder)" : "var(--sky-ink)"} strokeWidth={on ? 7 : 2} strokeDasharray={on ? undefined : "4 4"} opacity={on ? 1 : 0.45} className={cn(on && i === rungs - 1 && "animate-pop")} />;
+            return <g key={i} opacity={on ? 1 : 0.35} className={cn(on && i === rungs - 1 && "animate-pop")}>
+              <line x1={p.x - 24} y1={p.y} x2={p.x + 24} y2={p.y} strokeWidth={on ? 10 : 2} strokeDasharray={on ? undefined : "4 4"} />
+              {on && <line x1={p.x - 23} y1={p.y - 1} x2={p.x + 23} y2={p.y - 1} stroke="var(--ladder)" strokeWidth="5" />}
+            </g>;
           })}
         </g>
         {/* fire truck */}
