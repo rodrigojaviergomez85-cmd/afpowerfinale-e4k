@@ -124,7 +124,12 @@ function KittenGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
     if (phase !== "play") return;
     if (secs !== lastSec.current) {
       lastSec.current = secs;
-      if (secs <= 10 && secs > 0) sfx.heartbeat();
+      if (secs <= 10 && secs > 0) {
+        sfx.heartbeat();
+        if (secs > 5) sfx.tick();
+        else if (secs > 3) sfx.beep();
+        else sfx.alarm();
+      }
       if (pct <= 0.5 && pct > 0.25 && secs % 8 === 0) sfx.creak();
       if (pct <= 0.25 && secs % (calm ? 6 : 3) === 0) sfx.creak();
       if (secs % 15 === 0) sfx.meow();
