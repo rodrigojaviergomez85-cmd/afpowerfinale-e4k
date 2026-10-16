@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Improve Detective Sniff's characters, town and balloon using the supplied cartoon references; verify play, reactions and both endings without overlapping cards or controls.
+
 - [x] Review all ten games for overlapping cards, answers, notices and controls at 844×639, 1366×768 and 1920×1080. Fixed Rocket Race's layout/steal track, Bomb's columns/controls, Detective's options/answer space, compact rules and shared responsive picture/card fitting. Verified Q/T/F/H/S and M cards where applicable, Hot Chair and Blitz views, and all three team-game timeout tracks; nine content/Blitz tests pass, no timeout runtime errors.
 
 - [x] Correct overlapping cards/timeout messages in Demo Drill and Muddy Tug of War; hidden/revealed cards and timeout verified at 844×639, 1366×768 and 1920×1080.
