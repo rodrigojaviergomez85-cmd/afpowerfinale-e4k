@@ -39,8 +39,8 @@ export const COURSES: CourseDef[] = [
                   "T || Buenas noches. (despedida) || Good night.",
                   "T || Me llamo Ana. || My name is Ana.",
                   "Q || Say a greeting and your name. || Good morning! My name is Mia.",
-                  "H || 🌅 || Which greeting matches the morning picture? || Good morning!",
-                  "H || 🌙 || It is bedtime. Which greeting matches the hidden picture? || Good night!"
+                  "H || 🌅 || Which greeting matches the morning picture? || Good morning",
+                  "H || 🌙 || It is bedtime. Which greeting matches the hidden picture? || Good night"
                 ],
                 "mistakes": [
                   "M || Good [mornin]. || mornin / mornign / morning* || Good morning.",
@@ -66,8 +66,8 @@ export const COURSES: CourseDef[] = [
                   "E || 🇪🇸 || Say the country. || Spain.",
                   "T || Soy de Colombia. || I am from Colombia.",
                   "T || ¡Estoy muy bien! || I am great!",
-                  "H || 🇨🇴 || Say the country. || Colombia.",
-                  "H || 🇲🇽 || Say the country. || Mexico."
+                  "H || 🇨🇴 || Say the country. || Colombia",
+                  "H || 🇲🇽 || Say the country. || Mexico"
                 ],
                 "mistakes": [
                   "M || My name [are] Mia. || am / is* / are || My name is Mia.",
@@ -93,8 +93,8 @@ export const COURSES: CourseDef[] = [
                   "T || cuatro || four",
                   "T || seis || six",
                   "T || ocho || eight",
-                  "H || star:3 || How many objects are hidden? || Three.",
-                  "H || circle:5 || How many objects are hidden? || Five."
+                  "H || star:3 || How many objects are hidden? || Three",
+                  "H || circle:5 || How many objects are hidden? || Five"
                 ],
                 "mistakes": [
                   "M || My name [are] Mia. || is* / are / am || My name is Mia.",
@@ -120,8 +120,8 @@ export const COURSES: CourseDef[] = [
                   "Q || What letter comes after G? || H.",
                   "Q || Spell your first name. || M-I-A.",
                   "Q || What is the first letter of your name? || M.",
-                  "H || 🅰️ || What letter is hidden? || A.",
-                  "H || 🅱️ || What letter is hidden? || B."
+                  "H || 🅰️ || What letter is hidden? || A",
+                  "H || 🅱️ || What letter is hidden? || B"
                 ],
                 "mistakes": [
                   "M || The letter after E is [G]. || G / H / F* || The letter after E is F.",
@@ -147,8 +147,8 @@ export const COURSES: CourseDef[] = [
                   "Q || What letter comes after V? || W.",
                   "Q || Spell your first name. || M-I-A.",
                   "Q || What is the first letter of your name? || M.",
-                  "H || 🅰️ || What letter is hidden? || A.",
-                  "H || 🅱️ || What letter is hidden? || B."
+                  "H || 🅰️ || What letter is hidden? || A",
+                  "H || 🅱️ || What letter is hidden? || B"
                 ],
                 "mistakes": [
                   "M || The letter after Q is [S]. || T / R* / S || The letter after Q is R.",
@@ -179,8 +179,8 @@ export const COURSES: CourseDef[] = [
                   "Q || What is your favorite color? || My favorite color is red.",
                   "Q || Ask a friend their favorite color. || What is your favorite color?",
                   "Q || Complete with a color: My favorite color is ____. || My favorite color is green.",
-                  "H || 🔴 || What color is this? || It is red.",
-                  "H || 🔵 || What color is this? || It is blue."
+                  "H || 🔴 || What color is this? || Red",
+                  "H || 🔵 || What color is this? || Blue"
                 ],
                 "mistakes": [
                   "M || It [am] green. || am / are / is* || It is green.",
@@ -206,8 +206,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Complete with a food: My favorite food is ____. || My favorite food is hot dog.",
                   "Q || Choose French fries or chicken. What is your favorite food? || My favorite food is chicken.",
                   "Q || Choose ice cream or French fries. What is your favorite food? || My favorite food is French fries.",
-                  "H || 🍦 || Name the hidden food. || Ice cream.",
-                  "H || 🍔 || Name the hidden food. || A hamburger."
+                  "H || 🍦 || Name the hidden food. || Ice cream",
+                  "H || 🍔 || Name the hidden food. || Hamburger"
                 ],
                 "mistakes": [
                   "M || My favorite food [am] French fries. || are / is* / am || My favorite food is French fries.",
@@ -233,8 +233,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Complete with a fruit: My favorite fruit is ____. || My favorite fruit is watermelon.",
                   "Q || Choose an orange or a pineapple. What is your favorite fruit? || My favorite fruit is pineapple.",
                   "Q || Choose a banana or an orange. What is your favorite fruit? || My favorite fruit is orange.",
-                  "H || 🍌 || Name the hidden fruit. || A banana.",
-                  "H || 🍎 || Name the hidden fruit. || An apple."
+                  "H || 🍌 || Name the hidden fruit. || Banana",
+                  "H || 🍎 || Name the hidden fruit. || Apple"
                 ],
                 "mistakes": [
                   "M || My favorite fruit [am] pineapple. || is* / am / are || My favorite fruit is pineapple.",
@@ -260,8 +260,8 @@ export const COURSES: CourseDef[] = [
                   "T || una piña || a pineapple",
                   "E || 🔴 || What color is this? || It is red.",
                   "E || 🍦 || Name this food. || Ice cream.",
-                  "H || 🟢 || What color is this? || It is green.",
-                  "H || 🌭 || Name the hidden food. || A hot dog."
+                  "H || 🟢 || What color is this? || Green",
+                  "H || 🌭 || Name the hidden food. || Hot dog"
                 ],
                 "mistakes": [
                   "M || It [am] red. || am / are / is* || It is red.",
@@ -287,8 +287,8 @@ export const COURSES: CourseDef[] = [
                   "T || una sandía || a watermelon",
                   "T || amarillo || yellow",
                   "Q || Ask a friend their favorite food. || What is your favorite food?",
-                  "H || 🟠 || What color is this? || It is orange.",
-                  "H || 🍟 || Name the hidden food. || French fries."
+                  "H || 🟠 || What color is this? || Orange",
+                  "H || 🍟 || Name the hidden food. || French fries"
                 ],
                 "mistakes": [
                   "M || It [am] orange. || are / is* / am || It is orange.",
@@ -319,8 +319,8 @@ export const COURSES: CourseDef[] = [
                   "T || Él es un niño. || He is a boy.",
                   "Q || Use \"she\" and \"girl\" in a sentence. || She is a girl.",
                   "Q || Use \"he\" and \"boy\" in a sentence. || He is a boy.",
-                  "H || 👨 || What is he? || He is a man.",
-                  "H || 👩 || What is she? || She is a woman."
+                  "H || 👨 || What word is hidden? || Man",
+                  "H || 👩 || What word is hidden? || Woman"
                 ],
                 "mistakes": [
                   "M || She [am] a girl. || am / are / is* || She is a girl.",
@@ -346,8 +346,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Make a sentence with \"my sister\". || She is my sister.",
                   "Q || Introduce an imaginary brother. || He is my brother.",
                   "T || Él es mi hermano. || He is my brother.",
-                  "H || 👩 || Name the hidden person. || A woman.",
-                  "H || 👦 || Name the hidden person. || A boy."
+                  "H || 👩 || Name the hidden person. || Woman",
+                  "H || 👦 || Name the hidden person. || Boy"
                 ],
                 "mistakes": [
                   "M || She [am] my sister. || are / is* / am || She is my sister.",
@@ -373,8 +373,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Spell the word \"angry\". || A-N-G-R-Y.",
                   "Q || Say two things about an imaginary mom. || She is pretty and intelligent.",
                   "Q || Say two things about an imaginary dad. || He is handsome and happy.",
-                  "H || 😊 || How is he? || He is happy.",
-                  "H || 😠 || How is she? || She is angry."
+                  "H || 😊 || What word is hidden? || Happy",
+                  "H || 😠 || What word is hidden? || Angry"
                 ],
                 "mistakes": [
                   "M || She [am] angry. || is* / am / are || She is angry.",
@@ -400,8 +400,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Describe a story character with \"angry\". || She is angry.",
                   "Q || Spell the word \"man\". || M-A-N.",
                   "Q || Introduce an imaginary mom. || She is my mom.",
-                  "H || 👩 || What is she? || She is a woman.",
-                  "H || 👨 || What is he? || He is a man."
+                  "H || 👩 || What word is hidden? || Woman",
+                  "H || 👨 || What word is hidden? || Man"
                 ],
                 "mistakes": [
                   "M || He [am] handsome and happy. || am / are / is* || He is handsome and happy.",
@@ -427,8 +427,8 @@ export const COURSES: CourseDef[] = [
                   "T || Él está feliz. || He is happy.",
                   "T || Ella es una niña. || She is a girl.",
                   "Q || Complete: She is ____ sister. || She is my sister.",
-                  "H || 👧 || What is she? || She is a girl.",
-                  "H || 😊 || How is he? || He is happy."
+                  "H || 👧 || What word is hidden? || Girl",
+                  "H || 😊 || What word is hidden? || Happy"
                 ],
                 "mistakes": [
                   "M || He [am] intelligent. || are / is* / am || He is intelligent.",
@@ -459,8 +459,8 @@ export const COURSES: CourseDef[] = [
                   "Q || What is your sister's favorite food? || My sister's favorite food is sandwich.",
                   "Q || What is your brother's favorite food? || My brother's favorite food is cereal.",
                   "Q || What is your best friend's favorite food? || My best friend's favorite food is eggs.",
-                  "H || 🥗 || Name the hidden food. || Salad.",
-                  "H || 🍲 || Name the hidden food. || Soup."
+                  "H || 🥗 || Name the hidden food. || Salad",
+                  "H || 🍲 || Name the hidden food. || Soup"
                 ],
                 "mistakes": [
                   "M || My sister's favorite food [am] sandwich. || am / are / is* || My sister's favorite food is sandwich.",
@@ -486,8 +486,8 @@ export const COURSES: CourseDef[] = [
                   "Q || What is your grandma's favorite drink? || My grandma's favorite drink is coffee.",
                   "Q || What is your grandpa's favorite drink? || My grandpa's favorite drink is water.",
                   "Q || What is your cousin's favorite drink? || My cousin's favorite drink is milk.",
-                  "H || 💧 || Name this drink. || Water.",
-                  "H || 🥛 || Name this drink. || Milk."
+                  "H || 💧 || Name this drink. || Water",
+                  "H || 🥛 || Name this drink. || Milk"
                 ],
                 "mistakes": [
                   "M || My brother's favorite [drinks] is water. || drinking / drink* / drinks || My brother's favorite drink is water.",
@@ -513,8 +513,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Say your name and country. || My name is Mia. I am from Colombia.",
                   "T || cuatro || four",
                   "Q || Pretend you are eight. Say your age. || I am eight years old.",
-                  "H || 🍎 || Name the hidden fruit. || An apple.",
-                  "H || 😠 || How is she? || She is angry."
+                  "H || 🍎 || Name the hidden fruit. || Apple",
+                  "H || 😠 || What word is hidden? || Angry"
                 ],
                 "mistakes": [
                   "M || She [am] angry. || is* / am / are || She is angry.",
@@ -540,8 +540,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Say your name and age. || My name is Mia. I am ten years old.",
                   "Q || Spell your first name. || M-I-A.",
                   "Q || Spell SAM. || S-A-M.",
-                  "H || 🔴 || What color is this? || It is red.",
-                  "H || 👨 || What is he? || He is a man."
+                  "H || 🔴 || What color is this? || Red",
+                  "H || 👨 || What word is hidden? || Man"
                 ],
                 "mistakes": [
                   "M || He [am] a man. || am / are / is* || He is a man.",
@@ -567,8 +567,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Say this number: 1. || One.",
                   "Q || What is the first letter of your name? || M.",
                   "Q || Spell BEN. || B-E-N.",
-                  "H || 🍔 || Name the hidden food. || A hamburger.",
-                  "H || ☕ || Name this drink. || Coffee."
+                  "H || 🍔 || Name the hidden food. || Hamburger",
+                  "H || ☕ || Name this drink. || Coffee"
                 ],
                 "mistakes": [
                   "M || My favorite food [am] hot dog. || are / is* / am || My favorite food is hot dog.",
@@ -759,8 +759,7 @@ export const COURSES: CourseDef[] = [
                   "T || Yo me ducho. || I take a shower.",
                   "T || Yo desayuno. || I eat breakfast.",
                   "T || Yo me despierto todos los días. || I wake up every day.",
-                  "H || 🚿 || Use \"I\" to describe the hidden activity every day. || I take a shower.",
-                  "H || ⏰ || Name an action suggested by the hidden picture. || Wake up."
+                  "H || 🚿 || What is the hidden action? || Take a shower"
                 ],
                 "mistakes": [
                   "M || I [eats] breakfast. || eats / eating / eat* || I eat breakfast.",
@@ -786,8 +785,7 @@ export const COURSES: CourseDef[] = [
                   "T || Yo me ducho. || I take a shower.",
                   "T || Yo desayuno. || I eat breakfast.",
                   "T || Yo me cepillo los dientes. || I brush my teeth.",
-                  "H || 🚿 || Use \"I\" to describe the hidden activity every day. || I take a shower.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Eat breakfast."
+                  "H || 🚿 || What is the hidden action? || Take a shower"
                 ],
                 "mistakes": [
                   "M || I [eats] breakfast. || eating / eat* / eats || I eat breakfast.",
@@ -813,8 +811,7 @@ export const COURSES: CourseDef[] = [
                   "T || Yo me ducho. || I take a shower.",
                   "T || Yo desayuno. || I eat breakfast.",
                   "T || Yo me cepillo los dientes. || I brush my teeth.",
-                  "H || 🚿 || Use \"I\" to describe the hidden activity every day. || I take a shower.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Eat breakfast."
+                  "H || 🚿 || What is the hidden action? || Take a shower"
                 ],
                 "mistakes": [
                   "M || I [takes] a shower. || take* / takes / taking || I take a shower.",
@@ -840,8 +837,7 @@ export const COURSES: CourseDef[] = [
                   "T || Yo me ducho. || I take a shower.",
                   "T || Yo desayuno. || I eat breakfast.",
                   "T || Yo me cepillo los dientes. || I brush my teeth.",
-                  "H || 🚿 || Use \"I\" to describe the hidden activity every day. || I take a shower.",
-                  "H || 🪥 || Name an action suggested by the hidden picture. || Brush my teeth."
+                  "H || 🚿 || What is the hidden action? || Take a shower"
                 ],
                 "mistakes": [
                   "M || I [goes] to sleep at nine o'clock. || goes / going / go* || I go to sleep at nine o'clock.",
@@ -866,9 +862,7 @@ export const COURSES: CourseDef[] = [
                   "Q || When do you brush your teeth? || I brush my teeth after breakfast.",
                   "Q || When do you go to sleep? || I go to sleep at nine o'clock.",
                   "Q || What do you do in the bathroom? || I take a shower.",
-                  "Q || What do you do at seven o'clock? || I wake up.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Eat breakfast.",
-                  "H || ⏰ || Name an action suggested by the hidden picture. || Wake up."
+                  "Q || What do you do at seven o'clock? || I wake up."
                 ],
                 "mistakes": [
                   "M || I [goes] to sleep at nine o'clock. || going / go* / goes || I go to sleep at nine o'clock.",
@@ -899,8 +893,7 @@ export const COURSES: CourseDef[] = [
                   "T || Yo escribo un cuento. || I write a story.",
                   "T || Yo corro. || I run.",
                   "T || Yo aprendo inglés todos los días. || I learn English every day.",
-                  "H || ✍️ || Use \"I\" to describe the hidden activity every day. || I write a story.",
-                  "H || 📚 || Name an action suggested by the hidden picture. || Learn English."
+                  "H || ✍️ || What is the hidden action? || Write"
                 ],
                 "mistakes": [
                   "M || I [runs]. || runs / running / run* || I run.",
@@ -926,8 +919,8 @@ export const COURSES: CourseDef[] = [
                   "T || Yo escribo un cuento. || I write a story.",
                   "T || Yo corro. || I run.",
                   "T || Yo juego. || I play games.",
-                  "H || ✍️ || Use \"I\" to describe the hidden activity every day. || I write a story.",
-                  "H || 🏃 || Name an action suggested by the hidden picture. || Run."
+                  "H || ✍️ || What is the hidden action? || Write",
+                  "H || 🏃 || What is the hidden action? || Run"
                 ],
                 "mistakes": [
                   "M || I [runs]. || running / run* / runs || I run.",
@@ -953,8 +946,8 @@ export const COURSES: CourseDef[] = [
                   "T || Yo escribo un cuento. || I write a story.",
                   "T || Yo corro. || I run.",
                   "T || Yo juego. || I play games.",
-                  "H || ✍️ || Use \"I\" to describe the hidden activity every day. || I write a story.",
-                  "H || 🏃 || Name an action suggested by the hidden picture. || Run."
+                  "H || ✍️ || What is the hidden action? || Write",
+                  "H || 🏃 || What is the hidden action? || Run"
                 ],
                 "mistakes": [
                   "M || I [writes] a story. || write* / writes / writing || I write a story.",
@@ -980,8 +973,7 @@ export const COURSES: CourseDef[] = [
                   "T || Yo escribo un cuento. || I write a story.",
                   "T || Yo corro. || I run.",
                   "T || Yo juego. || I play games.",
-                  "H || ✍️ || Use \"I\" to describe the hidden activity every day. || I write a story.",
-                  "H || 🎲 || Name an action suggested by the hidden picture. || Play games."
+                  "H || ✍️ || What is the hidden action? || Write"
                 ],
                 "mistakes": [
                   "M || I [drinks] water after exercise. || drinks / drinking / drink* || I drink water after exercise.",
@@ -1007,8 +999,7 @@ export const COURSES: CourseDef[] = [
                   "Q || When do you drink water? || I drink water after exercise.",
                   "Q || What do you do in the classroom? || I write a story.",
                   "Q || What do you do after lunch? || I learn English.",
-                  "H || 🏃 || Name an action suggested by the hidden picture. || Run.",
-                  "H || 📚 || Name an action suggested by the hidden picture. || Learn English."
+                  "H || 🏃 || What is the hidden action? || Run"
                 ],
                 "mistakes": [
                   "M || I [drinks] water after exercise. || drinking / drink* / drinks || I drink water after exercise.",
@@ -1039,8 +1030,8 @@ export const COURSES: CourseDef[] = [
                   "T || Él pinta un cuadro. || He paints a picture.",
                   "T || Ella baila. || She dances.",
                   "T || Él canta todos los días. || He sings every day.",
-                  "H || 🎨 || Use \"He\" to describe the hidden activity every day. || He paints a picture.",
-                  "H || 💃 || Use \"He\" to describe the hidden activity every day. || He dances."
+                  "H || 🎨 || What is the hidden action? || Paint",
+                  "H || 💃 || What is the hidden action? || Dance"
                 ],
                 "mistakes": [
                   "M || He [dance]. || dance / dancing / dances* || He dances.",
@@ -1066,8 +1057,8 @@ export const COURSES: CourseDef[] = [
                   "T || Ella pinta un cuadro. || She paints a picture.",
                   "T || Él baila. || He dances.",
                   "T || Él lee un libro. || He reads a book.",
-                  "H || 🎨 || Use \"He\" to describe the hidden activity every day. || He paints a picture.",
-                  "H || 💃 || Use \"She\" to describe the hidden activity every day. || She dances."
+                  "H || 🎨 || What is the hidden action? || Paint",
+                  "H || 💃 || What is the hidden action? || Dance"
                 ],
                 "mistakes": [
                   "M || He [read] a book. || reading / reads* / read || He reads a book.",
@@ -1093,8 +1084,8 @@ export const COURSES: CourseDef[] = [
                   "T || Él pinta un cuadro. || He paints a picture.",
                   "T || Él baila. || He dances.",
                   "T || Ella lee un libro. || She reads a book.",
-                  "H || 🎨 || Use \"She\" to describe the hidden activity every day. || She paints a picture.",
-                  "H || 💃 || Use \"He\" to describe the hidden activity every day. || He dances."
+                  "H || 🎨 || What is the hidden action? || Paint",
+                  "H || 💃 || What is the hidden action? || Dance"
                 ],
                 "mistakes": [
                   "M || He [paint] a picture. || paints* / paint / painting || He paints a picture.",
@@ -1120,8 +1111,8 @@ export const COURSES: CourseDef[] = [
                   "T || Él pinta un cuadro. || He paints a picture.",
                   "T || Ella baila. || She dances.",
                   "T || Ella lee un libro. || She reads a book.",
-                  "H || 🎨 || Use \"He\" to describe the hidden activity every day. || He paints a picture.",
-                  "H || 💃 || Use \"He\" to describe the hidden activity every day. || He dances."
+                  "H || 🎨 || What is the hidden action? || Paint",
+                  "H || 💃 || What is the hidden action? || Dance"
                 ],
                 "mistakes": [
                   "M || She [read] a book in the library. || read / reading / reads* || She reads a book in the library.",
@@ -1147,8 +1138,8 @@ export const COURSES: CourseDef[] = [
                   "T || Ella pinta un cuadro. || She paints a picture.",
                   "T || Ella baila. || She dances.",
                   "T || Ella lee un libro. || She reads a book.",
-                  "H || 🎨 || Use \"He\" to describe the hidden activity every day. || He paints a picture.",
-                  "H || 💃 || Use \"She\" to describe the hidden activity every day. || She dances."
+                  "H || 🎨 || What is the hidden action? || Paint",
+                  "H || 💃 || What is the hidden action? || Dance"
                 ],
                 "mistakes": [
                   "M || He [paint] a picture. || painting / paints* / paint || He paints a picture.",
@@ -1179,8 +1170,7 @@ export const COURSES: CourseDef[] = [
                   "T || Yo me ducho. || I take a shower.",
                   "T || Yo desayuno. || I eat breakfast.",
                   "T || Yo corro. || I run.",
-                  "H || 🚿 || Use \"I\" to describe the hidden activity every day. || I take a shower.",
-                  "H || ⏰ || Name an action suggested by the hidden picture. || Wake up."
+                  "H || 🚿 || What is the hidden action? || Take a shower"
                 ],
                 "mistakes": [
                   "M || I [eats] breakfast. || eats / eating / eat* || I eat breakfast.",
@@ -1206,8 +1196,8 @@ export const COURSES: CourseDef[] = [
                   "T || Él pinta un cuadro. || He paints a picture.",
                   "T || Él baila. || He dances.",
                   "T || Ella lee un libro. || She reads a book.",
-                  "H || 🎨 || Use \"She\" to describe the hidden activity every day. || She paints a picture.",
-                  "H || 💃 || Use \"He\" to describe the hidden activity every day. || He dances."
+                  "H || 🎨 || What is the hidden action? || Paint",
+                  "H || 💃 || What is the hidden action? || Dance"
                 ],
                 "mistakes": [
                   "M || He [clean] the room at eight o'clock. || cleaning / cleans* / clean || He cleans the room at eight o'clock.",
@@ -1233,8 +1223,8 @@ export const COURSES: CourseDef[] = [
                   "Q || Tell us two things your best friend does. || My best friend sings and paints.",
                   "T || Ella canta después de la escuela. || She sings after school.",
                   "T || Él baila en casa. || He dances at home.",
-                  "H || 🍎 || Name the hidden fruit. || An apple.",
-                  "H || 🍌 || Name the hidden fruit. || A banana."
+                  "H || 🍎 || Name the hidden fruit. || Apple",
+                  "H || 🍌 || Name the hidden fruit. || Banana"
                 ],
                 "mistakes": [
                   "M || Leo [am] her best friend. || is* / am / are || Leo is her best friend.",
@@ -1260,8 +1250,7 @@ export const COURSES: CourseDef[] = [
                   "Q || Say your name, then spell it. || My name is Mia. M-I-A.",
                   "T || una manzana || an apple",
                   "Q || Describe a story character with \"angry\". || She is angry.",
-                  "H || 👧 || What is she? || She is a girl.",
-                  "H || ⏰ || Name an action suggested by the hidden picture. || Wake up."
+                  "H || 👧 || What word is hidden? || Girl"
                 ],
                 "mistakes": [
                   "M || She [am] a girl. || am / are / is* || She is a girl.",
@@ -1286,9 +1275,7 @@ export const COURSES: CourseDef[] = [
                   "Q || Say this number: 5. || Five.",
                   "T || azul || blue",
                   "Q || Complete: He ____ a boy. || He is a boy.",
-                  "Q || What is your mom's favorite food? || My mom's favorite food is salad.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Eat breakfast.",
-                  "H || 🪥 || Name an action suggested by the hidden picture. || Brush my teeth."
+                  "Q || What is your mom's favorite food? || My mom's favorite food is salad."
                 ],
                 "mistakes": [
                   "M || He [am] a boy. || are / is* / am || He is a boy.",
@@ -1318,9 +1305,7 @@ export const COURSES: CourseDef[] = [
                   "T || Ella se despierta. || She wakes up.",
                   "T || Él cocina la cena. || He cooks dinner.",
                   "T || Él trabaja. || He works.",
-                  "T || Ella se despierta todos los días. || She wakes up every day.",
-                  "H || ⏰ || Name an action suggested by the hidden picture. || Wake up.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Cook dinner."
+                  "T || Ella se despierta todos los días. || She wakes up every day."
                 ],
                 "mistakes": [
                   "M || He [work]. || work / working / works* || He works.",
@@ -1345,9 +1330,7 @@ export const COURSES: CourseDef[] = [
                   "T || Él se despierta. || He wakes up.",
                   "T || Él cocina la cena. || He cooks dinner.",
                   "T || Él trabaja. || He works.",
-                  "T || Ella hace ejercicio. || She exercises.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Cook dinner.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work."
+                  "T || Ella hace ejercicio. || She exercises."
                 ],
                 "mistakes": [
                   "M || He [cook] dinner. || cooking / cooks* / cook || He cooks dinner.",
@@ -1373,8 +1356,7 @@ export const COURSES: CourseDef[] = [
                   "T || Ella cocina la cena. || She cooks dinner.",
                   "T || Él trabaja. || He works.",
                   "T || Ella hace ejercicio. || She exercises.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work.",
-                  "H || 🏋️ || Name an action suggested by the hidden picture. || Exercise."
+                  "H || 🏋️ || What is the hidden action? || Exercise"
                 ],
                 "mistakes": [
                   "M || She [cook] dinner. || cooks* / cook / cooking || She cooks dinner.",
@@ -1400,8 +1382,7 @@ export const COURSES: CourseDef[] = [
                   "T || Ella cocina la cena. || She cooks dinner.",
                   "T || Él trabaja. || He works.",
                   "T || Él hace ejercicio. || He exercises.",
-                  "H || 📺 || Name an action suggested by the hidden picture. || Watch TV.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Cook dinner."
+                  "H || 📺 || What is the hidden action? || Watch TV"
                 ],
                 "mistakes": [
                   "M || He [exercise] in the park. || exercise / exercising / exercises* || He exercises in the park.",
@@ -1426,9 +1407,7 @@ export const COURSES: CourseDef[] = [
                   "Q || When does Leo exercise? || He exercises in the morning.",
                   "Q || When does your teacher watch TV? || He watches TV after dinner.",
                   "Q || What does Emma do in the kitchen? || She cooks dinner.",
-                  "Q || What does Leo do at seven o'clock? || He wakes up.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work.",
-                  "H || ⏰ || Name an action suggested by the hidden picture. || Wake up."
+                  "Q || What does Leo do at seven o'clock? || He wakes up."
                 ],
                 "mistakes": [
                   "M || She [exercise]. || exercising / exercises* / exercise || She exercises.",
@@ -1458,9 +1437,7 @@ export const COURSES: CourseDef[] = [
                   "T || Él se despierta. || He wakes up.",
                   "T || Ella trabaja. || She works.",
                   "T || Ella hace ejercicio. || She exercises.",
-                  "T || Ella se despierta. || She wakes up.",
-                  "H || ⏰ || Name an action suggested by the hidden picture. || Wake up.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work."
+                  "T || Ella se despierta. || She wakes up."
                 ],
                 "mistakes": [
                   "M || He [exercise]. || exercise / exercising / exercises* || He exercises.",
@@ -1485,9 +1462,7 @@ export const COURSES: CourseDef[] = [
                   "T || Él se despierta. || He wakes up.",
                   "T || Ella cocina la cena. || She cooks dinner.",
                   "T || Él trabaja. || He works.",
-                  "T || Ella hace ejercicio. || She exercises.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Cook dinner.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work."
+                  "T || Ella hace ejercicio. || She exercises."
                 ],
                 "mistakes": [
                   "M || She [cook] dinner. || cooking / cooks* / cook || She cooks dinner.",
@@ -1513,8 +1488,7 @@ export const COURSES: CourseDef[] = [
                   "T || Ella cocina la cena. || She cooks dinner.",
                   "T || Él trabaja. || He works.",
                   "T || Él hace ejercicio. || He exercises.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work.",
-                  "H || 🏋️ || Name an action suggested by the hidden picture. || Exercise."
+                  "H || 🏋️ || What is the hidden action? || Exercise"
                 ],
                 "mistakes": [
                   "M || She [cook] dinner. || cooks* / cook / cooking || She cooks dinner.",
@@ -1540,8 +1514,8 @@ export const COURSES: CourseDef[] = [
                   "T || Ella cocina la cena. || She cooks dinner.",
                   "T || Él trabaja. || He works.",
                   "T || Él hace ejercicio. || He exercises.",
-                  "H || 🏋️ || Name an action suggested by the hidden picture. || Exercise.",
-                  "H || 📺 || Name an action suggested by the hidden picture. || Watch TV."
+                  "H || 🏋️ || What is the hidden action? || Exercise",
+                  "H || 📺 || What is the hidden action? || Watch TV"
                 ],
                 "mistakes": [
                   "M || He [exercise] in the park. || exercise / exercising / exercises* || He exercises in the park.",
@@ -1567,8 +1541,7 @@ export const COURSES: CourseDef[] = [
                   "Q || When does your mom watch TV? || She watches TV after dinner.",
                   "Q || What does your mom do in an office? || She works.",
                   "Q || What does your teacher do in the morning? || He exercises.",
-                  "H || 🏋️ || Name an action suggested by the hidden picture. || Exercise.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work."
+                  "H || 🏋️ || What is the hidden action? || Exercise"
                 ],
                 "mistakes": [
                   "M || She [work]. || working / works* / work || She works.",
@@ -1599,8 +1572,8 @@ export const COURSES: CourseDef[] = [
                   "T || Ella juega fútbol. || She plays soccer.",
                   "T || Ella bebe agua. || She drinks water.",
                   "T || Ella hace ejercicio. || She exercises.",
-                  "H || ⚽ || Use \"He\" to describe the hidden activity every day. || He plays soccer.",
-                  "H || 🏋️ || Name an action suggested by the hidden picture. || Exercise."
+                  "H || ⚽ || What is the hidden action? || Play soccer",
+                  "H || 🏋️ || What is the hidden action? || Exercise"
                 ],
                 "mistakes": [
                   "M || He [drink] water. || drink / drinking / drinks* || He drinks water.",
@@ -1626,8 +1599,7 @@ export const COURSES: CourseDef[] = [
                   "T || Ella juega fútbol. || She plays soccer.",
                   "T || Ella bebe agua. || She drinks water.",
                   "T || Él gana una carrera. || He wins a race.",
-                  "H || ⚽ || Use \"She\" to describe the hidden activity every day. || She plays soccer.",
-                  "H || 💧 || Name an action suggested by the hidden picture. || Drink water."
+                  "H || ⚽ || What is the hidden action? || Play soccer"
                 ],
                 "mistakes": [
                   "M || She [play] soccer. || playing / plays* / play || She plays soccer.",
@@ -1653,8 +1625,7 @@ export const COURSES: CourseDef[] = [
                   "T || Ella juega fútbol. || She plays soccer.",
                   "T || Él bebe agua. || He drinks water.",
                   "T || Él gana una carrera. || He wins a race.",
-                  "H || ⚽ || Use \"She\" to describe the hidden activity every day. || She plays soccer.",
-                  "H || 💧 || Name an action suggested by the hidden picture. || Drink water."
+                  "H || ⚽ || What is the hidden action? || Play soccer"
                 ],
                 "mistakes": [
                   "M || He [play] soccer. || plays* / play / playing || He plays soccer.",
@@ -1680,8 +1651,7 @@ export const COURSES: CourseDef[] = [
                   "T || Él juega fútbol. || He plays soccer.",
                   "T || Él bebe agua. || He drinks water.",
                   "T || Ella gana una carrera. || She wins a race.",
-                  "H || ⚽ || Use \"She\" to describe the hidden activity every day. || She plays soccer.",
-                  "H || 🧳 || Name an action suggested by the hidden picture. || Travel."
+                  "H || ⚽ || What is the hidden action? || Play soccer"
                 ],
                 "mistakes": [
                   "M || She [win] a race at school. || win / winning / wins* || She wins a race at school.",
@@ -1707,8 +1677,7 @@ export const COURSES: CourseDef[] = [
                   "Q || Complete: He ____. (drink water) || He drinks water.",
                   "Q || What does your teacher do in the park? || He plays soccer.",
                   "Q || What does your mom do in the morning? || She exercises.",
-                  "H || 💧 || Name an action suggested by the hidden picture. || Drink water.",
-                  "H || 🏋️ || Name an action suggested by the hidden picture. || Exercise."
+                  "H || 🏋️ || What is the hidden action? || Exercise"
                 ],
                 "mistakes": [
                   "M || She [win] a race on sports day. || winning / wins* / win || She wins a race on sports day.",
@@ -1739,8 +1708,7 @@ export const COURSES: CourseDef[] = [
                   "T || Yo me ducho. || I take a shower.",
                   "T || Yo desayuno. || I eat breakfast.",
                   "T || Yo me cepillo los dientes. || I brush my teeth.",
-                  "H || 🚿 || Use \"I\" to describe the hidden activity every day. || I take a shower.",
-                  "H || ⏰ || Name an action suggested by the hidden picture. || Wake up."
+                  "H || 🚿 || What is the hidden action? || Take a shower"
                 ],
                 "mistakes": [
                   "M || I [eats] breakfast. || eats / eating / eat* || I eat breakfast.",
@@ -1765,9 +1733,7 @@ export const COURSES: CourseDef[] = [
                   "T || Ella se despierta. || She wakes up.",
                   "T || Ella cocina la cena. || She cooks dinner.",
                   "T || Él trabaja. || He works.",
-                  "T || Él hace ejercicio. || He exercises.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Cook dinner.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work."
+                  "T || Él hace ejercicio. || He exercises."
                 ],
                 "mistakes": [
                   "M || She [watch] TV at eight o'clock. || watching / watches* / watch || She watches TV at eight o'clock.",
@@ -1793,8 +1759,7 @@ export const COURSES: CourseDef[] = [
                   "T || Él juega fútbol. || He plays soccer.",
                   "T || Él bebe agua. || He drinks water.",
                   "T || Ella gana una carrera. || She wins a race.",
-                  "H || ⚽ || Use \"She\" to describe the hidden activity every day. || She plays soccer.",
-                  "H || 💧 || Name an action suggested by the hidden picture. || Drink water."
+                  "H || ⚽ || What is the hidden action? || Play soccer"
                 ],
                 "mistakes": [
                   "M || He [play] soccer. || plays* / play / playing || He plays soccer.",
@@ -1820,8 +1785,8 @@ export const COURSES: CourseDef[] = [
                   "T || Él limpia su cuarto los domingos. || He cleans his room on Sundays.",
                   "Q || Spell the word \"white\". || W-H-I-T-E.",
                   "Q || Make a simple present sentence with \"I\" and \"brush my teeth\". || I brush my teeth.",
-                  "H || 🎨 || Use \"He\" to describe the hidden activity every day. || He paints a picture.",
-                  "H || ⚪ || What color is this? || It is white."
+                  "H || 🎨 || What is the hidden action? || Paint",
+                  "H || ⚪ || What color is this? || White"
                 ],
                 "mistakes": [
                   "M || He [paint] a picture. || paint / painting / paints* || He paints a picture.",
@@ -1846,9 +1811,7 @@ export const COURSES: CourseDef[] = [
                   "Q || Spell TOM. || T-O-M.",
                   "Q || Make a simple present sentence with \"I\" and \"take a shower\". || I take a shower.",
                   "T || un perro caliente || a hot dog",
-                  "Q || Make a simple present sentence with \"I\" and \"wake up\". || I wake up.",
-                  "H || 💻 || Name an action suggested by the hidden picture. || Work.",
-                  "H || 🍳 || Name an action suggested by the hidden picture. || Cook dinner."
+                  "Q || Make a simple present sentence with \"I\" and \"wake up\". || I wake up."
                 ],
                 "mistakes": [
                   "M || I [eats] breakfast. || eating / eat* / eats || I eat breakfast.",
@@ -1986,8 +1949,8 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 1",
                 "focus": "There is / there are; simple present, 1st person (review) — Vocabulary: shapes (circle, rectangle, star, heart, square, triangle, oval)",
                 "lines": [
-                  "H || circle:2 || What is hidden? || There are two circles.",
-                  "H || star:1 || What shape is hidden? || It's a star.",
+                  "H || circle:1 || What shape is hidden? || Circle",
+                  "H || star:1 || What shape is hidden? || Star",
                   "F || There ____ three squares. || are || is / aren't",
                   "F || I ____ up at seven o'clock. || wake || wakes / waking",
                   "Q || What do you do on Saturdays? || On Saturdays, I play soccer. / I watch TV on Saturdays.",
@@ -2024,8 +1987,8 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 2",
                 "focus": "There is / there are; simple present, 3rd person singular (review)",
                 "lines": [
-                  "H || heart:3 || What is hidden? || There are three hearts.",
-                  "H || triangle:2 || What is hidden? || There are two triangles.",
+                  "H || heart:1 || What shape is hidden? || Heart",
+                  "H || triangle:1 || What shape is hidden? || Triangle",
                   "F || Messi ____ soccer every day. || plays || play / playing",
                   "F || My dad ____ up at six o'clock. || wakes || wake / waking",
                   "Q || What does your mom do in the morning? || My mom cooks breakfast. / She goes to work.",
@@ -2062,8 +2025,7 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 3",
                 "focus": "There is / there are",
                 "lines": [
-                  "H || oval:1, square:2 || What shapes are hidden? || There is one oval and two squares.",
-                  "H || rectangle:3 || What is hidden? || There are three rectangles.",
+                  "H || rectangle:1 || What shape is hidden? || Rectangle",
                   "F || There ____ a star. || is || are / aren't",
                   "F || There ____ a triangle. || isn't || aren't / are",
                   "S || star:3, heart:2 || How many shapes do you see? || I see five shapes. / There are five shapes.",
@@ -2105,8 +2067,8 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 1",
                 "focus": "Simple present, 1st person singular — Vocabulary: professions (doctor, vet, firefighter, police officer)",
                 "lines": [
-                  "H || 👩‍⚕️ || What is her profession? || She is a doctor.",
-                  "H || 🧑‍🚒 || What is his profession? || He is a firefighter.",
+                  "H || 👩‍⚕️ || What profession is hidden? || Doctor",
+                  "H || 🧑‍🚒 || What profession is hidden? || Firefighter",
                   "F || I ____ to be a vet. || want || wants / wanting",
                   "F || I don't want ____ a police officer. || to be || be / is",
                   "Q || What do you want to be in the future? || I want to be a doctor. / I want to be a vet.",
@@ -2148,8 +2110,8 @@ export const COURSES: CourseDef[] = [
                 "label": "Day 3",
                 "focus": "Want to be… because I want to… — Vocabulary: help, stop fires, fight crime, explore space (+ astronaut)",
                 "lines": [
-                  "H || 👩‍🚀 || What is her profession? || She is an astronaut.",
-                  "H || 🐶🩺 || Who helps animals? || A vet helps animals.",
+                  "H || 👩‍🚀 || What profession is hidden? || Astronaut",
+                  "H || 🐶🩺 || What profession is hidden? || Vet",
                   "F || A firefighter ____ fires. || stops || stop / stopping",
                   "F || I want to be a vet ____ I want to help animals. || because || but / and",
                   "Q || Where do you want to work? || I want to work in a hospital. / I want to work at a fire station.",
