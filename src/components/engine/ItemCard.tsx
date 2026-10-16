@@ -50,19 +50,19 @@ export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = 
         <div className="pic-wrap absolute inset-0 grid place-items-center">
           <ItemPicture item={item} big />
         </div>
-        <div className="absolute inset-0 grid grid-cols-4 grid-rows-3">
+        <div className="hidden-tiles absolute inset-0 grid grid-cols-4 grid-rows-3">
           {Array.from({ length: HIDDEN_TILES }, (_, i) => {
             const isOpen = showAll || open.has(i);
             if (isOpen) return <div key={i} aria-hidden className="pointer-events-none" />;
             return (
-              <div key={i} className="bg-card p-1">
-                <Button
-                  onClick={() => reveal(i)}
-                  className="h-full w-full rounded-xl border-4 border-border bg-primary font-display text-4xl font-bold text-primary-foreground hover:brightness-110"
-                >
-                  {i + 1}
-                </Button>
-              </div>
+              <Button
+                key={i}
+                aria-label={`Open tile ${i + 1}`}
+                onClick={() => reveal(i)}
+                className="hidden-tile h-full w-full rounded-none bg-primary p-0 font-display text-4xl font-bold text-primary-foreground hover:brightness-110"
+              >
+                {i + 1}
+              </Button>
             );
           })}
         </div>

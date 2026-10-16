@@ -1005,11 +1005,44 @@
   .game-rules .panel { padding: 8px 16px; gap: 14px; }
   .game-rules .panel > span:first-child { font-size: 34px; }
   .game-rules .panel > span:last-child { font-size: 26px; line-height: 1.15; }
-  .tug-shell .game-rules { gap: 8px; padding: 8px 24px; }
+}
+
+/* All twelve covers touch: only the outer board clips rounded corners. */
+.hidden-tiles { gap: 0; }
+.hidden-tiles .hidden-tile {
+  min-height: 0;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: inset -1px -1px 0 var(--primary-foreground);
+  font-size: min(40px, 22cqh);
+}
+.hidden-tiles .hidden-tile:nth-child(4n) { box-shadow: inset 0 -1px 0 var(--primary-foreground); }
+.hidden-tiles .hidden-tile:nth-child(n + 9) { box-shadow: inset -1px 0 0 var(--primary-foreground); }
+.hidden-tiles .hidden-tile:last-child { box-shadow: none; }
+
+/* Rules fit at every height, not just within the old laptop breakpoint. */
+.tug-shell > main:has(> .game-rules) { overflow: hidden; }
+.tug-shell .game-rules {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  gap: 16px;
+  padding: 16px 24px;
+}
+.tug-shell .game-rules > div:first-child { flex-shrink: 0; font-size: 80px; }
+.tug-shell .game-rules > h1 { flex-shrink: 0; font-size: 52px; line-height: 1.05; }
+.tug-shell .game-rules > .grid { width: min(100%, 960px); gap: 12px; }
+.tug-shell .game-rules .panel { min-width: 0; padding: 12px 20px; gap: 16px; }
+.tug-shell .game-rules .panel > span:first-child { flex-shrink: 0; font-size: 40px; }
+.tug-shell .game-rules .panel > span:last-child { min-width: 0; font-size: 30px; line-height: 1.2; }
+.tug-shell .game-rules > div:last-of-type { flex-shrink: 0; }
+@media (max-height: 740px) {
+  .tug-shell .game-rules { gap: 10px; padding: 10px 24px; }
   .tug-shell .game-rules > div:first-child { font-size: 48px; }
   .tug-shell .game-rules > h1 { font-size: 36px; }
-  .tug-shell .game-rules > .grid { gap: 6px; }
-  .tug-shell .game-rules .panel { padding: 6px 14px; }
-  .tug-shell .game-rules .panel > span:first-child { font-size: 28px; }
-  .tug-shell .game-rules .panel > span:last-child { font-size: 22px; }
+  .tug-shell .game-rules > .grid { gap: 8px; }
+  .tug-shell .game-rules .panel { padding: 8px 14px; }
+  .tug-shell .game-rules .panel > span:first-child { font-size: 30px; }
+  .tug-shell .game-rules .panel > span:last-child { font-size: 24px; }
 }
