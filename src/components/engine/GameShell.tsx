@@ -51,6 +51,9 @@ export function GameShell({ game, children, rightSlot, className }: { game: Game
         <Button asChild variant="panel" size="iconLg" aria-label="Home">
           <Link to="/"><Home /></Link>
         </Button>
+        <Button asChild variant="panel" size="iconLg" aria-label="Game settings">
+          <Link to="/setup" search={{ game: game.id }}><SlidersHorizontal /></Link>
+        </Button>
         <div className={cn("flex items-center gap-3 rounded-2xl px-4 py-2 text-primary-foreground chunky", game.accent)}>
           <span className="text-3xl">{game.icon}</span>
           <span className="text-2xl font-bold">{game.name}</span>
