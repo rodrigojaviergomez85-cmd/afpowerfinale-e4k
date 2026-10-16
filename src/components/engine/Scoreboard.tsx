@@ -43,23 +43,23 @@ export function TeamScore({ team, score, index, active }: { team: Team; score: n
   return (
     <div
       className={cn(
-        "relative flex items-center gap-4 rounded-3xl px-5 py-3 chunky transition-transform",
+        "@container relative flex min-w-0 items-center gap-2 rounded-3xl px-3 py-2 chunky transition-transform @md:gap-4 @md:px-5 @md:py-3",
         s.bg,
         active ? "scale-105 ring-4 ring-foreground" : "opacity-90",
       )}
     >
-      <span className="text-5xl">{team.icon}</span>
+      <span className="shrink-0 text-4xl @md:text-5xl">{team.icon}</span>
       <div className="min-w-0 flex-1 text-primary-foreground">
-        <div className="flex items-center gap-2 text-sm font-bold uppercase opacity-80">
+        <div className="hidden items-center gap-2 whitespace-nowrap text-sm font-bold uppercase opacity-80 @md:flex">
           <span>{s.pattern}</span> Team {index + 1} · key {index + 1}
         </div>
-        <div className="truncate text-2xl font-bold leading-tight">{team.name}</div>
+        <div className="truncate text-xl font-bold @md:text-2xl leading-tight">{team.name}</div>
       </div>
-      <div className="relative min-w-20 rounded-2xl bg-card px-4 py-1 text-center font-display text-6xl font-bold text-foreground">
+      <div className="relative min-w-14 shrink-0 rounded-2xl bg-card px-3 py-1 text-center font-display text-5xl @md:min-w-20 @md:px-4 @md:text-6xl font-bold text-foreground">
         {score}
       </div>
       {/* Own track for the +/- change so it never covers the score or the panel edge */}
-      <div className="relative w-24 shrink-0" aria-hidden="true">
+      <div className="relative w-12 shrink-0 @md:w-24" aria-hidden="true">
         <Pop value={score} />
       </div>
     </div>

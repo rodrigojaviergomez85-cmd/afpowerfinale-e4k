@@ -5,6 +5,15 @@ import { SHAPE_COLORS, shuffle } from "@/lib/content";
 const STAR = "50,5 61,38 96,38 68,59 78,93 50,72 22,93 32,59 4,38 39,38";
 const HEART = "M50 88 C20 66 5 48 5 30 C5 15 17 5 30 5 C40 5 47 11 50 18 C53 11 60 5 70 5 C83 5 95 15 95 30 C95 48 80 66 50 88 Z";
 
+const FLAG = /^[\u{1F1E6}-\u{1F1FF}]{2}$/u;
+const flagUrl = (s: string) => `https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/${[...s].map((c) => c.codePointAt(0)!.toString(16)).join("-")}.svg`;
+/** Text with country flags drawn as images (Windows shows flag emoji as letters like "MX"). */
+export function FlagText({ text }: { text: string }) {
+  const segs = [...new Intl.Segmenter().segment(text)].map((x) => x.segment);
+  if (!segs.some((x) => FLAG.test(x))) return <>{text}</>;
+  return <>{segs.map((x, i) => FLAG.test(x) ? <img key={i} alt="" draggable={false} className="inline-block align-[-0.12em]" style={{ height: "1em", width: "auto" }} src={flagUrl(x)} /> : x)}</>;
+}
+
 function Shape({ shape, color, size }: { shape: string; color: string; size: number }) {
   const fill = `var(--shape-${color})`;
   const common = { fill, stroke: "var(--shape-outline)", strokeWidth: 6, strokeLinejoin: "round" as const };
