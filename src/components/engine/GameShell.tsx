@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Home } from "lucide-react";
+import { Home, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FullscreenButton, MuteButton, useHotkeys } from "./controls";
 import type { GameDef } from "@/lib/games";
@@ -50,6 +50,9 @@ export function GameShell({ game, children, rightSlot, className }: { game: Game
       <header className="flex items-center gap-3 px-6 py-3">
         <Button asChild variant="panel" size="iconLg" aria-label="Home">
           <Link to="/"><Home /></Link>
+        </Button>
+        <Button asChild variant="panel" size="iconLg" aria-label="Game settings">
+          <Link to="/setup" search={{ game: game.id }}><SlidersHorizontal /></Link>
         </Button>
         <div className={cn("flex items-center gap-3 rounded-2xl px-4 py-2 text-primary-foreground chunky", game.accent)}>
           <span className="text-3xl">{game.icon}</span>
