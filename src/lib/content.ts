@@ -204,26 +204,34 @@ export function chairDeck(sel: Selection, mode: ChairMode) {
 }
 
 /** Parse Detective Sniff "find the mistake" lines (M || [wrong] sentence || a / b* / c || corrected). */
-function parseMistakes(d: DayDef, week: number): ContentItem[] {
+function parseMistakes(d: DayDef, week: number, level: number): ContentItem[] {
   return (d.mistakes ?? []).map((line, i) => {
     const [, sentence = "", opts = "", fixed = ""] = line.split(" || ");
     const parts = sentence.split(/(\[[^\]]+\])/).filter(Boolean).map((t) => (t.startsWith("[") ? { text: t.slice(1, -1), wrong: true } : { text: t, wrong: false }));
     const raw = opts.split(" / ");
     const options = raw.map((o) => o.replace(/\*$/, "").trim());
     const blank = options[raw.findIndex((o) => o.trim().endsWith("*"))] ?? options[0]!;
-    return { id: `w${week}d${d.day}-m${i}`, kind: "M" as const, prompt: parts.map((x) => x.text).join(""), parts, options, blank, answers: [fixed], week, day: d.day };
+    return { id: `l${level}w${week}d${d.day}-m${i}`, kind: "M" as const, prompt: parts.map((x) => x.text).join(""), parts, options, blank, answers: [fixed], week, day: d.day };
   });
 }
 
-/** Mistake cards for Detective Sniff: selected day → earlier days (latest first) → earlier weeks; never later; `avoid` last. */
+/** Mistake cards for Detective Sniff: selected day → earlier days → earlier weeks → earlier levels.
+ *  Only when that still falls short, this level's upcoming days (nearest first) top the round up. `avoid` (last round) goes last. */
 export function drawMistakes(sel: Selection, count: number, avoid: string[] = []) {
   const lv = getLevel(sel.course, sel.level);
   const tiers: ContentItem[][] = [];
   const weeks = [...lv.weeks].filter((w) => w.week <= sel.week).sort((a, b) => b.week - a.week);
   for (const w of weeks) {
     const days = [...w.days].filter((d) => w.week < sel.week || d.day <= sel.day).sort((a, b) => b.day - a.day);
-    if (w.week === sel.week) for (const d of days) tiers.push(parseMistakes(d, w.week));
-    else tiers.push(days.flatMap((d) => parseMistakes(d, w.week)));
+    if (w.week === sel.week) for (const d of days) tiers.push(parseMistakes(d, w.week, sel.level));
+    else tiers.push(days.flatMap((d) => parseMistakes(d, w.week, sel.level)));
+  }
+  for (const prev of [...getCourse(sel.course).levels].filter((l) => l.level < sel.level).sort((a, b) => b.level - a.level)) {
+    tiers.push([...prev.weeks].sort((a, b) => b.week - a.week).flatMap((w) => w.days.flatMap((d) => parseMistakes(d, w.week, prev.level))));
+  }
+  for (const w of [...lv.weeks].sort((a, b) => a.week - b.week)) {
+    const days = [...w.days].filter((d) => w.week > sel.week || d.day > sel.day).sort((a, b) => a.day - b.day);
+    if (days.length) tiers.push(days.flatMap((d) => parseMistakes(d, w.week, sel.level)));
   }
   const av = new Set(avoid);
   const ordered = [...tiers.flatMap((t) => shuffle(t.filter((i) => !av.has(i.id)))), ...tiers.flatMap((t) => shuffle(t.filter((i) => av.has(i.id))))];
