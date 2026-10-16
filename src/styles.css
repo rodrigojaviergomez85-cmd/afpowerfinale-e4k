@@ -852,6 +852,10 @@
 .demo-play .fit-card[data-kind="H"], .tug-play .fit-card[data-kind="H"] { container-type: size; }
 .demo-play .fit-card[data-kind="H"] .hidden-board, .tug-play .fit-card[data-kind="H"] .hidden-board { max-height: max(54px, calc(100cqh - 108px)); }
 .demo-play .fit-card[data-kind="H"] .item-answer, .tug-play .fit-card[data-kind="H"] .item-answer { min-height: 32px !important; display: block; }
+.demo-play .hidden-board, .tug-play .hidden-board { container-type: size; }
+.demo-play .hidden-board .pic-wrap, .tug-play .hidden-board .pic-wrap { zoom: 1 !important; }
+.demo-play .hidden-board .pic-wrap > div, .tug-play .hidden-board .pic-wrap > div { font-size: 80cqh !important; max-width: 100%; }
+.demo-play .hidden-board svg, .tug-play .hidden-board svg { max-height: 80cqh; max-width: 100%; }
 .steal-slot { flex: 0 0 36px; min-height: 36px; display: flex; justify-content: center; align-items: center; }
 .steal-notice { max-width: 100%; padding: 4px 18px; font-size: 22px; line-height: 1.2; text-align: center; }
 .demo-play, .tug-play { padding: 0 18px 14px; }
