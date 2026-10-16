@@ -120,14 +120,19 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
         {[0, 1].map((i) => mascot(1, i))}
         {/* sunk-in mud lip so muddy mascots look inside the puddle */}
         {ending && ending.step >= 1 && <ellipse cx="560" cy="266" rx="250" ry="26" fill="var(--mud-deep)" opacity="0.85" />}
-        {/* Interwoven rope knot: outlined strands with braided texture. */}
+        {/* Red ribbon bow tied at the rope's center, like the reference. */}
         <g key={`ribbon-${key}`} className={fx?.kind === "slip" ? "tug-shake" : undefined}>
-          <g transform={`translate(${ribbonX} ${ropeY(ribbonX)})`} aria-label="Center rope knot">
-            <path d="M -28 0 C -15 0 -18 -15 -5 -15 C 12 -15 18 15 4 15 C -10 15 -15 0 -28 0 M 28 0 C 15 0 18 15 5 15 C -12 15 -18 -15 -4 -15 C 10 -15 15 0 28 0" fill="none" stroke="var(--rope-straw-deep)" strokeWidth="12" strokeLinecap="round" />
-            <path d="M -28 0 C -15 0 -18 -15 -5 -15 C 12 -15 18 15 4 15 C -10 15 -15 0 -28 0 M 28 0 C 15 0 18 15 5 15 C -12 15 -18 -15 -4 -15 C 10 -15 15 0 28 0" fill="none" stroke="var(--rope-straw)" strokeWidth="7" strokeLinecap="round" />
-            <path d="M -8 -11 L 8 11" fill="none" stroke="var(--rope-straw-deep)" strokeWidth="12" strokeLinecap="round" />
-            <path d="M -8 -11 L 8 11" fill="none" stroke="var(--rope-straw)" strokeWidth="7" strokeLinecap="round" />
-            <path d="M -9 -7 l 7 -4 M -5 -1 l 7 -4 M -1 5 l 7 -4 M 3 11 l 7 -4 M -16 -8 l 5 3 M 14 7 l 5 3" fill="none" stroke="var(--rope-straw-deep)" strokeWidth="2" strokeLinecap="round" />
+          <g transform={`translate(${ribbonX} ${ropeY(ribbonX)})`} aria-label="Center rope bow">
+            {/* ribbon tails */}
+            <path d="M -3 4 Q -15 18 -19 36 L -7 32 Q -3 18 3 8 Z" fill="var(--shape-red)" stroke={OUTLINE} strokeWidth="2.2" strokeLinejoin="round" />
+            <path d="M 3 4 Q 13 18 15 34 L 5 31 Q 2 18 -1 8 Z" fill="var(--shape-red)" stroke={OUTLINE} strokeWidth="2.2" strokeLinejoin="round" />
+            {/* side loops */}
+            <path d="M -4 -5 C -20 -19 -35 -9 -30 2 C -26 10 -13 9 -4 4 Z" fill="var(--shape-red)" stroke={OUTLINE} strokeWidth="2.4" strokeLinejoin="round" />
+            <path d="M 4 -5 C 20 -19 35 -9 30 2 C 26 10 13 9 4 4 Z" fill="var(--shape-red)" stroke={OUTLINE} strokeWidth="2.4" strokeLinejoin="round" />
+            <path d="M -9 -4 q -7 1 -9 4 M 9 -4 q 7 1 9 4" fill="none" stroke={OUTLINE} strokeWidth="1.3" opacity="0.55" />
+            {/* knot over the rope */}
+            <ellipse cx="0" cy="0" rx="7.5" ry="8.5" fill="var(--shape-red)" stroke={OUTLINE} strokeWidth="2.4" />
+            <path d="M -4 -3 q 4 -3 8 0 M -4 3 q 4 3 8 0" fill="none" stroke={OUTLINE} strokeWidth="1.4" opacity="0.6" />
           </g>
         </g>
       </svg>
