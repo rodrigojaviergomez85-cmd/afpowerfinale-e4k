@@ -59,8 +59,8 @@ export const sfx = {
   tick: () => tone(1200, 0.05, "square", 0, 0.5),
   buzzer: () => { tone(140, 0.7, "sawtooth", 0, 1.3); tone(147, 0.7, "sawtooth", 0, 1.3); },
   whoosh: () => tone(300, 0.35, "sine", 0, 1, 1400),
-  count: () => { tone(660, 0.24, "square", 0, 1.9); noise(0.05, 0, 0.7, 4000); },
-  go: () => { tone(880, 0.5, "square", 0, 1.7); tone(1174, 0.5, "square", 0.02, 1.3); },
+  count: () => tone(520, 0.18),
+  go: () => tone(880, 0.4),
   win: () => {
     [523, 659, 784, 1047].forEach((f, i) => tone(f, 0.25, "square", i * 0.14));
     tone(1047, 0.6, "triangle", 0.6);
