@@ -57,6 +57,9 @@ export function TeamScore({ team, score, index, active }: { team: Team; score: n
       </div>
       <div className="relative min-w-20 rounded-2xl bg-card px-4 py-1 text-center font-display text-6xl font-bold text-foreground">
         {score}
+      </div>
+      {/* Own track for the +/- change so it never covers the score or the panel edge */}
+      <div className="relative w-24 shrink-0" aria-hidden="true">
         <Pop value={score} />
       </div>
     </div>
