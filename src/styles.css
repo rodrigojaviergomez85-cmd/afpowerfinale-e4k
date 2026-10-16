@@ -819,6 +819,17 @@
 .chair-shell .item-prompt { font-size: 56px; }
 
 /* Detective Sniff — reuses bridge-shell/bridge-play layout; mistake card + scene animation below */
+.detective-result-scene { height: 180px; flex-shrink: 0; }
+@media (max-height: 860px) {
+  .detective-result { gap: 12px; padding-bottom: 16px; }
+  .detective-result-scene { height: 130px; }
+  .detective-result h1 { font-size: 42px; line-height: 1.1; }
+  .detective-result > div { font-size: 24px; }
+  .detective-result > div:last-child { flex-wrap: wrap; justify-content: center; gap: 10px; }
+  .detective-ending { gap: 14px; }
+  .detective-ending > svg { height: 240px; }
+  .detective-ending > div:not(:last-child) { font-size: 42px; }
+}
 .detective-play .item-prompt { font-size: 56px !important; }
 .mistake-word { border-radius: 6px; }
 .mistake-word[data-hint="true"] { text-decoration: underline; text-decoration-color: var(--det-hint); text-decoration-thickness: 8px; text-underline-offset: 8px; background: color-mix(in oklch, var(--det-hint) 25%, transparent); }
