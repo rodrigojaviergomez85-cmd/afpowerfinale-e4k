@@ -243,7 +243,7 @@ function RopeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; he
           countdown={secs <= 10 && secs > 0 && !frozen ? secs : undefined} className="h-full" />
         <div className="pointer-events-none absolute left-1/2 top-12 flex -translate-x-1/2 flex-col items-center gap-2">
           {floats.map((f) => (
-            <span key={f.id} className={cn("animate-msg font-display text-3xl font-bold text-outline float-msg", f.tone === "good" ? "text-success" : "text-danger")}>{f.text}</span>
+            <span key={f.id} className={cn("animate-msg font-display text-3xl font-bold float-msg", f.tone === "good" ? "text-success" : "text-danger")}>{f.text}</span>
           ))}
         </div>
         {frozen && <div className="animate-pop absolute left-1/2 top-2 -translate-x-1/2 rounded-full px-5 py-1 text-2xl font-bold chunky" style={{ background: "var(--gold)", color: "var(--shape-outline)" }}>Safety Brake! Time frozen</div>}

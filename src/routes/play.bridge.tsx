@@ -232,7 +232,7 @@ function BridgeGame({ onRematch, helpOpen, openHelp }: { onRematch: () => void; 
         <Canyon pct={pct} goal={goal} planks={progress} mood={mood} frozen={frozen} waveKey={wave} plankKey={progress} calm={calm} className="fit-scene h-[200px]" />
         <div className="pointer-events-none absolute left-1/2 top-4 flex -translate-x-1/2 flex-col items-center gap-2">
           {floats.map((f) => (
-            <span key={f.id} className={cn("animate-msg font-display text-6xl font-bold text-outline float-msg", f.tone === "good" ? "text-success" : "text-danger")}>{f.text}</span>
+            <span key={f.id} className={cn("animate-msg font-display text-6xl font-bold float-msg", f.tone === "good" ? "text-success" : "text-danger")}>{f.text}</span>
           ))}
         </div>
         {secs <= 10 && secs > 0 && !frozen && (

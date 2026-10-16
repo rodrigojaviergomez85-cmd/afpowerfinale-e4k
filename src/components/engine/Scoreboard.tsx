@@ -27,7 +27,7 @@ function Pop({ value }: { value: number }) {
         <span
           key={p.id}
           className={cn(
-            "pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 font-display text-6xl font-bold animate-rise text-outline",
+            "pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 font-display text-6xl font-bold animate-rise msg-shadow",
             p.d > 0 ? "text-primary" : "text-danger",
           )}
         >

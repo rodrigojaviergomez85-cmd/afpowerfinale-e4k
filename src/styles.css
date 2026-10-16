@@ -368,8 +368,9 @@
   text-shadow: 0 4px 0 oklch(0 0 0 / 0.35);
 }
 
-/* Full dark outline so floating text stays readable over any scene colour */
-@utility text-outline {
+/* Plain class (not a Tailwind utility) so tailwind-merge never drops it when a
+   text colour class is combined in the same cn() call. */
+.msg-shadow {
   text-shadow:
     -3px -3px 0 oklch(0 0 0 / 0.85), 3px -3px 0 oklch(0 0 0 / 0.85),
     -3px 3px 0 oklch(0 0 0 / 0.85), 3px 3px 0 oklch(0 0 0 / 0.85),
