@@ -25,3 +25,4 @@
 - Detective Sniff (`/play/detective`, `detective` options) reads M items from each day's separate `mistakes` list via `drawMistakes`, so other games and review-day detection ignore them; reuses bridge-shell/bridge-play layout.
 - Hidden-picture cards use vocabulary answers in the static curriculum and draw only from the selected week; shared ItemCard omits redundant hidden prompts, while Demo/Tug reserve a separate timeout track to prevent content overlap.
 - Shared ItemCard measures available space on content/size changes and scales overflowing content without resizing its frame; team-game steal notices occupy separate tracks to keep answers and controls unobstructed.
+- Tug of War uses a shared mood-driven profile animal SVG in play and endings, mirrored per team, so visual changes preserve the existing game mechanics and compact scene dimensions.
