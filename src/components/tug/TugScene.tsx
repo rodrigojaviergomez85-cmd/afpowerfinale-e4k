@@ -35,7 +35,7 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
     const mood = moodFor(team);
     // Play positions: bunnies left, puppies right. Muddy losers end up in the puddle.
     const inPuddle = !!ending && ending.step >= 1 && (ending.tie || ending.losers.includes(team));
-    const x = inPuddle ? (team === 0 ? 480 + i * 62 : 642 + i * 62) : team === 0 ? 95 + i * 90 : 1025 - i * 90;
+    const x = inPuddle ? (team === 0 ? 440 + i * 90 : 680 + i * 90) : team === 0 ? 95 + i * 90 : 1025 - i * 90;
     const y = inPuddle ? 250 : 242;
     const lean = !ending && fx && fx.team === team && fx.kind !== "slip";
     const slip = !ending && fx && fx.team === team && fx.kind === "slip";
@@ -65,6 +65,7 @@ export function TugScene({ teams, pos, pulls, active, fx, className, ending }: {
   return (
     <div
       className={cn("tug-scene relative w-full overflow-hidden rounded-3xl chunky", className)}
+      style={{ background: "linear-gradient(to bottom, var(--park-sky) 0 31.5%, var(--park-grass) 31.5% 100%)" }}
     >
       <svg viewBox="0 90 1120 190" className="h-full w-full" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Tug of war over a mud puddle">
         <rect x="0" y="90" width="1120" height="190" fill="var(--park-sky)" />
