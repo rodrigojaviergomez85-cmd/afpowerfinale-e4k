@@ -3,12 +3,12 @@ import { cn } from "@/lib/utils";
 import { Acrobat, type AcrobatMood } from "./Acrobat";
 import { Audience } from "./Audience";
 
-export type LunaMood = AcrobatMood;
+export type PippoMood = AcrobatMood;
 export type Crowd = "calm" | "cheer" | "gasp" | "aww" | "roar";
 
 /** One lightweight vector stage shared by play, rescue, and splash. */
 export function Tightrope({ goal, steps, mood, frozen = false, countdown, falling = false, inPool = false, landing = false, celebrating = false, stars = [], className, calm = false, crowd = "calm", ...rest }: {
-  pct: number; goal: number; steps: number; mood: LunaMood; crowd?: Crowd; frozen?: boolean; slipKey?: number; flashKey?: number; calm?: boolean;
+  pct: number; goal: number; steps: number; mood: PippoMood; crowd?: Crowd; frozen?: boolean; slipKey?: number; flashKey?: number; calm?: boolean;
   countdown?: number | undefined; falling?: boolean; inPool?: boolean; landing?: boolean; celebrating?: boolean; spotsSwing?: boolean; stars?: string[]; className?: string;
 }) {
   const clip = useId().replaceAll(":", "");
@@ -22,7 +22,7 @@ export function Tightrope({ goal, steps, mood, frozen = false, countdown, fallin
   const reaction = crowd === "cheer" ? "happy" : crowd === "gasp" ? "uhoh" : mood;
   return (
     <div className={cn("elevator-scene relative min-h-0 w-full overflow-hidden rounded-lg", className)} data-height={height} data-safe={safe} data-calm={calm}>
-        <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label={`Luna's platform: level ${height} of ${goal + start}${safe ? ', safe!' : ''}`}>
+        <svg viewBox="0 0 600 600" className="absolute inset-0 h-full w-full" role="img" aria-label={`Pippo's platform: level ${height} of ${goal + start}${safe ? ', safe!' : ''}`}>
         <defs><clipPath id={clip}><rect width="600" height="520" /></clipPath></defs>
         <rect width="600" height="600" fill="var(--tent-b)" />
         {Array.from({ length: 7 }, (_, i) => <rect key={i} x={i * 92} width="46" height="600" fill="var(--tent-a)" />)}
