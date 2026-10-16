@@ -110,7 +110,7 @@ export function ChaseScene({
   const x = sniffX ?? START_X + ((END_X - START_X - 70) * clues) / Math.max(1, goal);
   const night = pct < 0.25;
   return (
-    <svg viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid meet" className={cn("w-full rounded-3xl", className)} role="img" aria-label={`Detective Sniff has found ${clues} of ${goal} clues`}>
+    <svg viewBox="0 0 1200 340" preserveAspectRatio="xMidYMid meet" className={cn("w-full overflow-hidden rounded-3xl", className)} role="img" aria-label={`Detective Sniff has found ${clues} of ${goal} clues`}>
       <defs>
         <linearGradient id="det-sky" x1="0" x2="0" y1="0" y2="1">
           <stop offset="0" stopColor={night ? "var(--det-balloon-a)" : "var(--det-sky)"} stopOpacity={night ? 0.45 : 1} />
@@ -136,7 +136,7 @@ export function ChaseScene({
       <path d={`M0 ${STREET_Y + 75} H1200`} stroke={INK} strokeOpacity="0.15" strokeWidth="2" />
       {paws.map((px, i) => <Paw key={i} x={px} y={STREET_Y + 50 + (i % 2 ? 6 : -6)} on={i < clues} fresh={freshPaw && i === clues - 1} />)}
       {/* balloon */}
-      <g transform={`translate(985 ${STREET_Y + 32})`}>
+      <g transform={`translate(${net ? 1120 : 985} ${STREET_Y + 32})`}>
         <Balloon state={balloon} ropes={ropes} tangled={tangled} countdown={countdown} bug={rackyInBasket ? rackyMood : undefined} />
       </g>
       {!rackyInBasket && !net && (
@@ -157,15 +157,15 @@ export function ChaseScene({
           <g transform="translate(70 -50)">
             <path d="M0 0 L60 -60" stroke="var(--det-paw)" strokeWidth="6" />
             <ellipse cx="74" cy="-74" rx="30" ry="22" fill="var(--explorer-teeth)" fillOpacity="0.55" stroke={INK} strokeWidth="3" strokeDasharray="5 4" />
-            <g transform="translate(74 -58) scale(0.5)"><Racky mood="caught" /></g>
+            <g transform="translate(74 -60) scale(0.36)"><Racky mood="caught" /></g>
           </g>
         )}
       </g>
       {badges.length > 0 && (
         <g>
           {badges.slice(0, 8).map((b, i) => (
-            <g key={b} transform={`translate(${170 + i * 120} 34)`}>
-              <rect x="-54" y="-18" width="108" height="34" rx="17" fill="var(--gold)" stroke={INK} strokeWidth="2.5" />
+            <g key={b} transform={`translate(${80 + i * 105} 24)`}>
+              <rect x="-48" y="-18" width="96" height="34" rx="17" fill="var(--gold)" stroke={INK} strokeWidth="2.5" />
               <text y="6" textAnchor="middle" fontSize="16" fontWeight="800" fill={INK}>⭐ {b.slice(0, 10)}</text>
             </g>
           ))}
