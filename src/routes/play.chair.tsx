@@ -179,7 +179,9 @@ function HotChair() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }), [mark, phase, startNext, undo, timer.toggle, team, player, app.settings.sound]);
 
-  const flames = Math.min(6, 1 + Math.floor(cur[team]! / 3));
+  // Fire rises with elapsed time: none before halfway, chair fully covered at 0:00.
+  const half = timer.duration / 2;
+  const fire = Math.min(1, Math.max(0, (half - timer.remaining) / half));
   const danger = phase === "play" && sec <= 10;
 
   return (
@@ -206,7 +208,7 @@ function HotChair() {
             <div className="panel p-10 text-center text-3xl">No cards for this day in this mode yet.</div>
           ) : phase === "ready" ? (
             <div className="panel chair-stage flex flex-1 flex-col items-center justify-center gap-4 text-center" style={{ ["--chair-color" as string]: `var(--team${(round + 1) % 2 + 1})` }}>
-              <ChairArt flames={1} speed={0.6} />
+              <ChairArt fire={0} speed={0.6} />
               <div className="animate-pop text-6xl font-bold text-stroke">{teams[(round + 1) % 2]!.icon} {teams[(round + 1) % 2]!.name}, get ready!</div>
               <Button variant="game" size="huge" onClick={startNext}><Play /> Start round <Kbd>Space</Kbd></Button>
             </div>
@@ -218,7 +220,7 @@ function HotChair() {
                   <div className="mt-20 max-w-full truncate rounded-xl border-4 border-foreground bg-card px-4 py-1 text-2xl font-bold">
                     {player ? <>🔥 {player.name}</> : <>{teams[team]!.icon} {teams[team]!.name}</>}
                   </div>
-                  <ChairArt flames={flames} speed={danger ? 0.18 : 0.5} />
+                  <ChairArt fire={fire} speed={danger ? 0.18 : 0.5} />
                   <div className="text-center text-lg font-bold text-muted-foreground">{player ? "In the hot chair!" : "Call a student!"}</div>
                 </div>
                 {phase === "timeup" ? (
@@ -255,12 +257,11 @@ function ChairKeys({ keys, enabled }: { keys: Record<string, () => void>; enable
   return null;
 }
 
-/** Drawn glowing chair in the active team's color with flames that grow with the score. */
-function ChairArt({ flames, speed }: { flames: number; speed: number }) {
-  const spots = [100, 60, 140, 30, 170, 80, 120].slice(0, Math.max(3, flames + 2));
-  const scale = 0.6 + flames * 0.2;
+/** Drawn glowing chair in the active team's color; a wall of fire rises from the floor as time runs out (fire 0..1). */
+function ChairArt({ fire, speed }: { fire: number; speed: number }) {
+  const spots = [24, 49, 74, 99, 124, 149, 174];
   return (
-    <svg viewBox="0 0 200 190" className="chair-glow w-full max-w-64 flex-1 min-h-0" role="img" aria-label={`Hot chair with ${flames} flames`}>
+    <svg viewBox="0 0 200 190" className="chair-glow w-full max-w-64 flex-1 min-h-0" role="img" aria-label={fire > 0 ? "Hot chair catching fire" : "Hot chair"}>
       <ellipse cx="100" cy="178" rx="85" ry="10" fill="var(--foreground)" opacity=".15" />
       <g stroke="var(--foreground)" strokeWidth="5" strokeLinejoin="round" strokeLinecap="round">
         <rect x="58" y="125" width="10" height="45" rx="4" fill="var(--chair-color)" />
@@ -269,12 +270,14 @@ function ChairArt({ flames, speed }: { flames: number; speed: number }) {
         <rect x="70" y="34" width="60" height="64" rx="14" fill="var(--card)" opacity=".35" />
         <rect x="44" y="104" width="112" height="28" rx="12" fill="var(--chair-color)" />
       </g>
-      {spots.map((x, i) => (
-        <g key={i} style={{ ["--flame-speed" as string]: `${speed + (i % 3) * 0.07}s` }}>
-          <g transform={`translate(${x} 182) scale(${scale * (i < 3 ? 1 : 0.8)})`}><path className="chair-flame" d="M0 0 C-22 -6 -20 -30 -6 -46 C-8 -30 4 -30 2 -50 C18 -36 24 -10 0 0Z" fill="var(--team1)" stroke="var(--foreground)" strokeWidth="3" strokeLinejoin="round" style={{ animationDelay: `${i * 0.09}s` }} /></g>
-          <g transform={`translate(${x} 180) scale(${scale * 0.5 * (i < 3 ? 1 : 0.8)})`}><path className="chair-flame" d="M0 0 C-18 -6 -14 -28 -2 -40 C2 -26 18 -18 0 0Z" fill="var(--game-demo)" style={{ animationDelay: `${i * 0.11}s` }} /></g>
-        </g>
-      ))}
+      <g className="chair-firewall" style={{ transform: `scaleY(${fire})`, opacity: fire > 0.02 ? 1 : 0 }}>
+        {spots.map((x, i) => (
+          <g key={i} style={{ ["--flame-speed" as string]: `${speed + (i % 3) * 0.07}s` }}>
+            <g transform={`translate(${x} 184) scale(${2.4 + (i % 3) * 0.5})`}><path className="chair-flame" d="M0 0 C-22 -6 -20 -30 -6 -46 C-8 -30 4 -30 2 -50 C18 -36 24 -10 0 0Z" fill="var(--team1)" stroke="var(--foreground)" strokeWidth="2" strokeLinejoin="round" style={{ animationDelay: `${i * 0.09}s` }} /></g>
+            <g transform={`translate(${x} 182) scale(${1.2 + (i % 3) * 0.25})`}><path className="chair-flame" d="M0 0 C-18 -6 -14 -28 -2 -40 C2 -26 18 -18 0 0Z" fill="var(--game-demo)" style={{ animationDelay: `${i * 0.11}s` }} /></g>
+          </g>
+        ))}
+      </g>
     </svg>
   );
 }

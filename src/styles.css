@@ -849,6 +849,7 @@
 .chair-cool { filter: grayscale(0.7) brightness(0.85); transition: filter 1.2s ease; }
 @keyframes chair-flame { 0%,100% { transform: scaleY(1) scaleX(1); } 50% { transform: scaleY(1.18) scaleX(0.9); } }
 .chair-flame { animation: chair-flame var(--flame-speed, .5s) ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
+.chair-firewall { transform-box: view-box; transform-origin: 0 184px; transition: transform 1s linear, opacity .4s ease; }
 @keyframes chair-flip { 0% { transform: rotateY(90deg); } 100% { transform: rotateY(0); } }
 .chair-flip { animation: chair-flip .6s cubic-bezier(.3,1.6,.5,1) both; }
 [data-calm="true"] .chair-flame, .chair-cool .chair-flame { animation: none; }

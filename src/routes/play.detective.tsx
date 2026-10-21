@@ -11,7 +11,7 @@ import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { ChaseScene, type SniffMood, type RackyMood, type BalloonState } from "@/components/detective/ChaseScene";
 import { getGame, GAMES } from "@/lib/games";
-import { drawMistakes, type ContentItem } from "@/lib/content";
+import { drawMistakes, shortfallRules, type ContentItem } from "@/lib/content";
 import { DETECTIVE_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";

@@ -11,7 +11,7 @@ import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { TreeScene, type PepperMood } from "@/components/kitten/TreeScene";
 import { getGame, GAMES } from "@/lib/games";
-import { drawItems, type ContentItem } from "@/lib/content";
+import { drawItems, shortfallRules, type ContentItem } from "@/lib/content";
 import { BOMB_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";

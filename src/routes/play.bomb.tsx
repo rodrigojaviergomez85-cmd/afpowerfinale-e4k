@@ -11,7 +11,7 @@ import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { Bomb, DefusePanel, type BombMood } from "@/components/bomb/Bomb";
 import { getGame, GAMES } from "@/lib/games";
-import { drawItems, type ContentItem } from "@/lib/content";
+import { drawItems, shortfallRules, type ContentItem } from "@/lib/content";
 import { selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";

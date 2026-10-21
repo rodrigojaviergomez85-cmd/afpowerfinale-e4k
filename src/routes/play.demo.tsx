@@ -10,7 +10,7 @@ import { useHotkeys, toggleFullscreen } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
 import { ItemCard, hiddenPoints } from "@/components/engine/ItemCard";
 import { getGame } from "@/lib/games";
-import { drawItems, type ContentItem } from "@/lib/content";
+import { drawItems, shortfallRules, type ContentItem } from "@/lib/content";
 import { selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { burst } from "@/lib/celebrate";
