@@ -64,12 +64,13 @@ export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = 
   }, [auto, showAll, paused]);
   return (
     <div className="hidden-picture flex flex-col items-center gap-2">
+      <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground"><FlagText text={item.prompt} /></div>
       <div className="hidden-board relative h-[230px] w-[580px] overflow-hidden rounded-3xl bg-card">
-        {/* One stable picture filling the board */}
-        <div className="pic-wrap absolute inset-0 grid place-items-center">
+        {/* One stable picture; anchor picked once per card so details vary between cards */}
+        <div className={cn("pic-wrap absolute inset-0 flex p-4", anchorFor(item.id))}>
           <ItemPicture item={item} big />
         </div>
-        <div className="hidden-tiles absolute inset-0 grid grid-cols-4 grid-rows-3">
+        <div className="hidden-tiles absolute inset-0 grid grid-cols-3 grid-rows-2">
           {Array.from({ length: HIDDEN_TILES }, (_, i) => {
             const isOpen = showAll || open.has(i);
             if (isOpen) return <div key={i} aria-hidden className="pointer-events-none" />;
