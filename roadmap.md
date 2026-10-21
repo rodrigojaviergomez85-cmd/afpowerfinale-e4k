@@ -1,5 +1,8 @@
 # Roadmap
 
+- [ ] AF-SUPER-FINALE-CONTEXT-FIXES_2.txt: six app fixes (APP-01 results scrolling; APP-02 card instructions; APP-03 distinct no-repeat decks; APP-04 scope/difficulty + remove flag-ID cards; APP-05 hidden pictures 3×2 six-tile mosaic with category prompts; APP-06 Bridge Builder Sandbox relabel), CONTENT-EXCEPTION-01 (L2W5 vet question), then 750 exact content replacements. L2W4 and rest of L2W5 protected; preserve 16 lines + 2 mistakes per day.
+- [ ] Hot Chair flames: one continuous fire layer rising from below, no flames before halfway, chair fully covered at time-up; verify at 0:40/0:30/0:15/0:00.
+
 - [x] Apply all 434 uploaded targeted curriculum corrections (0 already applied, 0 unmatched, no new duplicates); 444 tests pass, including exact day/type assignments and a whole-bank preservation check. Corrected scene and translation cards verified in Demo Drill at 791×639: clues fit, answers stay hidden until reveal, no scroll or runtime errors; game engines/settings/visuals and Level 2 Weeks 4–5 unchanged.
 
 - [x] Make shared hidden pictures a continuous twelve-tile mosaic with thin seams and exterior-only rounding; manual reveal leaves the image and eleven remaining covers stationary, automatic reveal and full answer reveal verified without runtime errors.
