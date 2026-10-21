@@ -10,7 +10,7 @@ import { useHotkeys, toggleFullscreen } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
 import { ItemCard, hiddenPoints } from "@/components/engine/ItemCard";
 import { getGame } from "@/lib/games";
-import { drawItems, type ContentItem } from "@/lib/content";
+import { drawItems, shortfallRules, type ContentItem } from "@/lib/content";
 import { selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { burst } from "@/lib/celebrate";
@@ -39,10 +39,14 @@ const SHORTCUTS: [string, string][] = [
 type Action = { team: number; delta: number; playerId?: string | undefined };
 
 function DemoDrill() {
-  const game = getGame("demo")!;
   const navigate = useNavigate();
   const app = useApp();
   const { settings, teams, roster } = app;
+  const peek = useMemo(() => drawItems(selectionOf(useApp.getState()), settings.rounds, "mix", sessionUsed["demo"] ?? []).items.length, [settings.rounds]);
+  const game = useMemo(() => {
+    const base = getGame("demo")!;
+    return { ...base, rules: [...base.rules, ...shortfallRules(settings.rounds, peek)] };
+  }, [settings.rounds, peek]);
 
   const [items, setItems] = useState<ContentItem[] | null>(null);
   const [review, setReview] = useState(false);

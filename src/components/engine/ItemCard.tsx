@@ -4,18 +4,37 @@ import { FlagText, ItemPicture } from "./Picture";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-export const HIDDEN_TILES = 12;
+export const HIDDEN_TILES = 6;
 
 /** Points for a hidden-picture item: fewer boxes opened = more points. */
-export const hiddenPoints = (opened: number) => (opened <= 3 ? 3 : opened <= 6 ? 2 : 1);
+export const hiddenPoints = (opened: number) => (opened <= 1 ? 3 : opened <= 3 ? 2 : 1);
 
-function banner(item: ContentItem) {
-  if (item.kind === "T") return "Say it in English! 🇺🇸";
-  if (item.kind === "H") return "What's hidden? 🔍 Open a box!";
-  if (item.kind === "F") return "Choose the right word! ✏️";
+/** Helper pill per task type; null when the question speaks for itself. */
+function banner(item: ContentItem): string | null {
+  if (item.kind === "T") return "Say it in English";
+  if (item.kind === "H") return null; // the category prompt sits above the cover instead
+  if (item.kind === "F") return null; // the gapped sentence is the instruction
   if (item.kind === "M") return "🔍 Find the mistake!";
-  return "Answer in a full sentence!";
+  // Q/S/E: spelling, letters and greetings need no helper; open questions about
+  // familiar people or public figures invite imagination; personal questions ask for English.
+  if (/¿|spell|letter|good (morning|afternoon|evening|night)|what is your name|where are you from|how old are you/i.test(item.prompt)) return null;
+  if (/\b(mom|dad|mother|father|brother|sister|grandma|grandpa|uncle|aunt|cousin|friend|teacher|family|messi|ronaldo)\b/i.test(item.prompt)) return "Use your imagination!";
+  return "Answer in English";
 }
+
+/** Stable anchor for the hidden picture so details do not always sit in the center tiles. */
+const H_ANCHORS = [
+  "items-center justify-center",
+  "items-center justify-start",
+  "items-center justify-end",
+  "items-start justify-center",
+  "items-end justify-center",
+];
+const anchorFor = (id: string) => {
+  let h = 0;
+  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
+  return H_ANCHORS[h % H_ANCHORS.length]!;
+};
 
 export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = false }: { item: ContentItem; showAll: boolean; onReveal?: ((opened: number) => void) | undefined; auto?: boolean | undefined; paused?: boolean | undefined }) {
   const [open, setOpen] = useState<Set<number>>(() => new Set());
@@ -45,12 +64,13 @@ export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = 
   }, [auto, showAll, paused]);
   return (
     <div className="hidden-picture flex flex-col items-center gap-2">
+      <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground"><FlagText text={item.prompt} /></div>
       <div className="hidden-board relative h-[230px] w-[580px] overflow-hidden rounded-3xl bg-card">
-        {/* One stable picture filling the board */}
-        <div className="pic-wrap absolute inset-0 grid place-items-center">
+        {/* One stable picture; anchor picked once per card so details vary between cards */}
+        <div className={cn("pic-wrap absolute inset-0 flex p-4", anchorFor(item.id))}>
           <ItemPicture item={item} big />
         </div>
-        <div className="hidden-tiles absolute inset-0 grid grid-cols-4 grid-rows-3">
+        <div className="hidden-tiles absolute inset-0 grid grid-cols-3 grid-rows-2">
           {Array.from({ length: HIDDEN_TILES }, (_, i) => {
             const isOpen = showAll || open.has(i);
             if (isOpen) return <div key={i} aria-hidden className="pointer-events-none" />;
@@ -143,7 +163,7 @@ export function ItemCard({ item, showAnswer, compact, onReveal, autoReveal, paus
   }, [item, showAnswer, hint]);
   return (
     <div ref={cardRef} data-kind={item.kind} className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
-      <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground">{autoReveal && item.kind === "H" ? "What's hidden? 🔍 Say the word!" : <FlagText text={banner(item)} />}</div>
+      {banner(item) && <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground"><FlagText text={banner(item)!} /></div>}
       {item.hidden ? <HiddenPicture item={item} showAll={showAnswer} onReveal={onReveal} auto={autoReveal} paused={paused} /> : <div className="item-picture pic-wrap"><ItemPicture item={item} /></div>}
       {!item.hidden && <div className="item-prompt font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">
         {item.parts ? item.parts.map((p, i) => (p.wrong ? <span key={i} className="mistake-word" data-hint={hint || showAnswer}>{p.text}</span> : <span key={i}>{p.text}</span>)) : item.prompt}

@@ -11,7 +11,7 @@ import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { ChaseScene, type SniffMood, type RackyMood, type BalloonState } from "@/components/detective/ChaseScene";
 import { getGame, GAMES } from "@/lib/games";
-import { drawMistakes, type ContentItem } from "@/lib/content";
+import { drawMistakes, shortfallRules, type ContentItem } from "@/lib/content";
 import { DETECTIVE_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";
@@ -41,8 +41,9 @@ const useOpts = () => useApp((s) => s.detective ?? DETECTIVE_PRESETS["Normal"]!)
 function DetectiveSniff() {
   const base = getGame("detective-sniff")!;
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🔍", text: `Find ${target} mistakes before Racky escapes!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
+  const peek = useMemo(() => drawMistakes(selectionOf(useApp.getState()), target, sessionUsed["detective"] ?? []).items.length, [target, round]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🔍", text: `Find ${target} mistakes before Racky escapes!` }, { icon: "🤝", text: "Work together!" }, ...shortfallRules(target, peek)] }), [base, target, peek]);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
     <GameShell key={round} game={game} className="bridge-shell" rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>

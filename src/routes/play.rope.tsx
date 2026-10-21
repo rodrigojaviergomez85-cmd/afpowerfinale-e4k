@@ -11,7 +11,7 @@ import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { Tightrope, type Crowd, type TitoMood } from "@/components/rope/Tightrope";
 import { getGame, GAMES } from "@/lib/games";
-import { drawItems, type ContentItem } from "@/lib/content";
+import { drawItems, shortfallRules, type ContentItem } from "@/lib/content";
 import { BOMB_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";
@@ -42,8 +42,9 @@ function TightropeRescue() {
   const base = getGame("tightrope");
   if (!base) throw new Error("Circus game is unavailable");
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Tito to safety! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
+  const peek = useMemo(() => drawItems(selectionOf(useApp.getState()), target, "mix", sessionUsed["rope"] ?? []).items.length, [target, round]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Tito to safety! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }, ...shortfallRules(target, peek)] }), [base, target, peek]);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
     <GameShell className="rope-shell" key={round} game={game} rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>

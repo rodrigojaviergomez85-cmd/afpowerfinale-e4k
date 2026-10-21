@@ -11,7 +11,7 @@ import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { TreeScene, type PepperMood } from "@/components/kitten/TreeScene";
 import { getGame, GAMES } from "@/lib/games";
-import { drawItems, type ContentItem } from "@/lib/content";
+import { drawItems, shortfallRules, type ContentItem } from "@/lib/content";
 import { BOMB_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";
@@ -41,8 +41,9 @@ const useOpts = () => useApp((s) => s.kitten ?? BOMB_PRESETS["Normal"]!);
 function KittenRescue() {
   const base = getGame("kitten-rescue")!;
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🐱", text: `Pepper is stuck! Build ${target} rungs before the branch breaks!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
+  const peek = useMemo(() => drawItems(selectionOf(useApp.getState()), target, "mix", sessionUsed["kitten"] ?? []).items.length, [target, round]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🐱", text: `Pepper is stuck! Build ${target} rungs before the branch breaks!` }, { icon: "🤝", text: "Work together!" }, ...shortfallRules(target, peek)] }), [base, target, peek]);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
     <GameShell key={round} game={game} className="bridge-shell" rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>

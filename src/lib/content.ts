@@ -82,6 +82,26 @@ const matchesMix = (i: ContentItem, mix: ContentMix) =>
   mix === "mix" ? true : mix === "translations" ? i.kind === "T" : mix === "wh" ? i.kind === "Q" : i.kind !== "T";
 
 /**
+ * Learner-facing identity of a card: type + normalized prompt + visual payload.
+ * Alternate model answers or different distractors do not make a new card;
+ * distinct images under the same H instruction remain distinct.
+ */
+const cardKey = (i: ContentItem) =>
+  [i.kind, i.prompt.toLowerCase().replace(/\s+/g, " ").trim(), i.emoji ?? "",
+    (i.shapes ?? []).map((s) => `${s.color ?? ""}:${s.shape}:${s.count}`).join(",")].join("|");
+
+/** Drop duplicate cards, keeping the first (freshest) occurrence. */
+function dedupe(items: ContentItem[]): ContentItem[] {
+  const seen = new Set<string>();
+  return items.filter((i) => {
+    const k = cardKey(i);
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+}
+
+/**
  * Tiers: selected day → earlier days of same week (latest first) → earlier weeks (latest first).
  * Never later days/weeks. No repeats within a game; `avoid` ids are used only as a last resort.
  */
@@ -101,10 +121,10 @@ export function drawItems(sel: Selection, count: number, mix: ContentMix, avoid:
   // Hidden cards belong to this week's vocabulary, not unrelated review tiers.
   const all = tiers.map((t) => t.filter((i) => matchesMix(i, mix) && (i.kind !== "H" || i.week === sel.week)));
   // Preference order: fresh items by tier (selected day first), then already-seen items.
-  const ordered = [
+  const ordered = dedupe([
     ...all.flatMap((t) => shuffle(t.filter((i) => !avoidSet.has(i.id)))),
     ...all.flatMap((t) => shuffle(t.filter((i) => avoidSet.has(i.id)))),
-  ];
+  ]);
   const typeOf = (i: ContentItem) => (i.kind === "S" || i.kind === "E" ? "P" : i.kind);
   const picked: ContentItem[] = [];
   if (mix === "translations" || mix === "wh") picked.push(...ordered.slice(0, count));
@@ -190,7 +210,7 @@ export function chairDeck(sel: Selection, mode: ChairMode) {
     if (w.week === sel.week) for (const d of days) tiers.push(parseDay(d, w.week));
     else tiers.push(days.flatMap((d) => parseDay(d, w.week)));
   }
-  const ordered = tiers.flatMap((t) => shuffle(t.filter((i) => chairMatch(i, mode))));
+  const ordered = dedupe(tiers.flatMap((t) => shuffle(t.filter((i) => chairMatch(i, mode)))));
   const typeOf = (i: ContentItem) => (i.kind === "S" || i.kind === "E" ? "P" : i.kind);
   if (mode !== "mix") return ordered;
   const rest = [...ordered];
@@ -234,8 +254,13 @@ export function drawMistakes(sel: Selection, count: number, avoid: string[] = []
     if (days.length) tiers.push(days.flatMap((d) => parseMistakes(d, w.week, sel.level)));
   }
   const av = new Set(avoid);
-  const ordered = [...tiers.flatMap((t) => shuffle(t.filter((i) => !av.has(i.id)))), ...tiers.flatMap((t) => shuffle(t.filter((i) => av.has(i.id))))];
+  const ordered = dedupe([...tiers.flatMap((t) => shuffle(t.filter((i) => !av.has(i.id)))), ...tiers.flatMap((t) => shuffle(t.filter((i) => av.has(i.id))))]);
   const picked = ordered.slice(0, count);
   const first = new Set((tiers[0] ?? []).map((i) => i.id));
   return { items: shuffle(picked), review: picked.some((i) => !first.has(i.id)) };
+}
+
+/** Rules-screen note when the unique card pool is smaller than the requested count. */
+export function shortfallRules(want: number, got: number) {
+  return got < want ? [{ icon: "ℹ️", text: `Heads up: only ${got} unique cards for this selection — the goal was lowered from ${want} to ${got}.` }] : [];
 }

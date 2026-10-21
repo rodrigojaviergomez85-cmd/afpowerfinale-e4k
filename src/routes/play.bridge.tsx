@@ -11,7 +11,7 @@ import { TimerRing } from "@/components/engine/Timer";
 import { pickPlayer } from "@/components/engine/TurnPicker";
 import { Canyon, type MaxMood } from "@/components/bridge/Canyon";
 import { getGame, GAMES } from "@/lib/games";
-import { drawItems, type ContentItem } from "@/lib/content";
+import { drawItems, shortfallRules, type ContentItem } from "@/lib/content";
 import { BOMB_PRESETS, selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
 import { sfx } from "@/lib/sound";
 import { cn } from "@/lib/utils";
@@ -41,8 +41,9 @@ const useOpts = () => useApp((s) => s.bridge ?? BOMB_PRESETS["Normal"]!);
 function BridgeBuilder() {
   const base = getGame("bridge-builder")!;
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🌉", text: `Build ${target} planks before the river rises!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
+  const peek = useMemo(() => drawItems(selectionOf(useApp.getState()), target, "mix", sessionUsed["bridge"] ?? []).items.length, [target, round]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🌉", text: `Build ${target} planks before the river rises!` }, { icon: "🤝", text: "Work together!" }, ...shortfallRules(target, peek)] }), [base, target, peek]);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
     <GameShell key={round} game={game} className="bridge-shell" rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>
