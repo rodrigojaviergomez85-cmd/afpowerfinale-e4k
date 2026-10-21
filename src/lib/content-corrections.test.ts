@@ -7527,17 +7527,24 @@ describe("approved targeted curriculum corrections", () => {
       expect(selected.mistakes).toHaveLength(2);
       expect(new Set(selected.lines).size).toBe(16);
     }
-    const [kind, prompt, answer] = replacement.split(" || ");
+    const f = replacement.split(" || ");
+    const kind = f[0];
     if (isMistake) {
       expect(selected.mistakes?.[index]).toBe(replacement);
       expect(kind).toBe("M");
       return;
     }
     expect(selected.lines[index]).toBe(replacement);
-    const card = chairDeck(selection, "mix").find(item => item.week === week && item.day === day && item.id === `w${week}d${day}-${index}`);
+    // Mirror parseDay in src/lib/content.ts per card type.
+    const expected = kind === "Q" ? { prompt: f[1], answers: f[2]?.split(" / ") }
+      : kind === "T" ? { prompt: f[1], answers: [f[2]] }
+      : kind === "F" ? { prompt: f[1], answers: [f[1]!.replace("____", f[2]!)] }
+      : { prompt: f[2], answers: f[3]?.split(" / ") }; // S, E, H
+    const deck = kind === "H" ? drawItems(selection, 1000, "mix").items : chairDeck(selection, "mix");
+    const card = deck.find(item => item.week === week && item.day === day && item.id === `w${week}d${day}-${index}`);
     expect(card?.kind).toBe(kind);
-    expect(card?.prompt).toBe(prompt);
-    expect(card?.answers).toEqual(answer?.split(" / "));
+    expect(card?.prompt).toBe(expected.prompt);
+    expect(card?.answers).toEqual(expected.answers);
     if (kind === "T") {
       expect(drawItems(selection, 1000, "wh").items.some(item => item.id === card?.id)).toBe(false);
       expect(chairDeck(selection, "wh").some(item => item.id === card?.id)).toBe(false);
