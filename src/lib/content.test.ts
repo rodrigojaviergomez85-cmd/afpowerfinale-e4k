@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { COURSES } from "@/data/content";
-import { drawItems } from "./content";
+import { drawItems, type ContentItem } from "./content";
 
 describe("hidden vocabulary cards", () => {
   it("uses lexical answers rather than sentence or grammar tasks", () => {
@@ -20,7 +20,7 @@ describe("hidden vocabulary cards", () => {
     }
   });
   it("never deals two cards with the same learner-facing prompt and payload", () => {
-    const key = (i: { kind: string; prompt: string; emoji?: string; shapes?: { shape: string; count: number; color?: string }[] }) =>
+    const key = (i: ContentItem) =>
       [i.kind, i.prompt.toLowerCase().replace(/\s+/g, " ").trim(), i.emoji ?? "", (i.shapes ?? []).map((s) => `${s.color ?? ""}:${s.shape}:${s.count}`).join(",")].join("|");
     for (const sel of [
       { course: "Kids Super Intensivo", level: 3, week: 4, day: 5 },
