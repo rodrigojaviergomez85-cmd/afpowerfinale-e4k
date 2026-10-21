@@ -11,9 +11,9 @@ export const hiddenPoints = (opened: number) => (opened <= 1 ? 3 : opened <= 3 ?
 
 /** Helper pill per task type; null when the question speaks for itself. */
 function banner(item: ContentItem): string | null {
-  if (item.kind === "T") return "Say it in English! 🇺🇸";
+  if (item.kind === "T") return "Say it in English";
   if (item.kind === "H") return null; // the category prompt sits above the cover instead
-  if (item.kind === "F") return "Choose the right word! ✏️";
+  if (item.kind === "F") return null; // the gapped sentence is the instruction
   if (item.kind === "M") return "🔍 Find the mistake!";
   // Q/S/E: spelling, letters and greetings need no helper; open questions about
   // familiar people or public figures invite imagination; personal questions ask for English.
