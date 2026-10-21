@@ -19,6 +19,22 @@ describe("hidden vocabulary cards", () => {
       expect(new Set(items.map((i) => i.id)).size).toBe(items.length);
     }
   });
+  it("never deals two cards with the same learner-facing prompt and payload", () => {
+    const key = (i: { kind: string; prompt: string; emoji?: string; shapes?: { shape: string; count: number; color?: string }[] }) =>
+      [i.kind, i.prompt.toLowerCase().replace(/\s+/g, " ").trim(), i.emoji ?? "", (i.shapes ?? []).map((s) => `${s.color ?? ""}:${s.shape}:${s.count}`).join(",")].join("|");
+    for (const sel of [
+      { course: "Kids Super Intensivo", level: 3, week: 4, day: 5 },
+      { course: "Kids Super Intensivo", level: 1, week: 5, day: 3 },
+      { course: "Kids Super Intensivo", level: 5, week: 8, day: 4 },
+      { course: "Kids Super Intensivo", level: 0, week: 2, day: 3 },
+    ]) {
+      for (let n = 0; n < 10; n++) {
+        const { items } = drawItems(sel, 20, "mix");
+        const keys = items.map(key);
+        expect(new Set(keys).size).toBe(keys.length);
+      }
+    }
+  });
   it("omits hidden cards when the current week has none", () => {
     const level = COURSES[0]?.levels.find((l) => l.level === 1);
     const week = level?.weeks.find((w) => w.week === 3);
