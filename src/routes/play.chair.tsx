@@ -273,7 +273,7 @@ function ChairArt({ fire, speed }: { fire: number; speed: number }) {
       <g className="chair-firewall" style={{ transform: `scaleY(${fire})`, opacity: fire > 0.02 ? 1 : 0 }}>
         {spots.map((x, i) => (
           <g key={i} style={{ ["--flame-speed" as string]: `${speed + (i % 3) * 0.07}s` }}>
-            <g transform={`translate(${x} 184) scale(${2.4 + (i % 3) * 0.5})`}><path className="chair-flame" d="M0 0 C-22 -6 -20 -30 -6 -46 C-8 -30 4 -30 2 -50 C18 -36 24 -10 0 0Z" fill="var(--team1)" stroke="var(--foreground)" strokeWidth="2" strokeLinejoin="round" style={{ animationDelay: `${i * 0.09}s` }} /></g>
+            <g transform={`translate(${x} 184) scale(${2.9 + (i % 3) * 0.4})`}><path className="chair-flame" d="M0 0 C-22 -6 -20 -30 -6 -46 C-8 -30 4 -30 2 -50 C18 -36 24 -10 0 0Z" fill="var(--team1)" stroke="var(--foreground)" strokeWidth="2" strokeLinejoin="round" style={{ animationDelay: `${i * 0.09}s` }} /></g>
             <g transform={`translate(${x} 182) scale(${1.2 + (i % 3) * 0.25})`}><path className="chair-flame" d="M0 0 C-18 -6 -14 -28 -2 -40 C2 -26 18 -18 0 0Z" fill="var(--game-demo)" style={{ animationDelay: `${i * 0.11}s` }} /></g>
           </g>
         ))}
