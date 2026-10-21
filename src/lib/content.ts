@@ -82,6 +82,26 @@ const matchesMix = (i: ContentItem, mix: ContentMix) =>
   mix === "mix" ? true : mix === "translations" ? i.kind === "T" : mix === "wh" ? i.kind === "Q" : i.kind !== "T";
 
 /**
+ * Learner-facing identity of a card: type + normalized prompt + visual payload.
+ * Alternate model answers or different distractors do not make a new card;
+ * distinct images under the same H instruction remain distinct.
+ */
+const cardKey = (i: ContentItem) =>
+  [i.kind, i.prompt.toLowerCase().replace(/\s+/g, " ").trim(), i.emoji ?? "",
+    (i.shapes ?? []).map((s) => `${s.color ?? ""}:${s.shape}:${s.count}`).join(",")].join("|");
+
+/** Drop duplicate cards, keeping the first (freshest) occurrence. */
+function dedupe(items: ContentItem[]): ContentItem[] {
+  const seen = new Set<string>();
+  return items.filter((i) => {
+    const k = cardKey(i);
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+}
+
+/**
  * Tiers: selected day → earlier days of same week (latest first) → earlier weeks (latest first).
  * Never later days/weeks. No repeats within a game; `avoid` ids are used only as a last resort.
  */
