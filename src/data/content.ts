@@ -62,12 +62,12 @@ export const COURSES: CourseDef[] = [
                     "Q || Completa: I ____ great! || I am great!",
                     "F || I ____ from Colombia. || am || is / are",
                     "F || I ____ nine years old. || am || is / are",
-                    "E || 🇧🇷 || ¿Qué país es? || Brazil.",
-                    "E || 🇪🇸 || ¿Qué país es? || Spain.",
+                    "T || Soy de Brasil. || I am from Brazil.",
+                    "T || Soy de España. || I am from Spain.",
                     "T || Soy de Colombia. || I am from Colombia.",
                     "T || ¡Estoy muy bien! || I am great!",
-                    "H || 🇨🇴 || ¿Qué país es? || Colombia",
-                    "H || 🇲🇽 || ¿Qué país es? || Mexico"
+                    "T || Soy de México. || I am from Mexico.",
+                    "T || ¿De dónde eres? || Where are you from?"
                   ],
                   "mistakes": [
                     "M || Corrige: My name [are] Mia. || am / is* / are || My name is Mia.",
@@ -114,18 +114,18 @@ export const COURSES: CourseDef[] = [
                     "Q || Deletrea LIA. || L-I-A.",
                     "Q || Deletrea TOM. || T-O-M.",
                     "Q || Deletrea EVA. || E-V-A.",
-                    "F || The letter after A is ____. || B || C / D",
-                    "F || The letter after C is ____. || D || E / F",
-                    "Q || ¿Qué letra es: F? || F",
-                    "Q || ¿Qué letra es: H? || H",
+                    "Q || What letter is it: B? || B",
+                    "Q || What letter is it: D? || D",
+                    "Q || What letter is it: F? || F",
+                    "Q || What letter is it: H? || H",
                     "Q || Spell your name || M-I-A.",
                     "Q || ¿Cuál es la primera letra de tu nombre? || M.",
-                    "H || 🅰️ || ¿Qué letra es? || A",
-                    "H || 🅱️ || ¿Qué letra es? || B"
+                    "H || 🅰️ || Encuentra la letra escondida. || A",
+                    "H || 🅱️ || Encuentra la letra escondida. || B"
                   ],
                   "mistakes": [
-                    "M || Corrige: The letter after E is [G]. || G / H / F* || The letter after E is F.",
-                    "M || Corrige: The letter after G is [I]. || J / H* / I || The letter after G is H."
+                    "M || Corrige: My [naem] is Mia. || naem / name* / neme || My name is Mia.",
+                    "M || Corrige: I [ma] Ana. || ma / am* / an || I am Ana."
                   ]
                 },
                 {
@@ -141,18 +141,18 @@ export const COURSES: CourseDef[] = [
                     "Q || Deletrea ALEX. || A-L-E-X.",
                     "Q || Deletrea EMMA. || E-M-M-A.",
                     "Q || Deletrea LUIS. || L-U-I-S.",
-                    "F || The letter after M is ____. || N || O / P",
-                    "F || The letter after O is ____. || P || Q / R",
-                    "Q || ¿Qué letra es: T? || T",
-                    "Q || ¿Qué letra es: W? || W",
+                    "Q || What letter is it: N? || N",
+                    "Q || What letter is it: P? || P",
+                    "Q || What letter is it: T? || T",
+                    "Q || What letter is it: W? || W",
                     "Q || Spell your name || M-I-A.",
                     "Q || ¿Cuál es la primera letra de tu nombre? || M.",
-                    "H || 🅰️ || ¿Qué letra es? || A",
-                    "H || 🅱️ || ¿Qué letra es? || B"
+                    "H || 🅰️ || Encuentra la letra escondida. || A",
+                    "H || 🅱️ || Encuentra la letra escondida. || B"
                   ],
                   "mistakes": [
-                    "M || Corrige: The letter after Q is [S]. || T / R* / S || The letter after Q is R.",
-                    "M || Corrige: The letter after S is [U]. || T* / U / V || The letter after S is T."
+                    "M || Corrige: My name [si] Luis. || si / is* / iz || My name is Luis.",
+                    "M || Corrige: I am [form] Colombia. || form / from* / fram || I am from Colombia."
                   ]
                 }
               ]
@@ -165,8 +165,8 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Colors — N/A; What is your favorite color? — Vocabulary: Colors Red, blue, green, yellow, orange, black, white",
                   "lines": [
-                    "Q || Elige entre naranja y amarillo. ¿Cuál es tu color favorito? || My favorite color is yellow.",
-                    "Q || Elige entre negro y naranja. ¿Cuál es tu color favorito? || My favorite color is orange.",
+                    "Q || What is your favorite color: orange or yellow? || My favorite color is orange. / My favorite color is yellow.",
+                    "Q || What is your favorite color: black or orange? || My favorite color is black. / My favorite color is orange.",
                     "E || 🟢 || ¿Qué color es? || It is green.",
                     "E || 🟡 || ¿Qué color es? || It is yellow.",
                     "E || 🟠 || ¿Qué color es? || It is orange.",
@@ -176,11 +176,11 @@ export const COURSES: CourseDef[] = [
                     "F || It ____ red. || is || am / are",
                     "F || It ____ blue. || is || am / are",
                     "T || amarillo || yellow",
-                    "Q || ¿Cuál es tu color favorito? || My favorite color is red.",
+                    "Q || What is your favorite color? || My favorite color is red.",
                     "Q || Pregúntale a un amigo cuál es su color favorito. || What is your favorite color?",
                     "Q || Completa con un color: My favorite color is ____. || My favorite color is green.",
-                    "H || 🔴 || ¿Qué color es? || Red",
-                    "H || 🔵 || ¿Qué color es? || Blue"
+                    "H || 🔴 || Encuentra el color escondido. || Red",
+                    "H || 🔵 || Encuentra el color escondido. || Blue"
                   ],
                   "mistakes": [
                     "M || Corrige: It [am] green. || am / are / is* || It is green.",
@@ -206,8 +206,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Completa con una comida: My favorite food is ____. || My favorite food is hot dog.",
                     "Q || Elige entre papas fritas y pollo. ¿Cuál es tu comida favorita? || My favorite food is chicken.",
                     "Q || Elige entre helado y papas fritas. ¿Cuál es tu comida favorita? || My favorite food is French fries.",
-                    "H || 🍦 || ¿Qué comida es? || Ice cream",
-                    "H || 🍔 || ¿Qué comida es? || Hamburger"
+                    "H || 🍦 || Encuentra la comida escondida. || Ice cream",
+                    "H || 🍔 || Encuentra la comida escondida. || Hamburger"
                   ],
                   "mistakes": [
                     "M || Corrige: My favorite food [am] French fries. || are / is* / am || My favorite food is French fries.",
@@ -219,22 +219,22 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 3",
                   "focus": "Fruits — N/A; What is your favorite fruit? — Vocabulary: Fruits Banana, Apple, Watermelon, Pineapple, Orange",
                   "lines": [
-                    "Q || Elige entre manzana y banano. ¿Cuál es tu fruta favorita? || My favorite fruit is banana.",
+                    "Q || ¿Cuál es tu fruta favorita? || My favorite fruit is watermelon. / My favorite fruit is pineapple.",
                     "Q || Elige entre sandía y manzana. ¿Cuál es tu fruta favorita? || My favorite fruit is apple.",
                     "E || 🍉 || ¿Qué fruta es? || A watermelon.",
                     "E || 🍍 || ¿Qué fruta es? || A pineapple.",
                     "E || 🍊 || ¿Qué fruta es? || An orange.",
-                    "T || un banano || a banana",
+                    "T || una piña || a pineapple",
                     "T || una manzana || an apple",
                     "T || una sandía || a watermelon",
-                    "F || My favorite fruit ____ banana. || is || am / are",
+                    "F || My favorite fruit ____ apple. || is || am / are",
                     "F || My favorite fruit ____ watermelon. || is || am / are",
                     "Q || Pregúntale a un amigo cuál es su fruta favorita. || What is your favorite fruit?",
                     "Q || Completa con una fruta: My favorite fruit is ____. || My favorite fruit is watermelon.",
                     "Q || Elige entre naranja y piña. ¿Cuál es tu fruta favorita? || My favorite fruit is pineapple.",
-                    "Q || Elige entre banano y naranja. ¿Cuál es tu fruta favorita? || My favorite fruit is orange.",
-                    "H || 🍌 || ¿Qué fruta es? || Banana",
-                    "H || 🍎 || ¿Qué fruta es? || Apple"
+                    "Q || Elige entre sandía y naranja. ¿Cuál es tu fruta favorita? || My favorite fruit is watermelon. / My favorite fruit is orange.",
+                    "H || 🍍 || Encuentra la fruta escondida. || Pineapple",
+                    "H || 🍎 || Encuentra la fruta escondida. || Apple"
                   ],
                   "mistakes": [
                     "M || Corrige: My favorite fruit [am] pineapple. || is* / am / are || My favorite fruit is pineapple.",
@@ -246,12 +246,12 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 4",
                   "focus": "Review — N/A; Review of previously introduced vocabulary and sentence patterns — Vocabulary: green; a hot dog; a watermelon; French fries; orange; black; ice cream; a banana; blue; chicken; a pineapple; red",
                   "lines": [
-                    "E || 🍌 || ¿Qué fruta es? || A banana.",
-                    "Q || ¿Cuál es tu color favorito? || My favorite color is red.",
+                    "E || 🍍 || ¿Qué fruta es? || A pineapple.",
+                    "Q || What is your favorite color? || My favorite color is red.",
                     "E || 🍉 || ¿Qué fruta es? || A watermelon.",
                     "Q || Completa con un color: My favorite color is ____. || My favorite color is green.",
                     "Q || Elige entre helado y papas fritas. ¿Cuál es tu comida favorita? || My favorite food is French fries.",
-                    "Q || Elige entre banano y naranja. ¿Cuál es tu fruta favorita? || My favorite fruit is orange.",
+                    "Q || Elige entre manzana y naranja. ¿Cuál es tu fruta favorita? || My favorite fruit is apple. / My favorite fruit is orange.",
                     "E || ⚫ || ¿Qué color es? || It is black.",
                     "T || helado || ice cream",
                     "F || My favorite fruit ____ orange. || is || am / are",
@@ -260,8 +260,8 @@ export const COURSES: CourseDef[] = [
                     "T || una piña || a pineapple",
                     "E || 🔴 || ¿Qué color es? || It is red.",
                     "E || 🍦 || ¿Qué comida es? || Ice cream.",
-                    "H || 🟢 || ¿Qué color es? || Green",
-                    "H || 🌭 || ¿Qué comida es? || Hot dog"
+                    "H || 🟢 || Encuentra el color escondido. || Green",
+                    "H || 🌭 || Encuentra la comida escondida. || Hot dog"
                   ],
                   "mistakes": [
                     "M || Corrige: It [am] red. || am / are / is* || It is red.",
@@ -279,7 +279,7 @@ export const COURSES: CourseDef[] = [
                     "Q || Pregúntale a un amigo cuál es su fruta favorita. || What is your favorite fruit?",
                     "E || 🟢 || ¿Qué color es? || It is green.",
                     "E || 🍊 || ¿Qué fruta es? || An orange.",
-                    "Q || Elige entre negro y naranja. ¿Cuál es tu color favorito? || My favorite color is orange.",
+                    "Q || What is your favorite color: black or orange? || My favorite color is black. / My favorite color is orange.",
                     "Q || Elige entre perro caliente y hamburguesa. ¿Cuál es tu comida favorita? || My favorite food is hamburger.",
                     "F || My favorite food ____ chicken. || is || am / are",
                     "F || My favorite fruit ____ pineapple. || is || am / are",
@@ -287,8 +287,8 @@ export const COURSES: CourseDef[] = [
                     "T || una sandía || a watermelon",
                     "T || amarillo || yellow",
                     "Q || Pregúntale a un amigo cuál es su comida favorita. || What is your favorite food?",
-                    "H || 🟠 || ¿Qué color es? || Orange",
-                    "H || 🍟 || ¿Qué comida es? || French fries"
+                    "H || 🟠 || Encuentra el color escondido. || Orange",
+                    "H || 🍟 || Encuentra la comida escondida. || French fries"
                   ],
                   "mistakes": [
                     "M || Corrige: It [am] orange. || are / is* / am || It is orange.",
@@ -319,8 +319,8 @@ export const COURSES: CourseDef[] = [
                     "T || Él es un niño. || He is a boy.",
                     "Q || Is your mom a woman? || Yes, she is a woman.",
                     "Q || Is your dad a man? || Yes, he is a man.",
-                    "H || 👨 || Name the person. || Man",
-                    "H || 👩 || Name the person. || Woman"
+                    "H || 👨 || Guess the hidden person! || Man",
+                    "H || 👩 || Guess the hidden person! || Woman"
                   ],
                   "mistakes": [
                     "M || She [am] a girl. || am / are / is* || She is a girl.",
@@ -346,8 +346,8 @@ export const COURSES: CourseDef[] = [
                     "T || Ella es mi hermana. || She is my sister.",
                     "Q || What is your brother's name? || His name is Leo.",
                     "T || Él es mi hermano. || He is my brother.",
-                    "H || 👩 || Name the person. || Woman",
-                    "H || 👦 || Name the person. || Boy"
+                    "H || 👩 || Guess the hidden person! || Woman",
+                    "H || 👦 || Guess the hidden person! || Boy"
                   ],
                   "mistakes": [
                     "M || She [am] my sister. || are / is* / am || She is my sister.",
@@ -373,8 +373,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Spell the word \"angry\". || A-N-G-R-Y.",
                     "T || Ella es bonita e inteligente. || She is pretty and intelligent.",
                     "T || Él es guapo y está feliz. || He is handsome and happy.",
-                    "H || 😊 || Name the adjective. || Happy",
-                    "H || 😠 || Name the adjective. || Angry"
+                    "H || 😊 || Guess the hidden adjective! || Happy",
+                    "H || 😠 || Guess the hidden adjective! || Angry"
                   ],
                   "mistakes": [
                     "M || She [am] angry. || is* / am / are || She is angry.",
@@ -400,8 +400,8 @@ export const COURSES: CourseDef[] = [
                     "T || Ella está enojada. || She is angry.",
                     "Q || Spell the word \"man\". || M-A-N.",
                     "T || Ella es mi mamá. || She is my mom.",
-                    "H || 👩 || Name the person. || Woman",
-                    "H || 👨 || Name the person. || Man"
+                    "H || 👩 || Guess the hidden person! || Woman",
+                    "H || 👨 || Guess the hidden person! || Man"
                   ],
                   "mistakes": [
                     "M || He [am] handsome and happy. || am / are / is* || He is handsome and happy.",
@@ -427,8 +427,8 @@ export const COURSES: CourseDef[] = [
                     "T || Él está feliz. || He is happy.",
                     "T || Ella es una niña. || She is a girl.",
                     "Q || Complete: She is ____ sister. || She is my sister.",
-                    "H || 👧 || Name the person. || Girl",
-                    "H || 😊 || Name the adjective. || Happy"
+                    "H || 👧 || Guess the hidden person! || Girl",
+                    "H || 😊 || Guess the hidden adjective! || Happy"
                   ],
                   "mistakes": [
                     "M || He [am] intelligent. || are / is* / am || He is intelligent.",
@@ -459,8 +459,8 @@ export const COURSES: CourseDef[] = [
                     "Q || What is your sister's favorite food? || My sister's favorite food is sandwich.",
                     "Q || What is your brother's favorite food? || My brother's favorite food is cereal.",
                     "Q || What is your best friend's favorite food? || My best friend's favorite food is eggs.",
-                    "H || 🥗 || Name the food. || Salad",
-                    "H || 🍲 || Name the food. || Soup"
+                    "H || 🥗 || Guess the hidden food! || Salad",
+                    "H || 🍲 || Guess the hidden food! || Soup"
                   ],
                   "mistakes": [
                     "M || My sister's favorite food [am] sandwich. || am / are / is* || My sister's favorite food is sandwich.",
@@ -486,8 +486,8 @@ export const COURSES: CourseDef[] = [
                     "Q || What is your grandma's favorite drink? || My grandma's favorite drink is coffee.",
                     "Q || What is your grandpa's favorite drink? || My grandpa's favorite drink is water.",
                     "Q || What is your cousin's favorite drink? || My cousin's favorite drink is milk.",
-                    "H || 💧 || Name the drink. || Water",
-                    "H || 🥛 || Name the drink. || Milk"
+                    "H || 💧 || Guess the hidden drink! || Water",
+                    "H || 🥛 || Guess the hidden drink! || Milk"
                   ],
                   "mistakes": [
                     "M || My brother's favorite [drinks] is water. || drinking / drink* / drinks || My brother's favorite drink is water.",
@@ -509,12 +509,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What is your grandma's favorite drink? || My grandma's favorite drink is coffee.",
                     "F || My favorite fruit ____ watermelon. || is || am / are",
                     "F || She ____ pretty. || is || am / are",
-                    "E || 🇪🇸 || Say the country. || Spain.",
+                    "T || Soy de España. || I am from Spain.",
                     "Q || Say your name and country. || My name is Mia. I am from Colombia.",
                     "T || cuatro || four",
                     "Q || Pretend you are eight. Say your age. || I am eight years old.",
-                    "H || 🍎 || Name the fruit. || Apple",
-                    "H || 😠 || Name the adjective. || Angry"
+                    "H || 🍎 || Guess the hidden fruit! || Apple",
+                    "H || 😠 || Guess the hidden adjective! || Angry"
                   ],
                   "mistakes": [
                     "M || She [am] angry. || is* / am / are || She is angry.",
@@ -540,8 +540,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Say your name and age. || My name is Mia. I am ten years old.",
                     "Q || Spell your first name. || M-I-A.",
                     "Q || Spell SAM. || S-A-M.",
-                    "H || 🔴 || What color is it? || Red",
-                    "H || 👨 || Name the person. || Man"
+                    "H || 🔴 || Guess the hidden color! || Red",
+                    "H || 👨 || Guess the hidden person! || Man"
                   ],
                   "mistakes": [
                     "M || He [am] a man. || am / are / is* || He is a man.",
@@ -567,8 +567,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Say this number: 1. || One.",
                     "Q || What is the first letter of your name? || M.",
                     "Q || Spell BEN. || B-E-N.",
-                    "H || 🍔 || Name the food. || Hamburger",
-                    "H || ☕ || Name the drink. || Coffee"
+                    "H || 🍔 || Guess the hidden food! || Hamburger",
+                    "H || ☕ || Guess the hidden drink! || Coffee"
                   ],
                   "mistakes": [
                     "M || My favorite food [am] hot dog. || are / is* / am || My favorite food is hot dog.",
@@ -745,7 +745,7 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Daily Routine — Simple present (1st person); Positive sentences — Vocabulary: Wake up, take a shower, eat",
                   "lines": [
-                    "Q || What do you do on school days? || I wake up.",
+                    "Q || What time do you wake up on school days? || I wake up at six thirty.",
                     "Q || What do you do after school? || I take a shower.",
                     "Q || What do you do before school? || I eat breakfast.",
                     "Q || What do you do at seven o'clock? || I wake up.",
@@ -802,7 +802,7 @@ export const COURSES: CourseDef[] = [
                     "Q || What do you do before school? || I eat breakfast.",
                     "Q || What do you do before bed? || I brush my teeth.",
                     "Q || What do you do at night? || I go to sleep.",
-                    "Q || What do you do on school days? || I wake up.",
+                    "Q || What time do you wake up on school days? || I wake up at six thirty.",
                     "Q || What do you do after school? || I take a shower.",
                     "Q || Where do you eat breakfast? || I eat breakfast in the kitchen.",
                     "Q || When do you brush your teeth? || I brush my teeth after breakfast.",
@@ -855,7 +855,7 @@ export const COURSES: CourseDef[] = [
                   "lines": [
                     "T || Yo desayuno. || I eat breakfast.",
                     "Q || Do you wake up? || Yes, I do. / No, I don't.",
-                    "Q || What do you do on school days? || I wake up.",
+                    "Q || What time do you wake up on school days? || I wake up at six thirty.",
                     "Q || Where do you take a shower? || I take a shower in the bathroom.",
                     "Q || What do you do in the morning? || I take a shower.",
                     "Q || Do you take a shower every day? || Yes, I do. / No, I don't.",
@@ -899,7 +899,7 @@ export const COURSES: CourseDef[] = [
                     "T || Yo escribo un cuento. || I write a story.",
                     "T || Yo corro. || I run.",
                     "T || Yo aprendo inglés todos los días. || I learn English every day.",
-                    "H || ✍️ || Name the action. || Write",
+                    "H || ✍️ || Guess the action! || Write",
                     "T || Yo aprendo inglés por la mañana. || I learn English in the morning."
                   ],
                   "mistakes": [
@@ -926,8 +926,8 @@ export const COURSES: CourseDef[] = [
                     "T || Yo escribo un cuento. || I write a story.",
                     "T || Yo corro. || I run.",
                     "T || Yo juego. || I play games.",
-                    "H || ✍️ || Name the action. || Write",
-                    "H || 🏃 || Name the action. || Run"
+                    "H || ✍️ || Guess the action! || Write",
+                    "H || 🏃 || Guess the action! || Run"
                   ],
                   "mistakes": [
                     "M || I [runs]. || running / run* / runs || I run.",
@@ -953,8 +953,8 @@ export const COURSES: CourseDef[] = [
                     "T || Yo escribo un cuento. || I write a story.",
                     "T || Yo corro. || I run.",
                     "T || Yo juego. || I play games.",
-                    "H || ✍️ || Name the action. || Write",
-                    "H || 🏃 || Name the action. || Run"
+                    "H || ✍️ || Guess the action! || Write",
+                    "H || 🏃 || Guess the action! || Run"
                   ],
                   "mistakes": [
                     "M || I [writes] a story. || write* / writes / writing || I write a story.",
@@ -980,7 +980,7 @@ export const COURSES: CourseDef[] = [
                     "T || Yo escribo un cuento. || I write a story.",
                     "T || Yo corro. || I run.",
                     "T || Yo juego. || I play games.",
-                    "H || ✍️ || Name the action. || Write",
+                    "H || ✍️ || Guess the action! || Write",
                     "T || Yo juego por la mañana. || I play games in the morning."
                   ],
                   "mistakes": [
@@ -1007,7 +1007,7 @@ export const COURSES: CourseDef[] = [
                     "Q || When do you drink water? || I drink water after exercise.",
                     "Q || What do you do in the classroom? || I write a story.",
                     "Q || What do you do after lunch? || I learn English.",
-                    "H || 🏃 || Name the action. || Run",
+                    "H || 🏃 || Guess the action! || Run",
                     "T || Yo aprendo inglés por la mañana. || I learn English in the morning."
                   ],
                   "mistakes": [
@@ -1039,8 +1039,8 @@ export const COURSES: CourseDef[] = [
                     "T || Él pinta un cuadro. || He paints a picture.",
                     "T || Ella baila. || She dances.",
                     "T || Él canta todos los días. || He sings every day.",
-                    "H || 🎨 || Name the action. || Paint",
-                    "H || 💃 || Name the action. || Dance"
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
+                    "H || 💃 || Guess the action! || Dance"
                   ],
                   "mistakes": [
                     "M || He [dance]. || dance / dancing / dances* || He dances.",
@@ -1066,8 +1066,8 @@ export const COURSES: CourseDef[] = [
                     "T || Ella pinta un cuadro. || She paints a picture.",
                     "T || Él baila. || He dances.",
                     "T || Él lee un libro. || He reads a book.",
-                    "H || 🎨 || Name the action. || Paint",
-                    "H || 💃 || Name the action. || Dance"
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
+                    "H || 💃 || Guess the action! || Dance"
                   ],
                   "mistakes": [
                     "M || He [read] a book. || reading / reads* / read || He reads a book.",
@@ -1093,8 +1093,8 @@ export const COURSES: CourseDef[] = [
                     "T || Él pinta un cuadro. || He paints a picture.",
                     "T || Él baila. || He dances.",
                     "T || Ella lee un libro. || She reads a book.",
-                    "H || 🎨 || Name the action. || Paint",
-                    "H || 💃 || Name the action. || Dance"
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
+                    "H || 💃 || Guess the action! || Dance"
                   ],
                   "mistakes": [
                     "M || He [paint] a picture. || paints* / paint / painting || He paints a picture.",
@@ -1108,20 +1108,20 @@ export const COURSES: CourseDef[] = [
                   "lines": [
                     "Q || Where does your teacher read a book? || He reads a book in the library.",
                     "Q || Where does your mom clean the room? || She cleans the room at home.",
-                    "Q || Where does your brother sing? || He sings at home.",
-                    "Q || Where does your dad paint a picture? || He paints a picture in the art room.",
-                    "Q || What does your sister do at a party? || She dances.",
-                    "Q || Where does your best friend read a book? || She reads a book in the library.",
+                    "Q || What does Shakira do on stage? || She sings on stage.",
+                    "Q || Where does your dad paint a picture? || He paints a picture at home.",
+                    "Q || What does your sister do at a party? || She dances at the party.",
+                    "Q || Does your best friend read at night? || Yes, she does. / No, she doesn't.",
                     "Q || When does your sister clean the room? || She cleans the room on Saturday mornings.",
-                    "Q || What does your cousin do after school? || He sings.",
+                    "Q || What does your brother do in art class? || He paints a picture in art class.",
                     "F || He ____ a picture in the art room. || paints || paint / painting",
-                    "F || She ____. || dances || dance / dancing",
-                    "T || Él canta. || He sings.",
-                    "T || Él pinta un cuadro. || He paints a picture.",
-                    "T || Ella baila. || She dances.",
-                    "T || Ella lee un libro. || She reads a book.",
-                    "H || 🎨 || Name the action. || Paint",
-                    "H || 💃 || Name the action. || Dance"
+                    "F || She ____ at a party. || dances || dance / dancing",
+                    "T || Él canta en casa. || He sings at home.",
+                    "T || Él pinta un cuadro en la escuela. || He paints a picture at school.",
+                    "T || Ella baila con su hermana. || She dances with her sister.",
+                    "T || Ella lee un libro por la noche. || She reads a book at night.",
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
+                    "H || 💃 || Guess the action! || Dance"
                   ],
                   "mistakes": [
                     "M || She [read] a book in the library. || read / reading / reads* || She reads a book in the library.",
@@ -1147,8 +1147,8 @@ export const COURSES: CourseDef[] = [
                     "T || Ella pinta un cuadro. || She paints a picture.",
                     "T || Ella baila. || She dances.",
                     "T || Ella lee un libro. || She reads a book.",
-                    "H || 🎨 || Name the action. || Paint",
-                    "H || 💃 || Name the action. || Dance"
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
+                    "H || 💃 || Guess the action! || Dance"
                   ],
                   "mistakes": [
                     "M || He [paint] a picture. || painting / paints* / paint || He paints a picture.",
@@ -1165,7 +1165,7 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Daily Routine — Simple present (1st person); Yes/No questions (Long answers) Wh-questions (What/Where...?) — Vocabulary: Wake up, take a shower, eat, run, play, drink",
                   "lines": [
-                    "Q || What do you do on school days? || I wake up.",
+                    "Q || What time do you wake up on school days? || I wake up at six thirty.",
                     "Q || What do you do after school? || I take a shower.",
                     "Q || What do you do before school? || I eat breakfast.",
                     "Q || What do you do on a sunny afternoon? || I run.",
@@ -1206,8 +1206,8 @@ export const COURSES: CourseDef[] = [
                     "T || Él pinta un cuadro. || He paints a picture.",
                     "T || Él baila. || He dances.",
                     "T || Ella lee un libro. || She reads a book.",
-                    "H || 🎨 || Name the action. || Paint",
-                    "H || 💃 || Name the action. || Dance"
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
+                    "H || 💃 || Guess the action! || Dance"
                   ],
                   "mistakes": [
                     "M || He [clean] the room at eight o'clock. || cleaning / cleans* / clean || He cleans the room at eight o'clock.",
@@ -1246,7 +1246,7 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 4",
                   "focus": "Monthly Evaluation — Previously introduced tenses; Cumulative review of previously introduced structures — Vocabulary: wake up; learn English; sing; take a shower; girl; salad; How are you today? I am great!; The alphabet; an apple; angry; Good morning, Good afternoon, Good evening, Good night; alphabet",
                   "lines": [
-                    "Q || What do you do on school days? || I wake up.",
+                    "Q || What time do you wake up on school days? || I wake up at six thirty.",
                     "T || Yo me despierto. || I wake up.",
                     "Q || What do you learn in class? || I learn English.",
                     "T || Yo aprendo inglés. || I learn English.",
@@ -1260,7 +1260,7 @@ export const COURSES: CourseDef[] = [
                     "Q || Say your name, then spell it. || My name is Mia. M-I-A.",
                     "T || una manzana || an apple",
                     "T || Ella está enojada. || She is angry.",
-                    "H || 👧 || Name the person. || Girl",
+                    "H || 👧 || Guess the hidden person! || Girl",
                     "T || Yo me despierto por la mañana. || I wake up in the morning."
                   ],
                   "mistakes": [
@@ -1305,7 +1305,7 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Daily Routine — Simple present (3rd person); Positive sentences — Vocabulary: Wake up, cook, work",
                   "lines": [
-                    "Q || What does your cousin do on school days? || He wakes up.",
+                    "Q || What time does your cousin wake up on school days? || He wakes up at six thirty.",
                     "Q || What does your teacher cook for his family? || He cooks dinner.",
                     "Q || What does your dad do on weekdays? || He works.",
                     "Q || What does your brother do at seven o'clock? || He wakes up.",
@@ -1362,7 +1362,7 @@ export const COURSES: CourseDef[] = [
                     "Q || What does your dad do on weekdays? || He works.",
                     "Q || What does your brother do after school? || He exercises.",
                     "Q || What does your dad do in the evening? || He watches TV.",
-                    "Q || What does your sister do on school days? || She wakes up.",
+                    "Q || What time does your sister wake up on school days? || She wakes up at six thirty.",
                     "Q || What does your best friend cook for her family? || She cooks dinner.",
                     "Q || Where does your mom work? || She works in an office.",
                     "Q || When does your uncle exercise? || He exercises in the morning.",
@@ -1374,7 +1374,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él trabaja. || He works.",
                     "T || Ella hace ejercicio. || She exercises.",
                     "T || Mi hermano trabaja. || My brother works.",
-                    "H || 🏋️ || Name the action. || Exercise"
+                    "H || 🏋️ || Guess the action! || Exercise"
                   ],
                   "mistakes": [
                     "M || She [cook] dinner. || cooks* / cook / cooking || She cooks dinner.",
@@ -1415,7 +1415,7 @@ export const COURSES: CourseDef[] = [
                   "lines": [
                     "T || Él trabaja. || He works.",
                     "Q || Does your dad wake up? || Yes, he wakes up. / No, he doesn't wake up.",
-                    "Q || What does your sister do on school days? || She wakes up.",
+                    "Q || What time does your sister wake up on school days? || She wakes up at six thirty.",
                     "Q || Who does your best friend exercise with? || She exercises with her brother.",
                     "Q || What does your dad do at six o'clock? || He cooks dinner.",
                     "Q || Does your sister cook dinner every day? || Yes, she cooks dinner. / No, she doesn't cook dinner.",
@@ -1445,7 +1445,7 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Daily Routine — Simple present (3rd person); Positive sentences — Vocabulary: Wake up, work, exercise",
                   "lines": [
-                    "Q || What does your teacher do on school days? || He wakes up.",
+                    "Q || What time does your teacher wake up on school days? || He wakes up at six thirty.",
                     "Q || What does your mom do on weekdays? || She works.",
                     "Q || What does your brother do after school? || He exercises.",
                     "Q || What does your dad do at seven o'clock? || He wakes up.",
@@ -1502,7 +1502,7 @@ export const COURSES: CourseDef[] = [
                     "Q || What does your dad do on weekdays? || He works.",
                     "Q || What does your dad do after work? || He exercises.",
                     "Q || What does your sister do in the evening? || She watches TV.",
-                    "Q || What does your best friend do on school days? || She wakes up.",
+                    "Q || What time does your best friend wake up on school days? || She wakes up at six thirty.",
                     "Q || What does your best friend cook for her family? || She cooks dinner.",
                     "Q || Where does your mom work? || She works in an office.",
                     "Q || When does your teacher exercise? || He exercises in the morning.",
@@ -1514,7 +1514,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él trabaja. || He works.",
                     "T || Él hace ejercicio. || He exercises.",
                     "T || Mi hermano trabaja. || My brother works.",
-                    "H || 🏋️ || Name the action. || Exercise"
+                    "H || 🏋️ || Guess the action! || Exercise"
                   ],
                   "mistakes": [
                     "M || She [cook] dinner. || cooks* / cook / cooking || She cooks dinner.",
@@ -1540,7 +1540,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ella cocina la cena. || She cooks dinner.",
                     "T || Él trabaja. || He works.",
                     "T || Él hace ejercicio. || He exercises.",
-                    "H || 🏋️ || Name the action. || Exercise",
+                    "H || 🏋️ || Guess the action! || Exercise",
                     "T || Mi hermana se despierta. || My sister wakes up."
                   ],
                   "mistakes": [
@@ -1555,7 +1555,7 @@ export const COURSES: CourseDef[] = [
                   "lines": [
                     "T || Ella hace ejercicio. || She exercises.",
                     "T || Él trabaja. || He works.",
-                    "Q || What does your best friend do on school days? || She wakes up.",
+                    "Q || What time does your best friend wake up on school days? || She wakes up at six thirty.",
                     "Q || When does your aunt cook dinner? || She cooks dinner at six o'clock.",
                     "Q || What does your dad do in the morning? || He works.",
                     "Q || Does your best friend wake up? || Yes, she does. / No, she doesn't.",
@@ -1567,7 +1567,7 @@ export const COURSES: CourseDef[] = [
                     "Q || When does your mom watch TV? || She watches TV after dinner.",
                     "Q || What does your mom do in an office? || She works.",
                     "Q || What does your teacher do in the morning? || He exercises.",
-                    "H || 🏋️ || Name the action. || Exercise",
+                    "H || 🏋️ || Guess the action! || Exercise",
                     "T || Mi hermano trabaja. || My brother works."
                   ],
                   "mistakes": [
@@ -1600,7 +1600,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ella bebe agua. || She drinks water.",
                     "T || Ella hace ejercicio. || She exercises.",
                     "T || Mi hermana juega fútbol. || My sister plays soccer.",
-                    "H || 🏋️ || Name the action. || Exercise"
+                    "H || 🏋️ || Guess the action! || Exercise"
                   ],
                   "mistakes": [
                     "M || He [drink] water. || drink / drinking / drinks* || He drinks water.",
@@ -1708,7 +1708,7 @@ export const COURSES: CourseDef[] = [
                     "Q || What does your teacher do in the park? || He plays soccer.",
                     "Q || What does your mom do in the morning? || She exercises.",
                     "T || Mi hermana bebe agua. || My sister drinks water.",
-                    "H || 🏋️ || Name the action. || Exercise"
+                    "H || 🏋️ || Guess the action! || Exercise"
                   ],
                   "mistakes": [
                     "M || She [win] a race on sports day. || winning / wins* / win || She wins a race on sports day.",
@@ -1725,7 +1725,7 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Daily Routine — Simple present (1st person); Wh-questions (What/Where/What time...?) — Vocabulary: Wake up, take a shower, eat, brush my teeth, sleep",
                   "lines": [
-                    "Q || What do you do on school days? || I wake up.",
+                    "Q || What time do you wake up on school days? || I wake up at six thirty.",
                     "Q || What do you do after school? || I take a shower.",
                     "Q || What do you do before school? || I eat breakfast.",
                     "Q || What do you do before bed? || I brush my teeth.",
@@ -1756,7 +1756,7 @@ export const COURSES: CourseDef[] = [
                     "Q || What time does your mom work? || She works at four o'clock.",
                     "Q || What time does your best friend exercise? || She exercises at six thirty.",
                     "Q || What time does your best friend watch TV? || She watches TV at eight o'clock.",
-                    "Q || What does your cousin do on school days? || He wakes up.",
+                    "Q || What time does your cousin wake up on school days? || He wakes up at six thirty.",
                     "Q || Where does your teacher cook dinner? || He cooks dinner in the kitchen.",
                     "Q || When does your dad work? || He works in the morning.",
                     "Q || What does your brother do in the morning? || He exercises.",
@@ -1806,13 +1806,13 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 4",
                   "focus": "Monthly Evaluation — Previously introduced tenses; Cumulative review of previously introduced structures — Vocabulary: wake up; exercise; milk; paint a picture; three; Wake up, take a shower, eat, run, play, drink, Sing, paint, dance, read, clean; white; brush my teeth; boy; play games",
                   "lines": [
-                    "Q || What does your cousin do on school days? || He wakes up.",
+                    "Q || What time does your cousin wake up on school days? || He wakes up at six thirty.",
                     "T || Ella se despierta. || She wakes up.",
-                    "Q || What does your teacher do on school days? || He wakes up.",
+                    "Q || What time does your teacher wake up on school days? || He wakes up at six thirty.",
                     "T || Él se despierta. || He wakes up.",
                     "Q || What does your mom do after work? || She exercises.",
                     "T || Él hace ejercicio. || He exercises.",
-                    "Q || What do you do on school days? || I wake up.",
+                    "Q || What time do you wake up on school days? || I wake up at six thirty.",
                     "T || Yo me despierto. || I wake up.",
                     "F || He ____. || exercises || exercise / exercising",
                     "F || I ____ up. || wake || wakes / waking",
@@ -1820,8 +1820,8 @@ export const COURSES: CourseDef[] = [
                     "T || Él limpia su cuarto los domingos. || He cleans his room on Sundays.",
                     "Q || Spell the word \"white\". || W-H-I-T-E.",
                     "T || Yo me cepillo los dientes. || I brush my teeth.",
-                    "H || 🎨 || Name the action. || Paint",
-                    "H || ⚪ || What color is it? || White"
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
+                    "H || ⚪ || Guess the hidden color! || White"
                   ],
                   "mistakes": [
                     "M || He [paint] a picture. || paint / painting / paints* || He paints a picture.",
@@ -1990,8 +1990,8 @@ export const COURSES: CourseDef[] = [
                     "T || No me gustan los mangos. || I don't like mangoes.",
                     "T || Me gustan las papas. || I like potatoes.",
                     "T || No me gustan las zanahorias. || I don't like carrots.",
-                    "H || 🥭 || Name the fruit. || Mango",
-                    "H || 🥕 || Name the vegetable. || Carrot"
+                    "H || 🥭 || Guess the hidden fruit! || Mango",
+                    "H || 🥕 || Guess the hidden vegetable! || Carrot"
                   ],
                   "mistakes": [
                     "M || I [likes] mangoes. || likes / liking / like* || I like mangoes.",
@@ -2017,8 +2017,8 @@ export const COURSES: CourseDef[] = [
                     "T || No me gustan las papas. || I don't like potatoes.",
                     "T || Me gustan las zanahorias. || I like carrots.",
                     "T || No me gustan las cebollas. || I don't like onions.",
-                    "H || 🥔 || Name the vegetable. || Potato",
-                    "H || 🧅 || Name the vegetable. || Onion"
+                    "H || 🥔 || Guess the hidden vegetable! || Potato",
+                    "H || 🧅 || Guess the hidden vegetable! || Onion"
                   ],
                   "mistakes": [
                     "M || I don't [likes] potatoes. || liking / like* / likes || I don't like potatoes.",
@@ -2044,8 +2044,8 @@ export const COURSES: CourseDef[] = [
                     "T || No me gustan las zanahorias. || I don't like carrots.",
                     "T || Me gustan las cebollas. || I like onions.",
                     "T || No me gustan las uvas. || I don't like grapes.",
-                    "H || 🥕 || Name the vegetable. || Carrot",
-                    "H || 🍇 || Name the fruit. || Grapes"
+                    "H || 🥕 || Guess the hidden vegetable! || Carrot",
+                    "H || 🍇 || Guess the hidden fruit! || Grapes"
                   ],
                   "mistakes": [
                     "M || I [likes] strawberries. || like* / likes / liking || I like strawberries.",
@@ -2071,8 +2071,8 @@ export const COURSES: CourseDef[] = [
                     "T || No me gustan las cebollas. || I don't like onions.",
                     "T || Me gustan las uvas. || I like grapes.",
                     "T || No me gustan las fresas. || I don't like strawberries.",
-                    "H || 🧅 || Name the vegetable. || Onion",
-                    "H || 🍓 || Name the fruit. || Strawberry"
+                    "H || 🧅 || Guess the hidden vegetable! || Onion",
+                    "H || 🍓 || Guess the hidden fruit! || Strawberry"
                   ],
                   "mistakes": [
                     "M || I don't [likes] onions because they taste bad. || likes / liking / like* || I don't like onions because they taste bad.",
@@ -2098,8 +2098,8 @@ export const COURSES: CourseDef[] = [
                     "E || 🍓 || Say whether you like this food. || I like strawberries. / I don't like strawberries.",
                     "Q || What vegetable don't you like? || I don't like onions.",
                     "Q || What fruit do you like? || I like mangoes.",
-                    "H || 🥕 || Name the vegetable. || Carrot",
-                    "H || 🧅 || Name the vegetable. || Onion"
+                    "H || 🥕 || Guess the hidden vegetable! || Carrot",
+                    "H || 🧅 || Guess the hidden vegetable! || Onion"
                   ],
                   "mistakes": [
                     "M || I don't [likes] strawberries because they taste bad. || liking / like* / likes || I don't like strawberries because they taste bad.",
@@ -2131,7 +2131,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él nada. || He swims.",
                     "T || Ella juega todos los días. || She plays games every day.",
                     "T || Mi hermano lee un libro. || My brother reads a book.",
-                    "H || 🏊 || Name the action. || Swim"
+                    "H || 🏊 || Guess the action! || Swim"
                   ],
                   "mistakes": [
                     "M || She [swim]. || swim / swimming / swims* || She swims.",
@@ -2158,7 +2158,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ella nada. || She swims.",
                     "T || Él monta bicicleta. || He rides a bike.",
                     "T || Mi hermano lee un libro. || My brother reads a book.",
-                    "H || 🏊 || Name the action. || Swim"
+                    "H || 🏊 || Guess the action! || Swim"
                   ],
                   "mistakes": [
                     "M || He [play] games. || playing / plays* / play || He plays games.",
@@ -2185,7 +2185,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él nada. || He swims.",
                     "T || Él monta bicicleta. || He rides a bike.",
                     "T || Mi hermana lee un libro. || My sister reads a book.",
-                    "H || 🏊 || Name the action. || Swim"
+                    "H || 🏊 || Guess the action! || Swim"
                   ],
                   "mistakes": [
                     "M || He [play] games. || plays* / play / playing || He plays games.",
@@ -2212,7 +2212,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él nada. || He swims.",
                     "T || Ella monta bicicleta. || She rides a bike.",
                     "T || Mi hermano lee un libro. || My brother reads a book.",
-                    "H || 🏊 || Name the action. || Swim"
+                    "H || 🏊 || Guess the action! || Swim"
                   ],
                   "mistakes": [
                     "M || She [swim] in the pool. || swim / swimming / swims* || She swims in the pool.",
@@ -2238,7 +2238,7 @@ export const COURSES: CourseDef[] = [
                     "Q || When does your best friend ride a bike? || She rides a bike after school.",
                     "Q || What does your dad do in the library? || He reads a book.",
                     "Q || What does your sister do after school? || She rides a bike.",
-                    "H || 🏊 || Name the action. || Swim",
+                    "H || 🏊 || Guess the action! || Swim",
                     "T || Mi hermano nada. || My brother swims."
                   ],
                   "mistakes": [
@@ -2271,7 +2271,7 @@ export const COURSES: CourseDef[] = [
                     "T || El perro salta. || The dog jumps.",
                     "T || El gato trepa un árbol todos los días. || The cat climbs a tree every day.",
                     "T || Mi gato trepa un árbol. || My cat climbs a tree.",
-                    "H || 🏃 || Name the action. || Run"
+                    "H || 🏃 || Guess the action! || Run"
                   ],
                   "mistakes": [
                     "M || It [jump]. || jump / jumping / jumps* || It jumps.",
@@ -2297,7 +2297,7 @@ export const COURSES: CourseDef[] = [
                     "T || El perro corre. || The dog runs.",
                     "T || El perro salta. || The dog jumps.",
                     "T || El perro camina. || The dog walks.",
-                    "H || 🏃 || Name the action. || Run",
+                    "H || 🏃 || Guess the action! || Run",
                     "T || Mi perro salta. || My dog jumps."
                   ],
                   "mistakes": [
@@ -2325,7 +2325,7 @@ export const COURSES: CourseDef[] = [
                     "T || El perro salta. || The dog jumps.",
                     "T || El perro camina. || The dog walks.",
                     "T || Mi perro salta. || My dog jumps.",
-                    "H || 🚶 || Name the action. || Walk"
+                    "H || 🚶 || Guess the action! || Walk"
                   ],
                   "mistakes": [
                     "M || It [run]. || runs* / run / running || It runs.",
@@ -2351,7 +2351,7 @@ export const COURSES: CourseDef[] = [
                     "T || El perro corre. || The dog runs.",
                     "T || El perro salta. || The dog jumps.",
                     "T || El perro camina. || The dog walks.",
-                    "H || 🚶 || Name the action. || Walk",
+                    "H || 🚶 || Guess the action! || Walk",
                     "T || Mi gato trepa un árbol. || My cat climbs a tree."
                   ],
                   "mistakes": [
@@ -2532,7 +2532,7 @@ export const COURSES: CourseDef[] = [
                   "Q || What is your favorite profession? || My favorite profession is firefighter.",
                   "Q || What do you do at school? || I study English at school. / I play with my friends.",
                   "Q || What time do you wake up? || I wake up at six thirty.",
-                  "Q || Do you want to be a vet or a firefighter? || I want to be a vet.",
+                  "Q || Do you want to be a vet? || Yes, I do. / No, I don't.",
                   "Q || What is your mom's profession? || My mom is a doctor.",
                   "Q || What do you do after school? || After school, I play soccer.",
                   "E || 👮 || Do you want to be a police officer? || Yes, I do. I want to be a police officer. / No, I don't.",
@@ -2766,8 +2766,8 @@ export const COURSES: CourseDef[] = [
                     "T || Estos son mis ojos. || These are my eyes.",
                     "T || Estas son mis orejas. || These are my ears.",
                     "T || Esta es mi nariz. || This is my nose.",
-                    "H || 👀 || Name the body part. || Eyes",
-                    "H || 👂 || Name the body part. || Ear"
+                    "H || 👀 || Guess the hidden body part! || Eyes",
+                    "H || 👂 || Guess the hidden body part! || Ear"
                   ],
                   "mistakes": [
                     "M || These [am] my ears. || am / is / are* || These are my ears.",
@@ -2793,8 +2793,8 @@ export const COURSES: CourseDef[] = [
                     "T || Estos son mis ojos. || These are my eyes.",
                     "T || Estas son mis orejas. || These are my ears.",
                     "T || Esta es mi nariz. || This is my nose.",
-                    "H || 👀 || Name the body part. || Eyes",
-                    "H || 👂 || Name the body part. || Ear"
+                    "H || 👀 || Guess the hidden body part! || Eyes",
+                    "H || 👂 || Guess the hidden body part! || Ear"
                   ],
                   "mistakes": [
                     "M || This [am] my nose. || are / is* / am || This is my nose.",
@@ -2820,8 +2820,8 @@ export const COURSES: CourseDef[] = [
                     "T || Esa es su rodilla. || That is its knee.",
                     "T || Ese es su codo. || That is its elbow.",
                     "T || Esas son sus piernas. || Those are its legs.",
-                    "H || 👀 || Name the body part. || Eyes",
-                    "H || 👂 || Name the body part. || Ear"
+                    "H || 👀 || Guess the hidden body part! || Eyes",
+                    "H || 👂 || Guess the hidden body part! || Ear"
                   ],
                   "mistakes": [
                     "M || Those [am] its fingers. || are* / am / is || Those are its fingers.",
@@ -2847,8 +2847,8 @@ export const COURSES: CourseDef[] = [
                     "T || Esa es su rodilla. || That is its knee.",
                     "T || Ese es su codo. || That is its elbow.",
                     "T || Esas son sus piernas. || Those are its legs.",
-                    "H || 👀 || Name the body part. || Eyes",
-                    "H || 👂 || Name the body part. || Ear"
+                    "H || 👀 || Guess the hidden body part! || Eyes",
+                    "H || 👂 || Guess the hidden body part! || Ear"
                   ],
                   "mistakes": [
                     "M || That [am] its elbow. || am / are / is* || That is its elbow.",
@@ -2874,8 +2874,8 @@ export const COURSES: CourseDef[] = [
                     "T || Esta es mi rodilla. || This is my knee.",
                     "T || Este es mi codo. || This is my elbow.",
                     "T || Estas son mis piernas. || These are my legs.",
-                    "H || 👀 || Name the body part. || Eyes",
-                    "H || 👂 || Name the body part. || Ear"
+                    "H || 👀 || Guess the hidden body part! || Eyes",
+                    "H || 👂 || Guess the hidden body part! || Ear"
                   ],
                   "mistakes": [
                     "M || These [am] my legs. || is / are* / am || These are my legs.",
@@ -2987,7 +2987,7 @@ export const COURSES: CourseDef[] = [
                     "T || once || eleven",
                     "Q || When does your brother clean his room? || He cleans his room on Sundays.",
                     "Q || Spell the word \"rectangle\". || R-E-C-T-A-N-G-L-E.",
-                    "H || 🎨 || Name the action. || Paint",
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
                     "S || red rectangle:2, heart:2 || What color are the rectangles? || The rectangles are red."
                   ],
                   "mistakes": [
@@ -3015,7 +3015,7 @@ export const COURSES: CourseDef[] = [
                     "Q || What does your cousin do in the kitchen? || She cooks dinner.",
                     "Q || What fruit do you like? || I like mangoes.",
                     "S || green oval:3, rectangle:2 || How many ovals are there? || There are three ovals.",
-                    "H || 🍦 || Name the food. || Ice cream"
+                    "H || 🍦 || Guess the hidden food! || Ice cream"
                   ],
                   "mistakes": [
                     "M || There [am] three ovals. || is / are* / am || There are three ovals.",
@@ -3236,8 +3236,8 @@ export const COURSES: CourseDef[] = [
                     "T || Estoy usando pantalones cortos. || I am wearing shorts.",
                     "Q || Complete: I ____ wearing a T-shirt. || I am wearing a T-shirt.",
                     "Q || Complete: I am ____ shoes. || I am wearing shoes.",
-                    "H || 👖 || Name the clothing. || Pants",
-                    "H || 👕 || Name the clothing. || T-shirt"
+                    "H || 👖 || Guess the hidden clothing item! || Pants",
+                    "H || 👕 || Guess the hidden clothing item! || T-shirt"
                   ],
                   "mistakes": [
                     "M || I am [wear] shoes. || wear / wears / wearing* || I am wearing shoes.",
@@ -3263,8 +3263,8 @@ export const COURSES: CourseDef[] = [
                     "T || Estoy usando calcetines. || I am wearing socks.",
                     "Q || Complete: I ____ wearing a T-shirt. || I am wearing a T-shirt.",
                     "Q || Complete: I am ____ shoes. || I am wearing shoes.",
-                    "H || 👟 || Name the clothing. || Shoes",
-                    "H || 👗 || Name the clothing. || Dress"
+                    "H || 👟 || Guess the hidden clothing item! || Shoes",
+                    "H || 👗 || Guess the hidden clothing item! || Dress"
                   ],
                   "mistakes": [
                     "M || I am [wear] socks. || wears / wearing* / wear || I am wearing socks.",
@@ -3290,8 +3290,8 @@ export const COURSES: CourseDef[] = [
                     "T || Estoy usando un suéter. || I am wearing a sweater.",
                     "Q || Complete: I ____ wearing a T-shirt. || I am wearing a T-shirt.",
                     "Q || Complete: I am ____ shoes. || I am wearing shoes.",
-                    "H || 👖 || Name the clothing. || Pants",
-                    "H || 👕 || Name the clothing. || T-shirt"
+                    "H || 👖 || Guess the hidden clothing item! || Pants",
+                    "H || 👕 || Guess the hidden clothing item! || T-shirt"
                   ],
                   "mistakes": [
                     "M || I am [wear] shorts. || wearing* / wear / wears || I am wearing shorts.",
@@ -3317,8 +3317,8 @@ export const COURSES: CourseDef[] = [
                     "T || Estoy usando pantalones. || I am wearing pants.",
                     "Q || Complete: I ____ wearing a T-shirt. || I am wearing a T-shirt.",
                     "Q || Complete: I am ____ shoes. || I am wearing shoes.",
-                    "H || 🧦 || Name the clothing. || Socks",
-                    "H || 👕 || Name the clothing. || T-shirt"
+                    "H || 🧦 || Guess the hidden clothing item! || Socks",
+                    "H || 👕 || Guess the hidden clothing item! || T-shirt"
                   ],
                   "mistakes": [
                     "M || I am [wear] socks because it is warm today. || wear / wears / wearing* || I am wearing socks because it is warm today.",
@@ -3344,8 +3344,8 @@ export const COURSES: CourseDef[] = [
                     "Q || It is cold outside. You are wearing a sweater. Why are you wearing a sweater? || I am wearing a sweater because it is cold.",
                     "Q || Describe two things you are wearing. || I am wearing pants and a T-shirt.",
                     "Q || Are you wearing blue pants? || Yes, I am wearing pants. / No, I am not wearing pants.",
-                    "H || 👗 || Name the clothing. || Dress",
-                    "H || 🩳 || Name the clothing. || Shorts"
+                    "H || 👗 || Guess the hidden clothing item! || Dress",
+                    "H || 🩳 || Guess the hidden clothing item! || Shorts"
                   ],
                   "mistakes": [
                     "M || My T-shirt [am] blue. || are / is* / am || My T-shirt is blue.",
@@ -3362,21 +3362,21 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Aliens on a mission — Present progressive (3rd person); Positive sentences — Vocabulary: Fly, Ride a Bike, Take a Nap",
                   "lines": [
-                    "Q || An alien is moving through the sky in a spaceship. What is it doing? || It is flying.",
-                    "Q || An alien is moving on a bicycle. What is it doing? || It is riding a bike.",
-                    "Q || An alien is sleeping for a short time after lunch. What is it doing? || It is taking a nap.",
-                    "Q || An alien is travelling through space in a spaceship. What is it doing? || It is flying.",
-                    "Q || An alien is on a bicycle in the park. What is it doing? || It is riding a bike.",
-                    "Q || An alien is on the sofa. Where is it taking a nap? || It is taking a nap on the sofa.",
-                    "Q || An alien is high above the clouds in a spaceship. What is it doing? || It is flying.",
-                    "Q || An alien is pedalling a bicycle. What is it doing? || It is riding a bike.",
+                    "Q || What is Messi doing right now? || He is flying in a plane.",
+                    "Q || What is your dad doing in the park? || He is riding a bike.",
+                    "Q || What is your mom doing after lunch? || She is taking a nap.",
+                    "Q || What is your uncle doing right now? || He is flying in a plane.",
+                    "Q || What is your best friend doing in the park? || He is riding a bike.",
+                    "Q || Where is your grandpa taking a nap? || He is taking a nap on the sofa.",
+                    "Q || What is your dad doing right now? || He is flying in a plane.",
+                    "Q || What is your cousin doing in the park? || He is riding a bike.",
                     "F || He is ____. || flying || fly / flies",
                     "F || She is ____ a bike. || riding || ride / rides",
                     "T || Él está volando. || He is flying.",
                     "T || Ella está montando bicicleta. || She is riding a bike.",
                     "T || Él está tomando una siesta. || He is taking a nap.",
                     "T || Ella está volando. || She is flying.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || El extraterrestre está volando. || The alien is flying."
                   ],
                   "mistakes": [
@@ -3389,21 +3389,21 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 2",
                   "focus": "Aliens on a mission — Present progressive (3rd person); Yes/No questions (Short and long answers) — Vocabulary: Fly, Ride a Bike, Take a Nap, Listen to Music",
                   "lines": [
-                    "Q || An alien is moving on a bicycle. Is it riding a bike? || Yes, it is riding a bike.",
-                    "Q || An alien is awake and riding a bike. Is it taking a nap? || No, it isn't taking a nap.",
-                    "Q || An alien has headphones on. A song is playing. Is it listening to music? || Yes, it is listening to music.",
-                    "Q || An alien is walking on the ground. Is it flying? || No, it isn't flying.",
-                    "Q || An alien is on a bicycle in the park. Is it riding a bike right now? || Yes, it is riding a bike.",
-                    "Q || An alien is awake and riding a bike. Is it taking a nap right now? || No, it isn't taking a nap.",
-                    "Q || An alien has a song playing through its headphones. What is it doing? || It is listening to music.",
-                    "Q || An alien is moving through the sky in a spaceship. What is it doing? || It is flying.",
+                    "Q || Is your dad riding a bike right now? || Yes, he is riding a bike. / No, he isn't riding a bike.",
+                    "Q || Is your mom taking a nap right now? || Yes, she is taking a nap. / No, she isn't taking a nap.",
+                    "Q || Is your sister listening to music right now? || Yes, she is listening to music. / No, she isn't listening to music.",
+                    "Q || Is Messi flying right now? || Yes, he is flying. / No, he isn't flying.",
+                    "Q || Is your brother riding a bike right now? || Yes, he is riding a bike. / No, he isn't riding a bike.",
+                    "Q || Is your dad taking a nap right now? || Yes, he is taking a nap. / No, he isn't taking a nap.",
+                    "Q || What is your sister doing at home? || She is listening to music.",
+                    "Q || What is Messi doing right now? || He is flying in a plane.",
                     "F || She is ____. || flying || fly / flies",
                     "F || He is ____ a nap. || taking || take / takes",
                     "T || Él está volando. || He is flying.",
                     "T || Ella está montando bicicleta. || She is riding a bike.",
                     "T || Él está tomando una siesta. || He is taking a nap.",
                     "T || Ella está escuchando música. || She is listening to music.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermano está tomando una siesta. || My brother is taking a nap."
                   ],
                   "mistakes": [
@@ -3416,21 +3416,21 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 3",
                   "focus": "Aliens on a mission — Present progressive (3rd person); Wh-questions (What...?) — Vocabulary: Fly, Ride a Bike, Take a Nap, Listen to Music, Meet",
                   "lines": [
-                    "Q || An alien is sleeping for a short time after lunch. What is it doing? || It is taking a nap.",
-                    "Q || An alien has headphones on. A song is playing. What is it doing? || It is listening to music.",
-                    "Q || An alien is at the park to see a friend. What is it doing? || It is meeting a friend.",
-                    "Q || An alien is moving through the sky in a spaceship. What is it doing? || It is flying.",
-                    "Q || An alien is moving on a bicycle. What is it doing? || It is riding a bike.",
-                    "Q || An alien is on the sofa. Where is it taking a nap? || It is taking a nap on the sofa.",
-                    "Q || An alien has a song playing through its headphones. What is it doing? || It is listening to music.",
-                    "Q || An alien is saying hello to a friend at the park. What is it doing? || It is meeting a friend.",
+                    "Q || What is your mom doing after lunch? || She is taking a nap.",
+                    "Q || What is your sister doing at home? || She is listening to music.",
+                    "Q || What is your cousin doing at the park? || He is meeting a friend.",
+                    "Q || What is your brother doing right now? || He is flying in a plane.",
+                    "Q || What is your brother doing in the park? || He is riding a bike.",
+                    "Q || Where is your dad taking a nap? || He is taking a nap on the sofa.",
+                    "Q || What is your brother doing at home? || He is listening to music.",
+                    "Q || What is your best friend doing at the park? || He is meeting a friend.",
                     "F || He is ____ a friend. || meeting || meet / meets",
                     "F || She is ____. || flying || fly / flies",
                     "T || Él está volando. || He is flying.",
                     "T || Ella está montando bicicleta. || She is riding a bike.",
                     "T || Él está tomando una siesta. || He is taking a nap.",
                     "T || Ella está escuchando música. || She is listening to music.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermano está tomando una siesta. || My brother is taking a nap."
                   ],
                   "mistakes": [
@@ -3443,21 +3443,21 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 4",
                   "focus": "Aliens on a mission — Present progressive (3rd person); Wh-questions (Where...?) — Vocabulary: Fly, Ride a Bike, Take a Nap, Listen to Music, Meet",
                   "lines": [
-                    "Q || An alien is in its bedroom. Where is it listening to music? || It is listening to music in its bedroom.",
-                    "Q || An alien is in the park. Where is it meeting a friend? || It is meeting a friend in the park.",
-                    "Q || An alien is in the sky. Where is it flying? || It is flying in the sky.",
-                    "Q || An alien is in the park. Where is it riding a bike? || It is riding a bike in the park.",
-                    "Q || An alien is sleeping for a short time after lunch. What is it doing? || It is taking a nap.",
-                    "Q || An alien is in the kitchen. Where is it listening to music? || It is listening to music in the kitchen.",
-                    "Q || An alien is at the park to see a friend. What is it doing? || It is meeting a friend.",
-                    "Q || An alien is moving through the sky in a spaceship. What is it doing? || It is flying.",
+                    "Q || Where is your sister listening to music? || She is listening to music at home.",
+                    "Q || Where is your cousin meeting a friend? || He is meeting a friend at the park.",
+                    "Q || Where is your brother flying? || He is flying to Colombia.",
+                    "Q || Where is your brother riding a bike? || He is riding a bike in the park.",
+                    "Q || What is your dad doing after lunch? || He is taking a nap.",
+                    "Q || Where is your brother listening to music? || He is listening to music at home.",
+                    "Q || What is your best friend doing at the park? || He is meeting a friend.",
+                    "Q || What is your dad doing right now? || He is flying in a plane.",
                     "F || She is ____ a bike in the park. || riding || ride / rides",
                     "F || He is ____ a nap. || taking || take / takes",
                     "T || Él está volando. || He is flying.",
                     "T || Ella está montando bicicleta. || She is riding a bike.",
                     "T || Él está tomando una siesta. || He is taking a nap.",
                     "T || Ella está escuchando música. || She is listening to music.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermana está escuchando música. || My sister is listening to music."
                   ],
                   "mistakes": [
@@ -3470,21 +3470,21 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 5",
                   "focus": "Aliens on a mission — Present progressive (3rd person); Yes/No questions Wh-questions (What/Where...?) — Vocabulary: Fly, Ride a Bike, Take a Nap, Listen to Music, Meet",
                   "lines": [
-                    "Q || An alien is in the park. Where is it meeting a friend? || It is meeting a friend in the park.",
-                    "Q || An alien is in the sky. Where is it flying? || It is flying in the sky.",
-                    "Q || An alien is in the park. Where is it riding a bike? || It is riding a bike in the park.",
-                    "Q || An alien is on the sofa. Where is it taking a nap? || It is taking a nap on the sofa.",
-                    "Q || An alien has headphones on. A song is playing. What is it doing? || It is listening to music.",
-                    "Q || An alien is at school. Where is it meeting a friend? || It is meeting a friend at school.",
-                    "Q || An alien is moving through the sky in a spaceship. What is it doing? || It is flying.",
-                    "Q || An alien is asleep on a sofa. Is it riding a bike right now? || No, it isn't riding a bike.",
+                    "Q || Where is your cousin meeting a friend? || He is meeting a friend at the park.",
+                    "Q || Where is your brother flying? || He is flying to Colombia.",
+                    "Q || Where is your brother riding a bike? || He is riding a bike in the park.",
+                    "Q || Where is your dad taking a nap? || He is taking a nap on the sofa.",
+                    "Q || What is your brother doing at home? || He is listening to music.",
+                    "Q || Where is your best friend meeting a friend? || He is meeting a friend at the park.",
+                    "Q || What is your dad doing right now? || He is flying in a plane.",
+                    "Q || Is your cousin riding a bike right now? || Yes, he is riding a bike. / No, he isn't riding a bike.",
                     "F || He is ____ to music. || listening || listen / listens",
                     "F || She is ____ a friend in the park. || meeting || meet / meets",
                     "T || Él está volando. || He is flying.",
                     "T || Ella está montando bicicleta. || She is riding a bike.",
                     "T || Él está tomando una siesta. || He is taking a nap.",
                     "T || Ella está escuchando música. || She is listening to music.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || El extraterrestre está volando. || The alien is flying."
                   ],
                   "mistakes": [
@@ -3587,7 +3587,7 @@ export const COURSES: CourseDef[] = [
                     "T || Yo estoy sentado. || I am sitting.",
                     "Q || Complete: I ____ great! || I am great!",
                     "T || Estoy usando un vestido. || I am wearing a dress.",
-                    "Q || An alien is moving through the sky in a spaceship. What is it doing? || It is flying.",
+                    "Q || What is your uncle doing right now? || He is flying in a plane.",
                     "T || Él está volando. || He is flying.",
                     "Q || Two children are running slowly in the park. What are they doing? || They are jogging.",
                     "T || Ellos están trotando. || They are jogging.",
@@ -3597,8 +3597,8 @@ export const COURSES: CourseDef[] = [
                     "Q || What is your grandpa's favorite food? || My grandpa's favorite food is soup.",
                     "Q || When does your sister clean the room? || She cleans the room on Saturday mornings.",
                     "T || El loro habla. || The parrot talks.",
-                    "H || 👖 || Name the clothing. || Pants",
-                    "H || 👧 || Name the person. || Girl"
+                    "H || 👖 || Guess the hidden clothing item! || Pants",
+                    "H || 👧 || Guess the hidden person! || Girl"
                   ],
                   "mistakes": [
                     "M || She [am] a girl. || am / are / is* || She is a girl.",
@@ -3614,7 +3614,7 @@ export const COURSES: CourseDef[] = [
                     "T || Yo estoy prestando atención. || I am paying attention.",
                     "Q || Are you wearing a T-shirt? || Yes, I am wearing a T-shirt. / No, I am not wearing a T-shirt.",
                     "T || Estoy usando calcetines. || I am wearing socks.",
-                    "Q || An alien is sleeping for a short time after lunch. Is it taking a nap? || Yes, it is taking a nap.",
+                    "Q || Is your sister taking a nap right now? || Yes, she is taking a nap. / No, she isn't taking a nap.",
                     "T || Ella está montando bicicleta. || She is riding a bike.",
                     "Q || Two children have a camera at the park. Are they taking pictures? || Yes, they are taking pictures.",
                     "T || Ellos están columpiándose. || They are swinging.",
@@ -3624,7 +3624,7 @@ export const COURSES: CourseDef[] = [
                     "Q || What is your sister's favorite drink? || My sister's favorite drink is coffee.",
                     "Q || What does your teacher do on Sundays? || He paints a picture.",
                     "T || El perro corre. || The dog runs.",
-                    "H || 💃 || Name the action. || Dance",
+                    "H || 💃 || Guess the action! || Dance",
                     "T || Yo estoy prestando atención en clase. || I am paying attention in class."
                   ],
                   "mistakes": [
@@ -3656,7 +3656,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ellos están nadando. || They are swimming.",
                     "T || Ellos están haciendo un pícnic. || They are having a picnic.",
                     "T || Ellos están haciendo un castillo de arena ahora. || They are making a sandcastle right now.",
-                    "H || 🏊 || Name the action. || Swim",
+                    "H || 🏊 || Guess the action! || Swim",
                     "T || Mis amigos están haciendo un castillo de arena. || My friends are making a sandcastle."
                   ],
                   "mistakes": [
@@ -3683,7 +3683,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ellos están nadando. || They are swimming.",
                     "T || Ellos están haciendo un pícnic. || They are having a picnic.",
                     "T || Ellos están surfeando. || They are surfing.",
-                    "H || 🏊 || Name the action. || Swim",
+                    "H || 🏊 || Guess the action! || Swim",
                     "T || Mis amigos están haciendo un pícnic. || My friends are having a picnic."
                   ],
                   "mistakes": [
@@ -3710,7 +3710,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ellos están nadando. || They are swimming.",
                     "T || Ellos están haciendo un pícnic. || They are having a picnic.",
                     "T || Ellos están surfeando. || They are surfing.",
-                    "H || 🏊 || Name the action. || Swim",
+                    "H || 🏊 || Guess the action! || Swim",
                     "T || Mis amigos están haciendo un pícnic. || My friends are having a picnic."
                   ],
                   "mistakes": [
@@ -3737,8 +3737,8 @@ export const COURSES: CourseDef[] = [
                     "T || Ellos están nadando. || They are swimming.",
                     "T || Ellos están haciendo un pícnic. || They are having a picnic.",
                     "T || Ellos están surfeando. || They are surfing.",
-                    "H || 🏊 || Name the action. || Swim",
-                    "H || 🏄 || Name the action. || Surf"
+                    "H || 🏊 || Guess the action! || Swim",
+                    "H || 🏄 || Guess the action! || Surf"
                   ],
                   "mistakes": [
                     "M || They are [surf] in the ocean. || surf / surfs / surfing* || They are surfing in the ocean.",
@@ -4072,11 +4072,11 @@ export const COURSES: CourseDef[] = [
                     "T || Mi tío es delgado. || My uncle is skinny.",
                     "F || Ben ____ tall. || is || am / are",
                     "F || Leo ____ short. || is || am / are",
-                    "T || Max es regordete. || Max is chubby.",
+                    "T || Max es gordito. || Max is chubby.",
                     "T || Tom es delgado. || Tom is skinny.",
                     "T || Sam es alto. || Sam is tall.",
                     "T || Alex es bajo. || Alex is short.",
-                    "T || Mi hermano es regordete. || My brother is chubby.",
+                    "T || Mi hermano es gordito. || My brother is chubby.",
                     "T || Mi hermano es delgado. || My brother is skinny."
                   ],
                   "mistakes": [
@@ -4099,12 +4099,12 @@ export const COURSES: CourseDef[] = [
                     "Q || Rob is short. He is not chubby. Is Rob chubby? || No, he isn't.",
                     "F || Leo ____ short. || is || am / are",
                     "F || Max ____ chubby. || is || am / are",
-                    "T || Max es regordete. || Max is chubby.",
+                    "T || Max es gordito. || Max is chubby.",
                     "T || Tom es delgado. || Tom is skinny.",
                     "T || Sam es fuerte. || Sam is strong.",
                     "T || Alex es calvo. || Alex is bald.",
-                    "H || 💪 || Name the adjective. || Strong",
-                    "H || 👨‍🦲 || Name the adjective. || Bald"
+                    "H || 💪 || Guess the hidden adjective! || Strong",
+                    "H || 👨‍🦲 || Guess the hidden adjective! || Bald"
                   ],
                   "mistakes": [
                     "M || Tom [am] skinny. || are / is* / am || Tom is skinny.",
@@ -4126,12 +4126,12 @@ export const COURSES: CourseDef[] = [
                     "Q || Rob is short. Ben is chubby. Who is short? || Rob is short.",
                     "F || Max ____ chubby. || is || am / are",
                     "F || Tom ____ skinny. || is || am / are",
-                    "T || Max es regordete. || Max is chubby.",
+                    "T || Max es gordito. || Max is chubby.",
                     "T || Tom es delgado. || Tom is skinny.",
                     "T || Sam es fuerte. || Sam is strong.",
                     "T || Alex es calvo. || Alex is bald.",
-                    "H || 💪 || Name the adjective. || Strong",
-                    "H || 👨‍🦲 || Name the adjective. || Bald"
+                    "H || 💪 || Guess the hidden adjective! || Strong",
+                    "H || 👨‍🦲 || Guess the hidden adjective! || Bald"
                   ],
                   "mistakes": [
                     "M || Sam [am] strong. || is* / am / are || Sam is strong.",
@@ -4150,7 +4150,7 @@ export const COURSES: CourseDef[] = [
                     "S || yellow circle:1, star:2 || Is there a rectangle? || No, there isn't a rectangle.",
                     "T || Veo dos estrellas. || I see two stars.",
                     "T || Mi papá es alto. || My dad is tall.",
-                    "T || Max es regordete. || Max is chubby.",
+                    "T || Max es gordito. || Max is chubby.",
                     "F || Ben ____ tall. || is || am / are",
                     "F || Max ____ chubby. || is || am / are",
                     "Q || Where does a parrot talk? || It talks at home.",
@@ -4158,7 +4158,7 @@ export const COURSES: CourseDef[] = [
                     "Q || Say this number: 5. || Five.",
                     "Q || What does your best friend do after school? || My best friend plays games.",
                     "S || star:2 || How many stars do you see? || I see two stars.",
-                    "H || 🎨 || Name the action. || Paint"
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint"
                   ],
                   "mistakes": [
                     "M || He [paint] a picture. || paint / painting / paints* || He paints a picture.",
@@ -4323,22 +4323,22 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "Birthday activities — Simple future - going to (1st person); Positive sentences — Vocabulary: Celebrate, Eat Cake, Take Pictures",
                   "lines": [
-                    "Q || What are you going to do on your next birthday? || I am going to celebrate my birthday.",
+                    "Q || What are you going to do on your next birthday? || I am going to have a party. / I am going to eat cake.",
                     "Q || What are you going to eat at a birthday party? || I am going to eat cake.",
                     "Q || What are you going to do with a camera? || I am going to take pictures.",
-                    "Q || What are you going to do on your birthday? || I am going to celebrate my birthday.",
+                    "Q || Who are you going to celebrate your birthday with? || I am going to celebrate with my family.",
                     "Q || What are you going to do after lunch? || I am going to eat cake.",
                     "Q || Where are you going to take pictures? || I am going to take pictures in the park.",
-                    "Q || When are you going to celebrate your birthday? || I am going to celebrate my birthday on my birthday.",
+                    "Q || When are you going to celebrate your birthday? || I am going to celebrate my birthday next Saturday.",
                     "Q || What are you going to do at home? || I am going to eat cake.",
                     "F || I am going to ____ my birthday. || celebrate || celebrates / celebrating",
                     "F || I am going to ____ cake. || eat || eats / eating",
-                    "T || Yo voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
-                    "T || Yo voy a comer pastel. || I am going to eat cake.",
-                    "T || Yo voy a tomar fotos. || I am going to take pictures.",
-                    "T || Yo voy a celebrar mi cumpleaños mañana. || I am going to celebrate my birthday tomorrow.",
-                    "T || Yo voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
-                    "T || Yo voy a celebrar mi cumpleaños el sábado. || I am going to celebrate my birthday on Saturday."
+                    "T || Voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
+                    "T || Voy a comer pastel. || I am going to eat cake.",
+                    "T || Voy a tomar fotos. || I am going to take pictures.",
+                    "T || Voy a celebrar mi cumpleaños mañana. || I am going to celebrate my birthday tomorrow.",
+                    "T || Voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
+                    "T || Voy a celebrar mi cumpleaños el sábado. || I am going to celebrate my birthday on Saturday."
                   ],
                   "mistakes": [
                     "M || I am going to [takes] pictures. || takes / taking / take* || I am going to take pictures.",
@@ -4357,15 +4357,15 @@ export const COURSES: CourseDef[] = [
                     "Q || Are you going to eat cake tomorrow? || Yes, I am. / No, I am not.",
                     "Q || Are you going to take pictures tomorrow? || Yes, I am. / No, I am not.",
                     "Q || What are you going to do on weekends? || I am going to spend time with friends.",
-                    "Q || What are you going to do on your birthday? || I am going to celebrate my birthday.",
+                    "Q || Who are you going to celebrate your birthday with? || I am going to celebrate with my family.",
                     "F || I am going to ____ time with friends. || spend || spends / spending",
                     "F || I am going to ____ my birthday. || celebrate || celebrates / celebrating",
-                    "T || Yo voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
-                    "T || Yo voy a comer pastel. || I am going to eat cake.",
-                    "T || Yo voy a tomar fotos. || I am going to take pictures.",
-                    "T || Yo voy a pasar tiempo con amigos. || I am going to spend time with friends.",
-                    "T || Yo voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
-                    "T || Yo voy a comer pastel mañana. || I am going to eat cake tomorrow."
+                    "T || Voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
+                    "T || Voy a comer pastel. || I am going to eat cake.",
+                    "T || Voy a tomar fotos. || I am going to take pictures.",
+                    "T || Voy a pasar tiempo con amigos. || I am going to spend time with friends.",
+                    "T || Voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
+                    "T || Voy a comer pastel mañana. || I am going to eat cake tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [takes] pictures. || taking / take* / takes || I am going to take pictures.",
@@ -4380,19 +4380,19 @@ export const COURSES: CourseDef[] = [
                     "Q || What are you going to do with a camera? || I am going to take pictures.",
                     "Q || What are you going to do after school? || I am going to spend time with friends.",
                     "Q || What are you going to open at a birthday party? || I am going to open presents.",
-                    "Q || What are you going to do on your next birthday? || I am going to celebrate my birthday.",
+                    "Q || What are you going to do on your next birthday? || I am going to have a party. / I am going to eat cake.",
                     "Q || What are you going to eat at a birthday party? || I am going to eat cake.",
                     "Q || Where are you going to take pictures? || I am going to take pictures in the park.",
                     "Q || When are you going to spend time with friends? || I am going to spend time with friends on weekends.",
-                    "Q || What are you going to do on your birthday? || I am going to open presents.",
+                    "Q || Who are you going to celebrate your birthday with? || I am going to celebrate with my family.",
                     "F || I am going to ____ presents. || open || opens / opening",
                     "F || I am going to ____ my birthday. || celebrate || celebrates / celebrating",
-                    "T || Yo voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
-                    "T || Yo voy a comer pastel. || I am going to eat cake.",
-                    "T || Yo voy a tomar fotos. || I am going to take pictures.",
-                    "T || Yo voy a pasar tiempo con amigos. || I am going to spend time with friends.",
-                    "T || Yo voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
-                    "T || Yo voy a pasar tiempo con amigos mañana. || I am going to spend time with friends tomorrow."
+                    "T || Voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
+                    "T || Voy a comer pastel. || I am going to eat cake.",
+                    "T || Voy a tomar fotos. || I am going to take pictures.",
+                    "T || Voy a pasar tiempo con amigos. || I am going to spend time with friends.",
+                    "T || Voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
+                    "T || Voy a pasar tiempo con amigos mañana. || I am going to spend time with friends tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [eats] cake. || eat* / eats / eating || I am going to eat cake.",
@@ -4411,15 +4411,15 @@ export const COURSES: CourseDef[] = [
                     "Q || What are you going to do with a camera? || I am going to take pictures.",
                     "Q || Where are you going to spend time with friends next Sunday? || I am going to spend time with friends in the park.",
                     "Q || When are you going to open presents? || I am going to open presents on my birthday.",
-                    "Q || What are you going to do on your birthday? || I am going to celebrate my birthday.",
+                    "Q || Who are you going to celebrate your birthday with? || I am going to celebrate with my family.",
                     "F || I am going to ____ cake at home. || eat || eats / eating",
                     "F || I am going to ____ pictures. || take || takes / taking",
-                    "T || Yo voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
-                    "T || Yo voy a comer pastel. || I am going to eat cake.",
-                    "T || Yo voy a tomar fotos. || I am going to take pictures.",
-                    "T || Yo voy a pasar tiempo con amigos. || I am going to spend time with friends.",
-                    "T || Yo voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
-                    "T || Yo voy a pasar tiempo con amigos mañana. || I am going to spend time with friends tomorrow."
+                    "T || Voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
+                    "T || Voy a comer pastel. || I am going to eat cake.",
+                    "T || Voy a tomar fotos. || I am going to take pictures.",
+                    "T || Voy a pasar tiempo con amigos. || I am going to spend time with friends.",
+                    "T || Voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
+                    "T || Voy a pasar tiempo con amigos mañana. || I am going to spend time with friends tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [opens] presents on my birthday. || opens / opening / open* || I am going to open presents on my birthday.",
@@ -4431,9 +4431,9 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 5",
                   "focus": "SUPER STAR EXAM — Simple future - going to (1st person); Positive sentences; Yes/No questions (Short answers); Wh-questions (What...?); Wh-questions (Where...?) — Vocabulary: take pictures; celebrate my birthday; eat cake; spend time with friends; open presents",
                   "lines": [
-                    "T || Yo voy a tomar fotos. || I am going to take pictures.",
+                    "T || Voy a tomar fotos. || I am going to take pictures.",
                     "Q || Are you going to celebrate your birthday? || Yes, I am. / No, I am not.",
-                    "Q || What are you going to do on your next birthday? || I am going to celebrate my birthday.",
+                    "Q || What are you going to do on your next birthday? || I am going to have a party. / I am going to eat cake.",
                     "Q || Where are you going to eat cake? || I am going to eat cake at home.",
                     "Q || What are you going to do after lunch? || I am going to eat cake.",
                     "Q || Are you going to eat cake tomorrow? || Yes, I am. / No, I am not.",
@@ -4444,9 +4444,9 @@ export const COURSES: CourseDef[] = [
                     "Q || When are you going to spend time with friends? || I am going to spend time with friends on weekends.",
                     "Q || When are you going to open presents? || I am going to open presents on my birthday.",
                     "Q || What are you going to do at home? || I am going to eat cake.",
-                    "Q || What are you going to do on your birthday? || I am going to celebrate my birthday.",
-                    "T || Yo voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
-                    "T || Yo voy a celebrar mi cumpleaños mañana. || I am going to celebrate my birthday tomorrow."
+                    "Q || Who are you going to celebrate your birthday with? || I am going to celebrate with my family.",
+                    "T || Voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
+                    "T || Voy a celebrar mi cumpleaños mañana. || I am going to celebrate my birthday tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [opens] presents on my birthday. || opening / open* / opens || I am going to open presents on my birthday.",
@@ -4473,12 +4473,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What are you going to do after class next Sunday? || I am going to check my phone.",
                     "F || I am going to ____ a snack. || eat || eats / eating",
                     "F || I am going to ____ my homework. || do || does / doing",
-                    "T || Yo voy a comer una merienda. || I am going to eat a snack.",
-                    "T || Yo voy a hacer mi tarea. || I am going to do my homework.",
-                    "T || Yo voy a jugar videojuegos. || I am going to play video games.",
-                    "T || Yo voy a revisar mi teléfono. || I am going to check my phone.",
-                    "T || Yo voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
-                    "T || Yo voy a comer una merienda mañana. || I am going to eat a snack tomorrow."
+                    "T || Voy a comer una merienda. || I am going to eat a snack.",
+                    "T || Voy a hacer mi tarea. || I am going to do my homework.",
+                    "T || Voy a jugar videojuegos. || I am going to play video games.",
+                    "T || Voy a revisar mi teléfono. || I am going to check my phone.",
+                    "T || Voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
+                    "T || Voy a comer una merienda mañana. || I am going to eat a snack tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [plays] video games. || plays / playing / play* || I am going to play video games.",
@@ -4500,12 +4500,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What are you going to do after class? || I am going to check my phone.",
                     "F || I am going to ____ video games. || play || plays / playing",
                     "F || I am going to ____ my phone. || check || checks / checking",
-                    "T || Yo voy a comer una merienda. || I am going to eat a snack.",
-                    "T || Yo voy a hacer mi tarea. || I am going to do my homework.",
-                    "T || Yo voy a jugar videojuegos. || I am going to play video games.",
-                    "T || Yo voy a revisar mi teléfono. || I am going to check my phone.",
-                    "T || Yo voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
-                    "T || Yo voy a hacer mi tarea mañana. || I am going to do my homework tomorrow."
+                    "T || Voy a comer una merienda. || I am going to eat a snack.",
+                    "T || Voy a hacer mi tarea. || I am going to do my homework.",
+                    "T || Voy a jugar videojuegos. || I am going to play video games.",
+                    "T || Voy a revisar mi teléfono. || I am going to check my phone.",
+                    "T || Voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
+                    "T || Voy a hacer mi tarea mañana. || I am going to do my homework tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [eats] a snack. || eating / eat* / eats || I am going to eat a snack.",
@@ -4527,12 +4527,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What are you going to do after class? || I am going to check my phone.",
                     "F || I am going to ____ with a friend. || chat || chats / chatting",
                     "F || I am going to ____. || rest || rests / resting",
-                    "T || Yo voy a comer una merienda. || I am going to eat a snack.",
-                    "T || Yo voy a hacer mi tarea. || I am going to do my homework.",
-                    "T || Yo voy a jugar videojuegos. || I am going to play video games.",
-                    "T || Yo voy a revisar mi teléfono. || I am going to check my phone.",
-                    "T || Yo voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
-                    "T || Yo voy a revisar mi teléfono mañana. || I am going to check my phone tomorrow."
+                    "T || Voy a comer una merienda. || I am going to eat a snack.",
+                    "T || Voy a hacer mi tarea. || I am going to do my homework.",
+                    "T || Voy a jugar videojuegos. || I am going to play video games.",
+                    "T || Voy a revisar mi teléfono. || I am going to check my phone.",
+                    "T || Voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
+                    "T || Voy a revisar mi teléfono mañana. || I am going to check my phone tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [eats] a snack. || eat* / eats / eating || I am going to eat a snack.",
@@ -4554,12 +4554,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What are you going to do after class? || I am going to chat with a friend.",
                     "F || I am going to ____ with a friend. || chat || chats / chatting",
                     "F || I am going to ____. || rest || rests / resting",
-                    "T || Yo voy a comer una merienda. || I am going to eat a snack.",
-                    "T || Yo voy a hacer mi tarea. || I am going to do my homework.",
-                    "T || Yo voy a jugar videojuegos. || I am going to play video games.",
-                    "T || Yo voy a revisar mi teléfono. || I am going to check my phone.",
-                    "T || Yo voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
-                    "T || Yo voy a revisar mi teléfono mañana. || I am going to check my phone tomorrow."
+                    "T || Voy a comer una merienda. || I am going to eat a snack.",
+                    "T || Voy a hacer mi tarea. || I am going to do my homework.",
+                    "T || Voy a jugar videojuegos. || I am going to play video games.",
+                    "T || Voy a revisar mi teléfono. || I am going to check my phone.",
+                    "T || Voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
+                    "T || Voy a revisar mi teléfono mañana. || I am going to check my phone tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [eats] a snack. || eats / eating / eat* || I am going to eat a snack.",
@@ -4571,7 +4571,7 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 5",
                   "focus": "SUPER STAR EXAM — Simple future - going to (1st person); Positive sentences; Yes/No questions (Long answers); Wh-questions (What...?); Wh-questions (Why...?) — Vocabulary: play video games; chat with a friend; rest; eat a snack; do my homework; check my phone",
                   "lines": [
-                    "T || Yo voy a jugar videojuegos. || I am going to play video games.",
+                    "T || Voy a jugar videojuegos. || I am going to play video games.",
                     "Q || Are you going to chat with a friend? || Yes, I am going to chat with a friend. / No, I am not going to chat with a friend.",
                     "Q || What are you going to do after a busy day tomorrow? || I am going to rest.",
                     "Q || Why are you going to eat a snack? || Because I am hungry.",
@@ -4585,8 +4585,8 @@ export const COURSES: CourseDef[] = [
                     "Q || When are you going to check your phone? || I am going to check my phone after class.",
                     "Q || What are you going to do after class next Sunday? || I am going to check my phone.",
                     "T || Voy a revisar mi teléfono. || I am going to check my phone.",
-                    "T || Yo voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
-                    "T || Yo voy a comer una merienda mañana. || I am going to eat a snack tomorrow."
+                    "T || Voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
+                    "T || Voy a comer una merienda mañana. || I am going to eat a snack tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [checks] my phone. || checking / check* / checks || I am going to check my phone.",
@@ -4617,7 +4617,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él va a montar bicicleta. || He is going to ride a bike.",
                     "T || Ella va a visitar a su abuela. || She is going to visit her grandma.",
                     "T || Él va a pagar una merienda mañana. || He is going to pay for a snack tomorrow.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermano va a pagar una merienda. || My brother is going to pay for a snack."
                   ],
                   "mistakes": [
@@ -4644,7 +4644,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ella va a montar bicicleta. || She is going to ride a bike.",
                     "T || Él va a visitar a su abuela. || He is going to visit his grandma.",
                     "T || Él va a comprar un juguete. || He is going to buy a toy.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermano va a visitar a su abuela. || My brother is going to visit his grandma."
                   ],
                   "mistakes": [
@@ -4671,7 +4671,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él va a montar bicicleta. || He is going to ride a bike.",
                     "T || Él va a visitar a su abuela. || He is going to visit his grandma.",
                     "T || Ella va a comprar un juguete. || She is going to buy a toy.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermano va a visitar a su abuela. || My brother is going to visit his grandma."
                   ],
                   "mistakes": [
@@ -4698,7 +4698,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él va a montar bicicleta. || He is going to ride a bike.",
                     "T || Ella va a visitar a su abuela. || She is going to visit her grandma.",
                     "T || Ella va a comprar un juguete. || She is going to buy a toy.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermana va a comprar un juguete. || My sister is going to buy a toy."
                   ],
                   "mistakes": [
@@ -4725,7 +4725,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ella va a montar bicicleta. || She is going to ride a bike.",
                     "T || Ella va a visitar a su abuela. || She is going to visit her grandma.",
                     "T || Ella va a comprar un juguete. || She is going to buy a toy.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermano va a pagar una merienda. || My brother is going to pay for a snack."
                   ],
                   "mistakes": [
@@ -4770,21 +4770,21 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 2",
                   "focus": "GENERAL REVIEW — Present progressive (3rd person); Yes/No questions (Short answers) Wh-questions (What/Where...?) — Vocabulary: Fly, Ride a Bike, Take a Nap, Listen to Music, Meet",
                   "lines": [
-                    "Q || An alien is in the park. Where is it riding a bike? || It is riding a bike in the park.",
-                    "Q || An alien is on the sofa. Where is it taking a nap? || It is taking a nap on the sofa.",
-                    "Q || An alien is in its bedroom. Where is it listening to music? || It is listening to music in its bedroom.",
-                    "Q || An alien is in the park. Where is it meeting a friend? || It is meeting a friend in the park.",
-                    "Q || An alien is moving through the sky in a spaceship. What is it doing? || It is flying.",
-                    "Q || An alien is in the garden. Where is it riding a bike? || It is riding a bike in the garden.",
-                    "Q || An alien is sleeping for a short time after lunch. What is it doing? || It is taking a nap.",
-                    "Q || An alien is reading in silence. There is no music. Is it listening to music right now? || No, it isn't listening to music.",
+                    "Q || Where is your dad riding a bike? || He is riding a bike in the park.",
+                    "Q || Where is your mom taking a nap? || She is taking a nap on the sofa.",
+                    "Q || Where is your sister listening to music? || She is listening to music at home.",
+                    "Q || Where is your cousin meeting a friend? || He is meeting a friend at the park.",
+                    "Q || What is your brother doing right now? || He is flying in a plane.",
+                    "Q || Where is your brother riding a bike? || He is riding a bike in the park.",
+                    "Q || What is your dad doing after lunch? || He is taking a nap.",
+                    "Q || Is your brother listening to music right now? || Yes, he is listening to music. / No, he isn't listening to music.",
                     "F || She is ____ a nap on the sofa. || taking || take / takes",
                     "F || He is ____ to music in his bedroom. || listening || listen / listens",
                     "T || Él está volando. || He is flying.",
                     "T || Ella está montando bicicleta. || She is riding a bike.",
                     "T || Él está tomando una siesta. || He is taking a nap.",
                     "T || Ella está escuchando música. || She is listening to music.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermano está tomando una siesta. || My brother is taking a nap."
                   ],
                   "mistakes": [
@@ -4811,7 +4811,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ellos están nadando. || They are swimming.",
                     "T || Ellos están haciendo un pícnic. || They are having a picnic.",
                     "T || Ellos están surfeando. || They are surfing.",
-                    "H || 🏊 || Name the action. || Swim",
+                    "H || 🏊 || Guess the action! || Swim",
                     "T || Mis amigos están haciendo un pícnic. || My friends are having a picnic."
                   ],
                   "mistakes": [
@@ -4824,10 +4824,10 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 4",
                   "focus": "Monthly Evaluation — Previously introduced tenses; Cumulative review of previously introduced structures — Vocabulary: celebrate my birthday; eat a snack; pay for a snack; sit; girl; paint a picture; jump; take a nap; soup; clean the room; climb a tree; fly",
                   "lines": [
-                    "Q || What are you going to do on your next birthday? || I am going to celebrate my birthday.",
-                    "T || Yo voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
+                    "Q || What are you going to do on your next birthday? || I am going to have a party. / I am going to eat cake.",
+                    "T || Voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
                     "Q || What are you going to eat after class? || I am going to eat a snack.",
-                    "T || Yo voy a comer una merienda. || I am going to eat a snack.",
+                    "T || Voy a comer una merienda. || I am going to eat a snack.",
                     "Q || What is your best friend going to do at a shop next weekend? || She is going to pay for a snack.",
                     "T || Él va a pagar una merienda. || He is going to pay for a snack.",
                     "Q || Why are you sitting? || Because the lesson is starting.",
@@ -4838,8 +4838,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Complete: She is ____. (take a nap) || She is taking a nap.",
                     "T || sopa || soup",
                     "T || Él limpia el cuarto. || He cleans the room.",
-                    "H || 👧 || Name the person. || Girl",
-                    "H || 🎨 || Name the action. || Paint"
+                    "H || 👧 || Guess the hidden person! || Girl",
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint"
                   ],
                   "mistakes": [
                     "M || She [am] a girl. || am / are / is* || She is a girl.",
@@ -4852,12 +4852,12 @@ export const COURSES: CourseDef[] = [
                   "focus": "Monthly Evaluation — Previously introduced tenses; Cumulative review of previously introduced structures — Vocabulary: take pictures; eat cake; play video games; do my homework; visit my grandma; ride a bike; take a nap; dad; dance; walk; milk; paint a picture; talk; fly",
                   "lines": [
                     "Q || Are you going to take pictures? || Yes, I am. / No, I am not.",
-                    "T || Yo voy a comer pastel. || I am going to eat cake.",
+                    "T || Voy a comer pastel. || I am going to eat cake.",
                     "Q || Are you going to play video games? || Yes, I am going to play video games. / No, I am not going to play video games.",
-                    "T || Yo voy a hacer mi tarea. || I am going to do my homework.",
+                    "T || Voy a hacer mi tarea. || I am going to do my homework.",
                     "Q || Is your cousin going to visit his grandma? || Yes, he is. / No, he isn't.",
                     "T || Ella va a montar bicicleta. || She is going to ride a bike.",
-                    "Q || An alien is on the sofa. Where is it taking a nap? || It is taking a nap on the sofa.",
+                    "Q || Where is your mom taking a nap? || She is taking a nap on the sofa.",
                     "T || Ella está montando bicicleta. || She is riding a bike.",
                     "F || She is ____ a bike. || riding || ride / rides",
                     "F || He ____ my dad. || is || am / are",
@@ -4865,8 +4865,8 @@ export const COURSES: CourseDef[] = [
                     "T || Él está tomando una siesta. || He is taking a nap.",
                     "Q || What is your dad's favorite drink? || My dad's favorite drink is milk.",
                     "T || Él pinta un cuadro. || He paints a picture.",
-                    "H || 💃 || Name the action. || Dance",
-                    "T || Yo voy a comer pastel mañana. || I am going to eat cake tomorrow."
+                    "H || 💃 || Guess the action! || Dance",
+                    "T || Voy a comer pastel mañana. || I am going to eat cake tomorrow."
                   ],
                   "mistakes": [
                     "M || She [dance]. || dancing / dances* / dance || She dances.",
@@ -4925,7 +4925,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él trabaja. || He works.",
                     "T || Ella hace ejercicio. || She exercises.",
                     "T || Mi hermano trabaja. || My brother works.",
-                    "H || 🏋️ || Name the action. || Exercise"
+                    "H || 🏋️ || Guess the action! || Exercise"
                   ],
                   "mistakes": [
                     "M || My best friend [wake] up at six thirty. || waking / wakes* / wake || My best friend wakes up at six thirty.",
@@ -5023,7 +5023,7 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 1",
                   "focus": "GENERAL REVIEW — Simple future - going to (1st person); Wh-questions (What/Where/When...?) — Vocabulary: Celebrate, Eat Cake, Take Pictures, Spend Time with Friends, Open Presents",
                   "lines": [
-                    "Q || When are you going to celebrate your birthday? || I am going to celebrate my birthday on my birthday.",
+                    "Q || When are you going to celebrate your birthday? || I am going to celebrate my birthday next Saturday.",
                     "Q || When are you going to eat cake? || I am going to eat cake after lunch.",
                     "Q || When are you going to take pictures? || I am going to take pictures on weekends.",
                     "Q || When are you going to spend time with friends? || I am going to spend time with friends on weekends.",
@@ -5031,14 +5031,14 @@ export const COURSES: CourseDef[] = [
                     "Q || Where are you going to celebrate your birthday? || I am going to celebrate my birthday at home.",
                     "Q || When are you going to eat cake next Sunday? || I am going to eat cake after lunch.",
                     "Q || What are you going to do on weekends? || I am going to take pictures.",
-                    "F || I am going to ____ my birthday on my birthday. || celebrate || celebrates / celebrating",
+                    "F || I am going to ____ my birthday next Saturday. || celebrate || celebrates / celebrating",
                     "F || I am going to ____ cake after lunch. || eat || eats / eating",
-                    "T || Yo voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
-                    "T || Yo voy a comer pastel. || I am going to eat cake.",
-                    "T || Yo voy a tomar fotos. || I am going to take pictures.",
-                    "T || Yo voy a pasar tiempo con amigos. || I am going to spend time with friends.",
-                    "T || Yo voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
-                    "T || Yo voy a celebrar mi cumpleaños mañana. || I am going to celebrate my birthday tomorrow."
+                    "T || Voy a celebrar mi cumpleaños. || I am going to celebrate my birthday.",
+                    "T || Voy a comer pastel. || I am going to eat cake.",
+                    "T || Voy a tomar fotos. || I am going to take pictures.",
+                    "T || Voy a pasar tiempo con amigos. || I am going to spend time with friends.",
+                    "T || Voy a tomar fotos mañana. || I am going to take pictures tomorrow.",
+                    "T || Voy a celebrar mi cumpleaños mañana. || I am going to celebrate my birthday tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [takes] pictures on weekends. || takes / taking / take* || I am going to take pictures on weekends.",
@@ -5060,12 +5060,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What are you going to do after homework? || I am going to play video games.",
                     "F || I am going to ____ video games with my friends. || play || plays / playing",
                     "F || I am going to ____ with a friend. || chat || chats / chatting",
-                    "T || Yo voy a comer una merienda. || I am going to eat a snack.",
-                    "T || Yo voy a hacer mi tarea. || I am going to do my homework.",
-                    "T || Yo voy a jugar videojuegos. || I am going to play video games.",
-                    "T || Yo voy a revisar mi teléfono. || I am going to check my phone.",
-                    "T || Yo voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
-                    "T || Yo voy a hacer mi tarea mañana. || I am going to do my homework tomorrow."
+                    "T || Voy a comer una merienda. || I am going to eat a snack.",
+                    "T || Voy a hacer mi tarea. || I am going to do my homework.",
+                    "T || Voy a jugar videojuegos. || I am going to play video games.",
+                    "T || Voy a revisar mi teléfono. || I am going to check my phone.",
+                    "T || Voy a jugar videojuegos mañana. || I am going to play video games tomorrow.",
+                    "T || Voy a hacer mi tarea mañana. || I am going to do my homework tomorrow."
                   ],
                   "mistakes": [
                     "M || I am going to [rests] with my brother. || resting / rest* / rests || I am going to rest with my brother.",
@@ -5091,7 +5091,7 @@ export const COURSES: CourseDef[] = [
                     "T || Ella va a montar bicicleta. || She is going to ride a bike.",
                     "T || Ella va a visitar a su abuela. || She is going to visit her grandma.",
                     "T || Él va a comprar un juguete. || He is going to buy a toy.",
-                    "H || 🚴 || Name the action. || Ride a bike",
+                    "H || 🚴 || Guess the action! || Ride a bike",
                     "T || Mi hermana va a visitar a su abuela. || My sister is going to visit her grandma."
                   ],
                   "mistakes": [
@@ -5259,7 +5259,7 @@ export const COURSES: CourseDef[] = [
                     "T || Yo viajaré. || I will travel.",
                     "T || Yo exploraré una ciudad. || I will explore a city.",
                     "T || Yo exploraré una ciudad mañana. || I will explore a city tomorrow.",
-                    "H || 🚴 || Name the action. || Ride a bike"
+                    "H || 🚴 || Guess the action! || Ride a bike"
                   ],
                   "mistakes": [
                     "M || I will [rides] a bike after school. || rides / rode / ride* || I will ride a bike after school.",
@@ -5398,7 +5398,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él cocinará la cena. || He will cook dinner.",
                     "T || Ella dará regalos. || She will give presents.",
                     "T || Él beberá leche. || He will drink milk.",
-                    "H || 💃 || Name the action. || Dance",
+                    "H || 💃 || Guess the action! || Dance",
                     "T || Mi hermano cocinará la cena. || My brother will cook dinner."
                   ],
                   "mistakes": [
@@ -6109,8 +6109,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Ask for directions to the library. || How do I get to the library?",
                     "T || Gira a la derecha. || Turn right.",
                     "T || Gira a la izquierda. || Turn left.",
-                    "H || ➡️ || Name the direction. || Right",
-                    "H || ⬅️ || Name the direction. || Left"
+                    "H || ➡️ || Guess the hidden direction! || Right",
+                    "H || ⬅️ || Guess the hidden direction! || Left"
                   ],
                   "mistakes": [
                     "M || I [is] nine years old. || is / are / am* || I am nine years old.",
@@ -6136,8 +6136,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Ask for directions to the library. || How do I get to the library?",
                     "T || Gira a la derecha. || Turn right.",
                     "T || Gira a la izquierda. || Turn left.",
-                    "H || ➡️ || Name the direction. || Right",
-                    "H || ⬅️ || Name the direction. || Left"
+                    "H || ➡️ || Guess the hidden direction! || Right",
+                    "H || ⬅️ || Guess the hidden direction! || Left"
                   ],
                   "mistakes": [
                     "M || My name [are] Mia. || am / is* / are || My name is Mia.",
@@ -6163,8 +6163,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Ask for directions to the library. || How do I get to the library?",
                     "T || Gira a la derecha. || Turn right.",
                     "T || Gira a la izquierda. || Turn left.",
-                    "H || ➡️ || Name the direction. || Right",
-                    "H || ⬅️ || Name the direction. || Left"
+                    "H || ➡️ || Guess the hidden direction! || Right",
+                    "H || ⬅️ || Guess the hidden direction! || Left"
                   ],
                   "mistakes": [
                     "M || I [is] from Colombia. || am* / is / are || I am from Colombia.",
@@ -6190,8 +6190,8 @@ export const COURSES: CourseDef[] = [
                     "Q || Complete: She is ____. (take a nap) || She is taking a nap.",
                     "Q || When is your dad going to pay for a snack? || He is going to pay for a snack in the afternoon.",
                     "T || cereal || cereal",
-                    "H || 👧 || Name the person. || Girl",
-                    "H || 🎨 || Name the action. || Paint"
+                    "H || 👧 || Guess the hidden person! || Girl",
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint"
                   ],
                   "mistakes": [
                     "M || She [am] a girl. || am / are / is* || She is a girl.",
@@ -6217,7 +6217,7 @@ export const COURSES: CourseDef[] = [
                     "T || Él está tomando una siesta. || He is taking a nap.",
                     "Q || What is your best friend going to do in the afternoon? || She is going to pay for a snack.",
                     "Q || What is your brother's favorite drink? || My brother's favorite drink is water.",
-                    "H || 💃 || Name the action. || Dance",
+                    "H || 💃 || Guess the action! || Dance",
                     "T || Yo jugué ayer. || I played games yesterday."
                   ],
                   "mistakes": [
@@ -6525,12 +6525,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What did your teacher do last night? || He cleaned the room.",
                     "F || She ____ dinner yesterday. || cooked || cook / cooks",
                     "F || He ____ the room yesterday. || cleaned || clean / cleans",
-                    "T || Él cocinó la cena. || He cooked dinner.",
-                    "T || Ella limpió el cuarto. || She cleaned the room.",
-                    "T || Él trabajó. || He worked.",
-                    "T || Ella cocinó la cena. || She cooked dinner.",
-                    "T || Mi hermano cocinó la cena. || My brother cooked dinner.",
-                    "T || Mi hermana limpió el cuarto. || My sister cleaned the room."
+                    "T || Él cocinó la cena para su familia anoche. || He cooked dinner for his family last night.",
+                    "T || Ella limpió el cuarto con su hermana ayer. || She cleaned the room with her sister yesterday.",
+                    "T || Él trabajó hasta las cinco ayer. || He worked until five yesterday.",
+                    "T || Ella cocinó la cena para su familia anoche. || She cooked dinner for her family last night.",
+                    "T || Mi hermano cocinó la cena con su papá ayer. || My brother cooked dinner with his dad yesterday.",
+                    "T || Mi hermana limpió el cuarto el sábado por la mañana. || My sister cleaned the room on Saturday morning."
                   ],
                   "mistakes": [
                     "M || He [work] yesterday. || work / works / worked* || He worked yesterday.",
@@ -6552,12 +6552,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What did your mom do last night? || She cooked dinner.",
                     "F || She ____ dinner yesterday. || cooked || cook / cooks",
                     "F || He ____ yesterday. || worked || work / works",
-                    "T || Ella cocinó la cena. || She cooked dinner.",
-                    "T || Ella limpió el cuarto. || She cleaned the room.",
-                    "T || Él trabajó. || He worked.",
-                    "T || Él llamó a su abuela. || He called his grandma.",
-                    "T || Mi hermana limpió el cuarto. || My sister cleaned the room.",
-                    "T || Mi hermano trabajó. || My brother worked."
+                    "T || Ella cocinó la cena con su papá ayer. || She cooked dinner with her dad yesterday.",
+                    "T || Ella limpió el cuarto el sábado por la mañana. || She cleaned the room on Saturday morning.",
+                    "T || Él trabajó en una oficina ayer por la mañana. || He worked in an office yesterday morning.",
+                    "T || Él llamó a su abuela el domingo por la tarde. || He called his grandma on Sunday afternoon.",
+                    "T || Mi hermana limpió el cuarto el sábado por la mañana. || My sister cleaned the room on Saturday morning.",
+                    "T || Mi hermano trabajó en una oficina ayer por la mañana. || My brother worked in an office yesterday morning."
                   ],
                   "mistakes": [
                     "M || She [clean] the room yesterday. || cleans / cleaned* / clean || She cleaned the room yesterday.",
@@ -6569,9 +6569,9 @@ export const COURSES: CourseDef[] = [
                   "label": "Day 3",
                   "focus": "Morning activities — Simple Past (3rd person); Wh-questions (What...?) — Vocabulary: Cook, Clean, Work, Call, Finish",
                   "lines": [
-                    "Q || What did your dad do last weekend? || He worked.",
+                    "Q || What did your dad do yesterday morning? || He worked in an office.",
                     "Q || What did your sister do yesterday afternoon? || She called her grandma.",
-                    "Q || What did your best friend do on the last family trip? || She finished a project.",
+                    "Q || What did your best friend do after school yesterday? || She finished a project with her classmates.",
                     "Q || What did your aunt cook for her family? || She cooked dinner.",
                     "Q || What did your best friend do last weekend? || He cleaned the room.",
                     "Q || Where did your mom work? || She worked in an office.",
@@ -6579,12 +6579,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What did your brother do last night? || He finished a project.",
                     "F || She ____ a project yesterday. || finished || finish / finishes",
                     "F || She ____ dinner yesterday. || cooked || cook / cooks",
-                    "T || Ella cocinó la cena. || She cooked dinner.",
-                    "T || Ella limpió el cuarto. || She cleaned the room.",
-                    "T || Él trabajó. || He worked.",
-                    "T || Él llamó a su abuela. || He called his grandma.",
-                    "T || Mi hermano trabajó. || My brother worked.",
-                    "T || Mi hermano llamó a su abuela. || My brother called his grandma."
+                    "T || Ella cocinó la cena después del trabajo. || She cooked dinner after work.",
+                    "T || Ella limpió el cuarto antes de la cena. || She cleaned the room before dinner.",
+                    "T || Él trabajó en casa después del almuerzo. || He worked at home after lunch.",
+                    "T || Él llamó a su abuela para hablar de sus vacaciones. || He called his grandma to talk about his vacation.",
+                    "T || Mi hermano trabajó en una oficina ayer por la mañana. || My brother worked in an office yesterday morning.",
+                    "T || Mi hermano llamó a su abuela el domingo por la tarde. || My brother called his grandma on Sunday afternoon."
                   ],
                   "mistakes": [
                     "M || He [clean] the room yesterday. || cleaned* / clean / cleans || He cleaned the room yesterday.",
@@ -6606,12 +6606,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What did your dad do last night? || He cooked dinner.",
                     "F || He ____ dinner yesterday. || cooked || cook / cooks",
                     "F || She ____ a project yesterday. || finished || finish / finishes",
-                    "T || Ella cocinó la cena. || She cooked dinner.",
-                    "T || Él limpió el cuarto. || He cleaned the room.",
-                    "T || Él trabajó. || He worked.",
-                    "T || Ella llamó a su abuela. || She called her grandma.",
-                    "T || Mi hermana llamó a su abuela. || My sister called her grandma.",
-                    "T || Mi hermana cocinó la cena. || My sister cooked dinner."
+                    "T || Ella cocinó la cena para su familia anoche. || She cooked dinner for her family last night.",
+                    "T || Él limpió el cuarto con su hermana ayer. || He cleaned the room with his sister yesterday.",
+                    "T || Él trabajó hasta las cinco ayer. || He worked until five yesterday.",
+                    "T || Ella llamó a su abuela después de la escuela. || She called her grandma after school.",
+                    "T || Mi hermana llamó a su abuela el domingo por la tarde. || My sister called her grandma on Sunday afternoon.",
+                    "T || Mi hermana cocinó la cena después del trabajo. || My sister cooked dinner after work."
                   ],
                   "mistakes": [
                     "M || She [cook] dinner yesterday. || cook / cooks / cooked* || She cooked dinner yesterday.",
@@ -6633,12 +6633,12 @@ export const COURSES: CourseDef[] = [
                     "Q || What did your sister do last night? || She cleaned the room.",
                     "F || She ____ her grandma yesterday. || called || call / calls",
                     "F || He ____ a project at home yesterday. || finished || finish / finishes",
-                    "T || Él cocinó la cena. || He cooked dinner.",
-                    "T || Él limpió el cuarto. || He cleaned the room.",
-                    "T || Él trabajó. || He worked.",
-                    "T || Él llamó a su abuela. || He called his grandma.",
-                    "T || Mi hermano cocinó la cena. || My brother cooked dinner.",
-                    "T || Mi hermana cocinó la cena. || My sister cooked dinner."
+                    "T || Él cocinó la cena con su papá ayer. || He cooked dinner with his dad yesterday.",
+                    "T || Él limpió el cuarto el sábado por la mañana. || He cleaned the room on Saturday morning.",
+                    "T || Él trabajó en una oficina ayer por la mañana. || He worked in an office yesterday morning.",
+                    "T || Él llamó a su abuela el domingo por la tarde. || He called his grandma on Sunday afternoon.",
+                    "T || Mi hermano cocinó la cena después del trabajo. || My brother cooked dinner after work.",
+                    "T || Mi hermana cocinó la cena para su familia anoche. || My sister cooked dinner for her family last night."
                   ],
                   "mistakes": [
                     "M || He [cook] dinner at six o'clock yesterday. || cooks / cooked* / cook || He cooked dinner at six o'clock yesterday.",
@@ -6750,7 +6750,7 @@ export const COURSES: CourseDef[] = [
                     "Q || Complete: She is ____. (take a nap) || She is taking a nap.",
                     "Q || When is your best friend going to pay for a snack? || He is going to pay for a snack in the afternoon.",
                     "T || Ella se despertó. || She woke up.",
-                    "H || 🎨 || Name the action. || Paint",
+                    "H || 🧑‍🎨 🖌️ 🎨 || Guess the action! || Paint",
                     "F || I read ____ the morning. || in || at / on"
                   ],
                   "mistakes": [
@@ -6778,7 +6778,7 @@ export const COURSES: CourseDef[] = [
                     "Q || What are you doing while you write in your notebook? || I am taking notes.",
                     "Q || Spell the word \"left\". || L-E-F-T.",
                     "S || green oval:3, rectangle:2 || How many ovals are there? || There are three ovals.",
-                    "H || ⬅️ || Name the direction. || Left"
+                    "H || ⬅️ || Guess the hidden direction! || Left"
                   ],
                   "mistakes": [
                     "M || There [am] three ovals. || is / are* / am || There are three ovals.",
