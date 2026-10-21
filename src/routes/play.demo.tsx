@@ -39,10 +39,14 @@ const SHORTCUTS: [string, string][] = [
 type Action = { team: number; delta: number; playerId?: string | undefined };
 
 function DemoDrill() {
-  const game = getGame("demo")!;
   const navigate = useNavigate();
   const app = useApp();
   const { settings, teams, roster } = app;
+  const peek = useMemo(() => drawItems(selectionOf(useApp.getState()), settings.rounds, "mix", sessionUsed["demo"] ?? []).items.length, [settings.rounds]);
+  const game = useMemo(() => {
+    const base = getGame("demo")!;
+    return { ...base, rules: [...base.rules, ...shortfallRules(settings.rounds, peek)] };
+  }, [settings.rounds, peek]);
 
   const [items, setItems] = useState<ContentItem[] | null>(null);
   const [review, setReview] = useState(false);

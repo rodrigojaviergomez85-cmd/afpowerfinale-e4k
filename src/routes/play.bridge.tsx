@@ -41,8 +41,9 @@ const useOpts = () => useApp((s) => s.bridge ?? BOMB_PRESETS["Normal"]!);
 function BridgeBuilder() {
   const base = getGame("bridge-builder")!;
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🌉", text: `Build ${target} planks before the river rises!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
+  const peek = useMemo(() => drawItems(selectionOf(useApp.getState()), target, "mix", sessionUsed["bridge"] ?? []).items.length, [target, round]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🌉", text: `Build ${target} planks before the river rises!` }, { icon: "🤝", text: "Work together!" }, ...shortfallRules(target, peek)] }), [base, target, peek]);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
     <GameShell key={round} game={game} className="bridge-shell" rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>

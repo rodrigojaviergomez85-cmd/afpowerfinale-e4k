@@ -40,15 +40,17 @@ function BeatTheBomb() {
   const base = getGame("beat-the-bomb")!;
   const target = useApp((s) => s.bomb.target);
   const whOnly = useApp((s) => s.bomb.whOnly);
+  const [round, setRound] = useState(0);
+  const peek = useMemo(() => drawItems(selectionOf(useApp.getState()), target, whOnly ? "wh" : "mix", sessionUsed["bomb"] ?? []).items.length, [target, whOnly, round]);
   const game = useMemo(() => ({
     ...base,
     rules: [
       { icon: "💣", text: `Answer ${target} questions before the bomb explodes!` },
       { icon: "🤝", text: "Work together!" },
       ...(whOnly ? [{ icon: "❓", text: "WH questions only!" }] : []),
+      ...shortfallRules(target, peek),
     ],
-  }), [base, target, whOnly]);
-  const [round, setRound] = useState(0);
+  }), [base, target, whOnly, peek]);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
     <GameShell key={round} game={game} rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>

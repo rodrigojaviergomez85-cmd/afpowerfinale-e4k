@@ -259,3 +259,8 @@ export function drawMistakes(sel: Selection, count: number, avoid: string[] = []
   const first = new Set((tiers[0] ?? []).map((i) => i.id));
   return { items: shuffle(picked), review: picked.some((i) => !first.has(i.id)) };
 }
+
+/** Rules-screen note when the unique card pool is smaller than the requested count. */
+export function shortfallRules(want: number, got: number) {
+  return got < want ? [{ icon: "ℹ️", text: `Heads up: only ${got} unique cards for this selection — the goal was lowered from ${want} to ${got}.` }] : [];
+}

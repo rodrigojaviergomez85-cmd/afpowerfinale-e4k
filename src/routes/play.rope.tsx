@@ -42,8 +42,9 @@ function TightropeRescue() {
   const base = getGame("tightrope");
   if (!base) throw new Error("Circus game is unavailable");
   const target = useOpts().target;
-  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Tito to safety! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }] }), [base, target]);
   const [round, setRound] = useState(0);
+  const peek = useMemo(() => drawItems(selectionOf(useApp.getState()), target, "mix", sessionUsed["rope"] ?? []).items.length, [target, round]);
+  const game = useMemo(() => ({ ...base, rules: [{ icon: "🤸‍♀️", text: `Raise Tito to safety! ${target} correct answers to climb. Wrong answers move the platform down!` }, { icon: "🤝", text: "Work together!" }, ...shortfallRules(target, peek)] }), [base, target, peek]);
   const [helpOpen, setHelpOpen] = useState(false);
   return (
     <GameShell className="rope-shell" key={round} game={game} rightSlot={<Button variant="panel" size="xl" onClick={() => setHelpOpen(true)}><HelpCircle /> Help <Kbd>?</Kbd></Button>}>
