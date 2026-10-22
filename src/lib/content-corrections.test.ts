@@ -7559,6 +7559,8 @@ describe("approved targeted curriculum corrections", () => {
       if (isMistake) selected.mistakes![index] = old;
       else selected.lines[index] = old;
     }
+    // Level 6 was added after the corrections; the hash below only guards levels 0-5.
+    for (const c of restored) c.levels = c.levels.filter(l => l.level < 6);
     expect(createHash("sha256").update(JSON.stringify(restored)).digest("hex")).toBe("8293c1f5b6f108a5147eebd2a340bc55f0973367a6391af3130723431401e5a4");
   });
 });
