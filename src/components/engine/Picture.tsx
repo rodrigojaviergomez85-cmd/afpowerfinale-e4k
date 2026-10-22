@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import type { ContentItem, ShapeSpec } from "@/lib/content";
 import { SHAPE_COLORS, shuffle } from "@/lib/content";
+import { scenePicture } from "@/data/scenePictures";
 
 const STAR = "50,5 61,38 96,38 68,59 78,93 50,72 22,93 32,59 4,38 39,38";
 const HEART = "M50 88 C20 66 5 48 5 30 C5 15 17 5 30 5 C40 5 47 11 50 18 C53 11 60 5 70 5 C83 5 95 15 95 30 C95 48 80 66 50 88 Z";
@@ -56,6 +57,8 @@ export function ShapePicture({ specs, seed, big }: { specs: ShapeSpec[]; seed: s
 export function ItemPicture({ item, big }: { item: ContentItem; big?: boolean | undefined }) {
   if (item.shapes) return <ShapePicture specs={item.shapes} seed={item.id} big={big} />;
   if (item.emoji) {
+    const scene = !item.hidden ? scenePicture(item.emoji, item.prompt) : undefined;
+    if (scene) return <img src={scene} alt="" draggable={false} width={992} height={672} className="h-auto max-h-[300px] w-auto max-w-full rounded-2xl border-4 border-border object-contain" />;
     const segs = [...new Intl.Segmenter().segment(item.emoji)].map((s) => s.segment);
     const n = segs.length;
     const size = big ? (n > 1 ? 170 : 200) : 160;
