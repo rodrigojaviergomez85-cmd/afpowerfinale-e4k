@@ -9724,6 +9724,1448 @@ export const COURSES: CourseDef[] = [
             ]
           }
         ]
+      },
+      {
+        "level": 8,
+        "weeks": [
+          {
+            "week": 1,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Family — Comparatives: short adjectives; Positive sentences — Vocabulary: tall, short, young, old",
+                "lines": [
+                  "Q || Who is taller, you or your best friend? || I am taller than my best friend. / My best friend is taller than me.",
+                  "Q || Who is older, your mom or your dad? || My dad is older than my mom. / My mom is older than my dad.",
+                  "Q || Who is younger, you or your cousin? || I am younger than my cousin. / My cousin is younger than me.",
+                  "Q || Who is shorter, your grandma or your grandpa? || My grandma is shorter than my grandpa.",
+                  "Q || Compare your brother or sister and you. Use \"taller\" or \"shorter\". || My brother is taller than me. / I am shorter than my sister.",
+                  "Q || Compare your teacher and your coach. Use \"older\" or \"younger\". (Use your imagination!) || My teacher is older than my coach.",
+                  "Q || Complete: My dad is ____ (tall) than my mom. || My dad is taller than my mom.",
+                  "Q || Complete: My grandpa is ____ (old) than my dad. || My grandpa is older than my dad.",
+                  "F || My dad is ____ than my mom. || taller || tall / more tall",
+                  "F || My cousin is ____ than me. || younger || young / more young",
+                  "F || She is shorter ____ her sister. || than || that / then",
+                  "T || Mi papá es más alto que mi mamá. || My dad is taller than my mom.",
+                  "T || Mi abuelo es mayor que mi papá. || My grandpa is older than my dad.",
+                  "T || Soy más bajo que mi hermano. || I am shorter than my brother.",
+                  "T || Mi prima es menor que yo. || My cousin is younger than me.",
+                  "T || Mi mamá es más joven que mi tía. || My mom is younger than my aunt.",
+                  "H || 📏⬆️ || Guess the hidden adjective! || Tall",
+                  "H || 👴 || Guess the hidden adjective! || Old",
+                  "E || 👨🧒 || Who is taller? || The man is taller than the boy.",
+                  "E || 👵👧 || Who is younger? || The girl is younger than the grandma."
+                ],
+                "mistakes": [
+                  "M || My dad is [more tall] than my mom. || taller* / more tall / tallest || My dad is taller than my mom.",
+                  "M || My cousin is younger [that] me. || than* / that / then || My cousin is younger than me."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Characters — Comparatives: short adjectives; Wh-questions (Who...?) — Vocabulary: tall, short, young, old, thin, chubby",
+                "lines": [
+                  "Q || Who is thinner, Spider-Man or Hulk? || Spider-Man is thinner than Hulk.",
+                  "Q || Who is chubbier, Winnie the Pooh or Mickey Mouse? || Winnie the Pooh is chubbier than Mickey Mouse.",
+                  "Q || Who is taller, Shrek or Puss in Boots? || Shrek is taller than Puss in Boots.",
+                  "Q || Who is older, Batman or Robin? || Batman is older than Robin.",
+                  "Q || Who is shorter, Minions or Gru? || Minions are shorter than Gru.",
+                  "Q || Who is younger, Elsa or Anna? || Anna is younger than Elsa.",
+                  "Q || Compare two characters from your favorite movie. Use \"thinner\" or \"chubbier\". || Olaf is chubbier than Elsa.",
+                  "Q || Compare your favorite superhero and your favorite villain. Use \"taller\" or \"shorter\". || Thanos is taller than Iron Man.",
+                  "F || Who is ____, Hulk or Spider-Man? || chubbier || chubby / more chubby",
+                  "F || Spider-Man is ____ than Hulk. || thinner || thin / thiner",
+                  "F || Who ____ older, Batman or Robin? || is || are / do",
+                  "T || ¿Quién es más delgado? || Who is thinner?",
+                  "T || Hulk es más gordito que Spider-Man. || Hulk is chubbier than Spider-Man.",
+                  "T || Shrek es más alto que Gato con Botas. || Shrek is taller than Puss in Boots.",
+                  "T || ¿Quién es mayor, Batman o Robin? || Who is older, Batman or Robin?",
+                  "T || Anna es menor que Elsa. || Anna is younger than Elsa.",
+                  "H || 📏⬇️ || Guess the hidden adjective! || Short",
+                  "E || 🧍 🧍‍♂️💪 || Who is thinner? || The first person is thinner than the second person.",
+                  "E || 🐻🍯 🐭 || Who is chubbier? || The bear is chubbier than the mouse.",
+                  "E || 👦 👧 || Who is older? (Use your imagination!) || The girl is older than the boy. / The boy is older than the girl."
+                ],
+                "mistakes": [
+                  "M || Hulk is [chubbyer] than Spider-Man. || chubbier* / chubbyer / more chubby || Hulk is chubbier than Spider-Man.",
+                  "M || Who is [thiner], Elsa or Olaf? || thinner* / thiner / more thin || Who is thinner, Elsa or Olaf?"
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Sea animals — Comparatives: long adjectives; Positive sentences — Vocabulary: intelligent, dangerous, powerful, playful; dolphin, shark, octopus, seal, starfish, whale",
+                "lines": [
+                  "Q || Which animal is more intelligent, a dolphin or a starfish? || A dolphin is more intelligent than a starfish.",
+                  "Q || Which animal is more dangerous, a shark or a seal? || A shark is more dangerous than a seal.",
+                  "Q || Which animal is more powerful, a whale or an octopus? || A whale is more powerful than an octopus.",
+                  "Q || Which animal is more playful, a seal or a shark? || A seal is more playful than a shark.",
+                  "Q || Compare a dolphin and a whale. Use \"more powerful\". || A whale is more powerful than a dolphin.",
+                  "Q || Compare an octopus and a starfish. Use \"more intelligent\". || An octopus is more intelligent than a starfish.",
+                  "Q || Complete: A shark is ____ (dangerous) than a dolphin. || A shark is more dangerous than a dolphin.",
+                  "Q || Which sea animal do you think is more playful? Why? || I think a dolphin is more playful because it jumps and plays with people.",
+                  "F || A shark is ____ than a seal. || more dangerous || dangerouser / dangerous",
+                  "F || A dolphin is more intelligent ____ a starfish. || than || that / then",
+                  "F || A whale is ____ powerful than an octopus. || more || most / much",
+                  "T || Un delfín es más inteligente que una estrella de mar. || A dolphin is more intelligent than a starfish.",
+                  "T || Un tiburón es más peligroso que una foca. || A shark is more dangerous than a seal.",
+                  "T || Una ballena es más poderosa que un pulpo. || A whale is more powerful than an octopus.",
+                  "T || Una foca es más juguetona que un tiburón. || A seal is more playful than a shark.",
+                  "T || El pulpo es más inteligente que la estrella de mar. || The octopus is more intelligent than the starfish.",
+                  "H || 🐬 || Guess the hidden sea animal! || Dolphin",
+                  "H || 🦈 || Guess the hidden sea animal! || Shark",
+                  "E || 🐙 ⭐ || Which animal is more intelligent? || The octopus is more intelligent than the starfish.",
+                  "E || 🐋 🦭 || Which animal is more powerful? || The whale is more powerful than the seal."
+                ],
+                "mistakes": [
+                  "M || A shark is [dangerouser] than a seal. || more dangerous* / dangerouser / most dangerous || A shark is more dangerous than a seal.",
+                  "M || A dolphin is [intelligenter] than a starfish. || more intelligent* / intelligenter / most intelligent || A dolphin is more intelligent than a starfish."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Dinosaurs — Comparatives: long adjectives; Wh-questions (Which...?); likes and dislikes — Vocabulary: intelligent, dangerous, powerful, playful, colorful, aggressive",
+                "lines": [
+                  "Q || Which dinosaur was more aggressive, a T-Rex or a Triceratops? || A T-Rex was more aggressive than a Triceratops.",
+                  "Q || Which dinosaur was more dangerous, a Velociraptor or a Brachiosaurus? || A Velociraptor was more dangerous than a Brachiosaurus.",
+                  "Q || Which bird is more colorful, a parrot or a pigeon? || A parrot is more colorful than a pigeon.",
+                  "Q || Which animal is more powerful, a T-Rex or a shark? || A T-Rex is more powerful than a shark.",
+                  "Q || Which pet is more playful, a puppy or a fish? || A puppy is more playful than a fish.",
+                  "Q || Which dinosaur do you like more? Why? || I like the T-Rex more because it is powerful.",
+                  "Q || Compare a parrot and a crocodile. Use \"more colorful\" or \"more aggressive\". || A parrot is more colorful than a crocodile. / A crocodile is more aggressive than a parrot.",
+                  "Q || Do you like dinosaurs? Which one do you dislike? || Yes, I like dinosaurs. I dislike the Velociraptor because it is aggressive.",
+                  "F || Which dinosaur was ____, a T-Rex or a Triceratops? || more aggressive || aggressiver / aggressive",
+                  "F || A parrot is more colorful ____ a pigeon. || than || that / then",
+                  "F || ____ animal is more dangerous? || Which || Who / Where",
+                  "T || ¿Cuál dinosaurio era más agresivo? || Which dinosaur was more aggressive?",
+                  "T || Un loro es más colorido que una paloma. || A parrot is more colorful than a pigeon.",
+                  "T || El T-Rex era más peligroso que el Triceratops. || The T-Rex was more dangerous than the Triceratops.",
+                  "T || Un cachorro es más juguetón que un pez. || A puppy is more playful than a fish.",
+                  "T || Me gustan los dinosaurios. || I like dinosaurs.",
+                  "H || 🦖 || Guess the hidden animal! || Dinosaur",
+                  "E || 🦖 🦕 || Which dinosaur is more aggressive? || The T-Rex is more aggressive than the long-neck dinosaur.",
+                  "E || 🦜 🕊️ || Which bird is more colorful? || The parrot is more colorful than the pigeon.",
+                  "E || 🐕 🐟 || Which pet is more playful? || The dog is more playful than the fish."
+                ],
+                "mistakes": [
+                  "M || A T-Rex was [aggressiver] than a Triceratops. || more aggressive* / aggressiver / most aggressive || A T-Rex was more aggressive than a Triceratops.",
+                  "M || [Who] dinosaur is more dangerous? || Which* / Who / Where || Which dinosaur is more dangerous?"
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Comparatives (short and long adjectives) — Vocabulary: tall, short, young, old, thin, chubby, intelligent, dangerous, powerful, playful, colorful, aggressive",
+                "lines": [
+                  "Q || Who is taller, your mom or your dad? || My dad is taller than my mom.",
+                  "Q || Which animal is more dangerous, a shark or a dolphin? || A shark is more dangerous than a dolphin.",
+                  "Q || Who is younger, your best friend or you? || My best friend is younger than me.",
+                  "Q || Which bird is more colorful, a parrot or a chicken? || A parrot is more colorful than a chicken.",
+                  "Q || Who is thinner, Spider-Man or Hulk? Why? || Spider-Man is thinner than Hulk because Hulk is very big.",
+                  "Q || Compare two people in your family. Use \"older\" or \"younger\". || My sister is older than me.",
+                  "Q || Compare two animals. Use \"more playful\". || A puppy is more playful than a cat.",
+                  "Q || What will you do next Christmas? || I will visit my grandparents and open presents.",
+                  "Q || Which dinosaur was more aggressive, a T-Rex or a Brachiosaurus? || A T-Rex was more aggressive than a Brachiosaurus.",
+                  "Q || Compare Messi and your dad. Use \"shorter\" or \"taller\". || Messi is shorter than my dad. / My dad is taller than Messi.",
+                  "F || My mom is ____ than my grandma. || younger || young / more young",
+                  "F || A whale is ____ than a seal. || more powerful || powerfuler / powerful",
+                  "F || Who is ____, Shrek or Puss in Boots? || taller || tallest / more tall",
+                  "T || Mi tío es más alto que mi papá. || My uncle is taller than my dad.",
+                  "T || Un tiburón es más peligroso que un delfín. || A shark is more dangerous than a dolphin.",
+                  "T || Mi hermana es mayor que yo. || My sister is older than me.",
+                  "T || Un loro es más colorido que un pollo. || A parrot is more colorful than a chicken.",
+                  "T || ¿Quién es más gordito, Hulk o Spider-Man? || Who is chubbier, Hulk or Spider-Man?",
+                  "H || 🐋 || Guess the hidden sea animal! || Whale",
+                  "E || 🦈 🐬 || Which animal is more dangerous? || The shark is more dangerous than the dolphin."
+                ],
+                "mistakes": [
+                  "M || My mom is [more young] than my grandma. || younger* / more young / youngest || My mom is younger than my grandma.",
+                  "M || A whale is [powerfuler] than a seal. || more powerful* / powerfuler / most powerful || A whale is more powerful than a seal."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 2,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Superheroes — Superlatives: short adjectives; Positive sentences — Vocabulary: strong, fast, smart",
+                "lines": [
+                  "Q || Who is the strongest superhero? || Hulk is the strongest superhero. / Superman is the strongest superhero.",
+                  "Q || Who is the fastest superhero? || Flash is the fastest superhero.",
+                  "Q || Who is the smartest superhero? || Iron Man is the smartest superhero. / Batman is the smartest superhero.",
+                  "Q || Who is the strongest person in your family? || My dad is the strongest person in my family.",
+                  "Q || Who is the fastest runner in your class? || My best friend is the fastest runner in my class.",
+                  "Q || Who is the smartest person you know? || My grandma is the smartest person I know.",
+                  "Q || Complete: Flash is the ____ (fast) superhero. || Flash is the fastest superhero.",
+                  "Q || Complete: Hulk is the ____ (strong) superhero. || Hulk is the strongest superhero.",
+                  "F || Hulk is the ____ superhero. || strongest || stronger / most strong",
+                  "F || Flash is the ____ superhero. || fastest || faster / most fast",
+                  "F || Batman is ____ smartest superhero. || the || a / than",
+                  "T || Hulk es el superhéroe más fuerte. || Hulk is the strongest superhero.",
+                  "T || Flash es el más rápido. || Flash is the fastest.",
+                  "T || Mi papá es la persona más fuerte de mi familia. || My dad is the strongest person in my family.",
+                  "T || Mi abuela es la persona más inteligente que conozco. || My grandma is the smartest person I know.",
+                  "T || Él es el corredor más rápido de mi clase. || He is the fastest runner in my class.",
+                  "H || 🦸💪 || Guess the hidden adjective! || Strong",
+                  "H || ⚡🏃 || Guess the hidden adjective! || Fast",
+                  "E || 🧒 🧒💪 🧒💪💪 || Who is the strongest? || The third kid is the strongest.",
+                  "E || 🐢 🐇 🐆 || Which animal is the fastest? || The cheetah is the fastest."
+                ],
+                "mistakes": [
+                  "M || Hulk is the [stronger] superhero. || strongest* / stronger / most strong || Hulk is the strongest superhero.",
+                  "M || Flash is [most fast] superhero. || the fastest* / most fast / faster || Flash is the fastest superhero."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Animals — Superlatives: short adjectives; Wh-questions (Which...?) — Vocabulary: slow, long, big",
+                "lines": [
+                  "Q || Which animal is the slowest, a turtle, a dog or a horse? || The turtle is the slowest.",
+                  "Q || Which animal is the biggest in the ocean? || The whale is the biggest animal in the ocean.",
+                  "Q || Which animal has the longest neck? || The giraffe has the longest neck.",
+                  "Q || Which animal is the fastest in the world? || The cheetah is the fastest animal in the world.",
+                  "Q || Which snake is the longest, a cobra, a python or a garden snake? || The python is the longest.",
+                  "Q || Which animal is the biggest on land? || The elephant is the biggest animal on land.",
+                  "Q || Which pet is the slowest, a cat, a hamster or a turtle? || The turtle is the slowest.",
+                  "Q || Which animal do you think is the strongest? Why? || I think the elephant is the strongest because it can carry trees.",
+                  "F || The turtle is the ____ animal. || slowest || slower / most slow",
+                  "F || The giraffe has the ____ neck. || longest || longer / most long",
+                  "F || Which animal is ____ biggest? || the || a / than",
+                  "T || La tortuga es el animal más lento. || The turtle is the slowest animal.",
+                  "T || La ballena es el animal más grande del océano. || The whale is the biggest animal in the ocean.",
+                  "T || La jirafa tiene el cuello más largo. || The giraffe has the longest neck.",
+                  "T || ¿Cuál animal es el más rápido? || Which animal is the fastest?",
+                  "T || El elefante es el más grande en tierra. || The elephant is the biggest on land.",
+                  "H || 🐢 || Guess the hidden animal! || Turtle",
+                  "E || 🐢 🐕 🐎 || Which animal is the slowest? || The turtle is the slowest.",
+                  "E || 🐭 🐕 🐘 || Which animal is the biggest? || The elephant is the biggest.",
+                  "E || 🦒 🐴 🐈 || Which animal has the longest neck? || The giraffe has the longest neck."
+                ],
+                "mistakes": [
+                  "M || The turtle is the [slower] animal. || slowest* / slower / most slow || The turtle is the slowest animal.",
+                  "M || The elephant is the [bigest] animal on land. || biggest* / bigest / most big || The elephant is the biggest animal on land."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Video game characters — Superlatives: long adjectives; Yes/No questions (Long answers); Wh-questions (Who...?) — Vocabulary: intelligent, dangerous, beautiful, curious",
+                "lines": [
+                  "Q || Who is the most intelligent video game character you know? || Mario is the most intelligent character I know. / Link is the most intelligent character.",
+                  "Q || Who is the most dangerous villain in your favorite video game? || Bowser is the most dangerous villain.",
+                  "Q || Is Princess Peach the most beautiful character in Mario games? || Yes, she is the most beautiful character. / No, she isn't. Rosalina is the most beautiful character.",
+                  "Q || Who is the most curious character in Minecraft? (Use your imagination!) || Steve is the most curious character.",
+                  "Q || Is Sonic the most intelligent video game character? || No, he isn't the most intelligent. He is the fastest. / Yes, he is.",
+                  "Q || Who is the most dangerous character in your favorite game? || Ganon is the most dangerous character.",
+                  "Q || Is Pikachu the most beautiful Pokémon? || Yes, Pikachu is the most beautiful Pokémon. / No, Eevee is the most beautiful Pokémon.",
+                  "Q || Who is the most curious person in your family? || My little brother is the most curious person in my family.",
+                  "F || Bowser is the ____ villain. || most dangerous || dangerousest / more dangerous",
+                  "F || She is the ____ character. || most beautiful || beautifulest / more beautiful",
+                  "F || ____ is the most intelligent character? || Who || Which / Where",
+                  "T || Mario es el personaje más inteligente. || Mario is the most intelligent character.",
+                  "T || Bowser es el villano más peligroso. || Bowser is the most dangerous villain.",
+                  "T || ¿Es Peach la más hermosa? || Is Peach the most beautiful?",
+                  "T || Mi hermanito es el más curioso de la familia. || My little brother is the most curious in the family.",
+                  "T || No, Sonic no es el más inteligente. || No, Sonic isn't the most intelligent.",
+                  "H || 🎮 || Guess the hidden word! || Video game",
+                  "E || 🧒🧒🧒🔍 || Who is the most curious? (Use your imagination!) || The kid with the magnifying glass is the most curious.",
+                  "E || 🌹 🌼 🌻 || Which flower is the most beautiful? (Use your imagination!) || The rose is the most beautiful.",
+                  "E || 🐍 🦁 🐇 || Which animal is the most dangerous? || The lion is the most dangerous."
+                ],
+                "mistakes": [
+                  "M || Bowser is the [dangerousest] villain. || most dangerous* / dangerousest / more dangerous || Bowser is the most dangerous villain.",
+                  "M || She is the [more beautiful] character. || most beautiful* / more beautiful / beautifulest || She is the most beautiful character."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "School subjects — Superlatives: long adjectives; Wh-questions (Why...?) — Vocabulary: useful, difficult, exciting",
+                "lines": [
+                  "Q || Which subject is the most useful for you? Why? || English is the most useful subject because I can talk to people from other countries.",
+                  "Q || Which subject is the most difficult for you? Why? || Math is the most difficult subject because there are many numbers.",
+                  "Q || Which subject is the most exciting? Why? || Science is the most exciting subject because we do experiments.",
+                  "Q || Why is P.E. the most exciting class for many kids? || Because they can run and play.",
+                  "Q || Which subject does your best friend think is the most difficult? || He thinks science is the most difficult subject.",
+                  "Q || Why is English the most useful subject for your mom? (Use your imagination!) || Because she needs it for her job.",
+                  "Q || Which subject is the most boring for you? Why? || History is the most boring subject because I have to memorize dates.",
+                  "Q || What is the most exciting day at school? Why? || Friday is the most exciting day because we have art class.",
+                  "F || Math is the ____ subject for me. || most difficult || difficultest / more difficult",
+                  "F || ____ is English the most useful subject? || Why || Which / What",
+                  "F || Science is ____ most exciting subject. || the || a / than",
+                  "T || Inglés es la materia más útil. || English is the most useful subject.",
+                  "T || Matemáticas es la más difícil. || Math is the most difficult.",
+                  "T || ¿Por qué es ciencias la más emocionante? || Why is science the most exciting?",
+                  "T || Porque hacemos experimentos. || Because we do experiments.",
+                  "T || Historia es la materia más aburrida. || History is the most boring subject.",
+                  "H || 🔬🧪 || Guess the hidden subject! || Science",
+                  "E || 📐➗ 🎨 ⚽ || Which subject is the most difficult? (Use your imagination!) || Math is the most difficult.",
+                  "E || 🧪💥 || Why is science the most exciting? || Because we do experiments.",
+                  "E || 🇬🇧🗣️🌎 || Why is English the most useful? || Because I can talk to people from other countries."
+                ],
+                "mistakes": [
+                  "M || Math is the [difficultest] subject. || most difficult* / difficultest / more difficult || Math is the most difficult subject.",
+                  "M || English is the most useful [that] science. || (nothing)* / that / than || English is the most useful."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Superlatives (short and long adjectives); shapes review — Vocabulary: strong, fast, smart, slow, long, big, intelligent, dangerous, beautiful, curious, useful, difficult, exciting",
+                "lines": [
+                  "Q || Who is the strongest superhero? Why? || Hulk is the strongest superhero because he can lift cars.",
+                  "Q || Which animal is the slowest in the world? || The sloth is the slowest animal in the world. / The turtle is the slowest.",
+                  "Q || Who is the most intelligent person in your family? || My mom is the most intelligent person in my family.",
+                  "Q || Which subject is the most exciting for you? || Art is the most exciting subject for me.",
+                  "Q || Which animal is the most dangerous in the ocean? || The shark is the most dangerous animal in the ocean.",
+                  "Q || Who is the fastest runner in your family? || My brother is the fastest runner in my family.",
+                  "Q || Which video game character is the most curious? || Steve from Minecraft is the most curious.",
+                  "Q || Which is the biggest animal in the world? || The blue whale is the biggest animal in the world.",
+                  "Q || Why is math the most difficult subject for many kids? || Because there are many numbers and rules.",
+                  "Q || What is the most beautiful place you know? || The beach is the most beautiful place I know.",
+                  "F || The whale is the ____ animal. || biggest || bigger / most big",
+                  "F || Art is the ____ subject. || most exciting || excitingest / more exciting",
+                  "F || My brother is ____ fastest runner. || the || a / than",
+                  "T || Hulk es el más fuerte. || Hulk is the strongest.",
+                  "T || Mi mamá es la más inteligente de mi familia. || My mom is the most intelligent in my family.",
+                  "T || ¿Cuál es el animal más grande del mundo? || Which is the biggest animal in the world?",
+                  "T || Arte es la materia más emocionante. || Art is the most exciting subject.",
+                  "T || El tiburón es el más peligroso del océano. || The shark is the most dangerous in the ocean.",
+                  "S || red circle:1, blue circle:1, green circle:1 || Which circle is the biggest? (They are the same size; say so!) || They are the same size. / No circle is the biggest.",
+                  "E || 🐌 🐢 🐇 || Which animal is the slowest? || The snail is the slowest."
+                ],
+                "mistakes": [
+                  "M || The whale is the [bigger] animal in the world. || biggest* / bigger / most big || The whale is the biggest animal in the world.",
+                  "M || Art is the [more exciting] subject. || most exciting* / more exciting / excitingest || Art is the most exciting subject."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 3,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Food — Comparatives & Superlatives; Positive sentences; Wh-questions (Which...?) — Vocabulary: spicy, sweet, salty, healthy, delicious",
+                "lines": [
+                  "Q || Which food is spicier, pizza or Mexican tacos? || Mexican tacos are spicier than pizza.",
+                  "Q || Which is the sweetest dessert you know? || Chocolate cake is the sweetest dessert I know.",
+                  "Q || Which food is healthier, a salad or french fries? || A salad is healthier than french fries.",
+                  "Q || Which snack is saltier, popcorn or an apple? || Popcorn is saltier than an apple.",
+                  "Q || What is the most delicious food your mom cooks? || Her lasagna is the most delicious food she cooks.",
+                  "Q || Which fruit is sweeter, a banana or a lemon? || A banana is sweeter than a lemon.",
+                  "Q || Which is the healthiest food in your house? || Vegetables are the healthiest food in my house.",
+                  "Q || Compare your favorite food and your best friend's favorite food. Use \"more delicious\". || Pizza is more delicious than hamburgers.",
+                  "F || Tacos are ____ than pizza. || spicier || spicyer / more spicy",
+                  "F || A salad is ____ than french fries. || healthier || healthyer / more healthy",
+                  "F || This is the ____ cake. || most delicious || deliciousest / more delicious",
+                  "T || Los tacos son más picantes que la pizza. || Tacos are spicier than pizza.",
+                  "T || La ensalada es más saludable que las papas fritas. || The salad is healthier than french fries.",
+                  "T || El pastel de chocolate es el postre más dulce. || Chocolate cake is the sweetest dessert.",
+                  "T || Las palomitas son más saladas que una manzana. || Popcorn is saltier than an apple.",
+                  "T || La lasaña de mi mamá es la comida más deliciosa. || My mom's lasagna is the most delicious food.",
+                  "H || 🌶️ || Guess the hidden adjective! || Spicy",
+                  "H || 🥗 || Guess the hidden adjective! || Healthy",
+                  "E || 🍌 🍋 || Which fruit is sweeter? || The banana is sweeter than the lemon.",
+                  "E || 🍟 🥗 🍰 || Which food is the healthiest? || The salad is the healthiest."
+                ],
+                "mistakes": [
+                  "M || Tacos are [more spicy] than pizza. || spicier* / more spicy / spiciest || Tacos are spicier than pizza.",
+                  "M || A salad is [healthyer] than french fries. || healthier* / healthyer / more healthy || A salad is healthier than french fries."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Superheroes and villains — Comparatives & Superlatives; Wh-questions (Who...?) — Vocabulary: strong, fast, smart, dangerous, powerful",
+                "lines": [
+                  "Q || Who is more dangerous, Joker or Thanos? || Thanos is more dangerous than Joker.",
+                  "Q || Who is the most powerful superhero? || Superman is the most powerful superhero. / Thor is the most powerful superhero.",
+                  "Q || Who is faster, Flash or Spider-Man? || Flash is faster than Spider-Man.",
+                  "Q || Who is the smartest villain? || Lex Luthor is the smartest villain. / Joker is the smartest villain.",
+                  "Q || Who is stronger, Hulk or Thor? || Hulk is stronger than Thor. / Thor is stronger than Hulk.",
+                  "Q || Who is the most dangerous villain in Spider-Man movies? || Green Goblin is the most dangerous villain.",
+                  "Q || Who is more powerful, your favorite superhero or your favorite villain? Why? || My favorite superhero is more powerful because he always wins.",
+                  "Q || Who is the fastest villain you know? || Reverse-Flash is the fastest villain I know.",
+                  "F || Thanos is ____ than Joker. || more dangerous || dangerouser / most dangerous",
+                  "F || Superman is the ____ superhero. || most powerful || more powerful / powerfulest",
+                  "F || Who is ____, Flash or Spider-Man? || faster || fastest / more fast",
+                  "T || Thanos es más peligroso que Joker. || Thanos is more dangerous than Joker.",
+                  "T || Superman es el superhéroe más poderoso. || Superman is the most powerful superhero.",
+                  "T || ¿Quién es más rápido? || Who is faster?",
+                  "T || Hulk es más fuerte que Thor. || Hulk is stronger than Thor.",
+                  "T || Joker es el villano más inteligente. || Joker is the smartest villain.",
+                  "H || 🦹 || Guess the hidden word! || Villain",
+                  "E || 🦸 🦹 || Who is more powerful? (Use your imagination!) || The superhero is more powerful than the villain.",
+                  "E || 🦸‍♂️ 🦸‍♀️ 🦹‍♂️ || Who is the fastest? (Use your imagination!) || The superwoman is the fastest.",
+                  "E || 🧠🦹 💪🦹 || Who is more dangerous, the smart villain or the strong villain? || The smart villain is more dangerous."
+                ],
+                "mistakes": [
+                  "M || Thanos is [the more dangerous] villain. || the most dangerous* / the more dangerous / dangerousest || Thanos is the most dangerous villain.",
+                  "M || Flash is [more fast] than Spider-Man. || faster* / more fast / fastest || Flash is faster than Spider-Man."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Devices — Comparatives & Superlatives; Wh-questions (Which...?) — Vocabulary: useful, cheap, expensive, cool, interactive",
+                "lines": [
+                  "Q || Which device is more expensive, a phone or a tablet? || A tablet is more expensive than a phone. / A phone is more expensive than a tablet.",
+                  "Q || Which is the cheapest device in your house? || The radio is the cheapest device in my house.",
+                  "Q || Which device is more useful for homework, a laptop or a TV? || A laptop is more useful for homework than a TV.",
+                  "Q || Which is the coolest device you have? || My video game console is the coolest device I have.",
+                  "Q || Which is more interactive, a book or a tablet? || A tablet is more interactive than a book.",
+                  "Q || Which is the most expensive device in your house? || The TV is the most expensive device in my house.",
+                  "Q || Which device is cheaper, a watch or a smartwatch? || A watch is cheaper than a smartwatch.",
+                  "Q || Which is the most useful device for your dad at work? || The computer is the most useful device for my dad at work.",
+                  "F || A tablet is ____ than a book. || more interactive || interactiver / most interactive",
+                  "F || A watch is ____ than a smartwatch. || cheaper || cheapest / more cheap",
+                  "F || The TV is the ____ device in my house. || most expensive || expensivest / more expensive",
+                  "T || Una tableta es más cara que un teléfono. || A tablet is more expensive than a phone.",
+                  "T || El radio es el aparato más barato. || The radio is the cheapest device.",
+                  "T || Una laptop es más útil para la tarea. || A laptop is more useful for homework.",
+                  "T || Mi consola es el aparato más genial. || My console is the coolest device.",
+                  "T || ¿Cuál es más interactivo? || Which is more interactive?",
+                  "H || 📱 || Guess the hidden device! || Phone",
+                  "E || 📱 💻 || Which device is more expensive? (Use your imagination!) || The laptop is more expensive than the phone.",
+                  "E || 📻 📺 🎮 || Which device is the cheapest? (Use your imagination!) || The radio is the cheapest.",
+                  "E || 📖 📱 || Which is more interactive? || The phone is more interactive than the book."
+                ],
+                "mistakes": [
+                  "M || A tablet is [expensiver] than a phone. || more expensive* / expensiver / most expensive || A tablet is more expensive than a phone.",
+                  "M || A watch is [more cheap] than a smartwatch. || cheaper* / more cheap / cheapest || A watch is cheaper than a smartwatch."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Countries and places — Comparatives & Superlatives; Wh-questions (Why...?) — Vocabulary: big, modern, beautiful, hot, busy, interesting",
+                "lines": [
+                  "Q || Which city is bigger, your city or the capital of your country? || The capital is bigger than my city.",
+                  "Q || Which is the most beautiful place in your country? Why? || Cartagena is the most beautiful place because it has the sea and old houses.",
+                  "Q || Why is New York busier than your city? || Because it has more people and more cars.",
+                  "Q || Which country is hotter, Colombia or Canada? Why? || Colombia is hotter than Canada because it is near the equator.",
+                  "Q || Which is the most modern city you know? Why? || Dubai is the most modern city I know because it has very tall buildings.",
+                  "Q || Why is the beach more interesting than the mountains for you? (Or the opposite!) || The beach is more interesting because I can swim and see fish.",
+                  "Q || Which is the biggest country in South America? || Brazil is the biggest country in South America.",
+                  "Q || Why is your city the most interesting place for you? || Because my family and friends are there.",
+                  "F || New York is ____ than my city. || busier || busyer / more busy",
+                  "F || Dubai is the ____ city. || most modern || modernest / more modern",
+                  "F || ____ is Colombia hotter than Canada? || Why || Which / Who",
+                  "T || Mi ciudad es más grande que la tuya. || My city is bigger than yours.",
+                  "T || Cartagena es el lugar más hermoso. || Cartagena is the most beautiful place.",
+                  "T || ¿Por qué es Nueva York más ocupada? || Why is New York busier?",
+                  "T || Colombia es más caliente que Canadá. || Colombia is hotter than Canada.",
+                  "T || Brasil es el país más grande de Sudamérica. || Brazil is the biggest country in South America.",
+                  "H || 🏙️ || Guess the hidden word! || City",
+                  "E || 🏙️🚕🚕 🏡🌳 || Which place is busier? || The city is busier than the countryside.",
+                  "E || 🏖️☀️ 🏔️❄️ || Which place is hotter? || The beach is hotter than the mountains.",
+                  "E || 🏰 🏢 || Which building is more modern? || The tall building is more modern than the castle."
+                ],
+                "mistakes": [
+                  "M || New York is [more busy] than my city. || busier* / more busy / busiest || New York is busier than my city.",
+                  "M || Colombia is [hoter] than Canada. || hotter* / hoter / more hot || Colombia is hotter than Canada."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Countries and places — Comparatives & Superlatives; Yes/No questions (Long answers); past progressive review — Vocabulary: big, modern, beautiful, hot, busy, interesting",
+                "lines": [
+                  "Q || Is Medellín hotter than Bogotá? || Yes, Medellín is hotter than Bogotá.",
+                  "Q || Is your city the most beautiful city in your country? || Yes, it is the most beautiful city. / No, it isn't. Cartagena is more beautiful.",
+                  "Q || Is the beach more interesting than the city for you? || Yes, the beach is more interesting than the city. / No, the city is more interesting.",
+                  "Q || Is Tokyo more modern than your city? || Yes, Tokyo is more modern than my city.",
+                  "Q || Is Brazil bigger than Colombia? || Yes, Brazil is bigger than Colombia.",
+                  "Q || Is your school the busiest place in your neighborhood? || Yes, it is the busiest place. / No, the mall is busier.",
+                  "Q || What was your family doing on your last trip at 3:00 PM? (Use your imagination!) || They were walking around the city.",
+                  "Q || Is the countryside quieter than the city? || Yes, the countryside is quieter than the city.",
+                  "Q || What were you doing yesterday at 5:00 PM? || I was doing my homework.",
+                  "Q || Compare your bedroom and the living room. Use \"bigger\" or \"smaller\". || The living room is bigger than my bedroom.",
+                  "F || ____ Brazil bigger than Colombia? || Is || Are / Does",
+                  "F || Yes, Tokyo is more modern ____ my city. || than || that / then",
+                  "F || They ____ walking around the city at 3:00 PM. || were || was / are",
+                  "T || ¿Es Medellín más caliente que Bogotá? || Is Medellín hotter than Bogotá?",
+                  "T || Sí, Brasil es más grande que Colombia. || Yes, Brazil is bigger than Colombia.",
+                  "T || No, mi ciudad no es la más moderna. || No, my city isn't the most modern.",
+                  "T || El campo es más tranquilo que la ciudad. || The countryside is quieter than the city.",
+                  "T || Ellos estaban caminando por la ciudad. || They were walking around the city.",
+                  "H || 🏖️ || Guess the hidden place! || Beach",
+                  "E || 🗼🏙️ 🏘️ || Is the big city more modern than the town? || Yes, the big city is more modern than the town."
+                ],
+                "mistakes": [
+                  "M || [Does] Brazil bigger than Colombia? || Is* / Does / Are || Is Brazil bigger than Colombia?",
+                  "M || They [was] walking around the city. || were* / was / are || They were walking around the city."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 4,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "House — Comparatives & Superlatives; Positive sentences — Vocabulary: big, small, cozy, comfortable",
+                "lines": [
+                  "Q || Describe your house. Which is the biggest room? || The living room is the biggest room in my house.",
+                  "Q || Which is the smallest room in your house? || The bathroom is the smallest room in my house.",
+                  "Q || Which room is cozier, your bedroom or the living room? || My bedroom is cozier than the living room.",
+                  "Q || Which is the most comfortable place in your house? || The sofa is the most comfortable place in my house. / My bed is the most comfortable place.",
+                  "Q || Is your house bigger or smaller than your grandma's house? || My house is smaller than my grandma's house.",
+                  "Q || Which bed is more comfortable, yours or your parents' bed? || My parents' bed is more comfortable than mine.",
+                  "Q || Compare your bedroom and your brother's or sister's bedroom. Use \"bigger\" or \"smaller\". || My bedroom is bigger than my sister's bedroom.",
+                  "Q || Which is the coziest place in your house when it rains? || The living room is the coziest place when it rains.",
+                  "F || My bedroom is ____ than the living room. || cozier || cozyer / more cozy",
+                  "F || The sofa is the ____ place. || most comfortable || comfortablest / more comfortable",
+                  "F || The bathroom is the ____ room. || smallest || smaller / most small",
+                  "T || La sala es el cuarto más grande de mi casa. || The living room is the biggest room in my house.",
+                  "T || El baño es el más pequeño. || The bathroom is the smallest.",
+                  "T || Mi cuarto es más acogedor que la sala. || My bedroom is cozier than the living room.",
+                  "T || Mi cama es el lugar más cómodo. || My bed is the most comfortable place.",
+                  "T || Mi casa es más pequeña que la de mi abuela. || My house is smaller than my grandma's house.",
+                  "H || 🛋️ || Guess the hidden adjective! || Comfortable",
+                  "H || 🏠 || Guess the hidden word! || House",
+                  "E || 🏠 🏡🏡 || Which house is bigger? || The second house is bigger than the first house.",
+                  "E || 🛏️ 🪑 🛋️ || Which is the most comfortable? (Use your imagination!) || The bed is the most comfortable."
+                ],
+                "mistakes": [
+                  "M || My bedroom is [cozyer] than the living room. || cozier* / cozyer / more cozy || My bedroom is cozier than the living room.",
+                  "M || The sofa is the [comfortablest] place. || most comfortable* / comfortablest / more comfortable || The sofa is the most comfortable place."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "House — Comparatives & Superlatives; Wh-questions (Which...?) — Vocabulary: big, small, cozy, comfortable, peaceful, spacious",
+                "lines": [
+                  "Q || Which room in your house is the most peaceful? || My bedroom is the most peaceful room.",
+                  "Q || Which is more spacious, your kitchen or your living room? || My living room is more spacious than my kitchen.",
+                  "Q || Which is the most spacious room in your grandma's house? (Use your imagination!) || The living room is the most spacious room in her house.",
+                  "Q || Which place is more peaceful, your house or your school? || My house is more peaceful than my school.",
+                  "Q || Which is cozier, a house or an apartment? Why? || A house is cozier because it has a garden.",
+                  "Q || Which is the smallest thing in your bedroom? || My lamp is the smallest thing in my bedroom.",
+                  "Q || Which is more comfortable, your chair or your bed? || My bed is more comfortable than my chair.",
+                  "Q || Which room is the biggest in your best friend's house? (Use your imagination!) || The living room is the biggest room in his house.",
+                  "F || My bedroom is the ____ room. || most peaceful || peacefulest / more peaceful",
+                  "F || The living room is ____ than the kitchen. || more spacious || spaciouser / most spacious",
+                  "F || ____ room is the coziest? || Which || Who / Why",
+                  "T || Mi cuarto es el más tranquilo. || My bedroom is the most peaceful.",
+                  "T || La sala es más espaciosa que la cocina. || The living room is more spacious than the kitchen.",
+                  "T || ¿Cuál cuarto es el más acogedor? || Which room is the coziest?",
+                  "T || Mi casa es más tranquila que mi escuela. || My house is more peaceful than my school.",
+                  "T || Una casa es más acogedora que un apartamento. || A house is cozier than an apartment.",
+                  "H || 🛏️ || Guess the hidden object! || Bed",
+                  "E || 🏡🌳 🏫🔔 || Which place is more peaceful? || The house is more peaceful than the school.",
+                  "E || 🍳🚪 🛋️📺🪴 || Which room is more spacious? || The living room is more spacious than the kitchen.",
+                  "E || 🏠 🏢 || Which is cozier? (Use your imagination!) || The house is cozier than the building."
+                ],
+                "mistakes": [
+                  "M || My bedroom is the [peacefulest] room. || most peaceful* / peacefulest / more peaceful || My bedroom is the most peaceful room.",
+                  "M || The living room is [spaciouser] than the kitchen. || more spacious* / spaciouser / most spacious || The living room is more spacious than the kitchen."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Toy Lab — Comparatives & Superlatives; rule -y → -ier / -iest; Find the mistakes — Vocabulary: bright, brave, sticky, loud, weird",
+                "lines": [
+                  "Q || Which toy is the loudest in your house? || My robot is the loudest toy in my house. / My drum is the loudest toy.",
+                  "Q || Which is weirder, a toy with three eyes or a toy with two heads? (Use your imagination!) || A toy with two heads is weirder.",
+                  "Q || Which is the brightest toy you have? || My light-up ball is the brightest toy I have.",
+                  "Q || Which is stickier, slime or play dough? || Slime is stickier than play dough.",
+                  "Q || Who is braver, a teddy bear or a toy soldier? (Use your imagination!) || A toy soldier is braver than a teddy bear.",
+                  "Q || Say the comparative of \"sticky\". || Stickier.",
+                  "Q || Say the superlative of \"weird\". || The weirdest.",
+                  "Q || Find the mistake and correct it: \"Slime is the stickyest toy.\" || Slime is the stickiest toy.",
+                  "F || Slime is ____ than play dough. || stickier || stickyer / more sticky",
+                  "F || My robot is the ____ toy. || loudest || louder / most loud",
+                  "F || This is the ____ toy in the lab. || weirdest || weirder / most weird",
+                  "T || El slime es más pegajoso que la plastilina. || Slime is stickier than play dough.",
+                  "T || Mi robot es el juguete más ruidoso. || My robot is the loudest toy.",
+                  "T || Este es el juguete más raro. || This is the weirdest toy.",
+                  "T || El soldado es más valiente que el oso. || The soldier is braver than the bear.",
+                  "T || Esta es la pelota más brillante. || This is the brightest ball.",
+                  "H || 🧸 || Guess the hidden toy! || Teddy bear",
+                  "E || 🤖🔊 🧸 || Which toy is louder? || The robot is louder than the teddy bear.",
+                  "E || 🟢🫠 🧱 || Which is stickier, the slime or the block? || The slime is stickier than the block.",
+                  "E || 💡⚪ ⚫ || Which ball is brighter? || The light ball is brighter than the black ball."
+                ],
+                "mistakes": [
+                  "M || Slime is the [stickyest] toy. || stickiest* / stickyest / most sticky || Slime is the stickiest toy.",
+                  "M || My robot is [louder] toy in the house. || the loudest* / louder / most loud || My robot is the loudest toy in the house."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Monthly Evaluation — Cumulative review of previously introduced structures (comparatives, superlatives, simple past, past progressive, going to, simple present) — Vocabulary Review",
+                "lines": [
+                  "Q || Who is the tallest person in your family? || My dad is the tallest person in my family.",
+                  "Q || Which animal is more dangerous, a lion or a rabbit? || A lion is more dangerous than a rabbit.",
+                  "Q || What are you going to do on your next birthday? || I am going to have a party with my friends.",
+                  "Q || What did you do last weekend? || I visited my cousins and played soccer.",
+                  "Q || What were you doing before class today? || I was eating a snack. / I was doing my homework.",
+                  "Q || Which is the most comfortable room in your house? || My bedroom is the most comfortable room.",
+                  "Q || How often does your dad cook? || He sometimes cooks.",
+                  "Q || Which subject is the most difficult for you? || Math is the most difficult subject for me.",
+                  "Q || What is your best friend doing right now? (Use your imagination!) || He is playing video games.",
+                  "Q || Spell the word \"beautiful\". || B-E-A-U-T-I-F-U-L.",
+                  "F || My dad is the ____ person in my family. || tallest || taller / most tall",
+                  "F || A laptop is ____ than a radio. || more expensive || expensiver / expensivest",
+                  "F || She ____ cooking when I arrived. || was || were / is",
+                  "T || Mi papá es el más alto. || My dad is the tallest.",
+                  "T || Un león es más peligroso que un conejo. || A lion is more dangerous than a rabbit.",
+                  "T || Voy a tener una fiesta. || I am going to have a party.",
+                  "T || Mi cuarto es el más cómodo. || My bedroom is the most comfortable.",
+                  "S || blue star:1, red star:1, yellow star:1 || Which star is the most beautiful? Give your opinion. || I think the blue star is the most beautiful.",
+                  "H || 🦁 || Guess the hidden animal! || Lion",
+                  "E || 🐘 🐭 || Which animal is bigger? || The elephant is bigger than the mouse."
+                ],
+                "mistakes": [
+                  "M || My dad is the [taller] person in my family. || tallest* / taller / most tall || My dad is the tallest person in my family.",
+                  "M || A lion is [dangerouser] than a rabbit. || more dangerous* / dangerouser / most dangerous || A lion is more dangerous than a rabbit."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Monthly Evaluation — Comparatives & Superlatives review; reading comprehension; cumulative review — Vocabulary Review",
+                "lines": [
+                  "Q || Read and answer: \"Tom is 10. Ana is 12. Leo is 8.\" Who is the oldest? || Ana is the oldest.",
+                  "Q || Read and answer: \"Tom is 10. Ana is 12. Leo is 8.\" Who is younger, Tom or Leo? || Leo is younger than Tom.",
+                  "Q || Read and answer: \"The red car costs $10. The blue car costs $20.\" Which car is cheaper? || The red car is cheaper than the blue car.",
+                  "Q || Read and answer: \"A cheetah runs 100 km/h. A horse runs 70 km/h. A turtle runs 1 km/h.\" Which is the slowest? || The turtle is the slowest.",
+                  "Q || Read and answer: \"Medellín is 25°C. Bogotá is 14°C.\" Which city is hotter? || Medellín is hotter than Bogotá.",
+                  "Q || Which is the most delicious food in the world for you? || Pizza is the most delicious food in the world for me.",
+                  "Q || Who is the strongest superhero for you? Why? || Hulk is the strongest superhero because he is very big.",
+                  "Q || Compare your house and your school. Use \"bigger\". || My school is bigger than my house.",
+                  "Q || Which is the most interesting place in your city? || The park is the most interesting place in my city.",
+                  "Q || Which device is more useful for you, a phone or a computer? Why? || A phone is more useful because I can call my family.",
+                  "F || Ana is the ____ of the three kids. || oldest || older / most old",
+                  "F || The red car is ____ than the blue car. || cheaper || cheapest / more cheap",
+                  "F || Medellín is ____ than Bogotá. || hotter || hoter / most hot",
+                  "T || Ana es la mayor. || Ana is the oldest.",
+                  "T || El carro rojo es más barato que el azul. || The red car is cheaper than the blue one.",
+                  "T || La tortuga es la más lenta. || The turtle is the slowest.",
+                  "T || Mi escuela es más grande que mi casa. || My school is bigger than my house.",
+                  "T || ¿Cuál es el lugar más interesante de tu ciudad? || Which is the most interesting place in your city?",
+                  "H || 🚗 || Guess the hidden word! || Car",
+                  "E || 🚗💲1️⃣0️⃣ 🚙💲2️⃣0️⃣ || Which car is more expensive? || The second car is more expensive than the first car."
+                ],
+                "mistakes": [
+                  "M || Ana is the [older] of the three kids. || oldest* / older / most old || Ana is the oldest of the three kids.",
+                  "M || The red car is cheaper [then] the blue car. || than* / then / that || The red car is cheaper than the blue car."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 5,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Life experiences — Present perfect (1st person); Positive sentences; Yes/No questions (Short answers) — Vocabulary: eat, drink, see, go, sleep",
+                "lines": [
+                  "Q || Have you ever eaten sushi? || Yes, I have. / No, I haven't.",
+                  "Q || Have you ever seen a whale? || Yes, I have. / No, I haven't.",
+                  "Q || Have you ever gone to another country? || Yes, I have. / No, I haven't.",
+                  "Q || Have you ever slept in a tent? || Yes, I have. / No, I haven't.",
+                  "Q || Have you ever drunk coconut water? || Yes, I have. / No, I haven't.",
+                  "Q || Tell me one thing you have eaten this week. || I have eaten pizza this week.",
+                  "Q || Tell me one animal you have seen in real life. || I have seen a monkey in real life.",
+                  "Q || Tell me one place you have gone to with your family. || I have gone to the beach with my family.",
+                  "F || I ____ eaten sushi. || have || has / had",
+                  "F || ____ you ever seen a whale? || Have || Has / Did",
+                  "F || I have ____ to another country. || gone || go / went",
+                  "T || He comido sushi. || I have eaten sushi.",
+                  "T || ¿Alguna vez has visto una ballena? || Have you ever seen a whale?",
+                  "T || Nunca he dormido en una carpa. || I have never slept in a tent.",
+                  "T || He ido a la playa con mi familia. || I have gone to the beach with my family.",
+                  "T || Sí, he tomado agua de coco. || Yes, I have drunk coconut water.",
+                  "H || 🍣 || Guess the hidden food! || Sushi",
+                  "H || ⛺ || Guess the hidden word! || Tent",
+                  "E || 🧒✅🐋 || Have you ever seen a whale? (Imagine the answer is yes.) || Yes, I have.",
+                  "E || 🧒❌🍣 || Have you ever eaten sushi? (Imagine the answer is no.) || No, I haven't."
+                ],
+                "mistakes": [
+                  "M || I have [eat] sushi. || eaten* / eat / ate || I have eaten sushi.",
+                  "M || [Has] you ever seen a whale? || Have* / Has / Did || Have you ever seen a whale?"
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Life experiences — Present perfect (1st person); Wh-questions (What...?) — Vocabulary: eat, drink, see, go, sleep",
+                "lines": [
+                  "Q || What is the strangest food you have ever eaten? || The strangest food I have ever eaten is ants. / I have eaten snails.",
+                  "Q || What is the biggest animal you have ever seen? || The biggest animal I have ever seen is an elephant.",
+                  "Q || What is the most delicious drink you have ever drunk? || The most delicious drink I have ever drunk is mango juice.",
+                  "Q || What is the most beautiful place you have ever gone to? || The most beautiful place I have ever gone to is Santa Marta.",
+                  "Q || What is the weirdest place you have ever slept in? || The weirdest place I have ever slept in is a car.",
+                  "Q || What have you eaten today? || I have eaten eggs and bread today.",
+                  "Q || What have you seen on TV this week? || I have seen a cartoon and a soccer game this week.",
+                  "Q || What have you drunk today? || I have drunk juice and water today.",
+                  "F || What ____ you eaten today? || have || has / did",
+                  "F || I have ____ an elephant. || seen || see / saw",
+                  "F || I have ____ juice today. || drunk || drink / drank",
+                  "T || ¿Qué has comido hoy? || What have you eaten today?",
+                  "T || El animal más grande que he visto es un elefante. || The biggest animal I have seen is an elephant.",
+                  "T || He tomado jugo hoy. || I have drunk juice today.",
+                  "T || ¿Cuál es el lugar más hermoso al que has ido? || What is the most beautiful place you have gone to?",
+                  "T || He dormido en un carro. || I have slept in a car.",
+                  "H || 🐘 || Guess the hidden animal! || Elephant",
+                  "E || 🧒🍳🍞 ☀️ || What have you eaten today? || I have eaten eggs and bread today.",
+                  "E || 🧒🧃💧 || What have you drunk today? || I have drunk juice and water today.",
+                  "E || 🧒👀📺⚽ || What have you seen on TV this week? || I have seen a soccer game this week."
+                ],
+                "mistakes": [
+                  "M || What [has] you eaten today? || have* / has / did || What have you eaten today?",
+                  "M || I have [see] an elephant. || seen* / see / saw || I have seen an elephant."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Life experiences — Present perfect (1st person); Yes/No questions (Long answers); trips — Vocabulary: be (city/country), visit, try new food, buy souvenirs, take pictures",
+                "lines": [
+                  "Q || Have you ever been to another city or country? || Yes, I have been to Cartagena. / No, I have never been to another country.",
+                  "Q || Have you ever visited a museum? || Yes, I have visited a museum. / No, I have never visited a museum.",
+                  "Q || Have you ever tried food from another country? || Yes, I have tried Mexican food. / No, I have never tried food from another country.",
+                  "Q || Have you ever bought souvenirs on a trip? || Yes, I have bought souvenirs. / No, I have never bought souvenirs.",
+                  "Q || Have you ever taken pictures of a famous place? || Yes, I have taken pictures of a famous place. / No, I haven't taken pictures of a famous place.",
+                  "Q || Have you ever been to the beach? || Yes, I have been to the beach many times. / No, I have never been to the beach.",
+                  "Q || Have you ever visited your grandparents in another city? || Yes, I have visited them in another city. / No, I haven't.",
+                  "Q || Have you ever tried sushi? || Yes, I have tried sushi. / No, I have never tried sushi.",
+                  "F || I have ____ to Cartagena. || been || be / was",
+                  "F || I have never ____ a museum. || visited || visit / visiting",
+                  "F || Have you ever ____ souvenirs? || bought || buy / buyed",
+                  "T || He estado en Cartagena. || I have been to Cartagena.",
+                  "T || ¿Has visitado un museo? || Have you visited a museum?",
+                  "T || He probado comida mexicana. || I have tried Mexican food.",
+                  "T || Nunca he comprado recuerdos. || I have never bought souvenirs.",
+                  "T || He tomado fotos de un lugar famoso. || I have taken pictures of a famous place.",
+                  "H || 🧳🎁 || Guess the action! || Buy souvenirs",
+                  "E || 🧒✅🏛️ || Have you ever visited a museum? (Imagine the answer is yes.) || Yes, I have visited a museum.",
+                  "E || 🧒❌🌮 || Have you ever tried Mexican food? (Imagine the answer is no.) || No, I have never tried Mexican food.",
+                  "E || 🧒📸🗼 || Have you ever taken pictures of a famous place? (Imagine the answer is yes.) || Yes, I have taken pictures of a famous place."
+                ],
+                "mistakes": [
+                  "M || I have [be] to Cartagena. || been* / be / was || I have been to Cartagena.",
+                  "M || I have never [buy] souvenirs. || bought* / buy / buyed || I have never bought souvenirs."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Life experiences — Present perfect (1st person); Wh-questions (Where/Who...?); trips — Vocabulary: be (city/country), visit, try new food, buy souvenirs, take pictures",
+                "lines": [
+                  "Q || Where have you been on vacation? || I have been to the beach. / I have been to my grandma's town.",
+                  "Q || Who have you traveled with? || I have traveled with my parents. / I have traveled with my cousins.",
+                  "Q || Where have you tried new food? || I have tried new food at a restaurant. / I have tried new food in another city.",
+                  "Q || Who have you bought souvenirs for? || I have bought souvenirs for my mom. / I have bought souvenirs for my best friend.",
+                  "Q || Where have you taken your best pictures? || I have taken my best pictures at the beach.",
+                  "Q || Who have you visited in another city? || I have visited my aunt in another city.",
+                  "Q || Where have you slept on a trip? || I have slept in a hotel. / I have slept at my uncle's house.",
+                  "Q || Who has traveled the most in your family? || My dad has traveled the most in my family.",
+                  "F || Where ____ you been? || have || has / did",
+                  "F || I have traveled ____ my parents. || with || whit / to",
+                  "F || Who have you ____ souvenirs for? || bought || buy / buying",
+                  "T || ¿Dónde has estado? || Where have you been?",
+                  "T || He viajado con mis padres. || I have traveled with my parents.",
+                  "T || ¿Para quién has comprado recuerdos? || Who have you bought souvenirs for?",
+                  "T || He tomado mis mejores fotos en la playa. || I have taken my best pictures at the beach.",
+                  "T || He visitado a mi tía en otra ciudad. || I have visited my aunt in another city.",
+                  "H || 🏨 || Guess the hidden place! || Hotel",
+                  "E || 🧒✈️👨👩 || Who have you traveled with? || I have traveled with my parents.",
+                  "E || 🧒🏖️📸 || Where have you taken pictures? || I have taken pictures at the beach.",
+                  "E || 🧒🎁👩 || Who have you bought souvenirs for? || I have bought souvenirs for my mom."
+                ],
+                "mistakes": [
+                  "M || Where [has] you been? || have* / has / did || Where have you been?",
+                  "M || I have [travel] with my parents. || traveled* / travel / traveling || I have traveled with my parents."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Present perfect (1st person); daily routine review — Vocabulary: eat, drink, see, go, sleep, be, visit, try new food, buy souvenirs, take pictures",
+                "lines": [
+                  "Q || Have you ever been to another country? || Yes, I have been to Mexico. / No, I have never been to another country.",
+                  "Q || What is the best food you have ever eaten? || The best food I have ever eaten is my grandma's soup.",
+                  "Q || Have you ever seen a famous person? || Yes, I have. / No, I haven't.",
+                  "Q || Where have you taken pictures with your family? || I have taken pictures with my family at the park.",
+                  "Q || Who have you visited this month? || I have visited my grandparents this month.",
+                  "Q || Have you ever slept in a hotel? || Yes, I have slept in a hotel. / No, I have never slept in a hotel.",
+                  "Q || What have you drunk this morning? || I have drunk milk and juice.",
+                  "Q || What is your best friend's daily routine? || He wakes up at 6:00 AM, goes to school and plays soccer in the afternoon.",
+                  "Q || Have you ever tried a very spicy food? || Yes, I have tried very spicy tacos. / No, I haven't.",
+                  "Q || Tell me three things you have done this year. || I have visited the beach, I have eaten sushi and I have seen a concert.",
+                  "F || I have ____ a famous person. || seen || see / saw",
+                  "F || Have you ever ____ in a hotel? || slept || sleep / sleeped",
+                  "F || I have never ____ to Mexico. || been || be / was",
+                  "T || He visto a una persona famosa. || I have seen a famous person.",
+                  "T || ¿Alguna vez has dormido en un hotel? || Have you ever slept in a hotel?",
+                  "T || Nunca he estado en México. || I have never been to Mexico.",
+                  "T || He visitado a mis abuelos este mes. || I have visited my grandparents this month.",
+                  "T || Él se despierta a las seis y va a la escuela. || He wakes up at six and goes to school.",
+                  "H || 🌮🌶️ || Guess the hidden food! || Spicy tacos",
+                  "E || 🧒✅🏨🛏️ || Have you ever slept in a hotel? (Imagine the answer is yes.) || Yes, I have slept in a hotel."
+                ],
+                "mistakes": [
+                  "M || I have [saw] a famous person. || seen* / saw / see || I have seen a famous person.",
+                  "M || Have you ever [sleeped] in a hotel? || slept* / sleeped / sleep || Have you ever slept in a hotel?"
+                ]
+              }
+            ]
+          },
+          {
+            "week": 6,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Life experiences — Present perfect (3rd person); Positive sentences; Yes/No questions (Long answers) — Vocabulary: ride, dance, read, wash",
+                "lines": [
+                  "Q || Has your mom ever ridden a horse? || Yes, she has ridden a horse. / No, she has never ridden a horse.",
+                  "Q || Has your dad ever danced at a wedding? || Yes, he has danced at a wedding. / No, he has never danced at a wedding.",
+                  "Q || Has your best friend ever read a book in English? || Yes, she has read a book in English. / No, he has never read a book in English.",
+                  "Q || Has your brother or sister ever washed the car? || Yes, he has washed the car. / No, she has never washed the car.",
+                  "Q || Has your grandpa ever ridden a motorcycle? || Yes, he has ridden a motorcycle. / No, he hasn't.",
+                  "Q || Has Shakira ever danced in Colombia? || Yes, she has danced in Colombia many times.",
+                  "Q || Tell me one thing your mom has done this week. || She has washed the clothes this week.",
+                  "Q || Tell me one thing your best friend has read this year. || He has read a comic book this year.",
+                  "F || She ____ ridden a horse. || has || have / had",
+                  "F || ____ he ever danced at a wedding? || Has || Have / Did",
+                  "F || My sister has ____ the car. || washed || wash / washing",
+                  "T || Ella ha montado a caballo. || She has ridden a horse.",
+                  "T || ¿Ha bailado tu papá en una boda? || Has your dad danced at a wedding?",
+                  "T || Mi hermano nunca ha lavado el carro. || My brother has never washed the car.",
+                  "T || Él ha leído un libro en inglés. || He has read a book in English.",
+                  "T || Sí, ella ha bailado en Colombia. || Yes, she has danced in Colombia.",
+                  "H || 🐎 || Guess the action! || Ride a horse",
+                  "H || 🚗🧽 || Guess the action! || Wash the car",
+                  "E || 👩✅🐎 || Has she ever ridden a horse? || Yes, she has ridden a horse.",
+                  "E || 👨❌💃 || Has he ever danced at a party? || No, he has never danced at a party."
+                ],
+                "mistakes": [
+                  "M || She [have] ridden a horse. || has* / have / had || She has ridden a horse.",
+                  "M || He has [rode] a motorcycle. || ridden* / rode / ride || He has ridden a motorcycle."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Life experiences — Present perfect (3rd person); Wh-questions (What/Where/Who... with?) — Vocabulary: ride, dance, read, wash",
+                "lines": [
+                  "Q || What has your mom read this month? || She has read a cooking book. / She has read the news.",
+                  "Q || Where has your dad ridden a bike? || He has ridden a bike in the park. / He has ridden a bike in the mountains.",
+                  "Q || Who has your sister danced with at parties? || She has danced with her friends. / She has danced with my dad.",
+                  "Q || What has your brother washed this week? || He has washed the dishes. / He has washed his bike.",
+                  "Q || Where has your best friend ridden a horse? (Use your imagination!) || He has ridden a horse on a farm.",
+                  "Q || Who has your grandma read stories to? || She has read stories to me and my cousins.",
+                  "Q || What has Messi ridden in a parade? (Use your imagination!) || He has ridden a bus in a parade.",
+                  "Q || Where has your teacher danced? (Use your imagination!) || She has danced at school parties.",
+                  "F || What ____ she read this month? || has || have / did",
+                  "F || He has ridden a bike ____ the park. || in || on / to",
+                  "F || Who has she danced ____? || with || whit / to",
+                  "T || ¿Qué ha leído tu mamá este mes? || What has your mom read this month?",
+                  "T || Él ha montado bicicleta en el parque. || He has ridden a bike in the park.",
+                  "T || ¿Con quién ha bailado tu hermana? || Who has your sister danced with?",
+                  "T || Mi hermano ha lavado los platos. || My brother has washed the dishes.",
+                  "T || Mi abuela me ha leído cuentos. || My grandma has read stories to me.",
+                  "H || 📚👓 || Guess the action! || Read",
+                  "E || 👩📖🍳 || What has she read this month? || She has read a cooking book.",
+                  "E || 👨🚴🌳 || Where has he ridden a bike? || He has ridden a bike in the park.",
+                  "E || 👧💃👧👧 || Who has she danced with? || She has danced with her friends."
+                ],
+                "mistakes": [
+                  "M || What [have] she read this month? || has* / have / did || What has she read this month?",
+                  "M || He has [rided] a bike in the park. || ridden* / rided / rode || He has ridden a bike in the park."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Life experiences — Present perfect (3rd person); Wh-questions (What...?); pets — Vocabulary: play, eat, sleep, wear",
+                "lines": [
+                  "Q || What has your dog eaten today? (Use your imagination if you don't have a dog!) || It has eaten dog food and a cookie.",
+                  "Q || What has your cat played with this week? (Use your imagination!) || It has played with a ball of yarn.",
+                  "Q || What has your pet worn? (Use your imagination!) || It has worn a sweater. / It has worn a Halloween costume.",
+                  "Q || Where has your dog slept this week? (Use your imagination!) || It has slept on my bed. / It has slept on the sofa.",
+                  "Q || What has your best friend's pet eaten that it shouldn't eat? (Use your imagination!) || It has eaten a shoe. / It has eaten chocolate.",
+                  "Q || What has your little brother worn to school this week? || He has worn his uniform.",
+                  "Q || What has your mom played with you this week? || She has played cards with me.",
+                  "Q || What has your grandpa eaten for breakfast this week? || He has eaten eggs and arepas.",
+                  "F || My dog ____ eaten a cookie. || has || have / had",
+                  "F || It has ____ on my bed. || slept || sleep / sleeped",
+                  "F || What ____ your cat played with? || has || have / did",
+                  "T || Mi perro ha comido una galleta. || My dog has eaten a cookie.",
+                  "T || Mi gato ha jugado con una pelota. || My cat has played with a ball.",
+                  "T || Él ha usado un suéter. || It has worn a sweater.",
+                  "T || ¿Qué ha comido tu perro hoy? || What has your dog eaten today?",
+                  "T || Mi perro ha dormido en mi cama. || My dog has slept on my bed.",
+                  "H || 🐕🧥 || Guess the action! || Wear a sweater",
+                  "E || 🐕🍪 || What has the dog eaten? || It has eaten a cookie.",
+                  "E || 🐈🧶 || What has the cat played with? || It has played with a ball of yarn.",
+                  "E || 🐕😴🛏️ || Where has the dog slept? || It has slept on the bed."
+                ],
+                "mistakes": [
+                  "M || My dog has [eat] a cookie. || eaten* / eat / ate || My dog has eaten a cookie.",
+                  "M || The cat [have] played with a ball. || has* / have / had || The cat has played with a ball."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Life experiences — Present perfect (3rd person); Wh-questions (Who...?); colors review — Vocabulary: play, eat, sleep, wear",
+                "lines": [
+                  "Q || Who has slept the most in your house this week? || My cat has slept the most. / My dad has slept the most.",
+                  "Q || Who has eaten the most candy in your family this month? || My little brother has eaten the most candy.",
+                  "Q || Who has played with your pet today? (Use your imagination!) || My sister has played with it today.",
+                  "Q || Who has worn a red T-shirt this week in your family? || My mom has worn a red T-shirt this week.",
+                  "Q || Who has played soccer with you this week? || My cousins have played soccer with me this week.",
+                  "Q || Who has worn the funniest costume in your family? (Use your imagination!) || My uncle has worn the funniest costume.",
+                  "Q || Who has eaten breakfast with you today? || My brother has eaten breakfast with me today.",
+                  "Q || Who has slept in your room this week? || Nobody has slept in my room. / My cousin has slept in my room.",
+                  "F || Who ____ eaten the most candy? || has || have / did",
+                  "F || My mom has ____ a red T-shirt. || worn || wear / weared",
+                  "F || Who has ____ with the dog today? || played || play / playing",
+                  "T || ¿Quién ha dormido más esta semana? || Who has slept the most this week?",
+                  "T || Mi hermanito ha comido más dulces. || My little brother has eaten the most candy.",
+                  "T || ¿Quién ha jugado con tu perro hoy? || Who has played with your dog today?",
+                  "T || Mi mamá ha usado una camiseta roja. || My mom has worn a red T-shirt.",
+                  "T || Mis primos han jugado fútbol conmigo. || My cousins have played soccer with me.",
+                  "H || 👕🟥 || Guess the hidden color! || Red",
+                  "E || 👩👕🟥 👨👕🟦 || Who has worn a red T-shirt? || The woman has worn a red T-shirt. / She has worn a red T-shirt.",
+                  "E || 👦🍬🍬🍬 👧🍬 || Who has eaten the most candy? || The boy has eaten the most candy.",
+                  "E || 👧🐕⚽ || Who has played with the dog? || The girl has played with the dog. / She has played with the dog."
+                ],
+                "mistakes": [
+                  "M || Who [have] eaten the most candy? || has* / have / did || Who has eaten the most candy?",
+                  "M || My mom has [weared] a red T-shirt. || worn* / weared / wore || My mom has worn a red T-shirt."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Present perfect (3rd person); present progressive review — Vocabulary: ride, dance, read, wash, play, eat, sleep, wear",
+                "lines": [
+                  "Q || Has your mom ever ridden a motorcycle? || Yes, she has. / No, she has never ridden a motorcycle.",
+                  "Q || What has your dad eaten today? || He has eaten rice and chicken.",
+                  "Q || Who has danced at a party in your family this year? || My aunt has danced at a party this year.",
+                  "Q || Where has your best friend ridden a bike? || She has ridden a bike at the park.",
+                  "Q || What has your dog or cat played with this week? (Use your imagination!) || It has played with a toy mouse.",
+                  "Q || Has your teacher ever read a book in Spanish? || Yes, she has. / No, he hasn't.",
+                  "Q || What is your best friend doing at school right now? (Use your imagination!) || He is taking notes. / She is reading.",
+                  "Q || Who has washed the dishes in your house this week? || My dad has washed the dishes this week.",
+                  "Q || What has your sister worn to a party? || She has worn a blue dress.",
+                  "Q || Tell me three things your mom has done this week. || She has cooked, she has worked and she has read a book.",
+                  "F || ____ she ever ridden a motorcycle? || Has || Have / Did",
+                  "F || He has ____ rice today. || eaten || eat / ate",
+                  "F || My aunt has ____ at a party. || danced || dance / dancing",
+                  "T || ¿Ha montado tu mamá en moto? || Has your mom ridden a motorcycle?",
+                  "T || Él ha comido arroz y pollo. || He has eaten rice and chicken.",
+                  "T || Mi tía ha bailado en una fiesta. || My aunt has danced at a party.",
+                  "T || Ella está leyendo ahora mismo. || She is reading right now.",
+                  "T || Mi papá ha lavado los platos. || My dad has washed the dishes.",
+                  "H || 🍽️🧽 || Guess the action! || Wash the dishes",
+                  "E || 👩✅🏍️ || Has she ever ridden a motorcycle? || Yes, she has ridden a motorcycle."
+                ],
+                "mistakes": [
+                  "M || [Have] she ever ridden a motorcycle? || Has* / Have / Did || Has she ever ridden a motorcycle?",
+                  "M || He has [ate] rice today. || eaten* / ate / eat || He has eaten rice today."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 7,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Life experiences — Present perfect & Simple past (1st person); Positive sentences; Yes/No questions (Long answers); best vacation — Vocabulary: travel, visit, stay, see, take pictures",
+                "lines": [
+                  "Q || Have you ever traveled by plane? When? || Yes, I have traveled by plane. I traveled last year. / No, I have never traveled by plane.",
+                  "Q || Have you ever stayed in a hotel? When did you stay there? || Yes, I have stayed in a hotel. I stayed there in December. / No, I have never stayed in a hotel.",
+                  "Q || Have you ever visited a zoo? What did you see? || Yes, I have visited a zoo. I saw lions and monkeys.",
+                  "Q || Have you ever taken pictures of the sea? Where did you take them? || Yes, I have taken pictures of the sea. I took them in Santa Marta.",
+                  "Q || Have you ever seen snow? Where did you see it? || No, I have never seen snow. / Yes, I have seen snow. I saw it in Canada.",
+                  "Q || What is the best vacation you have ever had? What did you do? || The best vacation I have ever had was in Cartagena. I swam every day.",
+                  "Q || Complete: I have ____ (travel) to many places. Last year I ____ (travel) to Medellín. || I have traveled to many places. Last year I traveled to Medellín.",
+                  "Q || Complete: I have ____ (see) the sea. I ____ (see) it in 2023. || I have seen the sea. I saw it in 2023.",
+                  "F || I ____ traveled by plane. || have || has / did",
+                  "F || Last year I ____ in a hotel. || stayed || have stayed / stay",
+                  "F || I have ____ snow. || seen || saw / see",
+                  "T || He viajado en avión. || I have traveled by plane.",
+                  "T || El año pasado viajé a Medellín. || Last year I traveled to Medellín.",
+                  "T || He visitado un zoológico. || I have visited a zoo.",
+                  "T || Vi leones y monos. || I saw lions and monkeys.",
+                  "T || Las mejores vacaciones que he tenido fueron en Cartagena. || The best vacation I have had was in Cartagena.",
+                  "H || ✈️ || Guess the action! || Travel by plane",
+                  "H || ❄️⛄ || Guess the hidden word! || Snow",
+                  "E || 🧒✈️ 📅2023 || When did you travel by plane? (Use your imagination!) || I traveled by plane in 2023.",
+                  "E || 🧒🏨✅ || Have you ever stayed in a hotel? || Yes, I have stayed in a hotel."
+                ],
+                "mistakes": [
+                  "M || I have traveled by plane. I [have traveled] last year. || traveled* / have traveled / travel || I have traveled by plane. I traveled last year.",
+                  "M || Last year I [have stayed] in a hotel. || stayed* / have stayed / stay || Last year I stayed in a hotel."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Life experiences — Present perfect & Simple past (1st person); Wh-questions (What...?); best vacation — Vocabulary: travel, visit, stay, see, take pictures",
+                "lines": [
+                  "Q || What is the most interesting place you have visited? When did you go? || The most interesting place I have visited is the Botanical Garden. I went last year.",
+                  "Q || What animals have you seen on your trips? Which one did you like the most? || I have seen monkeys and parrots. I liked the parrots the most.",
+                  "Q || What pictures have you taken on vacation? Who took them with you? || I have taken pictures of the beach. My mom took them with me.",
+                  "Q || What places have you stayed in on vacation? Which one did you like the most? || I have stayed in hotels and at my uncle's house. I liked the hotel the most.",
+                  "Q || What did you do on your best vacation? || I swam in the sea and ate ice cream every day.",
+                  "Q || What have you done this year that you didn't do last year? || This year I have traveled to the beach. Last year I stayed at home.",
+                  "Q || What did your best friend do last weekend? || He visited his grandma.",
+                  "Q || What is the best food you have eaten on a trip? Where did you eat it? || The best food I have eaten on a trip is seafood. I ate it in Cartagena.",
+                  "F || What is the most interesting place you ____ visited? || have || has / did",
+                  "F || I ____ to the beach last year. || went || have gone / go",
+                  "F || What ____ you do on your best vacation? || did || have / do",
+                  "T || ¿Cuál es el lugar más interesante que has visitado? || What is the most interesting place you have visited?",
+                  "T || Fui el año pasado. || I went last year.",
+                  "T || He visto monos y loros. || I have seen monkeys and parrots.",
+                  "T || Nadé en el mar todos los días. || I swam in the sea every day.",
+                  "T || Este año he viajado a la playa. || This year I have traveled to the beach.",
+                  "H || 🦜 || Guess the hidden animal! || Parrot",
+                  "E || 🧒🐒🦜 ❤️🦜 || What animals have you seen? Which one did you like the most? || I have seen monkeys and parrots. I liked the parrot the most.",
+                  "E || 🧒🏖️📸👩 || Who took pictures with you? || My mom took pictures with me.",
+                  "E || 🧒🦐🍽️ 🏖️ || Where did you eat the seafood? || I ate the seafood at the beach."
+                ],
+                "mistakes": [
+                  "M || I [have went] to the beach last year. || went* / have went / have go || I went to the beach last year.",
+                  "M || What is the most interesting place you [has] visited? || have* / has / did || What is the most interesting place you have visited?"
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Life experiences — Present perfect & Simple past (1st person); Yes/No questions (Long answers); something new this year — Vocabulary: learn, bake, read, study, play",
+                "lines": [
+                  "Q || Have you learned something new this year? What was it? || Yes, I have learned to swim. I learned it in January.",
+                  "Q || Have you ever baked a cake? When did you bake it? || Yes, I have baked a cake. I baked it for my mom's birthday. / No, I have never baked a cake.",
+                  "Q || Have you read a new book this year? Which one? || Yes, I have read a new book. I read a book about dinosaurs.",
+                  "Q || Have you studied a new subject this year? || Yes, I have studied science this year. / No, I haven't studied a new subject.",
+                  "Q || Have you played a new sport this year? When did you start? || Yes, I have played basketball this year. I started in March.",
+                  "Q || Have you learned a new song in English? Which one? || Yes, I have learned a new song. I learned it last week.",
+                  "Q || Have you ever baked cookies with your grandma? || Yes, I have baked cookies with my grandma. / No, I have never baked cookies with her.",
+                  "Q || Have you played a new video game this year? Did you like it? || Yes, I have played a new video game. I liked it a lot.",
+                  "F || I have ____ to swim this year. || learned || learn / learning",
+                  "F || I ____ a cake last month. || baked || have baked / bake",
+                  "F || Have you ____ a new book this year? || read || reading / reads",
+                  "T || He aprendido a nadar este año. || I have learned to swim this year.",
+                  "T || Horneé un pastel el mes pasado. || I baked a cake last month.",
+                  "T || He leído un libro nuevo. || I have read a new book.",
+                  "T || Empecé en marzo. || I started in March.",
+                  "T || Nunca he horneado galletas. || I have never baked cookies.",
+                  "H || 🎂👩‍🍳 || Guess the action! || Bake a cake",
+                  "E || 🧒🏊✅ 📅 || Have you learned to swim this year? When? (Use your imagination!) || Yes, I have learned to swim this year. I learned in January.",
+                  "E || 🧒🍪👵 || Have you ever baked cookies with your grandma? || Yes, I have baked cookies with my grandma.",
+                  "E || 🧒🏀 📅3️⃣ || When did you start playing basketball? || I started in March."
+                ],
+                "mistakes": [
+                  "M || I [baked] a cake many times this year. || have baked* / baked / bake || I have baked a cake many times this year.",
+                  "M || Have you [readed] a new book? || read* / readed / reading || Have you read a new book?"
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Life experiences — Present perfect & Simple past (1st person); Yes/No questions (Long answers); Wh-questions (Why...?) — Vocabulary Review: learn, bake, read, study, play",
+                "lines": [
+                  "Q || Have you ever learned to ride a bike? Why was it difficult or easy? || Yes, I have learned to ride a bike. It was difficult because I fell many times.",
+                  "Q || Why have you studied English this year? || Because I want to travel and talk to people. / Because my parents want me to learn.",
+                  "Q || Have you ever played an instrument? Why did you choose it? || Yes, I have played the guitar. I chose it because my dad plays it. / No, I have never played an instrument.",
+                  "Q || Why did you read your favorite book? || Because my teacher recommended it. / Because I love adventure stories.",
+                  "Q || Have you ever baked something that was a disaster? Why? || Yes, I have baked a disaster cake. It burned because I forgot it in the oven.",
+                  "Q || Why have you played a lot of video games this year? (Or not!) || Because I got a new console. / I haven't played a lot because I had many classes.",
+                  "Q || Have you learned a new word in English today? Why is it useful? || Yes, I have learned the word \"bake\". It is useful for talking about cooking.",
+                  "Q || Why did you study hard for your last test? || Because I wanted a good grade.",
+                  "F || Why ____ you studied English this year? || have || has / did",
+                  "F || I have ____ the guitar. || played || play / plays",
+                  "F || It was difficult because I ____ many times. || fell || have fallen / fall",
+                  "T || ¿Por qué has estudiado inglés este año? || Why have you studied English this year?",
+                  "T || Porque quiero viajar. || Because I want to travel.",
+                  "T || He tocado la guitarra. || I have played the guitar.",
+                  "T || El pastel se quemó. || The cake burned.",
+                  "T || ¿Por qué leíste tu libro favorito? || Why did you read your favorite book?",
+                  "H || 🎸🎹 || Guess the hidden word! || Instrument",
+                  "E || 🧒🚲😣 || Why was it difficult to learn to ride a bike? (Use your imagination!) || Because I fell many times.",
+                  "E || 🧒📚🇬🇧 ✈️ || Why have you studied English? || Because I want to travel.",
+                  "E || 🎂🔥 || Why was the cake a disaster? || Because it burned."
+                ],
+                "mistakes": [
+                  "M || Why [has] you studied English this year? || have* / has / did || Why have you studied English this year?",
+                  "M || It was difficult because I [have fallen] many times. || fell* / have fallen / fall || It was difficult because I fell many times."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Life experiences — Present perfect (1st person); Wh-questions (What/Why/Who... with?); means of transportation review — Vocabulary Review: learn, bake, read, study, play",
+                "lines": [
+                  "Q || What have you learned in English class this month? || I have learned the present perfect. / I have learned new verbs.",
+                  "Q || Who have you played with this week? || I have played with my cousins this week.",
+                  "Q || Why have you read so many books this year? (Or so few!) || Because I love reading. / I haven't read many books because I prefer movies.",
+                  "Q || What have you baked with your family? || I have baked cookies with my mom.",
+                  "Q || Who have you studied with for your tests? || I have studied with my best friend.",
+                  "Q || What means of transportation have you used this week? || I have used the bus and the car this week.",
+                  "Q || Why have you learned English? || Because I want to talk to people from other countries.",
+                  "Q || Who have you traveled by plane with? || I have traveled by plane with my parents. / I have never traveled by plane.",
+                  "F || What ____ you learned this month? || have || has / did",
+                  "F || I have ____ with my cousins. || played || play / playing",
+                  "F || I have used ____ bus this week. || the || a / an",
+                  "T || ¿Qué has aprendido este mes? || What have you learned this month?",
+                  "T || He jugado con mis primos esta semana. || I have played with my cousins this week.",
+                  "T || ¿Con quién has estudiado? || Who have you studied with?",
+                  "T || He usado el bus y el carro. || I have used the bus and the car.",
+                  "T || He horneado galletas con mi mamá. || I have baked cookies with my mom.",
+                  "H || 🚌 || Guess the hidden means of transportation! || Bus",
+                  "E || 🧒🚌🚗 || What means of transportation have you used this week? || I have used the bus and the car.",
+                  "E || 🧒📚👦 || Who have you studied with? || I have studied with my friend.",
+                  "E || 🧒🍪👩 || What have you baked and who with? || I have baked cookies with my mom."
+                ],
+                "mistakes": [
+                  "M || What [has] you learned this month? || have* / has / did || What have you learned this month?",
+                  "M || I have [play] with my cousins this week. || played* / play / playing || I have played with my cousins this week."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 8,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Life experiences at school — Present perfect & Simple past (1st person); Yes/No questions (Long answers) — Vocabulary: present a project, build a project, solve math problems, speak in class, make new friends",
+                "lines": [
+                  "Q || Have you presented a project this year? What was it about? || Yes, I have presented a project. It was about animals. / No, I haven't presented a project this year.",
+                  "Q || Have you built a project with your classmates? What did you build? || Yes, I have built a project. We built a volcano.",
+                  "Q || Have you solved difficult math problems this year? || Yes, I have solved difficult math problems. / No, I haven't.",
+                  "Q || Have you spoken in class in English? When did you do it? || Yes, I have spoken in English in class. I did it last week.",
+                  "Q || Have you made new friends this year? Who? || Yes, I have made new friends. I made friends with a new student.",
+                  "Q || Have you ever presented a project in English? || Yes, I have presented a project in English. / No, I have never presented a project in English.",
+                  "Q || Have you built something with your hands this year? || Yes, I have built a bird house. / No, I haven't built anything.",
+                  "Q || Have you spoken in front of the whole school? How did you feel? || Yes, I have. I felt nervous. / No, I have never spoken in front of the whole school.",
+                  "F || I have ____ a project this year. || presented || present / presenting",
+                  "F || We ____ a volcano last month. || built || have built / build",
+                  "F || Have you ____ new friends this year? || made || make / maked",
+                  "T || He presentado un proyecto este año. || I have presented a project this year.",
+                  "T || Construimos un volcán el mes pasado. || We built a volcano last month.",
+                  "T || He hablado en inglés en clase. || I have spoken in English in class.",
+                  "T || He hecho nuevos amigos. || I have made new friends.",
+                  "T || Nunca he hablado frente a toda la escuela. || I have never spoken in front of the whole school.",
+                  "H || 🌋🧪 || Guess the action! || Build a project",
+                  "H || ➗➕ || Guess the action! || Solve math problems",
+                  "E || 🧒🗣️🇬🇧🏫 || Have you spoken in English in class? || Yes, I have spoken in English in class.",
+                  "E || 🧒🤝🧒 ✅ || Have you made new friends this year? || Yes, I have made new friends this year."
+                ],
+                "mistakes": [
+                  "M || I have [speak] in class in English. || spoken* / speak / spoke || I have spoken in class in English.",
+                  "M || Have you [maked] new friends? || made* / maked / make || Have you made new friends?"
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Life experiences at the beach — Present perfect & Simple past (1st & 3rd person); Wh-questions (What/Where...?); giving directions review — Vocabulary: swim, sunbathe, collect seashells, surf, build a sandcastle",
+                "lines": [
+                  "Q || Have you ever been to the beach? What did you do there? || Yes, I have been to the beach. I swam and built a sandcastle. / No, I have never been to the beach.",
+                  "Q || Where has your family sunbathed? || They have sunbathed in Santa Marta. / They have never sunbathed.",
+                  "Q || What has your best friend collected at the beach? (Use your imagination!) || He has collected seashells.",
+                  "Q || Has your dad ever surfed? Where did he surf? || Yes, he has surfed. He surfed in Cartagena. / No, he has never surfed.",
+                  "Q || What is the biggest sandcastle you have ever built? || The biggest sandcastle I have ever built was as big as my dog.",
+                  "Q || Where has your mom swum? || She has swum in the sea and in a pool.",
+                  "Q || What has your cousin done at the beach that you have never done? (Use your imagination!) || She has surfed. I have never surfed.",
+                  "Q || How do I get to the beach from the hotel? (Use your imagination!) || Go straight and turn right.",
+                  "F || I ____ to the beach last December. || went || have gone / go",
+                  "F || She has ____ in the sea. || swum || swam / swim",
+                  "F || He has ____ seashells. || collected || collect / collecting",
+                  "T || He estado en la playa. || I have been to the beach.",
+                  "T || Nadé y construí un castillo de arena. || I swam and built a sandcastle.",
+                  "T || Mi papá ha surfeado en Cartagena. || My dad has surfed in Cartagena.",
+                  "T || Ella ha recogido conchas. || She has collected seashells.",
+                  "T || Ve derecho y gira a la derecha. || Go straight and turn right.",
+                  "H || 🐚 || Guess the hidden word! || Seashell",
+                  "E || 👧🐚🐚🐚 || What has she collected at the beach? || She has collected seashells.",
+                  "E || 👨🏄 🏖️ || Has he ever surfed? || Yes, he has surfed.",
+                  "E || 👩☀️😎🏖️ || What has she done at the beach? || She has sunbathed."
+                ],
+                "mistakes": [
+                  "M || I have [went] to the beach many times. || gone* / went / go || I have gone to the beach many times.",
+                  "M || She has [swam] in the sea. || swum* / swam / swim || She has swum in the sea."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Routine — Simple present (1st & 3rd person); Wh-questions (Where/When/Who... with?); there is / there are review — Vocabulary: play, do homework, draw, exercise, take a nap, watch TV",
+                "lines": [
+                  "Q || What do you like to do every day after school? || I like to play and watch TV. / I like to draw.",
+                  "Q || Where do you do your homework after school? || I do my homework in my room.",
+                  "Q || When does your best friend exercise? || He exercises after school. / She exercises on weekends.",
+                  "Q || Who do you watch TV with after school? || I watch TV with my brother.",
+                  "Q || When does your mom take a nap? || She takes a nap on Sundays. / She never takes a nap.",
+                  "Q || Where does your dad exercise? || He exercises at the gym.",
+                  "Q || Who does your sister draw with? || She draws with her friends.",
+                  "Q || How many rooms are there in your house? || There are five rooms in my house.",
+                  "F || I ____ my homework in my room. || do || does / doing",
+                  "F || ____ does she exercise? After school. || When || Where / Who",
+                  "F || There ____ five rooms in my house. || are || is / have",
+                  "T || Me gusta jugar después de la escuela. || I like to play after school.",
+                  "T || Hago mi tarea en mi cuarto. || I do my homework in my room.",
+                  "T || ¿Cuándo hace ejercicio tu amigo? || When does your friend exercise?",
+                  "T || Mi mamá toma una siesta los domingos. || My mom takes a nap on Sundays.",
+                  "T || Hay cinco cuartos en mi casa. || There are five rooms in my house.",
+                  "H || 🏋️‍♀️ || Guess the action! || Exercise",
+                  "E || 🧒📺👦 || Who do you watch TV with? || I watch TV with my brother.",
+                  "E || 👨🏋️🏢 || Where does he exercise? || He exercises at the gym.",
+                  "E || 🧒📝🛏️ || Where do you do your homework? || I do my homework in my room."
+                ],
+                "mistakes": [
+                  "M || She [exercise] after school. || exercises* / exercise / exercising || She exercises after school.",
+                  "M || There [is] five rooms in my house. || are* / is / have || There are five rooms in my house."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Monthly Evaluation — Cumulative review of previously introduced structures (comparatives, superlatives, present perfect, simple past, simple present, past progressive) — Vocabulary Review",
+                "lines": [
+                  "Q || Have you ever traveled by plane? || Yes, I have. / No, I haven't.",
+                  "Q || Who is the oldest person in your family? || My grandpa is the oldest person in my family.",
+                  "Q || What is the most delicious food you have ever eaten? || The most delicious food I have ever eaten is pizza.",
+                  "Q || What did you do last Saturday afternoon? || I visited my grandma and played soccer.",
+                  "Q || Which animal is more dangerous, a crocodile or a turtle? || A crocodile is more dangerous than a turtle.",
+                  "Q || What has your mom done this week? || She has worked and cooked.",
+                  "Q || What were you doing yesterday at 6:00 PM? || I was playing video games.",
+                  "Q || Where do you do your homework? || I do my homework in the kitchen.",
+                  "Q || What vegetables do you like and dislike? || I like carrots and I dislike broccoli.",
+                  "Q || Has your best friend ever ridden a horse? || Yes, he has. / No, she hasn't.",
+                  "F || I have ____ to the beach three times. || been || be / was",
+                  "F || My grandpa is the ____ person in my family. || oldest || older / most old",
+                  "F || A shark is ____ than a dolphin. || more dangerous || dangerouser / most dangerous",
+                  "T || Nunca he viajado en barco. || I have never traveled by boat.",
+                  "T || Mi abuelo es el mayor de la familia. || My grandpa is the oldest in the family.",
+                  "T || Ella ha trabajado esta semana. || She has worked this week.",
+                  "T || Me gustan las zanahorias. || I like carrots.",
+                  "S || green triangle:3, yellow square:1 || How many triangles are there? || There are three triangles.",
+                  "H || 🥦 || Guess the hidden vegetable! || Broccoli",
+                  "E || 🥕 🥦 ❤️🥕 || Which vegetable do you like? || I like carrots."
+                ],
+                "mistakes": [
+                  "M || I have [be] to the beach three times. || been* / be / was || I have been to the beach three times.",
+                  "M || My dad is the [most tall] person in my family. || tallest* / most tall / taller || My dad is the tallest person in my family."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Monthly Evaluation — Present perfect & Simple past review; cumulative review — Vocabulary Review",
+                "lines": [
+                  "Q || Have you ever eaten food from another country? What was it? || Yes, I have eaten Mexican food. It was tacos.",
+                  "Q || When did you last visit your grandparents? || I visited them last Sunday.",
+                  "Q || What is the best movie you have ever seen? || The best movie I have ever seen is Toy Story.",
+                  "Q || Have you studied for a test this week? When? || Yes, I have studied for a test. I studied yesterday.",
+                  "Q || What has your dad cooked this week? || He has cooked pasta this week.",
+                  "Q || Where did you go on your last trip? || I went to Cartagena.",
+                  "Q || Have you made a new friend this year? Who? || Yes, I have made a new friend. His name is Juan.",
+                  "Q || What did your family do last Christmas? || We ate dinner together and opened presents.",
+                  "Q || Has your mom ever been to another country? Which one? || Yes, she has been to Peru. / No, she has never been to another country.",
+                  "Q || Tell me two things you have done this year and one thing you did yesterday. || I have learned to swim, I have traveled to the beach and yesterday I played soccer.",
+                  "F || I ____ my grandparents last Sunday. || visited || have visited / visit",
+                  "F || Have you ____ for the test? || studied || study / studyed",
+                  "F || The best movie I have ever ____ is Toy Story. || seen || saw / see",
+                  "T || He comido comida mexicana. || I have eaten Mexican food.",
+                  "T || Visité a mis abuelos el domingo pasado. || I visited my grandparents last Sunday.",
+                  "T || ¿Cuál es la mejor película que has visto? || What is the best movie you have seen?",
+                  "T || Mi papá ha cocinado pasta esta semana. || My dad has cooked pasta this week.",
+                  "T || Fui a Cartagena en mi último viaje. || I went to Cartagena on my last trip.",
+                  "H || 🎬🍿 || Guess the hidden word! || Movie",
+                  "E || 🧒✅🌮 || Have you ever eaten Mexican food? || Yes, I have eaten Mexican food."
+                ],
+                "mistakes": [
+                  "M || I [have visited] my grandparents last Sunday. || visited* / have visited / visit || I visited my grandparents last Sunday.",
+                  "M || The best movie I have ever [saw] is Toy Story. || seen* / saw / see || The best movie I have ever seen is Toy Story."
+                ]
+              }
+            ]
+          }
+        ],
+        "vocab": [
+          {
+            "week": 1,
+            "category": "Comparatives: people, sea animals and dinosaurs",
+            "words": [
+              "Tall",
+              "Short",
+              "Young",
+              "Old",
+              "Thin",
+              "Chubby",
+              "Intelligent",
+              "Dangerous",
+              "Powerful",
+              "Playful",
+              "Colorful",
+              "Aggressive",
+              "Dolphin",
+              "Shark",
+              "Octopus",
+              "Seal",
+              "Starfish",
+              "Whale"
+            ]
+          },
+          {
+            "week": 2,
+            "category": "Superlatives: superheroes, animals, games and subjects",
+            "words": [
+              "Strong",
+              "Fast",
+              "Smart",
+              "Slow",
+              "Long",
+              "Big",
+              "Intelligent",
+              "Dangerous",
+              "Beautiful",
+              "Curious",
+              "Useful",
+              "Difficult",
+              "Exciting"
+            ]
+          },
+          {
+            "week": 3,
+            "category": "Comparatives & superlatives: food, heroes, devices and places",
+            "words": [
+              "Spicy",
+              "Sweet",
+              "Salty",
+              "Healthy",
+              "Delicious",
+              "Strong",
+              "Fast",
+              "Smart",
+              "Dangerous",
+              "Powerful",
+              "Useful",
+              "Cheap",
+              "Expensive",
+              "Cool",
+              "Interactive",
+              "Big",
+              "Modern",
+              "Beautiful",
+              "Hot",
+              "Busy",
+              "Interesting"
+            ]
+          },
+          {
+            "week": 4,
+            "category": "Comparatives & superlatives: house and toys",
+            "words": [
+              "Big",
+              "Small",
+              "Cozy",
+              "Comfortable",
+              "Peaceful",
+              "Spacious",
+              "Bright",
+              "Brave",
+              "Sticky",
+              "Loud",
+              "Weird"
+            ]
+          },
+          {
+            "week": 5,
+            "category": "Life experiences (Present perfect, 1st person)",
+            "words": [
+              "Eat",
+              "Drink",
+              "See",
+              "Go",
+              "Sleep",
+              "Be",
+              "Visit",
+              "Try new food",
+              "Buy souvenirs",
+              "Take pictures"
+            ]
+          },
+          {
+            "week": 6,
+            "category": "Life experiences (Present perfect, 3rd person)",
+            "words": [
+              "Ride",
+              "Dance",
+              "Read",
+              "Wash",
+              "Play",
+              "Eat",
+              "Sleep",
+              "Wear"
+            ]
+          },
+          {
+            "week": 7,
+            "category": "Life experiences (Present perfect & Simple past)",
+            "words": [
+              "Travel",
+              "Visit",
+              "Stay",
+              "See",
+              "Take pictures",
+              "Learn",
+              "Bake",
+              "Read",
+              "Study",
+              "Play"
+            ]
+          },
+          {
+            "week": 8,
+            "category": "Experiences at school and at the beach",
+            "words": [
+              "Present a project",
+              "Build a project",
+              "Solve math problems",
+              "Speak in class",
+              "Make new friends",
+              "Swim",
+              "Sunbathe",
+              "Collect seashells",
+              "Surf",
+              "Build a sandcastle",
+              "Play",
+              "Do homework",
+              "Draw",
+              "Exercise",
+              "Take a nap",
+              "Watch TV"
+            ]
+          }
+        ]
       }
     ]
   }

@@ -1,5 +1,7 @@
 # Roadmap
 
+- [x] Import uploaded Level 8 Weeks 1–8 exactly: 40 days, 800 general cards, 80 mistakes and 8 vocabulary groups; exact upload comparison and unchanged existing lessons verified. All 765 curriculum/Blitz tests pass; Level 8 selected through Quick Setup and Demo Drill answer reveal verified without page errors.
+
 - [ ] AF-SUPER-FINALE-CONTEXT-FIXES_2.txt: six app fixes (APP-01 results scrolling; APP-02 card instructions; APP-03 distinct no-repeat decks; APP-04 scope/difficulty + remove flag-ID cards; APP-05 hidden pictures 3×2 six-tile mosaic with category prompts; APP-06 Bridge Builder Sandbox relabel), CONTENT-EXCEPTION-01 (L2W5 vet question), then 750 exact content replacements. L2W4 and rest of L2W5 protected; preserve 16 lines + 2 mistakes per day.
 - [ ] Hot Chair flames: one continuous fire layer rising from below, no flames before halfway, chair fully covered at time-up; verify at 0:40/0:30/0:15/0:00.
 
