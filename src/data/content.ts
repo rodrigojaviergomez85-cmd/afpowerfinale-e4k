@@ -11166,6 +11166,1493 @@ export const COURSES: CourseDef[] = [
             ]
           }
         ]
+      },
+      {
+        "level": 9,
+        "weeks": [
+          {
+            "week": 1,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "General truths — Zero conditional; Positive sentences — Vocabulary: touch fire, get hurt, feel cold, get sick",
+                "lines": [
+                  "Q || What happens if you touch fire? || If you touch fire, you get hurt.",
+                  "Q || What happens if you don't wear a jacket in the snow? || If you don't wear a jacket in the snow, you feel cold.",
+                  "Q || What happens if you eat too much candy? || If you eat too much candy, you get sick.",
+                  "Q || What happens if you fall off your bike? || If you fall off your bike, you get hurt.",
+                  "Q || What happens if you go outside with wet hair when it is cold? || If you go outside with wet hair, you feel cold. / If you go outside with wet hair, you get sick.",
+                  "Q || Complete: If you touch a hot pan, you ____. || If you touch a hot pan, you get hurt.",
+                  "Q || Make a sentence with IF: not sleep / get sick. || If you don't sleep, you get sick.",
+                  "Q || Make a sentence with IF: open the window in winter / feel cold. || If you open the window in winter, you feel cold.",
+                  "F || If you touch fire, you ____ hurt. || get || gets / got",
+                  "F || If you don't wear a jacket, you ____ cold. || feel || feels / feeling",
+                  "F || ____ you eat too much candy, you get sick. || If || When / Because",
+                  "T || Si tocas el fuego, te lastimas. || If you touch fire, you get hurt.",
+                  "T || Si no usas chaqueta, sientes frío. || If you don't wear a jacket, you feel cold.",
+                  "T || Si comes muchos dulces, te enfermas. || If you eat too much candy, you get sick.",
+                  "T || Si te caes de la bicicleta, te lastimas. || If you fall off your bike, you get hurt.",
+                  "T || Si no duermes, te enfermas. || If you don't sleep, you get sick.",
+                  "H || 🔥🖐️ || Guess the action! || Touch fire",
+                  "H || 🥶 || Guess the hidden phrase! || Feel cold",
+                  "E || 🧒🍬🍬🍬 🤢 || What happens if you eat too much candy? || If you eat too much candy, you get sick.",
+                  "E || 🧒❄️👕 🥶 || What happens if you don't wear a jacket in the snow? || If you don't wear a jacket in the snow, you feel cold."
+                ],
+                "mistakes": [
+                  "M || If you touch fire, you [gets] hurt. || get* / gets / got || If you touch fire, you get hurt.",
+                  "M || If you don't sleep, you [will get] sick. (general truth) || get* / will get / got || If you don't sleep, you get sick."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "General truths — Zero conditional; Yes/No questions (Long answers) — Vocabulary: mix (colors), water (plants), die, grow",
+                "lines": [
+                  "Q || If you mix blue and yellow, do you get green? || Yes, if you mix blue and yellow, you get green.",
+                  "Q || If you don't water the plants, do they die? || Yes, if you don't water the plants, they die.",
+                  "Q || If you water a plant every day, does it grow? || Yes, if you water a plant every day, it grows.",
+                  "Q || If you mix red and white, do you get purple? || No, if you mix red and white, you get pink.",
+                  "Q || If a fish stays out of the water, does it die? || Yes, if a fish stays out of the water, it dies.",
+                  "Q || If you eat vegetables, do you grow strong? || Yes, if you eat vegetables, you grow strong.",
+                  "Q || If you mix red and blue, do you get orange? || No, if you mix red and blue, you get purple.",
+                  "Q || If you put ice in the sun, does it melt? || Yes, if you put ice in the sun, it melts.",
+                  "F || If you mix blue and yellow, you ____ green. || get || gets / getting",
+                  "F || If you don't water the plants, they ____. || die || dies / died",
+                  "F || If you water a plant, it ____. || grows || grow / growing",
+                  "T || Si mezclas azul y amarillo, obtienes verde. || If you mix blue and yellow, you get green.",
+                  "T || Si no riegas las plantas, se mueren. || If you don't water the plants, they die.",
+                  "T || Si riegas una planta, crece. || If you water a plant, it grows.",
+                  "T || ¿Si mezclas rojo y blanco, obtienes rosado? || If you mix red and white, do you get pink?",
+                  "T || Sí, si pones hielo al sol, se derrite. || Yes, if you put ice in the sun, it melts.",
+                  "H || 🪴💧 || Guess the action! || Water the plants",
+                  "E || 🔵➕🟡 || What color do you get if you mix blue and yellow? || If you mix blue and yellow, you get green.",
+                  "E || 🪴❌💧 🥀 || What happens if you don't water the plant? || If you don't water the plant, it dies.",
+                  "E || 🌱💧☀️ 🌳 || What happens if you water the plant every day? || If you water the plant every day, it grows."
+                ],
+                "mistakes": [
+                  "M || If you mix blue and yellow, you [gets] green. || get* / gets / getting || If you mix blue and yellow, you get green.",
+                  "M || If you don't water the plants, they [dies]. || die* / dies / died || If you don't water the plants, they die."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Imagine your day tomorrow — First conditional; Positive sentences — Vocabulary: stay at home, scream, pass a test, be late",
+                "lines": [
+                  "Q || What will you do tomorrow if it rains? || If it rains tomorrow, I will stay at home.",
+                  "Q || What will happen if you study tonight? || If I study tonight, I will pass the test.",
+                  "Q || What will you do if you see a spider in your room? (Use your imagination!) || If I see a spider, I will scream. / If I see a spider, I will call my dad.",
+                  "Q || What will happen if you wake up at 8:00 AM tomorrow? || If I wake up at 8:00 AM, I will be late for school.",
+                  "Q || What will your mom do if you pass the test? || If I pass the test, my mom will buy me ice cream.",
+                  "Q || What will you do if your best friend doesn't come to school tomorrow? || If my best friend doesn't come, I will play with my other friends.",
+                  "Q || Complete: If I miss the bus tomorrow, I ____ (be) late. || If I miss the bus tomorrow, I will be late.",
+                  "Q || Make a sentence with IF: it is sunny tomorrow / go to the park. || If it is sunny tomorrow, I will go to the park.",
+                  "F || If it rains, I ____ stay at home. || will || would / am",
+                  "F || If I study, I will ____ the test. || pass || passed / passing",
+                  "F || If I wake up late, I ____ be late. || will || would / did",
+                  "T || Si llueve mañana, me quedaré en casa. || If it rains tomorrow, I will stay at home.",
+                  "T || Si estudio, pasaré el examen. || If I study, I will pass the test.",
+                  "T || Si veo una araña, gritaré. || If I see a spider, I will scream.",
+                  "T || Si me despierto tarde, llegaré tarde. || If I wake up late, I will be late.",
+                  "T || Si hace sol, iré al parque. || If it is sunny, I will go to the park.",
+                  "H || 😱 || Guess the action! || Scream",
+                  "H || 📝✅ || Guess the hidden phrase! || Pass a test",
+                  "E || 🌧️ 🧒🏠 || What will you do if it rains tomorrow? || If it rains tomorrow, I will stay at home.",
+                  "E || 🧒📚🌙 ✅📝 || What will happen if you study tonight? || If I study tonight, I will pass the test."
+                ],
+                "mistakes": [
+                  "M || If it rains, I [stay] at home tomorrow. || will stay* / stay / stayed || If it rains, I will stay at home tomorrow.",
+                  "M || If I [will study], I will pass the test. || study* / will study / studied || If I study, I will pass the test."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Imagine your day tomorrow — First conditional; Find the mistakes — Vocabulary: stay at home, scream, pass a test, be late, improve",
+                "lines": [
+                  "Q || What will happen if you practice English every day? || If I practice English every day, I will improve.",
+                  "Q || Find the mistake and correct it: \"If it rains, I stay at home tomorrow.\" || If it rains, I will stay at home tomorrow.",
+                  "Q || Find the mistake and correct it: \"If I will study, I will pass the test.\" || If I study, I will pass the test.",
+                  "Q || Find the mistake and correct it: \"If I see a spider, I screams.\" || If I see a spider, I will scream.",
+                  "Q || What will your teacher say if you are late tomorrow? (Use your imagination!) || If I am late, my teacher will ask me why.",
+                  "Q || What will you do if you improve your grades this month? || If I improve my grades, I will celebrate with my family.",
+                  "Q || Find the mistake and correct it: \"If I don't sleep, I will being tired.\" || If I don't sleep, I will be tired.",
+                  "Q || Make a sentence with IF: practice soccer / improve. || If I practice soccer, I will improve.",
+                  "F || If I practice, I will ____. || improve || improved / improving",
+                  "F || If I ____ late, my teacher will be angry. || am || will be / was",
+                  "F || If I don't sleep, I ____ be tired. || will || would / am",
+                  "T || Si practico inglés, mejoraré. || If I practice English, I will improve.",
+                  "T || Si llego tarde, mi profesora preguntará por qué. || If I am late, my teacher will ask why.",
+                  "T || Si mejoro mis notas, celebraré. || If I improve my grades, I will celebrate.",
+                  "T || Si no duermo, estaré cansado. || If I don't sleep, I will be tired.",
+                  "T || Si practico fútbol, mejoraré. || If I practice soccer, I will improve.",
+                  "H || 📈 || Guess the action! || Improve",
+                  "E || 🧒🗣️🇬🇧 📅 📈 || What will happen if you practice English every day? || If I practice English every day, I will improve.",
+                  "E || 🧒🏃🏫 🕗 || What will happen if you arrive at 8:00 AM? (Use your imagination!) || If I arrive at 8:00 AM, I will be late.",
+                  "E || 🧒😴❌ 🥱 || What will happen if you don't sleep tonight? || If I don't sleep tonight, I will be tired."
+                ],
+                "mistakes": [
+                  "M || If I practice, I [improves]. || will improve* / improves / improved || If I practice, I will improve.",
+                  "M || If I [will be] late, my teacher will be angry. || am* / will be / was || If I am late, my teacher will be angry."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Zero and First conditional; basic tenses review — Vocabulary: touch fire, get hurt, feel cold, get sick, mix, water, die, grow, stay at home, scream, pass a test, be late, improve",
+                "lines": [
+                  "Q || What happens if you touch a hot iron? || If you touch a hot iron, you get hurt.",
+                  "Q || What will you do tomorrow if it is sunny? || If it is sunny tomorrow, I will go to the park.",
+                  "Q || If you mix red and yellow, what color do you get? || If you mix red and yellow, you get orange.",
+                  "Q || What will happen if you don't study for the test? || If I don't study, I will not pass the test.",
+                  "Q || What happens if a plant doesn't get water? || If a plant doesn't get water, it dies.",
+                  "Q || What will you do if you are late for school tomorrow? || If I am late, I will run to the classroom.",
+                  "Q || What happens if you eat ice cream in the snow? (Use your imagination!) || If you eat ice cream in the snow, you feel very cold.",
+                  "Q || What will your dad do if you improve your grades? || If I improve my grades, my dad will take me to the movies.",
+                  "Q || What did you do yesterday after school? || I did my homework and watched TV.",
+                  "Q || Make two sentences: one zero conditional and one first conditional. || If you don't sleep, you feel tired. If I sleep well tonight, I will feel great tomorrow.",
+                  "F || If you touch a cactus, you ____ hurt. (always true) || get || will get / got",
+                  "F || If it is sunny tomorrow, I ____ go to the park. || will || would / am",
+                  "F || If a plant doesn't get water, it ____. || dies || die / will dies",
+                  "T || Si tocas el fuego, te quemas. || If you touch fire, you get burned.",
+                  "T || Si hace sol mañana, iré al parque. || If it is sunny tomorrow, I will go to the park.",
+                  "T || Si mezclas rojo y amarillo, obtienes naranja. || If you mix red and yellow, you get orange.",
+                  "T || Si no estudio, no pasaré el examen. || If I don't study, I will not pass the test.",
+                  "T || Si llego tarde, correré al salón. || If I am late, I will run to the classroom.",
+                  "H || 🧒🏃🏫⏰ || Guess the hidden phrase! || Be late",
+                  "E || 🔴➕🟡 || What color do you get if you mix red and yellow? || If you mix red and yellow, you get orange."
+                ],
+                "mistakes": [
+                  "M || If it is sunny tomorrow, I [go] to the park. || will go* / go / went || If it is sunny tomorrow, I will go to the park.",
+                  "M || If a plant doesn't get water, it [will dies]. || dies* / will dies / die || If a plant doesn't get water, it dies."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 2,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Superpowers — Second conditional; Positive sentences; Yes/No questions (Short answers) — Vocabulary: lift heavy things, save people, shoot lasers, control fire, fly",
+                "lines": [
+                  "Q || What would you do if you were a superhero? || If I were a superhero, I would save people. / If I were a superhero, I would fly around the city.",
+                  "Q || If you could fly, would you go to school flying? || Yes, I would. / No, I wouldn't.",
+                  "Q || If you could lift heavy things, would you help your mom with the groceries? || Yes, I would. / No, I wouldn't.",
+                  "Q || What would you do if you could control fire? || If I could control fire, I would cook very fast. / I would help the firefighters.",
+                  "Q || If you could shoot lasers, would you use them at school? || No, I wouldn't. / Yes, I would.",
+                  "Q || What would your best friend do if he or she could fly? || If he could fly, he would fly to the beach every day.",
+                  "Q || Complete: If I ____ (be) a superhero, I would save people. || If I were a superhero, I would save people.",
+                  "Q || Make a sentence with IF: could fly / visit my grandma every day. || If I could fly, I would visit my grandma every day.",
+                  "F || If I were a superhero, I ____ save people. || would || will / would be",
+                  "F || If I ____ fly, I would go to the beach. || could || can / will",
+                  "F || ____ you fly to school if you could? || Would || Will / Do",
+                  "T || Si fuera un superhéroe, salvaría personas. || If I were a superhero, I would save people.",
+                  "T || Si pudiera volar, iría a la playa. || If I could fly, I would go to the beach.",
+                  "T || ¿Usarías los láseres en la escuela? || Would you use the lasers at school?",
+                  "T || No, no lo haría. || No, I wouldn't.",
+                  "T || Si pudiera levantar cosas pesadas, ayudaría a mi mamá. || If I could lift heavy things, I would help my mom.",
+                  "H || 🦸💪🚗 || Guess the hidden superpower! || Lift heavy things",
+                  "H || 🔥🖐️✨ || Guess the hidden superpower! || Control fire",
+                  "E || 🧒🦸 🚁❓ || What would you do if you were a superhero? (Use your imagination!) || If I were a superhero, I would save people.",
+                  "E || 🧒🪽 🏫❓ || Would you fly to school if you could? || Yes, I would. / No, I wouldn't."
+                ],
+                "mistakes": [
+                  "M || If I were a superhero, I [will] save people. || would* / will / would be || If I were a superhero, I would save people.",
+                  "M || If I [can] fly, I would visit my grandma. || could* / can / will || If I could fly, I would visit my grandma."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Magic and fantasy — Second conditional; Wh-questions (What...?) — Vocabulary: find, come to life, throw a party, ride",
+                "lines": [
+                  "Q || What would you do if you found a magic wand? || If I found a magic wand, I would make my homework disappear.",
+                  "Q || What would you do if your toys came to life? || If my toys came to life, I would play with them all night.",
+                  "Q || What would you do if you could ride a dragon? || If I could ride a dragon, I would fly over my city.",
+                  "Q || What would you do if you found a treasure in your garden? || If I found a treasure, I would buy a house for my family.",
+                  "Q || What would you do if you could throw a party with any famous person? || If I could throw a party with a famous person, I would invite Messi.",
+                  "Q || What would your dog do if it came to life as a person? (Use your imagination!) || If my dog came to life as a person, it would eat all the pizza.",
+                  "Q || What would your mom do if she found a magic wand? (Use your imagination!) || If she found a magic wand, she would clean the house in one second.",
+                  "Q || What would you do if you could ride a unicorn? || If I could ride a unicorn, I would go to school on it.",
+                  "F || If I ____ a magic wand, I would fly. || found || find / will find",
+                  "F || If my toys came to life, I ____ play with them. || would || will / can",
+                  "F || What ____ you do if you could ride a dragon? || would || will / do",
+                  "T || Si encontrara una varita mágica, haría desaparecer mi tarea. || If I found a magic wand, I would make my homework disappear.",
+                  "T || Si mis juguetes cobraran vida, jugaría con ellos. || If my toys came to life, I would play with them.",
+                  "T || Si pudiera montar un dragón, volaría sobre mi ciudad. || If I could ride a dragon, I would fly over my city.",
+                  "T || ¿Qué harías si encontraras un tesoro? || What would you do if you found a treasure?",
+                  "T || Haría una fiesta con mis amigos. || I would throw a party with my friends.",
+                  "H || 🪄✨ || Guess the hidden word! || Magic wand",
+                  "E || 🧒🪄 ❓ || What would you do if you found a magic wand? || If I found a magic wand, I would make my homework disappear.",
+                  "E || 🧸🤖✨ ❓ || What would you do if your toys came to life? || If my toys came to life, I would play with them.",
+                  "E || 🧒🐉 ❓ || What would you do if you could ride a dragon? || If I could ride a dragon, I would fly over my city."
+                ],
+                "mistakes": [
+                  "M || If I [find] a magic wand, I would fly. || found* / find / will find || If I found a magic wand, I would fly.",
+                  "M || What [will] you do if your toys came to life? || would* / will / do || What would you do if your toys came to life?"
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Space adventures — Second conditional; Wh-questions (Where/Who/Why...?) — Vocabulary: ride the spaceship, see, meet, land, float",
+                "lines": [
+                  "Q || Where would you land if you rode a spaceship? || If I rode a spaceship, I would land on the moon. / I would land on Mars.",
+                  "Q || Who would you meet if you went to space? (Use your imagination!) || If I went to space, I would meet an alien. / I would meet an astronaut.",
+                  "Q || Why would you go to space if you could? || I would go to space because I want to see the stars.",
+                  "Q || Where would you float if you were in a spaceship? || I would float in the spaceship's kitchen.",
+                  "Q || Who would you take with you if you went to space? || If I went to space, I would take my best friend.",
+                  "Q || What would you see if you looked out of the spaceship window? || If I looked out of the window, I would see the Earth and the stars.",
+                  "Q || Why would your dad ride a spaceship? (Use your imagination!) || He would ride a spaceship because he loves adventures.",
+                  "Q || Where would you go first if you had a spaceship? || If I had a spaceship, I would go to Jupiter first.",
+                  "F || If I rode a spaceship, I ____ land on the moon. || would || will / can",
+                  "F || Where ____ you land? || would || will / do",
+                  "F || If I ____ to space, I would meet an alien. || went || go / will go",
+                  "T || Si montara una nave espacial, aterrizaría en la luna. || If I rode a spaceship, I would land on the moon.",
+                  "T || ¿A quién conocerías en el espacio? || Who would you meet in space?",
+                  "T || Iría al espacio porque quiero ver las estrellas. || I would go to space because I want to see the stars.",
+                  "T || Flotaría en la nave. || I would float in the spaceship.",
+                  "T || Si tuviera una nave, iría a Júpiter. || If I had a spaceship, I would go to Jupiter.",
+                  "H || 🚀🌕 || Guess the action! || Land on the moon",
+                  "E || 🧒🚀 🌕🔴🪐 ❓ || Where would you land if you rode a spaceship? || If I rode a spaceship, I would land on the moon.",
+                  "E || 🧒🚀 👽🧑‍🚀 ❓ || Who would you meet in space? || I would meet an alien.",
+                  "E || 🧒🪐👀 ❓ || Why would you go to space? || Because I want to see the planets."
+                ],
+                "mistakes": [
+                  "M || If I rode a spaceship, I [will] land on the moon. || would* / will / can || If I rode a spaceship, I would land on the moon.",
+                  "M || If I [go] to space, I would meet an alien. || went* / go / will go || If I went to space, I would meet an alien."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Money and dreams — Second conditional — Vocabulary: buy, build, travel, help, donate",
+                "lines": [
+                  "Q || What would you do if you won a million dollars? || If I won a million dollars, I would buy a house for my family.",
+                  "Q || What would you build if you had a lot of money? || If I had a lot of money, I would build a big park for kids.",
+                  "Q || Where would you travel if you won the lottery? || If I won the lottery, I would travel to Japan.",
+                  "Q || Who would you help if you had a million dollars? || If I had a million dollars, I would help my grandparents.",
+                  "Q || What would you donate if you were rich? || If I were rich, I would donate money to animal shelters.",
+                  "Q || What would your mom buy if she won a million dollars? (Use your imagination!) || If she won a million dollars, she would buy a new car.",
+                  "Q || What would your best friend build if he or she were rich? (Use your imagination!) || If he were rich, he would build a soccer stadium.",
+                  "Q || Would you donate money to a hospital if you were rich? || Yes, I would. / No, I would donate it to a school.",
+                  "F || If I won a million dollars, I ____ buy a house. || would || will / can",
+                  "F || If I ____ rich, I would help many people. || were || am / will be",
+                  "F || What would you ____ if you had a lot of money? || build || built / building",
+                  "T || Si ganara un millón de dólares, compraría una casa. || If I won a million dollars, I would buy a house.",
+                  "T || Si tuviera mucho dinero, construiría un parque. || If I had a lot of money, I would build a park.",
+                  "T || Viajaría a Japón. || I would travel to Japan.",
+                  "T || Ayudaría a mis abuelos. || I would help my grandparents.",
+                  "T || Si fuera rico, donaría dinero. || If I were rich, I would donate money.",
+                  "H || 💰🎁 || Guess the action! || Donate",
+                  "E || 🧒💰💰 🏠❓ || What would you buy if you won a million dollars? || If I won a million dollars, I would buy a house.",
+                  "E || 🧒💰 ✈️🗾 || Where would you travel if you were rich? || If I were rich, I would travel to Japan.",
+                  "E || 🧒💰 👵👴 || Who would you help if you had a million dollars? || I would help my grandparents."
+                ],
+                "mistakes": [
+                  "M || If I [win] a million dollars, I would buy a house. || won* / win / will win || If I won a million dollars, I would buy a house.",
+                  "M || If I were rich, I [will] donate money. || would* / will / can || If I were rich, I would donate money."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Second conditional; zero conditional review — Vocabulary: lift heavy things, save people, shoot lasers, control fire, fly, find, come to life, throw a party, ride, see, meet, land, float, buy, build, travel, help, donate",
+                "lines": [
+                  "Q || What would you do if you had superpowers? || If I had superpowers, I would fly and save people.",
+                  "Q || What would you do if you found a magic lamp? || If I found a magic lamp, I would ask for three wishes.",
+                  "Q || Where would you travel if you had a spaceship? || If I had a spaceship, I would travel to Mars.",
+                  "Q || What would you buy if you won a million dollars? || If I won a million dollars, I would buy a big house.",
+                  "Q || Who would you meet if you could meet anyone in the world? || If I could meet anyone, I would meet Messi.",
+                  "Q || What would your dad do if he could fly? (Use your imagination!) || If he could fly, he would fly to work.",
+                  "Q || What happens if you touch a cactus? || If you touch a cactus, you get hurt.",
+                  "Q || What would you build if you were rich? || If I were rich, I would build a school for poor kids.",
+                  "Q || What happens if you don't water the plants? || If you don't water the plants, they die.",
+                  "Q || Make two sentences with \"If I were...\". || If I were a bird, I would fly. If I were a teacher, I would give no homework.",
+                  "F || If I ____ superpowers, I would save people. || had || have / will have",
+                  "F || If I won the lottery, I ____ buy a house. || would || will / can",
+                  "F || If you touch a hot iron, you ____ hurt. || get || would get / got",
+                  "T || Si tuviera superpoderes, volaría. || If I had superpowers, I would fly.",
+                  "T || Si encontrara una lámpara mágica, pediría tres deseos. || If I found a magic lamp, I would ask for three wishes.",
+                  "T || ¿A quién conocerías si pudieras? || Who would you meet if you could?",
+                  "T || Si fuera rico, construiría una escuela. || If I were rich, I would build a school.",
+                  "T || Si tocas un cactus, te lastimas. || If you touch a cactus, you get hurt.",
+                  "H || 🧞‍♂️🪔 || Guess the hidden word! || Magic lamp",
+                  "E || 🧒🦸 🪄 🚀 💰 || Choose one: superpowers, magic wand, spaceship or money. What would you do? || If I had a spaceship, I would travel to Mars."
+                ],
+                "mistakes": [
+                  "M || If I [have] superpowers, I would fly. || had* / have / will have || If I had superpowers, I would fly.",
+                  "M || If I found a magic lamp, I [will] ask for three wishes. || would* / will / can || If I found a magic lamp, I would ask for three wishes."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 3,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Abilities — Modal verb Can; Positive sentences; Yes/No questions (Short answers) — Vocabulary: draw, paint, ride a bike, play an instrument",
+                "lines": [
+                  "Q || Tell me about your abilities. What can you do? || I can draw and ride a bike. / I can play the guitar.",
+                  "Q || Can you ride a bike? || Yes, I can. / No, I can't.",
+                  "Q || Can you play an instrument? Which one? || Yes, I can. I can play the piano. / No, I can't.",
+                  "Q || Can your dad paint? || Yes, he can. / No, he can't.",
+                  "Q || Can your best friend draw well? || Yes, she can. / No, he can't.",
+                  "Q || What can your mom do that you can't do? || She can drive. / She can cook very well.",
+                  "Q || Can your grandpa ride a bike? || Yes, he can. / No, he can't.",
+                  "Q || What can Shakira do? || She can sing and dance.",
+                  "F || I ____ ride a bike. || can || cans / am can",
+                  "F || ____ you play the guitar? || Can || Do / Are",
+                  "F || She ____ paint very well. || can || cans / can to",
+                  "T || Puedo dibujar. || I can draw.",
+                  "T || ¿Puedes montar bicicleta? || Can you ride a bike?",
+                  "T || Sí, puedo. || Yes, I can.",
+                  "T || Mi papá no puede pintar. || My dad can't paint.",
+                  "T || Ella puede tocar el piano. || She can play the piano.",
+                  "H || 🎹 || Guess the action! || Play an instrument",
+                  "H || 🚲 || Guess the action! || Ride a bike",
+                  "E || 🧒🎨✅ || Can you paint? || Yes, I can.",
+                  "E || 👨🎸❌ || Can he play the guitar? || No, he can't."
+                ],
+                "mistakes": [
+                  "M || I [can to] ride a bike. || can* / can to / cans || I can ride a bike.",
+                  "M || [Do] you play an instrument? (ability) || Can* / Do / Are || Can you play an instrument?"
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Superpowers — Modal verb Can; Wh-questions (What...?) — Vocabulary: fly, climb, run fast, shoot lasers, read minds",
+                "lines": [
+                  "Q || What can your favorite superhero do? || Spider-Man can climb walls. / Superman can fly.",
+                  "Q || What can Flash do? || He can run very fast.",
+                  "Q || What can Superman do with his eyes? || He can shoot lasers.",
+                  "Q || What can Professor X do? || He can read minds.",
+                  "Q || What can Spider-Man climb? || He can climb walls and buildings.",
+                  "Q || What superpower can your best friend have? (Use your imagination!) || He can read minds. / She can fly.",
+                  "Q || What can a bird do that you can't do? || A bird can fly.",
+                  "Q || What can a cheetah do? || It can run very fast.",
+                  "F || Superman ____ fly. || can || cans / can to",
+                  "F || What ____ Flash do? || can || does / is",
+                  "F || He can ____ minds. || read || reads / reading",
+                  "T || Superman puede volar. || Superman can fly.",
+                  "T || ¿Qué puede hacer Flash? || What can Flash do?",
+                  "T || Él puede disparar láseres. || He can shoot lasers.",
+                  "T || Ella puede leer mentes. || She can read minds.",
+                  "T || Un pájaro puede volar. || A bird can fly.",
+                  "H || 🧠👁️ || Guess the hidden superpower! || Read minds",
+                  "E || 🦸⚡🏃 || What can he do? || He can run fast.",
+                  "E || 🦸👁️🔴🔴 || What can he do? || He can shoot lasers.",
+                  "E || 🕷️🧗🏢 || What can he do? || He can climb walls."
+                ],
+                "mistakes": [
+                  "M || Superman can [flies]. || fly* / flies / flying || Superman can fly.",
+                  "M || What [does] Flash can do? || can* / does / is || What can Flash do?"
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Past abilities — Modal verb Could; Positive sentences; Yes/No questions (Short answers) — Vocabulary: crawl, sleep all day, babble, cry, eat soft food, roll over",
+                "lines": [
+                  "Q || What could you do when you were a baby? || I could crawl and babble. / I could sleep all day.",
+                  "Q || Could you walk when you were six months old? || No, I couldn't. / Yes, I could.",
+                  "Q || Could you eat pizza when you were a baby? || No, I couldn't. I could only eat soft food.",
+                  "Q || Could you roll over when you were a baby? || Yes, I could.",
+                  "Q || Could your little cousin talk when he or she was one year old? (Use your imagination!) || No, he couldn't. He could only babble.",
+                  "Q || What could your brother or sister do when he or she was a baby? (Use your imagination!) || She could cry very loud. / He could crawl very fast.",
+                  "Q || Could you sleep all day when you were a baby? || Yes, I could. / No, I couldn't. I cried all day.",
+                  "Q || Could you ride a bike when you were three? || No, I couldn't. / Yes, I could.",
+                  "F || When I was a baby, I ____ crawl. || could || can / could to",
+                  "F || ____ you walk when you were six months old? || Could || Can / Did",
+                  "F || No, I ____. I could only eat soft food. || couldn't || can't / didn't",
+                  "T || Cuando era bebé, podía gatear. || When I was a baby, I could crawl.",
+                  "T || ¿Podías caminar a los seis meses? || Could you walk at six months?",
+                  "T || No, no podía. || No, I couldn't.",
+                  "T || Podía dormir todo el día. || I could sleep all day.",
+                  "T || Solo podía comer comida blanda. || I could only eat soft food.",
+                  "H || 👶🍼 || Guess the hidden word! || Baby",
+                  "E || 👶🧎 || What could you do when you were a baby? || I could crawl.",
+                  "E || 👶🍕❌ 🥣✅ || Could you eat pizza when you were a baby? || No, I couldn't. I could only eat soft food.",
+                  "E || 👶😴🕛 || Could you sleep all day when you were a baby? || Yes, I could."
+                ],
+                "mistakes": [
+                  "M || When I was a baby, I [can] crawl. || could* / can / could to || When I was a baby, I could crawl.",
+                  "M || No, I [can't]. I could only eat soft food. || couldn't* / can't / didn't || No, I couldn't. I could only eat soft food."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Suggestions — Modal verb Could; Wh-questions (What...?) — Vocabulary: buy, blow up, bring, surprise, meet",
+                "lines": [
+                  "Q || What could we do for your teacher's birthday? || We could buy her flowers. / We could surprise her with a cake.",
+                  "Q || What could you do for your dad's birthday? || I could bring him breakfast in bed. / I could buy him a present.",
+                  "Q || What could we do for your best friend's birthday? || We could blow up balloons and surprise her. / We could meet at the park.",
+                  "Q || What could you buy for your mom with five dollars? || I could buy her chocolate. / I could buy her a flower.",
+                  "Q || What could you bring to a class party? || I could bring cookies. / I could bring juice.",
+                  "Q || Where could we meet to plan a surprise party for your cousin? || We could meet at my house.",
+                  "Q || What could you do if your friend is sad? || I could bring her ice cream. / I could tell him a joke.",
+                  "Q || What could your family do for your grandma's birthday? || They could surprise her with a big dinner.",
+                  "F || We ____ buy her flowers. || could || can to / could to",
+                  "F || What ____ we do for his birthday? || could || do / did",
+                  "F || We could ____ up balloons. || blow || blew / blowing",
+                  "T || Podríamos comprarle flores. || We could buy her flowers.",
+                  "T || ¿Qué podríamos hacer para su cumpleaños? || What could we do for his birthday?",
+                  "T || Podría llevarle el desayuno a la cama. || I could bring him breakfast in bed.",
+                  "T || Podríamos inflar globos. || We could blow up balloons.",
+                  "T || Podríamos encontrarnos en mi casa. || We could meet at my house.",
+                  "H || 🎈💨 || Guess the action! || Blow up balloons",
+                  "E || 👩‍🏫🎂❓ || What could we do for the teacher's birthday? || We could buy her a cake.",
+                  "E || 👨🛏️🍳 || What could you do for your dad's birthday? || I could bring him breakfast in bed.",
+                  "E || 👧😢 🍦❓ || What could you do if your friend is sad? || I could bring her ice cream."
+                ],
+                "mistakes": [
+                  "M || We [could to] buy her flowers. || could* / could to / can to || We could buy her flowers.",
+                  "M || What [can] we do for his birthday? (suggestion) || could* / can / did || What could we do for his birthday?"
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Past abilities & suggestions — Modal verb Could; Wh-questions (What/Where...?); present progressive review — Vocabulary: crawl, sleep all day, babble, cry, eat soft food, roll over, buy, blow up, bring, surprise, meet",
+                "lines": [
+                  "Q || What could you do when you were two years old? || I could walk and say some words.",
+                  "Q || Where could you sleep when you were a baby? || I could sleep in my crib. / I could sleep in my mom's arms.",
+                  "Q || What could we do to surprise your mom on Mother's Day? || We could cook her breakfast. / We could buy her flowers.",
+                  "Q || Where could we meet to study for the test? || We could meet at the library.",
+                  "Q || What could your dad do when he was a kid that he can't do now? (Use your imagination!) || He could climb trees.",
+                  "Q || What could you bring to a picnic? || I could bring sandwiches and juice.",
+                  "Q || What are you doing right now? Say it with your body! (Simon says style.) || I am clapping my hands. / I am jumping.",
+                  "Q || Where could your family go to celebrate your grandpa's birthday? || They could go to his favorite restaurant.",
+                  "F || When I was two, I ____ walk. || could || can / could to",
+                  "F || Where ____ we meet to study? || could || do / are",
+                  "F || I am ____ my hands right now. || clapping || clap / claps",
+                  "T || Cuando tenía dos años, podía caminar. || When I was two, I could walk.",
+                  "T || ¿Dónde podríamos encontrarnos? || Where could we meet?",
+                  "T || Podríamos cocinarle el desayuno. || We could cook her breakfast.",
+                  "T || Mi papá podía trepar árboles. || My dad could climb trees.",
+                  "T || Estoy aplaudiendo. || I am clapping.",
+                  "H || 🍼🛏️ || Guess the hidden word! || Crib",
+                  "E || 👶🛏️ || Where could you sleep when you were a baby? || I could sleep in my crib.",
+                  "E || 👩🌸🍳❓ || What could we do for Mother's Day? || We could buy her flowers and cook breakfast.",
+                  "E || 🧒👏 || What are you doing right now? || I am clapping my hands."
+                ],
+                "mistakes": [
+                  "M || When I was two, I [can] walk. || could* / can / could to || When I was two, I could walk.",
+                  "M || We could [buying] her flowers. || buy* / buying / bought || We could buy her flowers."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 4,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Ordering food — Modal verb Would; Yes/No questions (Short answers); Wh-questions (What...?) — Vocabulary: order, drink, add, recommend, pay",
+                "lines": [
+                  "Q || You are at a restaurant. What would you like to order? || I would like to order a hamburger, please.",
+                  "Q || What would you like to drink? || I would like a lemonade, please. / I would like water.",
+                  "Q || Would you like to add cheese to your hamburger? || Yes, please. / No, thank you.",
+                  "Q || What would you recommend to a friend at your favorite restaurant? || I would recommend the pizza.",
+                  "Q || Would you like to pay with cash or card? (Pretend you are the customer.) || I would like to pay with cash.",
+                  "Q || Ask the waiter for a dessert. || I would like a chocolate cake, please.",
+                  "Q || Would you like something else? (Pretend you are the customer.) || No, thank you. That's all. / Yes, I would like some fries.",
+                  "Q || Pretend you are the waiter. Ask the customer what he or she would like to drink. || What would you like to drink?",
+                  "F || I ____ like a hamburger, please. || would || will / want",
+                  "F || ____ you like to add cheese? || Would || Will / Do",
+                  "F || I would like to ____ with cash. || pay || paid / paying",
+                  "T || Quisiera pedir una hamburguesa. || I would like to order a hamburger.",
+                  "T || ¿Qué le gustaría tomar? || What would you like to drink?",
+                  "T || ¿Le gustaría agregar queso? || Would you like to add cheese?",
+                  "T || Le recomiendo la pizza. || I would recommend the pizza.",
+                  "T || Quisiera pagar con tarjeta. || I would like to pay with card.",
+                  "H || 🍔🍟 || Guess the hidden food! || Hamburger and fries",
+                  "H || 🧾💳 || Guess the action! || Pay",
+                  "E || 🧑‍🍳❓🍔🍕 || The waiter asks: What would you like to order? || I would like to order a pizza, please.",
+                  "E || 🧒🥤❓ || What would you like to drink? || I would like a lemonade, please."
+                ],
+                "mistakes": [
+                  "M || I [will] like a hamburger, please. || would* / will / want || I would like a hamburger, please.",
+                  "M || [Do] you like to add cheese? (polite offer) || Would* / Do / Will || Would you like to add cheese?"
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "General review — Simple past (1st person); ED ending sounds; Positive sentences; school — Vocabulary: learn, ask, participate, work in groups",
+                "lines": [
+                  "Q || What did you do last week at school? || I learned new words and worked in groups.",
+                  "Q || What did you learn in science class last week? || I learned about the planets.",
+                  "Q || Did you participate in class yesterday? What did you do? || Yes, I participated. I answered a question.",
+                  "Q || What did you ask your teacher last week? || I asked her about the homework.",
+                  "Q || Who did you work with in groups last week? || I worked with my best friend and two classmates.",
+                  "Q || Say the past of \"learn\". || Learned.",
+                  "Q || Say the past of \"participate\" and tell me how the -ed sounds. || Participated. It sounds like /id/.",
+                  "Q || Say the past of \"ask\" and tell me how the -ed sounds. || Asked. It sounds like /t/.",
+                  "F || I ____ new words last week. || learned || learn / learning",
+                  "F || I ____ in class yesterday. || participated || participate / participating",
+                  "F || I ____ my teacher a question. || asked || ask / asking",
+                  "T || Aprendí palabras nuevas. || I learned new words.",
+                  "T || Participé en clase ayer. || I participated in class yesterday.",
+                  "T || Le pregunté a mi profesora sobre la tarea. || I asked my teacher about the homework.",
+                  "T || Trabajé en grupo con mis compañeros. || I worked in groups with my classmates.",
+                  "T || Aprendí sobre los planetas. || I learned about the planets.",
+                  "H || 🙋 || Guess the action! || Participate",
+                  "E || 🧒🧒🧒📋 || What did you do at school last week? || I worked in groups.",
+                  "E || 🧒🙋❓👩‍🏫 || What did you do in class yesterday? || I asked the teacher a question.",
+                  "E || 🧒📚🪐 || What did you learn last week? || I learned about the planets."
+                ],
+                "mistakes": [
+                  "M || I [learn] new words last week. || learned* / learn / learning || I learned new words last week.",
+                  "M || I [participate] in class yesterday. || participated* / participate / participating || I participated in class yesterday."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "General review — Simple past (1st person); Positive sentences; Yes/No questions (Long answers); school — Vocabulary: learn, ask, participate, work in groups, present a project",
+                "lines": [
+                  "Q || Did you present a project last month? || Yes, I presented a project about animals. / No, I didn't present a project.",
+                  "Q || Did you work in groups last week? || Yes, I worked in groups in science class. / No, I didn't work in groups.",
+                  "Q || Did you learn something new yesterday? || Yes, I learned a new song in English. / No, I didn't learn anything new.",
+                  "Q || Did you ask a question in class today? || Yes, I asked about the game. / No, I didn't ask any questions.",
+                  "Q || Did you participate in the school play last year? || Yes, I participated in the school play. / No, I didn't participate.",
+                  "Q || Did your best friend present a project with you? || Yes, he presented a project with me. / No, she didn't.",
+                  "Q || Did you work in groups in math class or in art class? || I worked in groups in art class.",
+                  "Q || What did you present your last project about? || I presented my last project about the ocean.",
+                  "F || ____ you present a project last month? || Did || Do / Were",
+                  "F || Yes, I ____ a project about animals. || presented || present / presenting",
+                  "F || No, I ____ work in groups. || didn't || don't / wasn't",
+                  "T || ¿Presentaste un proyecto el mes pasado? || Did you present a project last month?",
+                  "T || Sí, presenté un proyecto sobre animales. || Yes, I presented a project about animals.",
+                  "T || No, no trabajé en grupo. || No, I didn't work in groups.",
+                  "T || Aprendí una canción nueva. || I learned a new song.",
+                  "T || Participé en la obra de teatro. || I participated in the school play.",
+                  "H || 📊🧒 || Guess the action! || Present a project",
+                  "E || 🧒📊🐘🦁 || What did you present your project about? || I presented my project about animals.",
+                  "E || 🧒🎭✅ || Did you participate in the school play? || Yes, I participated in the school play.",
+                  "E || 🧒🧒📋🎨 || Did you work in groups in art class? || Yes, I worked in groups in art class."
+                ],
+                "mistakes": [
+                  "M || [Do] you present a project last month? || Did* / Do / Does || Did you present a project last month?",
+                  "M || No, I [don't] work in groups last week. || didn't* / don't / wasn't || No, I didn't work in groups last week."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Monthly Evaluation — Cumulative review of previously introduced structures (conditionals, can, could, would, simple past, present perfect, comparatives) — Vocabulary Review",
+                "lines": [
+                  "Q || What happens if you don't eat breakfast? || If you don't eat breakfast, you feel hungry.",
+                  "Q || What will you do if it rains tomorrow? || If it rains, I will stay at home.",
+                  "Q || What would you do if you found a genie lamp? || If I found a genie lamp, I would ask for three wishes.",
+                  "Q || What can you do very well? || I can draw very well.",
+                  "Q || What could you do when you were three years old? || I could walk and talk.",
+                  "Q || What would you like to order at a restaurant? || I would like a pizza, please.",
+                  "Q || What did you learn at school last week? || I learned about fractions.",
+                  "Q || Have you ever been to another city? || Yes, I have. / No, I haven't.",
+                  "Q || Who is the fastest person in your family? || My brother is the fastest person in my family.",
+                  "Q || Tell me about a family member. || My aunt is a doctor. She is tall and kind.",
+                  "F || If you don't sleep, you ____ tired. || feel || will feel / felt",
+                  "F || If I were rich, I ____ travel. || would || will / can",
+                  "F || When I was three, I ____ talk. || could || can / could to",
+                  "T || Si no desayunas, sientes hambre. || If you don't eat breakfast, you feel hungry.",
+                  "T || Si llueve, me quedaré en casa. || If it rains, I will stay at home.",
+                  "T || Puedo dibujar muy bien. || I can draw very well.",
+                  "T || Quisiera una pizza, por favor. || I would like a pizza, please.",
+                  "S || purple heart:2, orange star:3 || Which shape is there more of? || There are more stars than hearts.",
+                  "H || 🍕 || Guess the hidden food! || Pizza",
+                  "E || 🧒🪄 ❓ || What would you do if you had a magic wand? || If I had a magic wand, I would fly."
+                ],
+                "mistakes": [
+                  "M || If it rains, I [stay] at home tomorrow. || will stay* / stay / stayed || If it rains, I will stay at home tomorrow.",
+                  "M || I [can] crawl when I was a baby. || could* / can / can to || I could crawl when I was a baby."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Monthly Evaluation — Modal verb Would review; cumulative review — Vocabulary: order, drink, add, recommend, pay",
+                "lines": [
+                  "Q || What would you like to eat at your favorite restaurant? || I would like to eat a hamburger with fries.",
+                  "Q || Would you like to drink juice or water? || I would like juice, please.",
+                  "Q || What would you recommend to a tourist in your city? || I would recommend the park and the food.",
+                  "Q || Would you like to add ice cream to your dessert? || Yes, please. / No, thank you.",
+                  "Q || How would you like to pay? (Pretend you are the customer.) || I would like to pay with card.",
+                  "Q || What would you do if you were a waiter and a customer was angry? || I would say sorry and bring a free dessert.",
+                  "Q || What can you cook? || I can cook eggs and rice.",
+                  "Q || What did you eat yesterday at lunch? || I ate soup and chicken.",
+                  "Q || If you eat too much, what happens? || If you eat too much, you get a stomachache.",
+                  "Q || Pretend you are at a restaurant. Order a meal, a drink and a dessert. || I would like a pizza, a lemonade and a chocolate cake, please.",
+                  "F || I ____ like a lemonade. || would || will / want",
+                  "F || Would you like to ____ ice cream? || add || added / adding",
+                  "F || I would ____ the pizza to a tourist. || recommend || recommends / recommending",
+                  "T || Quisiera comer una hamburguesa. || I would like to eat a hamburger.",
+                  "T || ¿Le gustaría jugo o agua? || Would you like juice or water?",
+                  "T || Recomendaría el parque. || I would recommend the park.",
+                  "T || Quisiera pagar en efectivo. || I would like to pay with cash.",
+                  "T || Si comes mucho, te duele el estómago. || If you eat too much, you get a stomachache.",
+                  "H || 🍰🍨 || Guess the hidden word! || Dessert",
+                  "E || 🧑‍🍳❓🧃💧 || Would you like juice or water? || I would like juice, please."
+                ],
+                "mistakes": [
+                  "M || I [want] like a lemonade, please. || would* / want / will || I would like a lemonade, please.",
+                  "M || I would [recommends] the pizza. || recommend* / recommends / recommending || I would recommend the pizza."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 5,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Healthy habits — Modal verb Should; Positive sentences — Vocabulary: eat, drink, sleep, brush, wash",
+                "lines": [
+                  "Q || What should you do to stay healthy? || I should eat vegetables and drink water. / I should sleep eight hours.",
+                  "Q || What should you eat for breakfast to have energy? || I should eat fruit and eggs.",
+                  "Q || How many hours should a kid sleep? || A kid should sleep nine or ten hours.",
+                  "Q || What should you do before you eat? || I should wash my hands.",
+                  "Q || What should you do after you eat? || I should brush my teeth.",
+                  "Q || What should your dad drink instead of soda? || He should drink water.",
+                  "Q || What should your best friend do if he or she is always tired? || She should sleep more. / He should eat better.",
+                  "Q || Complete: You ____ brush your teeth twice a day. || You should brush your teeth twice a day.",
+                  "F || You ____ drink water every day. || should || should to / shoulds",
+                  "F || I should ____ my hands before I eat. || wash || washed / washing",
+                  "F || Kids ____ sleep nine hours. || should || must to / shoulds",
+                  "T || Deberías comer vegetales. || You should eat vegetables.",
+                  "T || Debo tomar agua todos los días. || I should drink water every day.",
+                  "T || Deberías lavarte las manos antes de comer. || You should wash your hands before you eat.",
+                  "T || Debo cepillarme los dientes después de comer. || I should brush my teeth after I eat.",
+                  "T || Los niños deberían dormir nueve horas. || Kids should sleep nine hours.",
+                  "H || 🪥🦷 || Guess the action! || Brush your teeth",
+                  "H || 🧼🖐️ || Guess the action! || Wash your hands",
+                  "E || 🧒🥤🍟 ❓ || What should he do to stay healthy? || He should drink water and eat vegetables.",
+                  "E || 🧒😴🕚 ❓ || What should she do? She is always tired. || She should sleep more."
+                ],
+                "mistakes": [
+                  "M || You [should to] drink water. || should* / should to / shoulds || You should drink water.",
+                  "M || I should [washing] my hands before I eat. || wash* / washing / washed || I should wash my hands before I eat."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Good habits — Modal verb Should; Wh-questions (What/Who...?); recommendations — Vocabulary: go to bed earlier, pack your backpack, ask for help, keep, move",
+                "lines": [
+                  "Q || Your friend is always late for school. What should he do? || He should go to bed earlier and pack his backpack at night.",
+                  "Q || Your cousin doesn't understand math. Who should she ask for help? || She should ask the teacher for help. / She should ask her dad.",
+                  "Q || Your brother loses his things all the time. What should he do? || He should keep his things in his backpack.",
+                  "Q || Your mom is very tired. What should she do? || She should rest and go to bed earlier.",
+                  "Q || Your best friend sits all day playing video games. What should he do? || He should move more and play outside.",
+                  "Q || Who should you ask for help if you are sad? || I should ask my parents for help. / I should ask my teacher.",
+                  "Q || What should you do with your room when it is messy? || I should keep it clean.",
+                  "Q || What should a kid do the night before school? || He should pack his backpack and go to bed earlier.",
+                  "F || He ____ go to bed earlier. || should || should to / shoulds",
+                  "F || Who should she ____ for help? || ask || asks / asking",
+                  "F || You should ____ your room clean. || keep || keeps / keeping",
+                  "T || Él debería acostarse más temprano. || He should go to bed earlier.",
+                  "T || Ella debería pedir ayuda. || She should ask for help.",
+                  "T || Deberías empacar tu mochila en la noche. || You should pack your backpack at night.",
+                  "T || Él debería moverse más. || He should move more.",
+                  "T || Deberías mantener tu cuarto limpio. || You should keep your room clean.",
+                  "H || 🎒✅ || Guess the action! || Pack your backpack",
+                  "E || 🧒⏰😴🏫 ❓ || He is always late for school. What should he do? || He should go to bed earlier.",
+                  "E || 🧒📐😕 ❓ || She doesn't understand math. What should she do? || She should ask for help.",
+                  "E || 🧒🎮🛋️🛋️ ❓ || He plays video games all day. What should he do? || He should move more."
+                ],
+                "mistakes": [
+                  "M || He should [goes] to bed earlier. || go* / goes / going || He should go to bed earlier.",
+                  "M || She [should asks] for help. || should ask* / should asks / should asking || She should ask for help."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Kids' responsibilities — Modal verb Have to; Positive sentences; Yes/No questions (Long answers) — Vocabulary: wake up early, feed my pet, go to school, do my homework, pack my backpack",
+                "lines": [
+                  "Q || What do you have to do as a kid? || I have to go to school and do my homework.",
+                  "Q || Do you have to wake up early on school days? || Yes, I have to wake up early on school days. / No, I don't have to wake up early.",
+                  "Q || Do you have to feed your pet? (Use your imagination if you don't have one!) || Yes, I have to feed my dog every morning. / No, I don't have to feed a pet.",
+                  "Q || Do you have to pack your backpack every night? || Yes, I have to pack my backpack every night. / No, my mom packs it.",
+                  "Q || Does your brother or sister have to do homework every day? || Yes, she has to do homework every day. / No, he doesn't have to.",
+                  "Q || Do you have to go to school on Saturdays? || No, I don't have to go to school on Saturdays.",
+                  "Q || What does your best friend have to do before playing video games? || He has to do his homework.",
+                  "Q || Do you have to wake up early on Sundays? || No, I don't have to wake up early on Sundays.",
+                  "F || I ____ to go to school. || have || has / had",
+                  "F || She ____ to do her homework. || has || have / had",
+                  "F || ____ you have to feed your pet? || Do || Does / Are",
+                  "T || Tengo que ir a la escuela. || I have to go to school.",
+                  "T || ¿Tienes que levantarte temprano? || Do you have to wake up early?",
+                  "T || Sí, tengo que alimentar a mi perro. || Yes, I have to feed my dog.",
+                  "T || No tengo que ir a la escuela los sábados. || I don't have to go to school on Saturdays.",
+                  "T || Ella tiene que hacer su tarea. || She has to do her homework.",
+                  "H || 🐕🥣 || Guess the action! || Feed my pet",
+                  "E || 🧒⏰🕕🏫 || What do you have to do on school days? || I have to wake up early and go to school.",
+                  "E || 🧒🐕🥣 ✅ || Do you have to feed your pet? || Yes, I have to feed my pet.",
+                  "E || 🧒📝 🎮 || What does he have to do before playing video games? || He has to do his homework."
+                ],
+                "mistakes": [
+                  "M || I [has] to go to school. || have* / has / had || I have to go to school.",
+                  "M || She [have] to do her homework. || has* / have / had || She has to do her homework."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "School rules — Modal verb Have to; Yes/No questions (Short answers); Wh-questions (Where...?) — Vocabulary: wear a uniform, be on time, raise your hand, paint on the walls, use a phone",
+                "lines": [
+                  "Q || What rules do you have to follow at school? || I have to wear a uniform and be on time.",
+                  "Q || Do you have to raise your hand to speak in class? || Yes, I do. / No, I don't.",
+                  "Q || Do you have to wear a uniform at your school? || Yes, I do. / No, I don't.",
+                  "Q || Can you paint on the walls at school? || No, I can't. I have to paint on paper.",
+                  "Q || Where do you have to put your phone during class? || I have to put it in my backpack. / I don't have to use a phone at school.",
+                  "Q || Where do you have to be at 7:00 AM on school days? || I have to be in my classroom.",
+                  "Q || Does your teacher have to be on time too? || Yes, she does. / Yes, he does.",
+                  "Q || Where do you have to wait for your parents after school? || I have to wait at the school door.",
+                  "F || I have to ____ my hand to speak. || raise || raising / raised",
+                  "F || You ____ paint on the walls. || can't || have to / should",
+                  "F || Where ____ you have to put your phone? || do || does / are",
+                  "T || Tengo que usar uniforme. || I have to wear a uniform.",
+                  "T || ¿Tienes que levantar la mano para hablar? || Do you have to raise your hand to speak?",
+                  "T || No puedo pintar en las paredes. || I can't paint on the walls.",
+                  "T || Tengo que llegar a tiempo. || I have to be on time.",
+                  "T || ¿Dónde tienes que esperar a tus padres? || Where do you have to wait for your parents?",
+                  "H || 🙋🏫 || Guess the action! || Raise your hand",
+                  "E || 🧒👔🏫 || What rule does he have to follow? || He has to wear a uniform.",
+                  "E || 🧒🎨🧱❌ || Can she paint on the walls? || No, she can't paint on the walls.",
+                  "E || 🧒📱🎒 || Where does he have to put his phone? || He has to put it in his backpack."
+                ],
+                "mistakes": [
+                  "M || I have to [raising] my hand. || raise* / raising / raised || I have to raise my hand.",
+                  "M || Where [does] you have to wait? || do* / does / are || Where do you have to wait?"
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Should and Have to; past progressive review — Vocabulary: eat, drink, sleep, brush, wash, go to bed earlier, pack your backpack, ask for help, keep, move, wake up early, feed my pet, go to school, do my homework, wear a uniform, be on time, raise your hand",
+                "lines": [
+                  "Q || What should you do to stay healthy? Tell me two things. || I should eat vegetables and sleep well.",
+                  "Q || What do you have to do every day as a kid? || I have to go to school and do my homework.",
+                  "Q || Your friend is sick. What should she do? || She should rest and drink water.",
+                  "Q || Do you have to wear a uniform at school? || Yes, I do. / No, I don't.",
+                  "Q || What should your dad do if he is stressed? || He should rest and go for a walk.",
+                  "Q || Do you have to feed a pet every day? || Yes, I have to feed my cat. / No, I don't have a pet.",
+                  "Q || What were you doing yesterday at 4:00 PM? || I was doing my homework.",
+                  "Q || What should you do before a test? || I should study and sleep well.",
+                  "Q || What rule do you have to follow in English class? || I have to speak in English.",
+                  "Q || Tell me one thing you should do and one thing you have to do tomorrow. || I should eat a good breakfast and I have to go to school.",
+                  "F || You ____ drink more water. || should || have / should to",
+                  "F || I ____ to wear a uniform. || have || has / should",
+                  "F || Yesterday at 4:00 PM I ____ doing my homework. || was || were / am",
+                  "T || Deberías descansar. || You should rest.",
+                  "T || Tengo que hacer mi tarea. || I have to do my homework.",
+                  "T || ¿Tienes que usar uniforme? || Do you have to wear a uniform?",
+                  "T || Él debería caminar. || He should go for a walk.",
+                  "T || Estaba haciendo mi tarea ayer a las cuatro. || I was doing my homework yesterday at four.",
+                  "H || 👔🏫 || Guess the hidden word! || Uniform",
+                  "E || 🧒🤒🛏️💧 || She is sick. What should she do? || She should rest and drink water."
+                ],
+                "mistakes": [
+                  "M || You [should to] rest. || should* / should to / shoulds || You should rest.",
+                  "M || I [has] to wear a uniform. || have* / has / should || I have to wear a uniform."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 6,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "General truths — Zero conditional: affirmative, negative and interrogative; phrasal verb \"show up\" — Vocabulary: touch fire, get hurt, feel cold, get sick, mix, water (plants), die",
+                "lines": [
+                  "Q || What happens if you touch a hot stove? || If you touch a hot stove, you get hurt.",
+                  "Q || What happens if you don't feed your fish? || If you don't feed your fish, it dies.",
+                  "Q || Does ice melt if you leave it in the sun? || Yes, if you leave ice in the sun, it melts.",
+                  "Q || Do you feel cold if you don't wear a coat in winter? || Yes, if I don't wear a coat in winter, I feel cold.",
+                  "Q || What happens if you mix white and black? || If you mix white and black, you get gray.",
+                  "Q || What happens if your friend doesn't show up to the party? || If my friend doesn't show up, I feel sad. / If he doesn't show up, I call him.",
+                  "Q || Make a negative sentence with IF: not eat vegetables / not grow strong. || If you don't eat vegetables, you don't grow strong.",
+                  "Q || Make a question with IF: not sleep / get sick? || If you don't sleep, do you get sick?",
+                  "F || If you don't feed the fish, it ____. || dies || die / will die",
+                  "F || ____ ice melt if you leave it in the sun? || Does || Do / Is",
+                  "F || If my friend doesn't ____ up, I call him. || show || shows / showing",
+                  "T || Si tocas una estufa caliente, te lastimas. || If you touch a hot stove, you get hurt.",
+                  "T || Si no alimentas al pez, se muere. || If you don't feed the fish, it dies.",
+                  "T || ¿Se derrite el hielo si lo dejas al sol? || Does ice melt if you leave it in the sun?",
+                  "T || Si mezclas blanco y negro, obtienes gris. || If you mix white and black, you get gray.",
+                  "T || Si mi amigo no aparece, lo llamo. || If my friend doesn't show up, I call him.",
+                  "H || 🧊☀️💧 || Guess the action! || Melt",
+                  "E || ⚪➕⚫ || What do you get if you mix white and black? || If you mix white and black, you get gray.",
+                  "E || 🧒🧥❌❄️ || What happens if you don't wear a coat in winter? || If you don't wear a coat in winter, you feel cold.",
+                  "E || 🎉👧❌ 😢 || What happens if your friend doesn't show up? || If my friend doesn't show up, I feel sad."
+                ],
+                "mistakes": [
+                  "M || If you don't water the plants, they [will die]. (general truth) || die* / will die / dies || If you don't water the plants, they die.",
+                  "M || [Do] ice melt if you leave it in the sun? || Does* / Do / Is || Does ice melt if you leave it in the sun?"
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Week activities — First conditional: affirmative, negative and interrogative — Vocabulary: stay at home, go out, visit, spend time with friends",
+                "lines": [
+                  "Q || What will you do if you have a free day this week? || If I have a free day, I will spend time with my friends. / If I have a free day, I will visit my grandma.",
+                  "Q || Will you go out if it is sunny on Saturday? || Yes, if it is sunny, I will go out. / No, I will stay at home.",
+                  "Q || What will you do if your friends are busy this weekend? || If my friends are busy, I will stay at home and watch movies.",
+                  "Q || Will you visit your grandparents if you have time this week? || Yes, if I have time, I will visit them. / No, I won't visit them this week.",
+                  "Q || What will your mom do if she has a free day? (Use your imagination!) || If she has a free day, she will rest and read.",
+                  "Q || Make a negative sentence with IF: rain / not go out. || If it rains, I won't go out.",
+                  "Q || Make a question with IF: have time / visit me? || If you have time, will you visit me?",
+                  "Q || What will you do if you finish your homework early today? || If I finish my homework early, I will play video games.",
+                  "F || If I have a free day, I ____ visit my grandma. || will || would / am",
+                  "F || If it rains, I ____ go out. || won't || don't / wouldn't",
+                  "F || ____ you visit me if you have time? || Will || Would / Do",
+                  "T || Si tengo un día libre, pasaré tiempo con mis amigos. || If I have a free day, I will spend time with my friends.",
+                  "T || Si llueve, no saldré. || If it rains, I won't go out.",
+                  "T || ¿Me visitarás si tienes tiempo? || Will you visit me if you have time?",
+                  "T || Si mis amigos están ocupados, me quedaré en casa. || If my friends are busy, I will stay at home.",
+                  "T || Si termino mi tarea temprano, jugaré videojuegos. || If I finish my homework early, I will play video games.",
+                  "H || 🚪🏃☀️ || Guess the action! || Go out",
+                  "E || 🧒📅🆓 ❓ || What will you do if you have a free day? || If I have a free day, I will spend time with my friends.",
+                  "E || 🌧️ 🧒🏠 || What will you do if it rains on Saturday? || If it rains on Saturday, I will stay at home.",
+                  "E || 🧒📝✅🕔 🎮 || What will you do if you finish your homework early? || If I finish my homework early, I will play video games."
+                ],
+                "mistakes": [
+                  "M || If it rains, I [don't] go out tomorrow. || won't* / don't / wouldn't || If it rains, I won't go out tomorrow.",
+                  "M || If I [will have] a free day, I will visit my grandma. || have* / will have / had || If I have a free day, I will visit my grandma."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "General activities — Second conditional: affirmative, negative and interrogative; tenses review — Vocabulary Review",
+                "lines": [
+                  "Q || What would your best friend do if he or she met his or her favorite singer? || If she met her favorite singer, she would take a picture with him.",
+                  "Q || What would you do if you met Messi? || If I met Messi, I would ask for his autograph.",
+                  "Q || Would your dad scream if he met his favorite soccer player? (Use your imagination!) || Yes, he would. / No, he wouldn't. He would shake his hand.",
+                  "Q || What would you say if you met Shakira? || If I met Shakira, I would say \"I love your songs!\"",
+                  "Q || Make a negative sentence with IF: meet a famous person / not be nervous. || If I met a famous person, I wouldn't be nervous.",
+                  "Q || Make a question with IF: meet your favorite singer / sing with him or her? || If you met your favorite singer, would you sing with him?",
+                  "Q || What does your mom do every day? || She works and cooks.",
+                  "Q || What did your dad do last weekend? || He washed the car and watched a movie.",
+                  "F || If I met Messi, I ____ ask for his autograph. || would || will / can",
+                  "F || If I met a famous person, I ____ be nervous. || wouldn't || won't / don't",
+                  "F || ____ you sing with your favorite singer if you met him? || Would || Will / Do",
+                  "T || Si conociera a Messi, le pediría un autógrafo. || If I met Messi, I would ask for his autograph.",
+                  "T || Si conociera a una persona famosa, no estaría nervioso. || If I met a famous person, I wouldn't be nervous.",
+                  "T || ¿Cantarías con tu cantante favorito? || Would you sing with your favorite singer?",
+                  "T || Mi mamá trabaja y cocina todos los días. || My mom works and cooks every day.",
+                  "T || Mi papá lavó el carro el fin de semana pasado. || My dad washed the car last weekend.",
+                  "H || 🎤⭐ || Guess the hidden word! || Singer",
+                  "E || 🧒🤝⚽⭐ ❓ || What would you do if you met your favorite soccer player? || If I met my favorite soccer player, I would shake his hand.",
+                  "E || 🧒📸🎤⭐ || What would you do if you met your favorite singer? || If I met my favorite singer, I would take a picture with her.",
+                  "E || 👧😱🎤⭐ ❓ || Would she scream if she met her favorite singer? (Use your imagination!) || Yes, she would scream."
+                ],
+                "mistakes": [
+                  "M || If I met Messi, I [will] ask for his autograph. || would* / will / can || If I met Messi, I would ask for his autograph.",
+                  "M || If I [meet] a famous person, I would be nervous. || met* / meet / will meet || If I met a famous person, I would be nervous."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Superpowers — Second conditional: Wh-questions (review) — Vocabulary: lift heavy things, save people, shoot lasers, control fire, fly, be invisible",
+                "lines": [
+                  "Q || What would you do if you were invisible for one day? || If I were invisible, I would play tricks on my brother. / I would visit the zoo for free.",
+                  "Q || Where would you go if you could fly? || If I could fly, I would go to the beach every day.",
+                  "Q || Who would you save first if you were a superhero? || If I were a superhero, I would save my family first.",
+                  "Q || Why would you want to control fire? || I would want to control fire to help firefighters. / To cook very fast.",
+                  "Q || What would you lift if you could lift heavy things? || If I could lift heavy things, I would lift a car.",
+                  "Q || Where would your best friend go if he or she were invisible? (Use your imagination!) || If she were invisible, she would go to a concert for free.",
+                  "Q || When would you use your lasers if you could shoot lasers? || I would use my lasers to open cans when I am hungry.",
+                  "Q || Which superpower would you choose? Why? || I would choose flying because I could travel for free.",
+                  "F || If I ____ invisible, I would play tricks. || were || am / will be",
+                  "F || Where ____ you go if you could fly? || would || will / do",
+                  "F || If I could lift heavy things, I ____ lift a car. || would || will / can",
+                  "T || Si fuera invisible, le haría bromas a mi hermano. || If I were invisible, I would play tricks on my brother.",
+                  "T || ¿A dónde irías si pudieras volar? || Where would you go if you could fly?",
+                  "T || Salvaría a mi familia primero. || I would save my family first.",
+                  "T || ¿Qué superpoder elegirías? || Which superpower would you choose?",
+                  "T || Elegiría volar porque podría viajar gratis. || I would choose flying because I could travel for free.",
+                  "H || 👻🫥 || Guess the hidden superpower! || Be invisible",
+                  "E || 🧒🫥 🎢🆓 ❓ || What would you do if you were invisible? || If I were invisible, I would go to the amusement park for free.",
+                  "E || 🧒🪽 🏖️❓ || Where would you go if you could fly? || If I could fly, I would go to the beach.",
+                  "E || 🧒🦸 👨‍👩‍👧 || Who would you save first if you were a superhero? || I would save my family first."
+                ],
+                "mistakes": [
+                  "M || If I [am] invisible, I would play tricks. || were* / am / will be || If I were invisible, I would play tricks.",
+                  "M || Where [will] you go if you could fly? || would* / will / do || Where would you go if you could fly?"
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Zero, first and second conditional; phrasal verb \"look for\" — Vocabulary Review",
+                "lines": [
+                  "Q || What happens if you don't eat? || If you don't eat, you feel hungry.",
+                  "Q || What will you do if you have a free day this weekend? || If I have a free day, I will visit my cousins.",
+                  "Q || What would you do if you were invisible? || If I were invisible, I would scare my sister.",
+                  "Q || What do you do if you lose your keys? || If I lose my keys, I look for them in my backpack.",
+                  "Q || What will you look for if you go to the mall this weekend? || If I go to the mall, I will look for new shoes.",
+                  "Q || What would you look for if you had a treasure map? || If I had a treasure map, I would look for gold.",
+                  "Q || Does your dog get happy if you say \"walk\"? (Use your imagination!) || Yes, if I say \"walk\", my dog gets very happy.",
+                  "Q || Will you go out if it is sunny tomorrow? || Yes, if it is sunny, I will go out. / No, I won't.",
+                  "Q || Would you be nervous if you met your favorite singer? || Yes, I would. / No, I wouldn't.",
+                  "Q || Make three sentences: zero, first and second conditional. || If you touch fire, you get hurt. If it rains, I will stay at home. If I were rich, I would travel.",
+                  "F || If you don't eat, you ____ hungry. || feel || will feel / would feel",
+                  "F || If I have a free day, I ____ visit my cousins. || will || would / can",
+                  "F || If I ____ invisible, I would scare my sister. || were || am / will be",
+                  "T || Si no comes, sientes hambre. || If you don't eat, you feel hungry.",
+                  "T || Si tengo un día libre, visitaré a mis primos. || If I have a free day, I will visit my cousins.",
+                  "T || Si fuera invisible, asustaría a mi hermana. || If I were invisible, I would scare my sister.",
+                  "T || Si pierdo mis llaves, las busco en mi mochila. || If I lose my keys, I look for them in my backpack.",
+                  "T || ¿Estarías nervioso si conocieras a tu cantante favorito? || Would you be nervous if you met your favorite singer?",
+                  "H || 🔑🔍 || Guess the action! || Look for the keys",
+                  "E || 🧒🗺️💰 ❓ || What would you look for if you had a treasure map? || If I had a treasure map, I would look for gold."
+                ],
+                "mistakes": [
+                  "M || If I have a free day, I [would] visit my cousins. (real plan) || will* / would / can || If I have a free day, I will visit my cousins.",
+                  "M || If I [was] invisible, I would scare my sister. || were* / was / am || If I were invisible, I would scare my sister."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 7,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "General review — Simple present (3rd person); Wh-questions (What/Where/How often...?); morning routine — Vocabulary: wake up, take a shower, brush my teeth, comb my hair, eat breakfast, go to school, study",
+                "lines": [
+                  "Q || What does your dad do every morning? || He wakes up, takes a shower and eats breakfast.",
+                  "Q || What does your best friend do after he or she brushes his or her teeth? || He combs his hair. / She eats breakfast.",
+                  "Q || Where does your brother or sister study in the morning? || She studies in her room. / He studies in the kitchen.",
+                  "Q || How often does your mom comb your little sister's hair? (Use your imagination!) || She combs her hair every morning.",
+                  "Q || What time does your grandpa wake up? || He wakes up at 5:00 AM.",
+                  "Q || How often does your cousin take a shower before school? || He always takes a shower before school.",
+                  "Q || Where does your teacher eat breakfast? (Use your imagination!) || She eats breakfast at home. / He eats breakfast at school.",
+                  "Q || What does Messi do every morning before training? (Use your imagination!) || He eats a big breakfast and stretches.",
+                  "F || He ____ up at 5:00 AM. || wakes || wake / waking",
+                  "F || How ____ does she take a shower? || often || many / long",
+                  "F || She ____ her hair every morning. || combs || comb / combing",
+                  "T || Él se despierta a las cinco. || He wakes up at five.",
+                  "T || Ella se cepilla los dientes después del desayuno. || She brushes her teeth after breakfast.",
+                  "T || Mi hermano estudia en la cocina. || My brother studies in the kitchen.",
+                  "T || ¿Con qué frecuencia se baña tu primo? || How often does your cousin take a shower?",
+                  "T || Mi papá se peina todas las mañanas. || My dad combs his hair every morning.",
+                  "H || 🪮 || Guess the action! || Comb my hair",
+                  "E || 👨⏰🚿🍳 || What does he do every morning? || He wakes up, takes a shower and eats breakfast.",
+                  "E || 👧📚🛏️ || Where does she study? || She studies in her bedroom.",
+                  "E || 👦🪥 ✅✅✅✅ || How often does he brush his teeth? || He always brushes his teeth."
+                ],
+                "mistakes": [
+                  "M || He [wake] up at 5:00 AM. || wakes* / wake / waking || He wakes up at 5:00 AM.",
+                  "M || How often [do] she take a shower? || does* / do / is || How often does she take a shower?"
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "General review — Present progressive (3rd person); Wh-questions (What/Who/Why...?) — Vocabulary: take a nap, sing, make, buy, talk to, pay, drink",
+                "lines": [
+                  "Q || What is your mom doing right now? (Use your imagination!) || She is making dinner. / She is talking to my grandma.",
+                  "Q || Who is your dad talking to on the phone? (Use your imagination!) || He is talking to his boss. / He is talking to my uncle.",
+                  "Q || Why is your little brother taking a nap at 11:00 AM? (Use your imagination!) || Because he woke up very early. / Because he is sick.",
+                  "Q || What is your sister singing in the shower? (Use your imagination!) || She is singing a Shakira song.",
+                  "Q || Why is your grandma buying so many vegetables? (Use your imagination!) || Because she is making soup for the whole family.",
+                  "Q || Who is paying for the pizza? (Use your imagination!) || My dad is paying for the pizza.",
+                  "Q || What is your best friend drinking at the party? (Use your imagination!) || He is drinking lemonade.",
+                  "Q || Why is your teacher making a cake? (Use your imagination!) || Because it is a student's birthday.",
+                  "F || She ____ making dinner right now. || is || are / am",
+                  "F || Who ____ he talking to? || is || are / does",
+                  "F || Why is he ____ a nap? || taking || take / takes",
+                  "T || Ella está haciendo la cena. || She is making dinner.",
+                  "T || ¿Con quién está hablando tu papá? || Who is your dad talking to?",
+                  "T || ¿Por qué está durmiendo tu hermano? || Why is your brother taking a nap?",
+                  "T || Mi hermana está cantando en la ducha. || My sister is singing in the shower.",
+                  "T || Mi papá está pagando la pizza. || My dad is paying for the pizza.",
+                  "H || 🎤🚿 || Guess the action! || Sing in the shower",
+                  "E || 👩🍲👨‍👩‍👧‍👦 || Why is she making a lot of soup? || Because she is cooking for the whole family.",
+                  "E || 👨📞👨‍💼 || Who is he talking to? || He is talking to his boss.",
+                  "E || 👦😴🕚 🤒 || Why is he taking a nap at 11:00 AM? || Because he is sick."
+                ],
+                "mistakes": [
+                  "M || She [are] making dinner. || is* / are / am || She is making dinner.",
+                  "M || Who [does] he talking to? || is* / does / are || Who is he talking to?"
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "General review — Simple future: going to (3rd person); Wh-questions (What/Why/How long...?); continue the story — Vocabulary: record, bake, give an interview, show up, go on a tour",
+                "lines": [
+                  "Q || What is Shakira going to do next month? (Use your imagination!) || She is going to record a new song. / She is going to go on a tour.",
+                  "Q || Why is Messi going to give an interview? (Use your imagination!) || Because he won an important game.",
+                  "Q || How long is your favorite singer going to be on tour? (Use your imagination!) || She is going to be on tour for three months.",
+                  "Q || What is your mom going to bake for your birthday? (Use your imagination!) || She is going to bake a chocolate cake.",
+                  "Q || Why is your best friend going to show up late to the party? (Use your imagination!) || Because he has soccer practice first.",
+                  "Q || How long is your family going to stay at the beach on vacation? || They are going to stay for one week.",
+                  "Q || Continue the story: \"Tomorrow a famous singer is going to visit our school. First, she is going to...\" || First, she is going to sing a song. Then she is going to give an interview.",
+                  "Q || What is your dad going to record on his phone at your school show? (Use your imagination!) || He is going to record my dance.",
+                  "F || She ____ going to record a new song. || is || are / will",
+                  "F || How ____ is she going to be on tour? || long || many / often",
+                  "F || He is going to ____ an interview. || give || gives / giving",
+                  "T || Ella va a grabar una canción nueva. || She is going to record a new song.",
+                  "T || ¿Por qué va a dar una entrevista? || Why is he going to give an interview?",
+                  "T || ¿Cuánto tiempo va a estar de gira? || How long is she going to be on tour?",
+                  "T || Mi mamá va a hornear un pastel. || My mom is going to bake a cake.",
+                  "T || Él va a llegar tarde a la fiesta. || He is going to show up late to the party.",
+                  "H || 🎤🎧🎚️ || Guess the action! || Record a song",
+                  "E || 👩‍🎤🎤🎧 || What is she going to do next month? || She is going to record a new song.",
+                  "E || 🧑‍🎤🚌🌎 3️⃣ 📅 || How long is she going to be on tour? || She is going to be on tour for three months.",
+                  "E || 👩🎂🍫 || What is she going to bake? || She is going to bake a chocolate cake."
+                ],
+                "mistakes": [
+                  "M || She [are] going to record a new song. || is* / are / will || She is going to record a new song.",
+                  "M || He is going to [gives] an interview. || give* / gives / giving || He is going to give an interview."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "General review — Simple future: will (3rd person); Wh-questions (What/When/Who...?) — Vocabulary: hear, open, see, scream, laugh",
+                "lines": [
+                  "Q || What will your mom do when she opens your birthday card? (Use your imagination!) || She will laugh and hug me. / She will cry a little.",
+                  "Q || When will your dad see your grades? || He will see them on Friday.",
+                  "Q || Who will scream first on the roller coaster, you or your best friend? || My best friend will scream first.",
+                  "Q || What will your sister do when she hears the good news? (Use your imagination!) || She will scream with joy.",
+                  "Q || When will your family open the Christmas presents? || They will open them at midnight.",
+                  "Q || Who will laugh the most at the movie tonight? || My dad will laugh the most.",
+                  "Q || What will your grandma say when she sees your drawing? (Use your imagination!) || She will say it is beautiful.",
+                  "Q || What will your best friend do after school tomorrow? || He will play basketball. / She will go to the park.",
+                  "F || She ____ laugh when she opens the card. || will || is going / would",
+                  "F || When ____ he see your grades? || will || does / is",
+                  "F || My dad will ____ the most at the movie. || laugh || laughs / laughing",
+                  "T || Ella se reirá cuando abra la tarjeta. || She will laugh when she opens the card.",
+                  "T || ¿Cuándo verá tu papá tus notas? || When will your dad see your grades?",
+                  "T || Mi amiga gritará primero. || My friend will scream first.",
+                  "T || Ellos abrirán los regalos a medianoche. || They will open the presents at midnight.",
+                  "T || Mi abuela dirá que es hermoso. || My grandma will say it is beautiful.",
+                  "H || 🎢😱 || Guess the action! || Scream",
+                  "E || 👩💌😂 || What will she do when she opens the card? || She will laugh.",
+                  "E || 👧📣📰 😱 || What will she do when she hears the news? || She will scream.",
+                  "E || 🎁🎄🕛 || When will they open the presents? || They will open the presents at midnight."
+                ],
+                "mistakes": [
+                  "M || She [wills] laugh when she opens the card. || will* / wills / is will || She will laugh when she opens the card.",
+                  "M || When [does] he will see your grades? || will* / does / is || When will he see your grades?"
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "General review — Simple present (process); Wh-questions (What/How many/How much...?); making lemonade — Vocabulary: squeeze, add, stir, pour",
+                "lines": [
+                  "Q || How do you make lemonade? Tell me the steps. || First, you squeeze the lemons. Then you add water and sugar. Then you stir and pour it into a glass.",
+                  "Q || What do you squeeze to make lemonade? || You squeeze lemons.",
+                  "Q || How many lemons do you need for one glass of lemonade? || You need two lemons. / You need one big lemon.",
+                  "Q || How much sugar do you add to the lemonade? || You add two spoons of sugar.",
+                  "Q || What do you do after you add the sugar? || You stir the lemonade.",
+                  "Q || What do you pour the lemonade into? || You pour it into a glass.",
+                  "Q || How much water do you add? || You add one glass of water.",
+                  "Q || What do you add to make the lemonade cold? || You add ice.",
+                  "F || First, you ____ the lemons. || squeeze || squeezes / squeezing",
+                  "F || How ____ sugar do you add? || much || many / long",
+                  "F || You ____ the lemonade into a glass. || pour || pours / pouring",
+                  "T || Primero, exprimes los limones. || First, you squeeze the lemons.",
+                  "T || Luego agregas agua y azúcar. || Then you add water and sugar.",
+                  "T || ¿Cuántos limones necesitas? || How many lemons do you need?",
+                  "T || Revuelves la limonada. || You stir the lemonade.",
+                  "T || Sirves la limonada en un vaso. || You pour the lemonade into a glass.",
+                  "H || 🍋🤏💧 || Guess the action! || Squeeze",
+                  "E || 🍋🍋 ❓ || How many lemons do you need? || You need two lemons.",
+                  "E || 🥄🥄🍚 || How much sugar do you add? || You add two spoons of sugar.",
+                  "E || 🥤🧊 || What do you add to make it cold? || You add ice."
+                ],
+                "mistakes": [
+                  "M || First, you [squeezes] the lemons. || squeeze* / squeezes / squeezing || First, you squeeze the lemons.",
+                  "M || How [many] sugar do you add? || much* / many / long || How much sugar do you add?"
+                ]
+              }
+            ]
+          },
+          {
+            "week": 8,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Means of transportation — Comparatives (short and long adjectives): affirmative, negative and interrogative — Vocabulary: fast, slow, cheap, expensive, safe, dangerous, comfortable",
+                "lines": [
+                  "Q || Which is faster, a plane or a bus? || A plane is faster than a bus.",
+                  "Q || Which is cheaper, a bike or a car? || A bike is cheaper than a car.",
+                  "Q || Which is more comfortable, a train or a motorcycle? || A train is more comfortable than a motorcycle.",
+                  "Q || Is a motorcycle more dangerous than a car? || Yes, a motorcycle is more dangerous than a car.",
+                  "Q || Is a bus more expensive than a taxi? || No, a bus isn't more expensive than a taxi. A taxi is more expensive.",
+                  "Q || Which is safer, a plane or a motorcycle? || A plane is safer than a motorcycle.",
+                  "Q || Make a negative sentence: a bike / not faster / a car. || A bike isn't faster than a car.",
+                  "Q || Which means of transportation do you use the most? Compare it with another one. || I use the bus. It is cheaper than a taxi but slower.",
+                  "F || A plane is ____ than a bus. || faster || more fast / fastest",
+                  "F || A train is ____ than a motorcycle. || more comfortable || comfortabler / most comfortable",
+                  "F || A bike ____ faster than a car. || isn't || not / doesn't",
+                  "T || Un avión es más rápido que un bus. || A plane is faster than a bus.",
+                  "T || Una bicicleta es más barata que un carro. || A bike is cheaper than a car.",
+                  "T || ¿Es una moto más peligrosa que un carro? || Is a motorcycle more dangerous than a car?",
+                  "T || Un bus no es más caro que un taxi. || A bus isn't more expensive than a taxi.",
+                  "T || Un tren es más cómodo que una moto. || A train is more comfortable than a motorcycle.",
+                  "H || ✈️ || Guess the hidden means of transportation! || Plane",
+                  "H || 🚲 || Guess the hidden means of transportation! || Bike",
+                  "E || ✈️ 🚌 || Which is faster? || The plane is faster than the bus.",
+                  "E || 🏍️ 🚗 || Which is more dangerous? || The motorcycle is more dangerous than the car."
+                ],
+                "mistakes": [
+                  "M || A plane is [more fast] than a bus. || faster* / more fast / fastest || A plane is faster than a bus.",
+                  "M || A bike [not is] faster than a car. || isn't* / not is / doesn't || A bike isn't faster than a car."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Family — Comparatives (short and long adjectives); Wh-questions — Vocabulary: tall, smart, loud, messy, kind, silly, responsible, polite",
+                "lines": [
+                  "Q || Who is louder in your family, your brother or your sister? || My brother is louder than my sister.",
+                  "Q || Who is messier, you or your best friend? || I am messier than my best friend. / My best friend is messier than me.",
+                  "Q || Who is more responsible, your mom or your dad? || My mom is more responsible than my dad.",
+                  "Q || Who is sillier, your cousin or your uncle? || My uncle is sillier than my cousin.",
+                  "Q || Who is more polite, you or your little brother? || I am more polite than my little brother.",
+                  "Q || Who is kinder, your grandma or your grandpa? || My grandma is kinder than my grandpa.",
+                  "Q || Who is smarter, your dog or your cat? (Use your imagination!) || My dog is smarter than my cat.",
+                  "Q || Compare two people in your family using \"taller\" and \"more responsible\". || My dad is taller than my mom, but my mom is more responsible.",
+                  "F || My brother is ____ than my sister. || louder || more loud / loudest",
+                  "F || My mom is ____ than my dad. || more responsible || responsibler / most responsible",
+                  "F || Who is ____, you or your friend? || messier || messyer / more messy",
+                  "T || Mi hermano es más ruidoso que mi hermana. || My brother is louder than my sister.",
+                  "T || Soy más desordenado que mi mejor amigo. || I am messier than my best friend.",
+                  "T || Mi mamá es más responsable que mi papá. || My mom is more responsible than my dad.",
+                  "T || Mi tío es más tonto que mi primo. || My uncle is sillier than my cousin.",
+                  "T || Mi abuela es más amable que mi abuelo. || My grandma is kinder than my grandpa.",
+                  "H || 🧹🚫🛏️ || Guess the hidden adjective! || Messy",
+                  "E || 👦📣 👧🤫 || Who is louder? || The boy is louder than the girl.",
+                  "E || 👩📋✅ 👨🛋️ || Who is more responsible? || The woman is more responsible than the man.",
+                  "E || 👧🙏 👦😜 || Who is more polite? || The girl is more polite than the boy."
+                ],
+                "mistakes": [
+                  "M || My brother is [more loud] than my sister. || louder* / more loud / loudest || My brother is louder than my sister.",
+                  "M || My mom is [responsibler] than my dad. || more responsible* / responsibler / most responsible || My mom is more responsible than my dad."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Holidays — Superlatives (short and long adjectives): affirmative, negative and interrogative — Vocabulary: cold, loud, exciting, beautiful, popular",
+                "lines": [
+                  "Q || Which is the most exciting holiday for you? Why? || Christmas is the most exciting holiday because I get presents.",
+                  "Q || Which is the loudest holiday in your country? || New Year's Eve is the loudest holiday because of the fireworks.",
+                  "Q || Which is the coldest month in your city? || December is the coldest month. / There is no cold month in my city.",
+                  "Q || Which is the most beautiful holiday? Why? || Christmas is the most beautiful holiday because of the lights.",
+                  "Q || Is Halloween the most popular holiday for kids? || Yes, it is the most popular holiday for kids. / No, Christmas is more popular.",
+                  "Q || Which is the most popular holiday in your family? || Mother's Day is the most popular holiday in my family.",
+                  "Q || Make a negative sentence: Easter / not the loudest holiday. || Easter isn't the loudest holiday.",
+                  "Q || When is the most exciting time of the year for you? || December is the most exciting time of the year for me.",
+                  "F || Christmas is the ____ holiday. || most exciting || excitingest / more exciting",
+                  "F || December is the ____ month. || coldest || colder / most cold",
+                  "F || ____ Halloween the most popular holiday? || Is || Are / Does",
+                  "T || Navidad es la fiesta más emocionante. || Christmas is the most exciting holiday.",
+                  "T || Año Nuevo es la fiesta más ruidosa. || New Year's Eve is the loudest holiday.",
+                  "T || Diciembre es el mes más frío. || December is the coldest month.",
+                  "T || ¿Es Halloween la fiesta más popular? || Is Halloween the most popular holiday?",
+                  "T || Pascua no es la fiesta más ruidosa. || Easter isn't the loudest holiday.",
+                  "H || 🎄🎁 || Guess the hidden holiday! || Christmas",
+                  "E || 🎄 🎃 🎆 || Which holiday is the loudest? || New Year's Eve is the loudest.",
+                  "E || 🎃 🎄 || Which holiday is more popular for kids? (Use your imagination!) || Halloween is more popular for kids. / Christmas is more popular.",
+                  "E || 🌡️❄️📅1️⃣2️⃣ || Which is the coldest month? || December is the coldest month."
+                ],
+                "mistakes": [
+                  "M || Christmas is the [excitingest] holiday. || most exciting* / excitingest / more exciting || Christmas is the most exciting holiday.",
+                  "M || December is the [more cold] month. || coldest* / more cold / colder || December is the coldest month."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Dogs and cats — Superlatives (short and long adjectives); Wh-questions — Vocabulary: fast, cute, lazy, friendly, intelligent, playful",
+                "lines": [
+                  "Q || Which is the cutest pet: a puppy, a kitten or a hamster? || A kitten is the cutest pet. / A puppy is the cutest pet.",
+                  "Q || Which animal is the laziest, a cat, a dog or a sloth? || The sloth is the laziest animal. / The cat is the laziest.",
+                  "Q || Which is the friendliest animal? || The dog is the friendliest animal.",
+                  "Q || Which is the most intelligent pet? || The dog is the most intelligent pet. / The parrot is the most intelligent pet.",
+                  "Q || Which is the most playful: a puppy, an old dog or a cat? || The puppy is the most playful.",
+                  "Q || Which is the fastest, a cat, a dog or a rabbit? || The dog is the fastest. / The rabbit is the fastest.",
+                  "Q || Do you prefer dogs or cats? Why? Use a superlative. || I prefer dogs because they are the friendliest animals.",
+                  "Q || Which is the laziest person in your family? (Use your imagination!) || My brother is the laziest person in my family.",
+                  "F || The dog is the ____ animal. || friendliest || friendlyest / most friendly",
+                  "F || The parrot is the ____ pet. || most intelligent || intelligentest / more intelligent",
+                  "F || The kitten is the ____ pet. || cutest || cuter / most cute",
+                  "T || El gatito es la mascota más linda. || The kitten is the cutest pet.",
+                  "T || El perezoso es el animal más perezoso. || The sloth is the laziest animal.",
+                  "T || El perro es el más amigable. || The dog is the friendliest.",
+                  "T || ¿Cuál es la mascota más inteligente? || Which is the most intelligent pet?",
+                  "T || Prefiero los perros porque son los más juguetones. || I prefer dogs because they are the most playful.",
+                  "H || 🐈 || Guess the hidden animal! || Cat",
+                  "E || 🐕 🐈 🐇 || Which animal is the fastest? || The dog is the fastest. / The rabbit is the fastest.",
+                  "E || 🐶 🐱 🐹 || Which is the cutest? (Use your imagination!) || The puppy is the cutest.",
+                  "E || 🐈😴 🐕🏃 🦥 || Which is the laziest? || The sloth is the laziest."
+                ],
+                "mistakes": [
+                  "M || The dog is the [friendlyest] animal. || friendliest* / friendlyest / most friendly || The dog is the friendliest animal.",
+                  "M || The kitten is the [more cute] pet. || cutest* / more cute / cuter || The kitten is the cutest pet."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Comparatives and superlatives; phrasal verb \"hurry up\" — Vocabulary: fast, slow, cheap, expensive, safe, dangerous, comfortable, tall, smart, loud, messy, kind, silly, responsible, polite, cold, exciting, beautiful, popular, cute, lazy, friendly, intelligent, playful",
+                "lines": [
+                  "Q || Which is faster, a car or a bike? || A car is faster than a bike.",
+                  "Q || Who is the tallest person in your family? || My dad is the tallest person in my family.",
+                  "Q || Which is the most exciting holiday for you? || Christmas is the most exciting holiday for me.",
+                  "Q || Which pet is the friendliest? || The dog is the friendliest pet.",
+                  "Q || Who is messier, you or your sister? || My sister is messier than me.",
+                  "Q || Which means of transportation is the safest? || The plane is the safest.",
+                  "Q || Is a motorcycle more expensive than a bike? || Yes, a motorcycle is more expensive than a bike.",
+                  "Q || Who is the most responsible person in your family? || My mom is the most responsible person in my family.",
+                  "Q || What does your mom say when you are late for school? || She says \"Hurry up!\"",
+                  "Q || Compare your city and another city. Use one comparative and one superlative. || Medellín is warmer than Bogotá, and Cartagena is the hottest city.",
+                  "F || A car is ____ than a bike. || faster || more fast / fastest",
+                  "F || My dad is the ____ person in my family. || tallest || taller / most tall",
+                  "F || The dog is the ____ pet. || friendliest || friendlier / most friendly",
+                  "T || Un carro es más rápido que una bicicleta. || A car is faster than a bike.",
+                  "T || Mi papá es la persona más alta de mi familia. || My dad is the tallest person in my family.",
+                  "T || Halloween es la fiesta más popular para los niños. || Halloween is the most popular holiday for kids.",
+                  "T || ¡Apúrate! Vamos tarde. || Hurry up! We are late.",
+                  "T || Mi mamá es la más responsable. || My mom is the most responsible.",
+                  "H || ⏰🏃💨 || Guess the hidden phrase! || Hurry up",
+                  "E || 🚗 🚲 🚶 || Which is the fastest? || The car is the fastest."
+                ],
+                "mistakes": [
+                  "M || My dad is the [taller] person in my family. || tallest* / taller / most tall || My dad is the tallest person in my family.",
+                  "M || A car is faster [then] a bike. || than* / then / that || A car is faster than a bike."
+                ]
+              }
+            ]
+          }
+        ],
+        "vocab": [
+          {
+            "week": 1,
+            "category": "Zero and first conditional",
+            "words": [
+              "Touch fire",
+              "Get hurt",
+              "Feel cold",
+              "Get sick",
+              "Mix",
+              "Water the plants",
+              "Die",
+              "Grow",
+              "Stay at home",
+              "Scream",
+              "Pass a test",
+              "Be late",
+              "Improve"
+            ]
+          },
+          {
+            "week": 2,
+            "category": "Second conditional: superpowers, magic, space and money",
+            "words": [
+              "Lift heavy things",
+              "Save people",
+              "Shoot lasers",
+              "Control fire",
+              "Fly",
+              "Find",
+              "Come to life",
+              "Throw a party",
+              "Ride",
+              "See",
+              "Meet",
+              "Land",
+              "Float",
+              "Buy",
+              "Build",
+              "Travel",
+              "Help",
+              "Donate"
+            ]
+          },
+          {
+            "week": 3,
+            "category": "Can and could: abilities and suggestions",
+            "words": [
+              "Draw",
+              "Paint",
+              "Ride a bike",
+              "Play an instrument",
+              "Fly",
+              "Climb",
+              "Run fast",
+              "Shoot lasers",
+              "Read minds",
+              "Crawl",
+              "Sleep all day",
+              "Babble",
+              "Cry",
+              "Eat soft food",
+              "Roll over",
+              "Buy",
+              "Blow up",
+              "Bring",
+              "Surprise",
+              "Meet"
+            ]
+          },
+          {
+            "week": 4,
+            "category": "Ordering food (would) and school activities (simple past)",
+            "words": [
+              "Order",
+              "Drink",
+              "Add",
+              "Recommend",
+              "Pay",
+              "Learn",
+              "Ask",
+              "Participate",
+              "Work in groups",
+              "Present a project"
+            ]
+          },
+          {
+            "week": 5,
+            "category": "Should and have to: habits, responsibilities and rules",
+            "words": [
+              "Eat",
+              "Drink",
+              "Sleep",
+              "Brush",
+              "Wash",
+              "Go to bed earlier",
+              "Pack your backpack",
+              "Ask for help",
+              "Keep",
+              "Move",
+              "Wake up early",
+              "Feed my pet",
+              "Go to school",
+              "Do my homework",
+              "Wear a uniform",
+              "Be on time",
+              "Raise your hand",
+              "Paint on the walls",
+              "Use a phone"
+            ]
+          },
+          {
+            "week": 6,
+            "category": "Conditionals review",
+            "words": [
+              "Touch fire",
+              "Get hurt",
+              "Feel cold",
+              "Get sick",
+              "Mix",
+              "Water the plants",
+              "Die",
+              "Stay at home",
+              "Go out",
+              "Visit",
+              "Spend time with friends",
+              "Lift heavy things",
+              "Save people",
+              "Shoot lasers",
+              "Control fire",
+              "Fly",
+              "Be invisible",
+              "Show up",
+              "Look for"
+            ]
+          },
+          {
+            "week": 7,
+            "category": "Tenses review: routines, present progressive, future and processes",
+            "words": [
+              "Wake up",
+              "Take a shower",
+              "Brush my teeth",
+              "Comb my hair",
+              "Eat breakfast",
+              "Go to school",
+              "Study",
+              "Take a nap",
+              "Sing",
+              "Make",
+              "Buy",
+              "Talk to",
+              "Pay",
+              "Drink",
+              "Record",
+              "Bake",
+              "Give an interview",
+              "Show up",
+              "Go on a tour",
+              "Hear",
+              "Open",
+              "See",
+              "Scream",
+              "Laugh",
+              "Squeeze",
+              "Add",
+              "Stir",
+              "Pour"
+            ]
+          },
+          {
+            "week": 8,
+            "category": "Comparatives and superlatives review",
+            "words": [
+              "Fast",
+              "Slow",
+              "Cheap",
+              "Expensive",
+              "Safe",
+              "Dangerous",
+              "Comfortable",
+              "Tall",
+              "Smart",
+              "Loud",
+              "Messy",
+              "Kind",
+              "Silly",
+              "Responsible",
+              "Polite",
+              "Cold",
+              "Exciting",
+              "Beautiful",
+              "Popular",
+              "Cute",
+              "Lazy",
+              "Friendly",
+              "Intelligent",
+              "Playful",
+              "Hurry up"
+            ]
+          }
+        ]
       }
     ]
   }
