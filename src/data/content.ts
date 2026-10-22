@@ -6877,6 +6877,1385 @@ export const COURSES: CourseDef[] = [
             ]
           }
         ]
+      },
+      {
+        "level": 6,
+        "weeks": [
+          {
+            "week": 1,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Yesterday at... — Past progressive (1st person); Positive sentences; time expressions 6:00 AM, 10:15 AM, 5:45 PM, 7:30 PM — Vocabulary: come, eat, wait",
+                "lines": [
+                  "Q || What were you doing yesterday at 6:00 AM? || I was sleeping. / I was eating breakfast.",
+                  "Q || What were you doing yesterday at 10:15 AM? || I was studying English. / I was waiting for the teacher.",
+                  "Q || What were you doing yesterday at 5:45 PM? || I was waiting for my mom. / I was eating a snack.",
+                  "Q || What were you doing yesterday at 7:30 PM? || I was eating dinner. / I was watching TV.",
+                  "Q || What were you doing yesterday when your English class started? || I was coming home from school. / I was eating a snack.",
+                  "Q || Complete: Yesterday at 6:00 AM, I ____ (eat) breakfast. || Yesterday at 6:00 AM, I was eating breakfast.",
+                  "Q || Complete: Yesterday at 5:45 PM, I ____ (wait) for the bus. || Yesterday at 5:45 PM, I was waiting for the bus.",
+                  "Q || Say the time: 10:15 AM. || It's ten fifteen in the morning. / It's a quarter past ten.",
+                  "Q || Say the time: 7:30 PM. || It's seven thirty in the evening. / It's half past seven.",
+                  "F || I ____ eating lunch at 12:00 PM. || was || were / am",
+                  "F || I was ____ for my dad at 5:45 PM. || waiting || wait / waited",
+                  "F || I was ____ to school at 7:00 AM. || coming || come / came",
+                  "T || Yo estaba comiendo el desayuno a las 6:00 AM. || I was eating breakfast at 6:00 AM.",
+                  "T || Yo estaba esperando a mi mamá. || I was waiting for my mom.",
+                  "T || Yo estaba llegando a la escuela a las 7:00 AM. || I was coming to school at 7:00 AM.",
+                  "T || Ayer a las 7:30 PM yo estaba comiendo la cena. || Yesterday at 7:30 PM I was eating dinner.",
+                  "T || Yo estaba esperando el bus. || I was waiting for the bus.",
+                  "H || 🍽️ || Guess the action! || Eat",
+                  "H || ⏳ || Guess the action! || Wait",
+                  "E || 🕕 || What time is it? || It's six o'clock."
+                ],
+                "mistakes": [
+                  "M || I [were] eating breakfast at 6:00 AM. || was* / were / am || I was eating breakfast at 6:00 AM.",
+                  "M || I was [wait] for the bus. || waiting* / wait / waited || I was waiting for the bus."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Yesterday at... — Past progressive (1st person); Yes/No questions (Short answers); Wh-questions (What...?) — Vocabulary: come, eat, wait, do homework",
+                "lines": [
+                  "Q || Were you sleeping yesterday at 6:00 AM? || Yes, I was. / No, I wasn't.",
+                  "Q || Were you doing homework yesterday at 5:45 PM? || Yes, I was. / No, I wasn't.",
+                  "Q || Were you eating dinner with your family yesterday at 7:30 PM? || Yes, I was. / No, I wasn't.",
+                  "Q || Were you waiting for the bus yesterday at 10:15 AM? || Yes, I was. / No, I wasn't.",
+                  "Q || What were you doing yesterday when it was raining? (Use your imagination!) || I was doing my homework. / I was watching TV.",
+                  "Q || What were you doing yesterday at lunchtime? || I was eating lunch with my family. / I was waiting in line at the cafeteria.",
+                  "Q || What were you doing last night before bed? || I was doing my homework. / I was eating a snack.",
+                  "Q || Ask your coach what he or she was doing yesterday at 7:30 PM. || What were you doing yesterday at 7:30 PM?",
+                  "Q || Ask a classmate if he or she was sleeping yesterday at 6:00 AM. || Were you sleeping yesterday at 6:00 AM?",
+                  "F || ____ you doing homework at 5:45 PM? || Were || Was / Are",
+                  "F || Yes, I ____. (short answer) || was || were / am",
+                  "F || I was ____ my homework. || doing || do / did",
+                  "T || ¿Estabas durmiendo ayer a las 6:00 AM? || Were you sleeping yesterday at 6:00 AM?",
+                  "T || Sí, estaba. || Yes, I was.",
+                  "T || No, no estaba. || No, I wasn't.",
+                  "T || Yo estaba haciendo mi tarea a las 5:45 PM. || I was doing my homework at 5:45 PM.",
+                  "T || ¿Qué estabas haciendo ayer a las 10:15 AM? || What were you doing yesterday at 10:15 AM?",
+                  "H || 📝 || Guess the action! || Do homework",
+                  "E || 🕥 || What time is it? || It's ten thirty.",
+                  "E || 😴 🕕 || What were you doing yesterday at 6:00 AM? || I was sleeping."
+                ],
+                "mistakes": [
+                  "M || [Was] you eating dinner at 7:30 PM? || Was / Were* / Are || Were you eating dinner at 7:30 PM?",
+                  "M || Yes, I [were]. || was* / were / am || Yes, I was."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Yesterday at... — Past progressive (3rd person); Positive sentences — Vocabulary: come, eat, wait, do homework, study",
+                "lines": [
+                  "Q || What was your mom doing yesterday at 6:00 AM? || She was cooking breakfast. / She was sleeping.",
+                  "Q || What was your dad doing yesterday at 7:30 PM when you got home? || He was eating dinner. / He was watching TV.",
+                  "Q || What was your best friend doing yesterday at 10:15 AM? || He was studying at school. / She was waiting for the teacher.",
+                  "Q || What was your grandpa doing yesterday at 5:45 PM? || He was waiting for the bus. / He was eating a snack.",
+                  "Q || What was Messi doing yesterday at 10:15 AM? (Use your imagination!) || He was playing soccer. / He was eating breakfast.",
+                  "Q || What was your cousin doing yesterday when you called him or her? (Use your imagination!) || He was doing homework. / She was eating a snack.",
+                  "Q || Complete: Yesterday at 7:30 PM, my aunt ____ (eat) dinner. || Yesterday at 7:30 PM, my aunt was eating dinner.",
+                  "Q || Complete: Yesterday at 10:15 AM, my teacher ____ (study) with us. || Yesterday at 10:15 AM, my teacher was studying with us.",
+                  "F || She ____ studying at 10:15 AM. || was || were / is",
+                  "F || He was ____ for his mom. || waiting || wait / waits",
+                  "F || My dad ____ eating lunch at 12:30 PM. || was || were / are",
+                  "T || Ella estaba estudiando a las 10:15 AM. || She was studying at 10:15 AM.",
+                  "T || Él estaba esperando a su papá. || He was waiting for his dad.",
+                  "T || Mi mamá estaba comiendo la cena a las 7:30 PM. || My mom was eating dinner at 7:30 PM.",
+                  "T || Mi mejor amigo estaba llegando a la escuela. || My best friend was coming to school.",
+                  "T || Mi prima estaba haciendo su tarea ayer a las 5:45 PM. || My cousin was doing her homework yesterday at 5:45 PM.",
+                  "H || 📚 || Guess the action! || Study",
+                  "E || 👩‍🍳🍳 🕕 || What was she doing yesterday at 6:00 AM? || She was cooking breakfast.",
+                  "E || 👦📚 🕙 || What was he doing yesterday at 10:15 AM? || He was studying.",
+                  "E || 🕠 || What time is it? || It's five thirty."
+                ],
+                "mistakes": [
+                  "M || She [were] studying English. || was* / were / is || She was studying English.",
+                  "M || He was [eat] lunch. || eating* / eat / ate || He was eating lunch."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Yesterday at... — Past progressive (3rd person); Yes/No questions (Short answers); Wh-questions (What...?) — Vocabulary Review",
+                "lines": [
+                  "Q || Was your mom sleeping yesterday at 6:00 AM? || Yes, she was. / No, she wasn't.",
+                  "Q || Was your dad working yesterday at 10:15 AM? || Yes, he was. / No, he wasn't.",
+                  "Q || Was your best friend doing homework yesterday at 5:45 PM? || Yes, he was. / No, she wasn't.",
+                  "Q || Was your neighbor playing music yesterday at 7:30 PM? (Use your imagination!) || Yes, he was. / No, she wasn't.",
+                  "Q || Was Shakira singing yesterday at 7:30 PM? (Use your imagination!) || Yes, she was. / No, she wasn't.",
+                  "Q || What was your grandma doing yesterday when you visited her? (Use your imagination!) || She was cooking. / She was waiting for me.",
+                  "Q || What was your uncle doing yesterday when it was raining? (Use your imagination!) || He was eating dinner. / He was studying.",
+                  "Q || Make a question: your sister / eat a snack / yesterday at 5:45 PM? || Was your sister eating a snack yesterday at 5:45 PM?",
+                  "F || ____ she waiting for the bus? || Was || Were / Is",
+                  "F || No, he ____. (short answer) || wasn't || weren't / isn't",
+                  "F || My best friend was ____ English at 10:15 AM. || studying || study / studies",
+                  "T || ¿Estaba tu mamá cocinando ayer a las 6:00 AM? || Was your mom cooking yesterday at 6:00 AM?",
+                  "T || Sí, ella estaba. || Yes, she was.",
+                  "T || No, él no estaba. || No, he wasn't.",
+                  "T || ¿Qué estaba haciendo tu papá ayer a las 7:30 PM? || What was your dad doing yesterday at 7:30 PM?",
+                  "T || Mi mejor amiga estaba estudiando a las 5:45 PM. || My best friend was studying at 5:45 PM.",
+                  "H || 👨‍💻 || Guess the action! || Work",
+                  "E || 👨‍💻 🕙 || Was he working yesterday at 10:15 AM? || Yes, he was.",
+                  "E || 👧🍝 🕢 || What was she doing yesterday at 7:30 PM? || She was eating dinner.",
+                  "E || 👨🚌⏳ || What was he doing yesterday at 5:45 PM? || He was waiting for the bus."
+                ],
+                "mistakes": [
+                  "M || [Were] she sleeping at 6:00 AM? || Was* / Were / Is || Was she sleeping at 6:00 AM?",
+                  "M || No, she [weren't]. || wasn't* / weren't / isn't || No, she wasn't."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Past progressive (1st & 3rd person) — Vocabulary: come, eat, wait, do homework, study",
+                "lines": [
+                  "Q || What were you doing last night at 9:00 PM? || I was sleeping. / I was watching TV.",
+                  "Q || What was your mom doing yesterday at 10:15 AM? || She was working. / She was cooking.",
+                  "Q || Were you eating breakfast yesterday at 6:00 AM? || Yes, I was. / No, I wasn't.",
+                  "Q || Was your dad waiting for you yesterday at 5:45 PM when school finished? || Yes, he was. / No, he wasn't.",
+                  "Q || What was your best friend doing yesterday at 7:30 PM? || He was doing his homework. / She was eating dinner.",
+                  "Q || What were you doing yesterday at 3:00 PM when you were tired? (Use your imagination!) || I was eating a snack. / I was waiting for my mom.",
+                  "Q || Complete: My sister ____ (wait) for the bus at 6:30 AM. || My sister was waiting for the bus at 6:30 AM.",
+                  "Q || Complete: I ____ (come) home at 5:45 PM. || I was coming home at 5:45 PM.",
+                  "Q || Say the time: 5:45 PM. || It's five forty-five in the evening. / It's a quarter to six.",
+                  "Q || Tell me two things you were doing yesterday at 7:30 PM. || I was eating dinner and talking to my mom.",
+                  "F || You ____ sleeping at 6:00 AM. || were || was / are",
+                  "F || ____ you doing homework yesterday? || Were || Was / Did",
+                  "F || She was ____ home at 5:45 PM. || coming || come / comes",
+                  "T || Yo estaba durmiendo a las 9:00 PM. || I was sleeping at 9:00 PM.",
+                  "T || Mi papá estaba trabajando a las 10:15 AM. || My dad was working at 10:15 AM.",
+                  "T || ¿Estabas comiendo ayer a las 7:30 PM? || Were you eating yesterday at 7:30 PM?",
+                  "T || Ella no estaba estudiando. || She wasn't studying.",
+                  "T || ¿Qué estaba haciendo tu abuelo ayer a las 6:00 AM? || What was your grandpa doing yesterday at 6:00 AM?",
+                  "H || 🚌🧍 || Guess the action! || Wait for the bus",
+                  "E || 🕖 || What time is it? || It's seven o'clock."
+                ],
+                "mistakes": [
+                  "M || What [was] you doing yesterday at 7:30 PM? || was / were* / are || What were you doing yesterday at 7:30 PM?",
+                  "M || My mom was [cook] dinner. || cooking* / cook / cooked || My mom was cooking dinner."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 2,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Parallel actions — Past progressive (3rd person); Positive sentences; parallel actions using WHILE — Vocabulary: Draw, Listen to music, Eat, Drink",
+                "lines": [
+                  "Q || What were your classmates doing yesterday at school? || They were drawing. / They were listening to music.",
+                  "Q || What was your best friend doing while you were drawing? || He was listening to music. / She was eating a snack.",
+                  "Q || What were you doing while your teacher was talking? || I was taking notes. / I was listening.",
+                  "Q || What was your mom doing while you were eating breakfast? || She was drinking coffee. / She was listening to the radio.",
+                  "Q || What was your dad doing while your mom was cooking? || He was listening to music. / He was drinking juice.",
+                  "Q || Complete: My friends ____ (draw) while I ____ (eat). || My friends were drawing while I was eating.",
+                  "Q || Complete: She was drinking juice while he ____ (listen) to music. || She was drinking juice while he was listening to music.",
+                  "Q || Make a sentence with WHILE: my brother / play / I / draw. || My brother was playing while I was drawing.",
+                  "F || They ____ drawing at school. || were || was / are",
+                  "F || I was eating while my sister ____ drinking juice. || was || were / is",
+                  "F || She was ____ to music. || listening || listen / listens",
+                  "T || Ellos estaban dibujando en la escuela. || They were drawing at school.",
+                  "T || Ella estaba escuchando música mientras él estaba comiendo. || She was listening to music while he was eating.",
+                  "T || Mi mamá estaba tomando café mientras yo estaba desayunando. || My mom was drinking coffee while I was eating breakfast.",
+                  "T || Mis amigos estaban jugando. || My friends were playing.",
+                  "T || Yo estaba dibujando mientras mi hermano estaba escuchando música. || I was drawing while my brother was listening to music.",
+                  "H || 🎨✏️ || Guess the action! || Draw",
+                  "H || 🎧 || Guess the action! || Listen to music",
+                  "E || 👧🧃 👦🎧 || What were they doing? || She was drinking juice while he was listening to music.",
+                  "E || 👦👧 ✏️🎨 || What were they doing at school? || They were drawing."
+                ],
+                "mistakes": [
+                  "M || They [was] drawing at school. || were* / was / are || They were drawing at school.",
+                  "M || She was [listen] to music while he was eating. || listening* / listen / listened || She was listening to music while he was eating."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Parallel actions — Past progressive (3rd person); Yes/No questions (Short answers) — Vocabulary: Draw, Listen to music, Eat, Drink, Play",
+                "lines": [
+                  "Q || Were your classmates drawing yesterday during art class? || Yes, they were. / No, they weren't.",
+                  "Q || Was your best friend listening to music while you were studying for the test? || Yes, he was. / No, she wasn't.",
+                  "Q || Were your friends playing while you were eating lunch in the cafeteria? || Yes, they were. / No, they weren't.",
+                  "Q || Was your grandma drinking tea while you were doing homework at her house? (Use your imagination!) || Yes, she was. / No, she wasn't.",
+                  "Q || Were you drawing while your teacher was explaining the lesson? || No, I wasn't. / Yes, I was.",
+                  "Q || Was Messi playing soccer while his fans were singing? (Use your imagination!) || Yes, he was. / No, he wasn't.",
+                  "Q || Make a question: your cousins / play / in the garden / while you / eat? || Were your cousins playing in the garden while you were eating?",
+                  "Q || Make a question: your dad / drink coffee / while you / eat breakfast? || Was your dad drinking coffee while you were eating breakfast?",
+                  "F || ____ they playing at school? || Were || Was / Are",
+                  "F || Yes, they ____. (short answer) || were || was / are",
+                  "F || Was she eating ____ he was drawing? || while || during / and",
+                  "T || ¿Estaban ellos jugando ayer en la escuela? || Were they playing yesterday at school?",
+                  "T || Sí, ellos estaban. || Yes, they were.",
+                  "T || No, ellos no estaban. || No, they weren't.",
+                  "T || ¿Estaba ella dibujando mientras tú estabas comiendo? || Was she drawing while you were eating?",
+                  "T || Ellos estaban jugando mientras la profesora estaba hablando. || They were playing while the teacher was talking.",
+                  "H || ⚽🎮 || Guess the action! || Play",
+                  "E || 👦👧⚽ || Were they playing? || Yes, they were.",
+                  "E || 👩🎧 👨🍔 || Was she eating while he was listening to music? || No, she wasn't. She was listening to music while he was eating.",
+                  "E || 🧒🧒📚 || Were they drawing? || No, they weren't. They were studying."
+                ],
+                "mistakes": [
+                  "M || [Was] they playing at school? || Was / Were* / Did || Were they playing at school?",
+                  "M || No, they [wasn't]. || weren't* / wasn't / aren't || No, they weren't."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Parallel actions — Past progressive (3rd person); Wh-questions (What/Where...?) — Vocabulary: Draw, Listen to music, Eat, Drink, Play, Fly",
+                "lines": [
+                  "Q || What were your friends doing at the park while you were flying a kite? (Use your imagination!) || They were playing soccer. / They were eating ice cream.",
+                  "Q || Where were your classmates playing yesterday during the break? || They were playing in the playground. / They were playing in the gym.",
+                  "Q || Where was your mom drinking coffee this morning while you were getting ready? || She was drinking coffee in the kitchen. / She was drinking coffee in the car.",
+                  "Q || What was your dad doing while you were playing video games? || He was listening to music. / He was drawing with my little sister.",
+                  "Q || Where were you eating lunch yesterday while your friends were playing? || I was eating lunch in the cafeteria. / I was eating lunch at home.",
+                  "Q || What were your cousins doing at your aunt's house while she was cooking? (Use your imagination!) || They were drawing. / They were playing.",
+                  "Q || Complete: They ____ (fly) a kite in the park while we ____ (eat). || They were flying a kite in the park while we were eating.",
+                  "Q || Make a sentence with WHILE: my friends / play soccer / I / drink water. || My friends were playing soccer while I was drinking water.",
+                  "F || Where ____ they playing? || were || was / are",
+                  "F || They were ____ a kite in the park. || flying || fly / flew",
+                  "F || We were eating ____ the kitchen. || in || on / at",
+                  "T || Ellos estaban volando una cometa en el parque. || They were flying a kite in the park.",
+                  "T || ¿Dónde estaban jugando tus amigos? || Where were your friends playing?",
+                  "T || ¿Qué estaban haciendo ellos en la casa? || What were they doing at home?",
+                  "T || Nosotros estábamos comiendo mientras ellos estaban jugando. || We were eating while they were playing.",
+                  "T || Mi hermana estaba dibujando en su cuarto. || My sister was drawing in her room.",
+                  "H || 🪁 || Guess the action! || Fly a kite",
+                  "E || 🧒🧒🪁🌳 || What were they doing at the park? || They were flying a kite.",
+                  "E || 👧👦🍕🏠 || Where were they eating pizza? || They were eating pizza at home.",
+                  "E || 👩🍵 👨🎧 || What were they doing at home? || She was drinking tea while he was listening to music."
+                ],
+                "mistakes": [
+                  "M || Where [was] they playing? || were* / was / are || Where were they playing?",
+                  "M || They were [fly] a kite. || flying* / fly / flies || They were flying a kite."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Parallel actions — Past progressive (3rd person); Wh-questions (Who...?) — Vocabulary Review",
+                "lines": [
+                  "Q || Who was drawing while you were eating lunch yesterday? || My best friend was drawing. / My classmate was drawing.",
+                  "Q || Who was listening to music at home last night while you were sleeping? (Use your imagination!) || My brother was listening to music.",
+                  "Q || Who was playing with you yesterday during the break? || My classmates were playing with me.",
+                  "Q || Who was drinking coffee at 6:00 AM in your house while you were still in bed? || My dad was drinking coffee. / My grandma was drinking coffee.",
+                  "Q || Who was flying a kite at the park while you were playing soccer? (Use your imagination!) || My cousins were flying a kite.",
+                  "Q || Who was cooking while you were watching TV last Sunday? || My mom was cooking. / My uncle was cooking.",
+                  "Q || Make a question with WHO: eat pizza / yesterday at 7:30 PM? || Who was eating pizza yesterday at 7:30 PM?",
+                  "Q || Tell me what you and your family were doing yesterday at 8:00 PM. || I was doing homework while my parents were watching TV.",
+                  "F || Who ____ playing soccer? || was || were / is",
+                  "F || My parents ____ watching TV while I was studying. || were || was / are",
+                  "F || Who was ____ coffee? || drinking || drink / drinks",
+                  "T || ¿Quién estaba dibujando? || Who was drawing?",
+                  "T || ¿Quién estaba jugando contigo ayer? || Who was playing with you yesterday?",
+                  "T || Mi hermano estaba escuchando música. || My brother was listening to music.",
+                  "T || Mis padres estaban tomando café. || My parents were drinking coffee.",
+                  "T || ¿Quién estaba volando una cometa en el parque? || Who was flying a kite at the park?",
+                  "H || 🥤 || Guess the action! || Drink",
+                  "E || 👨‍🍳🍲 👧📺 || Who was cooking? || The man was cooking. / He was cooking while she was watching TV.",
+                  "E || 👦🎧 👧✏️ || Who was drawing? || The girl was drawing. / She was drawing.",
+                  "E || 🧒🧒⚽ 👩📱 || Who was playing soccer? || The kids were playing soccer. / They were playing soccer."
+                ],
+                "mistakes": [
+                  "M || Who [were] drawing? || was* / were / is || Who was drawing?",
+                  "M || My parents [was] watching TV. || were* / was / are || My parents were watching TV."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Past progressive (3rd person), parallel actions with WHILE — Vocabulary: Draw, Listen to music, Eat, Drink, Play, Fly",
+                "lines": [
+                  "Q || What were your friends doing yesterday at school while you were in the bathroom? (Use your imagination!) || They were playing and drawing.",
+                  "Q || Were your classmates listening to music in class yesterday? || No, they weren't. / Yes, they were.",
+                  "Q || What was your dad doing while your mom was drinking coffee this morning? || He was eating breakfast. / He was listening to the news.",
+                  "Q || Where were you playing yesterday afternoon while it was sunny? || I was playing at the park. / I was playing in the garden.",
+                  "Q || Who was eating ice cream yesterday at 5:45 PM? (Use your imagination!) || My sister was eating ice cream.",
+                  "Q || Were you flying a kite last Sunday while your parents were having a picnic? (Use your imagination!) || No, I wasn't. / Yes, I was.",
+                  "Q || Complete: My friends ____ (listen) to music while I ____ (draw). || My friends were listening to music while I was drawing.",
+                  "Q || Make a sentence with WHILE: my teacher / talk / the students / draw. || My teacher was talking while the students were drawing.",
+                  "Q || What was Shakira doing while her fans were singing? (Use your imagination!) || She was dancing.",
+                  "Q || Tell me what your family was doing last night at 8:00 PM. || My mom was cooking while my dad was listening to music.",
+                  "F || What ____ they doing at school? || were || was / are",
+                  "F || He was drinking juice ____ she was drawing. || while || during / after",
+                  "F || They were ____ at the park. || playing || play / played",
+                  "T || Ellos estaban escuchando música. || They were listening to music.",
+                  "T || ¿Dónde estaban ellos comiendo? || Where were they eating?",
+                  "T || Ella estaba tomando jugo mientras él estaba dibujando. || She was drinking juice while he was drawing.",
+                  "T || ¿Quién estaba jugando en el parque? || Who was playing at the park?",
+                  "T || Los estudiantes estaban dibujando mientras la profesora estaba hablando. || The students were drawing while the teacher was talking.",
+                  "H || 🧃 || Guess the action! || Drink juice",
+                  "E || 👧🪁 👦🍦 || What were they doing at the park? || She was flying a kite while he was eating ice cream."
+                ],
+                "mistakes": [
+                  "M || He [were] playing while she was drawing. || was* / were / is || He was playing while she was drawing.",
+                  "M || They were [drink] juice. || drinking* / drink / drank || They were drinking juice."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 3,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Interrupted actions — Simple Past & Past Progressive (3rd person); Positive sentences; interrupted actions using WHEN — Vocabulary: Sleep, Ring, Watch TV, Knock",
+                "lines": [
+                  "Q || What happened last night while your dad was sleeping? (Use your imagination!) || The phone rang. / Someone knocked on the door.",
+                  "Q || What was your mom doing when the phone rang? || She was watching TV. / She was sleeping.",
+                  "Q || What happened while you were watching TV last night? (Use your imagination!) || Someone knocked on the door. / The phone rang.",
+                  "Q || What was your sister doing when someone knocked on the door? || She was sleeping. / She was doing homework.",
+                  "Q || Complete: My brother ____ (sleep) when the phone ____ (ring). || My brother was sleeping when the phone rang.",
+                  "Q || Complete: She was watching TV when someone ____ (knock) on the door. || She was watching TV when someone knocked on the door.",
+                  "Q || Make a sentence with WHEN: he / watch TV / the phone / ring. || He was watching TV when the phone rang.",
+                  "Q || Make a sentence with WHEN: she / sleep / someone / knock on the door. || She was sleeping when someone knocked on the door.",
+                  "F || My mom was sleeping ____ the phone rang. || when || while / because",
+                  "F || He was watching TV when someone ____ on the door. || knocked || knocking / knocks",
+                  "F || The phone ____ while she was sleeping. || rang || ring / ringing",
+                  "T || Mi papá estaba durmiendo cuando el teléfono sonó. || My dad was sleeping when the phone rang.",
+                  "T || Ella estaba viendo televisión cuando alguien tocó la puerta. || She was watching TV when someone knocked on the door.",
+                  "T || El teléfono sonó. || The phone rang.",
+                  "T || Alguien tocó la puerta. || Someone knocked on the door.",
+                  "T || Mi hermano estaba durmiendo. || My brother was sleeping.",
+                  "H || 📺🛋️ || Guess the action! || Watch TV",
+                  "H || 📞🔔 || Guess the action! || Ring",
+                  "E || 👨😴 📞🔔 || What happened? || He was sleeping when the phone rang.",
+                  "E || 👩📺 🚪✊ || What happened? || She was watching TV when someone knocked on the door."
+                ],
+                "mistakes": [
+                  "M || She was sleeping when the phone [ring]. || rang* / ring / ringing || She was sleeping when the phone rang.",
+                  "M || He was [watch] TV when someone knocked on the door. || watching* / watch / watched || He was watching TV when someone knocked on the door."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Interrupted actions — Simple Past & Past Progressive (3rd person); Yes/No questions (Long answers) — Vocabulary: Sleep, Ring, Watch TV, Knock, Cry",
+                "lines": [
+                  "Q || Was your mom sleeping when the phone rang last night? || Yes, she was sleeping when the phone rang. / No, she was watching TV when the phone rang.",
+                  "Q || Was your little brother or cousin crying when you got home tired yesterday? (Use your imagination!) || Yes, he was crying when I got home. / No, he wasn't crying.",
+                  "Q || Was your dad watching TV when the pizza delivery knocked on the door? (Use your imagination!) || Yes, he was watching TV when the pizza delivery knocked on the door. / No, he wasn't.",
+                  "Q || Were you sleeping when your mom called you for breakfast this morning? || Yes, I was sleeping when my mom called me. / No, I wasn't.",
+                  "Q || Was your teacher talking when the bell rang? || Yes, she was talking when the bell rang. / No, he wasn't.",
+                  "Q || Was Messi playing when it started to rain? (Use your imagination!) || Yes, he was playing when it started to rain. / No, he wasn't.",
+                  "Q || Make a question: your grandma / sleep / when the phone rang? || Was your grandma sleeping when the phone rang?",
+                  "Q || Make a question: the baby / cry / when you woke up? || Was the baby crying when you woke up?",
+                  "F || ____ he sleeping when the phone rang? || Was || Were / Did",
+                  "F || Yes, she was watching TV when someone ____ on the door. || knocked || knock / knocking",
+                  "F || The baby ____ crying when I got home. || was || were / did",
+                  "T || ¿Estaba ella durmiendo cuando el teléfono sonó? || Was she sleeping when the phone rang?",
+                  "T || Sí, ella estaba durmiendo cuando el teléfono sonó. || Yes, she was sleeping when the phone rang.",
+                  "T || El bebé estaba llorando cuando llegué a casa. || The baby was crying when I got home.",
+                  "T || No, él no estaba viendo televisión. || No, he wasn't watching TV.",
+                  "T || ¿Estaba tu papá durmiendo cuando alguien tocó la puerta? || Was your dad sleeping when someone knocked on the door?",
+                  "H || 👶😭 || Guess the action! || Cry",
+                  "E || 👶😭 🚪✊ || Was the baby crying when someone knocked on the door? || Yes, the baby was crying when someone knocked on the door.",
+                  "E || 👨📺 📞🔔 || Was he sleeping when the phone rang? || No, he wasn't. He was watching TV when the phone rang.",
+                  "E || 👧😴 🔔 || What happened? || She was sleeping when the bell rang."
+                ],
+                "mistakes": [
+                  "M || [Were] she sleeping when the phone rang? || Was* / Were / Did || Was she sleeping when the phone rang?",
+                  "M || The baby was [cry] when I got home. || crying* / cry / cried || The baby was crying when I got home."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Interrupted actions — Simple Past & Past Progressive (3rd person); Wh-questions (What...?) — Vocabulary: Sleep, Ring, Watch TV, Knock, Cry, Bark",
+                "lines": [
+                  "Q || What was your dog doing when you got home yesterday? (Use your imagination if you don't have a dog!) || It was barking. / It was sleeping.",
+                  "Q || What happened while your family was sleeping last night? (Use your imagination!) || A dog barked. / The phone rang.",
+                  "Q || What was your mom doing when you knocked on her door because you were hungry? || She was sleeping. / She was watching TV.",
+                  "Q || What was your best friend doing when the teacher called his or her name? || He was drawing. / She was talking.",
+                  "Q || What did your dad do when the phone rang during dinner? || He answered the phone. / He didn't answer.",
+                  "Q || What did you do when the neighbor's dog barked last night? (Use your imagination!) || I looked out the window. / I covered my ears.",
+                  "Q || Complete: The dog ____ (bark) while I ____ (sleep). || The dog barked while I was sleeping.",
+                  "Q || Make a sentence with WHEN: the baby / cry / my mom / come home. || The baby was crying when my mom came home.",
+                  "F || What ____ she doing when the dog barked? || was || were / did",
+                  "F || The dog ____ when someone knocked on the door. || barked || barking / barks",
+                  "F || My mom ____ cooking when I got home. || was || were / is",
+                  "T || ¿Qué estaba haciendo ella cuando el perro ladró? || What was she doing when the dog barked?",
+                  "T || El perro ladró cuando alguien tocó la puerta. || The dog barked when someone knocked on the door.",
+                  "T || ¿Qué pasó anoche? || What happened last night?",
+                  "T || Mi papá contestó el teléfono. || My dad answered the phone.",
+                  "T || Él estaba durmiendo cuando el perro ladró. || He was sleeping when the dog barked.",
+                  "H || 🐕💢 || Guess the action! || Bark",
+                  "E || 🐕 🚪✊ || What did the dog do when someone knocked on the door? || It barked.",
+                  "E || 👩😴 🐕💢 || What was she doing when the dog barked? || She was sleeping.",
+                  "E || 👦📺 👶😭 || What was he doing when the baby cried? || He was watching TV."
+                ],
+                "mistakes": [
+                  "M || What [were] he doing when the phone rang? || was* / were / did || What was he doing when the phone rang?",
+                  "M || The dog [bark] when I got home. || barked* / bark / barking || The dog barked when I got home."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Interrupted actions — Simple Past & Past Progressive (3rd person); Wh-questions (Where...?); prepositions of place review — Vocabulary Review",
+                "lines": [
+                  "Q || Where was your mom sleeping when the phone rang? || She was sleeping in her bedroom. / She was sleeping on the sofa.",
+                  "Q || Where were you when the dog barked last night? (Use your imagination!) || I was in the living room. / I was in bed.",
+                  "Q || Where was your dad watching TV when someone knocked on the door? || He was watching TV in the living room.",
+                  "Q || Where was your brother when the baby started crying? (Use your imagination!) || He was in the kitchen. / He was in the garden.",
+                  "Q || Where was the dog when it barked at the mailman? (Use your imagination!) || It was in the garden. / It was behind the door.",
+                  "Q || Where was your teacher when the bell rang? || She was in front of the class. / He was next to the door.",
+                  "Q || Make a question with WHERE: your grandpa / sleep / when the phone rang? || Where was your grandpa sleeping when the phone rang?",
+                  "Q || Complete: My cat ____ (sleep) on the sofa when the dog ____ (bark). || My cat was sleeping on the sofa when the dog barked.",
+                  "F || Where ____ you when the phone rang? || were || was / did",
+                  "F || She was sleeping ____ her bedroom. || in || on / at",
+                  "F || The dog was ____ the door when it barked. || behind || between / under",
+                  "T || ¿Dónde estabas tú cuando el perro ladró? || Where were you when the dog barked?",
+                  "T || Ella estaba durmiendo en su cuarto. || She was sleeping in her bedroom.",
+                  "T || Él estaba viendo televisión en la sala cuando el teléfono sonó. || He was watching TV in the living room when the phone rang.",
+                  "T || El perro estaba detrás de la puerta. || The dog was behind the door.",
+                  "T || ¿Dónde estaba tu mamá cuando alguien tocó la puerta? || Where was your mom when someone knocked on the door?",
+                  "H || 🛏️😴 || Guess the action! || Sleep",
+                  "E || 🐕🌳🏡 || Where was the dog when it barked? || It was in the garden.",
+                  "E || 👩😴🛋️ 📞 || Where was she sleeping when the phone rang? || She was sleeping on the sofa.",
+                  "E || 👦🍳 🚪✊ || Where was he when someone knocked on the door? || He was in the kitchen."
+                ],
+                "mistakes": [
+                  "M || Where [was] you when the dog barked? || were* / was / did || Where were you when the dog barked?",
+                  "M || She was sleeping [on] her bedroom. || in* / on / at || She was sleeping in her bedroom."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Interrupted actions — Simple Past & Past Progressive (3rd person); Wh-questions (Who...?) — Vocabulary Review",
+                "lines": [
+                  "Q || Who was sleeping when the phone rang last night? || My dad was sleeping. / My grandpa was sleeping.",
+                  "Q || Who knocked on the door while you were watching your favorite show? (Use your imagination!) || My neighbor knocked on the door. / My cousin knocked on the door.",
+                  "Q || Who was crying when you got home from school? (Use your imagination!) || My baby cousin was crying.",
+                  "Q || Who was watching TV when the dog barked? || My brother was watching TV. / My aunt was watching TV.",
+                  "Q || Who called while your mom was cooking dinner? (Use your imagination!) || My grandma called. / My uncle called.",
+                  "Q || Who was talking when the bell rang at school? || The teacher was talking. / My classmate was talking.",
+                  "Q || Make a question with WHO: sleep / when the dog barked? || Who was sleeping when the dog barked?",
+                  "Q || Make a sentence with WHEN: my grandma / call / I / do homework. || My grandma called when I was doing my homework.",
+                  "F || Who ____ on the door? || knocked || knocking / knock",
+                  "F || Who ____ sleeping when the phone rang? || was || were / did",
+                  "F || My sister ____ when I came home. || was crying || crying / cry",
+                  "T || ¿Quién tocó la puerta? || Who knocked on the door?",
+                  "T || ¿Quién estaba llorando? || Who was crying?",
+                  "T || Mi abuela llamó cuando yo estaba haciendo la tarea. || My grandma called when I was doing my homework.",
+                  "T || ¿Quién estaba viendo televisión cuando el perro ladró? || Who was watching TV when the dog barked?",
+                  "T || Mi hermano estaba durmiendo cuando alguien tocó la puerta. || My brother was sleeping when someone knocked on the door.",
+                  "H || 🚪✊ || Guess the action! || Knock",
+                  "E || 👴📞 👧📝 || Who called while she was doing homework? || Her grandpa called. / The grandpa called.",
+                  "E || 👦😴 👧📺 📞 || Who was sleeping when the phone rang? || The boy was sleeping. / He was sleeping.",
+                  "E || 🐕💢 👨😴 || Who was sleeping when the dog barked? || The man was sleeping. / He was sleeping."
+                ],
+                "mistakes": [
+                  "M || Who [were] crying? || was* / were / did || Who was crying?",
+                  "M || Who [knock] on the door last night? || knocked* / knock / knocking || Who knocked on the door last night?"
+                ]
+              }
+            ]
+          },
+          {
+            "week": 4,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Adverbs of frequency — Simple Present (3rd person); How often...?; Yes/No questions (Short answers) — Vocabulary: Sometimes, Usually, Always",
+                "lines": [
+                  "Q || How often does your mom cook dinner? || She always cooks dinner. / She usually cooks dinner.",
+                  "Q || How often does your dad play soccer on weekends? || He sometimes plays soccer on weekends. / He always plays soccer on weekends.",
+                  "Q || How often does your best friend do homework after school? || She always does homework after school. / He usually does homework after school.",
+                  "Q || Does your teacher always come to class on time? || Yes, she does. / No, he doesn't.",
+                  "Q || Does your brother usually eat breakfast before school? || Yes, he does. / No, he doesn't.",
+                  "Q || Does Messi always play soccer? || Yes, he does.",
+                  "Q || Complete: My mom ____ (always / drink) coffee in the morning. || My mom always drinks coffee in the morning.",
+                  "Q || Complete: He ____ (sometimes / watch) TV at night. || He sometimes watches TV at night.",
+                  "F || She ____ cooks dinner. (every day) || always || every / all",
+                  "F || My dad ____ plays soccer on Saturdays. || sometimes || sometime / some",
+                  "F || He usually ____ breakfast at 7:00 AM. || eats || eat / eating",
+                  "T || Mi mamá siempre cocina la cena. || My mom always cooks dinner.",
+                  "T || Él a veces juega fútbol. || He sometimes plays soccer.",
+                  "T || Ella usualmente hace su tarea en la tarde. || She usually does her homework in the afternoon.",
+                  "T || ¿Con qué frecuencia come tu papá pizza? || How often does your dad eat pizza?",
+                  "T || ¿Tu hermano siempre se levanta temprano? || Does your brother always wake up early?",
+                  "H || ☕🌅 || Guess the action! || Drink coffee",
+                  "E || 👩🍳 ✅✅✅✅ || How often does she cook? || She always cooks.",
+                  "E || 👨⚽ ✅✅❌❌ || How often does he play soccer? || He sometimes plays soccer.",
+                  "E || 👧📚 ✅✅✅❌ || How often does she study? || She usually studies."
+                ],
+                "mistakes": [
+                  "M || She always [cook] dinner. || cooks* / cook / cooking || She always cooks dinner.",
+                  "M || He [sometime] plays soccer. || sometimes* / sometime / some times || He sometimes plays soccer."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Adverbs of frequency — Simple Present (3rd person); Wh-questions (What...?) — Vocabulary: Rarely, Sometimes, Usually, Always",
+                "lines": [
+                  "Q || What does your mom usually do when she is tired? || She usually takes a nap. / She usually watches TV.",
+                  "Q || What does your dad always do when he gets home from work? || He always drinks coffee. / He always hugs us.",
+                  "Q || What does your best friend usually do after school? || He usually plays video games. / She usually does her homework.",
+                  "Q || What does your brother or sister rarely do when he or she is bored? || She rarely reads a book. / He rarely cleans his room.",
+                  "Q || What does Shakira usually do when she is happy? (Use your imagination!) || She usually sings and dances.",
+                  "Q || What does your grandma sometimes cook on Sundays? || She sometimes cooks soup. / She sometimes cooks rice and chicken.",
+                  "Q || Complete: My sister ____ (rarely / clean) her room. || My sister rarely cleans her room.",
+                  "Q || Make a sentence: my dad / usually / cook / on Saturdays. || My dad usually cooks on Saturdays.",
+                  "F || What ____ your mom usually do on Sundays? || does || do / is",
+                  "F || He ____ eats vegetables. (almost never) || rarely || sometimes / always",
+                  "F || She rarely ____ TV. || watches || watch / watching",
+                  "T || Mi hermana casi nunca limpia su cuarto. || My sister rarely cleans her room.",
+                  "T || ¿Qué hace tu papá usualmente cuando está cansado? || What does your dad usually do when he is tired?",
+                  "T || Él casi nunca come vegetales. || He rarely eats vegetables.",
+                  "T || Mi profesora usualmente llega temprano. || My teacher usually arrives early.",
+                  "T || Mi mejor amigo a veces juega videojuegos después de la escuela. || My best friend sometimes plays video games after school.",
+                  "H || 🥦🥕 || Guess the hidden word! || Vegetables",
+                  "E || 👦🧹 ✅❌❌❌ || How often does he clean his room? || He rarely cleans his room.",
+                  "E || 👩🏃 ✅✅✅✅ || What does she always do? || She always runs. / She always exercises.",
+                  "E || 👨🍕 ✅✅❌❌ || What does he sometimes eat? || He sometimes eats pizza."
+                ],
+                "mistakes": [
+                  "M || What [do] she usually do on Sundays? || does* / do / is || What does she usually do on Sundays?",
+                  "M || My dad usually [drink] coffee. || drinks* / drink / drinking || My dad usually drinks coffee."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Adverbs of frequency — Simple Present (3rd person); Wh-questions (How often...?) — Vocabulary: Never, Rarely, Sometimes, Usually, Always",
+                "lines": [
+                  "Q || How often does your dad go to the gym? || He never goes to the gym. / He sometimes goes to the gym.",
+                  "Q || How often does your mom watch TV at night? || She rarely watches TV at night. / She usually watches TV at night.",
+                  "Q || How often does your best friend play video games when he or she is bored? || He always plays video games. / She sometimes plays video games.",
+                  "Q || How often does your teacher give homework on Fridays? || She usually gives homework on Fridays. / He never gives homework on Fridays.",
+                  "Q || How often does your grandma call you? || She always calls me. / She sometimes calls me.",
+                  "Q || How often does Messi eat ice cream? (Use your imagination!) || He never eats ice cream. / He rarely eats ice cream.",
+                  "Q || Make a question with HOW OFTEN: your cousin / visit you? || How often does your cousin visit you?",
+                  "Q || Make a sentence: my brother / never / wake up early / on weekends. || My brother never wakes up early on weekends.",
+                  "F || ____ often does she go to the park? || How || What / When",
+                  "F || He ____ eats fish. He doesn't like it. || never || always / usually",
+                  "F || She never ____ coffee. || drinks || drink / drinking",
+                  "T || ¿Con qué frecuencia va tu mamá al gimnasio? || How often does your mom go to the gym?",
+                  "T || Él nunca come pescado. || He never eats fish.",
+                  "T || Mi abuela siempre me llama. || My grandma always calls me.",
+                  "T || Ella casi nunca ve televisión. || She rarely watches TV.",
+                  "T || Mi hermano nunca se levanta temprano. || My brother never wakes up early.",
+                  "H || 🏋️ || Guess the action! || Go to the gym",
+                  "E || 👨🏋️ ❌❌❌❌ || How often does he go to the gym? || He never goes to the gym.",
+                  "E || 👧📱 ✅✅✅✅ || How often does she check her phone? || She always checks her phone.",
+                  "E || 👦🐟 ❌❌❌❌ || How often does he eat fish? || He never eats fish."
+                ],
+                "mistakes": [
+                  "M || How often [do] he go to the park? || does* / do / is || How often does he go to the park?",
+                  "M || She never [eat] fish. || eats* / eat / eating || She never eats fish."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Monthly Evaluation — Cumulative review of previously introduced structures (routines, simple past, past progressive, going to, prepositions, shapes, spelling) — Vocabulary: wake up; cook; work; visit; play soccer; hospital; always",
+                "lines": [
+                  "Q || What is your daily routine on school days? || I wake up at 6:00 AM, I take a shower and I eat breakfast.",
+                  "Q || What does your mom do when she is sick? || She rests and drinks tea. / She sleeps.",
+                  "Q || What did you do last weekend when it was raining? (Use your imagination!) || I visited my grandma. / I watched movies.",
+                  "Q || What were you doing last Friday at 7:30 PM? || I was eating dinner. / I was doing my homework.",
+                  "Q || What is your best friend going to do next weekend? || He is going to play soccer. / She is going to visit her grandma.",
+                  "Q || What was your dad doing when the phone rang? || He was watching TV. / He was sleeping.",
+                  "Q || How often does your uncle cook? || He always cooks. / He never cooks.",
+                  "Q || How do I get to the park? (Use your imagination!) || Go straight and turn left.",
+                  "Q || When do you have English class? || I have English class on Monday at 5:00 PM.",
+                  "Q || Spell the word \"always\". || A-L-W-A-Y-S.",
+                  "F || I ____ to the zoo last Sunday. || went || go / going",
+                  "F || She ____ singing when I came home. || was || were / is",
+                  "F || My dad ____ breakfast at 7:00 AM. || eats || eat / eating",
+                  "T || Yo me levanto a las seis. || I wake up at six.",
+                  "T || Ella fue al zoológico ayer. || She went to the zoo yesterday.",
+                  "T || Ellos estaban jugando mientras yo estaba estudiando. || They were playing while I was studying.",
+                  "T || Mi mamá siempre toma café en la mañana. || My mom always drinks coffee in the morning.",
+                  "S || red star:4, blue circle:2 || How many stars are there? || There are four stars.",
+                  "H || 🏥 || Guess the hidden place! || Hospital",
+                  "E || 👧⚽📅 || What is she going to do on Saturday? || She is going to play soccer."
+                ],
+                "mistakes": [
+                  "M || I [go] to the zoo yesterday. || went* / go / goes || I went to the zoo yesterday.",
+                  "M || She [were] sleeping when the phone rang. || was* / were / is || She was sleeping when the phone rang."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Monthly Evaluation — Frequency adverbs review; Yes/No questions (Long answers); cumulative review — Vocabulary: always, usually, sometimes, rarely, never; brush my teeth",
+                "lines": [
+                  "Q || Does your dad always drink coffee in the morning? || Yes, he always drinks coffee in the morning. / No, he never drinks coffee.",
+                  "Q || Does your mom usually cook on Sundays? || Yes, she usually cooks on Sundays. / No, she doesn't usually cook on Sundays.",
+                  "Q || Does your best friend sometimes play video games when he or she is bored? || Yes, he sometimes plays video games. / No, she never plays video games.",
+                  "Q || Does your teacher ever sing in class? || No, she never sings in class. / Yes, she sometimes sings in class.",
+                  "Q || How often do you brush your teeth? || I always brush my teeth.",
+                  "Q || How often does your brother clean his room when your mom asks? || He rarely cleans his room. / He sometimes cleans his room.",
+                  "Q || Did you eat pizza last weekend at a party? (Use your imagination!) || Yes, I ate pizza last weekend. / No, I didn't eat pizza last weekend.",
+                  "Q || Were you sleeping yesterday at 10:15 AM? || No, I wasn't. I was studying. / Yes, I was.",
+                  "Q || Is your mom going to work tomorrow? || Yes, she is going to work tomorrow. / No, she isn't.",
+                  "Q || Tell me three things you always do in the morning. || I always wake up early, take a shower and eat breakfast.",
+                  "F || Does she ____ cook dinner? (every day) || always || every / all day",
+                  "F || Yes, he ____ plays soccer on Saturdays. || usually || usual / usuall",
+                  "F || I ____ my teeth every day. || brush || brushes / brushing",
+                  "T || ¿Tu papá siempre toma café? || Does your dad always drink coffee?",
+                  "T || Sí, él siempre toma café. || Yes, he always drinks coffee.",
+                  "T || No, ella nunca ve televisión. || No, she never watches TV.",
+                  "T || ¿Con qué frecuencia limpias tu cuarto? || How often do you clean your room?",
+                  "T || Yo siempre me cepillo los dientes. || I always brush my teeth.",
+                  "H || 🪥 || Guess the action! || Brush my teeth",
+                  "E || 👨☕ ✅✅✅✅ || Does he always drink coffee? || Yes, he always drinks coffee."
+                ],
+                "mistakes": [
+                  "M || Does she [cooks] dinner every day? || cook* / cooks / cooking || Does she cook dinner every day?",
+                  "M || He never [go] to the gym. || goes* / go / going || He never goes to the gym."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 5,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Activities after school — Simple Past (1st person); ED ending sounds; Positive sentences — Vocabulary: study, check my phone, clean",
+                "lines": [
+                  "Q || What did you do last week after school? || I studied English. / I checked my phone.",
+                  "Q || What did you do yesterday after school? || I cleaned my room. / I ate a snack.",
+                  "Q || What did you do last Monday after school when you were tired? || I checked my phone. / I took a nap.",
+                  "Q || Complete: Yesterday after school, I ____ (study) math. || Yesterday after school, I studied math.",
+                  "Q || Complete: Last week, I ____ (check) my phone. || Last week, I checked my phone.",
+                  "Q || Complete: Yesterday, I ____ (eat) pizza. || Yesterday, I ate pizza.",
+                  "Q || Tell me two things you did yesterday after school. || I ate a snack and I did my homework.",
+                  "Q || Say the past of \"clean\". || Cleaned.",
+                  "Q || Say the past of \"eat\". || Ate.",
+                  "F || I ____ my room yesterday. || cleaned || clean / cleaning",
+                  "F || I ____ a sandwich after school. || ate || eat / eated",
+                  "F || Last week I ____ English. || studied || study / studyed",
+                  "T || Yo estudié inglés ayer. || I studied English yesterday.",
+                  "T || Yo revisé mi celular después de la escuela. || I checked my phone after school.",
+                  "T || Yo limpié mi cuarto. || I cleaned my room.",
+                  "T || Ayer comí pizza. || I ate pizza yesterday.",
+                  "T || Hice mi tarea la semana pasada. || I did my homework last week.",
+                  "H || 📱👀 || Guess the action! || Check my phone",
+                  "H || 🧹 || Guess the action! || Clean",
+                  "E || 🧒📚 🕔 || What did you do yesterday at 5:00 PM? || I studied."
+                ],
+                "mistakes": [
+                  "M || I [study] English yesterday. || studied* / study / studyed || I studied English yesterday.",
+                  "M || I [eated] pizza last night. || ate* / eated / eat || I ate pizza last night."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Activities after school — Simple Past (1st person); Yes/No questions (Short answers); Wh-questions (What...?) — Vocabulary: study, check my phone, clean, eat",
+                "lines": [
+                  "Q || Did you study yesterday after school? || Yes, I did. / No, I didn't.",
+                  "Q || Did you check your phone in the car yesterday? || Yes, I did. / No, I didn't.",
+                  "Q || Did you clean your room last weekend before your friends came? (Use your imagination!) || Yes, I did. / No, I didn't.",
+                  "Q || Did you eat a snack yesterday when you got home hungry? || Yes, I did. / No, I didn't.",
+                  "Q || Did you do your homework last night before bed? || Yes, I did. / No, I didn't.",
+                  "Q || What did you eat yesterday after school? || I ate a sandwich. / I ate fruit.",
+                  "Q || What did you study last week for the test? || I studied science. / I studied English.",
+                  "Q || What did you do last Friday after school when it was sunny? (Use your imagination!) || I played in the park. / I cleaned my bike.",
+                  "Q || Make a question: you / clean your room / yesterday? || Did you clean your room yesterday?",
+                  "F || ____ you study yesterday? || Did || Do / Were",
+                  "F || Yes, I ____. (short answer, past) || did || do / was",
+                  "F || What did you ____ after school? || do || did / does",
+                  "T || ¿Estudiaste ayer? || Did you study yesterday?",
+                  "T || Sí, lo hice. || Yes, I did.",
+                  "T || No, no lo hice. || No, I didn't.",
+                  "T || ¿Qué comiste ayer después de la escuela? || What did you eat yesterday after school?",
+                  "T || Yo no limpié mi cuarto. || I didn't clean my room.",
+                  "H || 🥪 || Guess the hidden word! || Sandwich",
+                  "E || 🧒🥪 🕓 || What did you eat yesterday at 4:00 PM? || I ate a sandwich.",
+                  "E || 🧒📱✅ || Did you check your phone? || Yes, I did."
+                ],
+                "mistakes": [
+                  "M || Did you [studied] yesterday? || study* / studied / studying || Did you study yesterday?",
+                  "M || No, I [don't]. (yesterday) || didn't* / don't / wasn't || No, I didn't."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Activities after school — Simple Past (1st person); Wh-questions (Where...?) — Vocabulary: study, check my phone, clean, eat, do my homework",
+                "lines": [
+                  "Q || Where did you study yesterday? || I studied in my room. / I studied at the library.",
+                  "Q || Where did you eat lunch yesterday? || I ate lunch at school. / I ate lunch at home.",
+                  "Q || Where did you do your homework last night? || I did my homework in the kitchen. / I did my homework in my bedroom.",
+                  "Q || Where did you check your phone yesterday while you were waiting for your mom? || I checked my phone in the car. / I checked my phone at the school door.",
+                  "Q || Where did you go after school yesterday? || I went to the park. / I went home.",
+                  "Q || Where did you clean yesterday when your mom asked you for help? || I cleaned my bedroom. / I cleaned the kitchen.",
+                  "Q || Make a question with WHERE: you / do your homework? || Where did you do your homework?",
+                  "Q || Complete: I ____ (do) my homework at the library. || I did my homework at the library.",
+                  "F || Where ____ you study yesterday? || did || do / were",
+                  "F || I ate lunch ____ school. || at || on / to",
+                  "F || I did my homework ____ the kitchen. || in || on / at",
+                  "T || ¿Dónde estudiaste ayer? || Where did you study yesterday?",
+                  "T || Yo hice mi tarea en la cocina. || I did my homework in the kitchen.",
+                  "T || Comí en la escuela. || I ate at school.",
+                  "T || ¿Dónde revisaste tu celular? || Where did you check your phone?",
+                  "T || Fui al parque después de la escuela. || I went to the park after school.",
+                  "H || 📚🏛️ || Guess the hidden place! || Library",
+                  "E || 🧒📝🍳 || Where did you do your homework? || I did my homework in the kitchen.",
+                  "E || 🧒📚🛏️ || Where did you study? || I studied in my bedroom.",
+                  "E || 🧒🥪🏫 || Where did you eat? || I ate at school."
+                ],
+                "mistakes": [
+                  "M || Where [do] you study yesterday? || did* / do / does || Where did you study yesterday?",
+                  "M || I [eat] lunch at school yesterday. || ate* / eat / eated || I ate lunch at school yesterday."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Activities after school — Simple Past (1st person); Wh-questions (Who... with?) — Vocabulary Review",
+                "lines": [
+                  "Q || Who did you study with yesterday? || I studied with my best friend. / I studied alone.",
+                  "Q || Who did you eat with yesterday after school? || I ate with my family. / I ate with my grandpa.",
+                  "Q || Who did you do your homework with last night? || I did my homework with my sister. / I did it alone.",
+                  "Q || Who did you clean the house with last weekend? || I cleaned the house with my mom. / I cleaned the house with my brother.",
+                  "Q || Who did you play with yesterday after school when you finished your homework? || I played with my friends. / I played with my dog.",
+                  "Q || Who did you go to the park with last Sunday? || I went to the park with my dad. / I went to the park with my cousins.",
+                  "Q || Make a question with WHO... WITH: you / eat lunch / yesterday? || Who did you eat lunch with yesterday?",
+                  "Q || Tell me what you did and who you did it with yesterday after school. || I played video games with my brother.",
+                  "F || ____ did you study with? || Who || What / Where",
+                  "F || I studied ____ my cousin. || with || whit / and",
+                  "F || I ____ with my friends after school. || played || play / playing",
+                  "T || ¿Con quién estudiaste ayer? || Who did you study with yesterday?",
+                  "T || Comí con mi familia. || I ate with my family.",
+                  "T || Hice mi tarea con mi hermana. || I did my homework with my sister.",
+                  "T || ¿Con quién jugaste ayer? || Who did you play with yesterday?",
+                  "T || Limpié la casa con mi mamá. || I cleaned the house with my mom.",
+                  "H || 🏠🧹🧽 || Guess the action! || Clean the house",
+                  "E || 🧒👩📚 || Who did you study with? || I studied with my mom.",
+                  "E || 🧒👦🎮 || Who did you play with? || I played with my brother.",
+                  "E || 🧒👨🍽️ || Who did you eat dinner with? || I ate dinner with my dad."
+                ],
+                "mistakes": [
+                  "M || Who did you [studied] with? || study* / studied / studying || Who did you study with?",
+                  "M || I ate dinner [whit] my family. || with* / whit / wiht || I ate dinner with my family."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Simple Past (1st person) — Vocabulary: study, check my phone, clean, eat, do my homework",
+                "lines": [
+                  "Q || What did you do last Tuesday after school? || I did my homework and I checked my phone.",
+                  "Q || Did you clean your room yesterday? || Yes, I did. / No, I didn't.",
+                  "Q || Where did you eat yesterday when you were hungry after class? || I ate at home. / I ate at school.",
+                  "Q || Who did you do your homework with? || I did my homework with my mom. / I did it alone.",
+                  "Q || What did you study last Wednesday? || I studied English and math.",
+                  "Q || Did you eat vegetables yesterday? || Yes, I did. / No, I didn't.",
+                  "Q || Where did you go last Saturday when you were bored? (Use your imagination!) || I went to the mall. / I went to the park.",
+                  "Q || Who did you go with? || I went with my family. / I went with my cousins.",
+                  "Q || Say the past of \"do\". || Did.",
+                  "Q || Tell me three things you did last weekend. || I cleaned my room, I played soccer and I ate pizza.",
+                  "F || I ____ my phone yesterday. || checked || check / checking",
+                  "F || ____ you eat pizza last night? || Did || Do / Were",
+                  "F || Where ____ you go last Sunday? || did || do / were",
+                  "T || ¿Qué hiciste ayer después de la escuela? || What did you do yesterday after school?",
+                  "T || Yo revisé mi celular y comí un snack. || I checked my phone and ate a snack.",
+                  "T || ¿Con quién hiciste tu tarea? || Who did you do your homework with?",
+                  "T || No estudié ayer. || I didn't study yesterday.",
+                  "T || Fui al centro comercial con mi familia. || I went to the mall with my family.",
+                  "H || 🍕 || Guess the hidden word! || Pizza",
+                  "E || 🧒🧹🛏️ || What did you do yesterday? || I cleaned my room."
+                ],
+                "mistakes": [
+                  "M || I did my homework and I [eat] a snack. || ate* / eat / eated || I did my homework and I ate a snack.",
+                  "M || [Do] you clean your room yesterday? || Did* / Do / Does || Did you clean your room yesterday?"
+                ]
+              }
+            ]
+          },
+          {
+            "week": 6,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "A crazy Saturday for Kira — Simple Past (3rd person); Positive sentences — Vocabulary: dance, cook, play",
+                "lines": [
+                  "Q || What did Kira do last Saturday? || She danced. / She cooked.",
+                  "Q || What did your mom do last Saturday? || She cooked lunch. / She danced at a party.",
+                  "Q || What did your dad do last Saturday when he was bored? || He played soccer. / He cooked dinner.",
+                  "Q || What did your best friend do last weekend when it was raining? || She played video games. / He danced in his room.",
+                  "Q || What did Shakira do last Saturday? (Use your imagination!) || She danced at a concert.",
+                  "Q || Complete: Kira ____ (dance) in the kitchen. || Kira danced in the kitchen.",
+                  "Q || Complete: My brother ____ (play) video games last Saturday. || My brother played video games last Saturday.",
+                  "Q || Say the past of \"cook\". || Cooked.",
+                  "Q || Say the past of \"dance\". || Danced.",
+                  "F || Kira ____ a cake last Saturday. || cooked || cook / cooks",
+                  "F || My sister ____ all night. || danced || dance / dancing",
+                  "F || He ____ soccer with his friends. || played || play / plays",
+                  "T || Kira bailó en la cocina. || Kira danced in the kitchen.",
+                  "T || Mi mamá cocinó un pastel el sábado pasado. || My mom cooked a cake last Saturday.",
+                  "T || Él jugó fútbol con sus amigos. || He played soccer with his friends.",
+                  "T || Ella bailó toda la noche. || She danced all night.",
+                  "T || Mi papá cocinó la cena. || My dad cooked dinner.",
+                  "H || 💃 || Guess the action! || Dance",
+                  "H || 👩‍🍳🍲 || Guess the action! || Cook",
+                  "E || 👧💃🎶 || What did she do last Saturday? || She danced."
+                ],
+                "mistakes": [
+                  "M || Kira [dance] last Saturday. || danced* / dance / dances || Kira danced last Saturday.",
+                  "M || He [cook] dinner last night. || cooked* / cook / cooks || He cooked dinner last night."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "A crazy Saturday for Kira — Simple Past (3rd person); Yes/No questions (Long answers) — Vocabulary: dance, cook, play, climb",
+                "lines": [
+                  "Q || Did Kira dance last Saturday? || Yes, she danced last Saturday. / No, she didn't dance last Saturday.",
+                  "Q || Did your dad cook last weekend when your mom was tired? || Yes, he cooked last weekend. / No, he didn't cook last weekend.",
+                  "Q || Did your best friend climb a tree at the park last Saturday? || No, she didn't climb a tree. / Yes, he climbed a tree.",
+                  "Q || Did your mom play video games with you last Saturday? || No, she didn't play video games with me. / Yes, she played video games with me.",
+                  "Q || Did your brother or sister dance at the last family party? || Yes, she danced at the party. / No, he didn't dance.",
+                  "Q || Did Messi play soccer last Saturday? || Yes, he played soccer last Saturday.",
+                  "Q || Make a question: Kira / climb / the tree? || Did Kira climb the tree?",
+                  "Q || Make a question: your grandpa / cook / last Saturday? || Did your grandpa cook last Saturday?",
+                  "F || ____ Kira climb a tree? || Did || Do / Was",
+                  "F || No, she ____ cook. || didn't || doesn't / don't",
+                  "F || He ____ a mountain last year. || climbed || climb / climbing",
+                  "T || ¿Kira escaló un árbol? || Did Kira climb a tree?",
+                  "T || Sí, ella escaló un árbol. || Yes, she climbed a tree.",
+                  "T || No, él no cocinó. || No, he didn't cook.",
+                  "T || ¿Tu papá jugó fútbol el sábado pasado? || Did your dad play soccer last Saturday?",
+                  "T || Ella no bailó. || She didn't dance.",
+                  "H || 🧗 || Guess the action! || Climb",
+                  "E || 👧🧗🌳 || Did she climb a tree? || Yes, she climbed a tree.",
+                  "E || 👨🍳❌ 👨📺 || Did he cook? || No, he didn't cook. He watched TV.",
+                  "E || 👦⚽ || Did he play soccer? || Yes, he played soccer."
+                ],
+                "mistakes": [
+                  "M || [Does] Kira climb a tree last Saturday? || Did* / Does / Do || Did Kira climb a tree last Saturday?",
+                  "M || No, she [doesn't] dance last Saturday. || didn't* / doesn't / don't || No, she didn't dance last Saturday."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "A crazy Saturday for Kira — Simple Past (3rd person); Wh-questions (What...?) — Vocabulary: dance, cook, play, climb, jump",
+                "lines": [
+                  "Q || What did Kira do in the garden? (Use your imagination!) || She jumped. / She climbed a tree.",
+                  "Q || What did your cousin do last Saturday at the birthday party? (Use your imagination!) || He jumped on the trampoline. / She danced with her friends.",
+                  "Q || What did your grandma cook last Sunday when the family visited her? || She cooked soup. / She cooked rice and chicken.",
+                  "Q || What did your teacher do last weekend? (Use your imagination!) || She danced at a party. / He played with his kids.",
+                  "Q || What did your dog do at the park when it saw a cat? (Use your imagination if you don't have a dog!) || It jumped and played. / It climbed on the bench.",
+                  "Q || What did your dad play last weekend when his friends visited? || He played the guitar. / He played cards.",
+                  "Q || Make a question with WHAT: Kira / cook? || What did Kira cook?",
+                  "Q || Complete: She ____ (jump) on the bed. || She jumped on the bed.",
+                  "F || What ____ Kira do last Saturday? || did || do / does",
+                  "F || She ____ on the trampoline. || jumped || jump / jumps",
+                  "F || What did he ____? || cook || cooked / cooks",
+                  "T || ¿Qué hizo Kira el sábado pasado? || What did Kira do last Saturday?",
+                  "T || Ella saltó en la cama. || She jumped on the bed.",
+                  "T || ¿Qué cocinó tu abuela? || What did your grandma cook?",
+                  "T || Mi primo saltó en el trampolín. || My cousin jumped on the trampoline.",
+                  "T || ¿Qué jugó tu papá? || What did your dad play?",
+                  "H || 🤸 || Guess the action! || Jump",
+                  "E || 👧🤸🛏️ || What did she do? || She jumped on the bed.",
+                  "E || 👵🍲 || What did she cook? || She cooked soup.",
+                  "E || 👦🎸 || What did he play? || He played the guitar."
+                ],
+                "mistakes": [
+                  "M || What [does] Kira do last Saturday? || did* / does / do || What did Kira do last Saturday?",
+                  "M || She [jump] on the bed. || jumped* / jump / jumps || She jumped on the bed."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "A crazy Saturday for Kira — Simple Past (3rd person); Wh-questions (Who... with?) — Vocabulary Review",
+                "lines": [
+                  "Q || Who did Kira dance with? (Use your imagination!) || She danced with her brother.",
+                  "Q || Who did your mom cook with last Sunday? || She cooked with my grandma. / She cooked alone.",
+                  "Q || Who did your best friend play with last Saturday at the park? || He played with his cousins. / She played with her neighbors.",
+                  "Q || Who did your sister climb the tree with? (Use your imagination!) || She climbed the tree with her friend.",
+                  "Q || Who did your dad jump with on the trampoline at the party? (Use your imagination!) || He jumped with my little brother.",
+                  "Q || Who did Messi play with last Saturday? || He played with his team.",
+                  "Q || Make a question with WHO... WITH: Kira / play? || Who did Kira play with?",
+                  "Q || Tell me what Kira did and who she did it with. || She danced with her mom in the kitchen.",
+                  "F || Who ____ she dance with? || did || do / was",
+                  "F || She cooked ____ her grandma. || with || whit / to",
+                  "F || Who did he ____ soccer with? || play || played / plays",
+                  "T || ¿Con quién bailó Kira? || Who did Kira dance with?",
+                  "T || Ella cocinó con su abuela. || She cooked with her grandma.",
+                  "T || Él jugó con sus primos. || He played with his cousins.",
+                  "T || ¿Con quién saltó tu hermano? || Who did your brother jump with?",
+                  "T || Ella escaló el árbol con su amiga. || She climbed the tree with her friend.",
+                  "H || 👵 || Guess the hidden family member! || Grandma",
+                  "E || 👧👦💃🕺 || Who did she dance with? || She danced with her brother.",
+                  "E || 👩👵🍲 || Who did she cook with? || She cooked with her grandma.",
+                  "E || 👦👦👦⚽ || Who did he play with? || He played with his friends."
+                ],
+                "mistakes": [
+                  "M || Who did she [danced] with? || dance* / danced / dances || Who did she dance with?",
+                  "M || He played [whit] his cousins. || with* / whit / wiht || He played with his cousins."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: Simple Past (3rd person) — Vocabulary: dance, cook, play, climb, jump",
+                "lines": [
+                  "Q || What did Kira do last Saturday? Tell me three things. || She danced, she cooked and she climbed a tree.",
+                  "Q || Did your mom dance at the last party? || Yes, she danced at the party. / No, she didn't dance.",
+                  "Q || What did your dad cook last Sunday? || He cooked pasta. / He didn't cook.",
+                  "Q || Who did your best friend play with yesterday after school? || She played with her sister. / He played with his neighbors.",
+                  "Q || Did your brother jump on the bed when your mom wasn't looking? (Use your imagination!) || Yes, he jumped on the bed. / No, he didn't jump on the bed.",
+                  "Q || What did your teacher do last Saturday? (Use your imagination!) || She cooked and cleaned.",
+                  "Q || Who did Shakira dance with at her last concert? (Use your imagination!) || She danced with her dancers.",
+                  "Q || Say the past of \"climb\". || Climbed.",
+                  "Q || Say the past of \"jump\". || Jumped.",
+                  "Q || Make a question: Kira / cook / a cake? || Did Kira cook a cake?",
+                  "F || Kira ____ a tree last Saturday. || climbed || climb / climbs",
+                  "F || ____ she dance at the party? || Did || Do / Does",
+                  "F || Who did she ____ with? || cook || cooked / cooks",
+                  "T || Kira saltó en el trampolín. || Kira jumped on the trampoline.",
+                  "T || ¿Qué cocinó tu papá? || What did your dad cook?",
+                  "T || No, él no bailó. || No, he didn't dance.",
+                  "T || ¿Con quién jugó ella? || Who did she play with?",
+                  "T || Él escaló un árbol con su hermano. || He climbed a tree with his brother.",
+                  "H || 🎂👩‍🍳 || Guess the action! || Cook a cake",
+                  "E || 👧💃 👧🧗 👧🍳 || What did Kira do last Saturday? || She danced, climbed a tree and cooked."
+                ],
+                "mistakes": [
+                  "M || What did Kira [cooked]? || cook* / cooked / cooks || What did Kira cook?",
+                  "M || She [climb] a tree yesterday. || climbed* / climb / climbs || She climbed a tree yesterday."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 7,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Summer activities — Simple Past (3rd person plural); Positive sentences; Yes/No questions (Short answers) — Vocabulary: swim, eat ice cream, build sandcastles",
+                "lines": [
+                  "Q || What did your family do last summer? || They swam in the sea. / They ate ice cream.",
+                  "Q || What did your friends do last summer? || They built sandcastles. / They swam in the pool.",
+                  "Q || What did your cousins do at the beach? || They swam and built sandcastles.",
+                  "Q || Did your family swim last summer? || Yes, they did. / No, they didn't.",
+                  "Q || Did your friends eat ice cream at the beach when it was hot? || Yes, they did. / No, they didn't.",
+                  "Q || Did your parents build a sandcastle with you? || No, they didn't. / Yes, they did.",
+                  "Q || Complete: Last summer, they ____ (swim) in the pool. || Last summer, they swam in the pool.",
+                  "Q || Complete: My cousins ____ (build) a big sandcastle. || My cousins built a big sandcastle.",
+                  "Q || Say the past of \"swim\". || Swam.",
+                  "F || They ____ in the sea last summer. || swam || swim / swimmed",
+                  "F || My friends ____ ice cream. || ate || eat / eated",
+                  "F || ____ they build a sandcastle? || Did || Do / Were",
+                  "T || Ellos nadaron en el mar. || They swam in the sea.",
+                  "T || Mis amigos comieron helado. || My friends ate ice cream.",
+                  "T || Ellos construyeron un castillo de arena. || They built a sandcastle.",
+                  "T || ¿Nadaron ellos el verano pasado? || Did they swim last summer?",
+                  "T || Sí, lo hicieron. || Yes, they did.",
+                  "H || 🏊 || Guess the action! || Swim",
+                  "H || 🏰🏖️ || Guess the action! || Build sandcastles",
+                  "E || 👧👦🍦🏖️ || What did they do at the beach? || They ate ice cream."
+                ],
+                "mistakes": [
+                  "M || They [swimmed] in the sea. || swam* / swimmed / swim || They swam in the sea.",
+                  "M || My friends [eat] ice cream yesterday. || ate* / eat / eated || My friends ate ice cream yesterday."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Summer activities — Simple Past (3rd person plural); Yes/No questions (Long answers) — Vocabulary: swim, eat ice cream, build sandcastles, have a picnic",
+                "lines": [
+                  "Q || Did your family have a picnic last summer? || Yes, they had a picnic last summer. / No, they didn't have a picnic.",
+                  "Q || Did your friends swim in the pool when it was very hot? || Yes, they swam in the pool. / No, they didn't swim in the pool.",
+                  "Q || Did your cousins build sandcastles on their last trip to the beach? || Yes, they built sandcastles. / No, they didn't build sandcastles.",
+                  "Q || Did your parents eat ice cream at the beach? || No, they didn't eat ice cream. / Yes, they ate ice cream.",
+                  "Q || Did your classmates have a picnic at the park on the last day of school? (Use your imagination!) || Yes, they had a picnic at the park. / No, they didn't.",
+                  "Q || Did Messi and his family swim last summer? (Use your imagination!) || Yes, they swam last summer. / No, they didn't swim.",
+                  "Q || Make a question: your friends / have a picnic / last Sunday? || Did your friends have a picnic last Sunday?",
+                  "Q || Make a question: your grandparents / eat ice cream / at the beach? || Did your grandparents eat ice cream at the beach?",
+                  "F || They ____ a picnic in the park. || had || have / haved",
+                  "F || No, they ____ swim. || didn't || doesn't / don't",
+                  "F || Yes, they ____ sandcastles. || built || build / builded",
+                  "T || Ellos hicieron un picnic en el parque. || They had a picnic in the park.",
+                  "T || ¿Comieron ellos helado? || Did they eat ice cream?",
+                  "T || No, ellos no nadaron. || No, they didn't swim.",
+                  "T || Sí, ellos construyeron castillos de arena. || Yes, they built sandcastles.",
+                  "T || Mis primos hicieron un picnic el domingo pasado. || My cousins had a picnic last Sunday.",
+                  "H || 🧺🥪🌳 || Guess the action! || Have a picnic",
+                  "E || 👨👩👧🧺 || Did they have a picnic? || Yes, they had a picnic.",
+                  "E || 👦👧🏊❌ 🏰 || Did they swim? || No, they didn't swim. They built a sandcastle.",
+                  "E || 👧👦🍦 || Did they eat ice cream? || Yes, they ate ice cream."
+                ],
+                "mistakes": [
+                  "M || They [haved] a picnic. || had* / haved / has || They had a picnic.",
+                  "M || [Does] they swim last summer? || Did* / Does / Do || Did they swim last summer?"
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Summer activities — Simple Past (3rd person plural); Wh-questions (What/When...?) — Vocabulary: swim, eat ice cream, build sandcastles, have a picnic, fly a kite",
+                "lines": [
+                  "Q || What did your friends do at the park last summer when it was windy? || They flew a kite. / They had a picnic.",
+                  "Q || When did your family go to the beach? || They went to the beach in July. / They went last summer.",
+                  "Q || What did your cousins eat at the beach when they were hungry? || They ate ice cream. / They ate sandwiches.",
+                  "Q || When did your friends have a picnic? || They had a picnic last Sunday. / They had a picnic on the last day of school.",
+                  "Q || What did your classmates build at the beach? || They built sandcastles.",
+                  "Q || When did your parents swim in the sea? || They swam in the sea last summer. / They swam in the sea in January.",
+                  "Q || Make a question with WHEN: they / fly a kite? || When did they fly a kite?",
+                  "Q || Complete: They ____ (fly) a kite last Saturday. || They flew a kite last Saturday.",
+                  "F || When ____ they go to the beach? || did || do / were",
+                  "F || They ____ a kite in the park. || flew || fly / flied",
+                  "F || What did they ____ at the beach? || eat || ate / eats",
+                  "T || Ellos volaron una cometa en el parque. || They flew a kite in the park.",
+                  "T || ¿Cuándo fueron ellos a la playa? || When did they go to the beach?",
+                  "T || ¿Qué comieron ellos en la playa? || What did they eat at the beach?",
+                  "T || Ellos hicieron un picnic el domingo pasado. || They had a picnic last Sunday.",
+                  "T || Mis amigos nadaron en julio. || My friends swam in July.",
+                  "H || 🪁🏖️ || Guess the action! || Fly a kite",
+                  "E || 👦👧🪁 || What did they do at the park? || They flew a kite.",
+                  "E || 👨👩🏊 📅 || When did they swim? (Use your imagination!) || They swam in July. / They swam last summer.",
+                  "E || 👧👦🏰🏖️ || What did they build? || They built a sandcastle."
+                ],
+                "mistakes": [
+                  "M || When [do] they go to the beach? || did* / do / does || When did they go to the beach?",
+                  "M || They [flied] a kite. || flew* / flied / fly || They flew a kite."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Summer activities — Simple Past (3rd person plural); Wh-questions (Who/Where...?) — Vocabulary Review",
+                "lines": [
+                  "Q || Who swam in the sea last summer? || My cousins swam in the sea. / My friends swam in the sea.",
+                  "Q || Where did your family have a picnic last summer? || They had a picnic in the park. / They had a picnic at the beach.",
+                  "Q || Who built sandcastles at the beach while you were swimming? (Use your imagination!) || My friends built sandcastles. / My little cousins built sandcastles.",
+                  "Q || Where did your friends fly a kite when it was windy? || They flew a kite at the beach. / They flew a kite in the park.",
+                  "Q || Who ate all the ice cream at the party? (Use your imagination!) || My brother ate all the ice cream.",
+                  "Q || Where did your cousins swim last vacation? || They swam in the pool. / They swam in the sea.",
+                  "Q || Make a question with WHERE: they / build sandcastles? || Where did they build sandcastles?",
+                  "Q || Make a question with WHO: eat ice cream / at the park? || Who ate ice cream at the park?",
+                  "F || Where ____ they swim? || did || do / were",
+                  "F || ____ built a sandcastle? || Who || What / Where",
+                  "F || They had a picnic ____ the park. || in || on / to",
+                  "T || ¿Dónde nadaron ellos? || Where did they swim?",
+                  "T || ¿Quién construyó un castillo de arena? || Who built a sandcastle?",
+                  "T || Ellos volaron una cometa en la playa. || They flew a kite at the beach.",
+                  "T || Mis primos nadaron en la piscina. || My cousins swam in the pool.",
+                  "T || ¿Dónde hicieron ellos un picnic? || Where did they have a picnic?",
+                  "H || 🏖️ || Guess the hidden place! || Beach",
+                  "E || 👦👧🏊🌊 || Where did they swim? || They swam in the sea.",
+                  "E || 👨👩🧺🌳 || Where did they have a picnic? || They had a picnic in the park.",
+                  "E || 👧🍦🍦🍦 || Who ate the ice cream? || The girl ate the ice cream. / She ate the ice cream."
+                ],
+                "mistakes": [
+                  "M || Where [do] they swim last summer? || did* / do / does || Where did they swim last summer?",
+                  "M || Who [build] a sandcastle? || built* / build / builded || Who built a sandcastle?"
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Summer activities — Simple Past (3rd person plural); Wh-questions (Who... with?) — Vocabulary Review",
+                "lines": [
+                  "Q || Who did your family swim with last summer? || They swam with my uncle. / They swam with our friends.",
+                  "Q || Who did your friends have a picnic with on their last day of school? (Use your imagination!) || They had a picnic with their parents. / They had a picnic with the teacher.",
+                  "Q || Who did your cousins build sandcastles with? || They built sandcastles with me. / They built sandcastles with their dad.",
+                  "Q || Who did your classmates fly a kite with at the park? || They flew a kite with their teacher. / They flew a kite with their brothers.",
+                  "Q || Who did your parents eat ice cream with when they were on vacation? || They ate ice cream with my grandparents. / They ate ice cream with us.",
+                  "Q || Who did Messi and his teammates have a picnic with? (Use your imagination!) || They had a picnic with their families.",
+                  "Q || Make a question with WHO... WITH: they / swim? || Who did they swim with?",
+                  "Q || Tell me what your family did last summer and who they did it with. || They went to the beach with my aunt and swam in the sea.",
+                  "F || Who ____ they swim with? || did || do / were",
+                  "F || They had a picnic ____ their friends. || with || whit / to",
+                  "F || Who did they ____ sandcastles with? || build || built / builds",
+                  "T || ¿Con quién nadaron ellos? || Who did they swim with?",
+                  "T || Ellos hicieron un picnic con sus padres. || They had a picnic with their parents.",
+                  "T || Ellos volaron una cometa con su profesora. || They flew a kite with their teacher.",
+                  "T || ¿Con quién comieron helado tus primos? || Who did your cousins eat ice cream with?",
+                  "T || Ellos construyeron castillos de arena conmigo. || They built sandcastles with me.",
+                  "H || 🍦 || Guess the hidden word! || Ice cream",
+                  "E || 👦👧👨🏊 || Who did they swim with? || They swam with their dad.",
+                  "E || 👧👦👵🧺 || Who did they have a picnic with? || They had a picnic with their grandma.",
+                  "E || 👦👦👩‍🏫🪁 || Who did they fly a kite with? || They flew a kite with their teacher."
+                ],
+                "mistakes": [
+                  "M || Who did they [swam] with? || swim* / swam / swims || Who did they swim with?",
+                  "M || They ate ice cream [whit] their friends. || with* / whit / wiht || They ate ice cream with their friends."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 8,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Object pronouns — Positive sentences; Yes/No questions (Long answers); family: aunt, uncle, cousin — Vocabulary: me, you, him, her, it, us, them",
+                "lines": [
+                  "Q || Do you call your grandma every week? || Yes, I call her every week. / No, I don't call her every week.",
+                  "Q || Does your mom help you with your homework when you don't understand? || Yes, she helps me with my homework. / No, she doesn't help me.",
+                  "Q || Do you visit your cousins on weekends? || Yes, I visit them on weekends. / No, I don't visit them.",
+                  "Q || Does your dad play soccer with you and your brother when he has free time? || Yes, he plays soccer with us. / No, he doesn't play with us.",
+                  "Q || Do you like pizza? || Yes, I like it. / No, I don't like it.",
+                  "Q || Does your teacher know your uncle? || No, she doesn't know him. / Yes, he knows him.",
+                  "Q || Replace the words: I love my aunt. → I love ____. || I love her.",
+                  "Q || Replace the words: We visit our grandparents. → We visit ____. || We visit them.",
+                  "Q || Replace the words: My mom calls my brother and me. → My mom calls ____. || My mom calls us.",
+                  "F || I call ____ every day. (my grandma) || her || she / him",
+                  "F || My uncle visits ____ on Sundays. (my family and me) || us || we / them",
+                  "F || I like ____. (the cake) || it || its / him",
+                  "T || Yo la llamo todos los días. (a mi abuela) || I call her every day.",
+                  "T || Mi tío nos visita los domingos. || My uncle visits us on Sundays.",
+                  "T || Yo los veo en la escuela. (a mis primos) || I see them at school.",
+                  "T || Mi mamá me ayuda con la tarea. || My mom helps me with my homework.",
+                  "T || Yo lo quiero. (a mi papá) || I love him.",
+                  "H || 👨‍👩‍👧‍👦 || Guess the hidden word! || Family",
+                  "E || 👧📞👵 || Who does she call? || She calls her grandma. / She calls her.",
+                  "E || 👨⚽👦👦 || Who does he play soccer with? || He plays soccer with them."
+                ],
+                "mistakes": [
+                  "M || I love [she]. || her* / she / hers || I love her.",
+                  "M || My uncle visits [we] every Sunday. || us* / we / our || My uncle visits us every Sunday."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Object pronouns — Wh-questions (What...?) — Vocabulary: me, you, him, her, it, us, them",
+                "lines": [
+                  "Q || What do you do with your cousins when you are bored? || I play video games with them. / I go to the park with them.",
+                  "Q || What does your aunt cook for you when you visit her? || She cooks pasta for me. / She cooks soup for me.",
+                  "Q || What do you do with your best friend after school? || I do homework with him. / I play with her.",
+                  "Q || What does your dad buy for you and your sister when you behave well? (Use your imagination!) || He buys ice cream for us. / He buys candy for us.",
+                  "Q || What do you do with your dog when it is sad? (Use your imagination if you don't have one!) || I walk it. / I play with it.",
+                  "Q || What does Shakira do for her fans at a concert? || She sings for them. / She dances for them.",
+                  "Q || Replace the words: I eat pizza with my friends. → I eat pizza with ____. || I eat pizza with them.",
+                  "Q || Replace the words: My aunt gives a present to my brother. → My aunt gives a present to ____. || My aunt gives a present to him.",
+                  "F || What do you do with ____? (your cousins) || them || they / their",
+                  "F || My grandma cooks for ____. (my family and me) || us || we / our",
+                  "F || I walk ____ every morning. (my dog) || it || its / him",
+                  "T || Yo juego videojuegos con ellos. || I play video games with them.",
+                  "T || Ella cocina pasta para mí. || She cooks pasta for me.",
+                  "T || Él compra helado para nosotros. || He buys ice cream for us.",
+                  "T || ¿Qué haces con tus primos cuando estás aburrido? || What do you do with your cousins when you are bored?",
+                  "T || Mi tía le da un regalo. (a él) || My aunt gives him a present.",
+                  "H || 🎁 || Guess the hidden word! || Present",
+                  "E || 👧🎮👦👦 || What does she do with her cousins? || She plays video games with them.",
+                  "E || 👩🍝👧 || What does she cook for her? || She cooks pasta for her.",
+                  "E || 👨🍦👧👦 || What does he buy for them? || He buys ice cream for them."
+                ],
+                "mistakes": [
+                  "M || I play with [they] on weekends. || them* / they / their || I play with them on weekends.",
+                  "M || She cooks for [I]. || me* / I / my || She cooks for me."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Object pronouns — Review (fill in the blanks); Wh-questions (Where/How often...?) — Vocabulary: me, you, him, her, it, us, them",
+                "lines": [
+                  "Q || Where do you see your cousins? || I see them at my grandma's house. / I see them at school.",
+                  "Q || Where does your aunt take you when she visits? || She takes me to the park. / She takes me to the mall.",
+                  "Q || How often do you call your uncle? || I call him every month. / I rarely call him.",
+                  "Q || How often does your mom visit her friends when she has free time? || She visits them every Sunday. / She sometimes visits them.",
+                  "Q || Where do you and your friends play when it is sunny? || We play at the park. / We play in the garden.",
+                  "Q || How often does your coach help you when you don't understand? || He helps me every class. / She always helps me.",
+                  "Q || Complete with a pronoun: My cousins are funny. I like ____. || I like them.",
+                  "Q || Complete with a pronoun: My aunt is kind. I love ____. || I love her.",
+                  "Q || Complete with a pronoun: This is my new bike. I ride ____ every day. || I ride it every day.",
+                  "F || Where do you see ____? (your uncle) || him || he / his",
+                  "F || How often does she call ____? (you) || you || your / yours",
+                  "F || We play with ____ at school. (our friends) || them || they / their",
+                  "T || ¿Dónde ves a tus primos? || Where do you see your cousins?",
+                  "T || Yo lo llamo cada mes. (a mi tío) || I call him every month.",
+                  "T || Ella nos visita todos los domingos. || She visits us every Sunday.",
+                  "T || ¿Con qué frecuencia la llamas? (a ella) || How often do you call her?",
+                  "T || Nuestra profesora nos ayuda en clase. || Our teacher helps us in class.",
+                  "H || 🚲 || Guess the hidden word! || Bike",
+                  "E || 👧👵🏠 || Where does she see her grandma? || She sees her at her house.",
+                  "E || 👦📞👨 ✅✅✅✅ || How often does he call his uncle? || He calls him every day. / He always calls him."
+                ],
+                "mistakes": [
+                  "M || Where do you see [he]? || him* / he / his || Where do you see him?",
+                  "M || How often does she call [they]? || them* / they / their || How often does she call them?"
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Monthly Evaluation — Cumulative review of previously introduced structures (past progressive, interrupted actions, frequency adverbs, simple past, object pronouns, going to, professions, shapes) — Vocabulary: do homework; cook; swim; visit; doctor; dog",
+                "lines": [
+                  "Q || What were you doing last Sunday at 5:45 PM? || I was doing my homework. / I was playing.",
+                  "Q || What was your mom doing while you were studying for the test? || She was cooking. / She was working.",
+                  "Q || What happened when the phone rang during dinner last night? (Use your imagination!) || My dad answered it. / Nobody answered it.",
+                  "Q || How often does your dad cook when your mom is tired? || He sometimes cooks. / He never cooks.",
+                  "Q || What did you do after school last Thursday? || I checked my phone and ate a snack.",
+                  "Q || Tell me one thing Kira did last Saturday. || She danced. / She climbed a tree.",
+                  "Q || What did your cousins do last summer? || They swam in the sea. / They had a picnic.",
+                  "Q || Do you visit your cousins when you are on vacation? || Yes, I visit them on vacation. / No, I don't visit them.",
+                  "Q || What is your best friend going to do tomorrow when school finishes? || He is going to play soccer. / She is going to study.",
+                  "Q || What do you want to be in the future? || I want to be a doctor. / I want to be a vet.",
+                  "F || I was ____ when the phone rang. || sleeping || sleep / slept",
+                  "F || She ____ visits her grandma. (every Sunday) || always || every / all",
+                  "F || They ____ a kite last summer. || flew || fly / flied",
+                  "T || Yo estaba estudiando mientras mi hermano estaba jugando. || I was studying while my brother was playing.",
+                  "T || Mi papá nunca cocina. || My dad never cooks.",
+                  "T || Ellos comieron helado en la playa. || They ate ice cream at the beach.",
+                  "T || Yo los veo los fines de semana. || I see them on weekends.",
+                  "S || blue triangle:3, red square:2 || How many triangles are there? || There are three triangles.",
+                  "H || 🐕 || Guess the hidden animal! || Dog",
+                  "E || 👧😴 📞🔔 || What happened? || She was sleeping when the phone rang."
+                ],
+                "mistakes": [
+                  "M || They [was] swimming in the sea. || were* / was / are || They were swimming in the sea.",
+                  "M || I visit [they] every Sunday. || them* / they / their || I visit them every Sunday."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Monthly Evaluation — Object pronouns review; cumulative review — Vocabulary: me, you, him, her, it, us, them; grandpa",
+                "lines": [
+                  "Q || Do you love your family? || Yes, I love them.",
+                  "Q || Does your mom call you when you are at your grandma's house? || Yes, she calls me every day. / No, she doesn't call me.",
+                  "Q || Who helps you with your homework when it is difficult? || My dad helps me. / My sister helps me.",
+                  "Q || Replace the words: I play with my dog. → I play with ____. || I play with it.",
+                  "Q || Replace the words: My teacher helps my classmates and me. → My teacher helps ____. || My teacher helps us.",
+                  "Q || Replace the words: I call my aunt on Sundays. → I call ____ on Sundays. || I call her on Sundays.",
+                  "Q || What did you do last weekend with your cousins? || I played soccer with them. / I watched a movie with them.",
+                  "Q || Were you studying yesterday at 10:15 AM? || Yes, I was. / No, I wasn't.",
+                  "Q || How often do you see your uncle? || I see him every month. / I rarely see him.",
+                  "Q || Tell me about your family: what do you do together when you are all at home? || We eat dinner together and I love them.",
+                  "F || My grandma loves ____. (my sister and me) || us || we / our",
+                  "F || I see ____ every day. (my teacher, a woman) || her || she / hers",
+                  "F || Do you like ____? (soccer) || it || its / them",
+                  "T || Yo la quiero. (a mi mamá) || I love her.",
+                  "T || ¿Lo conoces? (a él) || Do you know him?",
+                  "T || Mi profesora nos ayuda. || My teacher helps us.",
+                  "T || Yo juego con él los sábados. || I play with him on Saturdays.",
+                  "T || Ellos me llaman todos los días. || They call me every day.",
+                  "H || 👴 || Guess the hidden family member! || Grandpa",
+                  "E || 👧❤️👨‍👩‍👦 || Does she love her family? || Yes, she loves them."
+                ],
+                "mistakes": [
+                  "M || My grandma loves [we]. || us* / we / our || My grandma loves us.",
+                  "M || I play with [he] on Saturdays. || him* / he / his || I play with him on Saturdays."
+                ]
+              }
+            ]
+          }
+        ],
+        "vocab": [
+          {
+            "week": 1,
+            "category": "Yesterday at... (Past progressive)",
+            "words": [
+              "Come",
+              "Eat",
+              "Wait",
+              "Do homework",
+              "Study"
+            ]
+          },
+          {
+            "week": 2,
+            "category": "Parallel actions",
+            "words": [
+              "Draw",
+              "Listen to music",
+              "Eat",
+              "Drink",
+              "Play",
+              "Fly a kite"
+            ]
+          },
+          {
+            "week": 3,
+            "category": "Interrupted actions",
+            "words": [
+              "Sleep",
+              "Ring",
+              "Watch TV",
+              "Knock",
+              "Cry",
+              "Bark"
+            ]
+          },
+          {
+            "week": 4,
+            "category": "Adverbs of frequency",
+            "words": [
+              "Never",
+              "Rarely",
+              "Sometimes",
+              "Usually",
+              "Always"
+            ]
+          },
+          {
+            "week": 5,
+            "category": "Activities after school",
+            "words": [
+              "Study",
+              "Check my phone",
+              "Clean",
+              "Eat",
+              "Do my homework"
+            ]
+          },
+          {
+            "week": 6,
+            "category": "A crazy Saturday for Kira",
+            "words": [
+              "Dance",
+              "Cook",
+              "Play",
+              "Climb",
+              "Jump"
+            ]
+          },
+          {
+            "week": 7,
+            "category": "Summer activities",
+            "words": [
+              "Swim",
+              "Eat ice cream",
+              "Build sandcastles",
+              "Have a picnic",
+              "Fly a kite"
+            ]
+          },
+          {
+            "week": 8,
+            "category": "Object pronouns",
+            "words": [
+              "Me",
+              "You",
+              "Him",
+              "Her",
+              "It",
+              "Us",
+              "Them"
+            ]
+          }
+        ]
       }
     ]
   }
