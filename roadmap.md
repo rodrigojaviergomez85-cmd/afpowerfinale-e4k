@@ -1,5 +1,7 @@
 # Roadmap
 
+- [ ] Import uploaded Level 8 Weeks 1–8 exactly, verify 20 general cards and 2 mistakes per day, preserve other lessons, and play a Level 8 selection from Quick Setup.
+
 - [ ] AF-SUPER-FINALE-CONTEXT-FIXES_2.txt: six app fixes (APP-01 results scrolling; APP-02 card instructions; APP-03 distinct no-repeat decks; APP-04 scope/difficulty + remove flag-ID cards; APP-05 hidden pictures 3×2 six-tile mosaic with category prompts; APP-06 Bridge Builder Sandbox relabel), CONTENT-EXCEPTION-01 (L2W5 vet question), then 750 exact content replacements. L2W4 and rest of L2W5 protected; preserve 16 lines + 2 mistakes per day.
 - [ ] Hot Chair flames: one continuous fire layer rising from below, no flames before halfway, chair fully covered at time-up; verify at 0:40/0:30/0:15/0:00.
 
