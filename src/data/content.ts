@@ -12653,6 +12653,1521 @@ export const COURSES: CourseDef[] = [
             ]
           }
         ]
+      },
+      {
+        "level": 10,
+        "weeks": [
+          {
+            "week": 1,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "General review — Simple past; Wh-questions; at the doctor's office — Vocabulary: fall, hurt, break, take medicine, look",
+                "lines": [
+                  "Q || Tell me about a time you went to the doctor. What happened? || I fell off my bike and hurt my knee. The doctor looked at it and gave me medicine.",
+                  "Q || Have you ever broken a bone? What happened? || No, I have never broken a bone. / Yes, I broke my arm when I fell from a tree.",
+                  "Q || What did the doctor do when you were sick last time? || She looked at my throat and gave me medicine.",
+                  "Q || When did you last take medicine? Why? || I took medicine last month because I had a cold.",
+                  "Q || What happened to your best friend when he or she fell at school? (Use your imagination!) || He hurt his hand. / She broke her glasses.",
+                  "Q || Where did you hurt yourself the last time you fell? || I hurt my elbow. / I hurt my knee.",
+                  "Q || What did your mom do when you had a fever? || She gave me medicine and I stayed in bed.",
+                  "Q || Why did your cousin go to the doctor last week? (Use your imagination!) || Because he had a stomachache.",
+                  "F || I ____ off my bike yesterday. || fell || fall / falled",
+                  "F || She ____ her arm last year. || broke || break / breaked",
+                  "F || The doctor ____ at my throat. || looked || look / looking",
+                  "T || Me caí de la bicicleta y me lastimé la rodilla. || I fell off my bike and hurt my knee.",
+                  "T || Nunca me he roto un hueso. || I have never broken a bone.",
+                  "T || El doctor miró mi garganta. || The doctor looked at my throat.",
+                  "T || Tomé medicina el mes pasado. || I took medicine last month.",
+                  "T || Ella se rompió el brazo el año pasado. || She broke her arm last year.",
+                  "H || 💊 || Guess the action! || Take medicine",
+                  "H || 🦴💥 || Guess the action! || Break a bone",
+                  "E || 🧒🚲💥🦵 || What happened? || I fell off my bike and hurt my knee.",
+                  "E || 👩‍⚕️👀👄 💊 || What did the doctor do? || She looked at my throat and gave me medicine."
+                ],
+                "mistakes": [
+                  "M || I [falled] off my bike yesterday. || fell* / falled / fall || I fell off my bike yesterday.",
+                  "M || She [breaked] her arm last year. || broke* / breaked / break || She broke her arm last year."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "General review — Present perfect; Wh-questions; learning a new skill — Vocabulary: watch videos, read books, join a class, practice, teach",
+                "lines": [
+                  "Q || Have you ever learned a new skill? How did you learn it? || Yes, I have learned to play chess. I watched videos and practiced with my dad.",
+                  "Q || What have you practiced this month? || I have practiced English and soccer this month.",
+                  "Q || Have you joined a class this year? Which one? || Yes, I have joined a swimming class. / No, I haven't joined any class.",
+                  "Q || Who has taught you something new this year? || My grandpa has taught me to play cards.",
+                  "Q || What videos have you watched to learn something? || I have watched videos to learn how to draw.",
+                  "Q || What books have you read to learn about a topic? || I have read books about dinosaurs.",
+                  "Q || What has your best friend learned this year? || She has learned to ride a skateboard.",
+                  "Q || What have you taught someone this year? || I have taught my little brother to count to ten.",
+                  "F || I have ____ a new skill. || learned || learn / learning",
+                  "F || Have you ____ a class this year? || joined || join / joins",
+                  "F || My grandpa has ____ me to play cards. || taught || teach / teached",
+                  "T || He aprendido una nueva habilidad. || I have learned a new skill.",
+                  "T || He visto videos para aprender a dibujar. || I have watched videos to learn to draw.",
+                  "T || ¿Te has unido a una clase este año? || Have you joined a class this year?",
+                  "T || Mi abuelo me ha enseñado a jugar cartas. || My grandpa has taught me to play cards.",
+                  "T || He practicado inglés este mes. || I have practiced English this month.",
+                  "H || 📺🎓 || Guess the action! || Watch videos",
+                  "E || 🧒♟️ 📺👨 || How have you learned to play chess? || I have watched videos and practiced with my dad.",
+                  "E || 🧒🏊📋✅ || Have you joined a class this year? || Yes, I have joined a swimming class.",
+                  "E || 👴🃏🧒 || Who has taught you to play cards? || My grandpa has taught me to play cards."
+                ],
+                "mistakes": [
+                  "M || I have [learn] a new skill. || learned* / learn / learning || I have learned a new skill.",
+                  "M || My grandpa has [teached] me to play cards. || taught* / teached / teach || My grandpa has taught me to play cards."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "General review — Simple present: affirmative, negative and interrogative; phrasal verb \"give away\"; a parrot's adventures — Vocabulary: fly, eat, visit, go to, talk, swim",
+                "lines": [
+                  "Q || Imagine a parrot that lives in your city. Where does it fly every day? (Use your imagination!) || It flies to the park every day.",
+                  "Q || What does the parrot eat? (Use your imagination!) || It eats fruit and seeds.",
+                  "Q || Does the parrot talk? What does it say? (Use your imagination!) || Yes, it talks. It says \"Hello!\" / No, it doesn't talk.",
+                  "Q || Does the parrot swim? || No, it doesn't swim. Parrots don't swim.",
+                  "Q || Who does the parrot visit on weekends? (Use your imagination!) || It visits its friend the dog.",
+                  "Q || Continue the story: \"Every morning the parrot goes to...\" || Every morning the parrot goes to the market and eats a banana.",
+                  "Q || What do you give away when you don't need it anymore? || I give away my old toys. / I give away clothes that don't fit me.",
+                  "Q || Does your family give away old things? What? || Yes, my family gives away old clothes and books.",
+                  "F || The parrot ____ to the park every day. || flies || fly / flying",
+                  "F || It ____ swim. || doesn't || don't / isn't",
+                  "F || ____ the parrot talk? || Does || Do / Is",
+                  "T || El loro vuela al parque todos los días. || The parrot flies to the park every day.",
+                  "T || ¿Habla el loro? || Does the parrot talk?",
+                  "T || No, no nada. || No, it doesn't swim.",
+                  "T || Regalo mis juguetes viejos. || I give away my old toys.",
+                  "T || Visita a su amigo el perro los fines de semana. || It visits its friend the dog on weekends.",
+                  "H || 🦜 || Guess the hidden animal! || Parrot",
+                  "E || 🦜🌳🏞️ || Where does the parrot fly every day? || It flies to the park every day.",
+                  "E || 🦜🍌🌰 || What does the parrot eat? || It eats fruit and seeds.",
+                  "E || 🧒🎁🧸📦 || What do you give away? || I give away my old toys."
+                ],
+                "mistakes": [
+                  "M || The parrot [fly] to the park every day. || flies* / fly / flying || The parrot flies to the park every day.",
+                  "M || It [don't] swim. || doesn't* / don't / isn't || It doesn't swim."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "General review — Simple present; Wh-questions; mom during the week — Vocabulary Review",
+                "lines": [
+                  "Q || What does your mom do during the week? || She works, cooks and takes care of us.",
+                  "Q || What time does your mom wake up on Mondays? || She wakes up at 5:30 AM.",
+                  "Q || Where does your mom work? || She works at an office. / She works at home.",
+                  "Q || What does your mom do when she gets home tired? || She rests on the sofa and watches TV.",
+                  "Q || How often does your mom go to the supermarket? || She goes to the supermarket twice a week.",
+                  "Q || Who does your mom talk to every day? || She talks to my grandma every day.",
+                  "Q || What does your mom do on Friday nights? || She watches movies with us. / She goes out with her friends.",
+                  "Q || Why does your mom like weekends? || Because she doesn't work and she can rest.",
+                  "F || My mom ____ at an office. || works || work / working",
+                  "F || What time ____ she wake up? || does || do / is",
+                  "F || She ____ TV when she is tired. || watches || watch / watching",
+                  "T || Mi mamá trabaja y cocina durante la semana. || My mom works and cooks during the week.",
+                  "T || ¿Dónde trabaja tu mamá? || Where does your mom work?",
+                  "T || Ella descansa cuando llega cansada. || She rests when she gets home tired.",
+                  "T || Va al supermercado dos veces a la semana. || She goes to the supermarket twice a week.",
+                  "T || A ella le gustan los fines de semana porque no trabaja. || She likes weekends because she doesn't work.",
+                  "H || 👩‍💼🏢 || Guess the action! || Work at an office",
+                  "E || 👩⏰🕠 || What time does she wake up? || She wakes up at 5:30 AM.",
+                  "E || 👩🛒 📅2️⃣ || How often does she go to the supermarket? || She goes to the supermarket twice a week.",
+                  "E || 👩🛋️📺😴 || What does she do when she gets home tired? || She rests on the sofa and watches TV."
+                ],
+                "mistakes": [
+                  "M || My mom [work] at an office. || works* / work / working || My mom works at an office.",
+                  "M || What time [do] she wake up? || does* / do / is || What time does she wake up?"
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SUPER STAR EXAM — Review of the week: simple past, present perfect, simple present; comparatives, superlatives, second conditional review — Vocabulary Review",
+                "lines": [
+                  "Q || What happened the last time you got hurt? || I fell at school and hurt my knee.",
+                  "Q || What new skill have you learned this year? || I have learned to swim.",
+                  "Q || What does your mom do every day? || She works and cooks.",
+                  "Q || Who is the shortest person in your family? || My little sister is the shortest person in my family.",
+                  "Q || Which is the most difficult subject for you? || Math is the most difficult subject for me.",
+                  "Q || What would you do if you were a parrot? || If I were a parrot, I would fly over the city and talk all day.",
+                  "Q || Have you ever taken medicine that tasted bad? || Yes, I have. / No, I haven't.",
+                  "Q || Who has taught you the most things in your life? || My mom has taught me the most things.",
+                  "Q || What do you give away every year? || I give away toys I don't use.",
+                  "Q || Compare your city and the capital. Use a comparative. || My city is smaller than the capital.",
+                  "F || I ____ at school last week. || fell || fall / have fallen",
+                  "F || I ____ learned to swim this year. || have || has / did",
+                  "F || Math is the ____ subject. || most difficult || difficultest / more difficult",
+                  "T || Me caí en la escuela. || I fell at school.",
+                  "T || He aprendido a nadar este año. || I have learned to swim this year.",
+                  "T || Mi papá es el más alto. || My dad is the tallest.",
+                  "T || Si fuera un loro, volaría sobre la ciudad. || If I were a parrot, I would fly over the city.",
+                  "T || ¿Alguna vez has tomado una medicina con mal sabor? || Have you ever taken medicine that tasted bad?",
+                  "H || 🤕🦵 || Guess the action! || Hurt my knee",
+                  "E || 🧒🏊✅ 📅 || What have you learned this year? || I have learned to swim."
+                ],
+                "mistakes": [
+                  "M || I [have fallen] at school last week. || fell* / have fallen / fall || I fell at school last week.",
+                  "M || Math is the [more difficult] subject for me. || most difficult* / more difficult / difficultest || Math is the most difficult subject for me."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 2,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "General review — Modal verb Can: affirmative, negative and interrogative; super abilities — Vocabulary: translate, illustrate, memorize, play, solve",
+                "lines": [
+                  "Q || Create a super ability for your best friend. What can he or she do? (Use your imagination!) || She can translate any language in one second. / He can memorize a whole book.",
+                  "Q || Can you solve math problems quickly? || Yes, I can. / No, I can't.",
+                  "Q || What can your teacher do that you can't do? || She can translate texts very fast. / He can play the piano.",
+                  "Q || Can your mom memorize phone numbers? || Yes, she can. / No, she can't.",
+                  "Q || What can you illustrate well? || I can illustrate animals and cars.",
+                  "Q || Can your dad play an instrument? Which one? || Yes, he can. He can play the guitar. / No, he can't.",
+                  "Q || Make a negative sentence: my cat / not solve / puzzles. || My cat can't solve puzzles.",
+                  "Q || What super ability can Messi have besides soccer? (Use your imagination!) || He can memorize every player's name in the world.",
+                  "F || She ____ translate any language. || can || cans / can to",
+                  "F || My cat ____ solve puzzles. || can't || doesn't can / not can",
+                  "F || ____ you memorize a whole book? || Can || Do / Are",
+                  "T || Ella puede traducir cualquier idioma. || She can translate any language.",
+                  "T || ¿Puedes resolver problemas de matemáticas rápido? || Can you solve math problems quickly?",
+                  "T || Mi gato no puede resolver rompecabezas. || My cat can't solve puzzles.",
+                  "T || Puedo ilustrar animales. || I can illustrate animals.",
+                  "T || Él puede memorizar un libro entero. || He can memorize a whole book.",
+                  "H || 🧠📖 || Guess the action! || Memorize",
+                  "H || 🌐🗣️ || Guess the action! || Translate",
+                  "E || 🧒📐✅ || Can you solve math problems? || Yes, I can.",
+                  "E || 🐈🧩❌ || Can the cat solve puzzles? || No, it can't."
+                ],
+                "mistakes": [
+                  "M || She [cans] translate any language. || can* / cans / can to || She can translate any language.",
+                  "M || My cat [doesn't can] solve puzzles. || can't* / doesn't can / not can || My cat can't solve puzzles."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "General review — Simple past & Past progressive (interrupted actions); Wh-questions; continue the story — Vocabulary: feed, fly, slip, take pictures, wear, laugh",
+                "lines": [
+                  "Q || What were you doing when your mom called you yesterday? || I was feeding my dog when my mom called me.",
+                  "Q || What happened while your best friend was taking pictures at the park? (Use your imagination!) || A bird flew in front of the camera.",
+                  "Q || Why did your cousin laugh when your uncle slipped on the wet floor? (Use your imagination!) || Because he looked very funny. / Because he wasn't hurt.",
+                  "Q || What was your dad wearing when he slipped on the ice? (Use your imagination!) || He was wearing his new shoes.",
+                  "Q || What were you doing when the bird flew into the classroom? (Use your imagination!) || I was taking notes when the bird flew into the classroom.",
+                  "Q || Continue the story: \"I was feeding the ducks when suddenly...\" || I was feeding the ducks when suddenly a big goose ran at me and I slipped into the lake.",
+                  "Q || Who was laughing when you slipped on the banana peel? (Use your imagination!) || My brother was laughing.",
+                  "Q || What were your grandparents doing when the lights went out? (Use your imagination!) || They were watching TV when the lights went out.",
+                  "F || I was feeding my dog ____ my mom called. || when || while / because",
+                  "F || He ____ on the wet floor. || slipped || slip / sliping",
+                  "F || A bird ____ into the classroom while we were studying. || flew || fly / flied",
+                  "T || Estaba alimentando a mi perro cuando mi mamá me llamó. || I was feeding my dog when my mom called me.",
+                  "T || Un pájaro voló frente a la cámara. || A bird flew in front of the camera.",
+                  "T || Mi tío se resbaló en el piso mojado. || My uncle slipped on the wet floor.",
+                  "T || ¿Qué estaba usando tu papá cuando se resbaló? || What was your dad wearing when he slipped?",
+                  "T || Mi hermano se estaba riendo. || My brother was laughing.",
+                  "H || 🍌🦶💫 || Guess the action! || Slip",
+                  "E || 🧒🦆🍞 🪿💨 || What happened while you were feeding the ducks? || A goose ran at me while I was feeding the ducks.",
+                  "E || 👨🧊👟💫 || What was he wearing when he slipped on the ice? || He was wearing his new shoes.",
+                  "E || 👧📸 🐦 || What happened while she was taking pictures? || A bird flew in front of the camera."
+                ],
+                "mistakes": [
+                  "M || I was feeding my dog [while] my mom called. || when* / while / because || I was feeding my dog when my mom called.",
+                  "M || He [sliped] on the wet floor. || slipped* / sliped / slip || He slipped on the wet floor."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "General review — Present progressive (1st & 3rd person); Wh-questions; at the swimming pool — Vocabulary: swim, play, dive, float, watch, relax",
+                "lines": [
+                  "Q || Imagine you are at the swimming pool. What are you doing? || I am swimming. / I am floating on my back.",
+                  "Q || What is your best friend doing at the pool? (Use your imagination!) || He is diving. / She is playing with a ball.",
+                  "Q || Who is relaxing on the chairs by the pool? (Use your imagination!) || My mom is relaxing on the chairs.",
+                  "Q || Why is your dad watching the little kids at the pool? (Use your imagination!) || Because he is taking care of them.",
+                  "Q || What are your cousins playing in the water? (Use your imagination!) || They are playing volleyball in the water.",
+                  "Q || Where is your sister diving from? (Use your imagination!) || She is diving from the big trampoline.",
+                  "Q || What is your grandpa doing at the pool while everybody is swimming? (Use your imagination!) || He is reading under the umbrella.",
+                  "Q || Are you floating or swimming right now? (Imagine you are in the pool.) || I am floating. / I am swimming.",
+                  "F || I ____ swimming right now. || am || is / are",
+                  "F || He ____ diving from the trampoline. || is || are / am",
+                  "F || They ____ playing in the water. || are || is / am",
+                  "T || Estoy nadando. || I am swimming.",
+                  "T || Él está clavándose desde el trampolín. || He is diving from the trampoline.",
+                  "T || Mi mamá está descansando al lado de la piscina. || My mom is relaxing by the pool.",
+                  "T || ¿Por qué está mirando tu papá a los niños? || Why is your dad watching the kids?",
+                  "T || Ellos están jugando en el agua. || They are playing in the water.",
+                  "H || 🏊 || Guess the action! || Swim",
+                  "E || 👦🤿💦 || What is he doing? || He is diving.",
+                  "E || 👩🪑☀️🏊 || What is she doing by the pool? || She is relaxing.",
+                  "E || 🧒🧒🏐💦 || What are they doing? || They are playing volleyball in the water."
+                ],
+                "mistakes": [
+                  "M || He [are] diving from the trampoline. || is* / are / am || He is diving from the trampoline.",
+                  "M || They are [play] in the water. || playing* / play / plays || They are playing in the water."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "General review — Simple future: going to (1st & 3rd person); Wh-questions; next Christmas — Vocabulary: visit, meet, make, bake, give",
+                "lines": [
+                  "Q || What are you going to do next Christmas? || I am going to visit my grandparents. / I am going to bake cookies with my mom.",
+                  "Q || Who are you going to meet next Christmas? || I am going to meet my cousins from another city.",
+                  "Q || What is your mom going to bake next Christmas? || She is going to bake a cake. / She is going to bake cookies.",
+                  "Q || What are you going to give your best friend next Christmas? || I am going to give him a book. / I am going to give her a bracelet.",
+                  "Q || Where is your family going to celebrate next Christmas? || They are going to celebrate at my grandma's house.",
+                  "Q || What is your dad going to make for Christmas dinner? || He is going to make turkey. / He is going to make his famous rice.",
+                  "Q || Who is going to visit you next Christmas? || My aunt and my uncle are going to visit me.",
+                  "Q || What is Santa going to give you if you behave well? (Use your imagination!) || He is going to give me a bike.",
+                  "F || I ____ going to visit my grandparents. || am || is / will",
+                  "F || She ____ going to bake a cake. || is || are / am",
+                  "F || What are you going to ____ your friend? || give || gives / giving",
+                  "T || Voy a visitar a mis abuelos en Navidad. || I am going to visit my grandparents at Christmas.",
+                  "T || Mi mamá va a hornear galletas. || My mom is going to bake cookies.",
+                  "T || ¿Qué le vas a regalar a tu amigo? || What are you going to give your friend?",
+                  "T || Mi familia va a celebrar en casa de mi abuela. || My family is going to celebrate at my grandma's house.",
+                  "T || Mi papá va a hacer pavo. || My dad is going to make turkey.",
+                  "H || 🍪🎄 || Guess the action! || Bake cookies",
+                  "E || 🧒🎄🏠👵👴 || What are you going to do next Christmas? || I am going to visit my grandparents.",
+                  "E || 👩🎂🎄 || What is she going to bake? || She is going to bake a cake.",
+                  "E || 🧒🎁📖👦 || What are you going to give your friend? || I am going to give him a book."
+                ],
+                "mistakes": [
+                  "M || I [is] going to visit my grandparents. || am* / is / will || I am going to visit my grandparents.",
+                  "M || She is going to [bakes] a cake. || bake* / bakes / baking || She is going to bake a cake."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "General review — Mix: simple present, present perfect and simple past; Wh-questions; conditionals review — Vocabulary: visit, eat, walk, slip, go, scare",
+                "lines": [
+                  "Q || Where do you usually go on Sundays? || I usually go to the park. / I usually go to my grandma's house.",
+                  "Q || Have you ever been scared by an animal? What happened? || Yes, a dog scared me when I was walking to school. / No, I have never been scared by an animal.",
+                  "Q || What did you eat last Sunday? || I ate chicken and rice.",
+                  "Q || Who has visited you this month? || My aunt has visited me this month.",
+                  "Q || When did you last slip and fall? || I slipped and fell last week in the bathroom.",
+                  "Q || What do you do if you see a spider? || If I see a spider, I scream and call my dad.",
+                  "Q || What will you do if your friend scares you tomorrow? || If my friend scares me, I will scare him back.",
+                  "Q || Where have you walked with your family this year? || We have walked in the mountains.",
+                  "Q || What would you do if a ghost visited your house? || If a ghost visited my house, I would run.",
+                  "Q || Tell me one thing you do every day, one thing you did yesterday and one thing you have done this year. || I go to school every day, I played soccer yesterday and I have learned English this year.",
+                  "F || I usually ____ to the park on Sundays. || go || went / gone",
+                  "F || I ____ chicken last Sunday. || ate || eat / have eaten",
+                  "F || My aunt ____ visited me this month. || has || have / did",
+                  "T || Usualmente voy al parque los domingos. || I usually go to the park on Sundays.",
+                  "T || Un perro me asustó. || A dog scared me.",
+                  "T || Comí pollo el domingo pasado. || I ate chicken last Sunday.",
+                  "T || Mi tía me ha visitado este mes. || My aunt has visited me this month.",
+                  "T || Si veo una araña, grito. || If I see a spider, I scream.",
+                  "H || 👻 || Guess the hidden word! || Ghost",
+                  "E || 🧒🚶🏫 🐕😱 || What happened when you were walking to school? || A dog scared me."
+                ],
+                "mistakes": [
+                  "M || I [have eaten] chicken last Sunday. || ate* / have eaten / eat || I ate chicken last Sunday.",
+                  "M || My aunt [have] visited me this month. || has* / have / did || My aunt has visited me this month."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 3,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "General review — Simple past & Past progressive (parallel & interrupted actions); Wh-questions; family last night — Vocabulary: paint, dance, sing, juggle, fix, drop",
+                "lines": [
+                  "Q || What were you and your family doing last night at 8:00 PM? || I was painting while my mom was cooking and my dad was fixing the TV.",
+                  "Q || What was your dad fixing while you were doing your homework? (Use your imagination!) || He was fixing the kitchen door.",
+                  "Q || What happened while your sister was dancing in the living room? (Use your imagination!) || She dropped a glass of juice.",
+                  "Q || Who was singing while you were painting? (Use your imagination!) || My brother was singing in the shower.",
+                  "Q || What were you doing when your mom dropped the plates? (Use your imagination!) || I was watching TV when my mom dropped the plates.",
+                  "Q || What was your cousin juggling at the party? (Use your imagination!) || He was juggling three oranges.",
+                  "Q || Why did your dad stop fixing the car? (Use your imagination!) || Because it started to rain.",
+                  "Q || What was your grandma doing while everybody was dancing? (Use your imagination!) || She was singing and clapping.",
+                  "F || I was painting ____ my mom was cooking. || while || when / because",
+                  "F || She ____ a glass while she was dancing. || dropped || drop / droping",
+                  "F || He was ____ three oranges. || juggling || juggle / juggles",
+                  "T || Yo estaba pintando mientras mi mamá cocinaba. || I was painting while my mom was cooking.",
+                  "T || Ella dejó caer un vaso mientras bailaba. || She dropped a glass while she was dancing.",
+                  "T || Mi papá estaba arreglando la puerta. || My dad was fixing the door.",
+                  "T || Mi primo estaba haciendo malabares con tres naranjas. || My cousin was juggling three oranges.",
+                  "T || ¿Quién estaba cantando mientras pintabas? || Who was singing while you were painting?",
+                  "H || 🤹 || Guess the action! || Juggle",
+                  "E || 👧💃 🥛💥 || What happened while she was dancing? || She dropped a glass while she was dancing.",
+                  "E || 👨🔧📺 👧📝 || What was he doing while she was doing homework? || He was fixing the TV.",
+                  "E || 👦🎤🚿 👧🎨 || Who was singing while she was painting? || The boy was singing in the shower."
+                ],
+                "mistakes": [
+                  "M || I was painting [when] my mom was cooking. (two actions at the same time) || while* / when / because || I was painting while my mom was cooking.",
+                  "M || She [droped] a glass. || dropped* / droped / drop || She dropped a glass."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "General review — Simple past (3rd person); Wh-questions; at the circus — Vocabulary: feed, eat, see, play the drums, jump, steal",
+                "lines": [
+                  "Q || Tell me about a crazy experience at the circus. What did the clown do? (Use your imagination!) || The clown played the drums and jumped on the elephant.",
+                  "Q || What did your best friend see at the circus? (Use your imagination!) || She saw lions and acrobats.",
+                  "Q || What did the monkey steal from your dad at the circus? (Use your imagination!) || It stole his hat. / It stole his popcorn.",
+                  "Q || What did your little cousin eat at the circus? (Use your imagination!) || He ate cotton candy and popcorn.",
+                  "Q || Who fed the elephant at the circus? (Use your imagination!) || The trainer fed the elephant.",
+                  "Q || What did the acrobat jump over? (Use your imagination!) || He jumped over three tigers.",
+                  "Q || Why did your mom laugh at the circus? (Use your imagination!) || Because the clown fell into a cake.",
+                  "Q || Who played the drums at the circus? (Use your imagination!) || A monkey played the drums.",
+                  "F || The monkey ____ my dad's hat. || stole || steal / stealed",
+                  "F || The clown ____ the drums. || played || play / playing",
+                  "F || She ____ lions and acrobats. || saw || see / seen",
+                  "T || El payaso tocó los tambores. || The clown played the drums.",
+                  "T || El mono se robó el sombrero de mi papá. || The monkey stole my dad's hat.",
+                  "T || Mi primo comió algodón de azúcar. || My cousin ate cotton candy.",
+                  "T || El entrenador alimentó al elefante. || The trainer fed the elephant.",
+                  "T || El acróbata saltó sobre tres tigres. || The acrobat jumped over three tigers.",
+                  "H || 🎪 || Guess the hidden place! || Circus",
+                  "E || 🐒🎩👨 || What did the monkey do? || It stole the man's hat.",
+                  "E || 🤡🥁 || What did the clown do? || He played the drums.",
+                  "E || 🤸🐯🐯🐯 || What did the acrobat do? || He jumped over three tigers."
+                ],
+                "mistakes": [
+                  "M || The monkey [stealed] my dad's hat. || stole* / stealed / steal || The monkey stole my dad's hat.",
+                  "M || The clown [play] the drums yesterday. || played* / play / playing || The clown played the drums yesterday."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "General review — Simple future: going to; Wh-questions; best friend's next vacation — Vocabulary: visit, wear, bounce, have a picnic, ride, race",
+                "lines": [
+                  "Q || How is your best friend going to spend his or her next vacation? || She is going to visit her grandparents and ride horses.",
+                  "Q || Where is your best friend going to have a picnic? (Use your imagination!) || He is going to have a picnic by the river.",
+                  "Q || What is your cousin going to wear on the beach? (Use your imagination!) || She is going to wear a hat and sunglasses.",
+                  "Q || Who is your brother going to race on his bike? (Use your imagination!) || He is going to race his friends.",
+                  "Q || What are your friends going to bounce on at the park? (Use your imagination!) || They are going to bounce on a big trampoline.",
+                  "Q || Why is your family going to visit the countryside? (Use your imagination!) || Because my grandpa lives there.",
+                  "Q || What animal is your best friend going to ride on vacation? (Use your imagination!) || He is going to ride a camel. / She is going to ride a horse.",
+                  "Q || When are you going to have your next vacation? || I am going to have my next vacation in December.",
+                  "F || She ____ going to ride horses. || is || are / will",
+                  "F || They are going to ____ on a trampoline. || bounce || bounces / bouncing",
+                  "F || Why ____ your family going to visit the countryside? || is || are / does",
+                  "T || Ella va a visitar a sus abuelos. || She is going to visit her grandparents.",
+                  "T || Él va a hacer un picnic junto al río. || He is going to have a picnic by the river.",
+                  "T || Mi prima va a usar un sombrero. || My cousin is going to wear a hat.",
+                  "T || Ellos van a saltar en un trampolín. || They are going to bounce on a trampoline.",
+                  "T || ¿Cuándo vas a tener tus próximas vacaciones? || When are you going to have your next vacation?",
+                  "H || 🐎🏁 || Guess the action! || Race",
+                  "E || 👧🐎🏞️ || What is she going to do on vacation? || She is going to ride horses.",
+                  "E || 👦🚲🏁👦👦 || Who is he going to race? || He is going to race his friends.",
+                  "E || 👧👒🕶️🏖️ || What is she going to wear on the beach? || She is going to wear a hat and sunglasses."
+                ],
+                "mistakes": [
+                  "M || She [are] going to ride horses. || is* / are / will || She is going to ride horses.",
+                  "M || They are going to [bouncing] on a trampoline. || bounce* / bouncing / bounces || They are going to bounce on a trampoline."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "General review — Mix: going to, will and simple past; Wh-questions; your next birthday — Vocabulary: invite, open presents, eat, wear, blow out",
+                "lines": [
+                  "Q || Who are you going to invite to your next birthday? || I am going to invite my cousins and my best friends.",
+                  "Q || What will you wear on your next birthday? || I will wear my favorite T-shirt. / I will wear a new dress.",
+                  "Q || What did you eat on your last birthday? || I ate pizza and cake.",
+                  "Q || When are you going to open your presents? || I am going to open my presents after the cake.",
+                  "Q || What will you wish for when you blow out the candles? (Use your imagination!) || I will wish for a new bike.",
+                  "Q || Who did you invite to your last birthday? || I invited my classmates.",
+                  "Q || What are you going to eat on your next birthday? || I am going to eat hamburgers and ice cream.",
+                  "Q || How many candles did you blow out on your last birthday? || I blew out ten candles.",
+                  "F || I ____ going to invite my cousins. || am || is / will",
+                  "F || I ____ pizza on my last birthday. || ate || eat / will eat",
+                  "F || I ____ wear my favorite T-shirt tomorrow. || will || going / am",
+                  "T || Voy a invitar a mis primos. || I am going to invite my cousins.",
+                  "T || Usaré mi camiseta favorita. || I will wear my favorite T-shirt.",
+                  "T || Comí pizza en mi último cumpleaños. || I ate pizza on my last birthday.",
+                  "T || Voy a abrir mis regalos después del pastel. || I am going to open my presents after the cake.",
+                  "T || Apagué diez velas. || I blew out ten candles.",
+                  "H || 🎂🕯️💨 || Guess the action! || Blow out the candles",
+                  "E || 🧒💌👦👧👦 || Who are you going to invite? || I am going to invite my friends.",
+                  "E || 🧒🎂🕯️🕯️🕯️ || How many candles did you blow out? || I blew out three candles.",
+                  "E || 🧒🎁 🎂➡️ || When are you going to open your presents? || I am going to open my presents after the cake."
+                ],
+                "mistakes": [
+                  "M || I [eated] pizza on my last birthday. || ate* / eated / eat || I ate pizza on my last birthday.",
+                  "M || I [will going] to open my presents after the cake. || am going* / will going / going || I am going to open my presents after the cake."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "SKILLS PRACTICE DAY — Various tenses; reading (paragraph + Wh-questions); have to, second conditional and comparatives review — Vocabulary Review",
+                "lines": [
+                  "Q || Read and answer: \"Lucas has to wake up at 6:00 AM. He goes to school by bus. After school he plays soccer.\" What does Lucas have to do at 6:00 AM? || He has to wake up.",
+                  "Q || Read and answer: \"Lucas has to wake up at 6:00 AM. He goes to school by bus. After school he plays soccer.\" How does Lucas go to school? || He goes to school by bus.",
+                  "Q || Read and answer: \"Lucas has to wake up at 6:00 AM. He goes to school by bus. After school he plays soccer.\" What does Lucas do after school? || He plays soccer.",
+                  "Q || Read and answer: \"Lucas has to wake up at 6:00 AM. He goes to school by bus. After school he plays soccer.\" Do you think Lucas likes sports? Why? || Yes, I think he likes sports because he plays soccer every day.",
+                  "Q || Read and answer: \"Yesterday Nina was reading when her dog jumped on the bed. She laughed and the dog ate her cookie.\" What was Nina doing when the dog jumped? || She was reading.",
+                  "Q || Read and answer: \"Yesterday Nina was reading when her dog jumped on the bed. She laughed and the dog ate her cookie.\" What did the dog eat? || It ate her cookie.",
+                  "Q || What do you have to do every morning? || I have to brush my teeth and go to school.",
+                  "Q || What would you do if you were Nina's dog? || If I were Nina's dog, I would eat the cookie too.",
+                  "Q || Who is more responsible, Lucas or you? Why? || Lucas is more responsible because he wakes up at 6:00 AM.",
+                  "Q || Which is the funniest thing in Nina's story? || The funniest thing is that the dog ate her cookie.",
+                  "F || Lucas ____ to wake up at 6:00 AM. || has || have / had",
+                  "F || Nina ____ reading when the dog jumped. || was || were / is",
+                  "F || If I were a dog, I ____ eat cookies. || would || will / can",
+                  "T || Lucas tiene que levantarse a las seis. || Lucas has to wake up at six.",
+                  "T || Él va a la escuela en bus. || He goes to school by bus.",
+                  "T || Nina estaba leyendo cuando el perro saltó. || Nina was reading when the dog jumped.",
+                  "T || El perro se comió su galleta. || The dog ate her cookie.",
+                  "T || Si yo fuera un perro, comería galletas. || If I were a dog, I would eat cookies.",
+                  "H || 🚌🏫 || Guess the hidden phrase! || Go to school by bus",
+                  "E || 👧📖 🐕🛏️ 🍪 || Retell the story in two sentences. || Nina was reading when her dog jumped on the bed. The dog ate her cookie."
+                ],
+                "mistakes": [
+                  "M || Lucas [have] to wake up at 6:00 AM. || has* / have / had || Lucas has to wake up at 6:00 AM.",
+                  "M || Nina was reading [while] the dog jumped on the bed. (interrupted action) || when* / while / because || Nina was reading when the dog jumped on the bed."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 4,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "General review — Present perfect (1st person); Wh-questions; phrasal verb \"run into\"; something new this year — Vocabulary: build, play, cook, bake, practice",
+                "lines": [
+                  "Q || Have you learned something new this year? What was it? || Yes, I have learned to cook eggs. / Yes, I have learned to play chess.",
+                  "Q || What have you built this year? || I have built a Lego castle. / I have built a bird house with my dad.",
+                  "Q || What sport have you practiced this year? || I have practiced basketball this year.",
+                  "Q || What have you cooked this year for the first time? || I have cooked pancakes for the first time.",
+                  "Q || What have you baked with your family? || I have baked a cake with my grandma.",
+                  "Q || What game have you played for the first time this year? || I have played Minecraft for the first time.",
+                  "Q || Who have you run into at the mall recently? (Use your imagination!) || I have run into my teacher at the mall.",
+                  "Q || Have you ever run into a famous person? Who? || No, I have never run into a famous person. / Yes, I ran into a soccer player at the airport.",
+                  "F || I have ____ a Lego castle. || built || build / builded",
+                  "F || What ____ you practiced this year? || have || has / did",
+                  "F || I have ____ into my teacher at the mall. || run || ran / runned",
+                  "T || He aprendido a cocinar huevos. || I have learned to cook eggs.",
+                  "T || He construido un castillo de Lego. || I have built a Lego castle.",
+                  "T || He practicado básquetbol este año. || I have practiced basketball this year.",
+                  "T || Me encontré con mi profesora en el centro comercial. || I ran into my teacher at the mall.",
+                  "T || He horneado un pastel con mi abuela. || I have baked a cake with my grandma.",
+                  "H || 🧱🏰 || Guess the action! || Build a castle",
+                  "H || 🥞🍳 || Guess the action! || Cook pancakes",
+                  "E || 🧒🏀 📅 || What sport have you practiced this year? || I have practiced basketball this year.",
+                  "E || 🧒🛍️😮👩‍🏫 || Who have you run into at the mall? || I have run into my teacher."
+                ],
+                "mistakes": [
+                  "M || I have [build] a Lego castle. || built* / build / builded || I have built a Lego castle.",
+                  "M || I have [ran] into my teacher at the mall. || run* / ran / runned || I have run into my teacher at the mall."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "General review — Present perfect (1st & 3rd person); Wh-questions; the most interesting place — Vocabulary: find, explore, build a sandcastle, melt, swim, discover",
+                "lines": [
+                  "Q || What is the most interesting place you have ever visited? || The most interesting place I have ever visited is the Botanical Garden. / It is the beach in Santa Marta.",
+                  "Q || What has your family discovered on a trip? || They have discovered a small restaurant with the best empanadas.",
+                  "Q || Where have you explored with your friends? || We have explored the park behind my school.",
+                  "Q || What has your best friend found on the beach? (Use your imagination!) || She has found a big seashell. / He has found a crab.",
+                  "Q || Where has your dad swum? || He has swum in the sea and in a river.",
+                  "Q || Has your ice cream ever melted before you ate it? Where? || Yes, it has melted at the beach. / No, it has never melted.",
+                  "Q || What is the biggest sandcastle your cousins have built? (Use your imagination!) || They have built a sandcastle as big as a dog.",
+                  "Q || What has your mom discovered that she loves on a trip? (Use your imagination!) || She has discovered that she loves the mountains.",
+                  "F || I have ____ the park behind my school. || explored || explore / exploring",
+                  "F || She has ____ a big seashell. || found || find / finded",
+                  "F || My ice cream has ____. || melted || melt / melting",
+                  "T || El lugar más interesante que he visitado es el Jardín Botánico. || The most interesting place I have visited is the Botanical Garden.",
+                  "T || Hemos explorado el parque detrás de mi escuela. || We have explored the park behind my school.",
+                  "T || Ella ha encontrado una concha grande. || She has found a big seashell.",
+                  "T || Mi helado se ha derretido. || My ice cream has melted.",
+                  "T || Mi papá ha nadado en un río. || My dad has swum in a river.",
+                  "H || 🧭🗺️ || Guess the action! || Explore",
+                  "E || 🧒🦀🏖️ || What have you found on the beach? || I have found a crab.",
+                  "E || 🍦☀️💧 || What has happened to the ice cream? || It has melted.",
+                  "E || 👨🏊🌊🏞️ || Where has he swum? || He has swum in the sea and in a river."
+                ],
+                "mistakes": [
+                  "M || She has [finded] a big seashell. || found* / finded / find || She has found a big seashell.",
+                  "M || My dad has [swam] in a river. || swum* / swam / swim || My dad has swum in a river."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "General review — Present perfect (1st person); Wh-questions; accidents; giving directions, superlatives and second conditional review — Vocabulary: break, drop, knock over, sit on, step on, spill",
+                "lines": [
+                  "Q || Have you ever broken something at home? What was it? || Yes, I have broken a plate. / Yes, I have broken my mom's vase.",
+                  "Q || Have you ever dropped your phone? What happened? || Yes, I have dropped my phone and the screen broke. / No, I have never dropped my phone.",
+                  "Q || Have you ever knocked over a glass at dinner? || Yes, I have knocked over a glass of juice. / No, I haven't.",
+                  "Q || Have you ever sat on something and broken it? What? || Yes, I have sat on my glasses and broken them.",
+                  "Q || Have you ever stepped on a Lego piece? How did it feel? || Yes, I have stepped on a Lego piece. It hurt a lot!",
+                  "Q || What have you spilled on the floor recently? || I have spilled milk on the floor.",
+                  "Q || What would you do if you broke your mom's favorite cup? || If I broke my mom's favorite cup, I would tell her the truth.",
+                  "Q || What is the worst thing you have ever broken? || The worst thing I have ever broken is my dad's phone.",
+                  "F || I have ____ a plate. || broken || broke / break",
+                  "F || I have ____ milk on the floor. || spilled || spill / spiled",
+                  "F || Have you ever ____ on a Lego piece? || stepped || step / steped",
+                  "T || He roto un plato. || I have broken a plate.",
+                  "T || He dejado caer mi celular. || I have dropped my phone.",
+                  "T || He tumbado un vaso en la cena. || I have knocked over a glass at dinner.",
+                  "T || He pisado una pieza de Lego. || I have stepped on a Lego piece.",
+                  "T || He derramado leche en el piso. || I have spilled milk on the floor.",
+                  "H || 🥛💦🫳 || Guess the action! || Spill",
+                  "E || 🧒🍽️💥 || Have you ever broken something at home? || Yes, I have broken a plate.",
+                  "E || 🧒📱⬇️💥 || Have you ever dropped your phone? || Yes, I have dropped my phone.",
+                  "E || 🧒🦶🧱😖 || Have you ever stepped on a Lego piece? || Yes, I have stepped on a Lego piece."
+                ],
+                "mistakes": [
+                  "M || I have [broke] a plate. || broken* / broke / break || I have broken a plate.",
+                  "M || I have [spill] milk on the floor. || spilled* / spill / spiled || I have spilled milk on the floor."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Monthly Evaluation — Cumulative review of previously introduced structures (all tenses, modals, conditionals, comparatives) — Vocabulary Review",
+                "lines": [
+                  "Q || What do you do every day after school? || I do my homework and play with my friends.",
+                  "Q || What did you do last weekend? || I visited my grandparents.",
+                  "Q || What have you learned this year? || I have learned to swim.",
+                  "Q || What are you going to do next vacation? || I am going to travel to the beach.",
+                  "Q || What were you doing yesterday at 7:00 PM? || I was eating dinner.",
+                  "Q || What would you do if you won a million dollars? || If I won a million dollars, I would buy a house.",
+                  "Q || What should you do to be healthy? || I should eat vegetables and exercise.",
+                  "Q || Who is the funniest person in your family? || My uncle is the funniest person in my family.",
+                  "Q || What can you do that your best friend can't? || I can play the piano.",
+                  "Q || What do you have to do before you go to bed? || I have to brush my teeth.",
+                  "F || I ____ to the beach last year. || went || go / have gone",
+                  "F || I ____ learned to ride a bike this year. || have || has / did",
+                  "F || If I won a million dollars, I ____ buy a house. || would || will / can",
+                  "T || Hago mi tarea después de la escuela. || I do my homework after school.",
+                  "T || He aprendido a nadar. || I have learned to swim.",
+                  "T || Si ganara un millón, compraría una casa. || If I won a million, I would buy a house.",
+                  "T || Debo comer vegetales. || I should eat vegetables.",
+                  "S || orange circle:2, purple triangle:4 || How many triangles are there? || There are four triangles.",
+                  "H || 🎹 || Guess the hidden instrument! || Piano",
+                  "E || 🧒🏖️✈️ 📅 || What are you going to do next vacation? || I am going to travel to the beach."
+                ],
+                "mistakes": [
+                  "M || I [have gone] to the beach last year. || went* / have gone / go || I went to the beach last year.",
+                  "M || I [has] learned to swim this year. || have* / has / did || I have learned to swim this year."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Monthly Evaluation — Questions review: \"Find who...\"; cumulative review — Vocabulary Review",
+                "lines": [
+                  "Q || Find who in your family has traveled by plane. Ask the question. || Who has traveled by plane?",
+                  "Q || Find who in your class likes pizza. Ask the question. || Who likes pizza?",
+                  "Q || Find who in your family can swim. Ask the question. || Who can swim?",
+                  "Q || Find who in your class went to the beach last year. Ask the question. || Who went to the beach last year?",
+                  "Q || Find who in your family is going to cook tonight. Ask the question. || Who is going to cook tonight?",
+                  "Q || Find who in your class has a dog. Ask the question. || Who has a dog?",
+                  "Q || Find who in your family was sleeping at 10:00 PM last night. Ask the question. || Who was sleeping at 10:00 PM last night?",
+                  "Q || Find who in your class would like to be a doctor. Ask the question. || Who would like to be a doctor?",
+                  "Q || Now answer: Who in your family has traveled by plane? || My dad has traveled by plane.",
+                  "Q || Now answer: Who in your family can swim? || My sister can swim.",
+                  "F || ____ has traveled by plane? || Who || What / Where",
+                  "F || Who ____ swim? || can || cans / does can",
+                  "F || Who ____ to the beach last year? || went || go / goes",
+                  "T || ¿Quién ha viajado en avión? || Who has traveled by plane?",
+                  "T || ¿A quién le gusta la pizza? || Who likes pizza?",
+                  "T || ¿Quién puede nadar? || Who can swim?",
+                  "T || ¿Quién va a cocinar esta noche? || Who is going to cook tonight?",
+                  "T || ¿Quién tiene un perro? || Who has a dog?",
+                  "H || 🔍🧑‍🤝‍🧑 || Guess the hidden phrase! || Find who",
+                  "E || ❓✈️👨👩👧 || Ask the question to find who has traveled by plane. || Who has traveled by plane?"
+                ],
+                "mistakes": [
+                  "M || Who [have] traveled by plane? || has* / have / did || Who has traveled by plane?",
+                  "M || Who [like] pizza? || likes* / like / liking || Who likes pizza?"
+                ]
+              }
+            ]
+          },
+          {
+            "week": 5,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Basic tenses review — Simple present (3rd person); Wh-questions; phrasal verb \"pass out\"; a day at school — Vocabulary: learn, practice, ask questions, play, eat snacks",
+                "lines": [
+                  "Q || Retell a day at school: what does your best friend do in the morning? || He learns new things and asks questions.",
+                  "Q || What does your best friend eat for a snack at school? || She eats fruit and cookies.",
+                  "Q || When does your class practice English? || We practice English on Tuesdays and Thursdays.",
+                  "Q || Who asks the most questions in your class? || My classmate Sofía asks the most questions.",
+                  "Q || Where does your class play during the break? || They play in the playground.",
+                  "Q || What happens if a student doesn't eat breakfast and runs a lot? || If a student doesn't eat breakfast and runs a lot, he can pass out.",
+                  "Q || What does your teacher do if a student passes out? || She calls the nurse.",
+                  "Q || Why does your teacher like your class? (Use your imagination!) || Because we ask good questions and practice a lot.",
+                  "F || He ____ new things every day. || learns || learn / learning",
+                  "F || She ____ fruit for a snack. || eats || eat / eating",
+                  "F || If you don't eat, you can ____ out. || pass || passed / passing",
+                  "T || Él aprende cosas nuevas todos los días. || He learns new things every day.",
+                  "T || Ella come fruta de merienda. || She eats fruit for a snack.",
+                  "T || Practicamos inglés los martes. || We practice English on Tuesdays.",
+                  "T || Si no comes, te puedes desmayar. || If you don't eat, you can pass out.",
+                  "T || Mi compañera hace muchas preguntas. || My classmate asks a lot of questions.",
+                  "H || 🍎🍪🎒 || Guess the action! || Eat snacks",
+                  "E || 👧🙋❓👩‍🏫 || What does she do in class? || She asks questions.",
+                  "E || 🧒🧒🛝⚽ || Where do they play during the break? || They play in the playground.",
+                  "E || 🧒😵🏃 🍳❌ || What happens if he runs a lot without breakfast? || He can pass out."
+                ],
+                "mistakes": [
+                  "M || He [learn] new things every day. || learns* / learn / learning || He learns new things every day.",
+                  "M || She [ask] a lot of questions. || asks* / ask / asking || She asks a lot of questions."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Basic tenses review — Past progressive (parallel actions); Wh-questions; at the amusement park — Vocabulary: eat, ride, scream, chase, dance, take selfies",
+                "lines": [
+                  "Q || What were your friends doing at the amusement park yesterday? (Use your imagination!) || They were riding the roller coaster and screaming.",
+                  "Q || What was your sister doing while you were riding the roller coaster? (Use your imagination!) || She was taking selfies.",
+                  "Q || Who was eating cotton candy while everybody was dancing? (Use your imagination!) || My little cousin was eating cotton candy.",
+                  "Q || Why was your dad chasing your brother at the park? (Use your imagination!) || Because my brother took his hat.",
+                  "Q || What was your mom doing while you were screaming on the ride? (Use your imagination!) || She was laughing and taking pictures.",
+                  "Q || Where were your cousins dancing at the amusement park? (Use your imagination!) || They were dancing next to the carousel.",
+                  "Q || Who was screaming the loudest on the roller coaster? (Use your imagination!) || My best friend was screaming the loudest.",
+                  "Q || What were you doing while your friends were taking selfies? (Use your imagination!) || I was eating ice cream.",
+                  "F || They ____ riding the roller coaster. || were || was / are",
+                  "F || She was taking selfies ____ I was riding. || while || when / because",
+                  "F || My dad was ____ my brother. || chasing || chase / chases",
+                  "T || Ellos estaban montando la montaña rusa. || They were riding the roller coaster.",
+                  "T || Ella estaba tomándose selfies. || She was taking selfies.",
+                  "T || Mi papá estaba persiguiendo a mi hermano. || My dad was chasing my brother.",
+                  "T || Mis primos estaban bailando al lado del carrusel. || My cousins were dancing next to the carousel.",
+                  "T || ¿Quién estaba gritando más fuerte? || Who was screaming the loudest?",
+                  "H || 🎢 || Guess the hidden word! || Roller coaster",
+                  "E || 🧒🧒🎢😱 || What were they doing? || They were riding the roller coaster and screaming.",
+                  "E || 👧🤳 👦🎢 || What was she doing while he was riding? || She was taking selfies.",
+                  "E || 👨🏃👦🎩 || Why was he chasing the boy? (Use your imagination!) || Because the boy took his hat."
+                ],
+                "mistakes": [
+                  "M || They [was] riding the roller coaster. || were* / was / are || They were riding the roller coaster.",
+                  "M || My dad was [chase] my brother. || chasing* / chase / chased || My dad was chasing my brother."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Basic tenses review — Simple past; Wh-questions; present perfect and comparatives review; yesterday at school — Vocabulary: arrive, paint, play, share, build, tell",
+                "lines": [
+                  "Q || What did you do yesterday at school? || I painted in art class and played soccer at the break.",
+                  "Q || What time did you arrive at school yesterday? || I arrived at 7:00 AM.",
+                  "Q || What did you share with your classmates yesterday? || I shared my snack. / I shared my colored pencils.",
+                  "Q || What did your teacher tell the class yesterday? || She told us a story about a dragon.",
+                  "Q || What did you build in science class last week? || We built a volcano.",
+                  "Q || Who did you play with at the break yesterday? || I played with my best friends.",
+                  "Q || Have you ever arrived late to school? When? || Yes, I have arrived late. I arrived late last Monday.",
+                  "Q || Which class was more fun yesterday, math or art? Why? || Art was more fun because we painted.",
+                  "F || I ____ at school at 7:00 AM. || arrived || arrive / arriving",
+                  "F || She ____ us a story. || told || tell / telled",
+                  "F || We ____ a volcano last week. || built || build / builded",
+                  "T || Llegué a la escuela a las siete. || I arrived at school at seven.",
+                  "T || Compartí mi merienda. || I shared my snack.",
+                  "T || La profesora nos contó una historia. || The teacher told us a story.",
+                  "T || Construimos un volcán. || We built a volcano.",
+                  "T || Arte fue más divertida que matemáticas. || Art was more fun than math.",
+                  "H || 🤝🍪 || Guess the action! || Share",
+                  "E || 🧒🏫🕖 || What time did you arrive at school? || I arrived at 7:00 AM.",
+                  "E || 👩‍🏫📖🐉 || What did the teacher tell the class? || She told a story about a dragon.",
+                  "E || 🧒🧒🌋 || What did they build in science class? || They built a volcano."
+                ],
+                "mistakes": [
+                  "M || I [arrive] at school at 7:00 AM yesterday. || arrived* / arrive / arriving || I arrived at school at 7:00 AM yesterday.",
+                  "M || She [telled] us a story. || told* / telled / tell || She told us a story."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "SKILLS PRACTICE DAY — Asking questions and giving opinions; present progressive (1st & 3rd person) review — Vocabulary: giving opinions, describing the picture",
+                "lines": [
+                  "Q || Describe what you are doing right now with three sentences. || I am sitting on my chair. I am looking at the screen. I am speaking English.",
+                  "Q || In your opinion, what is the best game in this class? Why? || In my opinion, the best game is Beat the Bomb because it is exciting.",
+                  "Q || Ask your coach a question about what he or she is doing right now. || What are you doing right now?",
+                  "Q || Ask a classmate a question about what his or her mom is doing right now. || What is your mom doing right now?",
+                  "Q || Do you think video games are good for kids? Why? || I think video games are good because they are fun, but kids should play outside too.",
+                  "Q || What is your opinion about homework? || In my opinion, homework is boring but important.",
+                  "Q || Ask a question with \"Why\" about something a classmate is wearing. || Why are you wearing a hat?",
+                  "Q || Give your opinion: Is English easy or difficult? Why? || I think English is easy because I practice every day.",
+                  "F || In my ____, pizza is the best food. || opinion || opinions / idea",
+                  "F || I ____ video games are fun. || think || thinks / thinking",
+                  "F || What ____ you doing right now? || are || is / do",
+                  "T || En mi opinión, el mejor juego es Beat the Bomb. || In my opinion, the best game is Beat the Bomb.",
+                  "T || Creo que los videojuegos son divertidos. || I think video games are fun.",
+                  "T || ¿Qué está haciendo tu mamá ahora? || What is your mom doing right now?",
+                  "T || Estoy mirando la pantalla. || I am looking at the screen.",
+                  "T || Pienso que el inglés es fácil. || I think English is easy.",
+                  "H || 💭🗣️ || Guess the hidden word! || Opinion",
+                  "E || 👦🎩 ❓ || Ask a question with WHY about the picture. || Why is he wearing a hat?",
+                  "E || 👧🎮 👦📚 || Describe the picture and give your opinion. || She is playing video games and he is reading. I think reading is better.",
+                  "E || 🍕 🥗 💭 || Give your opinion: which is better? Why? || In my opinion, pizza is better because it is delicious."
+                ],
+                "mistakes": [
+                  "M || In my [opinions], pizza is the best food. || opinion* / opinions / idea || In my opinion, pizza is the best food.",
+                  "M || What [is] you doing right now? || are* / is / do || What are you doing right now?"
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Basic tenses review — Present progressive (3rd person); Wh-questions; prepositions of time review — Vocabulary: study, listen to music, dance, draw, talk",
+                "lines": [
+                  "Q || What is your best friend doing right now? (Use your imagination!) || He is studying. / She is listening to music.",
+                  "Q || Who is your mom talking to right now? (Use your imagination!) || She is talking to my aunt.",
+                  "Q || Why is your brother dancing in the kitchen? (Use your imagination!) || Because his favorite song is playing.",
+                  "Q || What is your sister drawing? (Use your imagination!) || She is drawing a unicorn.",
+                  "Q || Where is your dad listening to music? (Use your imagination!) || He is listening to music in the car.",
+                  "Q || When do you have English class: in the morning, in the afternoon or at night? || I have English class in the afternoon.",
+                  "Q || What is your cousin studying for? (Use your imagination!) || He is studying for a science test.",
+                  "Q || On what day do you usually dance or play music at home? || We usually dance on Saturdays.",
+                  "F || She ____ listening to music. || is || are / am",
+                  "F || I have English class ____ the afternoon. || in || on / at",
+                  "F || We dance ____ Saturdays. || on || in / at",
+                  "T || Él está estudiando ahora. || He is studying right now.",
+                  "T || ¿Con quién está hablando tu mamá? || Who is your mom talking to?",
+                  "T || Mi hermana está dibujando un unicornio. || My sister is drawing a unicorn.",
+                  "T || Tengo clase de inglés en la tarde. || I have English class in the afternoon.",
+                  "T || Bailamos los sábados. || We dance on Saturdays.",
+                  "H || 🦄✏️ || Guess the action! || Draw a unicorn",
+                  "E || 👦📚🧪 || What is he studying for? || He is studying for a science test.",
+                  "E || 👨🎧🚗 || Where is he listening to music? || He is listening to music in the car.",
+                  "E || 👦💃🍳🎵 || Why is he dancing in the kitchen? || Because his favorite song is playing."
+                ],
+                "mistakes": [
+                  "M || She [are] listening to music. || is* / are / am || She is listening to music.",
+                  "M || I have English class [on] the afternoon. || in* / on / at || I have English class in the afternoon."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 6,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Advanced tenses review — Second conditional; Wh-questions; phrasal verb \"look forward to\"; a genie — Vocabulary: buy, travel, explore, meet, ask for",
+                "lines": [
+                  "Q || What would you do if you had a genie? || If I had a genie, I would ask for a million dollars.",
+                  "Q || What would you ask for if a genie gave you three wishes? || I would ask for a bike, a trip to Disney and a puppy.",
+                  "Q || Where would you travel if the genie gave you a magic carpet? || I would travel to Egypt. / I would travel to Japan.",
+                  "Q || Who would you meet if the genie could bring anyone? || I would meet Messi. / I would meet my favorite singer.",
+                  "Q || What would you buy if the genie gave you a lot of money? || I would buy a house with a pool.",
+                  "Q || What would you explore if the genie could take you anywhere? || I would explore the bottom of the ocean.",
+                  "Q || What are you looking forward to this year? || I am looking forward to my birthday. / I am looking forward to vacation.",
+                  "Q || What would your mom ask the genie for? (Use your imagination!) || She would ask for a bigger house.",
+                  "F || If I had a genie, I ____ ask for a puppy. || would || will / can",
+                  "F || I am looking ____ to my birthday. || forward || for / up",
+                  "F || If the genie ____ me money, I would buy a house. || gave || give / will give",
+                  "T || Si tuviera un genio, pediría un millón de dólares. || If I had a genie, I would ask for a million dollars.",
+                  "T || Viajaría a Egipto. || I would travel to Egypt.",
+                  "T || Conocería a Messi. || I would meet Messi.",
+                  "T || Tengo muchas ganas de que lleguen las vacaciones. || I am looking forward to vacation.",
+                  "T || Exploraría el fondo del océano. || I would explore the bottom of the ocean.",
+                  "H || 🧞 || Guess the hidden word! || Genie",
+                  "H || 🧒🤩📅 || Guess the hidden phrase! || Look forward to",
+                  "E || 🧒🧞 🐶🚲🏰 || What would you ask for if a genie gave you three wishes? || I would ask for a puppy, a bike and a trip to Disney.",
+                  "E || 🧒🧞 🪄🧳 🗺️❓ || Where would you travel with a magic carpet? || I would travel to Egypt."
+                ],
+                "mistakes": [
+                  "M || If I [have] a genie, I would ask for a puppy. || had* / have / will have || If I had a genie, I would ask for a puppy.",
+                  "M || I am looking [for] to my birthday. || forward* / for / up || I am looking forward to my birthday."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Advanced tenses review — Modal verb Should; Wh-questions; staying healthy — Vocabulary: cook healthy meals, sleep well, play sports, wash your hands, spend time outdoors",
+                "lines": [
+                  "Q || What should you do to stay healthy? Tell me three things. || I should cook healthy meals, sleep well and play sports.",
+                  "Q || What sport should a kid play to be strong? || A kid should play soccer or swim.",
+                  "Q || When should you wash your hands? || I should wash my hands before eating and after playing.",
+                  "Q || How many hours should you sleep every night? || I should sleep nine hours every night.",
+                  "Q || Why should kids spend time outdoors? || Because fresh air and sun are good for them.",
+                  "Q || What should your dad cook instead of fried food? || He should cook vegetables and fish.",
+                  "Q || What should your best friend do if he or she is always on the phone? || He should spend more time outdoors.",
+                  "Q || What shouldn't you do before going to bed? || I shouldn't eat candy before going to bed. / I shouldn't use my phone.",
+                  "F || You ____ sleep nine hours. || should || should to / shoulds",
+                  "F || You ____ eat candy before bed. || shouldn't || don't should / not should",
+                  "F || When ____ you wash your hands? || should || do / does",
+                  "T || Debería cocinar comidas saludables. || I should cook healthy meals.",
+                  "T || Deberías lavarte las manos antes de comer. || You should wash your hands before eating.",
+                  "T || Los niños deberían pasar tiempo al aire libre. || Kids should spend time outdoors.",
+                  "T || No deberías comer dulces antes de dormir. || You shouldn't eat candy before bed.",
+                  "T || Él debería cocinar vegetales. || He should cook vegetables.",
+                  "H || 🥗👨‍🍳 || Guess the action! || Cook healthy meals",
+                  "E || 🧒📱📱📱 ❓ || He is always on the phone. What should he do? || He should spend more time outdoors.",
+                  "E || 🧒😴🕘 || How many hours should he sleep? || He should sleep nine hours.",
+                  "E || 🧒🧼🖐️ 🍽️ || When should you wash your hands? || I should wash my hands before eating."
+                ],
+                "mistakes": [
+                  "M || You [should to] sleep nine hours. || should* / should to / shoulds || You should sleep nine hours.",
+                  "M || You [don't should] eat candy before bed. || shouldn't* / don't should / not should || You shouldn't eat candy before bed."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Advanced tenses review — Mix: superlatives, present perfect and second conditional; Wh-questions; movies — Vocabulary: exciting, funny, scary, sad, interesting",
+                "lines": [
+                  "Q || What is the most exciting movie you have ever seen? || The most exciting movie I have ever seen is Spider-Man.",
+                  "Q || What is the funniest movie you have ever seen? Why? || The funniest movie I have ever seen is Minions because they are silly.",
+                  "Q || Have you ever seen a scary movie? Which one? || Yes, I have seen a scary movie. It was Coraline. / No, I have never seen a scary movie.",
+                  "Q || What is the saddest movie you know? || The saddest movie I know is Coco.",
+                  "Q || What movie would you make if you were a director? || If I were a director, I would make a movie about dragons.",
+                  "Q || Who is the most interesting character in your favorite movie? || The most interesting character is Elsa.",
+                  "Q || Where do you usually watch movies: at home or at the cinema? || I usually watch movies at home.",
+                  "Q || If you could be any movie character, who would you be? Why? || If I could be any character, I would be Spider-Man because he can climb walls.",
+                  "F || The ____ movie I have seen is Minions. || funniest || funnyest / most funny",
+                  "F || Have you ever ____ a scary movie? || seen || saw / see",
+                  "F || If I ____ a director, I would make a movie about dragons. || were || am / will be",
+                  "T || La película más emocionante que he visto es Spider-Man. || The most exciting movie I have seen is Spider-Man.",
+                  "T || ¿Has visto una película de miedo? || Have you seen a scary movie?",
+                  "T || La película más triste es Coco. || The saddest movie is Coco.",
+                  "T || Si fuera director, haría una película sobre dragones. || If I were a director, I would make a movie about dragons.",
+                  "T || Usualmente veo películas en casa. || I usually watch movies at home.",
+                  "H || 🎬🎥 || Guess the hidden word! || Movie",
+                  "E || 😂🎬 😱🎬 😢🎬 || Which kind of movie do you like the most? Why? || I like funny movies the most because I love laughing.",
+                  "E || 🧒🎬👻 ✅❓ || Have you ever seen a scary movie? || Yes, I have seen a scary movie. / No, I haven't.",
+                  "E || 🧒🎬🐉 🎥 || What movie would you make if you were a director? || If I were a director, I would make a movie about dragons."
+                ],
+                "mistakes": [
+                  "M || The [funnyest] movie I have seen is Minions. || funniest* / funnyest / most funny || The funniest movie I have seen is Minions.",
+                  "M || If I [was] a director, I would make a movie. || were* / was / am || If I were a director, I would make a movie."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Advanced tenses review — Mix: can, simple present and first conditional; Wh-questions; the best pet — Vocabulary: protect, teach, support, bring, spend the day",
+                "lines": [
+                  "Q || What is the best animal someone can have as a pet? Why? || The best pet is a dog because it can protect you and it loves you.",
+                  "Q || What can a dog do for its family? || It can protect the house and bring the ball.",
+                  "Q || What can you teach a dog? || I can teach a dog to sit and to give its paw.",
+                  "Q || How does a pet support you when you are sad? || It stays with me and makes me feel better.",
+                  "Q || What will you do if your parents give you a pet? || If my parents give me a pet, I will take care of it every day.",
+                  "Q || What does a cat do all day? || It sleeps and plays all day.",
+                  "Q || What will happen if you don't feed your pet? || If I don't feed my pet, it will get sick.",
+                  "Q || Where would you spend the day with your pet if you could go anywhere? || I would spend the day at the beach with my dog.",
+                  "F || A dog ____ protect the house. || can || cans / can to",
+                  "F || If my parents give me a pet, I ____ take care of it. || will || would / can",
+                  "F || I can ____ a dog to sit. || teach || teaches / teaching",
+                  "T || Un perro puede proteger la casa. || A dog can protect the house.",
+                  "T || Puedo enseñarle a un perro a sentarse. || I can teach a dog to sit.",
+                  "T || Si mis padres me dan una mascota, la cuidaré. || If my parents give me a pet, I will take care of it.",
+                  "T || Un gato duerme todo el día. || A cat sleeps all day.",
+                  "T || Mi mascota me apoya cuando estoy triste. || My pet supports me when I am sad.",
+                  "H || 🐕🛡️🏠 || Guess the action! || Protect",
+                  "E || 🐕🎾➡️🧒 || What can the dog do? || It can bring the ball.",
+                  "E || 🧒😢🐕❤️ || How does the pet support you? || It stays with me when I am sad.",
+                  "E || 🧒🐕🏖️☀️ || Where would you spend the day with your pet? || I would spend the day at the beach with my dog."
+                ],
+                "mistakes": [
+                  "M || A dog [cans] protect the house. || can* / cans / can to || A dog can protect the house.",
+                  "M || If my parents give me a pet, I [would] take care of it. (real plan) || will* / would / can || If my parents give me a pet, I will take care of it."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "ENGLISH SKILLS TEST — Open grammar review: all tenses, modals and conditionals; rapport time — Vocabulary Review",
+                "lines": [
+                  "Q || Tell me about yourself: name, age and two things you like doing. || My name is Ana, I am ten years old and I like drawing and playing soccer.",
+                  "Q || What do you do every day? Tell me three things. || I wake up early, I go to school and I do my homework.",
+                  "Q || What did you do yesterday? || I played with my cousins and watched a movie.",
+                  "Q || What are you going to do tomorrow? || I am going to go to school and play soccer.",
+                  "Q || What have you learned in this course? || I have learned many verbs and how to talk about my life in English.",
+                  "Q || What were you doing yesterday at 6:00 PM? || I was eating dinner.",
+                  "Q || What would you do if you were a teacher for one day? || If I were a teacher, I would give no homework.",
+                  "Q || What should a kid do to learn English well? || A kid should practice every day and watch cartoons in English.",
+                  "Q || Who is the most important person in your life? Why? || My mom is the most important person in my life because she takes care of me.",
+                  "Q || What can you do now in English that you couldn't do before? || Now I can talk about my past and my plans.",
+                  "F || Yesterday I ____ with my cousins. || played || play / have played",
+                  "F || Tomorrow I ____ going to go to school. || am || is / will",
+                  "F || I ____ learned many verbs this year. || have || has / did",
+                  "T || Me llamo Ana y tengo diez años. || My name is Ana and I am ten years old.",
+                  "T || Ayer jugué con mis primos. || Yesterday I played with my cousins.",
+                  "T || Mañana voy a ir a la escuela. || Tomorrow I am going to go to school.",
+                  "T || He aprendido muchos verbos. || I have learned many verbs.",
+                  "T || Si fuera profesor, no pondría tarea. || If I were a teacher, I would give no homework.",
+                  "H || 🧒🗣️🇬🇧✅ || Guess the hidden phrase! || Speak English",
+                  "E || 🧒📅⬅️ 📅 📅➡️ || Tell me one thing you did yesterday, one thing you do every day and one thing you will do tomorrow. || Yesterday I played soccer, every day I go to school and tomorrow I will visit my grandma."
+                ],
+                "mistakes": [
+                  "M || Yesterday I [have played] with my cousins. || played* / have played / play || Yesterday I played with my cousins.",
+                  "M || Tomorrow I [will going] to go to school. || am going* / will going / going || Tomorrow I am going to go to school."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 7,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "Exit evaluation — Mix: simple present, simple past and going to; Wh-questions; phrasal verb \"count on\"; routines — Vocabulary: wake up, take a shower, eat, go to school, do homework, sleep",
+                "lines": [
+                  "Q || Tell me about your routine: what do you do every school day? || I wake up at 6:00 AM, take a shower, eat breakfast and go to school.",
+                  "Q || What did you do yesterday after school? || I did my homework and played with my dog.",
+                  "Q || What are you going to do tonight before you sleep? || I am going to read a book.",
+                  "Q || What time does your mom wake up on weekdays? || She wakes up at 5:30 AM.",
+                  "Q || What did your dad do last Sunday morning? || He slept until 9:00 AM and then cooked breakfast.",
+                  "Q || What is your best friend going to do this weekend? || She is going to visit her grandma.",
+                  "Q || Who can you count on when you have a problem? || I can count on my parents and my best friend.",
+                  "Q || Why can your family count on you? || Because I always help at home.",
+                  "F || I ____ up at 6:00 AM every day. || wake || wakes / woke",
+                  "F || Yesterday I ____ my homework at 5:00 PM. || did || do / have done",
+                  "F || I can count ____ my parents. || on || in / with",
+                  "T || Me despierto a las seis todos los días. || I wake up at six every day.",
+                  "T || Ayer hice mi tarea. || Yesterday I did my homework.",
+                  "T || Esta noche voy a leer un libro. || Tonight I am going to read a book.",
+                  "T || Puedo contar con mis padres. || I can count on my parents.",
+                  "T || Mi papá durmió hasta las nueve el domingo. || My dad slept until nine on Sunday.",
+                  "H || 🚿 || Guess the action! || Take a shower",
+                  "E || 🧒⏰🚿🍳🏫 || What do you do every school day? || I wake up, take a shower, eat breakfast and go to school.",
+                  "E || 🧒📝🐕 ⬅️📅 || What did you do yesterday after school? || I did my homework and played with my dog.",
+                  "E || 🧒🤝👨👩 || Who can you count on? || I can count on my parents."
+                ],
+                "mistakes": [
+                  "M || Yesterday I [do] my homework at 5:00 PM. || did* / do / have done || Yesterday I did my homework at 5:00 PM.",
+                  "M || I can count [with] my parents. || on* / with / in || I can count on my parents."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "Exit evaluation — Comparatives & Superlatives; Wh-questions; family — Vocabulary: young, old, tall, short, friendly, beautiful",
+                "lines": [
+                  "Q || Who is the youngest person in your family? || My little cousin is the youngest person in my family.",
+                  "Q || Who is older, your mom or your aunt? || My aunt is older than my mom.",
+                  "Q || Who is the tallest person in your family? || My dad is the tallest person in my family.",
+                  "Q || Who is shorter, you or your best friend? || I am shorter than my best friend.",
+                  "Q || Who is the friendliest person in your family? Why? || My grandma is the friendliest person because she talks to everybody.",
+                  "Q || Who is more beautiful, a sunset or a rainbow? (Give your opinion!) || A rainbow is more beautiful than a sunset.",
+                  "Q || Compare your grandparents: who is older and who is taller? || My grandpa is older and taller than my grandma.",
+                  "Q || Who is the most beautiful person in your family for you? || My mom is the most beautiful person in my family.",
+                  "F || My cousin is the ____ person in my family. || youngest || younger / most young",
+                  "F || My aunt is ____ than my mom. || older || more old / oldest",
+                  "F || My grandma is the ____ person. || friendliest || friendlyest / most friendly",
+                  "T || Mi primo es el más joven de la familia. || My cousin is the youngest in the family.",
+                  "T || Mi tía es mayor que mi mamá. || My aunt is older than my mom.",
+                  "T || Soy más bajo que mi mejor amigo. || I am shorter than my best friend.",
+                  "T || Mi abuela es la más amigable. || My grandma is the friendliest.",
+                  "T || Un arcoíris es más hermoso que un atardecer. || A rainbow is more beautiful than a sunset.",
+                  "H || 👶 || Guess the hidden adjective! || Young",
+                  "E || 👴 👨 👦 || Who is the oldest? || The grandpa is the oldest.",
+                  "E || 👩 👧 || Who is taller? || The woman is taller than the girl.",
+                  "E || 🌅 🌈 || Which is more beautiful? (Give your opinion!) || The rainbow is more beautiful than the sunset."
+                ],
+                "mistakes": [
+                  "M || My cousin is the [younger] person in my family. || youngest* / younger / most young || My cousin is the youngest person in my family.",
+                  "M || My aunt is [more old] than my mom. || older* / more old / oldest || My aunt is older than my mom."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "Exit evaluation — Present perfect (1st person): affirmative, negative and interrogative; food from other countries — Vocabulary: eat, try, slurp, taste, learn",
+                "lines": [
+                  "Q || Have you ever eaten food from another country? What did you think of it? || Yes, I have eaten Mexican tacos. They were delicious. / No, I have never eaten food from another country.",
+                  "Q || Have you ever tried sushi? || Yes, I have tried sushi. / No, I have never tried sushi.",
+                  "Q || Have you ever slurped noodles? || Yes, I have slurped noodles. It was fun! / No, I haven't.",
+                  "Q || What is the strangest thing you have ever tasted? || The strangest thing I have ever tasted is octopus.",
+                  "Q || Have you learned to cook a dish from another country? || Yes, I have learned to cook Italian pasta. / No, I haven't.",
+                  "Q || What food have you never tried but want to try? || I have never tried Japanese ramen, but I want to try it.",
+                  "Q || Make a negative sentence: I / never / eat / spicy food. || I have never eaten spicy food.",
+                  "Q || Make a question: you / ever / taste / Indian food? || Have you ever tasted Indian food?",
+                  "F || I have ____ Mexican tacos. || eaten || ate / eat",
+                  "F || I have ____ tried sushi. || never || not / no",
+                  "F || ____ you ever tasted Indian food? || Have || Has / Did",
+                  "T || He comido tacos mexicanos. || I have eaten Mexican tacos.",
+                  "T || Nunca he probado sushi. || I have never tried sushi.",
+                  "T || ¿Alguna vez has probado comida india? || Have you ever tasted Indian food?",
+                  "T || He aprendido a cocinar pasta italiana. || I have learned to cook Italian pasta.",
+                  "T || Lo más raro que he probado es pulpo. || The strangest thing I have tasted is octopus.",
+                  "H || 🍜 || Guess the hidden food! || Noodles",
+                  "E || 🧒🌮✅ 😋 || Have you ever eaten Mexican food? What did you think? || Yes, I have eaten Mexican tacos. They were delicious.",
+                  "E || 🧒🍣❌ || Have you ever tried sushi? (Imagine the answer is no.) || No, I have never tried sushi.",
+                  "E || 🧒🍜👄💨 || Have you ever slurped noodles? || Yes, I have slurped noodles."
+                ],
+                "mistakes": [
+                  "M || I have [ate] Mexican tacos. || eaten* / ate / eat || I have eaten Mexican tacos.",
+                  "M || I have [not never] tried sushi. || never* / not never / no || I have never tried sushi."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "Exit evaluation — Simple present (3rd person); Wh-questions; process: getting ready for school — Vocabulary: wake up, wash my face, brush my teeth, comb my hair, get dressed, grab my backpack",
+                "lines": [
+                  "Q || How does your best friend get ready for school? Tell me the steps. || First, he wakes up. Then he washes his face and brushes his teeth. After that, he gets dressed and grabs his backpack.",
+                  "Q || What does your brother or sister do after he or she wakes up? || She washes her face. / He brushes his teeth.",
+                  "Q || When does your mom comb your little sister's hair? (Use your imagination!) || She combs her hair after breakfast.",
+                  "Q || What does your dad grab before he leaves the house? || He grabs his keys and his bag.",
+                  "Q || What does your best friend do before he or she gets dressed? || He takes a shower. / She washes her face.",
+                  "Q || How long does your sister take to get dressed? (Use your imagination!) || She takes twenty minutes to get dressed.",
+                  "Q || What is the last thing your cousin does before school? (Use your imagination!) || He grabs his backpack and runs to the bus.",
+                  "Q || What does your grandpa do first in the morning? || He washes his face and drinks coffee.",
+                  "F || First, he ____ up. || wakes || wake / woke",
+                  "F || Then she ____ her face. || washes || wash / washing",
+                  "F || He ____ his backpack and leaves. || grabs || grab / grabbing",
+                  "T || Primero, él se despierta. || First, he wakes up.",
+                  "T || Luego ella se lava la cara. || Then she washes her face.",
+                  "T || Él se cepilla los dientes y se peina. || He brushes his teeth and combs his hair.",
+                  "T || Ella se viste en veinte minutos. || She gets dressed in twenty minutes.",
+                  "T || Él agarra su mochila y se va. || He grabs his backpack and leaves.",
+                  "H || 👕👖✅ || Guess the action! || Get dressed",
+                  "H || 🎒🤚 || Guess the action! || Grab my backpack",
+                  "E || 👦⏰ 🧼 🪥 👕 🎒 || Retell the process: how does he get ready for school? || First, he wakes up. Then he washes his face, brushes his teeth, gets dressed and grabs his backpack.",
+                  "E || 👧🪮 ⏱️ || How long does she take to comb her hair? (Use your imagination!) || She takes five minutes."
+                ],
+                "mistakes": [
+                  "M || First, he [wake] up. || wakes* / wake / woke || First, he wakes up.",
+                  "M || Then she [wash] her face. || washes* / wash / washing || Then she washes her face."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "Exit evaluation — Present progressive (3rd person); Wh-questions; picture technique: what is he/she wearing? — Vocabulary: pants, T-shirt, shoes, dress, shorts, socks, sweater",
+                "lines": [
+                  "Q || Look at your coach. What is he or she wearing? || She is wearing a blue T-shirt. / He is wearing a sweater.",
+                  "Q || What is your mom wearing today? (Use your imagination!) || She is wearing pants and a white T-shirt.",
+                  "Q || What is your best friend wearing right now? (Use your imagination!) || He is wearing shorts and a T-shirt.",
+                  "Q || Why is your dad wearing a sweater? (Use your imagination!) || Because it is cold today.",
+                  "Q || What is your sister wearing to the party? (Use your imagination!) || She is wearing a red dress and black shoes.",
+                  "Q || What color socks is your brother wearing? (Use your imagination!) || He is wearing blue socks.",
+                  "Q || What is your teacher wearing on her feet? (Use your imagination!) || She is wearing sneakers.",
+                  "Q || Describe what Messi is wearing in a game. || He is wearing a T-shirt, shorts, socks and soccer shoes.",
+                  "F || She ____ wearing a dress. || is || are / am",
+                  "F || What ____ he wearing? || is || are / does",
+                  "F || He is ____ blue socks. || wearing || wear / wears",
+                  "T || Ella está usando un vestido rojo. || She is wearing a red dress.",
+                  "T || ¿Qué está usando tu papá? || What is your dad wearing?",
+                  "T || Él está usando pantalones cortos y una camiseta. || He is wearing shorts and a T-shirt.",
+                  "T || Mi hermano está usando medias azules. || My brother is wearing blue socks.",
+                  "T || Está usando un suéter porque hace frío. || He is wearing a sweater because it is cold.",
+                  "H || 🧥 || Guess the hidden clothes! || Sweater",
+                  "E || 👧👗👠 || What is she wearing? || She is wearing a dress and shoes.",
+                  "E || 👦👕🩳🧦👟 || What is he wearing? || He is wearing a T-shirt, shorts, socks and shoes.",
+                  "E || 👨🧥❄️ || Why is he wearing a sweater? || Because it is cold."
+                ],
+                "mistakes": [
+                  "M || She [are] wearing a dress. || is* / are / am || She is wearing a dress.",
+                  "M || He is [wear] blue socks. || wearing* / wear / wears || He is wearing blue socks."
+                ]
+              }
+            ]
+          },
+          {
+            "week": 8,
+            "days": [
+              {
+                "day": 1,
+                "label": "Day 1",
+                "focus": "General review — Simple future: will vs going to; Wh-questions; phrasal verb \"look after\"; plans for the weekend — Vocabulary: wake up late, go to the park, visit (my friends/grandparents), do home chores, chat, take a nap",
+                "lines": [
+                  "Q || What are you going to do this weekend? (Plans you already have.) || I am going to visit my grandparents on Saturday.",
+                  "Q || What will you probably do on Sunday afternoon? (Not sure yet.) || I will probably take a nap. / I will probably chat with my friends.",
+                  "Q || Are you going to wake up late on Saturday? || Yes, I am going to wake up late. / No, I'm not. I have soccer practice.",
+                  "Q || Who will you chat with this weekend? || I will chat with my cousin.",
+                  "Q || What home chores are you going to do this weekend? || I am going to clean my room and wash the dishes.",
+                  "Q || Who is going to look after your little brother or your pet this weekend? (Use your imagination!) || My grandma is going to look after my little brother.",
+                  "Q || Will you go to the park if it is sunny? || Yes, I will go to the park if it is sunny.",
+                  "Q || What will your dad do this weekend? (Use your imagination!) || He will probably watch soccer and take a nap.",
+                  "F || I ____ going to visit my grandparents on Saturday. || am || will / is",
+                  "F || I ____ probably take a nap on Sunday. || will || am going / going",
+                  "F || My grandma is going to look ____ my brother. || after || for / up",
+                  "T || Voy a visitar a mis abuelos el sábado. || I am going to visit my grandparents on Saturday.",
+                  "T || Probablemente tomaré una siesta el domingo. || I will probably take a nap on Sunday.",
+                  "T || Voy a limpiar mi cuarto. || I am going to clean my room.",
+                  "T || Mi abuela va a cuidar a mi hermano. || My grandma is going to look after my brother.",
+                  "T || Iré al parque si hace sol. || I will go to the park if it is sunny.",
+                  "H || 👵👶🤱 || Guess the hidden phrase! || Look after",
+                  "E || 🧒📅✅👵👴 || What are you going to do on Saturday? (A plan you already have.) || I am going to visit my grandparents.",
+                  "E || 🧒📅❓😴 || What will you probably do on Sunday? (Not sure yet.) || I will probably take a nap.",
+                  "E || 🧒🧹🍽️ || What chores are you going to do? || I am going to clean my room and wash the dishes."
+                ],
+                "mistakes": [
+                  "M || I [will going] to visit my grandparents on Saturday. || am going* / will going / going || I am going to visit my grandparents on Saturday.",
+                  "M || My grandma is going to look [for] my brother. (take care of) || after* / for / up || My grandma is going to look after my brother."
+                ]
+              },
+              {
+                "day": 2,
+                "label": "Day 2",
+                "focus": "General review — Simple past (3rd person); Wh-questions; a day at the zoo — Vocabulary: walk around, take pictures, eat snacks, see animals, feed the animals, buy souvenirs",
+                "lines": [
+                  "Q || Tell me about a day at the zoo: what did your family do? (Use your imagination!) || They walked around, saw the lions and ate snacks.",
+                  "Q || What animals did your best friend see at the zoo? (Use your imagination!) || She saw elephants, monkeys and a tiger.",
+                  "Q || Who fed the animals at the zoo? (Use your imagination!) || My little brother fed the goats.",
+                  "Q || What souvenirs did your mom buy at the zoo? (Use your imagination!) || She bought a T-shirt with a panda.",
+                  "Q || Where did your family eat snacks at the zoo? (Use your imagination!) || They ate snacks next to the penguins.",
+                  "Q || What pictures did your dad take at the zoo? (Use your imagination!) || He took pictures of the giraffes.",
+                  "Q || How long did your family walk around the zoo? (Use your imagination!) || They walked around the zoo for three hours.",
+                  "Q || Why did your cousin cry at the zoo? (Use your imagination!) || Because a monkey stole his ice cream.",
+                  "F || They ____ around the zoo. || walked || walk / walking",
+                  "F || My brother ____ the goats. || fed || feed / feeded",
+                  "F || She ____ a T-shirt with a panda. || bought || buy / buyed",
+                  "T || Ellos caminaron por el zoológico. || They walked around the zoo.",
+                  "T || Mi hermano alimentó a las cabras. || My brother fed the goats.",
+                  "T || Mi mamá compró una camiseta con un panda. || My mom bought a T-shirt with a panda.",
+                  "T || Mi papá tomó fotos de las jirafas. || My dad took pictures of the giraffes.",
+                  "T || Un mono se robó su helado. || A monkey stole his ice cream.",
+                  "H || 🐐🥕 || Guess the action! || Feed the animals",
+                  "E || 👦🐐🥕 || Who fed the goats? || The boy fed the goats.",
+                  "E || 👩🛍️👕🐼 || What did she buy at the zoo? || She bought a T-shirt with a panda.",
+                  "E || 👧🍦 🐒 😢 || Why did she cry at the zoo? || Because a monkey stole her ice cream."
+                ],
+                "mistakes": [
+                  "M || My brother [feeded] the goats. || fed* / feeded / feed || My brother fed the goats.",
+                  "M || She [buyed] a T-shirt. || bought* / buyed / buy || She bought a T-shirt."
+                ]
+              },
+              {
+                "day": 3,
+                "label": "Day 3",
+                "focus": "General review — Comparatives & Superlatives; Positive sentences; past progressive and gerunds review; the weather — Vocabulary: hot, cold, sunny, stormy, unpredictable, beautiful",
+                "lines": [
+                  "Q || Which is hotter, Cartagena or Bogotá? || Cartagena is hotter than Bogotá.",
+                  "Q || Which is the coldest city you know? || Bogotá is the coldest city I know.",
+                  "Q || Which is more unpredictable, the weather in your city or the weather at the beach? || The weather in my city is more unpredictable than the weather at the beach.",
+                  "Q || Which is the most beautiful kind of weather for you? Why? || A sunny day is the most beautiful kind of weather because I can play outside.",
+                  "Q || Which is worse, a stormy day or a very hot day? Why? || A stormy day is worse because I can't go out.",
+                  "Q || What were you doing the last time it was stormy? || I was watching TV with my family.",
+                  "Q || What do you like doing on sunny days? || I like swimming and riding my bike.",
+                  "Q || Which month is the sunniest in your city? || December is the sunniest month in my city.",
+                  "F || Cartagena is ____ than Bogotá. || hotter || more hot / hottest",
+                  "F || Bogotá is the ____ city I know. || coldest || colder / most cold",
+                  "F || A stormy day is ____ than a sunny day. || worse || worser / more bad",
+                  "T || Cartagena es más caliente que Bogotá. || Cartagena is hotter than Bogotá.",
+                  "T || Bogotá es la ciudad más fría que conozco. || Bogotá is the coldest city I know.",
+                  "T || El clima aquí es impredecible. || The weather here is unpredictable.",
+                  "T || Un día soleado es el más hermoso. || A sunny day is the most beautiful.",
+                  "T || Me gusta nadar en los días soleados. || I like swimming on sunny days.",
+                  "H || ⛈️ || Guess the hidden weather! || Stormy",
+                  "E || ☀️🌡️ ❄️🌡️ || Which day is hotter? || The sunny day is hotter than the snowy day.",
+                  "E || ☀️ 🌧️ ⛈️ || Which weather is the worst for playing outside? || The stormy weather is the worst.",
+                  "E || 🧒📺 ⛈️ || What were you doing when it was stormy? || I was watching TV."
+                ],
+                "mistakes": [
+                  "M || Cartagena is [more hot] than Bogotá. || hotter* / more hot / hottest || Cartagena is hotter than Bogotá.",
+                  "M || A stormy day is [worser] than a sunny day. || worse* / worser / more bad || A stormy day is worse than a sunny day."
+                ]
+              },
+              {
+                "day": 4,
+                "label": "Day 4",
+                "focus": "General review — Mix: likes and dislikes, simple present: affirmative, negative and interrogative; healthy vs unhealthy food — Vocabulary: love, hate, healthy, fresh, greasy, sugary",
+                "lines": [
+                  "Q || What healthy food do you love? || I love fresh fruit. / I love salad.",
+                  "Q || What unhealthy food do you hate? || I hate greasy hamburgers. / I hate very sugary candy.",
+                  "Q || Does your dad like greasy food? || Yes, he loves french fries. / No, he doesn't like greasy food.",
+                  "Q || Do you prefer fresh juice or soda? Why? || I prefer fresh juice because it is healthier.",
+                  "Q || What sugary food does your little brother or sister love? || She loves chocolate. / He loves candy.",
+                  "Q || Does your mom cook healthy food? What does she cook? || Yes, she cooks vegetables and fish.",
+                  "Q || Make a negative sentence: I / not like / greasy food. || I don't like greasy food.",
+                  "Q || Make a question: your best friend / like / sugary drinks? || Does your best friend like sugary drinks?",
+                  "F || I ____ fresh fruit. || love || loves / loving",
+                  "F || He ____ like greasy food. || doesn't || don't / isn't",
+                  "F || ____ your friend like sugary drinks? || Does || Do / Is",
+                  "T || Me encanta la fruta fresca. || I love fresh fruit.",
+                  "T || Odio las hamburguesas grasosas. || I hate greasy hamburgers.",
+                  "T || No me gusta la comida grasosa. || I don't like greasy food.",
+                  "T || ¿A tu amigo le gustan las bebidas azucaradas? || Does your friend like sugary drinks?",
+                  "T || Prefiero el jugo fresco. || I prefer fresh juice.",
+                  "H || 🍟🍔 || Guess the hidden adjective! || Greasy",
+                  "H || 🍎🥗 || Guess the hidden adjective! || Healthy",
+                  "E || 🧒❤️🍎 🧒💔🍬 || What does he love and what does he hate? || He loves apples and he hates candy.",
+                  "E || 🧃 🥤 ❓ || Which is healthier, fresh juice or soda? || Fresh juice is healthier than soda."
+                ],
+                "mistakes": [
+                  "M || I [loves] fresh fruit. || love* / loves / loving || I love fresh fruit.",
+                  "M || He [don't] like greasy food. || doesn't* / don't / isn't || He doesn't like greasy food."
+                ]
+              },
+              {
+                "day": 5,
+                "label": "Day 5",
+                "focus": "General review — Basic vs advanced tenses; likes and dislikes, going to and simple past review; My E4Kids journey — Vocabulary: start, learn, practice, study, ask questions, improve",
+                "lines": [
+                  "Q || When did you start learning English? || I started learning English two years ago. / I started in Level 0.",
+                  "Q || What have you learned in all your E4Kids levels? || I have learned to talk about my routine, my past and my plans.",
+                  "Q || What do you like doing the most in English class? || I like playing the games the most.",
+                  "Q || What did you practice the most this year? || I practiced speaking the most.",
+                  "Q || How have you improved since Level 0? || Now I can speak in full sentences and ask questions.",
+                  "Q || What are you going to do with your English in the future? || I am going to travel and talk to people from other countries.",
+                  "Q || What will you do if you forget a word in English? || If I forget a word, I will ask my coach.",
+                  "Q || Who helped you improve the most? || My coach helped me improve the most. / My mom helped me the most.",
+                  "Q || What should a new student do to learn English fast? || A new student should ask questions and practice every day.",
+                  "Q || Tell me about your E4Kids journey in three sentences: past, present and future. || I started in Level 0 two years ago. Now I can speak English. In the future I will travel and use my English.",
+                  "F || I ____ learning English two years ago. || started || start / have started",
+                  "F || I ____ learned to talk about my past. || have || has / did",
+                  "F || I ____ going to travel in the future. || am || will / is",
+                  "T || Empecé a aprender inglés hace dos años. || I started learning English two years ago.",
+                  "T || He aprendido a hablar de mis planes. || I have learned to talk about my plans.",
+                  "T || Me gusta jugar los juegos en clase. || I like playing the games in class.",
+                  "T || Voy a viajar y hablar con personas de otros países. || I am going to travel and talk to people from other countries.",
+                  "T || Si olvido una palabra, le preguntaré a mi coach. || If I forget a word, I will ask my coach.",
+                  "H || 🧒📈🇬🇧 || Guess the action! || Improve my English",
+                  "E || 🧒📅⬅️🇬🇧 🧒🗣️🇬🇧 🧒✈️🌎 || Tell me about your journey: past, present and future. || I started learning English two years ago. Now I can speak English. In the future I will travel."
+                ],
+                "mistakes": [
+                  "M || I [have started] learning English two years ago. || started* / have started / start || I started learning English two years ago.",
+                  "M || If I forget a word, I [would] ask my coach. (real plan) || will* / would / can || If I forget a word, I will ask my coach."
+                ]
+              }
+            ]
+          }
+        ],
+        "vocab": [
+          {
+            "week": 1,
+            "category": "Review: doctor, new skills and routines",
+            "words": [
+              "Fall",
+              "Hurt",
+              "Break",
+              "Take medicine",
+              "Look",
+              "Watch videos",
+              "Read books",
+              "Join a class",
+              "Practice",
+              "Teach",
+              "Fly",
+              "Eat",
+              "Visit",
+              "Go to",
+              "Talk",
+              "Swim",
+              "Give away"
+            ]
+          },
+          {
+            "week": 2,
+            "category": "Review: abilities, interrupted actions, pool and Christmas",
+            "words": [
+              "Translate",
+              "Illustrate",
+              "Memorize",
+              "Play",
+              "Solve",
+              "Feed",
+              "Fly",
+              "Slip",
+              "Take pictures",
+              "Wear",
+              "Laugh",
+              "Swim",
+              "Dive",
+              "Float",
+              "Watch",
+              "Relax",
+              "Visit",
+              "Meet",
+              "Make",
+              "Bake",
+              "Give",
+              "Scare"
+            ]
+          },
+          {
+            "week": 3,
+            "category": "Review: family, circus, vacations and birthdays",
+            "words": [
+              "Paint",
+              "Dance",
+              "Sing",
+              "Juggle",
+              "Fix",
+              "Drop",
+              "Feed",
+              "Eat",
+              "See",
+              "Play the drums",
+              "Jump",
+              "Steal",
+              "Visit",
+              "Wear",
+              "Bounce",
+              "Have a picnic",
+              "Ride",
+              "Race",
+              "Invite",
+              "Open presents",
+              "Blow out"
+            ]
+          },
+          {
+            "week": 4,
+            "category": "Present perfect review: new things, places and accidents",
+            "words": [
+              "Build",
+              "Play",
+              "Cook",
+              "Bake",
+              "Practice",
+              "Find",
+              "Explore",
+              "Build a sandcastle",
+              "Melt",
+              "Swim",
+              "Discover",
+              "Break",
+              "Drop",
+              "Knock over",
+              "Sit on",
+              "Step on",
+              "Spill",
+              "Run into"
+            ]
+          },
+          {
+            "week": 5,
+            "category": "Basic tenses review: school and amusement park",
+            "words": [
+              "Learn",
+              "Practice",
+              "Ask questions",
+              "Play",
+              "Eat snacks",
+              "Eat",
+              "Ride",
+              "Scream",
+              "Chase",
+              "Dance",
+              "Take selfies",
+              "Arrive",
+              "Paint",
+              "Share",
+              "Build",
+              "Tell",
+              "Study",
+              "Listen to music",
+              "Draw",
+              "Talk",
+              "Pass out"
+            ]
+          },
+          {
+            "week": 6,
+            "category": "Advanced tenses review: genie, health, movies and pets",
+            "words": [
+              "Buy",
+              "Travel",
+              "Explore",
+              "Meet",
+              "Ask for",
+              "Cook healthy meals",
+              "Sleep well",
+              "Play sports",
+              "Wash your hands",
+              "Spend time outdoors",
+              "Exciting",
+              "Funny",
+              "Scary",
+              "Sad",
+              "Interesting",
+              "Protect",
+              "Teach",
+              "Support",
+              "Bring",
+              "Spend the day",
+              "Look forward to"
+            ]
+          },
+          {
+            "week": 7,
+            "category": "Exit evaluation: routines, family, food, getting ready and clothes",
+            "words": [
+              "Wake up",
+              "Take a shower",
+              "Eat",
+              "Go to school",
+              "Do homework",
+              "Sleep",
+              "Young",
+              "Old",
+              "Tall",
+              "Short",
+              "Friendly",
+              "Beautiful",
+              "Try",
+              "Slurp",
+              "Taste",
+              "Learn",
+              "Wash my face",
+              "Brush my teeth",
+              "Comb my hair",
+              "Get dressed",
+              "Grab my backpack",
+              "Pants",
+              "T-shirt",
+              "Shoes",
+              "Dress",
+              "Shorts",
+              "Socks",
+              "Sweater",
+              "Count on"
+            ]
+          },
+          {
+            "week": 8,
+            "category": "Final review: weekend plans, zoo, weather, food and my journey",
+            "words": [
+              "Wake up late",
+              "Go to the park",
+              "Visit",
+              "Do home chores",
+              "Chat",
+              "Take a nap",
+              "Walk around",
+              "Take pictures",
+              "Eat snacks",
+              "See animals",
+              "Feed the animals",
+              "Buy souvenirs",
+              "Hot",
+              "Cold",
+              "Sunny",
+              "Stormy",
+              "Unpredictable",
+              "Beautiful",
+              "Love",
+              "Hate",
+              "Healthy",
+              "Fresh",
+              "Greasy",
+              "Sugary",
+              "Start",
+              "Learn",
+              "Practice",
+              "Study",
+              "Ask questions",
+              "Improve",
+              "Look after"
+            ]
+          }
+        ]
       }
     ]
   }
