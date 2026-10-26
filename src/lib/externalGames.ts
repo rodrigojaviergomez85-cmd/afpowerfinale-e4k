@@ -22,8 +22,7 @@ export const EXTERNAL_GAMES: ExternalGameDef[] = [{
   bullets: [
     { icon: "🔗", text: "Host a room and share the link with your class." },
     { icon: "🤖", text: "Or send students to solo practice vs AI — no host needed." },
-    { icon: "📚", text: "Games are organized by course and level inside." },
   ],
   url: "https://e4k-games.lovable.app/",
-  badge: "Opens in a new tab",
+  badge: "Go",
 }];

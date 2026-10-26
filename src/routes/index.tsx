@@ -121,7 +121,7 @@ function Hub() {
                 </HubCard>
               );
               return g.url ? (
-                <a key={g.id} href={g.url} target="_blank" rel="noopener noreferrer" aria-label={`${g.name} — ${g.badge}`} className="block rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
+                <a key={g.id} href={g.url} target="_blank" rel="noopener noreferrer" aria-label={`${g.name} — opens in a new tab`} className="block rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring">
                   {card}
                 </a>
               ) : (
