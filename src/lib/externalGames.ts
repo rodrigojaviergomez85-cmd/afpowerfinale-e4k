@@ -10,7 +10,7 @@ export interface ExternalGameDef {
 
 export const EXTERNAL_GAMES_SECTION = {
   title: "Game Rooms",
-  subtitle: "Students play on their own device — share a room link or assign solo practice.",
+  subtitle: "Have your students play on their own device.",
   unavailableBadge: "Coming soon",
 };
 
@@ -24,5 +24,5 @@ export const EXTERNAL_GAMES: ExternalGameDef[] = [{
     { icon: "🤖", text: "Or send students to solo practice vs AI — no host needed." },
   ],
   url: "https://e4k-games.lovable.app/",
-  badge: "Go",
+  badge: "Go →",
 }];
