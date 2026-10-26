@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Add the configured external Game Rooms card below the unchanged drill grid; verify new-tab destination, accessibility, wrapping and console errors without changing games or tests.
+- [x] Add the configured external Game Rooms card below the unchanged drill grid; verified keyboard focus, new-tab E4K Games destination with hub staying open, desktop/windowed/mobile wrapping and no hub console errors. Build OK; two known routing-harness failures remain unchanged. Earlier open items below belong to previous requests and are outside this upload's explicit hub-only scope.
 
 - [x] Import uploaded Level 9 exactly: 8 weeks, 40 days, 800 general cards, 80 separate mistakes and 8 vocabulary groups. Existing curriculum unchanged; 768 curriculum/Blitz tests pass, build OK; selected Level 9 through Quick Setup and verified Demo Drill answer reveal without page errors. Optional image/audio notes remain for later manual work.
 
