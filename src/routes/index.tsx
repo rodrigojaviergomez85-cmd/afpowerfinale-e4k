@@ -93,8 +93,8 @@ function Hub() {
           })}
         </div>
         <section className="mt-10" aria-labelledby="external-games-title">
-          <h2 id="external-games-title" className="text-3xl">{EXTERNAL_GAMES_SECTION.title}</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          <h2 id="external-games-title" className="sr-only">{EXTERNAL_GAMES_SECTION.title}</h2>
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {EXTERNAL_GAMES.map((g, i) => {
               const card = (
                 <HubCard ready={Boolean(g.url)} index={i}>
