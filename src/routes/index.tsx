@@ -94,7 +94,6 @@ function Hub() {
         </div>
         <section className="mt-10" aria-labelledby="external-games-title">
           <h2 id="external-games-title" className="text-3xl">{EXTERNAL_GAMES_SECTION.title}</h2>
-          <p className="mt-2 text-xl font-semibold text-muted-foreground">{EXTERNAL_GAMES_SECTION.subtitle}</p>
           <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {EXTERNAL_GAMES.map((g, i) => {
               const card = (
@@ -103,7 +102,7 @@ function Hub() {
                   <div className="grid h-20 w-20 shrink-0 place-items-center rounded-3xl bg-game-blitz text-6xl chunky">{g.icon}</div>
                   <div className="min-w-0 flex-1">
                     <h3 className="text-3xl leading-tight">{g.name}</h3>
-                    <p className="mt-1 text-lg leading-snug text-muted-foreground">{g.tagline}</p>
+                    {g.tagline && <p className="mt-1 text-lg leading-snug text-muted-foreground">{g.tagline}</p>}
                     <ul className="mt-3 space-y-2 text-base leading-snug text-muted-foreground">
                       {g.bullets.map((bullet) => (
                         <li key={bullet.text} className="flex gap-2">
