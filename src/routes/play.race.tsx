@@ -139,7 +139,7 @@ function RaceGame({ planet, help, openHelp }: { planet: Planet; help: boolean; o
     if (scored.current || !item || landing) return;
     scored.current = true;
     const n = streak.team === team ? streak.n + 1 : 1;
-    const turbo = n >= 3 || (item.hidden && opened.current <= 4);
+    const turbo = n >= 3;
     const moves = turbo ? 2 : 1;
     setHistory((h) => [...h, { team, moves, playerId: player?.id, prevStreak: streak }]);
     setStreak({ team, n });
