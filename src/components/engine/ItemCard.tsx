@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import type { ContentItem } from "@/lib/content";
+import { splitHint, type ContentItem } from "@/lib/content";
 import { FlagText, ItemPicture } from "./Picture";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -10,10 +10,11 @@ function banner(item: ContentItem): string | null {
   if (item.kind === "H") return null; // the category prompt sits above the cover instead
   if (item.kind === "F") return null; // the gapped sentence is the instruction
   if (item.kind === "M") return "🔍 Find the mistake!";
-  // Q/S/E: spelling, letters and greetings need no helper; open questions about
-  // familiar people or public figures invite imagination; personal questions ask for English.
+  // Q/S/E: a hint the coach wrote into the question is shown up here; spelling,
+  // letters and greetings need no helper; everything else asks for English.
+  const { hint } = splitHint(item.prompt);
+  if (hint) return hint;
   if (/¿|spell|letter|good (morning|afternoon|evening|night)|what is your name|where are you from|how old are you/i.test(item.prompt)) return null;
-  if (/\b(mom|dad|mother|father|brother|sister|grandma|grandpa|uncle|aunt|cousin|friend|teacher|family|messi|ronaldo)\b/i.test(item.prompt)) return "Use your imagination!";
   return "Answer in English";
 }
 
@@ -107,12 +108,14 @@ export function ItemCard({ item, showAnswer, compact, onReveal, autoReveal, paus
     fit();
     return () => { observer.disconnect(); cancelAnimationFrame(frame); };
   }, [item, showAnswer, hint]);
+  const head = banner(item);
+  const shown = splitHint(item.prompt).text;
   return (
     <div ref={cardRef} data-kind={item.kind} className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
-      {banner(item) && <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground"><FlagText text={banner(item)!} /></div>}
+      {head && <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground"><FlagText text={head} /></div>}
       {item.hidden ? <HiddenPicture item={item} /> : <div className="item-picture pic-wrap"><ItemPicture item={item} /></div>}
       {!item.hidden && <div className="item-prompt font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">
-        {item.parts ? item.parts.map((p, i) => (p.wrong ? <span key={i} className="mistake-word" data-hint={hint || showAnswer}>{p.text}</span> : <span key={i}>{p.text}</span>)) : item.prompt}
+        {item.parts ? item.parts.map((p, i) => (p.wrong ? <span key={i} className="mistake-word" data-hint={hint || showAnswer}>{p.text}</span> : <span key={i}>{p.text}</span>)) : shown}
       </div>}
       {item.kind === "M" ? <MistakeOptions item={item} showAnswer={showAnswer} /> : item.options && <FillBlank item={item} showAnswer={showAnswer} />}
       <div className={cn("item-answer min-h-16 text-4xl font-bold text-success transition-all duration-500", showAnswer ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0")}>
