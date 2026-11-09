@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { COURSES } from "@/data/content";
-import { drawItems, type ContentItem } from "./content";
+import { drawItems, splitHint, type ContentItem } from "./content";
 
 describe("hidden vocabulary cards", () => {
   it("uses lexical answers rather than sentence or grammar tasks", () => {
