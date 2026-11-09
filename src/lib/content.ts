@@ -40,6 +40,18 @@ function parseShapes(s: string): ShapeSpec[] {
   });
 }
 
+/**
+ * Coach-authored hints arrive written into the question as a trailing "(…)", e.g.
+ * "What were you doing yesterday? (Use your imagination!)". Cards show that hint in
+ * the header pill instead, so every card puts its instruction in the same place.
+ * The stored curriculum text is never changed — this only splits it for display.
+ */
+const HINT_TAIL = /\s*\(([^()]*\bimagination\b[^()]*)\)\s*$/i;
+export function splitHint(prompt: string): { text: string; hint: string | null } {
+  const m = prompt.match(HINT_TAIL);
+  return m ? { text: prompt.slice(0, m.index).trimEnd(), hint: m[1]!.trim() } : { text: prompt, hint: null };
+}
+
 function parseDay(d: DayDef, week: number): ContentItem[] {
   return d.lines.map((line, i) => {
     const f = line.split(" || ") as [string, string, string, string];

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import type { ContentItem } from "@/lib/content";
+import { splitHint, type ContentItem } from "@/lib/content";
 import { FlagText, ItemPicture } from "./Picture";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
