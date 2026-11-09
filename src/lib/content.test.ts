@@ -50,3 +50,28 @@ describe("hidden vocabulary cards", () => {
     }
   });
 });
+
+describe("card instructions", () => {
+  it("lifts a coach-written hint out of the question into its own line", () => {
+    expect(splitHint("What were you doing yesterday when it was raining? (Use your imagination!)"))
+      .toEqual({ text: "What were you doing yesterday when it was raining?", hint: "Use your imagination!" });
+    expect(splitHint("What was your dog doing when you got home yesterday? (Use your imagination if you don't have a dog!)"))
+      .toEqual({ text: "What was your dog doing when you got home yesterday?", hint: "Use your imagination if you don't have a dog!" });
+  });
+  it("leaves questions without such a hint untouched", () => {
+    expect(splitHint("What is your name?")).toEqual({ text: "What is your name?", hint: null });
+    expect(splitHint("Do you like pizza? (Yes or no)")).toEqual({ text: "Do you like pizza? (Yes or no)", hint: null });
+  });
+  it("shows every curriculum hint as a header, never in parentheses", () => {
+    let seen = 0;
+    for (const c of COURSES) for (const l of c.levels) for (const w of l.weeks) for (const d of w.days) for (const line of d.lines) {
+      const seg = line.split(" || ").find((s) => /\bimagination\b/i.test(s));
+      if (!seg) continue;
+      seen++;
+      const { text, hint } = splitHint(seg.trim());
+      expect(hint).toBeTruthy();
+      expect(text).not.toMatch(/imagination/i);
+    }
+    expect(seen).toBeGreaterThan(300);
+  });
+});
