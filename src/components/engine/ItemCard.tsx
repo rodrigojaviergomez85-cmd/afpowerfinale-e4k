@@ -10,10 +10,11 @@ function banner(item: ContentItem): string | null {
   if (item.kind === "H") return null; // the category prompt sits above the cover instead
   if (item.kind === "F") return null; // the gapped sentence is the instruction
   if (item.kind === "M") return "🔍 Find the mistake!";
-  // Q/S/E: spelling, letters and greetings need no helper; open questions about
-  // familiar people or public figures invite imagination; personal questions ask for English.
+  // Q/S/E: a hint the coach wrote into the question is shown up here; spelling,
+  // letters and greetings need no helper; everything else asks for English.
+  const { hint } = splitHint(item.prompt);
+  if (hint) return hint;
   if (/¿|spell|letter|good (morning|afternoon|evening|night)|what is your name|where are you from|how old are you/i.test(item.prompt)) return null;
-  if (/\b(mom|dad|mother|father|brother|sister|grandma|grandpa|uncle|aunt|cousin|friend|teacher|family|messi|ronaldo)\b/i.test(item.prompt)) return "Use your imagination!";
   return "Answer in English";
 }
 
