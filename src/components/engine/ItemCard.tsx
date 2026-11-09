@@ -4,11 +4,6 @@ import { FlagText, ItemPicture } from "./Picture";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-export const HIDDEN_TILES = 6;
-
-/** Points for a hidden-picture item: fewer boxes opened = more points. */
-export const hiddenPoints = (opened: number) => (opened <= 1 ? 3 : opened <= 3 ? 2 : 1);
-
 /** Helper pill per task type; null when the question speaks for itself. */
 function banner(item: ContentItem): string | null {
   if (item.kind === "T") return "Say it in English";
@@ -22,72 +17,23 @@ function banner(item: ContentItem): string | null {
   return "Answer in English";
 }
 
-/** Stable anchor for the hidden picture so details do not always sit in the center tiles. */
-const H_ANCHORS = [
-  "items-center justify-center",
-  "items-center justify-start",
-  "items-center justify-end",
-  "items-start justify-center",
-  "items-end justify-center",
-];
-const anchorFor = (id: string) => {
-  let h = 0;
-  for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0;
-  return H_ANCHORS[h % H_ANCHORS.length]!;
-};
+const ES_GUESS: Record<string, string> = { letra: "letter", color: "color", comida: "food", fruta: "fruit" };
 
-export function HiddenPicture({ item, showAll, onReveal, auto = false, paused = false }: { item: ContentItem; showAll: boolean; onReveal?: ((opened: number) => void) | undefined; auto?: boolean | undefined; paused?: boolean | undefined }) {
-  const [open, setOpen] = useState<Set<number>>(() => new Set());
-  const openRef = useRef(open);
-  openRef.current = open;
-  const onRevealRef = useRef(onReveal);
-  onRevealRef.current = onReveal;
-  const reveal = (i: number) => {
-    if (open.has(i) || showAll) return;
-    const n = new Set(open).add(i);
-    setOpen(n);
-    onReveal?.(n.size);
-  };
-  // Mission mode: one box opens by itself every 2 seconds.
-  useEffect(() => {
-    if (!auto || showAll || paused) return;
-    const id = setInterval(() => {
-      const closed = Array.from({ length: HIDDEN_TILES }, (_, i) => i).filter((i) => !openRef.current.has(i));
-      if (!closed.length) return;
-      const pick = closed[Math.floor(Math.random() * closed.length)];
-      if (pick === undefined) return;
-      const n = new Set(openRef.current).add(pick);
-      setOpen(n);
-      onRevealRef.current?.(n.size);
-    }, 2000);
-    return () => clearInterval(id);
-  }, [auto, showAll, paused]);
+/** Short "Guess the …!" title for picture-guess cards (curriculum text stays untouched). */
+export function guessTitle(prompt: string): string {
+  const es = prompt.match(/Encuentra (?:la|el) (\w+)/i);
+  if (es) return `Guess the ${ES_GUESS[es[1]!.toLowerCase()] ?? "word"}!`;
+  const what = prompt.match(/^What (.+?) is hidden\?$/i);
+  if (what) return `Guess the ${what[1]}!`;
+  return prompt.replace(/\bhidden\s+/i, "");
+}
+
+/** Picture-guess card: the picture is fully visible so turns stay fast. */
+export function HiddenPicture({ item }: { item: ContentItem; showAll?: boolean; onReveal?: unknown; auto?: boolean; paused?: boolean }) {
   return (
-    <div className="hidden-picture flex flex-col items-center gap-2">
-      <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground"><FlagText text={item.prompt} /></div>
-      <div className="hidden-board relative h-[230px] w-[580px] overflow-hidden rounded-3xl bg-card">
-        {/* One stable picture; anchor picked once per card so details vary between cards */}
-        <div className={cn("pic-wrap absolute inset-0 flex p-4", anchorFor(item.id))}>
-          <ItemPicture item={item} big />
-        </div>
-        <div className="hidden-tiles absolute inset-0 grid grid-cols-3 grid-rows-2">
-          {Array.from({ length: HIDDEN_TILES }, (_, i) => {
-            const isOpen = showAll || open.has(i);
-            if (isOpen) return <div key={i} aria-hidden className="pointer-events-none" />;
-            return (
-              <Button
-                key={i}
-                aria-label={`Open tile ${i + 1}`}
-                onClick={() => reveal(i)}
-                className="hidden-tile h-full w-full rounded-none bg-primary p-0 font-display text-4xl font-bold text-primary-foreground hover:brightness-110"
-              >
-                {i + 1}
-              </Button>
-            );
-          })}
-        </div>
-      </div>
-      <div className="text-xl font-bold text-muted-foreground">{open.size} / {HIDDEN_TILES} boxes opened{auto && !showAll && " · opening by itself…"}</div>
+    <div className="hidden-picture flex flex-col items-center gap-3">
+      <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground"><FlagText text={guessTitle(item.prompt)} /></div>
+      <div className="item-picture pic-wrap"><ItemPicture item={item} big /></div>
     </div>
   );
 }
@@ -164,7 +110,7 @@ export function ItemCard({ item, showAnswer, compact, onReveal, autoReveal, paus
   return (
     <div ref={cardRef} data-kind={item.kind} className={cn("fit-card panel flex h-full w-full min-h-0 animate-pop flex-col items-center justify-center gap-5 p-8 text-center", compact ? "p-6" : "min-h-80")}>
       {banner(item) && <div className="banner-pill rounded-full bg-primary px-6 py-2 text-3xl font-bold text-primary-foreground"><FlagText text={banner(item)!} /></div>}
-      {item.hidden ? <HiddenPicture item={item} showAll={showAnswer} onReveal={onReveal} auto={autoReveal} paused={paused} /> : <div className="item-picture pic-wrap"><ItemPicture item={item} /></div>}
+      {item.hidden ? <HiddenPicture item={item} /> : <div className="item-picture pic-wrap"><ItemPicture item={item} /></div>}
       {!item.hidden && <div className="item-prompt font-display text-[56px] font-bold leading-tight text-stroke xl:text-7xl">
         {item.parts ? item.parts.map((p, i) => (p.wrong ? <span key={i} className="mistake-word" data-hint={hint || showAnswer}>{p.text}</span> : <span key={i}>{p.text}</span>)) : item.prompt}
       </div>}

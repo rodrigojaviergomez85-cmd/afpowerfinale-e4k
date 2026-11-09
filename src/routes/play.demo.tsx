@@ -8,7 +8,7 @@ import { Scoreboard, StreakBadge } from "@/components/engine/Scoreboard";
 import { TurnPicker } from "@/components/engine/TurnPicker";
 import { useHotkeys, toggleFullscreen } from "@/components/engine/controls";
 import { Kbd, HelpOverlay } from "@/components/engine/Kbd";
-import { ItemCard, hiddenPoints } from "@/components/engine/ItemCard";
+import { ItemCard } from "@/components/engine/ItemCard";
 import { getGame } from "@/lib/games";
 import { drawItems, shortfallRules, type ContentItem } from "@/lib/content";
 import { selectionOf, sessionUsed, useApp, type Player } from "@/lib/store";
@@ -136,7 +136,7 @@ function DemoDrill() {
   const correctFor = (team: number) => {
     if (scored.current || !item) return;
     scored.current = true;
-    award(team, item.hidden ? hiddenPoints(opened.current) : 1);
+    award(team, 1);
     setShowAnswer(true);
     timer.setRunning(false);
     setTimeout(next, 1200);
@@ -169,7 +169,7 @@ function DemoDrill() {
               <div className="rounded-full bg-secondary px-5 py-2">
                 Card {idx + 1} / {items!.length} {review && <span className="ml-2 text-primary">· Review mode</span>}
               </div>
-              {item.hidden ? <div className="rounded-full bg-accent px-5 py-2 text-accent-foreground">🔍 Worth {hiddenPoints(openedN)} pts</div> : <StreakBadge streak={streak.n} />}
+              <StreakBadge streak={streak.n} />
               <div className={cn("flex items-center gap-2 rounded-full px-5 py-2 text-primary-foreground", activeTeam === 0 ? "bg-team1" : "bg-team2")}>
                 {teams[activeTeam]!.icon} {teams[activeTeam]!.name}’s turn
                 {player && <span className="ml-2 rounded-full bg-card px-3 text-foreground">🎤 {player.name}</span>}

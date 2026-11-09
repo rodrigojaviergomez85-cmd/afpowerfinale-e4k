@@ -144,7 +144,7 @@ function TugGame({ help, openHelp, onRematch: _onRematch }: { help: boolean; ope
     if (scored.current || !item || finale) return;
     scored.current = true;
     const n = streak.team === team ? streak.n + 1 : 1;
-    const power = n >= 3 || (item.hidden && opened.current <= 4);
+    const power = n >= 3;
     const moves = power ? 2 : 1;
     setHistory((h) => [...h, { team, moves, playerId: player?.id, prevStreak: streak }]);
     setStreak({ team, n });
